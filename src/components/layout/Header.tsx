@@ -68,7 +68,7 @@ export function Header() {
           className="text-foreground transition-opacity hover:opacity-80"
           aria-label="SwiftWithFer — torna all'inizio"
         >
-          <SwiftWithFerLogo variant="header" />
+          <SwiftWithFerLogo variant="header" priority />
         </Link>
         <nav aria-label="Navigazione principale" className="hidden md:block">
           <ul className="flex items-center gap-1">

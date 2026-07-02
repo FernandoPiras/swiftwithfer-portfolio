@@ -36,8 +36,8 @@ export const siteConfig = {
   name: "Fernando Piras",
   brand: "SwiftWithFer",
   logo: {
-    header: "/images/brand/logo-mark.svg",
-    mark: "/images/brand/logo-mark.svg",
+    full: "/images/brand/logo.png",
+    alt: "SwiftWithFer — iOS Developer",
   },
   role: "iOS Developer",
   tagline: "App native di qualità Apple — performance, UX e codice pulito.",

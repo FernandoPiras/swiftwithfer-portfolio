@@ -49,7 +49,7 @@ export function Hero() {
         >
           <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/30 via-transparent to-accent-secondary/20 blur-2xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-glass-border bg-glass/40 p-3 shadow-glass backdrop-blur-xl">
-            <SwiftWithFerLogo variant="hero" />
+          <SwiftWithFerLogo variant="hero" priority />
           </div>
         </motion.div>
       </div>
