@@ -45,12 +45,13 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-md"
+          className="relative mx-auto flex w-full max-w-xs justify-center"
         >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/30 via-transparent to-accent-secondary/20 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-glass-border bg-glass/40 p-3 shadow-glass backdrop-blur-xl">
+          <div
+            className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-accent/25 via-transparent to-accent-secondary/15 blur-3xl"
+            aria-hidden
+          />
           <SwiftWithFerLogo variant="hero" priority />
-          </div>
         </motion.div>
       </div>
     </section>

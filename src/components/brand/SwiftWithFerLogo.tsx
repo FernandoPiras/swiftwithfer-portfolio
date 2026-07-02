@@ -3,10 +3,12 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 interface SwiftWithFerLogoProps {
-  variant?: "header" | "hero" | "mark";
+  variant?: "header" | "hero" | "mark" | "icon";
   className?: string;
   priority?: boolean;
 }
+
+const appIconRadius = "rounded-[22.37%]";
 
 export function SwiftWithFerLogo({
   variant = "header",
@@ -17,45 +19,50 @@ export function SwiftWithFerLogo({
 
   if (variant === "hero") {
     return (
+      <Image
+        src={logo.full}
+        alt={logo.alt}
+        width={1024}
+        height={1024}
+        priority={priority}
+        sizes="(max-width: 768px) 80vw, 320px"
+        className={cn(
+          "h-auto w-full max-w-[320px] shadow-2xl shadow-black/20",
+          appIconRadius,
+          className,
+        )}
+      />
+    );
+  }
+
+  if (variant === "icon" || variant === "mark") {
+    return (
       <div
         className={cn(
-          "relative aspect-square w-full overflow-hidden rounded-[1.35rem] bg-[#f3efe8]",
+          "relative shrink-0 overflow-hidden",
+          variant === "mark" ? "h-5 w-5 rounded-md" : "h-9 w-9 md:h-10 md:w-10",
+          variant === "icon" && appIconRadius,
           className,
         )}
       >
         <Image
           src={logo.full}
-          alt={logo.alt}
+          alt={variant === "icon" ? logo.alt : ""}
           fill
-          priority={priority}
-          sizes="(max-width: 768px) 100vw, 420px"
-          className="object-contain p-4"
+          aria-hidden={variant === "mark"}
+          sizes={variant === "mark" ? "20px" : "40px"}
+          className="object-cover object-[center_28%] scale-[1.45]"
         />
       </div>
     );
   }
 
-  if (variant === "mark") {
-    return (
-      <Image
-        src={logo.full}
-        alt=""
-        width={64}
-        height={64}
-        aria-hidden
-        className={cn("h-full w-full rounded-md object-cover", className)}
-      />
-    );
-  }
-
   return (
-    <Image
-      src={logo.full}
-      alt={logo.alt}
-      width={1024}
-      height={1024}
-      priority={priority}
-      className={cn("h-10 w-auto md:h-11", className)}
-    />
+    <div className={cn("flex items-center gap-2.5", className)}>
+      <SwiftWithFerLogo variant="icon" priority={priority} />
+      <span className="text-sm font-semibold tracking-tight text-white md:text-base">
+        {siteConfig.brand}
+      </span>
+    </div>
   );
 }
