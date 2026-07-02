@@ -35,6 +35,10 @@ export interface Technology {
 export const siteConfig = {
   name: "Fernando Piras",
   brand: "SwiftWithFer",
+  logo: {
+    header: "/images/brand/logo-mark.svg",
+    mark: "/images/brand/logo-mark.svg",
+  },
   role: "iOS Developer",
   tagline: "App native di qualità Apple — performance, UX e codice pulito.",
   email: "fernandopiras95@gmail.com",

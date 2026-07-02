@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SwiftWithFerLogo } from "@/components/brand/SwiftWithFerLogo";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -64,10 +65,10 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="#hero"
-          className="text-sm font-semibold tracking-tight text-foreground transition-opacity hover:opacity-80"
-          aria-label="Torna all'inizio"
+          className="text-foreground transition-opacity hover:opacity-80"
+          aria-label="SwiftWithFer — torna all'inizio"
         >
-          Swift<span className="text-accent">With</span>Fer
+          <SwiftWithFerLogo variant="header" />
         </Link>
         <nav aria-label="Navigazione principale" className="hidden md:block">
           <ul className="flex items-center gap-1">

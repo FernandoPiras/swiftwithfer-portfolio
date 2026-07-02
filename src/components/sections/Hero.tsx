@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import { SwiftWithFerLogo } from "@/components/brand/SwiftWithFerLogo";
 import { ButtonLink } from "@/components/layout/Header";
 
 export function Hero() {
@@ -18,7 +18,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="mb-4 inline-flex items-center rounded-full border border-glass-border bg-glass/50 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent backdrop-blur-md">
+          <p className="mb-4 inline-flex items-center gap-2.5 rounded-full border border-glass-border bg-glass/50 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent backdrop-blur-md">
+            <span className="h-5 w-5 shrink-0">
+              <SwiftWithFerLogo variant="mark" />
+            </span>
             {siteConfig.brand}
           </p>
           <h1 className="text-4xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
@@ -45,17 +48,8 @@ export function Hero() {
           className="relative mx-auto w-full max-w-md"
         >
           <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/30 via-transparent to-accent-secondary/20 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-glass-border bg-glass/40 p-2 shadow-glass backdrop-blur-xl">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
-              <Image
-                src={siteConfig.photo.hero}
-                alt={siteConfig.photo.alt}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 420px"
-                className="object-cover object-[70%_30%] grayscale-[15%]"
-              />
-            </div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-glass-border bg-glass/40 p-3 shadow-glass backdrop-blur-xl">
+            <SwiftWithFerLogo variant="hero" />
           </div>
         </motion.div>
       </div>
