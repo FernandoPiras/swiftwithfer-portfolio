@@ -13,7 +13,7 @@ export function SwiftWithFerLogo({
   className,
   priority = false,
 }: SwiftWithFerLogoProps) {
-  const { logo, brand } = siteConfig;
+  const { logo } = siteConfig;
 
   if (variant === "hero") {
     return (
