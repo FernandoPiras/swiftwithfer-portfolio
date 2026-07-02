@@ -14,23 +14,31 @@ interface SectionProps {
 
 export function Section({ id, title, subtitle, children, className }: SectionProps) {
   return (
-    <section id={id} className={cn("scroll-mt-28 py-20 md:py-28", className)}>
-      <div className="mx-auto max-w-6xl px-6">
+    <section
+      id={id}
+      className={cn(
+        "scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-14 sm:py-20 md:py-28",
+        className,
+      )}
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-12 md:mb-16"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 sm:mb-12 md:mb-16"
         >
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-accent">
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-accent sm:mb-3 sm:text-sm sm:tracking-[0.2em]">
             {id}
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
             {title}
           </h2>
           {subtitle ? (
-            <p className="mt-4 max-w-2xl text-lg text-muted">{subtitle}</p>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted sm:mt-4 sm:text-lg">
+              {subtitle}
+            </p>
           ) : null}
         </motion.div>
         {children}

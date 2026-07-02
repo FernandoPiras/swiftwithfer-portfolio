@@ -9,6 +9,7 @@
   --glass: rgba(255, 255, 255, 0.72);
   --glass-border: rgba(0, 0, 0, 0.08);
   --section-alt: #efeff2;
+  --header-offset: 4.5rem;
 }
 
 .dark {
@@ -51,6 +52,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -58,6 +61,11 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 ::selection {
@@ -86,5 +94,14 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (pointer: coarse) {
+  button,
+  a,
+  [role="button"],
+  [role="tab"] {
+    touch-action: manipulation;
   }
 }

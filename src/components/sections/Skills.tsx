@@ -19,7 +19,7 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.04 }}
-            className="group rounded-2xl border border-glass-border bg-glass/50 px-4 py-4 text-center text-sm font-medium text-foreground backdrop-blur-md transition-colors hover:border-accent/40 hover:bg-glass"
+            className="group rounded-2xl border border-glass-border bg-glass/50 px-3 py-3.5 text-center text-xs font-medium text-foreground backdrop-blur-md transition-colors hover:border-accent/40 hover:bg-glass sm:px-4 sm:py-4 sm:text-sm"
           >
             {skill}
           </motion.li>

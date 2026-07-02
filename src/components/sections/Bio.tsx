@@ -19,7 +19,7 @@ export function Bio() {
       subtitle="Sviluppatore iOS con focus su prodotti curati, scalabili e pronti per l'App Store."
     >
       <GlassCard className="overflow-hidden">
-        <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:items-start">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[220px_1fr] lg:items-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -28,7 +28,7 @@ export function Bio() {
             className="mx-auto flex flex-col items-center lg:mx-0"
           >
             <div className="relative rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[3px] shadow-lg shadow-[#ee2a7b]/20">
-              <div className="relative h-44 w-44 overflow-hidden rounded-full bg-background p-[3px] md:h-52 md:w-52">
+              <div className="relative h-36 w-36 overflow-hidden rounded-full bg-background p-[3px] sm:h-44 sm:w-44 md:h-52 md:w-52">
                 <div className="relative h-full w-full overflow-hidden rounded-full">
                   <Image
                     src={photo.bio}
@@ -56,15 +56,15 @@ export function Bio() {
             )}
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground">{name}</h3>
-              <p className="mt-1 text-base font-medium text-accent">{role}</p>
-              <p className="mt-4 leading-relaxed text-muted">{bio.short}</p>
-              <p className="mt-3 leading-relaxed text-muted">{bio.full}</p>
+              <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{name}</h3>
+              <p className="mt-1 text-sm font-medium text-accent sm:text-base">{role}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:mt-4 sm:text-base">{bio.short}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">{bio.full}</p>
             </div>
 
-            <dl className="grid gap-3 sm:grid-cols-3">
+            <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {bio.highlights.map((item) => (
                 <div
                   key={item.label}

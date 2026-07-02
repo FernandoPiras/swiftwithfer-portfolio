@@ -27,7 +27,7 @@ export function SwiftWithFerLogo({
         priority={priority}
         sizes="(max-width: 768px) 80vw, 320px"
         className={cn(
-          "h-auto w-full max-w-[320px] shadow-2xl shadow-black/20",
+          "h-auto w-full max-w-[220px] shadow-2xl shadow-black/20 sm:max-w-[280px] md:max-w-[320px]",
           appIconRadius,
           className,
         )}
@@ -60,7 +60,7 @@ export function SwiftWithFerLogo({
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
       <SwiftWithFerLogo variant="icon" priority={priority} />
-      <span className="text-sm font-semibold tracking-tight text-white md:text-base">
+      <span className="hidden text-sm font-semibold tracking-tight text-foreground sm:inline md:text-base">
         {siteConfig.brand}
       </span>
     </div>

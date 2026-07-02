@@ -24,30 +24,30 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
     >
       <GlassCard
         as="article"
-        className="group overflow-hidden transition-transform duration-500 hover:-translate-y-1"
+        className="group overflow-hidden md:transition-transform md:duration-500 md:hover:-translate-y-1"
       >
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center">
-          <div className="space-y-5">
-            <div className="flex items-start gap-4">
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.35rem] shadow-lg shadow-black/10 ring-1 ring-black/5">
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
+          <div className="order-2 space-y-4 sm:space-y-5 lg:order-1">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[1.2rem] shadow-lg shadow-black/10 ring-1 ring-black/5 sm:h-20 sm:w-20 sm:rounded-[1.35rem]">
                 <Image
                   src={app.icon}
                   alt={`Icona ${app.name}`}
                   fill
-                  sizes="80px"
+                  sizes="(max-width: 640px) 64px, 80px"
                   className="object-cover"
                 />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-2xl font-semibold tracking-tight text-foreground">
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                     {app.name}
                   </h3>
                   <span
@@ -63,46 +63,46 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
               </div>
             </div>
 
-            <p className="leading-relaxed text-muted">{app.description}</p>
+            <p className="text-sm leading-relaxed text-muted sm:text-base">{app.description}</p>
 
             <ul className="flex flex-wrap gap-2" aria-label={`Tecnologie usate in ${app.name}`}>
               {app.technologies.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs text-foreground"
+                  className="rounded-full border border-glass-border bg-background/40 px-2.5 py-1 text-[0.7rem] text-foreground sm:px-3 sm:text-xs"
                 >
                   {tech}
                 </li>
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-3 pt-1">
+            <div className="flex flex-col gap-2.5 pt-1 sm:flex-row sm:flex-wrap sm:gap-3">
               {app.appStoreUrl ? (
-                <ButtonLink href={app.appStoreUrl} external variant="primary">
+                <ButtonLink href={app.appStoreUrl} external variant="primary" className="w-full sm:w-auto">
                   App Store
                 </ButtonLink>
               ) : null}
               {app.githubUrl ? (
-                <ButtonLink href={app.githubUrl} external variant="secondary">
+                <ButtonLink href={app.githubUrl} external variant="secondary" className="w-full sm:w-auto">
                   GitHub
                 </ButtonLink>
               ) : null}
               {app.websiteUrl ? (
-                <ButtonLink href={app.websiteUrl} external variant="secondary">
+                <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
                   Sito web
                 </ButtonLink>
               ) : null}
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="relative mx-auto aspect-[9/19.5] w-full max-w-[260px] overflow-hidden rounded-[2rem] border border-glass-border bg-background/60 p-2 shadow-2xl shadow-black/10">
-              <div className="relative h-full w-full overflow-hidden rounded-[1.6rem] bg-black">
+          <div className="order-1 space-y-3 sm:space-y-4 lg:order-2">
+            <div className="relative mx-auto aspect-[9/19.5] w-full max-w-[220px] overflow-hidden rounded-[1.75rem] border border-glass-border bg-background/60 p-1.5 shadow-2xl shadow-black/10 sm:max-w-[260px] sm:rounded-[2rem] sm:p-2">
+              <div className="relative h-full w-full overflow-hidden rounded-[1.45rem] bg-black sm:rounded-[1.6rem]">
                 <Image
                   src={app.screenshots[activeScreenshot] ?? app.screenshots[0]}
                   alt={`Screenshot di ${app.name}`}
                   fill
-                  sizes="260px"
+                  sizes="(max-width: 640px) 220px, 260px"
                   className="object-cover object-top transition-opacity duration-500"
                 />
               </div>
@@ -110,7 +110,7 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
 
             {app.screenshots.length > 1 ? (
               <div
-                className="flex justify-center gap-2"
+                className="flex justify-center gap-2 py-1"
                 role="tablist"
                 aria-label={`Screenshot ${app.name}`}
               >
@@ -122,13 +122,17 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                     aria-selected={activeScreenshot === screenshotIndex}
                     aria-label={`Screenshot ${screenshotIndex + 1}`}
                     onClick={() => setActiveScreenshot(screenshotIndex)}
-                    className={cn(
-                      "h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
-                      activeScreenshot === screenshotIndex
-                        ? "w-8 bg-accent"
-                        : "w-2 bg-muted/40 hover:bg-muted",
-                    )}
-                  />
+                    className="flex min-h-11 min-w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    <span
+                      className={cn(
+                        "block rounded-full transition-all duration-300",
+                        activeScreenshot === screenshotIndex
+                          ? "h-2 w-8 bg-accent"
+                          : "h-2 w-2 bg-muted/40",
+                      )}
+                    />
+                  </button>
                 ))}
               </div>
             ) : null}

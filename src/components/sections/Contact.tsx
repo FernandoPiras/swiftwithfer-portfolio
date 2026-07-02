@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
@@ -36,7 +34,7 @@ export function Social() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.06 }}
-            className="group rounded-2xl border border-glass-border bg-glass/50 p-6 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="group rounded-2xl border border-glass-border bg-glass/50 p-4 backdrop-blur-md transition-all active:scale-[0.99] sm:p-6 md:hover:-translate-y-0.5 md:hover:border-accent/40"
           >
             <div className="flex items-center gap-4">
               <span
@@ -79,7 +77,7 @@ export function Contact() {
       <GlassCard>
         <div className="grid gap-8 md:grid-cols-2">
           <div>
-            <h3 className="text-xl font-semibold text-foreground">
+            <h3 className="text-lg font-semibold text-foreground sm:text-xl">
               Parliamo del tuo prossimo progetto
             </h3>
             <p className="mt-3 leading-relaxed text-muted">
@@ -88,7 +86,7 @@ export function Contact() {
             </p>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-accent transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="mt-6 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-base font-medium text-accent transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:text-lg"
             >
               <EmailIcon />
               {siteConfig.email}
@@ -102,7 +100,7 @@ export function Contact() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-glass-border bg-background/40 px-4 py-3 text-sm transition-colors hover:border-accent/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="flex min-h-11 items-center justify-between rounded-xl border border-glass-border bg-background/40 px-4 py-3 text-sm transition-colors hover:border-accent/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   <span className="flex items-center gap-3 text-foreground">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10">

@@ -21,9 +21,9 @@ export function Technologies() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
           >
-            <div className="flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-glass-border bg-glass/50 p-5 backdrop-blur-md transition-colors hover:border-accent/30">
+            <div className="flex h-full flex-col items-center justify-center gap-2 rounded-2xl border border-glass-border bg-glass/50 p-3 backdrop-blur-md transition-colors hover:border-accent/30 sm:gap-3 sm:p-5">
               <TechIcon slug={tech.slug} />
-              <span className="text-center text-sm font-medium text-foreground">
+              <span className="text-center text-xs font-medium text-foreground sm:text-sm">
                 {tech.name}
               </span>
             </div>
