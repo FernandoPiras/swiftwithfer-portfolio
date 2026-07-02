@@ -220,7 +220,7 @@ export const siteConfig = {
       status: "published",
       featured: true,
       demoVideo: {
-        src: "/videos/andrometrics-demo.mov",
+        src: "/videos/andrometrics-demo.mp4",
         poster: "/images/apps/andrometrics/screenshot-1.png",
         title: "AndroMetrics in uso reale su iPhone",
       },
