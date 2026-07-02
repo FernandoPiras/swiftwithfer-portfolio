@@ -50,11 +50,7 @@ export function Social() {
               <div>
                 <p className="text-lg font-semibold text-foreground">{link.name}</p>
                 <p className="text-sm text-muted">
-                  {link.icon === "instagram"
-                    ? "@swiftwithfer"
-                    : link.icon === "github"
-                      ? "FernandoPiras"
-                      : "Fernando Piras"}
+                  {link.icon === "instagram" ? "@swiftwithfer" : "Fernando Piras"}
                 </p>
               </div>
             </div>

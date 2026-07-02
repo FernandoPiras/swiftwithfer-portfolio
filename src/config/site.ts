@@ -3,7 +3,7 @@ export type ProjectStatus = "published" | "beta" | "in-development";
 export interface SocialLink {
   name: string;
   url: string;
-  icon: "instagram" | "github" | "appstore" | "email";
+  icon: "instagram" | "appstore" | "email";
 }
 
 export interface AppReview {
@@ -98,11 +98,6 @@ export const siteConfig = {
       name: "App Store",
       url: "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
       icon: "appstore",
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/FernandoPiras",
-      icon: "github",
     },
   ] satisfies SocialLink[],
   services: [

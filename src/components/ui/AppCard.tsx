@@ -78,14 +78,12 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
             </ul>
 
             <div className="flex flex-col gap-2.5 pt-1 sm:flex-row sm:flex-wrap sm:gap-3">
+              <ButtonLink href={`/apps/${app.id}`} variant="primary" className="w-full sm:w-auto">
+                Case Study
+              </ButtonLink>
               {app.appStoreUrl ? (
-                <ButtonLink href={app.appStoreUrl} external variant="primary" className="w-full sm:w-auto">
+                <ButtonLink href={app.appStoreUrl} external variant="secondary" className="w-full sm:w-auto">
                   App Store
-                </ButtonLink>
-              ) : null}
-              {app.githubUrl ? (
-                <ButtonLink href={app.githubUrl} external variant="secondary" className="w-full sm:w-auto">
-                  GitHub
                 </ButtonLink>
               ) : null}
               {app.websiteUrl ? (
