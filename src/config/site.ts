@@ -272,6 +272,11 @@ export const siteConfig = {
       websiteUrl: "https://www.slotiva.it",
       status: "published",
       featured: true,
+      demoVideo: {
+        src: "/videos/slotiva-demo.mp4",
+        poster: "/images/apps/slotiva/screenshot-1.png",
+        title: "Slotiva in uso reale su iPhone",
+      },
     },
     {
       id: "preventivorapido",
@@ -298,6 +303,11 @@ export const siteConfig = {
         "https://fernandopiras.github.io/preventivorapido--legal/",
       status: "published",
       featured: true,
+      demoVideo: {
+        src: "/videos/preventivorapido-demo.mp4",
+        poster: "/images/apps/preventivorapido/screenshot-1.png",
+        title: "PreventivoRapido PRO in uso reale su iPhone",
+      },
     },
   ] satisfies AppProject[],
   seo: {

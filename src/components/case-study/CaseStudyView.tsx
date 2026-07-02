@@ -5,8 +5,9 @@ import type { CaseStudyContent } from "@/config/case-studies";
 import type { AppProject } from "@/config/site";
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
-import { GlassCard } from "@/components/ui/GlassCard";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
+import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
+import { GlassCard } from "@/components/ui/GlassCard";
 
 interface CaseStudyViewProps {
   study: CaseStudyContent;
@@ -34,7 +35,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
   return (
     <article>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2rem)] pb-12 sm:pb-16">
+      <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2rem)] pb-10 sm:pb-12">
         <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <Link
@@ -66,10 +67,51 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
                 {app.description}
               </p>
+
+              <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:justify-start">
+                {app.demoVideo ? (
+                  <ButtonLink href="#demo" className="w-full sm:w-auto">
+                    Guarda demo reale
+                  </ButtonLink>
+                ) : null}
+                {app.appStoreUrl ? (
+                  <ButtonLink href={app.appStoreUrl} external variant="secondary" className="w-full sm:w-auto">
+                    App Store
+                  </ButtonLink>
+                ) : null}
+                {app.websiteUrl ? (
+                  <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
+                    Sito web
+                  </ButtonLink>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Demo — subito sotto l'hero per massima visibilità */}
+      {app.demoVideo ? (
+        <section
+          id="demo"
+          aria-label={`Demo reale ${app.name}`}
+          className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-12"
+        >
+          <h2 className="mb-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+            Demo reale
+          </h2>
+          <p className="mb-6 max-w-2xl text-sm text-muted sm:text-base">
+            Registrazione diretta da iPhone mentre l&apos;app è in esecuzione — nessun mockup,
+            l&apos;esperienza così com&apos;è su dispositivo.
+          </p>
+          <AppDemoVideo
+            src={app.demoVideo.src}
+            poster={app.demoVideo.poster}
+            title={app.demoVideo.title}
+            size="full"
+          />
+        </section>
+      ) : null}
 
       {/* Content */}
       <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 sm:space-y-12 sm:px-6 sm:pb-20 md:pb-28">
@@ -100,7 +142,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
 
           <CaseSection title="Tecnologie utilizzate">
             <ul className="flex flex-wrap gap-2">
-              {study.technologies.map((tech) => (
+              {app.technologies.map((tech) => (
                 <li
                   key={tech}
                   className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs text-foreground sm:text-sm"
@@ -127,24 +169,6 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </CaseSection>
         </GlassCard>
 
-        {app.demoVideo ? (
-          <section id="demo" aria-label={`Demo reale ${app.name}`}>
-            <h2 className="mb-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Demo reale
-            </h2>
-            <p className="mb-6 max-w-2xl text-sm text-muted sm:text-base">
-              Registrazione diretta da iPhone mentre l&apos;app è in esecuzione — nessun mockup,
-              l&apos;esperienza così com&apos;è su dispositivo.
-            </p>
-            <AppDemoVideo
-              src={app.demoVideo.src}
-              poster={app.demoVideo.poster}
-              title={app.demoVideo.title}
-              size="full"
-            />
-          </section>
-        ) : null}
-
         {/* Screenshots */}
         <section aria-label={`Screenshot ${app.name}`}>
           <h2 className="mb-6 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
@@ -170,18 +194,29 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </ul>
         </section>
 
+        {app.reviews?.length ? (
+          <GlassCard>
+            <AppStoreReviews app={app} className="mt-0 border-0 pt-0" />
+          </GlassCard>
+        ) : null}
+
         {/* CTA */}
         <GlassCard className="text-center">
           <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
             Vuoi un&apos;app come {app.name}?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-            Sviluppo app iOS native con la stessa attenzione a UX, architettura e qualità App Store.
+            {siteConfig.tagline}
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             {app.appStoreUrl ? (
               <ButtonLink href={app.appStoreUrl} external variant="primary" className="w-full sm:w-auto">
                 Scarica su App Store
+              </ButtonLink>
+            ) : null}
+            {app.websiteUrl ? (
+              <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
+                Visita il sito
               </ButtonLink>
             ) : null}
             <ButtonLink
