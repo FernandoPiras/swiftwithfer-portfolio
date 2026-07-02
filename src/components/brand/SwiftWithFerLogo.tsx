@@ -60,7 +60,7 @@ export function SwiftWithFerLogo({
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
       <SwiftWithFerLogo variant="icon" priority={priority} />
-      <span className="hidden text-sm font-semibold tracking-tight text-foreground sm:inline md:text-base">
+      <span className="text-xs font-semibold tracking-tight text-foreground dark:text-white sm:text-sm md:text-base">
         {siteConfig.brand}
       </span>
     </div>
