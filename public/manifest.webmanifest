@@ -1,0 +1,24 @@
+{
+  "name": "Fernando Piras — SwiftWithFer",
+  "short_name": "SwiftWithFer",
+  "description": "Portfolio iOS Developer — Fernando Piras",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#0a84ff",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
