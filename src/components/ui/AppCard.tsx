@@ -7,6 +7,7 @@ import type { AppProject } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
+import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { cn, getStatusLabel } from "@/lib/utils";
 
 interface AppCardProps {
@@ -137,6 +138,20 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
             ) : null}
           </div>
         </div>
+
+        {app.demoVideo ? (
+          <div className="mt-8 border-t border-glass-border pt-6 sm:mt-10 sm:pt-8">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-accent">
+              Demo reale
+            </p>
+            <AppDemoVideo
+              src={app.demoVideo.src}
+              poster={app.demoVideo.poster}
+              title={app.demoVideo.title}
+              size="compact"
+            />
+          </div>
+        ) : null}
 
         <AppStoreReviews app={app} />
       </GlassCard>

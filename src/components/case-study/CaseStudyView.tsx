@@ -6,6 +6,7 @@ import type { AppProject } from "@/config/site";
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 
 interface CaseStudyViewProps {
   study: CaseStudyContent;
@@ -125,6 +126,24 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             <p>{study.result}</p>
           </CaseSection>
         </GlassCard>
+
+        {app.demoVideo ? (
+          <section id="demo" aria-label={`Demo reale ${app.name}`}>
+            <h2 className="mb-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              Demo reale
+            </h2>
+            <p className="mb-6 max-w-2xl text-sm text-muted sm:text-base">
+              Registrazione diretta da iPhone mentre l&apos;app è in esecuzione — nessun mockup,
+              l&apos;esperienza così com&apos;è su dispositivo.
+            </p>
+            <AppDemoVideo
+              src={app.demoVideo.src}
+              poster={app.demoVideo.poster}
+              title={app.demoVideo.title}
+              size="full"
+            />
+          </section>
+        ) : null}
 
         {/* Screenshots */}
         <section aria-label={`Screenshot ${app.name}`}>

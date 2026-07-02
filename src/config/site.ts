@@ -34,6 +34,11 @@ export interface AppProject {
   featured?: boolean;
   appStoreRating?: AppStoreRating;
   reviews?: AppReview[];
+  demoVideo?: {
+    src: string;
+    poster?: string;
+    title: string;
+  };
 }
 
 export interface TimelineEntry {
@@ -55,7 +60,7 @@ export const siteConfig = {
     alt: "SwiftWithFer — iOS Developer",
   },
   role: "iOS Developer",
-  tagline: "App native di qualità Apple — performance, UX e codice pulito.",
+  tagline: "App iOS native, dal codice all'App Store.",
   email: "fernandopiras95@gmail.com",
   portfolioUrl: "https://swiftwithfer-portfolio.vercel.app",
   locale: "it_IT",
@@ -214,6 +219,11 @@ export const siteConfig = {
       websiteUrl: "https://fernandopiras.github.io/andrometrics-legal/",
       status: "published",
       featured: true,
+      demoVideo: {
+        src: "/videos/andrometrics-demo.mov",
+        poster: "/images/apps/andrometrics/screenshot-1.png",
+        title: "AndroMetrics in uso reale su iPhone",
+      },
       appStoreRating: { average: 5, count: 4 },
       reviews: [
         {
@@ -293,7 +303,7 @@ export const siteConfig = {
   seo: {
     title: "Fernando Piras — iOS Developer | SwiftWithFer",
     description:
-      "Portfolio ufficiale di Fernando Piras (@swiftwithfer). Sviluppatore iOS SwiftUI con 3 app su App Store: AndroMetrics, Slotiva e PreventivoRapido PRO. Consulenza e sviluppo app native.",
+      "Portfolio ufficiale di Fernando Piras (@swiftwithfer). App iOS native, dal codice all'App Store. AndroMetrics, Slotiva e PreventivoRapido PRO.",
     keywords: [
       "iOS Developer",
       "Swift",
