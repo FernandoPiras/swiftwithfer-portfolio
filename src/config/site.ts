@@ -57,6 +57,20 @@ export const siteConfig = {
     philosophy:
       "Credo in software che rispetta il tempo dell'utente: interfacce chiare, animazioni fluide, performance misurabili e privacy by design. La qualità non è un extra — è il requisito minimo.",
     focus: ["Qualità del codice", "UX & accessibilità", "Performance", "App Store readiness"],
+    highlights: [
+      {
+        label: "App Store",
+        value: "3 app pubblicate",
+      },
+      {
+        label: "Brand",
+        value: "SwiftWithFer",
+      },
+      {
+        label: "Contenuti",
+        value: "@swiftwithfer",
+      },
+    ],
   },
   social: [
     {

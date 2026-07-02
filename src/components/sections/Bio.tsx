@@ -1,13 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 
 export function Bio() {
-  const { bio, photo, name } = siteConfig;
+  const { bio, photo, name, role, brand, email } = siteConfig;
+  const publishedApps = siteConfig.apps.filter((app) => app.status === "published");
+  const instagram = siteConfig.social.find((link) => link.icon === "instagram");
 
   return (
     <Section
@@ -37,41 +40,101 @@ export function Bio() {
                 </div>
               </div>
             </div>
-            <p className="mt-4 text-center text-sm font-medium text-muted">
-              @{siteConfig.brand.toLowerCase()}
-            </p>
+            {instagram ? (
+              <Link
+                href={instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 text-center text-sm font-medium text-accent transition-opacity hover:opacity-80"
+              >
+                @{brand.toLowerCase()}
+              </Link>
+            ) : (
+              <p className="mt-4 text-center text-sm font-medium text-muted">
+                @{brand.toLowerCase()}
+              </p>
+            )}
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold text-foreground">{name}</h3>
+              <p className="mt-1 text-base font-medium text-accent">{role}</p>
+              <p className="mt-4 leading-relaxed text-muted">{bio.short}</p>
               <p className="mt-3 leading-relaxed text-muted">{bio.full}</p>
             </div>
 
-            <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">
-                Percorso
-              </h4>
-              <p className="mt-2 leading-relaxed text-muted">{bio.journey}</p>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">
-                Filosofia
-              </h4>
-              <p className="mt-2 leading-relaxed text-muted">{bio.philosophy}</p>
-            </div>
-
-            <ul className="flex flex-wrap gap-2" aria-label="Aree di focus">
-              {bio.focus.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-glass-border bg-background/50 px-4 py-1.5 text-sm text-foreground"
+            <dl className="grid gap-3 sm:grid-cols-3">
+              {bio.highlights.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-glass-border bg-background/40 px-4 py-3"
                 >
-                  {item}
-                </li>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-muted">
+                    {item.label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-foreground">{item.value}</dd>
+                </div>
               ))}
-            </ul>
+            </dl>
+
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">
+                App pubblicate
+              </h4>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {publishedApps.map((app) => (
+                  <li
+                    key={app.id}
+                    className="rounded-full border border-glass-border bg-background/50 px-4 py-1.5 text-sm text-foreground"
+                  >
+                    {app.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">
+                  Percorso
+                </h4>
+                <p className="mt-2 leading-relaxed text-muted">{bio.journey}</p>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">
+                  Filosofia
+                </h4>
+                <p className="mt-2 leading-relaxed text-muted">{bio.philosophy}</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-accent">
+                Focus
+              </h4>
+              <ul className="mt-3 flex flex-wrap gap-2" aria-label="Aree di focus">
+                {bio.focus.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-full border border-glass-border bg-background/50 px-4 py-1.5 text-sm text-foreground"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p className="text-sm text-muted">
+              Contatto:{" "}
+              <a
+                href={`mailto:${email}`}
+                className="font-medium text-accent transition-opacity hover:opacity-80"
+              >
+                {email}
+              </a>
+            </p>
           </div>
         </div>
       </GlassCard>
