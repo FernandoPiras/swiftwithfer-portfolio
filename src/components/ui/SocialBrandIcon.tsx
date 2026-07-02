@@ -1,4 +1,4 @@
-import { siApple, siInstagram } from "simple-icons";
+import { siApple, siGithub, siInstagram } from "simple-icons";
 import type { SocialLink } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +30,19 @@ export function SocialBrandIcon({ icon, className }: SocialBrandIconProps) {
         className={cn("h-7 w-7 dark:brightness-0 dark:invert", className)}
       >
         <path d={siApple.path} fill={`#${siApple.hex}`} />
+      </svg>
+    );
+  }
+
+  if (icon === "github") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        role="img"
+        aria-label={siGithub.title}
+        className={cn("h-7 w-7 dark:invert", className)}
+      >
+        <path d={siGithub.path} fill={`#${siGithub.hex}`} />
       </svg>
     );
   }

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "#bio", label: "Bio" },
+  { href: "#services", label: "Servizi" },
   { href: "#apps", label: "App" },
   { href: "#skills", label: "Skills" },
   { href: "#technologies", label: "Tech" },

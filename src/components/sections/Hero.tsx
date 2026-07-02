@@ -6,6 +6,9 @@ import { SwiftWithFerLogo } from "@/components/brand/SwiftWithFerLogo";
 import { ButtonLink } from "@/components/layout/Header";
 
 export function Hero() {
+  const instagram = siteConfig.social.find((link) => link.icon === "instagram");
+  const { metrics } = siteConfig;
+
   return (
     <section
       id="hero"
@@ -34,13 +37,37 @@ export function Hero() {
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg lg:mx-0">
             {siteConfig.tagline}
           </p>
+
+          <dl className="mx-auto mt-6 flex flex-wrap justify-center gap-3 sm:gap-4 lg:mx-0 lg:justify-start">
+            {[
+              { label: "App Store", value: `${metrics.publishedApps} app pubblicate` },
+              { label: "Stack", value: "Swift & SwiftUI" },
+              { label: "Brand", value: "@swiftwithfer" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-glass-border bg-glass/40 px-3.5 py-2 text-center backdrop-blur-md sm:px-4"
+              >
+                <dt className="text-[0.65rem] font-semibold uppercase tracking-wider text-muted sm:text-xs">
+                  {item.label}
+                </dt>
+                <dd className="mt-0.5 text-sm font-semibold text-foreground">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <ButtonLink href="#apps" className="w-full sm:w-auto">
               Le mie app
             </ButtonLink>
             <ButtonLink href="#contact" variant="secondary" className="w-full sm:w-auto">
-              Contattami
+              Richiedi consulenza
             </ButtonLink>
+            {instagram ? (
+              <ButtonLink href={instagram.url} external variant="secondary" className="w-full sm:w-auto">
+                Instagram
+              </ButtonLink>
+            ) : null}
           </div>
         </motion.div>
 

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
+import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 
@@ -23,7 +24,7 @@ export function Social() {
       title="Social"
       subtitle="Seguimi per aggiornamenti su iOS, Swift e nuove release."
     >
-      <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2 lg:max-w-3xl lg:grid-cols-3">
         {siteConfig.social.map((link, index) => (
           <motion.a
             key={link.name}
@@ -49,7 +50,11 @@ export function Social() {
               <div>
                 <p className="text-lg font-semibold text-foreground">{link.name}</p>
                 <p className="text-sm text-muted">
-                  {link.icon === "instagram" ? "@swiftwithfer" : "Fernando Piras"}
+                  {link.icon === "instagram"
+                    ? "@swiftwithfer"
+                    : link.icon === "github"
+                      ? "FernandoPiras"
+                      : "Fernando Piras"}
                 </p>
               </div>
             </div>
@@ -84,9 +89,20 @@ export function Contact() {
               Disponibile per consulenze, sviluppo app native, revisione architetturale
               e supporto fino alla pubblicazione su App Store.
             </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ButtonLink
+                href={`mailto:${siteConfig.email}?subject=Richiesta%20consulenza%20iOS%20-%20SwiftWithFer`}
+                external
+              >
+                Scrivimi ora
+              </ButtonLink>
+              <ButtonLink href="#services" variant="secondary">
+                Vedi i servizi
+              </ButtonLink>
+            </div>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="mt-6 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-base font-medium text-accent transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:text-lg"
+              className="mt-4 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-medium text-muted transition-opacity hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:text-base"
             >
               <EmailIcon />
               {siteConfig.email}

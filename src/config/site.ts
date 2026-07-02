@@ -42,6 +42,7 @@ export const siteConfig = {
   role: "iOS Developer",
   tagline: "App native di qualità Apple — performance, UX e codice pulito.",
   email: "fernandopiras95@gmail.com",
+  portfolioUrl: "https://swiftwithfer-portfolio.vercel.app",
   locale: "it_IT",
   photo: {
     hero: "/images/profile/fernando.jpg",
@@ -83,7 +84,44 @@ export const siteConfig = {
       url: "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
       icon: "appstore",
     },
+    {
+      name: "GitHub",
+      url: "https://github.com/FernandoPiras",
+      icon: "github",
+    },
   ] satisfies SocialLink[],
+  services: [
+    {
+      id: "ios-development",
+      title: "Sviluppo app iOS",
+      description:
+        "Progettazione e sviluppo end-to-end in SwiftUI: architetture MVVM, integrazioni native, test e pubblicazione su App Store.",
+    },
+    {
+      id: "consulting",
+      title: "Consulenza tecnica",
+      description:
+        "Revisione codice, audit architetturale, performance tuning e roadmap tecnica per prodotti già avviati o in fase di scaling.",
+    },
+    {
+      id: "app-store",
+      title: "App Store readiness",
+      description:
+        "StoreKit, abbonamenti, compliance Apple, metadata, screenshot e supporto fino all'approvazione e al lancio.",
+    },
+    {
+      id: "firebase-cloud",
+      title: "Backend & Firebase",
+      description:
+        "Auth, Firestore, Cloud Functions, push notification e sync cloud per app con utenti reali e dati sensibili.",
+    },
+  ],
+  metrics: {
+    publishedApps: 3,
+    technologies: 12,
+    appStoreDeveloperUrl:
+      "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
+  },
   skills: [
     "Swift",
     "SwiftUI",
@@ -221,15 +259,21 @@ export const siteConfig = {
   seo: {
     title: "Fernando Piras — iOS Developer | SwiftWithFer",
     description:
-      "Portfolio di Fernando Piras, iOS Developer. App native SwiftUI pubblicate su App Store: AndroMetrics, Slotiva e PreventivoRapido PRO.",
+      "Portfolio ufficiale di Fernando Piras (@swiftwithfer). Sviluppatore iOS SwiftUI con 3 app su App Store: AndroMetrics, Slotiva e PreventivoRapido PRO. Consulenza e sviluppo app native.",
     keywords: [
       "iOS Developer",
       "Swift",
       "SwiftUI",
       "Fernando Piras",
       "SwiftWithFer",
+      "swiftwithfer",
       "App Store",
-      "portfolio",
+      "portfolio iOS",
+      "sviluppatore iOS Italia",
+      "consulenza SwiftUI",
+      "AndroMetrics",
+      "Slotiva",
+      "PreventivoRapido",
     ],
     ogImage: "/images/og-cover.jpg",
   },
