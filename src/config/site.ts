@@ -29,7 +29,7 @@ export interface TimelineEntry {
 
 export interface Technology {
   name: string;
-  icon: string;
+  slug: string;
 }
 
 export const siteConfig = {
@@ -83,18 +83,18 @@ export const siteConfig = {
     "App Architecture",
   ],
   technologies: [
-    { name: "Swift", icon: "/images/tech/swift.svg" },
-    { name: "SwiftUI", icon: "/images/tech/swiftui.svg" },
-    { name: "UIKit", icon: "/images/tech/uikit.svg" },
-    { name: "Xcode", icon: "/images/tech/xcode.svg" },
-    { name: "Firebase", icon: "/images/tech/firebase.svg" },
-    { name: "StoreKit", icon: "/images/tech/storekit.svg" },
-    { name: "Git", icon: "/images/tech/git.svg" },
-    { name: "GitHub", icon: "/images/tech/github.svg" },
-    { name: "AdMob", icon: "/images/tech/admob.svg" },
-    { name: "REST API", icon: "/images/tech/api.svg" },
-    { name: "Cursor", icon: "/images/tech/cursor.svg" },
-    { name: "Figma", icon: "/images/tech/figma.svg" },
+    { name: "Swift", slug: "swift" },
+    { name: "SwiftUI", slug: "apple" },
+    { name: "UIKit", slug: "apple" },
+    { name: "Xcode", slug: "xcode" },
+    { name: "Firebase", slug: "firebase" },
+    { name: "StoreKit", slug: "appstore" },
+    { name: "Git", slug: "git" },
+    { name: "GitHub", slug: "github" },
+    { name: "AdMob", slug: "googleadmob" },
+    { name: "REST API", slug: "openapiinitiative" },
+    { name: "Cursor", slug: "cursor" },
+    { name: "Figma", slug: "figma" },
   ] satisfies Technology[],
   timeline: [
     {
@@ -120,12 +120,6 @@ export const siteConfig = {
       title: "AndroMetrics & Slotiva",
       description:
         "Pubblicazione di app in salute e produttività con Firebase, widget, IAP e backend cloud.",
-    },
-    {
-      year: "2026",
-      title: "Skyora",
-      description:
-        "Meteo premium con WeatherKit, widget, Live Activity, Watch e monetizzazione AdMob + IAP.",
     },
   ] satisfies TimelineEntry[],
   apps: [
@@ -207,30 +201,11 @@ export const siteConfig = {
       status: "published",
       featured: true,
     },
-    {
-      id: "skyora",
-      name: "Skyora",
-      tagline: "Meteo elegante, preciso e personale",
-      description:
-        "App meteo premium con WeatherKit, radar, widget, Live Activity, Apple Watch, offline mode e monetizzazione IAP + AdMob.",
-      icon: "/images/apps/skyora/icon.png",
-      screenshots: ["/images/apps/skyora/screenshot-1.png"],
-      technologies: [
-        "SwiftUI",
-        "WeatherKit",
-        "WidgetKit",
-        "StoreKit 2",
-        "AdMob",
-        "WatchKit",
-      ],
-      status: "beta",
-      featured: false,
-    },
   ] satisfies AppProject[],
   seo: {
     title: "Fernando Piras — iOS Developer | SwiftWithFer",
     description:
-      "Portfolio di Fernando Piras, iOS Developer. App native SwiftUI pubblicate su App Store: AndroMetrics, Slotiva, PreventivoRapido PRO e Skyora.",
+      "Portfolio di Fernando Piras, iOS Developer. App native SwiftUI pubblicate su App Store: AndroMetrics, Slotiva e PreventivoRapido PRO.",
     keywords: [
       "iOS Developer",
       "Swift",

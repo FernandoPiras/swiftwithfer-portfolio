@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Section } from "@/components/ui/Section";
+import { TechIcon } from "@/components/ui/TechIcon";
 
 export function Technologies() {
   return (
@@ -22,16 +22,7 @@ export function Technologies() {
             transition={{ duration: 0.4, delay: index * 0.05 }}
           >
             <div className="flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-glass-border bg-glass/50 p-5 backdrop-blur-md transition-colors hover:border-accent/30">
-              <div className="relative h-10 w-10">
-                <Image
-                  src={tech.icon}
-                  alt=""
-                  fill
-                  sizes="40px"
-                  className="object-contain"
-                  aria-hidden
-                />
-              </div>
+              <TechIcon slug={tech.slug} />
               <span className="text-center text-sm font-medium text-foreground">
                 {tech.name}
               </span>
