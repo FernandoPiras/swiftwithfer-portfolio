@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { AppProject } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { cn, getStatusLabel } from "@/lib/utils";
 
 interface AppCardProps {
@@ -138,6 +139,8 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
             ) : null}
           </div>
         </div>
+
+        <AppStoreReviews app={app} />
       </GlassCard>
     </motion.article>
   );

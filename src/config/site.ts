@@ -6,6 +6,19 @@ export interface SocialLink {
   icon: "instagram" | "github" | "appstore" | "email";
 }
 
+export interface AppReview {
+  author: string;
+  rating: number;
+  title: string;
+  body: string;
+  date: string;
+}
+
+export interface AppStoreRating {
+  average: number;
+  count: number;
+}
+
 export interface AppProject {
   id: string;
   name: string;
@@ -19,6 +32,8 @@ export interface AppProject {
   websiteUrl?: string;
   status: ProjectStatus;
   featured?: boolean;
+  appStoreRating?: AppStoreRating;
+  reviews?: AppReview[];
 }
 
 export interface TimelineEntry {
@@ -204,6 +219,30 @@ export const siteConfig = {
       websiteUrl: "https://fernandopiras.github.io/andrometrics-legal/",
       status: "published",
       featured: true,
+      appStoreRating: { average: 5, count: 4 },
+      reviews: [
+        {
+          author: "Shehan2002",
+          rating: 5,
+          title: "App fitness",
+          body: "Ottima app fitness, semplice e funzionale.",
+          date: "2026-04-15",
+        },
+        {
+          author: "Torrmax",
+          rating: 5,
+          title: "App molto utile",
+          body: "Funziona bene semplice e intuitiva utile da tenere sotto controllo gli andamenti",
+          date: "2026-03-27",
+        },
+        {
+          author: "Antonio Vacondio",
+          rating: 5,
+          title: "Molto chiara",
+          body: "App intuitiva e ben progettata. I dati sono facili da capire e i grafici aiutano a vedere i progressi nel tempo.",
+          date: "2026-03-08",
+        },
+      ],
     },
     {
       id: "slotiva",
