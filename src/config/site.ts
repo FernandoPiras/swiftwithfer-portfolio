@@ -163,7 +163,6 @@ export const siteConfig = {
       ],
       appStoreUrl:
         "https://apps.apple.com/it/app/andrometrics-fertility/id6758244167",
-      githubUrl: "https://github.com/FernandoPiras/andrometrics-legal",
       websiteUrl: "https://fernandopiras.github.io/andrometrics-legal/",
       status: "published",
       featured: true,
@@ -213,7 +212,6 @@ export const siteConfig = {
       ],
       appStoreUrl:
         "https://apps.apple.com/it/app/preventivorapido-pro/id6768065146",
-      githubUrl: "https://github.com/FernandoPiras/preventivorapido--legal",
       websiteUrl:
         "https://fernandopiras.github.io/preventivorapido--legal/",
       status: "published",

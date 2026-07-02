@@ -58,14 +58,6 @@ export const metadata: Metadata = {
     description: seo.description,
     creator: `@${siteConfig.brand.toLowerCase()}`,
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/images/brand/logo.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: "/apple-icon.png",
-    shortcut: "/favicon.ico",
-  },
   manifest: "/manifest.webmanifest",
   category: "technology",
 };
