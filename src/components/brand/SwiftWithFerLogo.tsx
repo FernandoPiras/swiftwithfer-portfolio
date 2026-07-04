@@ -51,7 +51,7 @@ export function SwiftWithFerLogo({
           fill
           aria-hidden={variant === "mark"}
           sizes={variant === "mark" ? "20px" : "40px"}
-          className="object-cover object-[center_28%] scale-[1.45]"
+          className="object-cover"
         />
       </div>
     );
