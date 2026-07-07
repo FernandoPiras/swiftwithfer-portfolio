@@ -7,6 +7,7 @@ export function Apps() {
   return (
     <Section
       id="apps"
+      eyebrow="Portfolio"
       title="Le mie App"
       subtitle="Prodotti pubblicati e in evoluzione — design App Store, architetture solide, esperienza premium."
       className="bg-section-alt/50"

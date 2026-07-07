@@ -10,3 +10,11 @@ export function getStatusLabel(status: "published" | "beta" | "in-development") 
   } as const;
   return labels[status];
 }
+
+export function getWebsiteLinkLabel(url: string): string {
+  if (/legal|privacy|support/i.test(url) || url.includes("github.io")) {
+    return "Privacy & legal";
+  }
+
+  return "Sito web";
+}

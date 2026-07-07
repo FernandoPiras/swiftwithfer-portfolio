@@ -1,0 +1,2300 @@
+{
+  "meta": {
+    "title": "SwiftWithFer — Discovery Document",
+    "subtitle": "Analisi requisiti per kick-off progetto",
+    "version": "1.1.0",
+    "author": "Fernando Piras — SwiftWithFer",
+    "confidentiality": "Confidenziale — Uso interno e cliente",
+    "website": "https://swiftwithfer-portfolio.vercel.app",
+    "email": "fernandopiras95@gmail.com",
+    "instructions": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
+    "generated_at": "2026-07-07T19:24:08.230621",
+    "format": "ai-ready",
+    "usage": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
+    "cursor_command": "python3 discovery-document/scripts/generate_cursor_prompt.py path/to/compilato.json",
+    "sector": "Educazione"
+  },
+  "sections": [
+    {
+      "id": "client_info",
+      "number": 1,
+      "title": "Informazioni Cliente",
+      "description": "Dati anagrafici, contatti, contesto aziendale e obiettivi strategici del progetto.",
+      "subsections": [
+        {
+          "title": "Dati Aziendali",
+          "fields": [
+            {
+              "id": "company_name",
+              "label": "Nome azienda / Brand commerciale",
+              "type": "text",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "legal_name",
+              "label": "Ragione sociale",
+              "type": "text",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "vat_number",
+              "label": "Partita IVA / Codice fiscale",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "sector",
+              "label": "Settore di attività",
+              "type": "select",
+              "options": [
+                "Hotel & Hospitality",
+                "Ristorante & Food",
+                "Centro Estetico & Beauty",
+                "Palestra & Fitness",
+                "Negozio Retail",
+                "Concessionaria Auto",
+                "Studio Medico & Sanità",
+                "Azienda B2B",
+                "E-commerce",
+                "Servizi Professionali",
+                "Immobiliare",
+                "Educazione",
+                "Eventi",
+                "Altro"
+              ],
+              "value": "Educazione"
+            },
+            {
+              "id": "sector_other",
+              "label": "Settore (specificare se Altro)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "employees",
+              "label": "Numero dipendenti",
+              "type": "select",
+              "options": [
+                "1 (freelance)",
+                "2-5",
+                "6-20",
+                "21-50",
+                "51-200",
+                "200+"
+              ],
+              "value": null
+            },
+            {
+              "id": "locations",
+              "label": "Sedi operative (indirizzi e ruolo di ciascuna)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "address",
+              "label": "Sede legale / principale",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "business_hours",
+              "label": "Orari di apertura / operatività",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Referente Progetto",
+          "fields": [
+            {
+              "id": "contact_name",
+              "label": "Nome e cognome referente",
+              "type": "text",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "contact_role",
+              "label": "Ruolo in azienda",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "contact_phone",
+              "label": "Telefono",
+              "type": "tel",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "contact_email",
+              "label": "Email",
+              "type": "email",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "contact_secondary",
+              "label": "Referente secondario (nome, ruolo, contatti)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "decision_maker",
+              "label": "Decision maker finale (se diverso dal referente)",
+              "type": "text",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Presenza Online Attuale",
+          "fields": [
+            {
+              "id": "website",
+              "label": "Sito web attuale",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "social_instagram",
+              "label": "Instagram",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "social_facebook",
+              "label": "Facebook",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "social_linkedin",
+              "label": "LinkedIn",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "social_tiktok",
+              "label": "TikTok",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "social_youtube",
+              "label": "YouTube",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "social_other",
+              "label": "Altri canali social",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Obiettivi e Vincoli",
+          "fields": [
+            {
+              "id": "project_objectives",
+              "label": "Obiettivi principali del progetto (cosa deve ottenere l'azienda)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "problems_to_solve",
+              "label": "Problemi attuali da risolvere (pain points)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "success_metrics",
+              "label": "Metriche di successo (KPI misurabili)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "budget_range",
+              "label": "Budget indicativo",
+              "type": "select",
+              "options": [
+                "< €5.000",
+                "€5.000 – €15.000",
+                "€15.000 – €30.000",
+                "€30.000 – €60.000",
+                "€60.000 – €100.000",
+                "> €100.000",
+                "Da definire"
+              ],
+              "value": null
+            },
+            {
+              "id": "budget_notes",
+              "label": "Note sul budget (fasi, vincoli, modalità pagamento)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "timeline",
+              "label": "Tempistiche desiderate",
+              "type": "select",
+              "options": [
+                "Urgente (< 1 mese)",
+                "1-2 mesi",
+                "3-4 mesi",
+                "5-6 mesi",
+                "6+ mesi",
+                "Flessibile"
+              ],
+              "value": null
+            },
+            {
+              "id": "deadline",
+              "label": "Data limite / evento di lancio",
+              "type": "date",
+              "value": null
+            },
+            {
+              "id": "priorities",
+              "label": "Priorità (ordinare: Must-have, Should-have, Nice-to-have)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "constraints",
+              "label": "Vincoli noti (tecnici, legali, organizzativi)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "branding",
+      "number": 2,
+      "title": "Branding",
+      "description": "Identità visiva, tono comunicativo, posizionamento e materiali esistenti.",
+      "subsections": [
+        {
+          "title": "Identità Visiva",
+          "fields": [
+            {
+              "id": "logo_status",
+              "label": "Stato logo",
+              "type": "select",
+              "options": [
+                "Logo esistente (file vettoriale)",
+                "Logo esistente (solo raster)",
+                "Da creare",
+                "Da rifare / rebrand"
+              ],
+              "value": null
+            },
+            {
+              "id": "logo_files",
+              "label": "File logo disponibili (formati, percorsi, link)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "brand_colors",
+              "label": "Colori brand (hex, RGB, Pantone)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "brand_fonts",
+              "label": "Font aziendali (nomi, licenze, file)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "brand_guidelines",
+              "label": "Brand Guidelines esistenti (link o descrizione)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "design_references",
+              "label": "Siti/app di riferimento per lo stile desiderato",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Materiali Esistenti",
+          "fields": [
+            {
+              "id": "has_photos",
+              "label": "Foto professionali disponibili",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "photos_notes",
+              "label": "Dettaglio foto (tipologia, quantità, qualità)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "has_videos",
+              "label": "Video disponibili",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "videos_notes",
+              "label": "Dettaglio video",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "has_brochures",
+              "label": "Brochure / depliant",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "has_catalogs",
+              "label": "Cataloghi prodotti/servizi",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "graphic_materials",
+              "label": "Altri materiali grafici (link, descrizione)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Posizionamento",
+          "fields": [
+            {
+              "id": "tone_of_voice",
+              "label": "Tone of Voice (formale, friendly, premium, tecnico, ecc.)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "usp",
+              "label": "USP — Unique Selling Proposition",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "brand_values",
+              "label": "Valori aziendali",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "target_audience",
+              "label": "Target / Buyer Personas (età, professione, esigenze, comportamenti)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "competitors",
+              "label": "Competitor principali (nomi, siti, punti di forza/debolezza)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "differentiation",
+              "label": "Elemento differenziante rispetto ai competitor",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business_analysis",
+      "number": 3,
+      "title": "Analisi Business",
+      "description": "Processi operativi, flussi cliente, offerta commerciale e workflow interni.",
+      "subsections": [
+        {
+          "title": "Descrizione Attività",
+          "fields": [
+            {
+              "id": "business_description",
+              "label": "Descrizione completa dell'attività",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "business_model",
+              "label": "Modello di business (B2B, B2C, B2B2C, marketplace, SaaS, ecc.)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "revenue_streams",
+              "label": "Flussi di ricavo principali",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "seasonality",
+              "label": "Stagionalità / picchi di attività",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Offerta",
+          "fields": [
+            {
+              "id": "services",
+              "label": "Servizi offerti (elenco dettagliato con descrizione e prezzo)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "products",
+              "label": "Prodotti (elenco, varianti, SKU, prezzi)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "subscriptions",
+              "label": "Abbonamenti / piani ricorrenti",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "packages",
+              "label": "Pacchetti / bundle",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Flusso Cliente",
+          "fields": [
+            {
+              "id": "customer_journey",
+              "label": "Customer journey (dalla scoperta al post-vendita)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "acquisition_channels",
+              "label": "Canali di acquisizione clienti",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "quotation_process",
+              "label": "Processo preventivi (come vengono creati, approvati, inviati)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "order_process",
+              "label": "Processo ordini (online, telefono, in sede)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "appointment_process",
+              "label": "Processo appuntamenti / prenotazioni",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Operatività Interna",
+          "fields": [
+            {
+              "id": "internal_workflow",
+              "label": "Workflow interno (passaggi operativi quotidiani)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "team_roles",
+              "label": "Ruoli del team e responsabilità",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "payment_methods_internal",
+              "label": "Metodi di pagamento accettati",
+              "type": "checkbox_group",
+              "options": [
+                "Contanti",
+                "Carta POS",
+                "Bonifico",
+                "PayPal",
+                "Stripe",
+                "Satispay",
+                "Buoni pasto",
+                "Finanziamento",
+                "Altro"
+              ],
+              "value": {
+                "Contanti": false,
+                "Carta POS": false,
+                "Bonifico": false,
+                "PayPal": false,
+                "Stripe": false,
+                "Satispay": false,
+                "Buoni pasto": false,
+                "Finanziamento": false,
+                "Altro": false
+              }
+            },
+            {
+              "id": "invoicing_process",
+              "label": "Processo fatturazione (software, SDI, note)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "inventory_management",
+              "label": "Gestione magazzino / scorte",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "crm_usage",
+              "label": "Uso CRM attuale (come gestite i contatti)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "loyalty_program",
+              "label": "Programma fedeltà esistente",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "reviews_management",
+              "label": "Gestione recensioni (Google, TripAdvisor, ecc.)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "marketing_activities",
+              "label": "Attività marketing attuali (campagne, newsletter, ads)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digital_presence",
+      "number": 4,
+      "title": "Presenza Digitale",
+      "description": "Infrastruttura web attuale, SEO, analytics, compliance e canali digitali.",
+      "subsections": [
+        {
+          "title": "Sito Web Attuale",
+          "fields": [
+            {
+              "id": "current_site_url",
+              "label": "URL sito attuale",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "site_platform",
+              "label": "Piattaforma / CMS attuale",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "hosting_provider",
+              "label": "Provider hosting",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "domain_registrar",
+              "label": "Registrar dominio",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "site_satisfaction",
+              "label": "Soddisfazione sito attuale (1-10)",
+              "type": "number",
+              "value": null
+            },
+            {
+              "id": "site_issues",
+              "label": "Problemi del sito attuale",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "SEO & Analytics",
+          "fields": [
+            {
+              "id": "seo_status",
+              "label": "Stato SEO (audit esistente, posizionamento, keyword)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "google_analytics",
+              "label": "Google Analytics (versione, accesso)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "google_search_console",
+              "label": "Google Search Console",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "tracking_pixels",
+              "label": "Pixel di tracciamento (Meta, Google Ads, TikTok, ecc.)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "newsletter_tool",
+              "label": "Tool newsletter (Mailchimp, Brevo, ecc.)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "newsletter_subscribers",
+              "label": "Numero iscritti newsletter",
+              "type": "number",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Canali Digitali",
+          "fields": [
+            {
+              "id": "google_business",
+              "label": "Google Business Profile (stato, recensioni)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "marketplaces",
+              "label": "Marketplace (Amazon, eBay, Etsy, Booking.com, ecc.)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "ecommerce_platform",
+              "label": "Piattaforma e-commerce attuale",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "customer_area",
+              "label": "Area clienti esistente (funzionalità)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "blog",
+              "label": "Blog (frequenza pubblicazione, argomenti)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Compliance",
+          "fields": [
+            {
+              "id": "privacy_policy",
+              "label": "Privacy Policy esistente (link)",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "cookie_policy",
+              "label": "Cookie Policy esistente (link)",
+              "type": "url",
+              "value": null
+            },
+            {
+              "id": "cookie_banner",
+              "label": "Cookie banner attuale",
+              "type": "select",
+              "options": [
+                "Assente",
+                "Base",
+                "Con gestione consenso granulare",
+                "Iubenda / Cookiebot / altro tool"
+              ],
+              "value": null
+            },
+            {
+              "id": "gdpr_compliance",
+              "label": "Stato conformità GDPR",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "accessibility_current",
+              "label": "Accessibilità sito attuale (WCAG)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "existing_software",
+      "number": 5,
+      "title": "Software Esistenti",
+      "description": "Sistemi in uso, integrazioni attuali, API e flussi dati.",
+      "subsections": [
+        {
+          "title": "Gestionali & ERP",
+          "fields": [
+            {
+              "id": "management_software",
+              "label": "Gestionale principale (nome, versione, fornitore)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "crm_software",
+              "label": "CRM (nome, versione, utenti attivi)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "erp_software",
+              "label": "ERP",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "pms_software",
+              "label": "PMS (Property Management — hotel)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "pos_software",
+              "label": "POS / Cassa",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "booking_software",
+              "label": "Sistema prenotazioni / booking",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Strumenti Operativi",
+          "fields": [
+            {
+              "id": "calendar_tool",
+              "label": "Calendario condiviso (Google, Outlook, altro)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "payment_gateway_existing",
+              "label": "Gateway pagamenti attuale",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "accounting_software",
+              "label": "Software contabilità / fatturazione",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "communication_tools",
+              "label": "Strumenti comunicazione interna (Slack, Teams, WhatsApp Business)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Dati & Integrazioni",
+          "fields": [
+            {
+              "id": "existing_apis",
+              "label": "API disponibili (documentazione, accesso)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "webhooks",
+              "label": "Webhook configurati",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "data_exports",
+              "label": "Esportazioni dati disponibili (formati, frequenza)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "data_imports",
+              "label": "Importazioni dati necessarie (fonti, volumi)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "sync_requirements",
+              "label": "Sincronizzazioni richieste tra sistemi",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "database_existing",
+              "label": "Database esistenti (tipo, hosting, dimensione)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "migration_needs",
+              "label": "Migrazione dati da sistemi legacy",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desired_features",
+      "number": 6,
+      "title": "Funzionalità Desiderate",
+      "description": "Piattaforme, moduli e feature richieste per il nuovo progetto.",
+      "subsections": [
+        {
+          "title": "Piattaforme",
+          "fields": [
+            {
+              "id": "platform_website",
+              "label": "Sito Web",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_webapp",
+              "label": "Web App (PWA)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_ios",
+              "label": "App iOS (nativa)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_android",
+              "label": "App Android (nativa)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_admin",
+              "label": "Dashboard Admin",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_staff",
+              "label": "Area Staff / Operativa",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_customer",
+              "label": "Area Cliente",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "platform_notes",
+              "label": "Note sulle piattaforme",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Autenticazione & Ruoli",
+          "fields": [
+            {
+              "id": "auth_login",
+              "label": "Sistema login richiesto",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "auth_methods",
+              "label": "Metodi autenticazione",
+              "type": "checkbox_group",
+              "options": [
+                "Email/Password",
+                "Magic Link",
+                "Social Login (Google)",
+                "Social Login (Apple)",
+                "Social Login (Facebook)",
+                "SSO Enterprise",
+                "OTP SMS",
+                "Biometria"
+              ],
+              "value": {
+                "Email/Password": false,
+                "Magic Link": false,
+                "Social Login (Google)": false,
+                "Social Login (Apple)": false,
+                "Social Login (Facebook)": false,
+                "SSO Enterprise": false,
+                "OTP SMS": false,
+                "Biometria": false
+              }
+            },
+            {
+              "id": "user_roles",
+              "label": "Ruoli utente previsti (descrizione e permessi)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "permissions_model",
+              "label": "Modello permessi (RBAC, ABAC, custom)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Moduli Funzionali",
+          "fields": [
+            {
+              "id": "feat_notifications",
+              "label": "Notifiche (push, email, in-app)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_chat",
+              "label": "Chat / Messaggistica",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_calendar",
+              "label": "Calendario / Agenda",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_documents",
+              "label": "Gestione documenti",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_upload",
+              "label": "Upload file",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_download",
+              "label": "Download / Export file",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_qrcode",
+              "label": "QR Code (generazione/lettura)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_barcode",
+              "label": "Barcode / Scanner",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_nfc",
+              "label": "NFC",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_maps",
+              "label": "Mappe interattive",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_gps",
+              "label": "GPS / Geolocalizzazione",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_ai",
+              "label": "Funzionalità AI",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_search",
+              "label": "Ricerca avanzata",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_filters",
+              "label": "Filtri e ordinamento",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_reports",
+              "label": "Report personalizzati",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_statistics",
+              "label": "Statistiche / Analytics interne",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_dashboard",
+              "label": "Dashboard KPI",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_backup",
+              "label": "Backup automatici",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_export",
+              "label": "Export dati (CSV, Excel, PDF)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_import",
+              "label": "Import dati bulk",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_offline",
+              "label": "Modalità offline",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_dark_mode",
+              "label": "Dark Mode",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_multilang",
+              "label": "Multi lingua",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "feat_accessibility",
+              "label": "Accessibilità WCAG 2.1 AA",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "features_detail",
+              "label": "Dettaglio funzionalità custom (descrizione approfondita per ciascuna)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "number": 7,
+      "title": "Automazioni",
+      "description": "Workflow automatici, comunicazioni programmate e pipeline operative.",
+      "subsections": [
+        {
+          "title": "Canali Comunicazione",
+          "fields": [
+            {
+              "id": "auto_email",
+              "label": "Email automatiche",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "auto_sms",
+              "label": "SMS",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "auto_whatsapp",
+              "label": "WhatsApp Business API",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "auto_push",
+              "label": "Push notification",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "communication_triggers",
+              "label": "Trigger comunicazioni (eventi che attivano invii)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Workflow",
+          "fields": [
+            {
+              "id": "auto_reminders",
+              "label": "Reminder automatici (appuntamenti, scadenze)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_followup",
+              "label": "Follow-up post-vendita / post-servizio",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_marketing",
+              "label": "Automazioni marketing (drip campaign, segmentazione)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_crm",
+              "label": "Automazioni CRM (lead scoring, assegnazione)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_ai",
+              "label": "Automazioni AI (classificazione, suggerimenti, chatbot)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_pipeline",
+              "label": "Pipeline vendite automatizzata",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_workflows",
+              "label": "Workflow operativi interni (approvazioni, notifiche team)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "auto_tickets",
+              "label": "Sistema ticket / supporto",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payments",
+      "number": 8,
+      "title": "Pagamenti",
+      "description": "Gateway, metodi di pagamento, fatturazione e modelli di pricing.",
+      "subsections": [
+        {
+          "title": "Gateway & Metodi",
+          "fields": [
+            {
+              "id": "pay_stripe",
+              "label": "Stripe",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_paypal",
+              "label": "PayPal",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_apple",
+              "label": "Apple Pay",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_google",
+              "label": "Google Pay",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_bank_transfer",
+              "label": "Bonifico bancario",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_pos",
+              "label": "POS fisico",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_satispay",
+              "label": "Satispay",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_other",
+              "label": "Altri metodi",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Modelli di Pagamento",
+          "fields": [
+            {
+              "id": "pay_invoicing",
+              "label": "Fatturazione elettronica integrata",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_subscriptions",
+              "label": "Abbonamenti ricorrenti",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_installments",
+              "label": "Pagamento rateale",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_coupons",
+              "label": "Coupon / codici sconto",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_giftcards",
+              "label": "Gift Card",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "pay_deposits",
+              "label": "Acconti / caparre",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "payment_flows",
+              "label": "Flussi di pagamento dettagliati (quando, quanto, rimborsi)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "refund_policy",
+              "label": "Policy rimborsi e cancellazioni",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "integrations",
+      "number": 9,
+      "title": "Integrazioni",
+      "description": "Servizi cloud, API terze parti e protocolli di comunicazione.",
+      "subsections": [
+        {
+          "title": "Cloud & Backend",
+          "fields": [
+            {
+              "id": "int_firebase",
+              "label": "Firebase",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_supabase",
+              "label": "Supabase",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_aws",
+              "label": "AWS",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_google_cloud",
+              "label": "Google Cloud",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_azure",
+              "label": "Microsoft Azure",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_vercel",
+              "label": "Vercel",
+              "type": "checkbox",
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": "Servizi Terze Parti",
+          "fields": [
+            {
+              "id": "int_apple",
+              "label": "Apple (Sign In, Push, StoreKit)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_google",
+              "label": "Google (Maps, Auth, Workspace)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_meta",
+              "label": "Meta (Login, Pixel, WhatsApp)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_openai",
+              "label": "OpenAI",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_claude",
+              "label": "Claude / Anthropic",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_maps",
+              "label": "Google Maps / Mapbox",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_weather",
+              "label": "API Meteo",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_twilio",
+              "label": "Twilio (SMS, Voice)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_sendgrid",
+              "label": "SendGrid / Resend (Email)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_cloudinary",
+              "label": "Cloudinary (Media)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_storage",
+              "label": "Cloud Storage (S3, GCS)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_analytics",
+              "label": "Analytics (GA4, Mixpanel, Amplitude)",
+              "type": "checkbox",
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": "Protocolli & API",
+          "fields": [
+            {
+              "id": "int_webhook",
+              "label": "Webhook in entrata/uscita",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_rest",
+              "label": "REST API",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_graphql",
+              "label": "GraphQL",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "int_soap",
+              "label": "SOAP",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "integrations_detail",
+              "label": "Dettaglio integrazioni (endpoint, credenziali, documentazione)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "number": 10,
+      "title": "Sicurezza",
+      "description": "Requisiti di sicurezza, privacy, conformità normativa e gestione accessi.",
+      "subsections": [
+        {
+          "title": "Conformità",
+          "fields": [
+            {
+              "id": "sec_gdpr",
+              "label": "Conformità GDPR richiesta",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_https",
+              "label": "HTTPS obbligatorio",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_privacy",
+              "label": "Privacy by Design",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_cookie_consent",
+              "label": "Gestione consenso cookie granulare",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_data_retention",
+              "label": "Policy retention dati",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "sec_compliance_other",
+              "label": "Altre normative (PCI-DSS, HIPAA, settore-specifiche)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Accesso & Autenticazione",
+          "fields": [
+            {
+              "id": "sec_2fa",
+              "label": "Autenticazione a due fattori (2FA)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_biometric",
+              "label": "Biometria (Face ID, Touch ID)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_roles",
+              "label": "Controllo accessi basato su ruoli",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_permissions",
+              "label": "Permessi granulari per risorsa",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_session",
+              "label": "Gestione sessioni (timeout, revoca)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Infrastruttura Sicura",
+          "fields": [
+            {
+              "id": "sec_backup",
+              "label": "Backup automatici e disaster recovery",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_audit_log",
+              "label": "Audit log (chi ha fatto cosa e quando)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_encryption",
+              "label": "Crittografia dati (at-rest, in-transit)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "sec_penetration",
+              "label": "Penetration test richiesto",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "sec_security_notes",
+              "label": "Note aggiuntive sicurezza",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ui_ux",
+      "number": 11,
+      "title": "UI / UX",
+      "description": "Design system, esperienza utente, responsive e riferimenti visivi.",
+      "subsections": [
+        {
+          "title": "Stile & Design",
+          "fields": [
+            {
+              "id": "ux_style",
+              "label": "Stile desiderato",
+              "type": "select",
+              "options": [
+                "Minimal & Clean",
+                "Premium & Luxury",
+                "Corporate & Professional",
+                "Playful & Colorful",
+                "Dark & Tech",
+                "Warm & Friendly",
+                "Da definire con moodboard"
+              ],
+              "value": null
+            },
+            {
+              "id": "ux_colors",
+              "label": "Palette colori UI (primario, secondario, accent, neutri)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "ux_animations",
+              "label": "Animazioni (nessuna, sottili, elaborate)",
+              "type": "select",
+              "options": [
+                "Nessuna",
+                "Sottili (micro-interactions)",
+                "Moderate",
+                "Elaborate"
+              ],
+              "value": null
+            },
+            {
+              "id": "ux_transitions",
+              "label": "Transizioni tra schermate",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "ux_design_system",
+              "label": "Design System esistente o da creare",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "ux_icons",
+              "label": "Stile icone (outline, filled, custom)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "ux_wireframes",
+              "label": "Wireframe / mockup esistenti (link)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "ux_references",
+              "label": "App/siti di riferimento per UX",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Dispositivi & Responsive",
+          "fields": [
+            {
+              "id": "ux_responsive",
+              "label": "Design responsive (mobile-first)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "ux_mobile",
+              "label": "Mobile (smartphone)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "ux_tablet",
+              "label": "Tablet",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "ux_desktop",
+              "label": "Desktop",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "ux_watch",
+              "label": "Apple Watch / Wearable",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "ux_tv",
+              "label": "TV / Large screen",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "ux_breakpoints",
+              "label": "Breakpoint specifici o requisiti layout",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "ux_user_flows",
+              "label": "User flow principali (descrivi i percorsi utente chiave)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "number": 12,
+      "title": "Database",
+      "description": "Modello dati, entità, relazioni e requisiti di persistenza.",
+      "subsections": [
+        {
+          "title": "Modello Dati",
+          "fields": [
+            {
+              "id": "db_entities",
+              "label": "Entità principali (es. Utente, Prodotto, Ordine, Appuntamento)",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "db_relations",
+              "label": "Relazioni tra entità",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "db_fields",
+              "label": "Campi chiave per entità principali",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "db_estimated_volume",
+              "label": "Volume dati stimato (record, crescita annua)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Requisiti Dati",
+          "fields": [
+            {
+              "id": "db_permissions",
+              "label": "Permessi accesso dati per ruolo",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "db_history",
+              "label": "Storico modifiche (chi, cosa, quando)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "db_versioning",
+              "label": "Versioning documenti/contenuti",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "db_audit",
+              "label": "Audit trail completo",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "db_soft_delete",
+              "label": "Soft delete (eliminazione logica)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "db_notes",
+              "label": "Note aggiuntive sul database",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "number": 13,
+      "title": "Architettura",
+      "description": "Stack tecnologico, infrastruttura cloud e pattern architetturali.",
+      "subsections": [
+        {
+          "title": "Stack Tecnologico",
+          "fields": [
+            {
+              "id": "arch_frontend",
+              "label": "Frontend (framework, linguaggio)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_backend",
+              "label": "Backend (framework, linguaggio)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_database",
+              "label": "Database (tipo, hosting)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_mobile",
+              "label": "Mobile (Swift, Kotlin, React Native, Flutter)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_preferences",
+              "label": "Preferenze tecnologiche del cliente",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "arch_constraints",
+              "label": "Vincoli tecnologici",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Infrastruttura",
+          "fields": [
+            {
+              "id": "arch_cloud",
+              "label": "Provider cloud",
+              "type": "select",
+              "options": [
+                "Vercel",
+                "AWS",
+                "Google Cloud",
+                "Azure",
+                "Firebase",
+                "Supabase",
+                "Self-hosted",
+                "Da definire"
+              ],
+              "value": null
+            },
+            {
+              "id": "arch_api",
+              "label": "Tipo API (REST, GraphQL, tRPC)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_storage",
+              "label": "Storage file/media",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_auth",
+              "label": "Sistema autenticazione",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_caching",
+              "label": "Caching (Redis, CDN, in-memory)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_cdn",
+              "label": "CDN",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_push",
+              "label": "Push notifications (APNs, FCM)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "arch_diagram",
+              "label": "Diagramma architettura (descrizione o link)",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roadmap",
+      "number": 14,
+      "title": "Roadmap",
+      "description": "Fasi di progetto, milestone, tempistiche e criteri di accettazione.",
+      "subsections": [
+        {
+          "title": "Fasi Progetto",
+          "fields": [
+            {
+              "id": "phase_analysis",
+              "label": "Fase 1 — Analisi & Discovery",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_ux",
+              "label": "Fase 2 — UX (wireframe, user flow)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_ui",
+              "label": "Fase 3 — UI Design (mockup, design system)",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_backend",
+              "label": "Fase 4 — Backend & API",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_frontend",
+              "label": "Fase 5 — Frontend & Mobile",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_testing",
+              "label": "Fase 6 — Testing & QA",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_beta",
+              "label": "Fase 7 — Beta / UAT",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_production",
+              "label": "Fase 8 — Produzione & Deploy",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "phase_support",
+              "label": "Fase 9 — Supporto post-lancio",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        },
+        {
+          "title": "Milestone & Deliverable",
+          "fields": [
+            {
+              "id": "milestones",
+              "label": "Milestone chiave con date target",
+              "type": "textarea",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "deliverables",
+              "label": "Deliverable per fase",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "acceptance_criteria",
+              "label": "Criteri di accettazione",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery_checklist",
+      "number": 15,
+      "title": "Checklist Consegna",
+      "description": "Elementi da consegnare al go-live e post-progetto.",
+      "subsections": [
+        {
+          "title": "Consegna Tecnica",
+          "fields": [
+            {
+              "id": "del_source_code",
+              "label": "Codice sorgente",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_repository",
+              "label": "Repository Git (accesso trasferito)",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_documentation",
+              "label": "Documentazione tecnica",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_manual",
+              "label": "Manuale utente / admin",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_credentials",
+              "label": "Credenziali e accessi",
+              "type": "checkbox",
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": "Infrastruttura & Deploy",
+          "fields": [
+            {
+              "id": "del_domain",
+              "label": "Dominio configurato",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_hosting",
+              "label": "Hosting attivo",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_dns",
+              "label": "DNS configurato",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_ssl",
+              "label": "Certificato SSL",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_app_store",
+              "label": "Pubblicazione App Store",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_play_store",
+              "label": "Pubblicazione Play Store",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_firebase",
+              "label": "Firebase / servizi cloud configurati",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_backup",
+              "label": "Sistema backup attivo",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_analytics",
+              "label": "Analytics configurato",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "del_monitoring",
+              "label": "Monitoring & alerting",
+              "type": "checkbox",
+              "value": false
+            },
+            {
+              "id": "delivery_notes",
+              "label": "Note consegna",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "number": 16,
+      "title": "Note",
+      "description": "Spazio libero per osservazioni, decisioni e informazioni aggiuntive.",
+      "subsections": [
+        {
+          "title": "Note Generali",
+          "fields": [
+            {
+              "id": "general_notes",
+              "label": "Note e osservazioni",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "meeting_notes",
+              "label": "Note dalle riunioni di kick-off",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "open_questions",
+              "label": "Domande aperte da risolvere",
+              "type": "textarea",
+              "value": null
+            },
+            {
+              "id": "decisions_log",
+              "label": "Registro decisioni prese",
+              "type": "textarea",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cursor_prompt",
+      "number": 17,
+      "title": "Prompt Finale Cursor",
+      "description": "Generato automaticamente dal JSON compilato con generate_cursor_prompt.py — contiene tutti i campi per sviluppo autonomo.",
+      "subsections": [
+        {
+          "title": "Prompt di Sviluppo",
+          "fields": [
+            {
+              "id": "cursor_prompt_output",
+              "label": "Prompt completo per Cursor AI",
+              "type": "textarea",
+              "generated": true,
+              "template": "# PROGETTO: {{company_name}}\n\n## RIEPILOGO\n- **Cliente:** {{company_name}} ({{legal_name}})\n- **Settore:** {{sector}} — {{sector_other}}\n- **Referente:** {{contact_name}} ({{contact_email}})\n- **Obiettivi:** {{project_objectives}}\n- **Problemi da risolvere:** {{problems_to_solve}}\n- **Budget:** {{budget_range}} — {{budget_notes}}\n- **Tempistiche:** {{timeline}} — Deadline: {{deadline}}\n- **Priorità:** {{priorities}}\n\n## STACK TECNOLOGICO\n- **Frontend:** {{arch_frontend}}\n- **Backend:** {{arch_backend}}\n- **Database:** {{arch_database}}\n- **Mobile:** {{arch_mobile}}\n- **Cloud:** {{arch_cloud}}\n- **API:** {{arch_api}}\n- **Auth:** {{arch_auth}}\n\n## ARCHITETTURA\n{{arch_diagram}}\n\n## DATABASE\n**Entità:** {{db_entities}}\n**Relazioni:** {{db_relations}}\n**Campi chiave:** {{db_fields}}\n**Volume:** {{db_estimated_volume}}\n\n## UI / UX\n- **Stile:** {{ux_style}}\n- **Colori:** {{ux_colors}} | Brand: {{brand_colors}}\n- **Animazioni:** {{ux_animations}}\n- **Design System:** {{ux_design_system}}\n- **User Flows:** {{ux_user_flows}}\n- **Dispositivi:** Mobile, Tablet, Desktop\n\n## FUNZIONALITÀ\n{{features_detail}}\n\n## FLUSSI BUSINESS\n- **Customer Journey:** {{customer_journey}}\n- **Preventivi:** {{quotation_process}}\n- **Ordini:** {{order_process}}\n- **Appuntamenti:** {{appointment_process}}\n- **Pagamenti:** {{payment_flows}}\n\n## API & INTEGRAZIONI\n{{integrations_detail}}\n**API esistenti:** {{existing_apis}}\n**Webhook:** {{webhooks}}\n**Sincronizzazioni:** {{sync_requirements}}\n\n## AUTOMAZIONI\n- **Comunicazioni:** Email, SMS, WhatsApp, Push\n- **Reminder:** {{auto_reminders}}\n- **Follow-up:** {{auto_followup}}\n- **Marketing:** {{auto_marketing}}\n- **Pipeline:** {{auto_pipeline}}\n- **Workflow:** {{auto_workflows}}\n\n## SICUREZZA\n- GDPR: {{sec_gdpr}} | HTTPS: {{sec_https}} | 2FA: {{sec_2fa}}\n- **Crittografia:** {{sec_encryption}}\n- **Retention:** {{sec_data_retention}}\n- **Audit log:** {{sec_audit_log}}\n\n## BRANDING\n- **Tone of Voice:** {{tone_of_voice}}\n- **USP:** {{usp}}\n- **Target:** {{target_audience}}\n- **Font:** {{brand_fonts}}\n\n## ROADMAP\n{{milestones}}\n**Deliverable:** {{deliverables}}\n**Criteri accettazione:** {{acceptance_criteria}}\n\n## VINCOLI\n{{constraints}} | {{arch_constraints}}\n\n## DELIVERABLE\nRepository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.\n\n---\n*Generato da SwiftWithFer Discovery Document v1.0 — Compilare tutti i campi sopra per un prompt completo.*",
+              "value": "# PROGETTO: {{company_name}}\n\n## RIEPILOGO\n- **Cliente:** {{company_name}} ({{legal_name}})\n- **Settore:** {{sector}} — {{sector_other}}\n- **Referente:** {{contact_name}} ({{contact_email}})\n- **Obiettivi:** {{project_objectives}}\n- **Problemi da risolvere:** {{problems_to_solve}}\n- **Budget:** {{budget_range}} — {{budget_notes}}\n- **Tempistiche:** {{timeline}} — Deadline: {{deadline}}\n- **Priorità:** {{priorities}}\n\n## STACK TECNOLOGICO\n- **Frontend:** {{arch_frontend}}\n- **Backend:** {{arch_backend}}\n- **Database:** {{arch_database}}\n- **Mobile:** {{arch_mobile}}\n- **Cloud:** {{arch_cloud}}\n- **API:** {{arch_api}}\n- **Auth:** {{arch_auth}}\n\n## ARCHITETTURA\n{{arch_diagram}}\n\n## DATABASE\n**Entità:** {{db_entities}}\n**Relazioni:** {{db_relations}}\n**Campi chiave:** {{db_fields}}\n**Volume:** {{db_estimated_volume}}\n\n## UI / UX\n- **Stile:** {{ux_style}}\n- **Colori:** {{ux_colors}} | Brand: {{brand_colors}}\n- **Animazioni:** {{ux_animations}}\n- **Design System:** {{ux_design_system}}\n- **User Flows:** {{ux_user_flows}}\n- **Dispositivi:** Mobile, Tablet, Desktop\n\n## FUNZIONALITÀ\n{{features_detail}}\n\n## FLUSSI BUSINESS\n- **Customer Journey:** {{customer_journey}}\n- **Preventivi:** {{quotation_process}}\n- **Ordini:** {{order_process}}\n- **Appuntamenti:** {{appointment_process}}\n- **Pagamenti:** {{payment_flows}}\n\n## API & INTEGRAZIONI\n{{integrations_detail}}\n**API esistenti:** {{existing_apis}}\n**Webhook:** {{webhooks}}\n**Sincronizzazioni:** {{sync_requirements}}\n\n## AUTOMAZIONI\n- **Comunicazioni:** Email, SMS, WhatsApp, Push\n- **Reminder:** {{auto_reminders}}\n- **Follow-up:** {{auto_followup}}\n- **Marketing:** {{auto_marketing}}\n- **Pipeline:** {{auto_pipeline}}\n- **Workflow:** {{auto_workflows}}\n\n## SICUREZZA\n- GDPR: {{sec_gdpr}} | HTTPS: {{sec_https}} | 2FA: {{sec_2fa}}\n- **Crittografia:** {{sec_encryption}}\n- **Retention:** {{sec_data_retention}}\n- **Audit log:** {{sec_audit_log}}\n\n## BRANDING\n- **Tone of Voice:** {{tone_of_voice}}\n- **USP:** {{usp}}\n- **Target:** {{target_audience}}\n- **Font:** {{brand_fonts}}\n\n## ROADMAP\n{{milestones}}\n**Deliverable:** {{deliverables}}\n**Criteri accettazione:** {{acceptance_criteria}}\n\n## VINCOLI\n{{constraints}} | {{arch_constraints}}\n\n## DELIVERABLE\nRepository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.\n\n---\n*Generato da SwiftWithFer Discovery Document v1.0 — Compilare tutti i campi sopra per un prompt completo.*",
+              "note": "Auto-generato: sostituire {{field_id}} con i valori compilati"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sectors": [
+    {
+      "id": "hotel-hospitality",
+      "label": "Hotel & Hospitality"
+    },
+    {
+      "id": "ristorante-food",
+      "label": "Ristorante & Food"
+    },
+    {
+      "id": "centro-estetico-beauty",
+      "label": "Centro Estetico & Beauty"
+    },
+    {
+      "id": "palestra-fitness",
+      "label": "Palestra & Fitness"
+    },
+    {
+      "id": "negozio-retail",
+      "label": "Negozio Retail"
+    },
+    {
+      "id": "concessionaria-auto",
+      "label": "Concessionaria Auto"
+    },
+    {
+      "id": "studio-medico-sanita",
+      "label": "Studio Medico & Sanità"
+    },
+    {
+      "id": "azienda-b2b",
+      "label": "Azienda B2B"
+    },
+    {
+      "id": "e-commerce",
+      "label": "E-commerce"
+    },
+    {
+      "id": "servizi-professionali",
+      "label": "Servizi Professionali"
+    },
+    {
+      "id": "immobiliare",
+      "label": "Immobiliare"
+    },
+    {
+      "id": "educazione",
+      "label": "Educazione"
+    },
+    {
+      "id": "eventi",
+      "label": "Eventi"
+    },
+    {
+      "id": "altro",
+      "label": "Altro"
+    }
+  ]
+}

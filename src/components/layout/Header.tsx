@@ -4,12 +4,12 @@ import { MobileNav } from "@/components/layout/MobileNav";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "#bio", label: "Bio" },
-  { href: "#services", label: "Servizi" },
-  { href: "#apps", label: "App" },
-  { href: "#skills", label: "Skills" },
-  { href: "#timeline", label: "Percorso" },
-  { href: "#contact", label: "Contatti" },
+  { href: "/#bio", label: "Bio" },
+  { href: "/#services", label: "Servizi" },
+  { href: "/#apps", label: "App" },
+  { href: "/#skills", label: "Competenze" },
+  { href: "/#technologies", label: "Tecnologie" },
+  { href: "/#contact", label: "Contatti" },
 ];
 
 interface ButtonLinkProps {
@@ -41,13 +41,16 @@ export function ButtonLink({
     className,
   );
 
-  if (external) {
+  const isMailto = href.startsWith("mailto:");
+
+  if (external || isMailto) {
     return (
       <a
         href={href}
         className={classes}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(external && !isMailto
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
       >
         {children}
       </a>
@@ -66,7 +69,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/60 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-6 sm:py-4">
         <Link
-          href="#hero"
+          href="/#hero"
           className="min-w-0 shrink text-foreground transition-opacity hover:opacity-80"
           aria-label="SwiftWithFer — torna all'inizio"
         >
@@ -90,7 +93,7 @@ export function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <ButtonLink
-            href="#contact"
+            href="/#contact"
             variant="secondary"
             className="hidden min-h-10 px-4 text-xs sm:inline-flex sm:text-sm"
           >

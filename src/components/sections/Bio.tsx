@@ -15,6 +15,7 @@ export function Bio() {
   return (
     <Section
       id="bio"
+      eyebrow="Profilo"
       title="Chi sono"
       subtitle="Sviluppatore iOS con focus su prodotti curati, scalabili e pronti per l'App Store."
     >

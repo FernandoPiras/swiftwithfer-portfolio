@@ -1,15 +1,17 @@
 {
   "meta": {
     "title": "SwiftWithFer — Discovery Document",
-    "subtitle": "Project Kick-off & Requirements Analysis",
-    "version": "1.0.0",
-    "author": "SwiftWithFer Software House",
+    "subtitle": "Analisi requisiti per kick-off progetto",
+    "version": "1.1.0",
+    "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
-    "website": "https://swiftwithfer.com",
-    "email": "hello@swiftwithfer.com",
-    "generated_at": "2026-07-07T15:18:33.503104",
+    "website": "https://swiftwithfer-portfolio.vercel.app",
+    "email": "fernandopiras95@gmail.com",
+    "instructions": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
+    "generated_at": "2026-07-07T19:24:08.230621",
     "format": "ai-ready",
-    "usage": "Compilare il campo 'value' di ogni field. Il prompt Cursor viene generato dalla sezione 17."
+    "usage": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
+    "cursor_command": "python3 discovery-document/scripts/generate_cursor_prompt.py path/to/compilato.json"
   },
   "sections": [
     {
@@ -2217,7 +2219,7 @@
       "id": "cursor_prompt",
       "number": 17,
       "title": "Prompt Finale Cursor",
-      "description": "Prompt auto-generato per avviare lo sviluppo in Cursor senza ulteriori domande.",
+      "description": "Generato automaticamente dal JSON compilato con generate_cursor_prompt.py — contiene tutti i campi per sviluppo autonomo.",
       "subsections": [
         {
           "title": "Prompt di Sviluppo",

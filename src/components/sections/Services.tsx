@@ -12,6 +12,7 @@ export function Services() {
   return (
     <Section
       id="services"
+      eyebrow="Offerta"
       title="Servizi"
       subtitle="Supporto professionale per chi vuole portare un'idea iOS su App Store con qualità da prodotto finito."
       className="bg-section-alt/50"

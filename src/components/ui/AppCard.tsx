@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
-import { cn, getStatusLabel } from "@/lib/utils";
+import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
 
 interface AppCardProps {
   app: AppProject;
@@ -89,7 +89,7 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
               ) : null}
               {app.websiteUrl ? (
                 <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
-                  Sito web
+                  {getWebsiteLinkLabel(app.websiteUrl)}
                 </ButtonLink>
               ) : null}
             </div>

@@ -65,9 +65,12 @@ export function DiscoveryDocumentPicker() {
     [sectorId],
   );
 
-  const fillablePdfHref = getDiscoveryDocumentPath(sectorId, "fillable-pdf");
-  const docxHref = getDiscoveryDocumentPath(sectorId, "docx");
-  const pdfHref = getDiscoveryDocumentPath(sectorId, "pdf");
+  const downloads = [
+    { href: getDiscoveryDocumentPath(sectorId, "fillable-pdf"), label: "PDF compilabile" },
+    { href: getDiscoveryDocumentPath(sectorId, "docx"), label: "Word (.docx)" },
+    { href: getDiscoveryDocumentPath(sectorId, "pdf"), label: "PDF stampabile" },
+    { href: getDiscoveryDocumentPath(sectorId, "json"), label: "JSON (per AI)" },
+  ] as const;
 
   return (
     <div className="space-y-6">
@@ -98,7 +101,7 @@ export function DiscoveryDocumentPicker() {
               entro 24–48 ore lavorative.
             </p>
             <div className="mt-5">
-              <ButtonLink href={buildDirectMailto(siteConfig.email)} external>
+              <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                 Apri email
               </ButtonLink>
             </div>
@@ -122,9 +125,9 @@ export function DiscoveryDocumentPicker() {
                     SwiftWithFer Discovery Document
                   </h4>
                   <p className="mt-1 text-sm leading-relaxed text-muted">
-                    Scarica il template professionale per il tuo settore, compilalo con
-                    tutte le informazioni del progetto e inviamelo via email. È lo stesso
-                    documento che uso in kick-off con clienti enterprise.
+                    Template professionale per raccogliere il 100% delle informazioni
+                    di progetto. Compilalo, allegalo via email e avviamo lo sviluppo
+                    senza ulteriori domande.
                   </p>
                 </div>
               </div>
@@ -149,31 +152,26 @@ export function DiscoveryDocumentPicker() {
               <p className="mt-2 text-sm text-muted">{selectedSector.description}</p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
-              <a
-                href={fillablePdfHref}
-                download
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-glass-border bg-background/60 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-accent/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <DownloadIcon />
-                PDF compilabile
-              </a>
-              <a
-                href={docxHref}
-                download
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-glass-border bg-background/60 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-accent/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <DownloadIcon />
-                Word (.docx)
-              </a>
-              <a
-                href={pdfHref}
-                download
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-glass-border bg-background/60 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-accent/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <DownloadIcon />
-                PDF stampabile
-              </a>
+            <div>
+              <p className="mb-3 text-sm font-medium text-foreground">Scarica il template</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {downloads.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    download
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-glass-border bg-background/60 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-accent/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    <DownloadIcon />
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-muted">
+                Il settore <span className="font-medium text-foreground">{selectedSector.label}</span>{" "}
+                è già precompilato. Usa il PDF compilabile o Word per compilazione manuale,
+                oppure il JSON se lavori con strumenti AI.
+              </p>
             </div>
 
             <div className="rounded-2xl border border-glass-border bg-background/40 p-5 sm:p-6">
@@ -181,15 +179,10 @@ export function DiscoveryDocumentPicker() {
                 Documento compilato?
               </h4>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                Allega il file alla mail. Il settore{" "}
-                <span className="font-medium text-foreground">{selectedSector.label}</span>{" "}
-                sarà già indicato nell&apos;oggetto.
+                Allega il file alla mail. L&apos;oggetto includerà già il settore selezionato.
               </p>
               <div className="mt-4">
-                <ButtonLink
-                  href={buildDiscoveryMailto(siteConfig.email, selectedSector.label)}
-                  external
-                >
+                <ButtonLink href={buildDiscoveryMailto(siteConfig.email, selectedSector.label)}>
                   Invia documento compilato
                 </ButtonLink>
               </div>

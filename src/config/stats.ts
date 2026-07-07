@@ -22,7 +22,7 @@ export const statsConfig: StatItem[] = [
     type: "counter",
     value: 3,
     suffix: "+",
-    label: "Published Apps",
+    label: "App pubblicate",
     description: "Prodotti live su App Store",
   },
   {
@@ -37,14 +37,14 @@ export const statsConfig: StatItem[] = [
     id: "firebase",
     type: "label",
     headline: "Firebase",
-    label: "Powered",
-    description: "Backend cloud scalabile",
+    label: "Backend cloud",
+    description: "Auth, database e funzioni serverless",
   },
   {
     id: "ai-assisted",
     type: "label",
-    headline: "AI Assisted",
-    label: "Development",
-    description: "Workflow potenziato con AI",
+    headline: "Sviluppo AI",
+    label: "Assistito",
+    description: "Workflow potenziato con Cursor e AI",
   },
 ];

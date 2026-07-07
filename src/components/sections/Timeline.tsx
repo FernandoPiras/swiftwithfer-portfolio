@@ -8,6 +8,7 @@ export function Timeline() {
   return (
     <Section
       id="timeline"
+      eyebrow="Storia"
       title="Percorso"
       subtitle="Dalla prima riga di Swift alle app pubblicate su App Store."
       className="bg-section-alt/50"

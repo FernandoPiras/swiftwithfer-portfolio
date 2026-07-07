@@ -8,6 +8,7 @@ export function Skills() {
   return (
     <Section
       id="skills"
+      eyebrow="Stack"
       title="Competenze"
       subtitle="Stack tecnico per app native performanti, sicure e pronte per la pubblicazione."
     >

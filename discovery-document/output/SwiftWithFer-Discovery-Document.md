@@ -1,8 +1,10 @@
 # SwiftWithFer — Discovery Document
-*Project Kick-off & Requirements Analysis*
+*Analisi requisiti per kick-off progetto*
+
+> **Come compilare:** compila ogni campo sotto. I campi con * sono obbligatori. Per lo sviluppo con AI, usa il file JSON e genera il prompt con `python3 discovery-document/scripts/generate_cursor_prompt.py`.
 
 ---
-| Versione | 1.0.0 || Autore | SwiftWithFer Software House || Data | _____________ || Cliente | _____________ || Progetto | _____________ || Confidenzialità | Confidenziale — Uso interno e cliente |
+| Versione | 1.1.0 || Autore | Fernando Piras — SwiftWithFer || Data | _____________ || Cliente | _____________ || Progetto | _____________ || Confidenzialità | Confidenziale — Uso interno e cliente |
 
 ---
 ## Indice
@@ -1767,7 +1769,7 @@ decisions_log:
 
 
 ## 17. Prompt Finale Cursor {#cursor_prompt}
-*Prompt auto-generato per avviare lo sviluppo in Cursor senza ulteriori domande.*
+*Generato automaticamente dal JSON compilato con generate_cursor_prompt.py — contiene tutti i campi per sviluppo autonomo.*
 
 ### Prompt di Sviluppo
 **Prompt completo per Cursor AI**
@@ -1782,4 +1784,4 @@ cursor_prompt_output:
 
 
 ---
-*© 2026 SwiftWithFer — https://swiftwithfer.com*
+*© 2026 SwiftWithFer — https://swiftwithfer-portfolio.vercel.app*

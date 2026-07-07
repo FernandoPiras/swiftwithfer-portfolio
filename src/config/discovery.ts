@@ -77,7 +77,7 @@ export const discoverySectors = [
   },
 ] satisfies DiscoverySector[];
 
-export type DiscoveryDocumentFormat = "fillable-pdf" | "docx" | "pdf";
+export type DiscoveryDocumentFormat = "fillable-pdf" | "docx" | "pdf" | "json";
 
 export function getDiscoveryDocumentPath(
   sectorId: string,
@@ -87,6 +87,7 @@ export function getDiscoveryDocumentPath(
     "fillable-pdf": "SwiftWithFer-Discovery-Fillable.pdf",
     docx: "SwiftWithFer-Discovery.docx",
     pdf: "SwiftWithFer-Discovery.pdf",
+    json: "SwiftWithFer-Discovery.json",
   };
 
   return `/documents/discovery/${sectorId}/${files[format]}`;
@@ -104,7 +105,7 @@ export function buildDiscoveryMailto(
 
 Ho compilato il Discovery Document per il settore: ${sectorLabel}.
 
-Allego il file compilato a questa email.
+Allego il file compilato (PDF, Word o JSON) a questa email.
 
 —
 Nome azienda:

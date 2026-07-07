@@ -67,6 +67,9 @@ def generate_markdown():
     lines = [
         f"# {META['title']}\n",
         f"*{META['subtitle']}*\n",
+        "\n> **Come compilare:** compila ogni campo sotto. I campi con * sono obbligatori. "
+        "Per lo sviluppo con AI, usa il file JSON e genera il prompt con "
+        "`python3 discovery-document/scripts/generate_cursor_prompt.py`.\n",
         "\n---\n",
         f"| Versione | {META['version']} |",
         f"| Autore | {META['author']} |",
@@ -104,9 +107,9 @@ def generate_json():
     schema = get_schema()
     schema["meta"]["generated_at"] = datetime.now().isoformat()
     schema["meta"]["format"] = "ai-ready"
-    schema["meta"]["usage"] = (
-        "Compilare il campo 'value' di ogni field. "
-        "Il prompt Cursor viene generato dalla sezione 17."
+    schema["meta"]["usage"] = META["instructions"]
+    schema["meta"]["cursor_command"] = (
+        "python3 discovery-document/scripts/generate_cursor_prompt.py path/to/compilato.json"
     )
 
     for section in schema["sections"]:
@@ -651,6 +654,18 @@ def generate_fillable_pdf(output_path=None, preset_values=None, sector_label=Non
     return path
 
 
+def build_sector_json(sector_label: str) -> dict:
+    """Return schema JSON with sector pre-filled."""
+    schema = json.loads((OUTPUT / "SwiftWithFer-Discovery-Document.json").read_text(encoding="utf-8"))
+    for section in schema["sections"]:
+        for subsection in section["subsections"]:
+            for field in subsection["fields"]:
+                if field["id"] == "sector":
+                    field["value"] = sector_label
+    schema["meta"]["sector"] = sector_label
+    return schema
+
+
 def generate_sector_documents():
     """Generate fillable PDF per sector and deploy to public/."""
     import shutil
@@ -680,6 +695,12 @@ def generate_sector_documents():
             shutil.copy2(docx_src, sector_dir / "SwiftWithFer-Discovery.docx")
         if pdf_src.exists():
             shutil.copy2(pdf_src, sector_dir / "SwiftWithFer-Discovery.pdf")
+
+        sector_json = build_sector_json(sector["label"])
+        (sector_dir / "SwiftWithFer-Discovery.json").write_text(
+            json.dumps(sector_json, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
         print(f"✓ Sector: {sector['label']} → {sector_dir}")
 

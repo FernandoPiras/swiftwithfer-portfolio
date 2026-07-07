@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 
 interface SectionProps {
   id: string;
+  eyebrow?: string;
   title: string;
   subtitle?: string;
   children: ReactNode;
   className?: string;
 }
 
-export function Section({ id, title, subtitle, children, className }: SectionProps) {
+export function Section({ id, eyebrow, title, subtitle, children, className }: SectionProps) {
   return (
     <section
       id={id}
@@ -29,9 +30,11 @@ export function Section({ id, title, subtitle, children, className }: SectionPro
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mb-8 sm:mb-12 md:mb-16"
         >
-          <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-accent sm:mb-3 sm:text-sm sm:tracking-[0.2em]">
-            {id}
-          </p>
+          {eyebrow ? (
+            <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-accent sm:mb-3 sm:text-sm sm:tracking-[0.2em]">
+              {eyebrow}
+            </p>
+          ) : null}
           <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
             {title}
           </h2>

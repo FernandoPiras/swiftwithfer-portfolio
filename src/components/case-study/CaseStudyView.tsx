@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { getWebsiteLinkLabel } from "@/lib/utils";
 
 interface CaseStudyViewProps {
   study: CaseStudyContent;
@@ -81,7 +82,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 ) : null}
                 {app.websiteUrl ? (
                   <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
-                    Sito web
+                    {getWebsiteLinkLabel(app.websiteUrl)}
                   </ButtonLink>
                 ) : null}
               </div>
@@ -216,7 +217,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             ) : null}
             {app.websiteUrl ? (
               <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
-                Visita il sito
+                {getWebsiteLinkLabel(app.websiteUrl)}
               </ButtonLink>
             ) : null}
             <ButtonLink

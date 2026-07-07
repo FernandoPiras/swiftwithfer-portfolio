@@ -229,8 +229,8 @@ export const siteConfig = {
         {
           author: "Shehan2002",
           rating: 5,
-          title: "App fitness",
-          body: "Ottima app fitness, semplice e funzionale.",
+          title: "Monitoraggio fertilità",
+          body: "Ottima app, semplice e funzionale per tenere sotto controllo i dati.",
           date: "2026-04-15",
         },
         {
@@ -329,7 +329,7 @@ export const siteConfig = {
       "Slotiva",
       "PreventivoRapido",
     ],
-    ogImage: "/images/og-cover.jpg",
+    ogImage: "/opengraph-image",
   },
 } as const;
 

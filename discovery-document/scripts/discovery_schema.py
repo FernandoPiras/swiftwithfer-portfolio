@@ -5,12 +5,17 @@ Source of truth for all document formats.
 
 META = {
     "title": "SwiftWithFer — Discovery Document",
-    "subtitle": "Project Kick-off & Requirements Analysis",
-    "version": "1.0.0",
-    "author": "SwiftWithFer Software House",
+    "subtitle": "Analisi requisiti per kick-off progetto",
+    "version": "1.1.0",
+    "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
-    "website": "https://swiftwithfer.com",
-    "email": "hello@swiftwithfer.com",
+    "website": "https://swiftwithfer-portfolio.vercel.app",
+    "email": "fernandopiras95@gmail.com",
+    "instructions": (
+        "Compila tutti i campi obbligatori (*). "
+        "Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. "
+        "Non sono necessarie ulteriori domande se ogni sezione e compilata."
+    ),
 }
 
 SECTOR_OPTIONS = [
@@ -700,7 +705,7 @@ SECTIONS = [
         "id": "cursor_prompt",
         "number": 17,
         "title": "Prompt Finale Cursor",
-        "description": "Prompt auto-generato per avviare lo sviluppo in Cursor senza ulteriori domande.",
+        "description": "Generato automaticamente dal JSON compilato con generate_cursor_prompt.py — contiene tutti i campi per sviluppo autonomo.",
         "subsections": [
             {
                 "title": "Prompt di Sviluppo",

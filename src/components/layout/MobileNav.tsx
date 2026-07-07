@@ -5,14 +5,13 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "#bio", label: "Bio" },
-  { href: "#services", label: "Servizi" },
-  { href: "#apps", label: "App" },
-  { href: "#skills", label: "Skills" },
-  { href: "#technologies", label: "Tech" },
-  { href: "#timeline", label: "Percorso" },
-  { href: "#social", label: "Social" },
-  { href: "#contact", label: "Contatti" },
+  { href: "/#bio", label: "Bio" },
+  { href: "/#services", label: "Servizi" },
+  { href: "/#apps", label: "App" },
+  { href: "/#skills", label: "Competenze" },
+  { href: "/#technologies", label: "Tecnologie" },
+  { href: "/#timeline", label: "Percorso" },
+  { href: "/#contact", label: "Contatti" },
 ];
 
 export function MobileNav() {

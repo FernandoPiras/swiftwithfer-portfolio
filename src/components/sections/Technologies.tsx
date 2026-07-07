@@ -9,6 +9,7 @@ export function Technologies() {
   return (
     <Section
       id="technologies"
+      eyebrow="Stack"
       title="Tecnologie"
       subtitle="Strumenti e framework che uso ogni giorno per costruire app iOS di livello professionale."
     >

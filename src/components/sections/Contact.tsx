@@ -23,10 +23,11 @@ export function Social() {
   return (
     <Section
       id="social"
+      eyebrow="Community"
       title="Social"
       subtitle="Seguimi per aggiornamenti su iOS, Swift e nuove release."
     >
-      <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2 lg:max-w-3xl lg:grid-cols-3">
+      <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
         {siteConfig.social.map((link, index) => (
           <motion.a
             key={link.name}
@@ -73,6 +74,7 @@ export function Contact() {
   return (
     <Section
       id="contact"
+      eyebrow="Progetti"
       title="Contatti"
       subtitle="Avvia un progetto con il Discovery Document o scrivimi direttamente."
       className="bg-section-alt/50"
@@ -92,7 +94,7 @@ export function Contact() {
               e supporto fino alla pubblicazione su App Store.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonLink href={buildDirectMailto(siteConfig.email)} external>
+              <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                 Scrivimi ora
               </ButtonLink>
               <ButtonLink href="#services" variant="secondary">
