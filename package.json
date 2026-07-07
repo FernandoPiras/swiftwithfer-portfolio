@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:discovery": "python3 discovery-document/scripts/generate_discovery.py"
   },
   "dependencies": {
     "framer-motion": "^12.42.2",

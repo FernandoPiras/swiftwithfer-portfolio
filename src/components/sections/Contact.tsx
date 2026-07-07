@@ -6,6 +6,8 @@ import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
+import { DiscoveryDocumentPicker } from "@/components/sections/DiscoveryDocumentPicker";
+import { buildDirectMailto } from "@/config/discovery";
 
 function EmailIcon() {
   return (
@@ -72,12 +74,16 @@ export function Contact() {
     <Section
       id="contact"
       title="Contatti"
-      subtitle="Hai un progetto iOS o vuoi collaborare? Scrivimi."
+      subtitle="Avvia un progetto con il Discovery Document o scrivimi direttamente."
       className="bg-section-alt/50"
     >
-      <GlassCard>
-        <div className="grid gap-8 md:grid-cols-2">
-          <div>
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8">
+        <GlassCard>
+          <DiscoveryDocumentPicker />
+        </GlassCard>
+
+        <div className="space-y-6">
+          <GlassCard>
             <h3 className="text-lg font-semibold text-foreground sm:text-xl">
               Parliamo del tuo prossimo progetto
             </h3>
@@ -86,10 +92,7 @@ export function Contact() {
               e supporto fino alla pubblicazione su App Store.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonLink
-                href={`mailto:${siteConfig.email}?subject=Richiesta%20consulenza%20iOS%20-%20SwiftWithFer`}
-                external
-              >
+              <ButtonLink href={buildDirectMailto(siteConfig.email)} external>
                 Scrivimi ora
               </ButtonLink>
               <ButtonLink href="#services" variant="secondary">
@@ -103,32 +106,34 @@ export function Contact() {
               <EmailIcon />
               {siteConfig.email}
             </a>
-          </div>
+          </GlassCard>
 
-          <ul className="space-y-3" aria-label="Collegamenti rapidi">
-            {siteConfig.social.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-h-11 items-center justify-between rounded-xl border border-glass-border bg-background/40 px-4 py-3 text-sm transition-colors hover:border-accent/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                >
-                  <span className="flex items-center gap-3 text-foreground">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10">
-                      <SocialBrandIcon icon={link.icon} className="h-5 w-5" />
+          <GlassCard className="p-4 sm:p-6">
+            <ul className="space-y-3" aria-label="Collegamenti rapidi">
+              {siteConfig.social.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex min-h-11 items-center justify-between rounded-xl border border-glass-border bg-background/40 px-4 py-3 text-sm transition-colors hover:border-accent/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    <span className="flex items-center gap-3 text-foreground">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10">
+                        <SocialBrandIcon icon={link.icon} className="h-5 w-5" />
+                      </span>
+                      {link.name}
                     </span>
-                    {link.name}
-                  </span>
-                  <span className="text-muted" aria-hidden>
-                    →
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+                    <span className="text-muted" aria-hidden>
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </GlassCard>
         </div>
-      </GlassCard>
+      </div>
     </Section>
   );
 }
