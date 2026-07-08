@@ -61,7 +61,7 @@ export const siteConfig = {
   },
   role: "iOS Developer",
   tagline: "App iOS native, dal codice all'App Store.",
-  email: "fernandopiras95@gmail.com",
+  email: "fernando@fernandopiras.com",
   portfolioUrl: "https://swiftwithfer-portfolio.vercel.app",
   locale: "it_IT",
   photo: {

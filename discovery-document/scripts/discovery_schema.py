@@ -10,7 +10,7 @@ META = {
     "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
     "website": "https://swiftwithfer-portfolio.vercel.app",
-    "email": "fernandopiras95@gmail.com",
+    "email": "fernando@fernandopiras.com",
     "instructions": (
         "Compila tutti i campi obbligatori (*). "
         "Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. "

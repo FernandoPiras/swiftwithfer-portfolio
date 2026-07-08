@@ -6,9 +6,9 @@
     "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
     "website": "https://swiftwithfer-portfolio.vercel.app",
-    "email": "fernandopiras95@gmail.com",
+    "email": "fernando@fernandopiras.com",
     "instructions": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
-    "generated_at": "2026-07-07T19:24:08.230621",
+    "generated_at": "2026-07-08T15:32:27.152237",
     "format": "ai-ready",
     "usage": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
     "cursor_command": "python3 discovery-document/scripts/generate_cursor_prompt.py path/to/compilato.json"
