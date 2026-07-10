@@ -3,7 +3,7 @@
 > **Istruzioni per Cursor AI:** Tutte le informazioni del progetto sono in questo documento. Non fare domande di chiarimento: usa i valori indicati, segna le assunzioni minime dove un campo è `[non specificato]`, e procedi con architettura, implementazione e deliverable.
 
 **Documento:** SwiftWithFer — Discovery Document v1.1.0
-**Generato:** 2026-07-07 19:24
+**Generato:** 2026-07-10 15:18
 
 ## ⚠ CAMPI OBBLIGATORI MANCANTI
 
@@ -1043,4 +1043,4 @@ No
 - Test per flussi critici
 - Deploy configurato sul cloud indicato
 
-— Fernando Piras — SwiftWithFer | https://swiftwithfer-portfolio.vercel.app
+— Fernando Piras — SwiftWithFer | https://fernandopiras.com

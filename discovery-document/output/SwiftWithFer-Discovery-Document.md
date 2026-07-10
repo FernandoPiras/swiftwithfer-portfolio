@@ -1784,4 +1784,4 @@ cursor_prompt_output:
 
 
 ---
-*© 2026 SwiftWithFer — https://swiftwithfer-portfolio.vercel.app*
+*© 2026 SwiftWithFer — https://fernandopiras.com*

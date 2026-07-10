@@ -1,66 +1,24 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { getSiteUrl } from "@/lib/site-url";
+import { createSiteMetadata } from "@/lib/seo-metadata";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
-const { seo, name } = siteConfig;
-const siteUrl = getSiteUrl();
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: seo.title,
-    template: `%s | ${name}`,
-  },
-  description: seo.description,
-  keywords: [...seo.keywords],
-  authors: [{ name, url: siteUrl }],
-  creator: name,
-  publisher: siteConfig.brand,
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: siteUrl,
-  },
-  openGraph: {
-    type: "website",
-    locale: siteConfig.locale,
-    url: siteUrl,
-    siteName: siteConfig.brand,
-    title: seo.title,
-    description: seo.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: seo.title,
-    description: seo.description,
-    creator: `@${siteConfig.brand.toLowerCase()}`,
-  },
-  manifest: "/manifest.webmanifest",
-  category: "technology",
-};
+export const metadata: Metadata = createSiteMetadata();
 
 export const viewport: Viewport = {
   themeColor: [
@@ -84,6 +42,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
+        <link rel="dns-prefetch" href="https://apps.apple.com" />
+      </head>
       <body className="min-h-full bg-background text-foreground">
         <a
           href="#main-content"

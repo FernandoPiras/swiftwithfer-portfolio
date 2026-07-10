@@ -8,7 +8,8 @@ import {
   getCaseStudyBySlug,
 } from "@/config/case-studies";
 import { siteConfig } from "@/config/site";
-import { getSiteUrl } from "@/lib/site-url";
+import { buildCaseStudyJsonLd } from "@/lib/json-ld";
+import { createCaseStudyMetadata } from "@/lib/seo-metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -26,20 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const app = siteConfig.apps.find((item) => item.id === study.appId);
   if (!app) return {};
 
-  const siteUrl = getSiteUrl();
-  const url = `${siteUrl}/apps/${slug}`;
-
-  return {
-    title: `${app.name} — Case Study`,
-    description: study.seoDescription,
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${app.name} — Case Study | ${siteConfig.brand}`,
-      description: study.seoDescription,
-      url,
-      type: "article",
-    },
-  };
+  return createCaseStudyMetadata(app.name, study.seoDescription, slug);
 }
 
 export default async function CaseStudyPage({ params }: PageProps) {
@@ -50,8 +38,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const app = siteConfig.apps.find((item) => item.id === study.appId);
   if (!app) notFound();
 
+  const jsonLd = buildCaseStudyJsonLd(app, slug, study.seoDescription);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main id="main-content">
         <CaseStudyView study={study} app={app} />

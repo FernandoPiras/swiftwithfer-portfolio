@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -9,27 +10,13 @@ import { Services } from "@/components/sections/Services";
 import { Technologies } from "@/components/sections/Technologies";
 import { Timeline } from "@/components/sections/Timeline";
 import { Social, Contact } from "@/components/sections/Contact";
-import { siteConfig } from "@/config/site";
-import { getSiteUrl } from "@/lib/site-url";
+import { buildHomeJsonLd } from "@/lib/json-ld";
+import { createHomeMetadata } from "@/lib/seo-metadata";
+
+export const metadata: Metadata = createHomeMetadata();
 
 function JsonLd() {
-  const siteUrl = getSiteUrl();
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteConfig.name,
-    jobTitle: siteConfig.role,
-    url: siteUrl,
-    email: siteConfig.email,
-    image: `${siteUrl}${siteConfig.photo.bio}`,
-    sameAs: siteConfig.social.map((s) => s.url),
-    knowsAbout: siteConfig.skills,
-    worksFor: {
-      "@type": "Organization",
-      name: siteConfig.brand,
-    },
-  };
+  const schema = buildHomeJsonLd();
 
   return (
     <script

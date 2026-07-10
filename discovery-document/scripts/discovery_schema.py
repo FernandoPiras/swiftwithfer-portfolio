@@ -9,7 +9,7 @@ META = {
     "version": "1.1.0",
     "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
-    "website": "https://swiftwithfer-portfolio.vercel.app",
+    "website": "https://fernandopiras.com",
     "email": "fernando@fernandopiras.com",
     "instructions": (
         "Compila tutti i campi obbligatori (*). "

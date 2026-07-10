@@ -1,12 +1,16 @@
 {
+  "id": "/",
   "name": "Fernando Piras — SwiftWithFer",
   "short_name": "SwiftWithFer",
-  "description": "App iOS native, dal codice all'App Store. — Fernando Piras",
+  "description": "Portfolio ufficiale di Fernando Piras. Sviluppatore iOS, SwiftUI, app developer e software developer in Italia.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#09090b",
   "theme_color": "#0a84ff",
   "lang": "it",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "developer"],
   "icons": [
     {
       "src": "/images/brand/logo.png",
