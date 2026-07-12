@@ -1,7 +1,7 @@
 {
   "id": "/",
   "name": "Fernando Piras — SwiftWithFer",
-  "short_name": "SwiftWithFer",
+  "short_name": "Fernando Piras",
   "description": "Portfolio ufficiale di Fernando Piras. Sviluppatore iOS, SwiftUI, app developer e software developer in Italia.",
   "start_url": "/",
   "scope": "/",
@@ -13,14 +13,26 @@
   "categories": ["business", "productivity", "developer"],
   "icons": [
     {
-      "src": "/images/brand/logo.png",
-      "sizes": "512x512",
+      "src": "/icon-16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-32.png",
+      "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "src": "/apple-icon.png",
       "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/brand/logo.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },

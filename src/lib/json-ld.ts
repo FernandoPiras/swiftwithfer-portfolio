@@ -4,7 +4,8 @@ import { getSiteUrl } from "@/lib/site-url";
 
 export function buildHomeJsonLd() {
   const siteUrl = getSiteUrl();
-  const { seo, name, brand, email, role, skills, social, photo, logo } = siteConfig;
+  const { seo, name, brand, email, role, skills, social, photo, logo, apps } =
+    siteConfig;
 
   return {
     "@context": "https://schema.org",
@@ -51,47 +52,45 @@ export function buildHomeJsonLd() {
         sameAs: social.map((item) => item.url),
       },
       {
-        "@type": "ProfessionalService",
-        "@id": `${siteUrl}/#service`,
-        name: `${brand} — Sviluppo Software`,
-        url: siteUrl,
-        email: `mailto:${email}`,
-        provider: { "@id": `${siteUrl}/#person` },
-        areaServed: {
-          "@type": "Country",
-          name: "Italy",
-        },
-        serviceType: [
-          "Sviluppo app iOS",
-          "Sviluppo siti web",
-          "Gestionali aziendali",
-          "Consulenza SwiftUI",
-          "Pubblicazione App Store",
-        ],
-        description: seo.description,
-      },
-      {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: `${name} — ${brand}`,
+        alternateName: brand,
         description: seo.description,
         publisher: { "@id": `${siteUrl}/#organization` },
+        author: { "@id": `${siteUrl}/#person` },
         inLanguage: "it-IT",
       },
       {
-        "@type": "WebPage",
-        "@id": `${siteUrl}/#webpage`,
-        url: siteUrl,
-        name: seo.title,
+        "@type": "ProfilePage",
+        "@id": `${siteUrl}/#portfolio`,
+        name: `Portfolio — ${name}`,
+        alternateName: `${brand} Portfolio`,
         description: seo.description,
-        isPartOf: { "@id": `${siteUrl}/#website` },
+        url: siteUrl,
+        mainEntity: { "@id": `${siteUrl}/#person` },
         about: { "@id": `${siteUrl}/#person` },
+        isPartOf: { "@id": `${siteUrl}/#website` },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: `${siteUrl}/opengraph-image`,
+          url: `${siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          caption: `${name} — ${brand} Portfolio`,
         },
         inLanguage: "it-IT",
+        hasPart: apps.map((app: AppProject, index: number) => ({
+          "@type": "SoftwareApplication",
+          "@id": `${siteUrl}/apps/${app.id}/#app`,
+          position: index + 1,
+          name: app.name,
+          description: app.description,
+          applicationCategory: "MobileApplication",
+          operatingSystem: "iOS",
+          image: `${siteUrl}${app.icon}`,
+          author: { "@id": `${siteUrl}/#person` },
+        })),
       },
     ],
   };
