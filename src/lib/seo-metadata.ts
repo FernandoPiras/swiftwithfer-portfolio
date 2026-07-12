@@ -3,14 +3,14 @@ import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
 
 const OG_IMAGE = {
-  url: "/opengraph-image",
+  url: "/og-image.png",
   width: 1200,
   height: 630,
   alt: `${siteConfig.name} — ${siteConfig.brand} Portfolio`,
   type: "image/png" as const,
 };
 
-const TWITTER_IMAGE = "/twitter-image";
+const TWITTER_IMAGE = "/og-image.png";
 
 export function createSiteMetadata(overrides?: Metadata): Metadata {
   const siteUrl = getSiteUrl();
@@ -26,7 +26,7 @@ export function createSiteMetadata(overrides?: Metadata): Metadata {
     keywords: [...seo.keywords],
     authors: [{ name, url: siteUrl }],
     creator: name,
-    publisher: brand,
+    publisher: name,
     applicationName: brand,
     referrer: "origin-when-cross-origin",
     formatDetection: {
@@ -55,7 +55,7 @@ export function createSiteMetadata(overrides?: Metadata): Metadata {
       type: "website",
       locale,
       url: siteUrl,
-      siteName: brand,
+      siteName: name,
       title: seo.title,
       description: seo.description,
       images: [OG_IMAGE],
@@ -64,20 +64,20 @@ export function createSiteMetadata(overrides?: Metadata): Metadata {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
-      creator: `@${brand.toLowerCase()}`,
+      creator: "@swiftwithfer",
       images: [TWITTER_IMAGE],
     },
     icons: {
       icon: [
-        { url: "/icon.png" },
-        { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+        { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+        { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
       ],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     appleWebApp: {
       capable: true,
       statusBarStyle: "default",
-      title: brand,
+      title: name,
     },
     manifest: "/manifest.webmanifest",
     category: "technology",
@@ -91,7 +91,7 @@ export function createSiteMetadata(overrides?: Metadata): Metadata {
 
 export function createHomeMetadata(): Metadata {
   const siteUrl = getSiteUrl();
-  const { seo, brand } = siteConfig;
+  const { seo, name } = siteConfig;
   const title = seo.title;
 
   return createSiteMetadata({
@@ -106,7 +106,7 @@ export function createHomeMetadata(): Metadata {
       type: "website",
       locale: siteConfig.locale,
       url: siteUrl,
-      siteName: brand,
+      siteName: name,
       title,
       description: seo.description,
       images: [OG_IMAGE],
@@ -115,7 +115,7 @@ export function createHomeMetadata(): Metadata {
       card: "summary_large_image",
       title,
       description: seo.description,
-      creator: `@${brand.toLowerCase()}`,
+      creator: "@swiftwithfer",
       images: [TWITTER_IMAGE],
     },
   });
@@ -127,10 +127,10 @@ export function createCaseStudyMetadata(
   slug: string,
 ): Metadata {
   const siteUrl = getSiteUrl();
-  const { brand } = siteConfig;
+  const { name } = siteConfig;
   const url = `${siteUrl}/apps/${slug}`;
   const title = `${appName} — Case Study`;
-  const ogTitle = `${appName} — Case Study | ${brand}`;
+  const ogTitle = `${appName} — Case Study | ${name}`;
 
   return {
     title,
@@ -147,7 +147,7 @@ export function createCaseStudyMetadata(
       type: "article",
       locale: siteConfig.locale,
       url,
-      siteName: brand,
+      siteName: name,
       title: ogTitle,
       description,
       images: [OG_IMAGE],

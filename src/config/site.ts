@@ -344,7 +344,7 @@ export const siteConfig = {
       "Slotiva",
       "PreventivoRapido",
     ],
-    ogImage: "/opengraph-image",
+    ogImage: "/og-image.png",
   },
 } as const;
 
