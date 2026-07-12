@@ -20,9 +20,9 @@ export function buildHomeJsonLd() {
         jobTitle: [
           role,
           "SwiftUI Developer",
+          "Web Developer",
           "App Developer",
           "Software Developer",
-          "Web Developer",
           "Sviluppatore iOS",
         ],
         url: siteUrl,
@@ -64,8 +64,8 @@ export function buildHomeJsonLd() {
       },
       {
         "@type": "ProfilePage",
-        "@id": `${siteUrl}/#portfolio`,
-        name: `Portfolio — ${name}`,
+        "@id": `${siteUrl}/#profilepage`,
+        name: `${name} — Portfolio`,
         alternateName: `${brand} Portfolio`,
         description: seo.description,
         url: siteUrl,
@@ -77,7 +77,7 @@ export function buildHomeJsonLd() {
           url: `${siteUrl}/og-image.png`,
           width: 1200,
           height: 630,
-          caption: `${name} — ${brand} Portfolio`,
+          caption: `${name} — Developer iOS, SwiftUI & Web`,
         },
         inLanguage: "it-IT",
         hasPart: apps.map((app: AppProject, index: number) => ({

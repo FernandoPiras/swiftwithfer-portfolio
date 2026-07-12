@@ -2,19 +2,39 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
 
-const OG_IMAGE = {
-  url: "/og-image.png",
-  width: 1200,
-  height: 630,
-  alt: `${siteConfig.name} — ${siteConfig.brand} Portfolio`,
-  type: "image/png" as const,
-};
+const TWITTER_HANDLE = "@swiftwithfer";
 
-const TWITTER_IMAGE = "/og-image.png";
+function buildOgImage(siteUrl: string) {
+  const imagePath = siteConfig.seo.ogImage;
+  const absoluteUrl = `${siteUrl}${imagePath}`;
+  const alt = `${siteConfig.name} — ${siteConfig.brand} Portfolio`;
+
+  return {
+    url: imagePath,
+    secureUrl: absoluteUrl,
+    width: 1200,
+    height: 630,
+    alt,
+    type: "image/png" as const,
+  };
+}
+
+function buildTwitterImage(siteUrl: string) {
+  const imagePath = siteConfig.seo.ogImage;
+  const alt = `${siteConfig.name} — ${siteConfig.brand} Portfolio`;
+
+  return {
+    url: imagePath,
+    secureUrl: `${siteUrl}${imagePath}`,
+    alt,
+  };
+}
 
 export function createSiteMetadata(overrides?: Metadata): Metadata {
   const siteUrl = getSiteUrl();
   const { seo, name, brand, email, locale } = siteConfig;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
 
   const base: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -58,21 +78,38 @@ export function createSiteMetadata(overrides?: Metadata): Metadata {
       siteName: name,
       title: seo.title,
       description: seo.description,
-      images: [OG_IMAGE],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
       title: seo.title,
       description: seo.description,
-      creator: "@swiftwithfer",
-      images: [TWITTER_IMAGE],
+      images: [twitterImage],
     },
     icons: {
       icon: [
-        { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
-        { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       ],
-      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+      other: [
+        {
+          rel: "icon",
+          url: "/android-chrome-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          rel: "icon",
+          url: "/android-chrome-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
     },
     appleWebApp: {
       capable: true,
@@ -93,6 +130,8 @@ export function createHomeMetadata(): Metadata {
   const siteUrl = getSiteUrl();
   const { seo, name } = siteConfig;
   const title = seo.title;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
 
   return createSiteMetadata({
     title: { absolute: title },
@@ -109,14 +148,15 @@ export function createHomeMetadata(): Metadata {
       siteName: name,
       title,
       description: seo.description,
-      images: [OG_IMAGE],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
       title,
       description: seo.description,
-      creator: "@swiftwithfer",
-      images: [TWITTER_IMAGE],
+      images: [twitterImage],
     },
   });
 }
@@ -131,6 +171,8 @@ export function createCaseStudyMetadata(
   const url = `${siteUrl}/apps/${slug}`;
   const title = `${appName} — Case Study`;
   const ogTitle = `${appName} — Case Study | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
 
   return {
     title,
@@ -150,15 +192,17 @@ export function createCaseStudyMetadata(
       siteName: name,
       title: ogTitle,
       description,
-      images: [OG_IMAGE],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
       title: ogTitle,
       description,
-      images: [TWITTER_IMAGE],
+      images: [twitterImage],
     },
   };
 }
 
-export { OG_IMAGE, TWITTER_IMAGE };
+export { TWITTER_HANDLE };

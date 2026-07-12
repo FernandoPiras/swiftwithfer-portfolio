@@ -101,24 +101,14 @@ export function OgImageContent() {
         </div>
         <div
           style={{
-            fontSize: 34,
-            marginTop: 14,
+            fontSize: 32,
+            marginTop: 16,
             color: "#a1a1aa",
             fontWeight: 500,
+            letterSpacing: "0.01em",
           }}
         >
-          {siteConfig.role}
-        </div>
-        <div
-          style={{
-            marginTop: 28,
-            fontSize: 26,
-            maxWidth: 820,
-            lineHeight: 1.45,
-            color: "#d4d4d8",
-          }}
-        >
-          {siteConfig.tagline}
+          Developer iOS • SwiftUI • Web
         </div>
       </div>
 
