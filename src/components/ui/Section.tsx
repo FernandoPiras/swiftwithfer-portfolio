@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { EASE_OUT } from "@/lib/motion";
 
 interface SectionProps {
   id: string;
@@ -18,7 +19,7 @@ export function Section({ id, eyebrow, title, subtitle, children, className }: S
     <section
       id={id}
       className={cn(
-        "scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-14 sm:py-20 md:py-28",
+        "scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-16 sm:py-24 md:py-28",
         className,
       )}
     >
@@ -27,19 +28,15 @@ export function Section({ id, eyebrow, title, subtitle, children, className }: S
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8 sm:mb-12 md:mb-16"
+          transition={{ duration: 0.5, ease: EASE_OUT }}
+          className="mb-10 sm:mb-14 md:mb-16"
         >
           {eyebrow ? (
-            <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-accent sm:mb-3 sm:text-sm sm:tracking-[0.2em]">
-              {eyebrow}
-            </p>
+            <p className="text-eyebrow mb-3 text-accent">{eyebrow}</p>
           ) : null}
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
-            {title}
-          </h2>
+          <h2 className="text-section-title text-foreground">{title}</h2>
           {subtitle ? (
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted sm:mt-4 sm:text-lg">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               {subtitle}
             </p>
           ) : null}

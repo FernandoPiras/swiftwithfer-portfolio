@@ -28,15 +28,14 @@ export function ButtonLink({
   external,
 }: ButtonLinkProps) {
   const styles = {
-    primary:
-      "bg-foreground text-background hover:opacity-90 shadow-lg shadow-foreground/10",
+    primary: "btn-primary hover:opacity-92",
     secondary:
-      "border border-glass-border bg-glass/60 text-foreground backdrop-blur-md hover:bg-glass",
+      "border border-glass-border bg-glass/70 text-foreground backdrop-blur-md hover:border-accent/25 hover:bg-glass",
     ghost: "text-muted hover:text-foreground",
   };
 
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]",
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]",
     styles[variant],
     className,
   );

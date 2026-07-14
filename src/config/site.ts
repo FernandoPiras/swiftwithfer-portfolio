@@ -32,6 +32,7 @@ export interface AppProject {
   websiteUrl?: string;
   status: ProjectStatus;
   featured?: boolean;
+  outcomes?: string[];
   appStoreRating?: AppStoreRating;
   reviews?: AppReview[];
   demoVideo?: {
@@ -59,27 +60,22 @@ export const siteConfig = {
     full: "/images/brand/logo.png",
     alt: "SwiftWithFer — iOS Developer",
   },
-  role: "iOS & Software Developer",
-  tagline: "App iOS native, web app e gestionali aziendali — dal codice al rilascio.",
+  role: "Sviluppatore iOS & Software",
+  tagline: "Trasformo idee in prodotti digitali che generano risultati — app, web e gestionali pronti per il mercato.",
   email: "fernando@fernandopiras.com",
   portfolioUrl: "https://fernandopiras.com",
   locale: "it_IT",
   hero: {
     valueProps: [
-      "App iOS native pubblicate su App Store",
-      "Web app, CRM e gestionali su misura",
-      "Architetture scalabili con Firebase e cloud",
+      "3 prodotti live su App Store con recensioni verificate",
+      "Piattaforme complete: app native, CRM web e backend cloud",
+      "Dalla prima idea al rilascio, con cura su ogni dettaglio",
     ],
     credibility: [
       "App Store",
-      "Firebase",
       "SwiftUI",
       "React",
-      "React Native",
-      "iOS",
-      "Web",
-      "AI",
-      "Cloud",
+      "Firebase",
       "UI/UX",
       "Performance",
     ],
@@ -91,32 +87,32 @@ export const siteConfig = {
   },
   bio: {
     short:
-      "Sviluppatore iOS e software indipendente. Realizzo prodotti digitali di livello enterprise: app native, web app e gestionali aziendali, dalla progettazione al rilascio.",
-    full: "Unisco design raffinato, architetture solide e attenzione maniacale all'esperienza utente. Ogni progetto nasce da un'esigenza reale del business e cresce con iterazioni misurate, test rigorosi e standard di qualità da prodotto finito.",
+      "Progetto e rilascio software che funziona davvero: app iOS, web app e gestionali pensati per far crescere il business del cliente.",
+    full: "Ogni prodotto nasce da un problema concreto. Lavoro con iterazioni misurate, attenzione al dettaglio e standard di qualità che un cliente enterprise si aspetta — senza compromessi su UX, performance o affidabilità.",
     journey:
-      "Il percorso parte da Swift e SwiftUI, passa per app pubblicate in salute, produttività e servizi, fino a piattaforme complete con Firebase, gestionali web, StoreKit, widget, Watch e integrazioni cloud.",
+      "Dal primo prototipo SwiftUI alle piattaforme complete oggi live: salute, produttività, servizi e CRM. Ogni release su App Store è il risultato di mesi di raffinamento.",
     philosophy:
-      "Credo in software che rispetta il tempo dell'utente: interfacce chiare, animazioni fluide, performance misurabili e privacy by design. La qualità non è un extra — è il requisito minimo per ogni prodotto che rilascio.",
+      "Il software migliore è quello che l'utente non deve imparare. Interfacce chiare, tempi di risposta rapidi, dati protetti. La qualità non si negocia.",
     focus: [
-      "Qualità del codice",
-      "UX & accessibilità",
+      "Esperienza utente",
+      "Affidabilità",
       "Performance",
-      "App Store readiness",
-      "Web & gestionali",
-      "Firebase & cloud",
+      "App Store",
+      "Web & CRM",
+      "Privacy",
     ],
     highlights: [
       {
-        label: "App Store",
-        value: "3 app pubblicate",
+        label: "Esperienza",
+        value: "3+ anni SwiftUI",
       },
       {
-        label: "Stack",
-        value: "iOS · Web · Cloud",
+        label: "Risultati",
+        value: "3 app su App Store",
       },
       {
-        label: "Brand",
-        value: "@swiftwithfer",
+        label: "Recensioni",
+        value: "5.0 su AndroMetrics",
       },
     ],
   },
@@ -135,51 +131,51 @@ export const siteConfig = {
   services: [
     {
       id: "ios-development",
-      title: "Sviluppo app iOS",
+      title: "App iOS native",
       description:
-        "Progettazione e sviluppo end-to-end in SwiftUI: architetture MVVM, integrazioni native, test e pubblicazione su App Store.",
+        "App su misura per iPhone e iPad, pubblicate su App Store. Design curato, performance native e integrazioni Apple.",
     },
     {
       id: "web-development",
-      title: "Sviluppo web",
+      title: "Web app & siti",
       description:
-        "Siti web e web app responsive con React, TypeScript e deploy su Vercel. Performance, SEO e UX curata su ogni dispositivo.",
+        "Piattaforme web veloci e responsive. Ottimizzate per conversione, SEO e utilizzo quotidiano su ogni dispositivo.",
     },
     {
       id: "business-software",
       title: "Gestionali aziendali",
       description:
-        "Software su misura per attività e aziende: flussi operativi, pannelli admin, reportistica e strumenti di gestione quotidiana.",
+        "Software che semplifica le operazioni: pannelli admin, reportistica e flussi di lavoro su misura per il tuo team.",
     },
     {
       id: "crm",
       title: "CRM & automazioni",
       description:
-        "CRM evoluti, automazioni di processo, marketing e fidelizzazione clienti integrati con app e backend cloud.",
+        "Gestione clienti, marketing e fidelizzazione in un unico sistema. Meno lavoro manuale, più controllo sul business.",
     },
     {
       id: "consulting",
       title: "Consulenza tecnica",
       description:
-        "Revisione codice, audit architetturale, performance tuning e roadmap tecnica per prodotti già avviati o in fase di scaling.",
+        "Analisi del prodotto esistente, roadmap e interventi mirati per migliorare qualità, velocità e scalabilità.",
     },
     {
       id: "ui-ux",
       title: "UI/UX Design",
       description:
-        "Interfacce chiare, accessibili e coerenti con le linee guida Apple. Prototipi, design system e microinterazioni curate.",
+        "Interfacce intuitive che convertono. Prototipi, design system e microinterazioni allineate alle linee guida Apple.",
     },
     {
       id: "firebase-cloud",
-      title: "Firebase & Backend",
+      title: "Backend & cloud",
       description:
-        "Auth, Firestore, Cloud Functions, push notification, sync realtime e architetture cloud scalabili.",
+        "Infrastruttura sicura e scalabile: autenticazione, database, notifiche e sincronizzazione in tempo reale.",
     },
     {
       id: "end-to-end",
-      title: "Sviluppo completo",
+      title: "Progetto completo",
       description:
-        "Dalla progettazione al rilascio: discovery, sviluppo, test, deploy, App Store e supporto post-lancio.",
+        "Un unico partner dalla discovery al rilascio: progettazione, sviluppo, test, deploy e supporto post-lancio.",
     },
   ],
   metrics: {
@@ -241,22 +237,27 @@ export const siteConfig = {
       year: "2025",
       title: "PreventivoRapido PRO",
       description:
-        "App per preventivi professionali con PDF, firma cliente, sync cloud e abbonamenti StoreKit.",
+        "Prima app business live: preventivi professionali che risparmiano ore di lavoro agli artigiani.",
     },
     {
       year: "2026",
       title: "AndroMetrics & Slotiva",
       description:
-        "Pubblicazione di app in salute e produttività con Firebase, widget, IAP e backend cloud.",
+        "Due piattaforme complete in salute e servizi — app, CRM web e backend integrati.",
     },
   ] satisfies TimelineEntry[],
   apps: [
     {
       id: "andrometrics",
       name: "AndroMetrics",
-      tagline: "Score fertilità 0–100 ogni giorno",
+      tagline: "Monitoraggio fertilità maschile, ogni giorno",
       description:
-        "Monitoraggio del benessere maschile con analisi personalizzate, grafici avanzati, OCR referti, widget e abbonamenti Premium via StoreKit.",
+        "App medica premium che traduce dati complessi in un punteggio chiaro 0–100. Grafici evolutivi, referti digitalizzati e widget — progettata per chi vuole capire i propri progressi senza sforzo.",
+      outcomes: [
+        "Score giornaliero immediato e comprensibile",
+        "Valutazione 5.0 su App Store",
+        "Dati sensibili protetti e sincronizzati",
+      ],
       icon: "/images/apps/andrometrics/icon.png",
       screenshots: [
         "/images/apps/andrometrics/screenshot-1.png",
@@ -309,9 +310,14 @@ export const siteConfig = {
     {
       id: "slotiva",
       name: "Slotiva",
-      tagline: "Piattaforma prenotazioni + CRM professionale",
+      tagline: "Prenotazioni e CRM per saloni e studi",
       description:
-        "Ecosistema completo per saloni, barbieri e PT: app iOS nativa con prenotazioni, chat, pagamenti e abbonamenti; gestionale web CRM su slotiva.it con dashboard, analytics e KPI.",
+        "Piattaforma enterprise per chi gestisce appuntamenti ogni giorno: app iOS per clienti e titolari, gestionale web con analytics e KPI su slotiva.it. Meno no-show, agenda sempre aggiornata, business sotto controllo.",
+      outcomes: [
+        "Ecosistema app + CRM + backend integrato",
+        "Gestionale web live su slotiva.it",
+        "Prenotazioni e pagamenti in tempo reale",
+      ],
       icon: "/images/apps/slotiva/icon.png",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
@@ -345,7 +351,12 @@ export const siteConfig = {
       name: "PreventivoRapido PRO",
       tagline: "Preventivi professionali in pochi minuti",
       description:
-        "Per artigiani e freelance: preventivi PDF, rubrica clienti, firma digitale, fatture, backup e sync cloud con abbonamento Pro.",
+        "Per artigiani e professionisti che vogliono chiudere più lavori: preventivi PDF curati, firma cliente integrata, rubrica organizzata e backup automatico. Meno tempo in ufficio, più tempo sul campo.",
+      outcomes: [
+        "Preventivi PDF pronti in minuti",
+        "Firma digitale integrata nel documento",
+        "Rubrica clienti sempre sincronizzata",
+      ],
       icon: "/images/apps/preventivorapido/icon.png",
       screenshots: [
         "/images/apps/preventivorapido/screenshot-1.png",
@@ -376,7 +387,7 @@ export const siteConfig = {
     title:
       "Fernando Piras — iOS & Software Developer | SwiftWithFer",
     description:
-      "Portfolio ufficiale di Fernando Piras (SwiftWithFer). Sviluppatore iOS, SwiftUI, web e gestionali aziendali in Italia. App native, CRM, Firebase e prodotti enterprise.",
+      "Portfolio di Fernando Piras (SwiftWithFer). Sviluppatore iOS e software in Italia. App native, gestionali web e CRM — prodotti reali con risultati misurabili.",
     keywords: [
       "Fernando Piras",
       "SwiftWithFer",

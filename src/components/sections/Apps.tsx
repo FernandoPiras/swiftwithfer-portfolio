@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { AppCard } from "@/components/ui/AppCard";
+import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 
 export function Apps() {
@@ -8,50 +9,30 @@ export function Apps() {
     <Section
       id="apps"
       eyebrow="Portfolio"
-      title="Progetti"
-      subtitle="Prodotti reali su App Store e piattaforme web — architetture solide, UX premium ed esperienza da software house."
-      className="bg-section-alt/50"
+      title="Prodotti rilasciati"
+      subtitle="Software reale, utenti reali, risultati misurabili. Ogni progetto include case study, demo e link diretti."
+      className="section-surface"
     >
-      <div className="mb-8 grid gap-4 sm:grid-cols-3">
-        {[
-          {
-            label: "App Store",
-            value: `${siteConfig.metrics.publishedApps} prodotti live`,
-          },
-          {
-            label: "Stack",
-            value: "SwiftUI · Firebase · React",
-          },
-          {
-            label: "Delivery",
-            value: "Design → Rilascio",
-          },
-        ].map((item) => (
-          <div
-            key={item.label}
-            className="rounded-2xl border border-glass-border bg-glass/50 p-4 backdrop-blur-md sm:p-5"
-          >
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted">{item.label}</p>
-            <p className="mt-1.5 text-sm font-semibold text-foreground sm:text-base">{item.value}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mb-8 flex flex-col items-start justify-between gap-4 rounded-2xl border border-glass-border bg-glass/50 p-4 backdrop-blur-md sm:flex-row sm:items-center sm:p-5">
+      <GlassCard className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <p className="text-sm font-semibold text-foreground">
-            Profilo sviluppatore Apple verificato
+          <p className="font-semibold text-foreground">
+            Profilo sviluppatore verificato su App Store
           </p>
           <p className="mt-1 text-sm text-muted">
-            AndroMetrics, Slotiva e PreventivoRapido PRO — case study, demo reali e recensioni.
+            AndroMetrics · Slotiva · PreventivoRapido PRO
           </p>
         </div>
-        <ButtonLink href={siteConfig.metrics.appStoreDeveloperUrl} external variant="secondary" className="w-full sm:w-auto">
-          App Store Developer
+        <ButtonLink
+          href={siteConfig.metrics.appStoreDeveloperUrl}
+          external
+          variant="secondary"
+          className="w-full shrink-0 sm:w-auto"
+        >
+          Vedi su App Store
         </ButtonLink>
-      </div>
+      </GlassCard>
 
-      <div className="space-y-8">
+      <div className="space-y-10 sm:space-y-12">
         {siteConfig.apps.map((app, index) => (
           <AppCard key={app.id} app={app} index={index} />
         ))}

@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import type { AppProject } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
+import { EASE_OUT } from "@/lib/motion";
 
 interface AppCardProps {
   app: AppProject;
@@ -16,34 +18,34 @@ interface AppCardProps {
 }
 
 const statusStyles = {
-  published: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
-  beta: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
-  "in-development": "bg-blue-500/15 text-blue-600 dark:text-blue-400",
+  published: "bg-emerald-500/12 text-emerald-700 dark:text-emerald-400",
+  beta: "bg-amber-500/12 text-amber-700 dark:text-amber-400",
+  "in-development": "bg-blue-500/12 text-blue-700 dark:text-blue-400",
 };
+
+const VISIBLE_TECH = 4;
 
 export function AppCard({ app, index = 0 }: AppCardProps) {
   const [activeScreenshot, setActiveScreenshot] = useState(0);
+  const extraTech = app.technologies.length - VISIBLE_TECH;
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease: EASE_OUT }}
     >
-      <GlassCard
-        as="article"
-        className="group overflow-hidden md:transition-transform md:duration-500 md:hover:-translate-y-1 premium-card"
-      >
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
-          <div className="order-2 space-y-4 sm:space-y-5 lg:order-1">
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[1.2rem] shadow-lg shadow-black/10 ring-1 ring-black/5 sm:h-20 sm:w-20 sm:rounded-[1.35rem]">
+      <GlassCard as="article" className="premium-card overflow-hidden">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-10">
+          <div className="order-2 space-y-5 lg:order-1">
+            <div className="flex items-start gap-4">
+              <div className="relative h-[4.5rem] w-[4.5rem] shrink-0 overflow-hidden rounded-[1.25rem] shadow-md ring-1 ring-black/5 sm:h-20 sm:w-20">
                 <Image
                   src={app.icon}
                   alt={`Icona ${app.name}`}
                   fill
-                  sizes="(max-width: 640px) 64px, 80px"
+                  sizes="80px"
                   className="object-cover"
                 />
               </div>
@@ -67,19 +69,43 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
 
             <p className="text-sm leading-relaxed text-muted sm:text-base">{app.description}</p>
 
-            <ul className="flex flex-wrap gap-2" aria-label={`Tecnologie usate in ${app.name}`}>
-              {app.technologies.map((tech) => (
+            {app.outcomes?.length ? (
+              <ul className="space-y-2" aria-label={`Risultati ${app.name}`}>
+                {app.outcomes.map((outcome) => (
+                  <li
+                    key={outcome}
+                    className="flex items-start gap-2.5 text-sm text-foreground"
+                  >
+                    <span className="mt-1.5 text-accent" aria-hidden>
+                      ✓
+                    </span>
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+
+            <ul
+              className="flex flex-wrap gap-1.5"
+              aria-label={`Tecnologie usate in ${app.name}`}
+            >
+              {app.technologies.slice(0, VISIBLE_TECH).map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full border border-glass-border bg-background/40 px-2.5 py-1 text-[0.7rem] text-foreground sm:px-3 sm:text-xs"
+                  className="rounded-full border border-glass-border bg-background/50 px-2.5 py-0.5 text-xs text-muted"
                 >
                   {tech}
                 </li>
               ))}
+              {extraTech > 0 ? (
+                <li className="rounded-full px-2 py-0.5 text-xs text-muted">
+                  +{extraTech}
+                </li>
+              ) : null}
             </ul>
 
-            <div className="flex flex-col gap-2.5 pt-1 sm:flex-row sm:flex-wrap sm:gap-3">
-              <ButtonLink href={`/apps/${app.id}`} variant="primary" className="w-full sm:w-auto">
+            <div className="flex flex-col gap-2.5 pt-1 sm:flex-row sm:flex-wrap">
+              <ButtonLink href={`/apps/${app.id}`} className="w-full sm:w-auto">
                 Case Study
               </ButtonLink>
               {app.appStoreUrl ? (
@@ -95,22 +121,16 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
             </div>
           </div>
 
-          <div className="order-1 space-y-3 sm:space-y-4 lg:order-2">
-            <div className="relative mx-auto aspect-[9/19.5] w-full max-w-[220px] overflow-hidden rounded-[1.75rem] border border-glass-border bg-background/60 p-1.5 shadow-2xl shadow-black/10 sm:max-w-[260px] sm:rounded-[2rem] sm:p-2">
-              <div className="relative h-full w-full overflow-hidden rounded-[1.45rem] bg-black sm:rounded-[1.6rem]">
-                <Image
-                  src={app.screenshots[activeScreenshot] ?? app.screenshots[0]}
-                  alt={`Screenshot di ${app.name}`}
-                  fill
-                  sizes="(max-width: 640px) 220px, 260px"
-                  className="object-cover object-top transition-opacity duration-500"
-                />
-              </div>
-            </div>
+          <div className="order-1 space-y-3 lg:order-2">
+            <PhoneFrame
+              src={app.screenshots[activeScreenshot] ?? app.screenshots[0]}
+              alt={`Screenshot di ${app.name}`}
+              size="compact"
+            />
 
             {app.screenshots.length > 1 ? (
               <div
-                className="flex justify-center gap-2 py-1"
+                className="flex justify-center gap-1 py-1"
                 role="tablist"
                 aria-label={`Screenshot ${app.name}`}
               >
@@ -128,8 +148,8 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                       className={cn(
                         "block rounded-full transition-all duration-300",
                         activeScreenshot === screenshotIndex
-                          ? "h-2 w-8 bg-accent"
-                          : "h-2 w-2 bg-muted/40",
+                          ? "h-1.5 w-7 bg-accent"
+                          : "h-1.5 w-1.5 bg-muted/30",
                       )}
                     />
                   </button>
@@ -140,10 +160,8 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
         </div>
 
         {app.demoVideo ? (
-          <div className="mt-8 border-t border-glass-border pt-6 sm:mt-10 sm:pt-8">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-accent">
-              Demo reale
-            </p>
+          <div className="mt-8 border-t border-glass-border pt-7 sm:mt-10">
+            <p className="text-eyebrow mb-4 text-accent">Demo reale</p>
             <AppDemoVideo
               src={app.demoVideo.src}
               poster={app.demoVideo.poster}

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface AppDemoVideoProps {
@@ -16,33 +19,63 @@ export function AppDemoVideo({
   size = "full",
 }: AppDemoVideoProps) {
   const isCompact = size === "compact";
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(!isCompact);
+
+  useEffect(() => {
+    if (shouldLoad) return;
+    const node = containerRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [shouldLoad]);
 
   return (
     <figure className={cn("mx-auto w-full", className)}>
       <div
-        className={cn(
-          "relative mx-auto overflow-hidden border border-glass-border bg-black shadow-2xl shadow-black/10",
-          isCompact
-            ? "max-w-[220px] rounded-[1.75rem] p-1.5 sm:max-w-[260px] sm:rounded-[2rem] sm:p-2"
-            : "max-w-[280px] rounded-[2rem] p-2 sm:max-w-[320px] sm:p-2.5",
-        )}
+        ref={containerRef}
+        className={cn("phone-frame", isCompact && "phone-frame--compact")}
       >
-        <video
-          src={src}
-          poster={poster}
-          controls
-          playsInline
-          preload="metadata"
-          aria-label={title}
-          className={cn(
-            "w-full bg-black",
-            isCompact
-              ? "aspect-[9/19.5] rounded-[1.45rem] object-contain sm:rounded-[1.6rem]"
-              : "aspect-[9/19.5] rounded-[1.6rem] object-contain sm:rounded-[1.75rem]",
+        <div className="phone-frame__screen">
+          {shouldLoad ? (
+            <video
+              src={src}
+              poster={poster}
+              controls
+              playsInline
+              preload={isCompact ? "none" : "metadata"}
+              aria-label={title}
+              className="h-full w-full object-contain"
+            >
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+          ) : (
+            <div
+              className="flex h-full w-full items-center justify-center bg-black text-xs text-muted"
+              aria-hidden
+            >
+              {poster ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={poster}
+                  alt=""
+                  className="h-full w-full object-cover object-top opacity-80"
+                />
+              ) : null}
+            </div>
           )}
-        >
-          Il tuo browser non supporta la riproduzione video.
-        </video>
+        </div>
       </div>
       <figcaption className="mt-3 text-center text-xs text-muted sm:text-sm">
         {title}

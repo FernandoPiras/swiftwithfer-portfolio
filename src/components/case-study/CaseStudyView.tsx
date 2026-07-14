@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
 
 interface CaseStudyViewProps {
@@ -23,8 +24,8 @@ function CaseSection({
   children: ReactNode;
 }) {
   return (
-    <section className="space-y-4">
-      <h2 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+    <section className="space-y-3">
+      <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
         {title}
       </h2>
       <div className="text-sm leading-relaxed text-muted sm:text-base">{children}</div>
@@ -38,9 +39,9 @@ function FeatureGrid({ items }: { items: string[] }) {
       {items.map((feature) => (
         <li
           key={feature}
-          className="flex items-start gap-2 rounded-xl border border-glass-border bg-background/40 px-3 py-2.5 text-sm text-foreground"
+          className="flex items-start gap-2 rounded-lg border border-glass-border bg-background/40 px-3 py-2 text-sm text-foreground"
         >
-          <span className="mt-0.5 text-accent" aria-hidden>
+          <span className="mt-0.5 shrink-0 text-accent" aria-hidden>
             ✓
           </span>
           {feature}
@@ -52,14 +53,14 @@ function FeatureGrid({ items }: { items: string[] }) {
 
 export function CaseStudyView({ study, app }: CaseStudyViewProps) {
   const statusStyles = {
-    published: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
-    beta: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
-    "in-development": "bg-blue-500/15 text-blue-600 dark:text-blue-400",
+    published: "bg-emerald-500/12 text-emerald-700 dark:text-emerald-400",
+    beta: "bg-amber-500/12 text-amber-700 dark:text-amber-400",
+    "in-development": "bg-blue-500/12 text-blue-700 dark:text-blue-400",
   };
 
   return (
     <article>
-      <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2rem)] pb-10 sm:pb-12">
+      <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2rem)] pb-10 sm:pb-14">
         <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <Link
@@ -69,8 +70,8 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             ← Torna ai progetti
           </Link>
 
-          <div className="mt-8 flex flex-col items-center gap-6 text-center sm:mt-10 md:flex-row md:items-start md:text-left">
-            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[1.5rem] shadow-lg shadow-black/10 ring-1 ring-black/5 sm:h-28 sm:w-28">
+          <div className="mt-8 flex flex-col items-center gap-6 text-center sm:mt-10 md:flex-row md:items-start md:gap-8 md:text-left">
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[1.25rem] shadow-md ring-1 ring-black/5 sm:h-28 sm:w-28">
               <Image
                 src={app.icon}
                 alt={`Icona ${app.name}`}
@@ -80,11 +81,9 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 className="object-cover"
               />
             </div>
-            <div className="max-w-3xl">
+            <div className="max-w-2xl">
               <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-                  Case Study
-                </p>
+                <p className="text-eyebrow text-accent">Case Study</p>
                 <span
                   className={cn(
                     "rounded-full px-2.5 py-0.5 text-xs font-medium",
@@ -94,18 +93,29 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                   {getStatusLabel(app.status)}
                 </span>
               </div>
-              <h1 className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-                {app.name}
-              </h1>
-              <p className="mt-3 text-base font-medium text-accent sm:text-lg">{app.tagline}</p>
+              <h1 className="text-section-title mt-2 text-foreground">{app.name}</h1>
+              <p className="mt-3 text-base font-medium text-accent">{app.tagline}</p>
               <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
                 {app.description}
               </p>
 
+              {app.outcomes?.length ? (
+                <ul className="mt-5 space-y-2 text-left">
+                  {app.outcomes.map((outcome) => (
+                    <li key={outcome} className="flex items-start gap-2 text-sm text-foreground">
+                      <span className="text-accent" aria-hidden>
+                        ✓
+                      </span>
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+
               <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:justify-start">
                 {app.demoVideo ? (
                   <ButtonLink href="#demo" className="w-full sm:w-auto">
-                    Guarda demo reale
+                    Guarda demo
                   </ButtonLink>
                 ) : null}
                 {app.appStoreUrl ? (
@@ -127,15 +137,12 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
       {app.demoVideo ? (
         <section
           id="demo"
-          aria-label={`Demo reale ${app.name}`}
-          className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-12"
+          aria-label={`Demo ${app.name}`}
+          className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-14"
         >
-          <h2 className="mb-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-            Demo reale
-          </h2>
-          <p className="mb-6 max-w-2xl text-sm text-muted sm:text-base">
-            Registrazione diretta da iPhone mentre l&apos;app è in esecuzione — nessun mockup,
-            l&apos;esperienza così com&apos;è su dispositivo.
+          <h2 className="text-lg font-semibold text-foreground sm:text-xl">Demo reale</h2>
+          <p className="mb-6 mt-2 max-w-lg text-sm text-muted">
+            Registrazione diretta da iPhone — nessun mockup.
           </p>
           <AppDemoVideo
             src={app.demoVideo.src}
@@ -146,7 +153,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </section>
       ) : null}
 
-      <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 sm:space-y-12 sm:px-6 sm:pb-20 md:pb-28">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 sm:space-y-12 sm:px-6 sm:pb-24">
         <GlassCard className="space-y-8 sm:space-y-10">
           <CaseSection title="Il problema">
             <p>{study.problem}</p>
@@ -163,17 +170,17 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               </CaseSection>
             ))
           ) : (
-            <CaseSection title="Funzionalità principali">
+            <CaseSection title="Funzionalità">
               <FeatureGrid items={study.features} />
             </CaseSection>
           )}
 
-          <CaseSection title="Tecnologie utilizzate">
+          <CaseSection title="Stack tecnico">
             <ul className="flex flex-wrap gap-2">
               {app.technologies.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs text-foreground sm:text-sm"
+                  className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs text-muted"
                 >
                   {tech}
                 </li>
@@ -181,11 +188,11 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             </ul>
           </CaseSection>
 
-          <CaseSection title="Sfide affrontate">
-            <ul className="space-y-3">
+          <CaseSection title="Sfide">
+            <ul className="space-y-2.5">
               {study.challenges.map((challenge) => (
                 <li key={challenge} className="flex gap-3">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
                   <span>{challenge}</span>
                 </li>
               ))}
@@ -193,10 +200,10 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </CaseSection>
 
           <CaseSection title="Risultati">
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {study.results.map((result) => (
                 <li key={result} className="flex gap-3">
-                  <span className="mt-0.5 text-accent" aria-hidden>
+                  <span className="shrink-0 text-accent" aria-hidden>
                     ✓
                   </span>
                   <span>{result}</span>
@@ -207,24 +214,15 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </GlassCard>
 
         <section aria-label={`Screenshot ${app.name}`}>
-          <h2 className="mb-6 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-            Screenshot
-          </h2>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="mb-6 text-lg font-semibold text-foreground sm:text-xl">Screenshot</h2>
+          <ul className="grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {app.screenshots.map((screenshot, index) => (
-              <li
-                key={screenshot}
-                className="relative mx-auto aspect-[9/19.5] w-full max-w-[260px] overflow-hidden rounded-[2rem] border border-glass-border bg-background/60 p-2 shadow-2xl shadow-black/10"
-              >
-                <div className="relative h-full w-full overflow-hidden rounded-[1.6rem] bg-black">
-                  <Image
-                    src={screenshot}
-                    alt={`Screenshot ${index + 1} di ${app.name}`}
-                    fill
-                    sizes="(max-width: 640px) 220px, 260px"
-                    className="object-cover object-top"
-                  />
-                </div>
+              <li key={screenshot}>
+                <PhoneFrame
+                  src={screenshot}
+                  alt={`Screenshot ${index + 1} di ${app.name}`}
+                  size="compact"
+                />
               </li>
             ))}
           </ul>
@@ -237,31 +235,25 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         ) : null}
 
         <GlassCard className="text-center">
-          <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
+          <h2 className="text-lg font-semibold text-foreground sm:text-xl">
             Vuoi un prodotto come {app.name}?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-            {siteConfig.tagline}
+          <p className="mx-auto mt-3 max-w-md text-sm text-muted">
+            Raccontami la tua idea — rispondo entro 48 ore lavorative.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            {app.appStoreUrl ? (
-              <ButtonLink href={app.appStoreUrl} external variant="primary" className="w-full sm:w-auto">
-                Scarica su App Store
-              </ButtonLink>
-            ) : null}
-            {app.websiteUrl ? (
-              <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
-                {getWebsiteLinkLabel(app.websiteUrl)}
-              </ButtonLink>
-            ) : null}
             <ButtonLink
               href={`mailto:${siteConfig.email}?subject=Consulenza%20-%20${encodeURIComponent(app.name)}`}
               external
-              variant="secondary"
               className="w-full sm:w-auto"
             >
               Contattami
             </ButtonLink>
+            {app.appStoreUrl ? (
+              <ButtonLink href={app.appStoreUrl} external variant="secondary" className="w-full sm:w-auto">
+                App Store
+              </ButtonLink>
+            ) : null}
           </div>
         </GlassCard>
       </div>

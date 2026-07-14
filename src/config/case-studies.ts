@@ -20,44 +20,44 @@ export const caseStudies: CaseStudyContent[] = [
     slug: "andrometrics",
     appId: "andrometrics",
     problem:
-      "Monitorare il benessere e la fertilità maschile richiede strumenti chiari, continui e facili da interpretare. Registrare parametri su fogli sparsi o app generiche non offre analisi personalizzate né trend comprensibili nel tempo.",
+      "Monitorare il benessere maschile richiede continuità e chiarezza. Fogli sparsi e app generiche non offrono trend comprensibili né un quadro unificato nel tempo.",
     solution:
-      "AndroMetrics centralizza parametri, abitudini e referti in un'unica app SwiftUI. Calcola uno score giornaliero 0–100, mostra grafici evolutivi e insight personalizzati per seguire i progressi con chiarezza.",
+      "AndroMetrics traduce dati complessi in un punteggio giornaliero 0–100. Grafici evolutivi, referti digitalizzati e widget iOS — tutto in un'interfaccia medica premium, pensata per l'uso quotidiano.",
     features: [
       "Score fertilità 0–100 ogni giorno",
-      "Monitoraggio parametri e abitudini quotidiane",
+      "Monitoraggio parametri e abitudini",
       "Grafici e trend nel tempo",
-      "OCR referti con Vision",
+      "Digitalizzazione referti",
       "Widget iOS",
       "Export PDF",
-      "Abbonamenti Premium con StoreKit 2",
+      "Piano Premium",
     ],
     challenges: [
-      "Interfaccia chiara per dati di salute, senza risultare complessa",
-      "Gestione dati sensibili con sync cloud e privacy by design",
-      "Integrazione OCR su referti con formati diversi",
-      "Abbonamenti Premium conformi alle linee guida Apple",
+      "Comunicare dati di salute con chiarezza, senza complessità",
+      "Proteggere dati sensibili con sync cloud sicura",
+      "Digitalizzare referti con formati diversi",
+      "Monetizzazione conforme alle linee guida Apple",
     ],
     results: [
-      "App pubblicata su App Store con valutazione 5.0",
+      "Valutazione 5.0 su App Store",
       "Recensioni positive da utenti reali",
-      "UX curata con analisi personalizzate e grafici evolutivi",
-      "Monetizzazione StoreKit 2 integrata",
+      "UX medica curata e comprensibile",
+      "Piano Premium integrato",
     ],
     seoDescription:
-      "Case study AndroMetrics: app iOS SwiftUI per monitoraggio fertilità maschile con Firebase, StoreKit 2, widget e OCR referti.",
+      "Case study AndroMetrics: app iOS per monitoraggio fertilità maschile con score giornaliero, grafici e widget.",
   },
   {
     slug: "slotiva",
     appId: "slotiva",
     problem:
-      "Saloni, barbieri e personal trainer spesso gestiscono prenotazioni su WhatsApp, fogli o strumenti non integrati. Il risultato sono sovrapposizioni, no-show, poca visibilità sull'agenda e zero controllo su clienti, staff e performance dell'attività.",
+      "Saloni e studi gestiscono prenotazioni su WhatsApp e fogli. Risultato: sovrapposizioni, no-show, zero visibilità su clienti e performance.",
     solution:
-      "Slotiva è una piattaforma completa: app iOS nativa per clienti e titolari, gestionale web professionale su slotiva.it e backend Firebase in tempo reale. Calendario, prenotazioni, chat, pagamenti, analytics e CRM in un unico ecosistema.",
+      "Slotiva unifica prenotazioni, pagamenti e CRM in un ecosistema: app iOS per clienti e titolari, gestionale web professionale su slotiva.it, backend sincronizzato in tempo reale.",
     features: [],
     featureGroups: [
       {
-        title: "App iOS",
+        title: "App iOS — per clienti e titolari",
         items: [
           "Prenotazioni",
           "Clienti",
@@ -84,7 +84,7 @@ export const caseStudies: CaseStudyContent[] = [
         ],
       },
       {
-        title: "Gestionale Web",
+        title: "Gestionale Web — CRM professionale",
         items: [
           "Dashboard completa",
           "Analytics",
@@ -107,50 +107,50 @@ export const caseStudies: CaseStudyContent[] = [
       },
     ],
     challenges: [
-      "Prenotazioni multi-utente in tempo reale senza conflitti",
-      "UX distinte per clienti finali e titolari attività",
-      "Sincronizzazione app iOS ↔ gestionale web ↔ Firebase",
-      "Notifiche push affidabili e backend scalabile per team multipli",
+      "Prenotazioni simultanee senza conflitti",
+      "Esperienze distinte per clienti e titolari",
+      "Sync app iOS ↔ gestionale web in tempo reale",
+      "Notifiche affidabili per team multipli",
     ],
     results: [
-      "App pubblicata su App Store",
-      "Gestionale web live su slotiva.it",
-      "Piattaforma pronta per saloni, barbieri e personal trainer",
-      "Ecosistema integrato app + CRM + backend cloud",
+      "App live su App Store",
+      "CRM operativo su slotiva.it",
+      "Piattaforma pronta per saloni, barbieri e PT",
+      "Ecosistema integrato app + web + backend",
     ],
     seoDescription:
-      "Case study Slotiva: app iOS SwiftUI e gestionale web CRM per prenotazioni con Firebase, React, TypeScript, Vercel e StoreKit 2.",
+      "Case study Slotiva: piattaforma prenotazioni con app iOS e gestionale web CRM per saloni e studi.",
   },
   {
     slug: "preventivorapido",
     appId: "preventivorapido",
     problem:
-      "Artigiani e freelance perdono tempo con preventivi manuali: documenti non uniformi, firme mancanti e nessun archivio centralizzato dei clienti.",
+      "Artigiani e professionisti perdono ore con preventivi manuali: documenti non uniformi, firme mancanti, nessun archivio clienti.",
     solution:
-      "PreventivoRapido PRO digitalizza il flusso: preventivi PDF in pochi minuti, rubrica clienti, firma digitale, fatture, backup e sync cloud con abbonamento Pro.",
+      "PreventivoRapido PRO digitalizza l'intero flusso: preventivi PDF in minuti, firma cliente integrata, rubrica organizzata e backup automatico.",
     features: [
       "Preventivi PDF professionali",
       "Rubrica clienti con storico",
       "Firma digitale nel PDF",
       "Gestione fatture",
       "Backup e sync cloud",
-      "Abbonamento Pro con StoreKit 2",
-      "Sign in with Apple",
+      "Piano Pro",
+      "Accesso con Apple ID",
     ],
     challenges: [
-      "PDF professionali con layout consistenti",
-      "Firma cliente integrata nel documento exportato",
+      "PDF con layout professionale e consistente",
+      "Firma cliente nel documento exportato",
       "Sync cloud affidabile per dati business",
-      "Bilanciamento funzionalità free e Pro con StoreKit 2",
+      "Equilibrio tra funzioni base e piano Pro",
     ],
     results: [
-      "App pubblicata su App Store",
-      "Flusso preventivi semplificato per artigiani e freelance",
-      "Documenti PDF con firma digitale integrata",
-      "Sync cloud tra dispositivi",
+      "App live su App Store",
+      "Tempo di preventivazione ridotto drasticamente",
+      "Documenti con firma digitale integrata",
+      "Dati sincronizzati tra dispositivi",
     ],
     seoDescription:
-      "Case study PreventivoRapido PRO: app iOS SwiftUI per preventivi PDF, firma digitale, sync cloud e abbonamenti StoreKit 2.",
+      "Case study PreventivoRapido PRO: app iOS per preventivi PDF professionali con firma digitale e sync cloud.",
   },
 ];
 

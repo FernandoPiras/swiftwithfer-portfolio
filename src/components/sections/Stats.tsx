@@ -53,17 +53,20 @@ function CounterStatCard({
 
   return (
     <article
-      className="rounded-2xl border border-glass-border bg-glass/60 p-4 text-center shadow-glass backdrop-blur-xl sm:rounded-3xl sm:p-6"
+      className="stat-card"
       aria-label={`${stat.prefix ?? ""}${stat.value}${stat.suffix ?? ""} ${stat.label}`}
     >
-      <p className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl" aria-hidden>
+      <p
+        className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+        aria-hidden
+      >
         {stat.prefix}
         <span>{count}</span>
         {stat.suffix}
       </p>
-      <p className="mt-2 text-sm font-semibold text-foreground sm:text-base">{stat.label}</p>
+      <p className="mt-2 text-sm font-semibold text-foreground">{stat.label}</p>
       {stat.description ? (
-        <p className="mt-1 text-xs text-muted sm:text-sm">{stat.description}</p>
+        <p className="mt-1 text-xs text-muted">{stat.description}</p>
       ) : null}
     </article>
   );
@@ -79,17 +82,17 @@ function LabelStatCard({
   return (
     <article
       className={cn(
-        "rounded-2xl border border-glass-border bg-glass/60 p-4 text-center shadow-glass backdrop-blur-xl transition-all duration-700 sm:rounded-3xl sm:p-6",
+        "stat-card transition-all duration-700",
         active ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
       )}
       aria-label={`${stat.headline} ${stat.label}`}
     >
-      <p className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+      <p className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
         {stat.headline}
       </p>
-      <p className="mt-1 text-sm font-semibold text-accent sm:text-base">{stat.label}</p>
+      <p className="mt-1 text-sm font-semibold text-accent">{stat.label}</p>
       {stat.description ? (
-        <p className="mt-2 text-xs text-muted sm:text-sm">{stat.description}</p>
+        <p className="mt-1 text-xs text-muted">{stat.description}</p>
       ) : null}
     </article>
   );
@@ -121,8 +124,8 @@ export function Stats() {
     <section
       ref={sectionRef}
       id="stats"
-      aria-label="Metriche SwiftWithFer"
-      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-10 sm:py-14 md:py-16"
+      aria-label="Metriche principali"
+      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] border-y border-glass-border/60 py-12 sm:py-16"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">

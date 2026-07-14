@@ -8,6 +8,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 import { DiscoveryDocumentPicker } from "@/components/sections/DiscoveryDocumentPicker";
 import { buildDirectMailto } from "@/config/discovery";
+import { gridItem } from "@/lib/motion";
 
 function EmailIcon() {
   return (
@@ -18,40 +19,29 @@ function EmailIcon() {
 }
 
 export function Social() {
-  const instagram = siteConfig.social.find((link) => link.icon === "instagram");
-
   return (
     <Section
       id="social"
       eyebrow="Community"
-      title="Social"
-      subtitle="Seguimi per aggiornamenti su iOS, Swift e nuove release."
+      title="Seguimi"
+      subtitle="Aggiornamenti su iOS, nuove release e processo di sviluppo."
     >
-      <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-xl gap-3 sm:grid-cols-2">
         {siteConfig.social.map((link, index) => (
           <motion.a
             key={link.name}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.06 }}
-            className="group rounded-2xl border border-glass-border bg-glass/50 p-4 backdrop-blur-md transition-all active:scale-[0.99] sm:p-6 md:hover:-translate-y-0.5 md:hover:border-accent/40"
+            {...gridItem(index)}
+            className="premium-card rounded-xl border border-glass-border bg-glass/60 p-5 backdrop-blur-md"
           >
             <div className="flex items-center gap-4">
-              <span
-                className={
-                  link.icon === "instagram"
-                    ? "flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-black/5"
-                    : "flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f5f5f7] shadow-sm ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10"
-                }
-              >
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10">
                 <SocialBrandIcon icon={link.icon} />
               </span>
               <div>
-                <p className="text-lg font-semibold text-foreground">{link.name}</p>
+                <p className="font-semibold text-foreground">{link.name}</p>
                 <p className="text-sm text-muted">
                   {link.icon === "instagram" ? "@swiftwithfer" : "Fernando Piras"}
                 </p>
@@ -60,12 +50,6 @@ export function Social() {
           </motion.a>
         ))}
       </div>
-
-      {instagram ? (
-        <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted">
-          Su Instagram condivido aggiornamenti su Swift, SwiftUI e le mie release su App Store.
-        </p>
-      ) : null}
     </Section>
   );
 }
@@ -74,10 +58,10 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="Progetti"
-      title="Contatti"
-      subtitle="Avvia un progetto con il Discovery Document o contattami direttamente. Risposta professionale e processo strutturato."
-      className="bg-section-alt/50"
+      eyebrow="Contatti"
+      title="Iniziamo"
+      subtitle="Compila il Discovery Document o scrivimi direttamente. Rispondo entro 48 ore lavorative."
+      className="section-surface"
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8">
         <GlassCard>
@@ -86,19 +70,15 @@ export function Contact() {
 
         <div className="space-y-6">
           <GlassCard>
-            <h3 className="text-lg font-semibold text-foreground sm:text-xl">
-              Parliamo del tuo prossimo progetto
+            <h3 className="text-lg font-semibold text-foreground">
+              Parliamo del tuo progetto
             </h3>
-            <p className="mt-3 leading-relaxed text-muted">
-              Disponibile per app iOS, web app, gestionali aziendali, CRM e consulenza tecnica —
-              dalla discovery alla pubblicazione su App Store e al deploy in produzione.
+            <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+              App iOS, web app, gestionali o CRM — un unico partner dalla prima call al rilascio.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                 Scrivimi ora
-              </ButtonLink>
-              <ButtonLink href={siteConfig.portfolioUrl} external variant="secondary">
-                {siteConfig.portfolioUrl.replace("https://", "")}
               </ButtonLink>
               <ButtonLink href="#services" variant="secondary">
                 Vedi i servizi
@@ -106,25 +86,25 @@ export function Contact() {
             </div>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="mt-4 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-medium text-muted transition-opacity hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:text-base"
+              className="mt-5 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-medium text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <EmailIcon />
               {siteConfig.email}
             </a>
           </GlassCard>
 
-          <GlassCard className="p-4 sm:p-6">
-            <ul className="space-y-3" aria-label="Collegamenti rapidi">
+          <GlassCard>
+            <ul className="space-y-2" aria-label="Collegamenti">
               {siteConfig.social.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex min-h-11 items-center justify-between rounded-xl border border-glass-border bg-background/40 px-4 py-3 text-sm transition-colors hover:border-accent/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    className="flex min-h-11 items-center justify-between rounded-lg border border-glass-border bg-background/40 px-4 py-3 text-sm transition-colors hover:border-accent/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                   >
                     <span className="flex items-center gap-3 text-foreground">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white ring-1 ring-black/5 dark:bg-white/10">
                         <SocialBrandIcon icon={link.icon} className="h-5 w-5" />
                       </span>
                       {link.name}
