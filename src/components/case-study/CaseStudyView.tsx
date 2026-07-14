@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { getWebsiteLinkLabel } from "@/lib/utils";
+import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
 
 interface CaseStudyViewProps {
   study: CaseStudyContent;
@@ -32,10 +32,33 @@ function CaseSection({
   );
 }
 
+function FeatureGrid({ items }: { items: string[] }) {
+  return (
+    <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((feature) => (
+        <li
+          key={feature}
+          className="flex items-start gap-2 rounded-xl border border-glass-border bg-background/40 px-3 py-2.5 text-sm text-foreground"
+        >
+          <span className="mt-0.5 text-accent" aria-hidden>
+            ✓
+          </span>
+          {feature}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function CaseStudyView({ study, app }: CaseStudyViewProps) {
+  const statusStyles = {
+    published: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
+    beta: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+    "in-development": "bg-blue-500/15 text-blue-600 dark:text-blue-400",
+  };
+
   return (
     <article>
-      {/* Hero */}
       <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2rem)] pb-10 sm:pb-12">
         <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
@@ -43,7 +66,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             href="/#apps"
             className="inline-flex min-h-11 items-center text-sm font-medium text-accent transition-opacity hover:opacity-80"
           >
-            ← Torna alle app
+            ← Torna ai progetti
           </Link>
 
           <div className="mt-8 flex flex-col items-center gap-6 text-center sm:mt-10 md:flex-row md:items-start md:text-left">
@@ -57,10 +80,20 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 className="object-cover"
               />
             </div>
-            <div className="max-w-2xl">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-                Case Study
-              </p>
+            <div className="max-w-3xl">
+              <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+                  Case Study
+                </p>
+                <span
+                  className={cn(
+                    "rounded-full px-2.5 py-0.5 text-xs font-medium",
+                    statusStyles[app.status],
+                  )}
+                >
+                  {getStatusLabel(app.status)}
+                </span>
+              </div>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                 {app.name}
               </h1>
@@ -91,7 +124,6 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </div>
       </section>
 
-      {/* Demo — subito sotto l'hero per massima visibilità */}
       {app.demoVideo ? (
         <section
           id="demo"
@@ -114,7 +146,6 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </section>
       ) : null}
 
-      {/* Content */}
       <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 sm:space-y-12 sm:px-6 sm:pb-20 md:pb-28">
         <GlassCard className="space-y-8 sm:space-y-10">
           <CaseSection title="Il problema">
@@ -125,21 +156,17 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             <p>{study.solution}</p>
           </CaseSection>
 
-          <CaseSection title="Funzionalità principali">
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {study.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-2 rounded-xl border border-glass-border bg-background/40 px-3 py-2.5 text-sm text-foreground"
-                >
-                  <span className="mt-0.5 text-accent" aria-hidden>
-                    ✓
-                  </span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </CaseSection>
+          {study.featureGroups?.length ? (
+            study.featureGroups.map((group) => (
+              <CaseSection key={group.title} title={group.title}>
+                <FeatureGrid items={group.items} />
+              </CaseSection>
+            ))
+          ) : (
+            <CaseSection title="Funzionalità principali">
+              <FeatureGrid items={study.features} />
+            </CaseSection>
+          )}
 
           <CaseSection title="Tecnologie utilizzate">
             <ul className="flex flex-wrap gap-2">
@@ -165,12 +192,20 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             </ul>
           </CaseSection>
 
-          <CaseSection title="Risultato finale">
-            <p>{study.result}</p>
+          <CaseSection title="Risultati">
+            <ul className="space-y-3">
+              {study.results.map((result) => (
+                <li key={result} className="flex gap-3">
+                  <span className="mt-0.5 text-accent" aria-hidden>
+                    ✓
+                  </span>
+                  <span>{result}</span>
+                </li>
+              ))}
+            </ul>
           </CaseSection>
         </GlassCard>
 
-        {/* Screenshots */}
         <section aria-label={`Screenshot ${app.name}`}>
           <h2 className="mb-6 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
             Screenshot
@@ -201,10 +236,9 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </GlassCard>
         ) : null}
 
-        {/* CTA */}
         <GlassCard className="text-center">
           <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-            Vuoi un&apos;app come {app.name}?
+            Vuoi un prodotto come {app.name}?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
             {siteConfig.tagline}
@@ -221,7 +255,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               </ButtonLink>
             ) : null}
             <ButtonLink
-              href={`mailto:${siteConfig.email}?subject=Consulenza%20iOS%20-%20${encodeURIComponent(app.name)}`}
+              href={`mailto:${siteConfig.email}?subject=Consulenza%20-%20${encodeURIComponent(app.name)}`}
               external
               variant="secondary"
               className="w-full sm:w-auto"

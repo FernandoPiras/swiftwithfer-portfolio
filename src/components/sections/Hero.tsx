@@ -7,7 +7,7 @@ import { ButtonLink } from "@/components/layout/Header";
 
 export function Hero() {
   const instagram = siteConfig.social.find((link) => link.icon === "instagram");
-  const { metrics } = siteConfig;
+  const { metrics, hero } = siteConfig;
 
   return (
     <section
@@ -15,7 +15,7 @@ export function Hero() {
       className="relative flex min-h-[100dvh] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+1.5rem)]"
     >
       <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-10 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export function Hero() {
             </span>
             {siteConfig.brand}
           </p>
-          <h1 className="text-[2rem] font-semibold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="text-[2rem] font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem]">
             {siteConfig.name}
           </h1>
           <p className="mt-3 text-lg font-medium text-accent sm:mt-4 sm:text-xl md:text-2xl">
@@ -38,11 +38,20 @@ export function Hero() {
             {siteConfig.tagline}
           </p>
 
+          <ul className="mx-auto mt-6 max-w-xl space-y-2.5 text-left sm:mt-7 lg:mx-0">
+            {hero.valueProps.map((item) => (
+              <li key={item} className="flex items-start gap-2.5 text-sm text-foreground sm:text-base">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                {item}
+              </li>
+            ))}
+          </ul>
+
           <dl className="mx-auto mt-6 flex flex-wrap justify-center gap-3 sm:gap-4 lg:mx-0 lg:justify-start">
             {[
-              { label: "App Store", value: `${metrics.publishedApps} app pubblicate` },
-              { label: "Stack", value: "Swift & SwiftUI" },
-              { label: "Brand", value: "@swiftwithfer" },
+              { label: "App Store", value: `${metrics.publishedApps} app live` },
+              { label: "Focus", value: "iOS · Web · CRM" },
+              { label: "Qualità", value: "Enterprise-grade" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -56,9 +65,20 @@ export function Hero() {
             ))}
           </dl>
 
+          <div className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-2 lg:mx-0 lg:justify-start">
+            {hero.credibility.map((badge) => (
+              <span
+                key={badge}
+                className="rounded-full border border-glass-border bg-background/50 px-3 py-1 text-[0.7rem] font-medium text-foreground sm:text-xs"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <ButtonLink href="#apps" className="w-full sm:w-auto">
-              Le mie app
+              Vedi i progetti
             </ButtonLink>
             <ButtonLink href="#contact" variant="secondary" className="w-full sm:w-auto">
               Richiedi consulenza

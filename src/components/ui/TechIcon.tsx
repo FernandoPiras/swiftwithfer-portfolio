@@ -6,9 +6,13 @@ import {
   siFirebase,
   siGit,
   siGithub,
+  siGoogleanalytics,
   siGoogleadmob,
   siOpenapiinitiative,
+  siReact,
   siSwift,
+  siTypescript,
+  siVercel,
   siXcode,
 } from "simple-icons";
 import { cn } from "@/lib/utils";
@@ -22,12 +26,16 @@ const icons = {
   git: siGit,
   github: siGithub,
   googleadmob: siGoogleadmob,
+  googleanalytics: siGoogleanalytics,
   openapiinitiative: siOpenapiinitiative,
   cursor: siCursor,
   figma: siFigma,
+  react: siReact,
+  typescript: siTypescript,
+  vercel: siVercel,
 } as const;
 
-const darkInvertSlugs = new Set(["github", "cursor", "apple", "xcode"]);
+const darkInvertSlugs = new Set(["github", "cursor", "apple", "xcode", "vercel"]);
 
 interface TechIconProps {
   slug: keyof typeof icons | string;

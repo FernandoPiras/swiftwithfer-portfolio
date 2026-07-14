@@ -10,7 +10,7 @@ export function Skills() {
       id="skills"
       eyebrow="Stack"
       title="Competenze"
-      subtitle="Stack tecnico per app native performanti, sicure e pronte per la pubblicazione."
+      subtitle="Competenze full stack per prodotti enterprise: app native, web app, backend cloud e UX di livello professionale."
     >
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {siteConfig.skills.map((skill, index) => (

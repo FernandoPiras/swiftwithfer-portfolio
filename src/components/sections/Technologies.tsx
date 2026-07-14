@@ -11,7 +11,7 @@ export function Technologies() {
       id="technologies"
       eyebrow="Stack"
       title="Tecnologie"
-      subtitle="Strumenti e framework che uso ogni giorno per costruire app iOS di livello professionale."
+      subtitle="Stack tecnico per app native, web app e backend cloud — strumenti enterprise per prodotti scalabili."
     >
       <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {siteConfig.technologies.map((tech, index) => (

@@ -76,7 +76,7 @@ export function Contact() {
       id="contact"
       eyebrow="Progetti"
       title="Contatti"
-      subtitle="Avvia un progetto con il Discovery Document o scrivimi direttamente."
+      subtitle="Avvia un progetto con il Discovery Document o contattami direttamente. Risposta professionale e processo strutturato."
       className="bg-section-alt/50"
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8">
@@ -90,12 +90,15 @@ export function Contact() {
               Parliamo del tuo prossimo progetto
             </h3>
             <p className="mt-3 leading-relaxed text-muted">
-              Disponibile per consulenze, sviluppo app native, revisione architetturale
-              e supporto fino alla pubblicazione su App Store.
+              Disponibile per app iOS, web app, gestionali aziendali, CRM e consulenza tecnica —
+              dalla discovery alla pubblicazione su App Store e al deploy in produzione.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                 Scrivimi ora
+              </ButtonLink>
+              <ButtonLink href={siteConfig.portfolioUrl} external variant="secondary">
+                {siteConfig.portfolioUrl.replace("https://", "")}
               </ButtonLink>
               <ButtonLink href="#services" variant="secondary">
                 Vedi i servizi

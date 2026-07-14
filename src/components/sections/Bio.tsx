@@ -17,7 +17,7 @@ export function Bio() {
       id="bio"
       eyebrow="Profilo"
       title="Chi sono"
-      subtitle="Sviluppatore iOS con focus su prodotti curati, scalabili e pronti per l'App Store."
+      subtitle="Sviluppatore iOS e software con focus su prodotti enterprise, scalabili e pronti per il mercato."
     >
       <GlassCard className="overflow-hidden">
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-[220px_1fr] lg:items-start">

@@ -33,7 +33,7 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
     >
       <GlassCard
         as="article"
-        className="group overflow-hidden md:transition-transform md:duration-500 md:hover:-translate-y-1"
+        className="group overflow-hidden md:transition-transform md:duration-500 md:hover:-translate-y-1 premium-card"
       >
         <div className="grid gap-6 md:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
           <div className="order-2 space-y-4 sm:space-y-5 lg:order-1">

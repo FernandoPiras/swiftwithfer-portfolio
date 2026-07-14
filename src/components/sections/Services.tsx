@@ -14,20 +14,24 @@ export function Services() {
       id="services"
       eyebrow="Offerta"
       title="Servizi"
-      subtitle="Supporto professionale per chi vuole portare un'idea iOS su App Store con qualità da prodotto finito."
+      subtitle="Sviluppo end-to-end per app iOS, web app, gestionali aziendali e CRM — con la qualità di un prodotto enterprise."
       className="bg-section-alt/50"
     >
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {siteConfig.services.map((service, index) => (
           <motion.div
             key={service.id}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
+            transition={{ duration: 0.4, delay: index * 0.04 }}
+            className="h-full"
           >
-            <GlassCard className="h-full">
-              <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
+            <GlassCard className="premium-card h-full">
+              <p className="text-xs font-semibold uppercase tracking-wider text-accent">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-3 text-lg font-semibold text-foreground">{service.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
                 {service.description}
               </p>
@@ -36,8 +40,8 @@ export function Services() {
         ))}
       </div>
 
-      <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <ButtonLink href="#contact">Richiedi una consulenza</ButtonLink>
+      <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <ButtonLink href="#contact">Avvia un progetto</ButtonLink>
         {instagram ? (
           <ButtonLink href={instagram.url} external variant="secondary">
             Seguimi su Instagram

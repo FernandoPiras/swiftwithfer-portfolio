@@ -59,11 +59,31 @@ export const siteConfig = {
     full: "/images/brand/logo.png",
     alt: "SwiftWithFer — iOS Developer",
   },
-  role: "iOS Developer",
-  tagline: "App iOS native, dal codice all'App Store.",
+  role: "iOS & Software Developer",
+  tagline: "App iOS native, web app e gestionali aziendali — dal codice al rilascio.",
   email: "fernando@fernandopiras.com",
   portfolioUrl: "https://fernandopiras.com",
   locale: "it_IT",
+  hero: {
+    valueProps: [
+      "App iOS native pubblicate su App Store",
+      "Web app, CRM e gestionali su misura",
+      "Architetture scalabili con Firebase e cloud",
+    ],
+    credibility: [
+      "App Store",
+      "Firebase",
+      "SwiftUI",
+      "React",
+      "React Native",
+      "iOS",
+      "Web",
+      "AI",
+      "Cloud",
+      "UI/UX",
+      "Performance",
+    ],
+  },
   photo: {
     hero: "/images/profile/fernando.jpg",
     bio: "/images/profile/fernando-bio.png",
@@ -71,24 +91,31 @@ export const siteConfig = {
   },
   bio: {
     short:
-      "Sviluppatore iOS indipendente con passione per prodotti digitali curati nei dettagli, dalla prima riga di codice alla pubblicazione su App Store.",
-    full: "Creo app iOS che uniscono design raffinato, architetture solide e attenzione maniacale all'esperienza utente. Ogni progetto nasce da un'esigenza reale e cresce con iterazioni misurate, test rigorosi e un occhio costante alle linee guida Apple.",
+      "Sviluppatore iOS e software indipendente. Realizzo prodotti digitali di livello enterprise: app native, web app e gestionali aziendali, dalla progettazione al rilascio.",
+    full: "Unisco design raffinato, architetture solide e attenzione maniacale all'esperienza utente. Ogni progetto nasce da un'esigenza reale del business e cresce con iterazioni misurate, test rigorosi e standard di qualità da prodotto finito.",
     journey:
-      "Il mio percorso parte dalla curiosità per Swift e SwiftUI, passa per app pubblicate in salute, produttività e lifestyle, fino a prodotti completi con Firebase, StoreKit, widget, Watch e integrazioni cloud.",
+      "Il percorso parte da Swift e SwiftUI, passa per app pubblicate in salute, produttività e servizi, fino a piattaforme complete con Firebase, gestionali web, StoreKit, widget, Watch e integrazioni cloud.",
     philosophy:
-      "Credo in software che rispetta il tempo dell'utente: interfacce chiare, animazioni fluide, performance misurabili e privacy by design. La qualità non è un extra — è il requisito minimo.",
-    focus: ["Qualità del codice", "UX & accessibilità", "Performance", "App Store readiness"],
+      "Credo in software che rispetta il tempo dell'utente: interfacce chiare, animazioni fluide, performance misurabili e privacy by design. La qualità non è un extra — è il requisito minimo per ogni prodotto che rilascio.",
+    focus: [
+      "Qualità del codice",
+      "UX & accessibilità",
+      "Performance",
+      "App Store readiness",
+      "Web & gestionali",
+      "Firebase & cloud",
+    ],
     highlights: [
       {
         label: "App Store",
         value: "3 app pubblicate",
       },
       {
-        label: "Brand",
-        value: "SwiftWithFer",
+        label: "Stack",
+        value: "iOS · Web · Cloud",
       },
       {
-        label: "Contenuti",
+        label: "Brand",
         value: "@swiftwithfer",
       },
     ],
@@ -113,27 +140,51 @@ export const siteConfig = {
         "Progettazione e sviluppo end-to-end in SwiftUI: architetture MVVM, integrazioni native, test e pubblicazione su App Store.",
     },
     {
+      id: "web-development",
+      title: "Sviluppo web",
+      description:
+        "Siti web e web app responsive con React, TypeScript e deploy su Vercel. Performance, SEO e UX curata su ogni dispositivo.",
+    },
+    {
+      id: "business-software",
+      title: "Gestionali aziendali",
+      description:
+        "Software su misura per attività e aziende: flussi operativi, pannelli admin, reportistica e strumenti di gestione quotidiana.",
+    },
+    {
+      id: "crm",
+      title: "CRM & automazioni",
+      description:
+        "CRM evoluti, automazioni di processo, marketing e fidelizzazione clienti integrati con app e backend cloud.",
+    },
+    {
       id: "consulting",
       title: "Consulenza tecnica",
       description:
         "Revisione codice, audit architetturale, performance tuning e roadmap tecnica per prodotti già avviati o in fase di scaling.",
     },
     {
-      id: "app-store",
-      title: "App Store readiness",
+      id: "ui-ux",
+      title: "UI/UX Design",
       description:
-        "StoreKit, abbonamenti, compliance Apple, metadata, screenshot e supporto fino all'approvazione e al lancio.",
+        "Interfacce chiare, accessibili e coerenti con le linee guida Apple. Prototipi, design system e microinterazioni curate.",
     },
     {
       id: "firebase-cloud",
-      title: "Backend & Firebase",
+      title: "Firebase & Backend",
       description:
-        "Auth, Firestore, Cloud Functions, push notification e sync cloud per app con utenti reali e dati sensibili.",
+        "Auth, Firestore, Cloud Functions, push notification, sync realtime e architetture cloud scalabili.",
+    },
+    {
+      id: "end-to-end",
+      title: "Sviluppo completo",
+      description:
+        "Dalla progettazione al rilascio: discovery, sviluppo, test, deploy, App Store e supporto post-lancio.",
     },
   ],
   metrics: {
     publishedApps: 3,
-    technologies: 12,
+    technologies: 16,
     appStoreDeveloperUrl:
       "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
   },
@@ -141,31 +192,37 @@ export const siteConfig = {
     "Swift",
     "SwiftUI",
     "UIKit",
+    "React",
+    "TypeScript",
     "Firebase",
+    "Firestore",
     "Cloud Functions",
     "Xcode",
     "StoreKit",
-    "AdMob",
+    "Vercel",
     "Git",
-    "GitHub",
     "REST API",
     "AI Tools (Cursor, ChatGPT)",
     "UI/UX",
     "App Architecture",
   ],
   technologies: [
-    { name: "Swift", slug: "swift" },
     { name: "SwiftUI", slug: "apple" },
-    { name: "UIKit", slug: "apple" },
-    { name: "Xcode", slug: "xcode" },
+    { name: "Swift", slug: "swift" },
     { name: "Firebase", slug: "firebase" },
+    { name: "Firestore", slug: "firebase" },
+    { name: "Cloud Functions", slug: "firebase" },
+    { name: "React", slug: "react" },
+    { name: "TypeScript", slug: "typescript" },
+    { name: "Vercel", slug: "vercel" },
     { name: "StoreKit", slug: "appstore" },
-    { name: "Git", slug: "git" },
-    { name: "GitHub", slug: "github" },
-    { name: "AdMob", slug: "googleadmob" },
-    { name: "REST API", slug: "openapiinitiative" },
-    { name: "Cursor", slug: "cursor" },
+    { name: "Xcode", slug: "xcode" },
+    { name: "AI / Cursor", slug: "cursor" },
+    { name: "Analytics", slug: "googleanalytics" },
     { name: "Figma", slug: "figma" },
+    { name: "Git", slug: "git" },
+    { name: "REST API", slug: "openapiinitiative" },
+    { name: "AdMob", slug: "googleadmob" },
   ] satisfies Technology[],
   timeline: [
     {
@@ -252,9 +309,9 @@ export const siteConfig = {
     {
       id: "slotiva",
       name: "Slotiva",
-      tagline: "Agenda e prenotazioni smart",
+      tagline: "Piattaforma prenotazioni + CRM professionale",
       description:
-        "Piattaforma per saloni, barbieri e PT: calendario, prenotazioni, chat, notifiche push e Slotiva Pro per titolari attività.",
+        "Ecosistema completo per saloni, barbieri e PT: app iOS nativa con prenotazioni, chat, pagamenti e abbonamenti; gestionale web CRM su slotiva.it con dashboard, analytics e KPI.",
       icon: "/images/apps/slotiva/icon.png",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
@@ -264,6 +321,11 @@ export const siteConfig = {
       technologies: [
         "SwiftUI",
         "Firebase",
+        "Firestore",
+        "Cloud Functions",
+        "React",
+        "TypeScript",
+        "Vercel",
         "StoreKit 2",
         "Apple Watch",
         "Push Notifications",
@@ -312,9 +374,9 @@ export const siteConfig = {
   ] satisfies AppProject[],
   seo: {
     title:
-      "Fernando Piras — iOS Developer, SwiftUI & App Developer | SwiftWithFer",
+      "Fernando Piras — iOS & Software Developer | SwiftWithFer",
     description:
-      "Portfolio ufficiale di Fernando Piras (SwiftWithFer). Sviluppatore iOS, SwiftUI e software developer: app iOS, siti web e gestionali aziendali in Italia.",
+      "Portfolio ufficiale di Fernando Piras (SwiftWithFer). Sviluppatore iOS, SwiftUI, web e gestionali aziendali in Italia. App native, CRM, Firebase e prodotti enterprise.",
     keywords: [
       "Fernando Piras",
       "SwiftWithFer",
