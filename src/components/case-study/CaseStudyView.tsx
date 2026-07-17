@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import type { CaseStudyContent } from "@/config/case-studies";
 import type { AppProject } from "@/config/site";
 import { siteConfig } from "@/config/site";
@@ -10,32 +13,66 @@ import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
+import { EASE_OUT, MOTION } from "@/lib/motion";
 
 interface CaseStudyViewProps {
   study: CaseStudyContent;
   app: AppProject;
 }
 
-function CaseSection({
+function Reveal({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      className={className}
+      initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-48px" }}
+      transition={{ duration: MOTION.duration.base, delay, ease: EASE_OUT }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function StoryChapter({
+  index,
   title,
   description,
   children,
 }: {
+  index: number;
   title: string;
   description?: string;
   children: ReactNode;
 }) {
   return (
-    <section className="space-y-3">
-      <div>
-        <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-          {title}
-        </h2>
-        {description ? (
-          <p className="mt-1 text-sm text-muted">{description}</p>
-        ) : null}
+    <section className="space-y-4 border-t border-glass-border/80 pt-8 first:border-t-0 first:pt-0 sm:pt-10">
+      <div className="flex items-baseline gap-3">
+        <span className="text-eyebrow text-accent tabular-nums">
+          {String(index).padStart(2, "0")}
+        </span>
+        <div>
+          <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            {title}
+          </h2>
+          {description ? (
+            <p className="mt-1 text-sm text-muted">{description}</p>
+          ) : null}
+        </div>
       </div>
-      <div className="text-sm leading-relaxed text-muted sm:text-base">{children}</div>
+      <div className="text-sm leading-relaxed text-muted sm:text-base sm:leading-relaxed">
+        {children}
+      </div>
     </section>
   );
 }
@@ -46,7 +83,7 @@ function FeatureGrid({ items }: { items: string[] }) {
       {items.map((feature) => (
         <li
           key={feature}
-          className="flex items-start gap-2 rounded-lg border border-glass-border bg-background/40 px-3 py-2 text-sm text-foreground"
+          className="flex items-start gap-2.5 rounded-lg border border-glass-border bg-background/40 px-3 py-2.5 text-sm text-foreground"
         >
           <span
             className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
@@ -65,6 +102,9 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
     beta: "bg-amber-500/12 text-amber-700 dark:text-amber-400",
     "in-development": "bg-blue-500/12 text-blue-700 dark:text-blue-400",
   };
+
+  const architecture = study.architecture || app.architecture;
+  let chapter = 1;
 
   return (
     <article>
@@ -104,21 +144,20 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               <h1 className="text-section-title mt-2 text-foreground">{app.name}</h1>
               <p className="mt-3 text-base font-medium text-accent">{app.tagline}</p>
               <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-                {app.description}
+                {study.positioning}
               </p>
 
-              {app.outcomes?.length ? (
-                <ul className="mt-5 space-y-2 text-left">
-                  {app.outcomes.map((outcome) => (
+              {study.trustSignals.length ? (
+                <ul
+                  className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start"
+                  aria-label="Segnali di affidabilità"
+                >
+                  {study.trustSignals.map((signal) => (
                     <li
-                      key={outcome}
-                      className="flex items-start gap-2 text-sm text-foreground"
+                      key={signal}
+                      className="rounded-full border border-glass-border bg-background/50 px-3 py-1 text-xs font-medium text-foreground"
                     >
-                      <span
-                        className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
-                        aria-hidden
-                      />
-                      {outcome}
+                      {signal}
                     </li>
                   ))}
                 </ul>
@@ -157,148 +196,193 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
       </section>
 
       {app.demoVideo ? (
-        <section
-          id="demo"
-          aria-label={`Demo ${app.name}`}
-          className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-14"
-        >
-          <h2 className="text-lg font-semibold text-foreground sm:text-xl">Demo reale</h2>
-          <p className="mb-6 mt-2 max-w-lg text-sm text-muted">
-            Registrazione diretta da iPhone — nessun mockup.
-          </p>
-          <AppDemoVideo
-            src={app.demoVideo.src}
-            poster={app.demoVideo.poster}
-            title={app.demoVideo.title}
-            size="full"
-          />
-        </section>
+        <Reveal>
+          <section
+            id="demo"
+            aria-label={`Demo ${app.name}`}
+            className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-14"
+          >
+            <h2 className="text-lg font-semibold text-foreground sm:text-xl">Demo reale</h2>
+            <p className="mb-6 mt-2 max-w-lg text-sm text-muted">
+              Registrazione diretta da iPhone — il prodotto in uso, non un mockup.
+            </p>
+            <AppDemoVideo
+              src={app.demoVideo.src}
+              poster={app.demoVideo.poster}
+              title={app.demoVideo.title}
+              size="full"
+            />
+          </section>
+        </Reveal>
       ) : null}
 
       <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 sm:space-y-12 sm:px-6 sm:pb-24">
-        <GlassCard className="space-y-8 sm:space-y-10">
-          <CaseSection title="Il problema">
-            <p>{study.problem}</p>
-          </CaseSection>
-
-          <CaseSection title="La soluzione">
-            <p>{study.solution}</p>
-          </CaseSection>
-
-          {app.architecture ? (
-            <CaseSection title="Architettura">
-              <p>{app.architecture}</p>
-            </CaseSection>
-          ) : null}
-
-          {study.featureGroups?.length ? (
-            study.featureGroups.map((group) => (
-              <CaseSection
-                key={group.title}
-                title={group.title}
-                description={group.description}
-              >
-                <FeatureGrid items={group.items} />
-              </CaseSection>
-            ))
-          ) : (
-            <CaseSection title="Funzionalità">
-              <FeatureGrid items={study.features} />
-            </CaseSection>
-          )}
-
-          <CaseSection title="Stack tecnico">
-            <ul className="flex flex-wrap gap-2">
-              {app.technologies.map((tech) => (
-                <li
-                  key={tech}
-                  className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs text-muted"
-                >
-                  {tech}
-                </li>
-              ))}
-            </ul>
-          </CaseSection>
-
-          <CaseSection title="Sfide">
-            <ul className="space-y-2.5">
-              {study.challenges.map((challenge) => (
-                <li key={challenge} className="flex gap-3">
-                  <span
-                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
-                    aria-hidden
-                  />
-                  <span>{challenge}</span>
-                </li>
-              ))}
-            </ul>
-          </CaseSection>
-
-          <CaseSection title="Risultati">
-            <ul className="space-y-2.5">
-              {study.results.map((result) => (
-                <li key={result} className="flex gap-3">
-                  <span
-                    className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
-                    aria-hidden
-                  />
-                  <span>{result}</span>
-                </li>
-              ))}
-            </ul>
-          </CaseSection>
-        </GlassCard>
-
-        <section aria-label={`Screenshot ${app.name}`}>
-          <h2 className="mb-6 text-lg font-semibold text-foreground sm:text-xl">
-            Screenshot
-          </h2>
-          <ul className="grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {app.screenshots.map((screenshot, index) => (
-              <li key={screenshot}>
-                <PhoneFrame
-                  src={screenshot}
-                  alt={`Screenshot ${index + 1} di ${app.name}`}
-                  size="compact"
-                />
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {app.reviews?.length ? (
-          <GlassCard>
-            <AppStoreReviews app={app} className="mt-0 border-0 pt-0" />
-          </GlassCard>
+        {study.ecosystem?.length ? (
+          <Reveal>
+            <div>
+              <h2 className="mb-2 text-lg font-semibold text-foreground sm:text-xl">
+                L&apos;ecosistema
+              </h2>
+              <p className="mb-6 max-w-2xl text-sm text-muted">
+                Tre superfici, una piattaforma: così Slotiva copre l&apos;intera attività.
+              </p>
+              <ul className="grid gap-4 sm:grid-cols-3">
+                {study.ecosystem.map((layer, index) => (
+                  <li key={layer.title}>
+                    <GlassCard className="premium-card h-full">
+                      <p className="text-eyebrow text-accent">
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <h3 className="mt-2 font-semibold text-foreground">{layer.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
+                        {layer.summary}
+                      </p>
+                    </GlassCard>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         ) : null}
 
-        <GlassCard className="text-center">
-          <h2 className="text-lg font-semibold text-foreground sm:text-xl">
-            Vuoi un prodotto come {app.name}?
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-sm text-muted">
-            Raccontami la tua idea — rispondo entro 48 ore lavorative.
-          </p>
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <ButtonLink
-              href={`mailto:${siteConfig.email}?subject=Consulenza%20-%20${encodeURIComponent(app.name)}`}
-              external
-              className="w-full sm:w-auto"
-            >
-              Contattami
-            </ButtonLink>
-            {app.appStoreUrl ? (
+        <Reveal delay={0.04}>
+          <GlassCard className="space-y-0">
+            <StoryChapter index={chapter++} title="Il problema">
+              <p>{study.problem}</p>
+            </StoryChapter>
+
+            <StoryChapter index={chapter++} title="La soluzione">
+              <p>{study.solution}</p>
+            </StoryChapter>
+
+            {study.featureGroups?.length ? (
+              study.featureGroups.map((group) => (
+                <StoryChapter
+                  key={group.title}
+                  index={chapter++}
+                  title={group.title}
+                  description={group.description}
+                >
+                  <FeatureGrid items={group.items} />
+                </StoryChapter>
+              ))
+            ) : (
+              <StoryChapter index={chapter++} title="Funzionalità principali">
+                <FeatureGrid items={study.features} />
+              </StoryChapter>
+            )}
+
+            {architecture ? (
+              <StoryChapter index={chapter++} title="Architettura">
+                <p>{architecture}</p>
+              </StoryChapter>
+            ) : null}
+
+            <StoryChapter index={chapter++} title="Tecnologie">
+              <ul className="flex flex-wrap gap-2">
+                {app.technologies.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs font-medium text-foreground sm:text-sm"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </StoryChapter>
+
+            <StoryChapter index={chapter++} title="Sfide affrontate">
+              <ul className="space-y-2.5">
+                {study.challenges.map((challenge) => (
+                  <li key={challenge} className="flex gap-3">
+                    <span
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                      aria-hidden
+                    />
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </StoryChapter>
+
+            <StoryChapter index={chapter++} title="Il risultato">
+              <ul className="space-y-2.5">
+                {study.results.map((result) => (
+                  <li key={result} className="flex gap-3 text-foreground">
+                    <span
+                      className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                      aria-hidden
+                    />
+                    <span>{result}</span>
+                  </li>
+                ))}
+              </ul>
+            </StoryChapter>
+          </GlassCard>
+        </Reveal>
+
+        <Reveal delay={0.06}>
+          <section aria-label={`Screenshot ${app.name}`}>
+            <h2 className="mb-2 text-lg font-semibold text-foreground sm:text-xl">
+              Il prodotto in immagini
+            </h2>
+            <p className="mb-6 max-w-xl text-sm text-muted">
+              Screenshot reali, stesso formato e stessa cornice — per leggere il prodotto senza rumore.
+            </p>
+            <ul className="grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+              {app.screenshots.map((screenshot, index) => (
+                <li key={screenshot} className="w-full max-w-[260px]">
+                  <PhoneFrame
+                    src={screenshot}
+                    alt={`Screenshot ${index + 1} di ${app.name}`}
+                    size="compact"
+                  />
+                  <p className="mt-3 text-center text-xs text-muted">
+                    Schermata {index + 1}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </Reveal>
+
+        {app.reviews?.length ? (
+          <Reveal delay={0.08}>
+            <GlassCard>
+              <AppStoreReviews app={app} className="mt-0 border-0 pt-0" />
+            </GlassCard>
+          </Reveal>
+        ) : null}
+
+        <Reveal delay={0.1}>
+          <GlassCard className="text-center">
+            <h2 className="text-lg font-semibold text-foreground sm:text-xl">
+              Vuoi un prodotto come {app.name}?
+            </h2>
+            <p className="mx-auto mt-3 max-w-md text-sm text-muted">
+              Dalla discovery al rilascio — un unico partner. Rispondo entro 48 ore lavorative.
+            </p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink
-                href={app.appStoreUrl}
+                href={`mailto:${siteConfig.email}?subject=Consulenza%20-%20${encodeURIComponent(app.name)}`}
                 external
-                variant="secondary"
                 className="w-full sm:w-auto"
               >
-                App Store
+                Contattami
               </ButtonLink>
-            ) : null}
-          </div>
-        </GlassCard>
+              {app.appStoreUrl ? (
+                <ButtonLink
+                  href={app.appStoreUrl}
+                  external
+                  variant="secondary"
+                  className="w-full sm:w-auto"
+                >
+                  App Store
+                </ButtonLink>
+              ) : null}
+            </div>
+          </GlassCard>
+        </Reveal>
       </div>
     </article>
   );

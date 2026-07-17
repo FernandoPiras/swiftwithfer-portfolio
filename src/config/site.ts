@@ -196,14 +196,14 @@ export const siteConfig = {
       name: "Slotiva",
       tagline: "Prenotazioni, CRM e operations in un solo sistema",
       description:
-        "La piattaforma per saloni, barbieri e studi: app iOS per clienti e titolari, gestionale web con dashboard e KPI, backend cloud in tempo reale. Meno no-show, agenda sempre aggiornata, business sotto controllo.",
+        "L'ecosistema completo per saloni e studi: app iOS, gestionale web CRM e backend cloud in tempo reale. Meno no-show, agenda allineata, business sotto controllo — dalla prenotazione all'analytics.",
       outcomes: [
-        "App + CRM web + backend in un unico ecosistema",
+        "Ecosistema app + CRM web + Firebase",
         "Gestionale live su slotiva.it",
         "Prenotazioni, pagamenti e chat sincronizzati",
       ],
       architecture:
-        "App iOS (SwiftUI) e gestionale web (React/TypeScript) condividono Firestore e Cloud Functions. Auth, ruoli, multi-business e sync realtime unificano clienti, staff e amministrazione su ogni dispositivo.",
+        "App iOS (SwiftUI) e gestionale web (React/TypeScript su Vercel) condividono Firestore e Cloud Functions. Auth, ruoli, multi-business e sync realtime unificano clienti, staff e amministrazione.",
       icon: "/images/apps/slotiva/icon.png",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
@@ -236,16 +236,16 @@ export const siteConfig = {
     {
       id: "andrometrics",
       name: "AndroMetrics",
-      tagline: "Monitoraggio fertilità maschile, chiaro ogni giorno",
+      tagline: "Qualità medicale, chiarezza ogni giorno",
       description:
-        "Prodotto medicale premium: dati complessi tradotti in uno score 0–100, grafici evolutivi e insight comprensibili. Privacy by design, widget e piano Premium — progettata per fiducia e chiarezza clinica.",
+        "App medicale premium per fertilità e benessere maschile: tracking, score 0–100, grafici e report PDF. Privacy by design e UX pensata per fiducia — non per tecnici.",
       outcomes: [
-        "Score giornaliero immediato e comprensibile",
+        "Tracking e score giornaliero chiari",
         "Valutazione 5.0 su App Store",
-        "Dati sensibili protetti e sincronizzati",
+        "Report PDF e privacy protetta",
       ],
       architecture:
-        "App SwiftUI con sync cloud Firebase, OCR referti (Vision), widget iOS e abbonamenti StoreKit 2. Flusso dati pensato per continuità d'uso e protezione delle informazioni di salute.",
+        "App SwiftUI con sync Firebase, digitalizzazione referti (Vision), widget iOS e StoreKit 2. Flusso dati orientato a continuità, chiarezza clinica e protezione delle informazioni di salute.",
       icon: "/images/apps/andrometrics/icon.png",
       screenshots: [
         "/images/apps/andrometrics/screenshot-1.png",
@@ -298,16 +298,16 @@ export const siteConfig = {
     {
       id: "preventivorapido",
       name: "PreventivoRapido PRO",
-      tagline: "Preventivi professionali che chiudono lavori",
+      tagline: "Dal cliente al preventivo firmato, in pochi minuti",
       description:
-        "Strumento professionale per artigiani e freelance: preventivi PDF curati, firma cliente, rubrica e sync cloud. Meno tempo in ufficio, più tempo sul campo — con documenti che trasmettono affidabilità.",
+        "Strumento professionale per artigiani e freelance: preventivi PDF rapidi, firma digitale e rubrica sincronizzata. Semplicità sul campo, affidabilità da studio.",
       outcomes: [
-        "Preventivi PDF pronti in minuti",
-        "Firma digitale integrata nel documento",
-        "Rubrica clienti sempre sincronizzata",
+        "Preventivi PDF in pochi minuti",
+        "Firma digitale nel documento",
+        "Più produttività, meno lavoro d'ufficio",
       ],
       architecture:
-        "App SwiftUI con generazione PDF, firma digitale, Sign in with Apple e sync cloud. Monetizzazione StoreKit 2 sul piano Pro.",
+        "App SwiftUI con PDF, firma digitale, Sign in with Apple e sync cloud. Piano Pro via StoreKit 2 per chi chiude lavori ogni giorno.",
       icon: "/images/apps/preventivorapido/icon.png",
       screenshots: [
         "/images/apps/preventivorapido/screenshot-1.png",

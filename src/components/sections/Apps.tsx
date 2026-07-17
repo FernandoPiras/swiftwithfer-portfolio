@@ -9,8 +9,8 @@ export function Apps() {
     <Section
       id="apps"
       eyebrow="Portfolio"
-      title="Prodotti rilasciati"
-      subtitle="Software reale, utenti reali. Ogni progetto include case study, demo e link diretti."
+      title="Prodotti con una storia"
+      subtitle="Ogni release nasce da un problema reale. Case study, demo e link diretti — non slide."
       className="section-surface"
     >
       <GlassCard className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
