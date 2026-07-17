@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useId, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import type { AppProject } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
-import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
-import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
 import { EASE_OUT } from "@/lib/motion";
 
@@ -23,20 +21,32 @@ const statusStyles = {
   "in-development": "bg-blue-500/12 text-blue-700 dark:text-blue-400",
 };
 
-const VISIBLE_TECH = 4;
+const VISIBLE_TECH = 5;
 
 export function AppCard({ app, index = 0 }: AppCardProps) {
   const [activeScreenshot, setActiveScreenshot] = useState(0);
+  const reduceMotion = useReducedMotion();
+  const tabId = useId();
   const extraTech = app.technologies.length - VISIBLE_TECH;
+  const isFlagship = app.id === "slotiva";
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
+    <motion.div
+      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, delay: index * 0.06, ease: EASE_OUT }}
     >
-      <GlassCard as="article" className="premium-card overflow-hidden">
+      <GlassCard
+        className={cn(
+          "premium-card overflow-hidden",
+          isFlagship && "ring-1 ring-accent/15",
+        )}
+      >
+        {isFlagship ? (
+          <p className="text-eyebrow mb-5 text-accent">Progetto principale</p>
+        ) : null}
+
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-10">
           <div className="order-2 space-y-5 lg:order-1">
             <div className="flex items-start gap-4">
@@ -76,9 +86,10 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                     key={outcome}
                     className="flex items-start gap-2.5 text-sm text-foreground"
                   >
-                    <span className="mt-1.5 text-accent" aria-hidden>
-                      ✓
-                    </span>
+                    <span
+                      className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                      aria-hidden
+                    />
                     {outcome}
                   </li>
                 ))}
@@ -109,12 +120,22 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                 Case Study
               </ButtonLink>
               {app.appStoreUrl ? (
-                <ButtonLink href={app.appStoreUrl} external variant="secondary" className="w-full sm:w-auto">
+                <ButtonLink
+                  href={app.appStoreUrl}
+                  external
+                  variant="secondary"
+                  className="w-full sm:w-auto"
+                >
                   App Store
                 </ButtonLink>
               ) : null}
               {app.websiteUrl ? (
-                <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
+                <ButtonLink
+                  href={app.websiteUrl}
+                  external
+                  variant="secondary"
+                  className="w-full sm:w-auto"
+                >
                   {getWebsiteLinkLabel(app.websiteUrl)}
                 </ButtonLink>
               ) : null}
@@ -134,45 +155,53 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                 role="tablist"
                 aria-label={`Screenshot ${app.name}`}
               >
-                {app.screenshots.map((screenshot, screenshotIndex) => (
-                  <button
-                    key={screenshot}
-                    type="button"
-                    role="tab"
-                    aria-selected={activeScreenshot === screenshotIndex}
-                    aria-label={`Screenshot ${screenshotIndex + 1}`}
-                    onClick={() => setActiveScreenshot(screenshotIndex)}
-                    className="flex min-h-11 min-w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                  >
-                    <span
-                      className={cn(
-                        "block rounded-full transition-all duration-300",
-                        activeScreenshot === screenshotIndex
-                          ? "h-1.5 w-7 bg-accent"
-                          : "h-1.5 w-1.5 bg-muted/30",
-                      )}
-                    />
-                  </button>
-                ))}
+                {app.screenshots.map((screenshot, screenshotIndex) => {
+                  const selected = activeScreenshot === screenshotIndex;
+                  return (
+                    <button
+                      key={screenshot}
+                      type="button"
+                      role="tab"
+                      id={`${tabId}-tab-${screenshotIndex}`}
+                      aria-selected={selected}
+                      aria-controls={`${tabId}-panel`}
+                      tabIndex={selected ? 0 : -1}
+                      aria-label={`Screenshot ${screenshotIndex + 1}`}
+                      onClick={() => setActiveScreenshot(screenshotIndex)}
+                      onKeyDown={(event) => {
+                        if (event.key === "ArrowRight") {
+                          event.preventDefault();
+                          setActiveScreenshot(
+                            (activeScreenshot + 1) % app.screenshots.length,
+                          );
+                        }
+                        if (event.key === "ArrowLeft") {
+                          event.preventDefault();
+                          setActiveScreenshot(
+                            (activeScreenshot - 1 + app.screenshots.length) %
+                              app.screenshots.length,
+                          );
+                        }
+                      }}
+                      className="flex min-h-11 min-w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    >
+                      <span
+                        className={cn(
+                          "block rounded-full transition-all duration-300",
+                          selected ? "h-1.5 w-7 bg-accent" : "h-1.5 w-1.5 bg-muted/30",
+                        )}
+                      />
+                    </button>
+                  );
+                })}
               </div>
             ) : null}
+            <div id={`${tabId}-panel`} role="tabpanel" className="sr-only">
+              Screenshot {activeScreenshot + 1} di {app.name}
+            </div>
           </div>
         </div>
-
-        {app.demoVideo ? (
-          <div className="mt-8 border-t border-glass-border pt-7 sm:mt-10">
-            <p className="text-eyebrow mb-4 text-accent">Demo reale</p>
-            <AppDemoVideo
-              src={app.demoVideo.src}
-              poster={app.demoVideo.poster}
-              title={app.demoVideo.title}
-              size="compact"
-            />
-          </div>
-        ) : null}
-
-        <AppStoreReviews app={app} />
       </GlassCard>
-    </motion.article>
+    </motion.div>
   );
 }

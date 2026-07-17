@@ -98,7 +98,7 @@ export function DiscoveryDocumentPicker() {
             </h4>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               Scrivimi direttamente con una breve descrizione del progetto. Rispondo
-              entro 24–48 ore lavorative.
+              entro 48 ore lavorative.
             </p>
             <div className="mt-5">
               <ButtonLink href={buildDirectMailto(siteConfig.email)}>

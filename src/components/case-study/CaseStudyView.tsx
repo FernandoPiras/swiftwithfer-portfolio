@@ -18,16 +18,23 @@ interface CaseStudyViewProps {
 
 function CaseSection({
   title,
+  description,
   children,
 }: {
   title: string;
+  description?: string;
   children: ReactNode;
 }) {
   return (
     <section className="space-y-3">
-      <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-        {title}
-      </h2>
+      <div>
+        <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+          {title}
+        </h2>
+        {description ? (
+          <p className="mt-1 text-sm text-muted">{description}</p>
+        ) : null}
+      </div>
       <div className="text-sm leading-relaxed text-muted sm:text-base">{children}</div>
     </section>
   );
@@ -41,9 +48,10 @@ function FeatureGrid({ items }: { items: string[] }) {
           key={feature}
           className="flex items-start gap-2 rounded-lg border border-glass-border bg-background/40 px-3 py-2 text-sm text-foreground"
         >
-          <span className="mt-0.5 shrink-0 text-accent" aria-hidden>
-            ✓
-          </span>
+          <span
+            className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+            aria-hidden
+          />
           {feature}
         </li>
       ))}
@@ -102,10 +110,14 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               {app.outcomes?.length ? (
                 <ul className="mt-5 space-y-2 text-left">
                   {app.outcomes.map((outcome) => (
-                    <li key={outcome} className="flex items-start gap-2 text-sm text-foreground">
-                      <span className="text-accent" aria-hidden>
-                        ✓
-                      </span>
+                    <li
+                      key={outcome}
+                      className="flex items-start gap-2 text-sm text-foreground"
+                    >
+                      <span
+                        className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                        aria-hidden
+                      />
                       {outcome}
                     </li>
                   ))}
@@ -119,12 +131,22 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                   </ButtonLink>
                 ) : null}
                 {app.appStoreUrl ? (
-                  <ButtonLink href={app.appStoreUrl} external variant="secondary" className="w-full sm:w-auto">
+                  <ButtonLink
+                    href={app.appStoreUrl}
+                    external
+                    variant="secondary"
+                    className="w-full sm:w-auto"
+                  >
                     App Store
                   </ButtonLink>
                 ) : null}
                 {app.websiteUrl ? (
-                  <ButtonLink href={app.websiteUrl} external variant="secondary" className="w-full sm:w-auto">
+                  <ButtonLink
+                    href={app.websiteUrl}
+                    external
+                    variant="secondary"
+                    className="w-full sm:w-auto"
+                  >
                     {getWebsiteLinkLabel(app.websiteUrl)}
                   </ButtonLink>
                 ) : null}
@@ -163,9 +185,19 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             <p>{study.solution}</p>
           </CaseSection>
 
+          {app.architecture ? (
+            <CaseSection title="Architettura">
+              <p>{app.architecture}</p>
+            </CaseSection>
+          ) : null}
+
           {study.featureGroups?.length ? (
             study.featureGroups.map((group) => (
-              <CaseSection key={group.title} title={group.title}>
+              <CaseSection
+                key={group.title}
+                title={group.title}
+                description={group.description}
+              >
                 <FeatureGrid items={group.items} />
               </CaseSection>
             ))
@@ -192,7 +224,10 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             <ul className="space-y-2.5">
               {study.challenges.map((challenge) => (
                 <li key={challenge} className="flex gap-3">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
+                  <span
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                    aria-hidden
+                  />
                   <span>{challenge}</span>
                 </li>
               ))}
@@ -203,9 +238,10 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             <ul className="space-y-2.5">
               {study.results.map((result) => (
                 <li key={result} className="flex gap-3">
-                  <span className="shrink-0 text-accent" aria-hidden>
-                    ✓
-                  </span>
+                  <span
+                    className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                    aria-hidden
+                  />
                   <span>{result}</span>
                 </li>
               ))}
@@ -214,7 +250,9 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </GlassCard>
 
         <section aria-label={`Screenshot ${app.name}`}>
-          <h2 className="mb-6 text-lg font-semibold text-foreground sm:text-xl">Screenshot</h2>
+          <h2 className="mb-6 text-lg font-semibold text-foreground sm:text-xl">
+            Screenshot
+          </h2>
           <ul className="grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {app.screenshots.map((screenshot, index) => (
               <li key={screenshot}>
@@ -250,7 +288,12 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               Contattami
             </ButtonLink>
             {app.appStoreUrl ? (
-              <ButtonLink href={app.appStoreUrl} external variant="secondary" className="w-full sm:w-auto">
+              <ButtonLink
+                href={app.appStoreUrl}
+                external
+                variant="secondary"
+                className="w-full sm:w-auto"
+              >
                 App Store
               </ButtonLink>
             ) : null}

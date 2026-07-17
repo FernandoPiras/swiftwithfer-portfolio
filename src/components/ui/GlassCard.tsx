@@ -15,7 +15,7 @@ export function GlassCard({
   return (
     <Component
       className={cn(
-        "rounded-2xl border border-glass-border bg-glass/80 p-5 shadow-glass backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8",
+        "rounded-2xl border border-glass-border bg-glass/85 p-5 shadow-sm backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8",
         className,
       )}
     >

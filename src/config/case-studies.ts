@@ -1,5 +1,6 @@
 export interface CaseStudyFeatureGroup {
   title: string;
+  description?: string;
   items: string[];
 }
 
@@ -17,12 +18,79 @@ export interface CaseStudyContent {
 
 export const caseStudies: CaseStudyContent[] = [
   {
+    slug: "slotiva",
+    appId: "slotiva",
+    problem:
+      "Saloni e studi gestiscono prenotazioni su WhatsApp e fogli. Sovrapposizioni, no-show e zero visibilità su clienti, staff e fatturato.",
+    solution:
+      "Slotiva unifica operations e crescita: app iOS per clienti e titolari, gestionale web CRM su slotiva.it, backend Firebase in tempo reale. Un solo sistema per agenda, pagamenti, chat e analytics.",
+    features: [],
+    featureGroups: [
+      {
+        title: "App iOS — clienti e titolari",
+        description: "Esperienza native per chi prenota e chi gestisce l'attività.",
+        items: [
+          "Prenotazioni e gestione appuntamenti",
+          "Calendario e disponibilità",
+          "Clienti, staff e ruoli",
+          "Servizi, pacchetti e abbonamenti",
+          "Pagamenti e notifiche push",
+          "Chat e feedback",
+          "Profilo cliente e storico",
+          "Dashboard e statistiche",
+          "Multi business",
+          "Autenticazione e sync realtime",
+          "Companion Apple Watch",
+        ],
+      },
+      {
+        title: "Gestionale web — CRM professionale",
+        description: "Pannello responsive per controllare l'attività da desktop, tablet e mobile.",
+        items: [
+          "Dashboard completa con KPI",
+          "Analytics, BI e insight",
+          "Clienti, storico e fatturato",
+          "CRM, marketing e fidelizzazione",
+          "Gestione staff e servizi",
+          "Disponibilità e config attività",
+          "Pannello amministrativo",
+          "Responsive desktop / tablet / mobile",
+        ],
+      },
+      {
+        title: "Backend & AI",
+        description: "Infrastruttura cloud per affidabilità e automazioni.",
+        items: [
+          "Firebase Auth e Firestore",
+          "Cloud Functions",
+          "Sincronizzazione realtime",
+          "Notifiche e automazioni",
+          "AI assistita nei flussi operativi",
+        ],
+      },
+    ],
+    challenges: [
+      "Prenotazioni simultanee senza conflitti",
+      "UX distinte per clienti e titolari",
+      "Sync affidabile app ↔ web ↔ cloud",
+      "Scalabilità multi-business e multi-staff",
+    ],
+    results: [
+      "App pubblicata su App Store",
+      "CRM operativo su slotiva.it",
+      "Ecosistema integrato pronto per saloni, barbieri e PT",
+      "Operations e analytics nello stesso prodotto",
+    ],
+    seoDescription:
+      "Case study Slotiva: piattaforma prenotazioni con app iOS, gestionale web CRM, Firebase e sync realtime.",
+  },
+  {
     slug: "andrometrics",
     appId: "andrometrics",
     problem:
-      "Monitorare il benessere maschile richiede continuità e chiarezza. Fogli sparsi e app generiche non offrono trend comprensibili né un quadro unificato nel tempo.",
+      "Il benessere maschile richiede continuità e chiarezza. Fogli e app generiche non offrono un quadro clinico comprensibile nel tempo.",
     solution:
-      "AndroMetrics traduce dati complessi in un punteggio giornaliero 0–100. Grafici evolutivi, referti digitalizzati e widget iOS — tutto in un'interfaccia medica premium, pensata per l'uso quotidiano.",
+      "AndroMetrics traduce parametri e abitudini in uno score giornaliero 0–100, con grafici evolutivi e insight. Un'esperienza medicale premium, pensata per fiducia e uso quotidiano.",
     features: [
       "Score fertilità 0–100 ogni giorno",
       "Monitoraggio parametri e abitudini",
@@ -33,93 +101,19 @@ export const caseStudies: CaseStudyContent[] = [
       "Piano Premium",
     ],
     challenges: [
-      "Comunicare dati di salute con chiarezza, senza complessità",
-      "Proteggere dati sensibili con sync cloud sicura",
+      "Comunicare dati di salute senza complessità",
+      "Proteggere dati sensibili con sync sicura",
       "Digitalizzare referti con formati diversi",
       "Monetizzazione conforme alle linee guida Apple",
     ],
     results: [
       "Valutazione 5.0 su App Store",
       "Recensioni positive da utenti reali",
-      "UX medica curata e comprensibile",
+      "UX medicale chiara e affidabile",
       "Piano Premium integrato",
     ],
     seoDescription:
-      "Case study AndroMetrics: app iOS per monitoraggio fertilità maschile con score giornaliero, grafici e widget.",
-  },
-  {
-    slug: "slotiva",
-    appId: "slotiva",
-    problem:
-      "Saloni e studi gestiscono prenotazioni su WhatsApp e fogli. Risultato: sovrapposizioni, no-show, zero visibilità su clienti e performance.",
-    solution:
-      "Slotiva unifica prenotazioni, pagamenti e CRM in un ecosistema: app iOS per clienti e titolari, gestionale web professionale su slotiva.it, backend sincronizzato in tempo reale.",
-    features: [],
-    featureGroups: [
-      {
-        title: "App iOS — per clienti e titolari",
-        items: [
-          "Prenotazioni",
-          "Clienti",
-          "Staff",
-          "Calendario",
-          "Servizi",
-          "Disponibilità",
-          "Notifiche push",
-          "Autenticazione",
-          "Ruoli utente",
-          "Multi business",
-          "Statistiche",
-          "Dashboard",
-          "Gestione appuntamenti",
-          "Storico",
-          "Pagamenti",
-          "Pacchetti",
-          "Abbonamenti",
-          "Feedback",
-          "Chat",
-          "Profilo cliente",
-          "Sincronizzazione realtime",
-          "Companion Apple Watch",
-        ],
-      },
-      {
-        title: "Gestionale Web — CRM professionale",
-        items: [
-          "Dashboard completa",
-          "Analytics",
-          "KPI",
-          "Clienti",
-          "Storico",
-          "Fatturato",
-          "Business Intelligence",
-          "Insight",
-          "CRM evoluto",
-          "Marketing",
-          "Fidelizzazione",
-          "Gestione staff",
-          "Gestione servizi",
-          "Disponibilità",
-          "Configurazione attività",
-          "Pannello amministrativo",
-          "Responsive desktop, tablet e mobile",
-        ],
-      },
-    ],
-    challenges: [
-      "Prenotazioni simultanee senza conflitti",
-      "Esperienze distinte per clienti e titolari",
-      "Sync app iOS ↔ gestionale web in tempo reale",
-      "Notifiche affidabili per team multipli",
-    ],
-    results: [
-      "App live su App Store",
-      "CRM operativo su slotiva.it",
-      "Piattaforma pronta per saloni, barbieri e PT",
-      "Ecosistema integrato app + web + backend",
-    ],
-    seoDescription:
-      "Case study Slotiva: piattaforma prenotazioni con app iOS e gestionale web CRM per saloni e studi.",
+      "Case study AndroMetrics: app iOS medicale premium per monitoraggio fertilità maschile con score giornaliero.",
   },
   {
     slug: "preventivorapido",
@@ -127,7 +121,7 @@ export const caseStudies: CaseStudyContent[] = [
     problem:
       "Artigiani e professionisti perdono ore con preventivi manuali: documenti non uniformi, firme mancanti, nessun archivio clienti.",
     solution:
-      "PreventivoRapido PRO digitalizza l'intero flusso: preventivi PDF in minuti, firma cliente integrata, rubrica organizzata e backup automatico.",
+      "PreventivoRapido PRO digitalizza il flusso commerciale: preventivi PDF in minuti, firma cliente, rubrica e sync cloud — documenti che trasmettono professionalità.",
     features: [
       "Preventivi PDF professionali",
       "Rubrica clienti con storico",
@@ -145,7 +139,7 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     results: [
       "App live su App Store",
-      "Tempo di preventivazione ridotto drasticamente",
+      "Tempo di preventivazione drasticamente ridotto",
       "Documenti con firma digitale integrata",
       "Dati sincronizzati tra dispositivi",
     ],

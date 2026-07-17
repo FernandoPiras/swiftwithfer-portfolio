@@ -4,11 +4,10 @@ import { MobileNav } from "@/components/layout/MobileNav";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/#bio", label: "Bio" },
+  { href: "/#apps", label: "Progetti" },
   { href: "/#services", label: "Servizi" },
-  { href: "/#apps", label: "App" },
-  { href: "/#skills", label: "Competenze" },
-  { href: "/#technologies", label: "Tecnologie" },
+  { href: "/#bio", label: "Bio" },
+  { href: "/#technologies", label: "Stack" },
   { href: "/#contact", label: "Contatti" },
 ];
 
@@ -28,7 +27,7 @@ export function ButtonLink({
   external,
 }: ButtonLinkProps) {
   const styles = {
-    primary: "btn-primary hover:opacity-92",
+    primary: "btn-primary",
     secondary:
       "border border-glass-border bg-glass/70 text-foreground backdrop-blur-md hover:border-accent/25 hover:bg-glass",
     ghost: "text-muted hover:text-foreground",

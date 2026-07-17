@@ -2,6 +2,49 @@ import type { AppProject } from "@/config/site";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
 
+function buildAppSchema(app: AppProject, siteUrl: string, position?: number) {
+  const base: Record<string, unknown> = {
+    "@type":
+      app.id === "slotiva"
+        ? ["MobileApplication", "WebApplication"]
+        : "MobileApplication",
+    "@id": `${siteUrl}/apps/${app.id}/#app`,
+    name: app.name,
+    description: app.description,
+    applicationCategory:
+      app.id === "slotiva" ? "BusinessApplication" : "MobileApplication",
+    operatingSystem: app.id === "slotiva" ? "iOS, Web" : "iOS",
+    image: `${siteUrl}${app.icon}`,
+    author: { "@id": `${siteUrl}/#person` },
+    url: app.appStoreUrl ?? `${siteUrl}/apps/${app.id}`,
+  };
+
+  if (typeof position === "number") {
+    base.position = position;
+  }
+
+  if (app.appStoreRating) {
+    base.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: app.appStoreRating.average,
+      ratingCount: app.appStoreRating.count,
+      bestRating: 5,
+      worstRating: 1,
+    };
+  }
+
+  if (app.appStoreUrl) {
+    base.offers = {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+      url: app.appStoreUrl,
+    };
+  }
+
+  return base;
+}
+
 export function buildHomeJsonLd() {
   const siteUrl = getSiteUrl();
   const { seo, name, brand, email, role, skills, social, photo, logo, apps } =
@@ -17,14 +60,7 @@ export function buildHomeJsonLd() {
         givenName: "Fernando",
         familyName: "Piras",
         alternateName: brand,
-        jobTitle: [
-          role,
-          "SwiftUI Developer",
-          "Web Developer",
-          "App Developer",
-          "Software Developer",
-          "Sviluppatore iOS",
-        ],
+        jobTitle: [role, "Sviluppatore iOS", "Software Developer"],
         url: siteUrl,
         email: `mailto:${email}`,
         image: {
@@ -77,26 +113,22 @@ export function buildHomeJsonLd() {
           url: `${siteUrl}/og-image.png`,
           width: 1200,
           height: 630,
-          caption: `${name} — Developer iOS, SwiftUI & Web`,
+          caption: `${name} — Sviluppatore iOS & Software`,
         },
         inLanguage: "it-IT",
-        hasPart: apps.map((app: AppProject, index: number) => ({
-          "@type": "SoftwareApplication",
-          "@id": `${siteUrl}/apps/${app.id}/#app`,
-          position: index + 1,
-          name: app.name,
-          description: app.description,
-          applicationCategory: "MobileApplication",
-          operatingSystem: "iOS",
-          image: `${siteUrl}${app.icon}`,
-          author: { "@id": `${siteUrl}/#person` },
-        })),
+        hasPart: apps.map((app: AppProject, index: number) =>
+          buildAppSchema(app, siteUrl, index + 1),
+        ),
       },
     ],
   };
 }
 
-export function buildCaseStudyJsonLd(app: AppProject, slug: string, description: string) {
+export function buildCaseStudyJsonLd(
+  app: AppProject,
+  slug: string,
+  description: string,
+) {
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/apps/${slug}`;
 
@@ -114,7 +146,7 @@ export function buildCaseStudyJsonLd(app: AppProject, slug: string, description:
         {
           "@type": "ListItem",
           position: 2,
-          name: "App",
+          name: "Progetti",
           item: `${siteUrl}/#apps`,
         },
         {
@@ -134,26 +166,39 @@ export function buildCaseStudyJsonLd(app: AppProject, slug: string, description:
       isPartOf: { "@id": `${siteUrl}/#website` },
       breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
       inLanguage: "it-IT",
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${siteUrl}${app.icon}`,
+      },
     },
     {
-      "@type": "SoftwareApplication",
+      ...buildAppSchema(app, siteUrl),
       "@id": `${pageUrl}/#app`,
-      name: app.name,
-      description: app.description,
-      applicationCategory: "MobileApplication",
-      operatingSystem: "iOS",
-      image: `${siteUrl}${app.icon}`,
-      author: { "@id": `${siteUrl}/#person` },
-      offers: app.appStoreUrl
-        ? {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "EUR",
-            url: app.appStoreUrl,
-          }
-        : undefined,
     },
   ];
+
+  if (app.reviews?.length) {
+    graph.push(
+      ...app.reviews.map((review, index) => ({
+        "@type": "Review",
+        "@id": `${pageUrl}/#review-${index + 1}`,
+        itemReviewed: { "@id": `${pageUrl}/#app` },
+        author: {
+          "@type": "Person",
+          name: review.author,
+        },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: review.rating,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        name: review.title,
+        reviewBody: review.body,
+        datePublished: review.date,
+      })),
+    );
+  }
 
   return {
     "@context": "https://schema.org",

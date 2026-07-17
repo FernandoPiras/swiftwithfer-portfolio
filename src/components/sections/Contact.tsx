@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 import { ButtonLink } from "@/components/layout/Header";
@@ -8,49 +7,12 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 import { DiscoveryDocumentPicker } from "@/components/sections/DiscoveryDocumentPicker";
 import { buildDirectMailto } from "@/config/discovery";
-import { gridItem } from "@/lib/motion";
 
 function EmailIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden>
       <path d="M2 4h20v16H2V4zm2 2v.01L12 13l8-6.99V6H4zm16 10V9.25l-8 6.99-8-6.99V16h16z" />
     </svg>
-  );
-}
-
-export function Social() {
-  return (
-    <Section
-      id="social"
-      eyebrow="Community"
-      title="Seguimi"
-      subtitle="Aggiornamenti su iOS, nuove release e processo di sviluppo."
-    >
-      <div className="mx-auto grid max-w-xl gap-3 sm:grid-cols-2">
-        {siteConfig.social.map((link, index) => (
-          <motion.a
-            key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            {...gridItem(index)}
-            className="premium-card rounded-xl border border-glass-border bg-glass/60 p-5 backdrop-blur-md"
-          >
-            <div className="flex items-center gap-4">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-black/5 dark:bg-white/10 dark:ring-white/10">
-                <SocialBrandIcon icon={link.icon} />
-              </span>
-              <div>
-                <p className="font-semibold text-foreground">{link.name}</p>
-                <p className="text-sm text-muted">
-                  {link.icon === "instagram" ? "@swiftwithfer" : "Fernando Piras"}
-                </p>
-              </div>
-            </div>
-          </motion.a>
-        ))}
-      </div>
-    </Section>
   );
 }
 
@@ -74,7 +36,7 @@ export function Contact() {
               Parliamo del tuo progetto
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-              App iOS, web app, gestionali o CRM — un unico partner dalla prima call al rilascio.
+              App iOS, gestionali o CRM — un unico partner dalla prima call al rilascio.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href={buildDirectMailto(siteConfig.email)}>

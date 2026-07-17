@@ -10,7 +10,7 @@ export function Apps() {
       id="apps"
       eyebrow="Portfolio"
       title="Prodotti rilasciati"
-      subtitle="Software reale, utenti reali, risultati misurabili. Ogni progetto include case study, demo e link diretti."
+      subtitle="Software reale, utenti reali. Ogni progetto include case study, demo e link diretti."
       className="section-surface"
     >
       <GlassCard className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
@@ -19,7 +19,7 @@ export function Apps() {
             Profilo sviluppatore verificato su App Store
           </p>
           <p className="mt-1 text-sm text-muted">
-            AndroMetrics · Slotiva · PreventivoRapido PRO
+            Slotiva · AndroMetrics · PreventivoRapido PRO
           </p>
         </div>
         <ButtonLink
