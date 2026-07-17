@@ -59,7 +59,9 @@ export const siteConfig = {
   brand: "SwiftWithFer",
   logo: {
     full: "/images/brand/logo.png",
+    wordmark: "/images/brand/wordmark.png",
     alt: "SwiftWithFer — iOS Developer",
+    wordmarkAlt: "SwiftWithFer",
   },
   role: "Sviluppatore iOS & Software",
   tagline:

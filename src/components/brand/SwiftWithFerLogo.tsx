@@ -2,13 +2,41 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+/** Intrinsic wordmark dimensions — 2172×724, aspect ≈ 3:1 */
+export const WORDMARK_WIDTH = 2172;
+export const WORDMARK_HEIGHT = 724;
+
 interface SwiftWithFerLogoProps {
-  variant?: "header" | "hero" | "mark" | "icon";
+  variant?: "header" | "footer" | "hero" | "mark" | "icon" | "wordmark";
   className?: string;
   priority?: boolean;
 }
 
 const appIconRadius = "rounded-[22.37%]";
+
+function WordmarkImage({
+  className,
+  priority,
+  sizes,
+}: {
+  className?: string;
+  priority?: boolean;
+  sizes: string;
+}) {
+  const { logo } = siteConfig;
+
+  return (
+    <Image
+      src={logo.wordmark}
+      alt={logo.wordmarkAlt}
+      width={WORDMARK_WIDTH}
+      height={WORDMARK_HEIGHT}
+      priority={priority}
+      sizes={sizes}
+      className={cn("wordmark-img h-full w-auto max-w-full select-none", className)}
+    />
+  );
+}
 
 export function SwiftWithFerLogo({
   variant = "header",
@@ -16,6 +44,32 @@ export function SwiftWithFerLogo({
   priority = false,
 }: SwiftWithFerLogoProps) {
   const { logo } = siteConfig;
+
+  if (variant === "header") {
+    return (
+      <span
+        className={cn(
+          "wordmark-frame inline-flex h-6 items-center sm:h-7",
+          className,
+        )}
+      >
+        <WordmarkImage priority={priority} sizes="(max-width: 640px) 120px, 140px" />
+      </span>
+    );
+  }
+
+  if (variant === "footer" || variant === "wordmark") {
+    return (
+      <span
+        className={cn(
+          "wordmark-frame inline-flex h-5 items-center sm:h-[1.375rem]",
+          className,
+        )}
+      >
+        <WordmarkImage priority={priority} sizes="110px" />
+      </span>
+    );
+  }
 
   if (variant === "hero") {
     return (
@@ -58,11 +112,8 @@ export function SwiftWithFerLogo({
   }
 
   return (
-    <div className={cn("flex items-center gap-2.5", className)}>
-      <SwiftWithFerLogo variant="icon" priority={priority} />
-      <span className="text-xs font-semibold tracking-tight text-foreground dark:text-white sm:text-sm md:text-base">
-        {siteConfig.brand}
-      </span>
-    </div>
+    <span className={cn("wordmark-frame inline-flex h-6 items-center", className)}>
+      <WordmarkImage priority={priority} sizes="140px" />
+    </span>
   );
 }
