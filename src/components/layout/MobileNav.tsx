@@ -114,7 +114,7 @@ export function MobileNav() {
         id="mobile-nav-panel"
         aria-labelledby={titleId}
         className={cn(
-          "fixed inset-x-0 top-[calc(4.25rem+env(safe-area-inset-top,0px))] z-50 mx-4 rounded-2xl border border-glass-border bg-glass/95 p-4 shadow-glass backdrop-blur-xl transition-all duration-300",
+          "fixed inset-x-0 top-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] z-50 mx-4 rounded-2xl border border-glass-border bg-glass/95 p-4 shadow-glass backdrop-blur-xl transition-all duration-300",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",

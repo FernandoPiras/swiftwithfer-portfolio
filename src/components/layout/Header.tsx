@@ -64,11 +64,11 @@ export function ButtonLink({
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/60 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-6 sm:py-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/60 bg-background/80 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
+      <div className="mx-auto flex h-[var(--header-offset)] max-w-6xl items-center justify-between gap-4 px-4 sm:gap-6 sm:px-6">
         <Link
           href="/#hero"
-          className="brand-link -translate-y-px shrink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="brand-link relative z-10 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="SwiftWithFer — torna all'inizio"
         >
           <SwiftWithFerLogo variant="header" priority />
@@ -80,7 +80,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-10 items-center rounded-full px-3 py-2 text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="inline-flex h-10 items-center rounded-full px-3.5 text-[0.8125rem] font-medium tracking-[-0.01em] text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:px-4 lg:text-sm"
                 >
                   {item.label}
                 </Link>
@@ -89,11 +89,11 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
           <ButtonLink
             href="/#contact"
             variant="secondary"
-            className="hidden min-h-10 px-4 text-xs sm:inline-flex sm:text-sm"
+            className="hidden h-10 min-h-10 px-4 py-0 text-sm sm:inline-flex"
           >
             Contattami
           </ButtonLink>

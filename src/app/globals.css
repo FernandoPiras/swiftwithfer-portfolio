@@ -9,7 +9,7 @@
   --glass: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(0, 0, 0, 0.06);
   --section-alt: #eeeff2;
-  --header-offset: 4.25rem;
+  --header-offset: 4rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 0.25s;
   --duration-base: 0.45s;
@@ -286,12 +286,12 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   .brand-link:hover {
-    opacity: 0.7;
+    opacity: 0.78;
   }
 }
 
 .brand-link:active {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 :focus-visible {

@@ -1,32 +1,31 @@
-# Wordmark refinement
+# Wordmark navbar balance
 
-## Audit
+## Problema
+Wordmark a 20–22px su una riga controlli da 40px (~50%): sembrava un elemento secondario.
 
-| Issue | Decision |
-|-------|----------|
-| Wordmark ×3 (header, hero, footer) | Troppo. Hero rimosso — competeva con headline/CTA |
-| `mix-blend-mode` + `invert` | Fragili su Safari/Firefox con blur header. Rimossi |
-| PNG con sfondo bianco | `Wordmark.png` intatto; derivata trasparente solo in `public/` |
-| Gerarchia | Header = brand primario; footer = chiusura soft |
+## Equilibrio scelto
+| Elemento | Misura |
+|----------|--------|
+| Navbar content | `4rem` (64px) fissa |
+| Controlli (nav / CTA / menu) | `40px` (`h-10`) |
+| Wordmark header | **24px → 26px** (~60–65% della riga) |
+| Wordmark footer | 17→18px (~0.7× header) |
+| Larghezza wordmark | ~72–78px (aspect 3:1) |
 
-## Soluzione tecnica
+Non “più grande per forza”: scala che eguaglia il peso della CTA senza invadere la nav.
 
-- Derivata RGBA (lettere nere, fondo trasparente) da `Wordmark.png` senza modificarlo
-- Rendering: CSS `mask-image` + `background: var(--foreground)`
-- Light/dark automatici via token colore — zero filter/blend
-- Preload in `layout.tsx`
-- Box dimensioni esplicite (aspect 3:1) → no CLS
-- Header 20→22px; footer 15→16px; allineamento ottico `-translate-y-px` in nav
+## Navbar (dettagli correlati)
+- Altezza fissa + safe-area sul `<header>` (non dentro la row)
+- CTA `text-sm` uniforme (rimosso `text-xs`)
+- Link nav: tracking stretto, `font-medium`, hover più pulito
+- Gap brand ↔ nav più generoso (`gap-4` / `sm:gap-6`)
+- Hover brand meno aggressivo (`0.78`)
+- Mobile menu ancorato a `--header-offset`
 
-## Dove compare ora
+## Vincoli rispettati
+- Solo CSS scaling
+- `Wordmark.png` non modificato
+- Mask + `--foreground` (Chrome / Safari / Firefox / Edge)
 
-1. **Header** (unico brand above-the-fold)
-2. **Footer** (chiusura)
-
-## Browser
-
-`mask-image` + `-webkit-mask-image`: Chrome, Safari, Firefox, Edge.
-
-## Verifiche
-
-Build / lint dopo le modifiche.
+## Verifica
+Build + lint.
