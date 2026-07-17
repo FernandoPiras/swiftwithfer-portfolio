@@ -38,6 +38,12 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://www.instagram.com" />
         <link rel="dns-prefetch" href="https://apps.apple.com" />
+        <link
+          rel="preload"
+          href="/images/brand/wordmark.png"
+          as="image"
+          type="image/png"
+        />
       </head>
       <body className="min-h-full bg-background text-foreground">
         <a

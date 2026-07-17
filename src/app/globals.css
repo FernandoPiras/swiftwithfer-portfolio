@@ -251,31 +251,28 @@ body {
   }
 }
 
-/* Wordmark: black-on-white asset — blend out background without editing the PNG */
-.wordmark-frame {
-  isolation: isolate;
-  line-height: 0;
-}
-
-.wordmark-img {
-  display: block;
-  height: 100%;
-  width: auto;
+/* Wordmark — mask + foreground color (no blend / invert) */
+.wordmark {
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--wordmark-w);
+  height: var(--wordmark-h);
   max-width: 100%;
-  object-fit: contain;
-  object-position: left center;
-  mix-blend-mode: multiply;
+  background-color: var(--foreground);
+  -webkit-mask-image: url("/images/brand/wordmark.png");
+  mask-image: url("/images/brand/wordmark.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: left center;
+  mask-position: left center;
 }
 
-.dark .wordmark-img {
-  filter: invert(1);
-  mix-blend-mode: screen;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) .wordmark-img {
-    filter: invert(1);
-    mix-blend-mode: screen;
+@media (min-width: 640px) {
+  .wordmark {
+    width: var(--wordmark-w-sm);
+    height: var(--wordmark-h-sm);
   }
 }
 
@@ -289,12 +286,12 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   .brand-link:hover {
-    opacity: 0.72;
+    opacity: 0.7;
   }
 }
 
 .brand-link:active {
-  opacity: 0.88;
+  opacity: 0.85;
 }
 
 :focus-visible {

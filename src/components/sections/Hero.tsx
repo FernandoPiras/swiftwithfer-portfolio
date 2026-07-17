@@ -26,10 +26,6 @@ export function Hero() {
           transition={{ duration: 0.55, ease: EASE_OUT }}
           className="order-2 text-center lg:order-1 lg:text-left"
         >
-          <div className="mb-5 flex justify-center lg:justify-start">
-            <SwiftWithFerLogo variant="footer" className="h-[1.125rem] sm:h-5" />
-          </div>
-
           <h1 className="text-display text-foreground">
             {siteConfig.hero.headline}
           </h1>

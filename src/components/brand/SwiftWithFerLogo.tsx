@@ -1,39 +1,49 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-/** Intrinsic wordmark dimensions — 2172×724, aspect ≈ 3:1 */
+/** Intrinsic wordmark dimensions — 2172×724 */
 export const WORDMARK_WIDTH = 2172;
 export const WORDMARK_HEIGHT = 724;
+export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
 
 interface SwiftWithFerLogoProps {
-  variant?: "header" | "footer" | "hero" | "mark" | "icon" | "wordmark";
+  variant?: "header" | "footer" | "hero" | "mark" | "icon";
   className?: string;
   priority?: boolean;
 }
 
 const appIconRadius = "rounded-[22.37%]";
 
-function WordmarkImage({
+/**
+ * Wordmark as CSS mask filled with --foreground.
+ * Transparent derivative of Wordmark.png (source file never altered).
+ * No mix-blend-mode / invert — stable in Chrome, Safari, Firefox, Edge.
+ */
+function Wordmark({
   className,
-  priority,
-  sizes,
+  heightPx,
 }: {
   className?: string;
-  priority?: boolean;
-  sizes: string;
+  heightPx: { base: number; sm?: number };
 }) {
-  const { logo } = siteConfig;
+  const widthBase = Math.round(heightPx.base * WORDMARK_ASPECT);
+  const widthSm = Math.round((heightPx.sm ?? heightPx.base) * WORDMARK_ASPECT);
+
+  const style = {
+    "--wordmark-h": `${heightPx.base}px`,
+    "--wordmark-w": `${widthBase}px`,
+    "--wordmark-h-sm": `${heightPx.sm ?? heightPx.base}px`,
+    "--wordmark-w-sm": `${widthSm}px`,
+  } as CSSProperties;
 
   return (
-    <Image
-      src={logo.wordmark}
-      alt={logo.wordmarkAlt}
-      width={WORDMARK_WIDTH}
-      height={WORDMARK_HEIGHT}
-      priority={priority}
-      sizes={sizes}
-      className={cn("wordmark-img h-full w-auto max-w-full select-none", className)}
+    <span
+      role="img"
+      aria-label={siteConfig.logo.wordmarkAlt}
+      className={cn("wordmark", className)}
+      style={style}
     />
   );
 }
@@ -46,29 +56,11 @@ export function SwiftWithFerLogo({
   const { logo } = siteConfig;
 
   if (variant === "header") {
-    return (
-      <span
-        className={cn(
-          "wordmark-frame inline-flex h-6 items-center sm:h-7",
-          className,
-        )}
-      >
-        <WordmarkImage priority={priority} sizes="(max-width: 640px) 120px, 140px" />
-      </span>
-    );
+    return <Wordmark heightPx={{ base: 20, sm: 22 }} className={className} />;
   }
 
-  if (variant === "footer" || variant === "wordmark") {
-    return (
-      <span
-        className={cn(
-          "wordmark-frame inline-flex h-5 items-center sm:h-[1.375rem]",
-          className,
-        )}
-      >
-        <WordmarkImage priority={priority} sizes="110px" />
-      </span>
-    );
+  if (variant === "footer") {
+    return <Wordmark heightPx={{ base: 15, sm: 16 }} className={className} />;
   }
 
   if (variant === "hero") {
@@ -111,9 +103,5 @@ export function SwiftWithFerLogo({
     );
   }
 
-  return (
-    <span className={cn("wordmark-frame inline-flex h-6 items-center", className)}>
-      <WordmarkImage priority={priority} sizes="140px" />
-    </span>
-  );
+  return <Wordmark heightPx={{ base: 20 }} className={className} />;
 }

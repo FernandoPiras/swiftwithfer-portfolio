@@ -1,59 +1,32 @@
-# Wordmark Integration Report
+# Wordmark refinement
 
-**Data:** 17 luglio 2026  
-**Asset:** `Wordmark.png` (2172×724) → `public/images/brand/wordmark.png` (copia identica, SHA256 invariato)
+## Audit
 
----
+| Issue | Decision |
+|-------|----------|
+| Wordmark ×3 (header, hero, footer) | Troppo. Hero rimosso — competeva con headline/CTA |
+| `mix-blend-mode` + `invert` | Fragili su Safari/Firefox con blur header. Rimossi |
+| PNG con sfondo bianco | `Wordmark.png` intatto; derivata trasparente solo in `public/` |
+| Gerarchia | Header = brand primario; footer = chiusura soft |
 
-## Modifiche
+## Soluzione tecnica
 
-### Asset
-- Copiato il wordmark in `public/images/brand/wordmark.png` senza ritagli, ricompressioni o alterazioni pixel.
-- Favicon / app icon restano su `logo.png` (SF mark) — il wordmark non è adatto come favicon.
+- Derivata RGBA (lettere nere, fondo trasparente) da `Wordmark.png` senza modificarlo
+- Rendering: CSS `mask-image` + `background: var(--foreground)`
+- Light/dark automatici via token colore — zero filter/blend
+- Preload in `layout.tsx`
+- Box dimensioni esplicite (aspect 3:1) → no CLS
+- Header 20→22px; footer 15→16px; allineamento ottico `-translate-y-px` in nav
 
-### Header
-- Testo “SwiftWithFer” sostituito dal wordmark.
-- Altezze: `24px` mobile / `28px` desktop (`h-6` / `h-7`), aspect ratio nativo.
-- Link a `/#hero`, hover opacity discreto (`.brand-link`), focus ring accessibile.
-- `priority` + `sizes` mirati per LCP/CLS.
+## Dove compare ora
 
-### Footer
-- Wordmark ridotto (`20–22px`), centrato, link alla home.
-- Spaziatura premium sopra tagline e social.
+1. **Header** (unico brand above-the-fold)
+2. **Footer** (chiusura)
 
-### Hero
-- Eyebrow testuale sostituita dal wordmark (branding primario coerente).
+## Browser
 
-### Light / Dark
-- Sfondo bianco del PNG non modificato.
-- Light: `mix-blend-mode: multiply` (sfondo bianco “scompare”).
-- Dark: `invert` + `mix-blend-mode: screen` (testo bianco, sfondo invisibile).
-
-### Config
-- `siteConfig.logo.wordmark` + `wordmarkAlt` aggiunti.
-
----
+`mask-image` + `-webkit-mask-image`: Chrome, Safari, Firefox, Edge.
 
 ## Verifiche
 
-| Check | Esito |
-|-------|-------|
-| Build | ✅ |
-| Lint | ✅ |
-| Immagine non modificata | ✅ stesso hash |
-| Responsive (overflow/deformazione) | ✅ `h-* w-auto max-w-full` |
-| SEO / funzionalità | ✅ invariate |
-
----
-
-## File toccati
-
-```
-public/images/brand/wordmark.png
-src/config/site.ts
-src/components/brand/SwiftWithFerLogo.tsx
-src/components/layout/Header.tsx
-src/components/layout/Footer.tsx
-src/components/sections/Hero.tsx
-src/app/globals.css
-```
+Build / lint dopo le modifiche.
