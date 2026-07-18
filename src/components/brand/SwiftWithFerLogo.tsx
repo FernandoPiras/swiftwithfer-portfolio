@@ -3,28 +3,20 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-/** Legacy mask wordmark (footer) — 2172×724 transparent PNG */
-export const WORDMARK_WIDTH = 2172;
-export const WORDMARK_HEIGHT = 724;
+/**
+ * Sole brand wordmark — /images/brand/wordmark.png
+ * Transparent PNG (RGBA). Intrinsic after content crop: 1337 × 280 → aspect ≈ 4.775
+ * Sized by WIDTH for the header; height follows aspect.
+ */
+export const WORDMARK_WIDTH = 1337;
+export const WORDMARK_HEIGHT = 280;
 export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
 
 /**
- * Official header lockup — wordmark_lockup.png (transparent)
- * Intrinsic: 2038 × 771 → aspect ≈ 2.643
- * Sized by WIDTH (primary reading axis). Height follows aspect — never forced.
- */
-export const HEADER_WORDMARK_WIDTH = 2038;
-export const HEADER_WORDMARK_HEIGHT = 771;
-export const HEADER_WORDMARK_ASPECT =
-  HEADER_WORDMARK_WIDTH / HEADER_WORDMARK_HEIGHT;
-
-/**
- * Display widths — aspect-locked (2038/771 ≈ 2.643).
- * Desktop (sm+) stays at 172px — do not change.
- * Mobile steps leave room for Contattami + burger on the trailing edge.
- *   <390px   140px → ~53px H
- *   390–639  152px → ~57px H
- *   ≥640px   172px → ~65px H (desktop, unchanged)
+ * Display widths — unchanged from prior header balance.
+ *   <390px   140px
+ *   390–639  152px
+ *   ≥640px   172px
  */
 const HEADER_WM_DISPLAY_W = {
   xs: 140,
@@ -40,64 +32,36 @@ interface SwiftWithFerLogoProps {
 
 const appIconRadius = "rounded-[22.37%]";
 
-function Wordmark({
-  className,
-  heightPx,
-}: {
-  className?: string;
-  heightPx: { base: number; sm?: number };
-}) {
-  const widthBase = Math.round(heightPx.base * WORDMARK_ASPECT);
-  const widthSm = Math.round((heightPx.sm ?? heightPx.base) * WORDMARK_ASPECT);
-
-  const style = {
-    "--wordmark-h": `${heightPx.base}px`,
-    "--wordmark-w": `${widthBase}px`,
-    "--wordmark-h-sm": `${heightPx.sm ?? heightPx.base}px`,
-    "--wordmark-w-sm": `${widthSm}px`,
-  } as CSSProperties;
-
-  return (
-    <span
-      role="img"
-      aria-label={siteConfig.logo.wordmarkAlt}
-      className={cn("wordmark", className)}
-      style={style}
-    />
-  );
-}
-
-/**
- * Header brand — width-driven, aspect-locked rendering of wordmark_lockup.png.
- */
-function HeaderWordmark({
+function BrandWordmark({
   className,
   priority,
+  displayWidth,
 }: {
   className?: string;
   priority?: boolean;
+  displayWidth: { xs?: number; base: number; sm?: number };
 }) {
+  const xs = displayWidth.xs ?? displayWidth.base;
+  const sm = displayWidth.sm ?? displayWidth.base;
+
   const style = {
-    "--header-wm-w-xs": `${HEADER_WM_DISPLAY_W.xs}px`,
-    "--header-wm-w": `${HEADER_WM_DISPLAY_W.base}px`,
-    "--header-wm-w-sm": `${HEADER_WM_DISPLAY_W.sm}px`,
+    "--header-wm-w-xs": `${xs}px`,
+    "--header-wm-w": `${displayWidth.base}px`,
+    "--header-wm-w-sm": `${sm}px`,
   } as CSSProperties;
 
   return (
     <Image
-      src={siteConfig.logo.headerWordmark}
+      src={siteConfig.logo.wordmark}
       alt={siteConfig.logo.wordmarkAlt}
-      width={HEADER_WORDMARK_WIDTH}
-      height={HEADER_WORDMARK_HEIGHT}
+      width={WORDMARK_WIDTH}
+      height={WORDMARK_HEIGHT}
       priority={priority}
-      // Serve the designed RGBA PNG as-is — avoids optimizer palette flattening
-      // that can reintroduce an opaque plate behind the lockup.
       unoptimized
-      sizes={`(max-width: 389px) ${HEADER_WM_DISPLAY_W.xs}px, (max-width: 639px) ${HEADER_WM_DISPLAY_W.base}px, ${HEADER_WM_DISPLAY_W.sm}px`}
+      sizes={`(max-width: 389px) ${xs}px, (max-width: 639px) ${displayWidth.base}px, ${sm}px`}
       style={style}
       className={cn(
         "header-wordmark h-auto max-w-full object-contain object-left",
-        "dark:invert",
         className,
       )}
     />
@@ -112,11 +76,33 @@ export function SwiftWithFerLogo({
   const { logo } = siteConfig;
 
   if (variant === "header") {
-    return <HeaderWordmark className={className} priority={priority} />;
+    return (
+      <BrandWordmark
+        className={className}
+        priority={priority}
+        displayWidth={HEADER_WM_DISPLAY_W}
+      />
+    );
   }
 
   if (variant === "footer") {
-    return <Wordmark heightPx={{ base: 22, sm: 24 }} className={className} />;
+    // Same asset; compact height for footer chrome (≈ previous visual mass)
+    const footerH = 22;
+    const footerW = Math.round(footerH * WORDMARK_ASPECT);
+    return (
+      <Image
+        src={logo.wordmark}
+        alt={logo.wordmarkAlt}
+        width={WORDMARK_WIDTH}
+        height={WORDMARK_HEIGHT}
+        unoptimized
+        sizes={`${footerW}px`}
+        className={cn(
+          "h-[22px] w-auto max-w-full object-contain object-left sm:h-6",
+          className,
+        )}
+      />
+    );
   }
 
   if (variant === "hero") {
@@ -159,5 +145,11 @@ export function SwiftWithFerLogo({
     );
   }
 
-  return <Wordmark heightPx={{ base: 20 }} className={className} />;
+  return (
+    <BrandWordmark
+      className={className}
+      priority={priority}
+      displayWidth={{ base: 120 }}
+    />
+  );
 }

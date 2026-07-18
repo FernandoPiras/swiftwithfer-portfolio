@@ -59,9 +59,8 @@ export const siteConfig = {
   brand: "SwiftWithFer",
   logo: {
     full: "/images/brand/logo.png",
+    /** Sole brand wordmark — transparent PNG */
     wordmark: "/images/brand/wordmark.png",
-    /** Official header lockup — black ink on transparent PNG */
-    headerWordmark: "/images/brand/wordmark_lockup.png",
     alt: "SwiftWithFer — iOS Developer",
     wordmarkAlt: "SwiftWithFer",
   },

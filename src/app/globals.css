@@ -527,31 +527,6 @@ body {
   }
 }
 
-/* Wordmark — mask + foreground color (no blend / invert) */
-.wordmark {
-  display: inline-block;
-  flex-shrink: 0;
-  width: var(--wordmark-w);
-  height: var(--wordmark-h);
-  max-width: 100%;
-  background-color: var(--foreground);
-  -webkit-mask-image: url("/images/brand/wordmark.png");
-  mask-image: url("/images/brand/wordmark.png");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-position: left center;
-  mask-position: left center;
-}
-
-@media (min-width: 640px) {
-  .wordmark {
-    width: var(--wordmark-w-sm);
-    height: var(--wordmark-h-sm);
-  }
-}
-
 .brand-link {
   display: inline-flex;
   align-items: center;
