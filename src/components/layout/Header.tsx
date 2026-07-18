@@ -66,8 +66,8 @@ export function ButtonLink({
 export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/35 bg-background/75 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
-      <div className="mx-auto flex h-[var(--header-offset)] max-w-6xl items-center gap-3 px-4 sm:gap-8 sm:px-6 lg:gap-12 lg:px-8">
-        {/* Brand — primary mass on the left */}
+      <div className="header-bar mx-auto flex h-[var(--header-offset)] w-full max-w-6xl items-center px-4 sm:px-6 lg:px-8">
+        {/* Brand — left */}
         <Link
           href="/#hero"
           className="brand-link relative z-10 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -76,7 +76,7 @@ export function Header() {
           <SwiftWithFerLogo variant="header" priority />
         </Link>
 
-        {/* Menu — secondary, pushed away from the mark */}
+        {/* Desktop nav — absorbs free space, sits before the action cluster */}
         <nav
           aria-label="Navigazione principale"
           className="ml-auto hidden min-w-0 md:block"
@@ -95,17 +95,18 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center gap-1 max-md:ml-auto sm:gap-2 md:ml-1">
-          {/* Wrapper avoids ButtonLink base `inline-flex` winning over `hidden` (no twMerge). */}
-          <div className="hidden sm:contents">
-            <ButtonLink
-              href="/#contact"
-              variant="ghost"
-              className="h-10 min-h-10 px-2.5 py-0 text-[0.8125rem]"
-            >
-              Contattami
-            </ButtonLink>
-          </div>
+        {/*
+          Action cluster: [Contattami] [Burger]
+          Always trailing-edge aligned as one group.
+          Mobile: ml-auto (nav hidden). Desktop: follows nav.
+        */}
+        <div className="header-actions flex shrink-0 items-center gap-1 max-md:ml-auto sm:gap-1.5 md:ml-1">
+          <Link
+            href="/#contact"
+            className="header-contact inline-flex h-10 min-h-10 items-center justify-center rounded-full px-2.5 text-[0.8125rem] font-medium tracking-[-0.01em] text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Contattami
+          </Link>
           <MobileNav />
         </div>
       </div>

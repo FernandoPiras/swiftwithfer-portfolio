@@ -556,14 +556,14 @@ body {
   display: inline-flex;
   align-items: center;
   min-width: 0;
-  max-width: min(100%, 10.25rem);
+  max-width: min(100%, 9.5rem);
   border-radius: var(--radius-sm);
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
 @media (min-width: 390px) {
   .brand-link {
-    max-width: min(100%, 10.75rem);
+    max-width: min(100%, 10.5rem);
   }
 }
 
@@ -577,6 +577,8 @@ body {
   display: block;
   flex-shrink: 0;
   width: var(--header-wm-w-xs);
+  height: auto;
+  background: transparent;
 }
 
 @media (min-width: 390px) {
@@ -588,6 +590,13 @@ body {
 @media (min-width: 640px) {
   .header-wordmark {
     width: var(--header-wm-w-sm);
+  }
+}
+
+/* Keep Contattami + burger fitting beside the wordmark on the narrowest phones */
+@media (max-width: 359px) {
+  .header-contact {
+    padding-inline: 0.5rem;
   }
 }
 

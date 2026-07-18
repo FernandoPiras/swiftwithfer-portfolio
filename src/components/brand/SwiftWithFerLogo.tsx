@@ -9,7 +9,7 @@ export const WORDMARK_HEIGHT = 724;
 export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
 
 /**
- * Official header lockup — wordmark_logo.png
+ * Official header lockup — wordmark_lockup.png (transparent)
  * Intrinsic: 2038 × 771 → aspect ≈ 2.643
  * Sized by WIDTH (primary reading axis). Height follows aspect — never forced.
  */
@@ -21,14 +21,14 @@ export const HEADER_WORDMARK_ASPECT =
 /**
  * Display widths — aspect-locked (2038/771 ≈ 2.643).
  * Desktop (sm+) stays at 172px — do not change.
- * Mobile steps improve lockup legibility without crowding the bar.
- *   <390px   148px → ~56px H
- *   390–639  156px → ~59px H
+ * Mobile steps leave room for Contattami + burger on the trailing edge.
+ *   <390px   140px → ~53px H
+ *   390–639  152px → ~57px H
  *   ≥640px   172px → ~65px H (desktop, unchanged)
  */
 const HEADER_WM_DISPLAY_W = {
-  xs: 148,
-  base: 156,
+  xs: 140,
+  base: 152,
   sm: 172,
 } as const;
 
@@ -68,7 +68,7 @@ function Wordmark({
 }
 
 /**
- * Header brand — width-driven, aspect-locked rendering of wordmark_logo.png.
+ * Header brand — width-driven, aspect-locked rendering of wordmark_lockup.png.
  */
 function HeaderWordmark({
   className,
@@ -90,6 +90,9 @@ function HeaderWordmark({
       width={HEADER_WORDMARK_WIDTH}
       height={HEADER_WORDMARK_HEIGHT}
       priority={priority}
+      // Serve the designed RGBA PNG as-is — avoids optimizer palette flattening
+      // that can reintroduce an opaque plate behind the lockup.
+      unoptimized
       sizes={`(max-width: 389px) ${HEADER_WM_DISPLAY_W.xs}px, (max-width: 639px) ${HEADER_WM_DISPLAY_W.base}px, ${HEADER_WM_DISPLAY_W.sm}px`}
       style={style}
       className={cn(

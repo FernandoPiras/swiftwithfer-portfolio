@@ -40,7 +40,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://apps.apple.com" />
         <link
           rel="preload"
-          href="/images/brand/wordmark_logo.png"
+          href="/images/brand/wordmark_lockup.png"
           as="image"
           type="image/png"
         />
