@@ -47,7 +47,7 @@ export function MobileNav() {
       if (event.key !== "Tab" || !panelRef.current) return;
 
       const focusable = panelRef.current.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled])',
+        "a[href], button:not([disabled])",
       );
       if (focusable.length === 0) return;
 
@@ -79,23 +79,34 @@ export function MobileNav() {
         aria-controls="mobile-nav-panel"
         aria-label={open ? "Chiudi menu" : "Apri menu"}
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-glass-border bg-glass/60 text-foreground backdrop-blur-md transition-colors hover:bg-glass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className={cn(
+          "relative z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full border border-glass-border bg-background text-foreground shadow-sm transition-colors hover:bg-glass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+          open && "bg-background",
+        )}
       >
-        <span className="sr-only">Menu</span>
-        <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
+        <span className="sr-only">{open ? "Chiudi menu" : "Apri menu"}</span>
+        <svg
+          viewBox="0 0 24 24"
+          className="h-5 w-5 text-foreground"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+        >
           {open ? (
             <path
               d="M6 6l12 12M18 6L6 18"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.25"
               strokeLinecap="round"
+              strokeLinejoin="round"
             />
           ) : (
             <path
               d="M4 7h16M4 12h16M4 17h16"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.25"
               strokeLinecap="round"
+              strokeLinejoin="round"
             />
           )}
         </svg>
@@ -104,7 +115,9 @@ export function MobileNav() {
       <div
         className={cn(
           "fixed inset-0 z-40 bg-background/70 backdrop-blur-sm transition-opacity duration-300",
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+          open
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
         )}
         onClick={() => setOpen(false)}
         aria-hidden={!open}
@@ -115,7 +128,7 @@ export function MobileNav() {
         id="mobile-nav-panel"
         aria-labelledby={titleId}
         className={cn(
-          "fixed inset-x-0 top-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] z-50 mx-4 rounded-2xl border border-glass-border bg-glass/95 p-4 shadow-glass backdrop-blur-xl transition-all duration-300",
+          "fixed inset-x-0 top-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] z-50 mx-3 max-h-[min(70vh,calc(100dvh-var(--header-offset)-2rem))] overflow-y-auto rounded-2xl border border-glass-border bg-background/95 p-3 shadow-glass backdrop-blur-xl transition-all duration-300 sm:mx-4 sm:p-4",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",

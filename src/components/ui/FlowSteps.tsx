@@ -53,7 +53,7 @@ export function FlowSteps({
               responsive ? "w-full md:w-auto" : "w-full",
             )}
           >
-            <span className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-glass-border bg-background/50 px-4 py-2.5 text-center text-sm font-medium text-foreground shadow-sm md:w-auto md:min-w-[7.5rem]">
+            <span className="inline-flex min-h-11 w-full max-w-full items-center justify-center break-words rounded-xl border border-glass-border bg-background/50 px-3 py-2.5 text-center text-sm font-medium text-foreground shadow-sm sm:px-4 md:w-auto md:min-w-[7.5rem]">
               {step}
             </span>
             {!isLast ? (

@@ -46,7 +46,7 @@ function ModeTab({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        "min-h-11 flex-1 rounded-full px-4 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+        "min-h-11 flex-1 rounded-full px-2.5 py-2.5 text-center text-xs font-medium leading-snug transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:px-4 sm:text-sm sm:leading-normal",
         active
           ? "bg-foreground text-background shadow-lg shadow-foreground/10"
           : "text-muted hover:text-foreground",

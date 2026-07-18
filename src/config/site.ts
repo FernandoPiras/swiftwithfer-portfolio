@@ -60,6 +60,8 @@ export const siteConfig = {
   logo: {
     full: "/images/brand/logo.png",
     wordmark: "/images/brand/wordmark.png",
+    /** Official header lockup — exact copy of root wordmark_logo.png */
+    headerWordmark: "/images/brand/wordmark_logo.png",
     alt: "SwiftWithFer — iOS Developer",
     wordmarkAlt: "SwiftWithFer",
   },

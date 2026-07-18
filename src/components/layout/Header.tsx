@@ -66,7 +66,7 @@ export function ButtonLink({
 export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/35 bg-background/75 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
-      <div className="mx-auto flex h-[var(--header-offset)] max-w-7xl items-center gap-8 px-5 sm:gap-10 sm:px-8 lg:gap-14 lg:px-10">
+      <div className="mx-auto flex h-[var(--header-offset)] max-w-7xl items-center gap-3 px-4 sm:gap-8 sm:px-8 lg:gap-14 lg:px-10">
         {/* Brand — primary mass on the left */}
         <Link
           href="/#hero"

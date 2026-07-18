@@ -3,10 +3,16 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-/** Intrinsic wordmark dimensions — 2172×724 */
+/** Legacy mask wordmark (footer) — 2172×724 transparent PNG */
 export const WORDMARK_WIDTH = 2172;
 export const WORDMARK_HEIGHT = 724;
 export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
+
+/** Official header lockup — wordmark_logo.png (2038×771), used as-is */
+export const HEADER_WORDMARK_WIDTH = 2038;
+export const HEADER_WORDMARK_HEIGHT = 771;
+export const HEADER_WORDMARK_ASPECT =
+  HEADER_WORDMARK_WIDTH / HEADER_WORDMARK_HEIGHT;
 
 interface SwiftWithFerLogoProps {
   variant?: "header" | "footer" | "hero" | "mark" | "icon";
@@ -17,9 +23,7 @@ interface SwiftWithFerLogoProps {
 const appIconRadius = "rounded-[22.37%]";
 
 /**
- * Wordmark as CSS mask filled with --foreground.
- * Transparent derivative of Wordmark.png (source file never altered).
- * No mix-blend-mode / invert — stable in Chrome, Safari, Firefox, Edge.
+ * Footer / legacy wordmark — CSS mask + foreground (theme-aware).
  */
 function Wordmark({
   className,
@@ -48,6 +52,34 @@ function Wordmark({
   );
 }
 
+/**
+ * Header brand lockup — exact wordmark_logo.png, no redesign / filters beyond
+ * dark-mode invert so the black-on-white asset remains legible on dark UI.
+ */
+function HeaderWordmark({
+  className,
+  priority,
+}: {
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <Image
+      src={siteConfig.logo.headerWordmark}
+      alt={siteConfig.logo.wordmarkAlt}
+      width={HEADER_WORDMARK_WIDTH}
+      height={HEADER_WORDMARK_HEIGHT}
+      priority={priority}
+      sizes="(max-width: 640px) 95px, 111px"
+      className={cn(
+        "h-9 w-auto max-w-[min(100%,11.5rem)] object-contain object-left sm:h-[2.625rem] sm:max-w-[13.5rem]",
+        "dark:invert",
+        className,
+      )}
+    />
+  );
+}
+
 export function SwiftWithFerLogo({
   variant = "header",
   className,
@@ -56,12 +88,10 @@ export function SwiftWithFerLogo({
   const { logo } = siteConfig;
 
   if (variant === "header") {
-    // Brand mark — presence comparable to a product marketing site
-    return <Wordmark heightPx={{ base: 40, sm: 48 }} className={className} />;
+    return <HeaderWordmark className={className} priority={priority} />;
   }
 
   if (variant === "footer") {
-    // Secondary to header authority (~0.5×)
     return <Wordmark heightPx={{ base: 22, sm: 24 }} className={className} />;
   }
 
