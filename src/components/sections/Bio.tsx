@@ -142,8 +142,8 @@ export function Bio() {
                 >
                   {email}
                 </a>
-                <ButtonLink href="/#technologies" variant="secondary" className="w-full sm:w-auto">
-                  Stack di produzione
+                <ButtonLink href="/#technologies" variant="ghost" className="w-full sm:w-auto">
+                  Stack di produzione →
                 </ButtonLink>
               </div>
             </div>

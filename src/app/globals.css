@@ -118,43 +118,38 @@ body {
 }
 
 .text-display {
-  font-size: clamp(2.25rem, 4.5vw + 0.75rem, 3.75rem);
+  font-size: clamp(2.35rem, 4.2vw + 0.85rem, 3.85rem);
   font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  line-height: 1.08;
+  letter-spacing: -0.038em;
 }
 
 .text-section-title {
-  font-size: clamp(1.625rem, 2.5vw + 0.5rem, 2.75rem);
+  font-size: clamp(1.6875rem, 2.4vw + 0.55rem, 2.625rem);
   font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.028em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .text-lead {
-  font-size: clamp(1.0625rem, 0.5vw + 0.95rem, 1.25rem);
-  line-height: 1.55;
+  font-size: clamp(1.0625rem, 0.45vw + 0.95rem, 1.1875rem);
+  line-height: 1.65;
   color: var(--muted);
 }
 
 .text-eyebrow {
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
 .hero-gradient {
   background:
     radial-gradient(
-      ellipse 80% 55% at 50% -18%,
-      color-mix(in srgb, var(--accent) 14%, transparent),
-      transparent 68%
-    ),
-    radial-gradient(
-      ellipse 45% 35% at 85% 40%,
-      color-mix(in srgb, var(--accent-secondary) 6%, transparent),
-      transparent 70%
+      ellipse 70% 48% at 50% -12%,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent 72%
     );
 }
 
@@ -163,8 +158,8 @@ body {
     linear-gradient(
       180deg,
       color-mix(in srgb, var(--section-alt) 0%, transparent) 0%,
-      color-mix(in srgb, var(--section-alt) 58%, transparent) 12%,
-      color-mix(in srgb, var(--section-alt) 58%, transparent) 88%,
+      color-mix(in srgb, var(--section-alt) 42%, transparent) 14%,
+      color-mix(in srgb, var(--section-alt) 42%, transparent) 86%,
       color-mix(in srgb, var(--section-alt) 0%, transparent) 100%
     );
 }
@@ -172,14 +167,14 @@ body {
 .section-glow {
   background:
     radial-gradient(
-      ellipse 70% 55% at 50% 0%,
-      color-mix(in srgb, var(--accent) 9%, transparent),
-      transparent 65%
+      ellipse 65% 50% at 50% 0%,
+      color-mix(in srgb, var(--accent) 6%, transparent),
+      transparent 68%
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--section-alt) 35%, transparent),
-      transparent 40%
+      color-mix(in srgb, var(--section-alt) 28%, transparent),
+      transparent 42%
     );
 }
 
@@ -191,12 +186,13 @@ body {
   max-width: 260px;
   overflow: hidden;
   border-radius: var(--radius-3xl);
-  border: 1px solid var(--glass-border);
+  border: 1px solid color-mix(in srgb, var(--glass-border) 80%, transparent);
   background: color-mix(in srgb, var(--background) 70%, transparent);
   padding: 0.5rem;
   box-shadow:
-    var(--shadow-xl),
-    0 0 0 1px color-mix(in srgb, var(--foreground) 3%, transparent);
+    0 24px 48px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.03),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 2.5%, transparent);
   transition:
     transform var(--duration-slow) var(--ease-out),
     box-shadow var(--duration-slow) var(--ease-out);
@@ -204,15 +200,16 @@ body {
 
 .phone-frame--hero {
   max-width: 300px;
-  padding: 0.625rem;
-  border-radius: calc(var(--radius-3xl) + 0.15rem);
+  padding: 0.6875rem;
+  border-radius: calc(var(--radius-3xl) + 0.2rem);
   box-shadow:
-    0 36px 80px rgba(0, 0, 0, 0.12),
-    0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
+    0 40px 80px rgba(0, 0, 0, 0.09),
+    0 8px 24px rgba(0, 0, 0, 0.04),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 3%, transparent);
 }
 
 .phone-frame--hero .phone-frame__screen {
-  border-radius: calc(var(--radius-3xl) - 0.2rem);
+  border-radius: calc(var(--radius-3xl) - 0.15rem);
 }
 
 @media (min-width: 640px) {
@@ -223,47 +220,59 @@ body {
 
 @media (min-width: 1024px) {
   .phone-frame--hero {
-    max-width: 380px;
+    max-width: 372px;
   }
 }
 
 @media (min-width: 1280px) {
   .phone-frame--hero {
-    max-width: 400px;
+    max-width: 392px;
   }
+}
+
+.dark .phone-frame {
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
 }
 
 .dark .phone-frame--hero {
   box-shadow:
-    0 36px 80px rgba(0, 0, 0, 0.5),
-    0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
+    0 40px 80px rgba(0, 0, 0, 0.48),
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 5%, transparent);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .phone-frame:hover {
-    transform: translateY(-3px);
+    transform: translateY(-1.5px);
     box-shadow:
-      0 32px 64px rgba(0, 0, 0, 0.1),
-      0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
+      0 28px 56px rgba(0, 0, 0, 0.08),
+      0 4px 12px rgba(0, 0, 0, 0.04),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 3.5%, transparent);
   }
 
   .phone-frame--hero:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     box-shadow:
-      0 42px 90px rgba(0, 0, 0, 0.14),
-      0 0 0 1px color-mix(in srgb, var(--foreground) 5%, transparent);
+      0 44px 88px rgba(0, 0, 0, 0.1),
+      0 10px 28px rgba(0, 0, 0, 0.05),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
   }
 
   .dark .phone-frame:hover {
     box-shadow:
-      0 32px 64px rgba(0, 0, 0, 0.45),
-      0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
+      0 28px 56px rgba(0, 0, 0, 0.48),
+      0 4px 12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 5%, transparent);
   }
 
   .dark .phone-frame--hero:hover {
     box-shadow:
-      0 42px 90px rgba(0, 0, 0, 0.55),
-      0 0 0 1px color-mix(in srgb, var(--foreground) 8%, transparent);
+      0 44px 88px rgba(0, 0, 0, 0.55),
+      0 10px 28px rgba(0, 0, 0, 0.3),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
   }
 }
 
@@ -302,30 +311,28 @@ body {
 
 .stat-card {
   border-radius: var(--radius-xl);
-  border: 1px solid var(--glass-border);
-  background: var(--glass);
-  padding: 1.25rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--glass-border) 70%, transparent);
+  background: color-mix(in srgb, var(--glass) 70%, transparent);
+  padding: 1.35rem 1rem;
   text-align: center;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(16px);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
   transition:
-    box-shadow var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out),
-    border-color var(--duration-base) var(--ease-out);
+    border-color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
 }
 
 @media (min-width: 640px) {
   .stat-card {
     border-radius: var(--radius-2xl);
-    padding: 1.5rem;
+    padding: 1.65rem 1.25rem;
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
   .stat-card:hover {
-    border-color: color-mix(in srgb, var(--accent) 14%, var(--glass-border));
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 12%, var(--glass-border));
+    background-color: color-mix(in srgb, var(--glass) 88%, transparent);
   }
 }
 
@@ -333,7 +340,7 @@ body {
   border-radius: var(--radius-2xl);
   border: 1px solid var(--glass-border);
   background: var(--glass);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(16px);
 }
 
@@ -341,20 +348,22 @@ body {
   transition:
     border-color var(--duration-base) var(--ease-out),
     box-shadow var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out),
-    background-color var(--duration-base) var(--ease-out);
+    transform var(--duration-base) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .premium-card:hover {
-    border-color: color-mix(in srgb, var(--accent) 20%, var(--glass-border));
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-    background-color: color-mix(in srgb, var(--glass) 92%, white);
+    border-color: color-mix(in srgb, var(--accent) 14%, var(--glass-border));
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.05),
+      0 1px 2px rgba(0, 0, 0, 0.03);
+    transform: translateY(-1px);
   }
 
   .dark .premium-card:hover {
-    background-color: color-mix(in srgb, var(--glass) 88%, white 4%);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.35),
+      0 1px 2px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -362,40 +371,36 @@ body {
   position: relative;
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 28%, transparent);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--accent) 20%, transparent),
+    0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent);
   transition:
-    filter var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .btn-primary:hover {
-    filter: brightness(1.05);
-    box-shadow: 0 14px 36px color-mix(in srgb, var(--accent) 38%, transparent);
-    transform: translateY(-1px);
-  }
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  filter: brightness(0.98);
-}
-
-.tech-tile {
-  transition:
-    border-color var(--duration-base) var(--ease-out),
     box-shadow var(--duration-base) var(--ease-out),
     transform var(--duration-base) var(--ease-out),
     background-color var(--duration-base) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--accent) 24%, transparent),
+      0 12px 28px color-mix(in srgb, var(--accent) 30%, transparent);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.tech-tile {
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
   .tech-tile:hover {
-    border-color: color-mix(in srgb, var(--accent) 22%, var(--glass-border));
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-    background-color: color-mix(in srgb, var(--glass) 90%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 16%, var(--glass-border));
+    background-color: color-mix(in srgb, var(--glass) 92%, transparent);
   }
 }
 
@@ -457,28 +462,18 @@ body {
 }
 
 .hero-product-caption {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
   text-align: center;
-}
-
-.hero-product-caption__label {
-  display: block;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
 .hero-product-caption__action {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.35rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  color: var(--foreground);
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: var(--muted);
   transition: color var(--duration-fast) var(--ease-out);
 }
 
@@ -488,13 +483,36 @@ body {
   }
 
   .hero-product-link:hover .hero-product-caption__arrow {
-    transform: translateX(3px);
+    transform: translateX(2px);
   }
 }
 
 .hero-product-caption__arrow {
   display: inline-block;
   transition: transform var(--duration-base) var(--ease-out);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 1024px) {
+  .hero-meta {
+    justify-content: flex-start;
+  }
+}
+
+.hero-meta__sep {
+  width: 1px;
+  height: 0.75rem;
+  background: var(--glass-border);
 }
 
 :focus-visible {

@@ -48,10 +48,10 @@ export function Services() {
         ))}
       </div>
 
-      <Reveal delay={0.06} className="mt-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <Reveal delay={0.06} className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
         <ButtonLink href="/#contact">Avvia un progetto</ButtonLink>
-        <ButtonLink href="/#bio" variant="secondary">
-          Chi sono
+        <ButtonLink href="/#bio" variant="ghost">
+          Chi sono →
         </ButtonLink>
       </Reveal>
     </Section>

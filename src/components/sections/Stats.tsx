@@ -124,24 +124,20 @@ export function Stats() {
       ref={sectionRef}
       id="stats"
       aria-label="Metriche principali"
-      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/50 py-14 sm:py-16 md:py-20"
+      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/40 py-16 sm:py-20 md:py-24"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,color-mix(in_srgb,var(--accent)_5%,transparent),transparent_70%)]"
-        aria-hidden
-      />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-3 sm:gap-3.5 lg:grid-cols-4 lg:gap-4">
           {statsConfig.map((stat, index) => (
             <li
               key={stat.id}
               style={{
-                transitionDelay: active ? `${index * 55}ms` : "0ms",
+                transitionDelay: active ? `${index * 40}ms` : "0ms",
               }}
               className={
                 active
-                  ? "translate-y-0 opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  : "translate-y-3 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  ? "translate-y-0 opacity-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  : "translate-y-2 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
               }
             >
               {stat.type === "counter" ? (

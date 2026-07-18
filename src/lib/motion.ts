@@ -4,15 +4,15 @@ export const EASE_OUT_SOFT = [0.16, 1, 0.3, 1] as const;
 
 export const MOTION = {
   duration: {
-    fast: 0.45,
-    base: 0.65,
-    slow: 0.85,
+    fast: 0.4,
+    base: 0.55,
+    slow: 0.7,
   },
-  stagger: 0.055,
-  /** Softer travel for premium entrances */
-  distance: 18,
-  viewport: { once: true, margin: "-12% 0px -8% 0px" as const },
-  viewportTight: { once: true, margin: "-6% 0px -4% 0px" as const },
+  stagger: 0.05,
+  /** Refined travel — precision over drama */
+  distance: 10,
+  viewport: { once: true, margin: "-10% 0px -6% 0px" as const },
+  viewportTight: { once: true, margin: "-5% 0px -3% 0px" as const },
 } as const;
 
 export function fadeUp(delay = 0) {

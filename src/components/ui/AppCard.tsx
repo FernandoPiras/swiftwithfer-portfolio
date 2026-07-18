@@ -41,57 +41,56 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
         ease: EASE_OUT_SOFT,
       }}
     >
-      <GlassCard
-        className={cn(
-          "premium-card overflow-hidden",
-          isFlagship && "ring-1 ring-accent/15",
-        )}
-      >
+      <GlassCard className="premium-card overflow-hidden">
         {isFlagship ? (
-          <p className="text-eyebrow mb-5 text-accent">Progetto principale</p>
+          <p className="text-eyebrow mb-6 text-accent">Progetto principale</p>
         ) : null}
 
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-10">
-          <div className="order-2 space-y-5 lg:order-1">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12">
+          <div className="order-2 space-y-6 lg:order-1">
             <div className="flex items-start gap-4">
-              <div className="relative h-[4.5rem] w-[4.5rem] shrink-0 overflow-hidden rounded-[1.25rem] shadow-md ring-1 ring-black/5 sm:h-20 sm:w-20">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[1.15rem] shadow-[0_4px_16px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.04] sm:h-[4.5rem] sm:w-[4.5rem]">
                 <Image
                   src={app.icon}
                   alt={`Icona ${app.name}`}
                   fill
-                  sizes="80px"
+                  sizes="72px"
                   className="object-cover"
                 />
               </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              <div className="min-w-0 flex-1 pt-0.5">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-foreground sm:text-2xl">
                     {app.name}
                   </h3>
                   <span
                     className={cn(
-                      "rounded-full px-2.5 py-0.5 text-xs font-medium",
+                      "rounded-full px-2.5 py-0.5 text-[0.6875rem] font-medium tracking-[-0.01em]",
                       statusStyles[app.status],
                     )}
                   >
                     {getStatusLabel(app.status)}
                   </span>
                 </div>
-                <p className="mt-1 text-sm font-medium text-accent">{app.tagline}</p>
+                <p className="mt-1.5 text-sm font-medium leading-snug text-accent">
+                  {app.tagline}
+                </p>
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed text-muted sm:text-base">{app.description}</p>
+            <p className="text-sm leading-relaxed text-muted text-pretty sm:text-[0.9375rem] sm:leading-relaxed">
+              {app.description}
+            </p>
 
             {app.outcomes?.length ? (
-              <ul className="space-y-2" aria-label={`Risultati ${app.name}`}>
+              <ul className="space-y-2.5" aria-label={`Risultati ${app.name}`}>
                 {app.outcomes.map((outcome) => (
                   <li
                     key={outcome}
-                    className="flex items-start gap-2.5 text-sm text-foreground"
+                    className="flex items-start gap-2.5 text-sm leading-snug text-foreground"
                   >
                     <span
-                      className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent"
+                      className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-accent"
                       aria-hidden
                     />
                     {outcome}
@@ -107,13 +106,13 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
               {app.technologies.slice(0, VISIBLE_TECH).map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full border border-glass-border bg-background/50 px-2.5 py-0.5 text-xs text-muted"
+                  className="rounded-full border border-glass-border/80 bg-background/40 px-2.5 py-0.5 text-[0.6875rem] tracking-[-0.01em] text-muted"
                 >
                   {tech}
                 </li>
               ))}
               {extraTech > 0 ? (
-                <li className="rounded-full px-2 py-0.5 text-xs text-muted">
+                <li className="rounded-full px-2 py-0.5 text-[0.6875rem] text-muted">
                   +{extraTech}
                 </li>
               ) : null}
@@ -137,7 +136,7 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                 <ButtonLink
                   href={app.websiteUrl}
                   external
-                  variant="secondary"
+                  variant="ghost"
                   className="w-full sm:w-auto"
                 >
                   {getWebsiteLinkLabel(app.websiteUrl)}

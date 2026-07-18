@@ -31,7 +31,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-16 sm:py-24 md:py-28",
+        "relative scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-20 sm:py-28 md:py-32",
         tone === "surface" && "section-surface",
         tone === "glow" && "section-glow",
         className,
@@ -39,21 +39,21 @@ export function Section({
     >
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={MOTION.viewport}
           transition={{
             duration: MOTION.duration.base,
             ease: EASE_OUT_SOFT,
           }}
-          className="mb-10 sm:mb-12 md:mb-14"
+          className="mb-12 sm:mb-14 md:mb-16"
         >
           {eyebrow ? (
-            <p className="text-eyebrow mb-3 text-accent">{eyebrow}</p>
+            <p className="text-eyebrow mb-3.5 text-accent">{eyebrow}</p>
           ) : null}
-          <h2 className="text-section-title text-foreground">{title}</h2>
+          <h2 className="text-section-title text-foreground text-balance">{title}</h2>
           {subtitle ? (
-            <p className="text-lead mt-4 max-w-xl text-pretty">{subtitle}</p>
+            <p className="text-lead mt-5 max-w-xl text-pretty">{subtitle}</p>
           ) : null}
         </motion.div>
         {children}

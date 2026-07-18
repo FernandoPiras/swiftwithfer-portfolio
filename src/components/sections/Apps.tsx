@@ -15,12 +15,12 @@ export function Apps() {
       tone="surface"
     >
       <Reveal>
-        <GlassCard className="mb-10 flex flex-col items-start justify-between gap-4 sm:mb-12 sm:flex-row sm:items-center">
+        <GlassCard className="mb-12 flex flex-col items-start justify-between gap-5 border-glass-border/60 bg-transparent shadow-none backdrop-blur-none sm:mb-14 sm:flex-row sm:items-center">
           <div>
-            <p className="font-semibold text-foreground">
+            <p className="text-[0.9375rem] font-semibold tracking-[-0.015em] text-foreground">
               Profilo sviluppatore verificato su App Store
             </p>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-1.5 text-sm text-muted">
               Slotiva · AndroMetrics · PreventivoRapido PRO
             </p>
           </div>
@@ -35,15 +35,15 @@ export function Apps() {
         </GlassCard>
       </Reveal>
 
-      <div className="space-y-10 sm:space-y-14">
+      <div className="space-y-12 sm:space-y-16">
         {siteConfig.apps.map((app, index) => (
           <AppCard key={app.id} app={app} index={index} />
         ))}
       </div>
 
-      <Reveal delay={0.06} className="mt-12 flex justify-center sm:mt-14">
-        <ButtonLink href="/#process" variant="secondary">
-          Come sviluppo un prodotto
+      <Reveal delay={0.06} className="mt-14 flex justify-center sm:mt-16">
+        <ButtonLink href="/#process" variant="ghost">
+          Come sviluppo un prodotto →
         </ButtonLink>
       </Reveal>
     </Section>
