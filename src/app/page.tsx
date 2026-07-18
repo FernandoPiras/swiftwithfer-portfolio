@@ -6,6 +6,7 @@ import { Stats } from "@/components/sections/Stats";
 import { Bio } from "@/components/sections/Bio";
 import { Apps } from "@/components/sections/Apps";
 import { Services } from "@/components/sections/Services";
+import { Process } from "@/components/sections/Process";
 import { Technologies } from "@/components/sections/Technologies";
 import { Contact } from "@/components/sections/Contact";
 import { buildHomeJsonLd } from "@/lib/json-ld";
@@ -33,6 +34,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <Apps />
+        <Process />
         <Services />
         <Bio />
         <Technologies />

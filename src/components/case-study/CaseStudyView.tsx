@@ -11,6 +11,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { AppDemoVideo } from "@/components/ui/AppDemoVideo";
 import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { FlowSteps } from "@/components/ui/FlowSteps";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
 import { EASE_OUT, MOTION } from "@/lib/motion";
@@ -96,6 +97,41 @@ function FeatureGrid({ items }: { items: string[] }) {
   );
 }
 
+function SignalList({ items, label }: { items: string[]; label: string }) {
+  return (
+    <ul className="flex flex-wrap gap-2" aria-label={label}>
+      {items.map((item) => (
+        <li
+          key={item}
+          className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs font-medium text-foreground sm:text-sm"
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function DecisionsList({
+  decisions,
+}: {
+  decisions: CaseStudyContent["decisions"];
+}) {
+  return (
+    <ul className="grid gap-3 sm:grid-cols-2">
+      {decisions.map((decision) => (
+        <li
+          key={decision.title}
+          className="rounded-xl border border-glass-border bg-background/40 px-4 py-3"
+        >
+          <p className="text-sm font-semibold text-foreground">{decision.title}</p>
+          <p className="mt-1 text-sm leading-relaxed text-muted">{decision.reason}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function CaseStudyView({ study, app }: CaseStudyViewProps) {
   const statusStyles = {
     published: "bg-emerald-500/12 text-emerald-700 dark:text-emerald-400",
@@ -103,7 +139,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
     "in-development": "bg-blue-500/12 text-blue-700 dark:text-blue-400",
   };
 
-  const architecture = study.architecture || app.architecture;
+  const architectureCaption = study.architecture || app.architecture;
   let chapter = 1;
 
   return (
@@ -272,11 +308,68 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               </StoryChapter>
             )}
 
-            {architecture ? (
-              <StoryChapter index={chapter++} title="Architettura">
-                <p>{architecture}</p>
+            {study.architectureFlow.length ? (
+              <StoryChapter
+                index={chapter++}
+                title="Architettura"
+                description="Come è strutturato il sistema — flusso, non documentazione."
+              >
+                <div className="space-y-6">
+                  <FlowSteps
+                    steps={study.architectureFlow}
+                    label={`Architettura di ${app.name}`}
+                  />
+                  {study.journeyFlow?.length ? (
+                    <div className="space-y-3 border-t border-glass-border/60 pt-6">
+                      <p className="text-eyebrow text-accent">Flusso operativo</p>
+                      <FlowSteps
+                        steps={study.journeyFlow}
+                        label={`Flusso operativo di ${app.name}`}
+                      />
+                    </div>
+                  ) : null}
+                  {architectureCaption ? (
+                    <p className="text-sm text-muted">{architectureCaption}</p>
+                  ) : null}
+                </div>
               </StoryChapter>
             ) : null}
+
+            <StoryChapter
+              index={chapter++}
+              title="Decisioni tecniche"
+              description="Scelte di prodotto e architettura che contano davvero."
+            >
+              <DecisionsList decisions={study.decisions} />
+            </StoryChapter>
+
+            <StoryChapter
+              index={chapter++}
+              title="Timeline del prodotto"
+              description="Dal concetto alla produzione — e oltre."
+            >
+              <FlowSteps
+                steps={study.productTimeline}
+                label={`Timeline di ${app.name}`}
+              />
+            </StoryChapter>
+
+            <StoryChapter
+              index={chapter++}
+              title="Qualità in produzione"
+              description="Segnali che il prodotto è mantenuto, scalabile e pensato per il reale."
+            >
+              <div className="space-y-4">
+                <SignalList
+                  items={study.qualitySignals}
+                  label="Segnali di qualità"
+                />
+                <SignalList
+                  items={study.capabilities}
+                  label="Capacità del sistema"
+                />
+              </div>
+            </StoryChapter>
 
             <StoryChapter index={chapter++} title="Tecnologie">
               <ul className="flex flex-wrap gap-2">

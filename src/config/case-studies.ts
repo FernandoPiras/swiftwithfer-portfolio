@@ -9,6 +9,11 @@ export interface CaseStudyEcosystemLayer {
   summary: string;
 }
 
+export interface TechnicalDecision {
+  title: string;
+  reason: string;
+}
+
 export interface CaseStudyContent {
   slug: string;
   appId: "andrometrics" | "slotiva" | "preventivorapido";
@@ -16,16 +21,38 @@ export interface CaseStudyContent {
   positioning: string;
   problem: string;
   solution: string;
+  /** Short caption under the architecture flow */
   architecture: string;
+  /** Visual system architecture (top → bottom / left → right) */
+  architectureFlow: string[];
+  /** Optional user/business journey flow */
+  journeyFlow?: string[];
   features: string[];
   featureGroups?: CaseStudyFeatureGroup[];
   /** High-level product map — used for Slotiva */
   ecosystem?: CaseStudyEcosystemLayer[];
+  /** 3–6 key technical / product decisions */
+  decisions: TechnicalDecision[];
+  /** Product lifecycle timeline */
+  productTimeline: string[];
+  /** Production-quality signals */
+  qualitySignals: string[];
+  /** Where apt: realtime, cloud, security, etc. */
+  capabilities: string[];
   challenges: string[];
   results: string[];
   trustSignals: string[];
   seoDescription: string;
 }
+
+const PRODUCT_TIMELINE = [
+  "Idea",
+  "Progettazione",
+  "Sviluppo",
+  "Testing",
+  "Produzione",
+  "Aggiornamenti",
+] as const;
 
 export const caseStudies: CaseStudyContent[] = [
   {
@@ -38,7 +65,23 @@ export const caseStudies: CaseStudyContent[] = [
     solution:
       "Slotiva è la piattaforma che unifica operations e crescita. I clienti prenotano e comunicano dall'app iOS; i titolari e lo staff gestiscono agenda, servizi e team; il gestionale web su slotiva.it offre CRM, dashboard e analytics. Tutto condivide lo stesso backend Firebase in tempo reale: una modifica su un dispositivo è subito ovunque.",
     architecture:
-      "Tre superfici, una fonte di verità. L'app iOS (SwiftUI) e il gestionale web (React + TypeScript su Vercel) leggono e scrivono su Firestore. Cloud Functions orchestrano notifiche, regole di business e automazioni. Auth e ruoli proteggono multi-business e multi-staff. La sync realtime tiene allineati clienti, agenda, pagamenti e chat — con AI assistita nei flussi operativi dove genera valore concreto.",
+      "Tre superfici, una fonte di verità — progettato per scalare multi-business senza perdere sync.",
+    architectureFlow: [
+      "Utente",
+      "App iOS",
+      "Firebase",
+      "Cloud Functions",
+      "Firestore",
+      "Dashboard Web",
+    ],
+    journeyFlow: [
+      "Cliente",
+      "Prenotazione",
+      "Realtime Sync",
+      "Gestionale",
+      "Notifiche",
+      "Analytics",
+    ],
     features: [],
     ecosystem: [
       {
@@ -108,6 +151,48 @@ export const caseStudies: CaseStudyContent[] = [
         ],
       },
     ],
+    decisions: [
+      {
+        title: "Firebase per sync realtime",
+        reason: "Agenda, chat e stato business allineati su ogni dispositivo.",
+      },
+      {
+        title: "Cloud Functions per la logica server",
+        reason: "Notifiche, regole di business e automazioni fuori dal client.",
+      },
+      {
+        title: "Firestore per scalabilità",
+        reason: "Multi-business e crescita senza redesign del data model.",
+      },
+      {
+        title: "SwiftUI per UI nativa",
+        reason: "Esperienza iOS fluida per clienti e titolari.",
+      },
+      {
+        title: "React per il gestionale",
+        reason: "Dashboard CRM professionale, responsive e aggiornabile.",
+      },
+      {
+        title: "Vercel per il deploy web",
+        reason: "Rilasci rapidi del gestionale con infrastruttura stabile.",
+      },
+    ],
+    productTimeline: [...PRODUCT_TIMELINE],
+    qualitySignals: [
+      "In produzione",
+      "Mantenuto e aggiornato",
+      "Scalabile multi-business",
+      "Sync realtime",
+      "Architettura cloud",
+    ],
+    capabilities: [
+      "Realtime",
+      "Cloud",
+      "Sicurezza",
+      "Responsive",
+      "Performance",
+      "Accessibilità",
+    ],
     challenges: [
       "Prenotazioni concorrenti senza conflitti di slot",
       "Due esperienze distinte (cliente vs titolare) sulla stessa piattaforma",
@@ -142,7 +227,15 @@ export const caseStudies: CaseStudyContent[] = [
     solution:
       "AndroMetrics centralizza tracking, abitudini e referti in un'unica esperienza iOS. Ogni giorno calcola uno score 0–100, mostra grafici evolutivi e report comprensibili. Privacy by design, notifiche discrete e export PDF: qualità medicale senza complessità da laboratorio.",
     architecture:
-      "App SwiftUI con sync cloud Firebase, digitalizzazione referti (Vision), widget iOS e abbonamenti StoreKit 2. Il flusso dati è pensato per continuità d'uso, chiarezza clinica e protezione delle informazioni di salute.",
+      "Flusso dati pensato per continuità d'uso, chiarezza clinica e protezione delle informazioni di salute.",
+    architectureFlow: [
+      "Utente",
+      "App iOS",
+      "Tracking",
+      "Firebase",
+      "Score & Grafici",
+      "Report PDF",
+    ],
     features: [
       "Tracking quotidiano di parametri e abitudini",
       "Score fertilità 0–100 immediato e leggibile",
@@ -155,6 +248,36 @@ export const caseStudies: CaseStudyContent[] = [
       "Esperienza utente medicale, non tecnica",
       "Piano Premium con StoreKit 2",
     ],
+    decisions: [
+      {
+        title: "SwiftUI per UI medicale",
+        reason: "Chiarezza e fiducia in un contesto di salute sensibile.",
+      },
+      {
+        title: "Firebase per sync protetta",
+        reason: "Continuità tra dispositivi senza esporre dati inutilmente.",
+      },
+      {
+        title: "Vision per i referti",
+        reason: "Da documento cartaceo a dati strutturati, senza frizione.",
+      },
+      {
+        title: "StoreKit 2 per Premium",
+        reason: "Monetizzazione nativa, stabile e conforme alle policy Apple.",
+      },
+      {
+        title: "Privacy by design",
+        reason: "Sicurezza e discrezione come requisito di prodotto, non add-on.",
+      },
+    ],
+    productTimeline: [...PRODUCT_TIMELINE],
+    qualitySignals: [
+      "Live su App Store",
+      "Aggiornamenti continui",
+      "Privacy first",
+      "Prodotto in produzione",
+    ],
+    capabilities: ["Cloud", "Sicurezza", "Performance", "Accessibilità"],
     challenges: [
       "Comunicare dati sensibili con linguaggio chiaro e rassicurante",
       "Proteggere la privacy senza compromettere la sync cloud",
@@ -186,7 +309,15 @@ export const caseStudies: CaseStudyContent[] = [
     solution:
       "PreventivoRapido PRO digitalizza il flusso commerciale: preventivi PDF curati in pochi minuti, firma cliente integrata, rubrica sincronizzata e cloud backup. Rapidità e semplicità sul campo; affidabilità da studio professionale.",
     architecture:
-      "App SwiftUI con generazione PDF, firma digitale nel documento, Sign in with Apple e sync cloud. Il piano Pro (StoreKit 2) sblocca produttività senza frizioni — pensato per chi lavora tra cantiere e cliente.",
+      "Dal cantiere al documento firmato — un flusso corto, affidabile e sincronizzato sul cloud.",
+    architectureFlow: [
+      "Cliente",
+      "App iOS",
+      "Preventivo PDF",
+      "Firma",
+      "Sync Cloud",
+      "Archivio",
+    ],
     features: [
       "Preventivi PDF professionali in pochi minuti",
       "Flusso semplice: crea, invia, fai firmare",
@@ -197,6 +328,36 @@ export const caseStudies: CaseStudyContent[] = [
       "Accesso con Apple ID",
       "Piano Pro per chi lavora ogni giorno",
     ],
+    decisions: [
+      {
+        title: "SwiftUI per velocità sul campo",
+        reason: "Interfaccia nativa, leggera e usabile tra un lavoro e l'altro.",
+      },
+      {
+        title: "PDF come deliverable",
+        reason: "Documento professionale che il cliente riconosce e conserva.",
+      },
+      {
+        title: "Firma nel documento",
+        reason: "Chiude il ciclo commerciale senza tool esterni.",
+      },
+      {
+        title: "Sync cloud",
+        reason: "Backup e continuità tra dispositivi per dati business critici.",
+      },
+      {
+        title: "Sign in with Apple",
+        reason: "Accesso sicuro e senza friction per professionisti.",
+      },
+    ],
+    productTimeline: [...PRODUCT_TIMELINE],
+    qualitySignals: [
+      "Live su App Store",
+      "Mantenuto",
+      "Sync cloud",
+      "Pronto per produzione",
+    ],
+    capabilities: ["Cloud", "Sicurezza", "Performance", "Responsive"],
     challenges: [
       "PDF con layout professionale e consistente su ogni dispositivo",
       "Firma cliente affidabile e leggibile nel documento finale",
