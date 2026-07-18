@@ -8,11 +8,27 @@ export const WORDMARK_WIDTH = 2172;
 export const WORDMARK_HEIGHT = 724;
 export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
 
-/** Official header lockup — wordmark_logo.png (2038×771), used as-is */
+/**
+ * Official header lockup — wordmark_logo.png
+ * Intrinsic: 2038 × 771 → aspect ≈ 2.643
+ * Sized by WIDTH (primary reading axis). Height follows aspect — never forced.
+ */
 export const HEADER_WORDMARK_WIDTH = 2038;
 export const HEADER_WORDMARK_HEIGHT = 771;
 export const HEADER_WORDMARK_ASPECT =
   HEADER_WORDMARK_WIDTH / HEADER_WORDMARK_HEIGHT;
+
+/**
+ * Display widths chosen for at-a-glance legibility of “swiftwithfer”
+ * inside the SF | wordmark lockup (not arbitrary heights).
+ * Height = width / HEADER_WORDMARK_ASPECT
+ *   mobile  132px → ~50px H
+ *   sm+     172px → ~65px H
+ */
+const HEADER_WM_DISPLAY_W = {
+  base: 132,
+  sm: 172,
+} as const;
 
 interface SwiftWithFerLogoProps {
   variant?: "header" | "footer" | "hero" | "mark" | "icon";
@@ -22,9 +38,6 @@ interface SwiftWithFerLogoProps {
 
 const appIconRadius = "rounded-[22.37%]";
 
-/**
- * Footer / legacy wordmark — CSS mask + foreground (theme-aware).
- */
 function Wordmark({
   className,
   heightPx,
@@ -53,8 +66,7 @@ function Wordmark({
 }
 
 /**
- * Header brand lockup — exact wordmark_logo.png, no redesign / filters beyond
- * dark-mode invert so the black-on-white asset remains legible on dark UI.
+ * Header brand — width-driven, aspect-locked rendering of wordmark_logo.png.
  */
 function HeaderWordmark({
   className,
@@ -63,6 +75,11 @@ function HeaderWordmark({
   className?: string;
   priority?: boolean;
 }) {
+  const style = {
+    "--header-wm-w": `${HEADER_WM_DISPLAY_W.base}px`,
+    "--header-wm-w-sm": `${HEADER_WM_DISPLAY_W.sm}px`,
+  } as CSSProperties;
+
   return (
     <Image
       src={siteConfig.logo.headerWordmark}
@@ -70,9 +87,10 @@ function HeaderWordmark({
       width={HEADER_WORDMARK_WIDTH}
       height={HEADER_WORDMARK_HEIGHT}
       priority={priority}
-      sizes="(max-width: 640px) 95px, 111px"
+      sizes={`(max-width: 639px) ${HEADER_WM_DISPLAY_W.base}px, ${HEADER_WM_DISPLAY_W.sm}px`}
+      style={style}
       className={cn(
-        "h-9 w-auto max-w-[min(100%,11.5rem)] object-contain object-left sm:h-[2.625rem] sm:max-w-[13.5rem]",
+        "header-wordmark h-auto w-[var(--header-wm-w)] max-w-full object-contain object-left sm:w-[var(--header-wm-w-sm)]",
         "dark:invert",
         className,
       )}

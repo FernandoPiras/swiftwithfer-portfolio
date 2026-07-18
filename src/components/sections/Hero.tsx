@@ -41,16 +41,16 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[min(100dvh,1080px)] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))]"
+      className="relative flex min-h-[min(100dvh,960px)] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))]"
     >
       <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
 
       {/*
-        Launch composition: compact copy column + dominant product column.
-        Desktop weight ~40/60 so the phone matches the headline, not a side note.
+        Balanced composition: copy leads, product supports.
+        Grid ~1.05 / 0.95 so headline retains primacy over the device.
       */}
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-4 pb-14 pt-8 sm:gap-12 sm:px-8 sm:pb-16 sm:pt-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.25fr)] lg:gap-8 lg:px-10 lg:pb-20 lg:pt-8 xl:gap-12">
-        <div className="order-1 min-w-0 text-center lg:max-w-xl lg:justify-self-start lg:text-left xl:max-w-[34rem]">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:pb-20 lg:pt-10 xl:gap-16">
+        <div className="order-1 min-w-0 text-center lg:text-left">
           <motion.h1
             className="text-display text-foreground text-balance"
             initial={reduceMotion ? false : { opacity: 0, y: 10 }}
@@ -64,7 +64,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lead mx-auto mt-5 max-w-md text-pretty lg:mx-0"
+            className="text-lead mx-auto mt-5 max-w-lg text-pretty lg:mx-0"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -77,7 +77,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-8 hidden lg:block"
+            className="mt-9 hidden lg:block"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -99,16 +99,16 @@ export function Hero() {
             delay: 0.08,
             ease: EASE_OUT_SOFT,
           }}
-          className="relative order-2 w-full min-w-0 justify-self-center lg:justify-self-end"
+          className="relative order-2 w-full min-w-0 justify-self-center lg:justify-self-center"
         >
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-gradient-to-b from-accent/14 via-accent/4 to-transparent blur-3xl lg:left-auto lg:right-0 lg:translate-x-0"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[110%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-gradient-to-b from-accent/10 via-accent/3 to-transparent blur-3xl"
             aria-hidden
           />
           {slotiva ? (
             <Link
               href={`/apps/${slotiva.id}`}
-              className="hero-product-link relative mx-auto block w-full max-w-[320px] sm:max-w-[380px] lg:mr-0 lg:ml-auto lg:max-w-[440px] xl:max-w-[480px]"
+              className="hero-product-link relative mx-auto block w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[340px] xl:max-w-[360px]"
               aria-label={`Esplora il case study di ${slotiva.name}`}
             >
               <PhoneFrame
@@ -116,7 +116,7 @@ export function Hero() {
                 alt={`Anteprima ${slotiva.name}`}
                 priority
                 size="hero"
-                sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 440px, 480px"
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 300px, (max-width: 1280px) 340px, 360px"
               />
               <div className="hero-product-caption">
                 <span className="hero-product-caption__action">
