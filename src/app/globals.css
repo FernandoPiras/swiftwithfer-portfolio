@@ -199,16 +199,18 @@ body {
 }
 
 /*
- * Hero phone — mobile bands only (<640).
- * Tablet (sm+) and desktop ladders unchanged from prior balance pass.
- *   320–359  168px
- *   360–389  176px
- *   390–430  188px
- *   431–639  200px
+ * Hero phone — mobile optical bands (<640), capped at ~72vw (never >75vw).
+ * Tablet (sm+) and desktop ladders unchanged.
+ *   320–359  min(72vw, 228px)
+ *   360–389  min(72vw, 248px)
+ *   390–413  min(72vw, 264px)
+ *   414–429  min(72vw, 276px)
+ *   430–479  min(72vw, 288px)
+ *   480–639  min(72vw, 300px)
  *   ≥640     248 / 288 / 308 (unchanged)
  */
 .phone-frame--hero {
-  max-width: min(100%, 168px);
+  max-width: min(72vw, 228px);
   padding: 0.625rem;
   border-radius: calc(var(--radius-3xl) + 0.25rem);
   box-shadow:
@@ -223,19 +225,31 @@ body {
 
 @media (min-width: 360px) {
   .phone-frame--hero {
-    max-width: min(100%, 176px);
+    max-width: min(72vw, 248px);
   }
 }
 
 @media (min-width: 390px) {
   .phone-frame--hero {
-    max-width: min(100%, 188px);
+    max-width: min(72vw, 264px);
   }
 }
 
-@media (min-width: 431px) {
+@media (min-width: 414px) {
   .phone-frame--hero {
-    max-width: min(100%, 200px);
+    max-width: min(72vw, 276px);
+  }
+}
+
+@media (min-width: 430px) {
+  .phone-frame--hero {
+    max-width: min(72vw, 288px);
+  }
+}
+
+@media (min-width: 480px) {
+  .phone-frame--hero {
+    max-width: min(72vw, 300px);
   }
 }
 
@@ -257,77 +271,72 @@ body {
   }
 }
 
-/* Mobile product link widths — match phone-frame bands (<640 only) */
+/* Mobile product link + CTA stack under mockup */
 @media (max-width: 639px) {
   .hero-phone-stage .hero-product-link {
-    max-width: min(100%, 168px);
+    max-width: min(72vw, 228px);
   }
 
+  /* Caption duplicates the CTA below — hide on mobile for a tighter stack */
   .hero-phone-stage .hero-product-caption {
-    margin-top: 0.75rem;
+    display: none;
+  }
+
+  .hero-ctas-below {
+    margin-top: 0;
+  }
+
+  .hero-ctas-below .flex {
+    gap: 0.75rem;
   }
 }
 
 @media (max-width: 639px) and (min-width: 360px) {
   .hero-phone-stage .hero-product-link {
-    max-width: min(100%, 176px);
+    max-width: min(72vw, 248px);
   }
 }
 
 @media (max-width: 639px) and (min-width: 390px) {
   .hero-phone-stage .hero-product-link {
-    max-width: min(100%, 188px);
+    max-width: min(72vw, 264px);
   }
 }
 
-@media (max-width: 639px) and (min-width: 431px) {
+@media (max-width: 639px) and (min-width: 414px) {
   .hero-phone-stage .hero-product-link {
-    max-width: min(100%, 200px);
+    max-width: min(72vw, 276px);
+  }
+}
+
+@media (max-width: 639px) and (min-width: 430px) {
+  .hero-phone-stage .hero-product-link {
+    max-width: min(72vw, 288px);
+  }
+}
+
+@media (max-width: 639px) and (min-width: 480px) {
+  .hero-phone-stage .hero-product-link {
+    max-width: min(72vw, 300px);
   }
 }
 
 /*
- * Mobile / short-landscape CTA visibility — tablet portrait & desktop untouched.
- *   <640px portrait: mobile CTAs (above phone)
- *   640–1023 portrait: tablet CTAs (below phone)
- *   short landscape ≤1023×520: mobile CTAs (message-first on phone landscape)
- *   ≥1024: neither (desktop CTAs in copy column)
+ * Below-lg CTAs sit under the mockup (mobile + tablet).
+ * Desktop keeps CTAs in the copy column.
+ * Short landscape: phone hidden — CTAs follow copy immediately.
  */
-.hero-ctas-mobile {
+.hero-ctas-below {
   display: block;
 }
 
-.hero-ctas-tablet {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .hero-ctas-mobile {
-    display: none;
-  }
-
-  .hero-ctas-tablet {
-    display: block;
-  }
-}
-
 @media (min-width: 1024px) {
-  .hero-ctas-mobile,
-  .hero-ctas-tablet {
+  .hero-ctas-below {
     display: none;
   }
 }
 
 @media (max-width: 1023px) and (max-height: 520px) {
-  .hero-ctas-mobile {
-    display: block;
-  }
-
-  .hero-ctas-tablet {
-    display: none;
-  }
-
-  /* Short landscape: message + CTA only — phone would never fit above the fold */
   .hero-phone-stage {
     display: none;
   }

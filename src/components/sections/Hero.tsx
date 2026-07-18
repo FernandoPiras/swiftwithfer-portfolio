@@ -46,14 +46,13 @@ export function Hero() {
       <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
 
       {/*
-        Balanced composition: copy leads, product supports.
-        Grid ~1.05 / 0.95 so headline retains primacy over the device.
-        Mobile (<640): copy → CTA → phone peek. Tablet/desktop unchanged.
+        Desktop/tablet: unchanged two-column / phone-then-CTA rhythm.
+        Mobile (<640): wordmark → headline → description → mockup → CTA.
       */}
-      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:pb-20 lg:pt-10 xl:gap-16 max-sm:gap-5 max-sm:pb-8 max-sm:pt-5">
+      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:pb-20 lg:pt-10 xl:gap-16 max-sm:gap-6 max-sm:px-5 max-sm:pb-12 max-sm:pt-4">
         <div className="order-1 min-w-0 text-center lg:text-left">
           <motion.h1
-            className="text-display text-foreground text-balance"
+            className="text-display text-foreground text-balance max-sm:mx-auto max-sm:w-full max-sm:max-w-none"
             initial={reduceMotion ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -65,7 +64,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lead mx-auto mt-5 max-w-lg text-pretty lg:mx-0 max-sm:mt-3"
+            className="text-lead mx-auto mt-5 max-w-lg text-pretty lg:mx-0 max-sm:mt-3.5 max-sm:max-w-none"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -76,21 +75,6 @@ export function Hero() {
           >
             {siteConfig.hero.subhead}
           </motion.p>
-
-          {/* Mobile (+ short landscape): CTA above the mockup so the message leads the fold */}
-          <motion.div
-            className="hero-ctas-mobile mt-5"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: MOTION.duration.base,
-              delay: 0.12,
-              ease: EASE_OUT_SOFT,
-            }}
-          >
-            <HeroCtas className="flex flex-col gap-2.5" />
-            <HeroMeta className="hero-meta mt-4" />
-          </motion.div>
 
           <motion.div
             className="mt-9 hidden lg:block"
@@ -132,7 +116,7 @@ export function Hero() {
                 alt={`Anteprima ${slotiva.name}`}
                 priority
                 size="hero"
-                sizes="(max-width: 359px) 168px, (max-width: 389px) 176px, (max-width: 430px) 188px, (max-width: 639px) 200px, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"
+                sizes="(max-width: 359px) 72vw, (max-width: 389px) 72vw, (max-width: 429px) 72vw, (max-width: 639px) 72vw, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"
               />
               <div className="hero-product-caption">
                 <span className="hero-product-caption__action">
@@ -148,19 +132,19 @@ export function Hero() {
           )}
         </motion.div>
 
-        {/* Tablet portrait only: keep prior order — phone then CTAs */}
+        {/* Mobile + tablet: CTAs directly under the mockup */}
         <motion.div
-          className="hero-ctas-tablet order-3 text-center"
+          className="hero-ctas-below order-3 text-center"
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: MOTION.duration.base,
-            delay: 0.18,
+            delay: 0.16,
             ease: EASE_OUT_SOFT,
           }}
         >
           <HeroCtas className="flex flex-col gap-3 sm:flex-row sm:justify-center" />
-          <HeroMeta />
+          <HeroMeta className="hero-meta mt-5 sm:mt-7" />
         </motion.div>
       </div>
     </section>
