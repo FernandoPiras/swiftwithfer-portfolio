@@ -10,7 +10,7 @@ import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 function HeroMeta() {
   return (
-    <p className="hero-meta mt-8">
+    <p className="hero-meta mt-7">
       <span>{siteConfig.name}</span>
       <span className="hero-meta__sep" aria-hidden />
       <span>{siteConfig.role}</span>
@@ -41,11 +41,16 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[min(100dvh,960px)] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))]"
+      className="relative flex min-h-[min(100dvh,1080px)] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))]"
     >
       <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 pb-16 pt-10 sm:gap-16 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 lg:pb-24 lg:pt-16 xl:gap-20">
-        <div className="order-1 text-center lg:text-left">
+
+      {/*
+        Launch composition: compact copy column + dominant product column.
+        Desktop weight ~40/60 so the phone matches the headline, not a side note.
+      */}
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-5 pb-14 pt-8 sm:gap-12 sm:px-8 sm:pb-16 sm:pt-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.25fr)] lg:gap-8 lg:px-10 lg:pb-20 lg:pt-8 xl:gap-12">
+        <div className="order-1 text-center lg:max-w-xl lg:justify-self-start lg:text-left xl:max-w-[34rem]">
           <motion.h1
             className="text-display text-foreground text-balance"
             initial={reduceMotion ? false : { opacity: 0, y: 10 }}
@@ -59,7 +64,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lead mx-auto mt-6 max-w-md text-pretty lg:mx-0 lg:max-w-lg"
+            className="text-lead mx-auto mt-5 max-w-md text-pretty lg:mx-0"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -72,7 +77,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-10 hidden lg:block"
+            className="mt-8 hidden lg:block"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -94,16 +99,16 @@ export function Hero() {
             delay: 0.08,
             ease: EASE_OUT_SOFT,
           }}
-          className="relative order-2 mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:max-w-none"
+          className="relative order-2 w-full justify-self-center lg:justify-self-end"
         >
           <div
-            className="pointer-events-none absolute -inset-10 rounded-[4rem] bg-gradient-to-b from-accent/12 via-transparent to-transparent blur-3xl sm:-inset-14"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-gradient-to-b from-accent/14 via-accent/4 to-transparent blur-3xl lg:left-auto lg:right-0 lg:translate-x-0"
             aria-hidden
           />
           {slotiva ? (
             <Link
               href={`/apps/${slotiva.id}`}
-              className="hero-product-link relative mx-auto block w-fit"
+              className="hero-product-link relative mx-auto block w-fit lg:mr-0 lg:ml-auto"
               aria-label={`Esplora il case study di ${slotiva.name}`}
             >
               <PhoneFrame
@@ -111,7 +116,7 @@ export function Hero() {
                 alt={`Anteprima ${slotiva.name}`}
                 priority
                 size="hero"
-                sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 392px"
+                sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 440px, 480px"
               />
               <div className="hero-product-caption">
                 <span className="hero-product-caption__action">

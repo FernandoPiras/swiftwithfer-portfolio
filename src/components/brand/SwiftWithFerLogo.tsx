@@ -56,13 +56,13 @@ export function SwiftWithFerLogo({
   const { logo } = siteConfig;
 
   if (variant === "header") {
-    // Navbar protagonist — designed presence, not a quiet mark
-    return <Wordmark heightPx={{ base: 30, sm: 36 }} className={className} />;
+    // Brand mark — presence comparable to a product marketing site
+    return <Wordmark heightPx={{ base: 40, sm: 48 }} className={className} />;
   }
 
   if (variant === "footer") {
-    // Quieter close (~0.55× header) so header remains brand authority
-    return <Wordmark heightPx={{ base: 18, sm: 20 }} className={className} />;
+    // Secondary to header authority (~0.5×)
+    return <Wordmark heightPx={{ base: 22, sm: 24 }} className={className} />;
   }
 
   if (variant === "hero") {

@@ -65,8 +65,9 @@ export function ButtonLink({
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/40 bg-background/75 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
-      <div className="mx-auto flex h-[var(--header-offset)] max-w-6xl items-center justify-between gap-6 px-4 sm:gap-8 sm:px-6 lg:gap-12">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/35 bg-background/75 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
+      <div className="mx-auto flex h-[var(--header-offset)] max-w-7xl items-center gap-8 px-5 sm:gap-10 sm:px-8 lg:gap-14 lg:px-10">
+        {/* Brand — primary mass on the left */}
         <Link
           href="/#hero"
           className="brand-link relative z-10 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -75,16 +76,17 @@ export function Header() {
           <SwiftWithFerLogo variant="header" priority />
         </Link>
 
+        {/* Menu — secondary, pushed away from the mark */}
         <nav
           aria-label="Navigazione principale"
-          className="hidden min-w-0 flex-1 justify-center md:flex"
+          className="ml-auto hidden min-w-0 md:block"
         >
-          <ul className="flex items-center gap-1 lg:gap-1.5">
+          <ul className="flex items-center gap-0.5 lg:gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex h-9 items-center px-3 text-[0.8125rem] font-medium tracking-[-0.012em] text-muted transition-colors duration-300 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:px-3.5"
+                  className="inline-flex h-9 items-center px-2.5 text-[0.8125rem] font-medium tracking-[-0.012em] text-muted transition-colors duration-300 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:px-3"
                 >
                   {item.label}
                 </Link>
@@ -93,11 +95,11 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:ml-1">
           <ButtonLink
             href="/#contact"
             variant="ghost"
-            className="hidden h-10 min-h-10 px-3 py-0 text-[0.8125rem] sm:inline-flex"
+            className="hidden h-10 min-h-10 px-2.5 py-0 text-[0.8125rem] sm:inline-flex"
           >
             Contattami
           </ButtonLink>

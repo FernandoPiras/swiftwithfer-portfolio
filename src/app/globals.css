@@ -9,7 +9,7 @@
   --glass: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(0, 0, 0, 0.06);
   --section-alt: #eeeff2;
-  --header-offset: 4.75rem;
+  --header-offset: 5.75rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 0.25s;
   --duration-base: 0.45s;
@@ -39,7 +39,7 @@
 
 @media (min-width: 640px) {
   :root {
-    --header-offset: 5.25rem;
+    --header-offset: 6.5rem;
   }
 }
 
@@ -199,34 +199,34 @@ body {
 }
 
 .phone-frame--hero {
-  max-width: 300px;
-  padding: 0.6875rem;
-  border-radius: calc(var(--radius-3xl) + 0.2rem);
+  max-width: 320px;
+  padding: 0.75rem;
+  border-radius: calc(var(--radius-3xl) + 0.35rem);
   box-shadow:
-    0 40px 80px rgba(0, 0, 0, 0.09),
-    0 8px 24px rgba(0, 0, 0, 0.04),
+    0 44px 90px rgba(0, 0, 0, 0.1),
+    0 10px 28px rgba(0, 0, 0, 0.045),
     0 0 0 1px color-mix(in srgb, var(--foreground) 3%, transparent);
 }
 
 .phone-frame--hero .phone-frame__screen {
-  border-radius: calc(var(--radius-3xl) - 0.15rem);
+  border-radius: calc(var(--radius-3xl) - 0.05rem);
 }
 
 @media (min-width: 640px) {
   .phone-frame--hero {
-    max-width: 340px;
+    max-width: 380px;
   }
 }
 
 @media (min-width: 1024px) {
   .phone-frame--hero {
-    max-width: 372px;
+    max-width: 440px;
   }
 }
 
 @media (min-width: 1280px) {
   .phone-frame--hero {
-    max-width: 392px;
+    max-width: 480px;
   }
 }
 
@@ -462,7 +462,7 @@ body {
 }
 
 .hero-product-caption {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   text-align: center;
 }
 
