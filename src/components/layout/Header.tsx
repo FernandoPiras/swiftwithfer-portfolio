@@ -66,7 +66,7 @@ export function ButtonLink({
 export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-glass-border/35 bg-background/75 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
-      <div className="mx-auto flex h-[var(--header-offset)] max-w-6xl items-center gap-4 px-4 sm:gap-8 sm:px-6 lg:gap-12 lg:px-8">
+      <div className="mx-auto flex h-[var(--header-offset)] max-w-6xl items-center gap-3 px-4 sm:gap-8 sm:px-6 lg:gap-12 lg:px-8">
         {/* Brand — primary mass on the left */}
         <Link
           href="/#hero"
@@ -95,14 +95,17 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex shrink-0 items-center gap-1 sm:gap-2 md:ml-1">
-          <ButtonLink
-            href="/#contact"
-            variant="ghost"
-            className="hidden h-10 min-h-10 px-2.5 py-0 text-[0.8125rem] sm:inline-flex"
-          >
-            Contattami
-          </ButtonLink>
+        <div className="flex shrink-0 items-center gap-1 max-md:ml-auto sm:gap-2 md:ml-1">
+          {/* Wrapper avoids ButtonLink base `inline-flex` winning over `hidden` (no twMerge). */}
+          <div className="hidden sm:contents">
+            <ButtonLink
+              href="/#contact"
+              variant="ghost"
+              className="h-10 min-h-10 px-2.5 py-0 text-[0.8125rem]"
+            >
+              Contattami
+            </ButtonLink>
+          </div>
           <MobileNav />
         </div>
       </div>

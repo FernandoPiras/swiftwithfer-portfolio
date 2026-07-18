@@ -108,7 +108,7 @@ export function Hero() {
           {slotiva ? (
             <Link
               href={`/apps/${slotiva.id}`}
-              className="hero-product-link relative mx-auto block w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[340px] xl:max-w-[360px]"
+              className="hero-product-link relative mx-auto block w-full max-w-[232px] sm:max-w-[248px] lg:max-w-[288px] xl:max-w-[308px]"
               aria-label={`Esplora il case study di ${slotiva.name}`}
             >
               <PhoneFrame
@@ -116,7 +116,7 @@ export function Hero() {
                 alt={`Anteprima ${slotiva.name}`}
                 priority
                 size="hero"
-                sizes="(max-width: 640px) 280px, (max-width: 1024px) 300px, (max-width: 1280px) 340px, 360px"
+                sizes="(max-width: 640px) 232px, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"
               />
               <div className="hero-product-caption">
                 <span className="hero-product-caption__action">

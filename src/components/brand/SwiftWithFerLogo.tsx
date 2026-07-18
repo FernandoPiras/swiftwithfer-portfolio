@@ -19,14 +19,16 @@ export const HEADER_WORDMARK_ASPECT =
   HEADER_WORDMARK_WIDTH / HEADER_WORDMARK_HEIGHT;
 
 /**
- * Display widths chosen for at-a-glance legibility of “swiftwithfer”
- * inside the SF | wordmark lockup (not arbitrary heights).
- * Height = width / HEADER_WORDMARK_ASPECT
- *   mobile  132px → ~50px H
- *   sm+     172px → ~65px H
+ * Display widths — aspect-locked (2038/771 ≈ 2.643).
+ * Desktop (sm+) stays at 172px — do not change.
+ * Mobile steps improve lockup legibility without crowding the bar.
+ *   <390px   148px → ~56px H
+ *   390–639  156px → ~59px H
+ *   ≥640px   172px → ~65px H (desktop, unchanged)
  */
 const HEADER_WM_DISPLAY_W = {
-  base: 132,
+  xs: 148,
+  base: 156,
   sm: 172,
 } as const;
 
@@ -76,6 +78,7 @@ function HeaderWordmark({
   priority?: boolean;
 }) {
   const style = {
+    "--header-wm-w-xs": `${HEADER_WM_DISPLAY_W.xs}px`,
     "--header-wm-w": `${HEADER_WM_DISPLAY_W.base}px`,
     "--header-wm-w-sm": `${HEADER_WM_DISPLAY_W.sm}px`,
   } as CSSProperties;
@@ -87,10 +90,10 @@ function HeaderWordmark({
       width={HEADER_WORDMARK_WIDTH}
       height={HEADER_WORDMARK_HEIGHT}
       priority={priority}
-      sizes={`(max-width: 639px) ${HEADER_WM_DISPLAY_W.base}px, ${HEADER_WM_DISPLAY_W.sm}px`}
+      sizes={`(max-width: 389px) ${HEADER_WM_DISPLAY_W.xs}px, (max-width: 639px) ${HEADER_WM_DISPLAY_W.base}px, ${HEADER_WM_DISPLAY_W.sm}px`}
       style={style}
       className={cn(
-        "header-wordmark h-auto w-[var(--header-wm-w)] max-w-full object-contain object-left sm:w-[var(--header-wm-w-sm)]",
+        "header-wordmark h-auto max-w-full object-contain object-left",
         "dark:invert",
         className,
       )}

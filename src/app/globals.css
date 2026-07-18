@@ -9,7 +9,7 @@
   --glass: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(0, 0, 0, 0.06);
   --section-alt: #eeeff2;
-  --header-offset: 4.75rem;
+  --header-offset: 5rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 0.25s;
   --duration-base: 0.45s;
@@ -199,7 +199,7 @@ body {
 }
 
 .phone-frame--hero {
-  max-width: min(100%, 280px);
+  max-width: min(100%, 232px);
   padding: 0.625rem;
   border-radius: calc(var(--radius-3xl) + 0.25rem);
   box-shadow:
@@ -214,19 +214,19 @@ body {
 
 @media (min-width: 640px) {
   .phone-frame--hero {
-    max-width: min(100%, 300px);
+    max-width: min(100%, 248px);
   }
 }
 
 @media (min-width: 1024px) {
   .phone-frame--hero {
-    max-width: min(100%, 340px);
+    max-width: min(100%, 288px);
   }
 }
 
 @media (min-width: 1280px) {
   .phone-frame--hero {
-    max-width: min(100%, 360px);
+    max-width: min(100%, 308px);
   }
 }
 
@@ -433,9 +433,15 @@ body {
   display: inline-flex;
   align-items: center;
   min-width: 0;
-  max-width: min(100%, 12rem);
+  max-width: min(100%, 10.25rem);
   border-radius: var(--radius-sm);
   transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+@media (min-width: 390px) {
+  .brand-link {
+    max-width: min(100%, 10.75rem);
+  }
 }
 
 @media (min-width: 640px) {
@@ -447,6 +453,19 @@ body {
 .header-wordmark {
   display: block;
   flex-shrink: 0;
+  width: var(--header-wm-w-xs);
+}
+
+@media (min-width: 390px) {
+  .header-wordmark {
+    width: var(--header-wm-w);
+  }
+}
+
+@media (min-width: 640px) {
+  .header-wordmark {
+    width: var(--header-wm-w-sm);
+  }
 }
 
 
