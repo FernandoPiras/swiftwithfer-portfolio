@@ -44,6 +44,7 @@ function ModeTab({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={cn(
         "min-h-11 flex-1 rounded-full px-4 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
         active
@@ -76,7 +77,7 @@ export function DiscoveryDocumentPicker() {
     <div className="space-y-6">
       <div className="flex rounded-full border border-glass-border bg-background/50 p-1">
         <ModeTab active={mode === "discovery"} onClick={() => setMode("discovery")}>
-          Avvia un progetto
+          Discovery Document
         </ModeTab>
         <ModeTab active={mode === "email"} onClick={() => setMode("email")}>
           Scrivimi direttamente
@@ -125,9 +126,9 @@ export function DiscoveryDocumentPicker() {
                     SwiftWithFer Discovery Document
                   </h4>
                   <p className="mt-1 text-sm leading-relaxed text-muted">
-                    Template professionale per raccogliere il 100% delle informazioni
-                    di progetto. Compilalo, allegalo via email e avviamo lo sviluppo
-                    senza ulteriori domande.
+                    Template professionale per raccogliere le informazioni essenziali
+                    di progetto. Compilalo, allegalo via email e partiamo con un
+                    quadro chiaro — senza iniziare da zero.
                   </p>
                 </div>
               </div>

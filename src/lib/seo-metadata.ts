@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
 
-const TWITTER_HANDLE = "@swiftwithfer";
-
 function buildOgImage(siteUrl: string) {
   const imagePath = siteConfig.seo.ogImage;
   const absoluteUrl = `${siteUrl}${imagePath}`;
@@ -82,14 +80,13 @@ export function createSiteMetadata(overrides?: Metadata): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
       title: seo.title,
       description: seo.description,
       images: [twitterImage],
     },
     icons: {
       icon: [
+        { url: "/favicon.ico", sizes: "48x48" },
         { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
         { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       ],
@@ -152,8 +149,6 @@ export function createHomeMetadata(): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
       title,
       description: seo.description,
       images: [twitterImage],
@@ -196,13 +191,9 @@ export function createCaseStudyMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
       title: ogTitle,
       description,
       images: [twitterImage],
     },
   };
 }
-
-export { TWITTER_HANDLE };

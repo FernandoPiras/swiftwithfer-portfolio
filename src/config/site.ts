@@ -141,7 +141,7 @@ export const siteConfig = {
   ],
   metrics: {
     publishedApps: 3,
-    technologies: 16,
+    technologies: 11,
     appStoreDeveloperUrl:
       "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
   },
@@ -156,7 +156,6 @@ export const siteConfig = {
     "StoreKit",
     "Vercel",
     "UI/UX",
-    "AI Tools",
     "App Architecture",
   ],
   technologies: [
@@ -170,7 +169,6 @@ export const siteConfig = {
     { name: "Vercel", slug: "vercel" },
     { name: "StoreKit", slug: "appstore" },
     { name: "Xcode", slug: "xcode" },
-    { name: "AI / Cursor", slug: "cursor" },
     { name: "Analytics", slug: "googleanalytics" },
   ] satisfies Technology[],
   timeline: [

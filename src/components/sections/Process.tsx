@@ -142,7 +142,7 @@ export function Process() {
       </ol>
 
       <Reveal delay={0.08} className="mt-12 flex justify-center">
-        <ButtonLink href="#services" variant="secondary">
+        <ButtonLink href="/#services" variant="secondary">
           Cosa posso fare per te
         </ButtonLink>
       </Reveal>

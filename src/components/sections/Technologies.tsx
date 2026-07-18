@@ -43,7 +43,7 @@ export function Technologies() {
       </ul>
 
       <Reveal delay={0.06} className="mt-12 flex justify-center">
-        <ButtonLink href="#contact">Iniziamo</ButtonLink>
+        <ButtonLink href="/#contact">Iniziamo</ButtonLink>
       </Reveal>
     </Section>
   );

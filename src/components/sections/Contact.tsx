@@ -46,7 +46,7 @@ export function Contact() {
                 <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                   Scrivimi ora
                 </ButtonLink>
-                <ButtonLink href="#services" variant="secondary">
+                <ButtonLink href="/#services" variant="secondary">
                   Vedi i servizi
                 </ButtonLink>
               </div>

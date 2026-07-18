@@ -21,7 +21,7 @@ export function Bio() {
       id="bio"
       eyebrow="Profilo"
       title="Chi sono"
-      subtitle="Un partner tecnico che consegna prodotti finiti — non slide o prototipi abbandonati."
+      subtitle="Un partner tecnico che consegna prodotti finiti — dalla discovery al rilascio."
       tone="default"
     >
       <Reveal>
@@ -142,7 +142,7 @@ export function Bio() {
                 >
                   {email}
                 </a>
-                <ButtonLink href="#technologies" variant="secondary" className="w-full sm:w-auto">
+                <ButtonLink href="/#technologies" variant="secondary" className="w-full sm:w-auto">
                   Stack di produzione
                 </ButtonLink>
               </div>

@@ -42,7 +42,7 @@ export function Apps() {
       </div>
 
       <Reveal delay={0.06} className="mt-12 flex justify-center sm:mt-14">
-        <ButtonLink href="#process" variant="secondary">
+        <ButtonLink href="/#process" variant="secondary">
           Come sviluppo un prodotto
         </ButtonLink>
       </Reveal>

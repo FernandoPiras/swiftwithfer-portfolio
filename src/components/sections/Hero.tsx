@@ -56,10 +56,10 @@ export function Hero() {
               ease: EASE_OUT_SOFT,
             }}
           >
-            <ButtonLink href="#apps" className="w-full sm:w-auto">
+            <ButtonLink href="/#apps" className="w-full sm:w-auto">
               Vedi i progetti
             </ButtonLink>
-            <ButtonLink href="#contact" variant="secondary" className="w-full sm:w-auto">
+            <ButtonLink href="/#contact" variant="secondary" className="w-full sm:w-auto">
               Parliamo del tuo progetto
             </ButtonLink>
           </motion.div>
