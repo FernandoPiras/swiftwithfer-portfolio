@@ -8,9 +8,9 @@ import { ButtonLink } from "@/components/layout/Header";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
-function HeroMeta() {
+function HeroMeta({ className }: { className?: string }) {
   return (
-    <p className="hero-meta mt-7">
+    <p className={className ?? "hero-meta mt-7"}>
       <span>{siteConfig.name}</span>
       <span className="hero-meta__sep" aria-hidden />
       <span>{siteConfig.role}</span>
@@ -41,15 +41,16 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[min(100dvh,960px)] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))]"
+      className="relative flex min-h-[min(100dvh,960px)] items-center overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] max-sm:min-h-0 max-sm:items-start"
     >
       <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
 
       {/*
         Balanced composition: copy leads, product supports.
         Grid ~1.05 / 0.95 so headline retains primacy over the device.
+        Mobile (<640): copy → CTA → phone peek. Tablet/desktop unchanged.
       */}
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:pb-20 lg:pt-10 xl:gap-16">
+      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:pb-20 lg:pt-10 xl:gap-16 max-sm:gap-5 max-sm:pb-8 max-sm:pt-5">
         <div className="order-1 min-w-0 text-center lg:text-left">
           <motion.h1
             className="text-display text-foreground text-balance"
@@ -64,7 +65,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lead mx-auto mt-5 max-w-lg text-pretty lg:mx-0"
+            className="text-lead mx-auto mt-5 max-w-lg text-pretty lg:mx-0 max-sm:mt-3"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -75,6 +76,21 @@ export function Hero() {
           >
             {siteConfig.hero.subhead}
           </motion.p>
+
+          {/* Mobile (+ short landscape): CTA above the mockup so the message leads the fold */}
+          <motion.div
+            className="hero-ctas-mobile mt-5"
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: MOTION.duration.base,
+              delay: 0.12,
+              ease: EASE_OUT_SOFT,
+            }}
+          >
+            <HeroCtas className="flex flex-col gap-2.5" />
+            <HeroMeta className="hero-meta mt-4" />
+          </motion.div>
 
           <motion.div
             className="mt-9 hidden lg:block"
@@ -99,7 +115,7 @@ export function Hero() {
             delay: 0.08,
             ease: EASE_OUT_SOFT,
           }}
-          className="relative order-2 w-full min-w-0 justify-self-center lg:justify-self-center"
+          className="hero-phone-stage relative order-2 w-full min-w-0 justify-self-center lg:justify-self-center"
         >
           <div
             className="pointer-events-none absolute left-1/2 top-1/2 h-[110%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-gradient-to-b from-accent/10 via-accent/3 to-transparent blur-3xl"
@@ -108,7 +124,7 @@ export function Hero() {
           {slotiva ? (
             <Link
               href={`/apps/${slotiva.id}`}
-              className="hero-product-link relative mx-auto block w-full max-w-[232px] sm:max-w-[248px] lg:max-w-[288px] xl:max-w-[308px]"
+              className="hero-product-link relative mx-auto block w-full sm:max-w-[248px] lg:max-w-[288px] xl:max-w-[308px]"
               aria-label={`Esplora il case study di ${slotiva.name}`}
             >
               <PhoneFrame
@@ -116,7 +132,7 @@ export function Hero() {
                 alt={`Anteprima ${slotiva.name}`}
                 priority
                 size="hero"
-                sizes="(max-width: 640px) 232px, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"
+                sizes="(max-width: 359px) 168px, (max-width: 389px) 176px, (max-width: 430px) 188px, (max-width: 639px) 200px, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"
               />
               <div className="hero-product-caption">
                 <span className="hero-product-caption__action">
@@ -132,8 +148,9 @@ export function Hero() {
           )}
         </motion.div>
 
+        {/* Tablet portrait only: keep prior order — phone then CTAs */}
         <motion.div
-          className="order-3 text-center lg:hidden"
+          className="hero-ctas-tablet order-3 text-center"
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{

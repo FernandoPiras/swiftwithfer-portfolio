@@ -198,8 +198,17 @@ body {
     box-shadow var(--duration-slow) var(--ease-out);
 }
 
+/*
+ * Hero phone — mobile bands only (<640).
+ * Tablet (sm+) and desktop ladders unchanged from prior balance pass.
+ *   320–359  168px
+ *   360–389  176px
+ *   390–430  188px
+ *   431–639  200px
+ *   ≥640     248 / 288 / 308 (unchanged)
+ */
 .phone-frame--hero {
-  max-width: min(100%, 232px);
+  max-width: min(100%, 168px);
   padding: 0.625rem;
   border-radius: calc(var(--radius-3xl) + 0.25rem);
   box-shadow:
@@ -210,6 +219,24 @@ body {
 
 .phone-frame--hero .phone-frame__screen {
   border-radius: calc(var(--radius-3xl) - 0.15rem);
+}
+
+@media (min-width: 360px) {
+  .phone-frame--hero {
+    max-width: min(100%, 176px);
+  }
+}
+
+@media (min-width: 390px) {
+  .phone-frame--hero {
+    max-width: min(100%, 188px);
+  }
+}
+
+@media (min-width: 431px) {
+  .phone-frame--hero {
+    max-width: min(100%, 200px);
+  }
 }
 
 @media (min-width: 640px) {
@@ -227,6 +254,93 @@ body {
 @media (min-width: 1280px) {
   .phone-frame--hero {
     max-width: min(100%, 308px);
+  }
+}
+
+/* Mobile product link widths — match phone-frame bands (<640 only) */
+@media (max-width: 639px) {
+  .hero-phone-stage .hero-product-link {
+    max-width: min(100%, 168px);
+  }
+
+  .hero-phone-stage .hero-product-caption {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 639px) and (min-width: 360px) {
+  .hero-phone-stage .hero-product-link {
+    max-width: min(100%, 176px);
+  }
+}
+
+@media (max-width: 639px) and (min-width: 390px) {
+  .hero-phone-stage .hero-product-link {
+    max-width: min(100%, 188px);
+  }
+}
+
+@media (max-width: 639px) and (min-width: 431px) {
+  .hero-phone-stage .hero-product-link {
+    max-width: min(100%, 200px);
+  }
+}
+
+/*
+ * Mobile / short-landscape CTA visibility — tablet portrait & desktop untouched.
+ *   <640px portrait: mobile CTAs (above phone)
+ *   640–1023 portrait: tablet CTAs (below phone)
+ *   short landscape ≤1023×520: mobile CTAs (message-first on phone landscape)
+ *   ≥1024: neither (desktop CTAs in copy column)
+ */
+.hero-ctas-mobile {
+  display: block;
+}
+
+.hero-ctas-tablet {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hero-ctas-mobile {
+    display: none;
+  }
+
+  .hero-ctas-tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-ctas-mobile,
+  .hero-ctas-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 520px) {
+  .hero-ctas-mobile {
+    display: block;
+  }
+
+  .hero-ctas-tablet {
+    display: none;
+  }
+
+  /* Short landscape: message + CTA only — phone would never fit above the fold */
+  .hero-phone-stage {
+    display: none;
+  }
+
+  #hero {
+    min-height: 0;
+    align-items: flex-start;
+  }
+
+  #hero .hero-shell {
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 }
 
