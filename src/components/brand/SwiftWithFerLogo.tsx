@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 
 /**
  * Sole brand wordmark — /images/brand/wordmark.png
- * Transparent PNG (RGBA). Intrinsic after content crop: 1337 × 280 → aspect ≈ 4.775
+ * Exact user original: 1536 × 1024 RGBA (MD5 749b46cf67a573c258032a01e62add2e)
  * Sized by WIDTH for the header; height follows aspect.
  */
-export const WORDMARK_WIDTH = 1337;
-export const WORDMARK_HEIGHT = 280;
+export const WORDMARK_WIDTH = 1536;
+export const WORDMARK_HEIGHT = 1024;
 export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
 
 /**
