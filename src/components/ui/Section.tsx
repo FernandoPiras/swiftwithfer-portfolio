@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { EASE_OUT } from "@/lib/motion";
+import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 interface SectionProps {
   id: string;
@@ -12,6 +12,8 @@ interface SectionProps {
   subtitle?: string;
   children: ReactNode;
   className?: string;
+  /** Visual rhythm without changing palette */
+  tone?: "default" | "surface" | "glow";
 }
 
 export function Section({
@@ -21,6 +23,7 @@ export function Section({
   subtitle,
   children,
   className,
+  tone = "default",
 }: SectionProps) {
   const reduceMotion = useReducedMotion();
 
@@ -28,22 +31,29 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-16 sm:py-24 md:py-28",
+        "relative scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-16 sm:py-24 md:py-28",
+        tone === "surface" && "section-surface",
+        tone === "glow" && "section-glow",
         className,
       )}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: EASE_OUT }}
-          className="mb-10 sm:mb-14 md:mb-16"
+          viewport={MOTION.viewport}
+          transition={{
+            duration: MOTION.duration.base,
+            ease: EASE_OUT_SOFT,
+          }}
+          className="mb-10 sm:mb-12 md:mb-14"
         >
-          {eyebrow ? <p className="text-eyebrow mb-3 text-accent">{eyebrow}</p> : null}
+          {eyebrow ? (
+            <p className="text-eyebrow mb-3 text-accent">{eyebrow}</p>
+          ) : null}
           <h2 className="text-section-title text-foreground">{title}</h2>
           {subtitle ? (
-            <p className="text-lead mt-4 max-w-xl">{subtitle}</p>
+            <p className="text-lead mt-4 max-w-xl text-pretty">{subtitle}</p>
           ) : null}
         </motion.div>
         {children}

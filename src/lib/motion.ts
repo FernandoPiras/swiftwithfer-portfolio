@@ -1,22 +1,30 @@
-/** Shared motion tokens — Apple / Linear easing */
+/** Shared motion tokens — cinematic, never flashy */
 export const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+export const EASE_OUT_SOFT = [0.16, 1, 0.3, 1] as const;
 
 export const MOTION = {
   duration: {
-    fast: 0.4,
-    base: 0.5,
-    slow: 0.6,
+    fast: 0.45,
+    base: 0.65,
+    slow: 0.85,
   },
-  stagger: 0.04,
-  viewport: { once: true, margin: "-60px" as const },
+  stagger: 0.055,
+  /** Softer travel for premium entrances */
+  distance: 18,
+  viewport: { once: true, margin: "-12% 0px -8% 0px" as const },
+  viewportTight: { once: true, margin: "-6% 0px -4% 0px" as const },
 } as const;
 
 export function fadeUp(delay = 0) {
   return {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: MOTION.distance },
     whileInView: { opacity: 1, y: 0 },
     viewport: MOTION.viewport,
-    transition: { duration: MOTION.duration.base, delay, ease: EASE_OUT },
+    transition: {
+      duration: MOTION.duration.base,
+      delay,
+      ease: EASE_OUT_SOFT,
+    },
   };
 }
 
@@ -24,27 +32,48 @@ export function fadeIn(delay = 0) {
   return {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: MOTION.duration.slow, delay, ease: EASE_OUT },
+    transition: {
+      duration: MOTION.duration.slow,
+      delay,
+      ease: EASE_OUT_SOFT,
+    },
   };
 }
 
 export function scaleIn(delay = 0) {
   return {
-    initial: { opacity: 0, scale: 0.96 },
+    initial: { opacity: 0, scale: 0.97 },
     animate: { opacity: 1, scale: 1 },
-    transition: { duration: MOTION.duration.slow, delay, ease: EASE_OUT },
+    transition: {
+      duration: MOTION.duration.slow,
+      delay,
+      ease: EASE_OUT_SOFT,
+    },
   };
 }
 
 export function gridItem(index: number) {
   return {
-    initial: { opacity: 0, y: 16 },
+    initial: { opacity: 0, y: 14 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-40px" },
+    viewport: MOTION.viewportTight,
     transition: {
       duration: MOTION.duration.fast,
       delay: index * MOTION.stagger,
-      ease: EASE_OUT,
+      ease: EASE_OUT_SOFT,
+    },
+  };
+}
+
+/** Hero / above-the-fold entrance */
+export function enterUp(delay = 0, distance = 16) {
+  return {
+    initial: { opacity: 0, y: distance },
+    animate: { opacity: 1, y: 0 },
+    transition: {
+      duration: MOTION.duration.base,
+      delay,
+      ease: EASE_OUT_SOFT,
     },
   };
 }

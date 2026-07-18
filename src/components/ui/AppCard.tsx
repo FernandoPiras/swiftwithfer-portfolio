@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
-import { EASE_OUT } from "@/lib/motion";
+import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 interface AppCardProps {
   app: AppProject;
@@ -32,10 +32,14 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
 
   return (
     <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+      initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.06, ease: EASE_OUT }}
+      viewport={MOTION.viewport}
+      transition={{
+        duration: MOTION.duration.base,
+        delay: index * 0.07,
+        ease: EASE_OUT_SOFT,
+      }}
     >
       <GlassCard
         className={cn(

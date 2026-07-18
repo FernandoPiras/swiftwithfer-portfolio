@@ -14,7 +14,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { FlowSteps } from "@/components/ui/FlowSteps";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
-import { EASE_OUT, MOTION } from "@/lib/motion";
+import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 interface CaseStudyViewProps {
   study: CaseStudyContent;
@@ -35,10 +35,10 @@ function Reveal({
   return (
     <motion.div
       className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+      initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-48px" }}
-      transition={{ duration: MOTION.duration.base, delay, ease: EASE_OUT }}
+      viewport={MOTION.viewport}
+      transition={{ duration: MOTION.duration.base, delay, ease: EASE_OUT_SOFT }}
     >
       {children}
     </motion.div>

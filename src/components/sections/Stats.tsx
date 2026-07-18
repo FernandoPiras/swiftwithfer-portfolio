@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { statsConfig, type StatItem } from "@/config/stats";
-import { cn } from "@/lib/utils";
 
 function easeOutCubic(t: number) {
   return 1 - (1 - t) ** 3;
@@ -74,17 +73,12 @@ function CounterStatCard({
 
 function LabelStatCard({
   stat,
-  active,
 }: {
   stat: Extract<StatItem, { type: "label" }>;
-  active: boolean;
 }) {
   return (
     <article
-      className={cn(
-        "stat-card transition-all duration-700",
-        active ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
-      )}
+      className="stat-card"
       aria-label={`${stat.headline} ${stat.label}`}
     >
       <p className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
@@ -106,6 +100,11 @@ export function Stats() {
     const node = sectionRef.current;
     if (!node) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setActive(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
@@ -125,16 +124,30 @@ export function Stats() {
       ref={sectionRef}
       id="stats"
       aria-label="Metriche principali"
-      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] border-y border-glass-border/60 py-12 sm:py-16"
+      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/50 py-14 sm:py-16 md:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_50%,color-mix(in_srgb,var(--accent)_5%,transparent),transparent_70%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-          {statsConfig.map((stat) => (
-            <li key={stat.id}>
+          {statsConfig.map((stat, index) => (
+            <li
+              key={stat.id}
+              style={{
+                transitionDelay: active ? `${index * 55}ms` : "0ms",
+              }}
+              className={
+                active
+                  ? "translate-y-0 opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  : "translate-y-3 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              }
+            >
               {stat.type === "counter" ? (
                 <CounterStatCard stat={stat} active={active} />
               ) : (
-                <LabelStatCard stat={stat} active={active} />
+                <LabelStatCard stat={stat} />
               )}
             </li>
           ))}

@@ -141,14 +141,40 @@ body {
 .hero-gradient {
   background:
     radial-gradient(
-      ellipse 80% 50% at 50% -20%,
-      color-mix(in srgb, var(--accent) 12%, transparent),
+      ellipse 80% 55% at 50% -18%,
+      color-mix(in srgb, var(--accent) 14%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 85% 40%,
+      color-mix(in srgb, var(--accent-secondary) 6%, transparent),
       transparent 70%
     );
 }
 
 .section-surface {
-  background: color-mix(in srgb, var(--section-alt) 55%, transparent);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--section-alt) 0%, transparent) 0%,
+      color-mix(in srgb, var(--section-alt) 58%, transparent) 12%,
+      color-mix(in srgb, var(--section-alt) 58%, transparent) 88%,
+      color-mix(in srgb, var(--section-alt) 0%, transparent) 100%
+    );
+}
+
+.section-glow {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 50% 0%,
+      color-mix(in srgb, var(--accent) 9%, transparent),
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--section-alt) 35%, transparent),
+      transparent 40%
+    );
 }
 
 .phone-frame {
@@ -162,7 +188,27 @@ body {
   border: 1px solid var(--glass-border);
   background: color-mix(in srgb, var(--background) 70%, transparent);
   padding: 0.5rem;
-  box-shadow: var(--shadow-xl);
+  box-shadow:
+    var(--shadow-xl),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 3%, transparent);
+  transition:
+    transform var(--duration-slow) var(--ease-out),
+    box-shadow var(--duration-slow) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .phone-frame:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 32px 64px rgba(0, 0, 0, 0.1),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
+  }
+
+  .dark .phone-frame:hover {
+    box-shadow:
+      0 32px 64px rgba(0, 0, 0, 0.45),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
+  }
 }
 
 .phone-frame--compact {
@@ -206,12 +252,24 @@ body {
   text-align: center;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(16px);
+  transition:
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
 }
 
 @media (min-width: 640px) {
   .stat-card {
     border-radius: var(--radius-2xl);
     padding: 1.5rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .stat-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 14%, var(--glass-border));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 }
 
@@ -227,27 +285,61 @@ body {
   transition:
     border-color var(--duration-base) var(--ease-out),
     box-shadow var(--duration-base) var(--ease-out),
-    transform var(--duration-base) var(--ease-out);
+    transform var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .premium-card:hover {
-    border-color: color-mix(in srgb, var(--accent) 18%, var(--glass-border));
+    border-color: color-mix(in srgb, var(--accent) 20%, var(--glass-border));
     box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    background-color: color-mix(in srgb, var(--glass) 92%, white);
+  }
+
+  .dark .premium-card:hover {
+    background-color: color-mix(in srgb, var(--glass) 88%, white 4%);
   }
 }
 
 .btn-primary {
+  position: relative;
   background: var(--accent);
   color: #fff;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 28%, transparent);
+  transition:
+    filter var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
-    filter: brightness(1.06);
-    box-shadow: 0 12px 32px color-mix(in srgb, var(--accent) 35%, transparent);
+    filter: brightness(1.05);
+    box-shadow: 0 14px 36px color-mix(in srgb, var(--accent) 38%, transparent);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+.tech-tile {
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    background-color var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tech-tile:hover {
+    border-color: color-mix(in srgb, var(--accent) 22%, var(--glass-border));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    background-color: color-mix(in srgb, var(--glass) 90%, transparent);
   }
 }
 
