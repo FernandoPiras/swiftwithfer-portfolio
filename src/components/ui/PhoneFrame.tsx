@@ -9,7 +9,7 @@ interface PhoneFrameProps {
   sizes?: string;
   priority?: boolean;
   className?: string;
-  size?: "default" | "compact";
+  size?: "default" | "compact" | "hero";
 }
 
 /** Unified device frame — identical proportions across portfolio */
@@ -23,12 +23,14 @@ export function PhoneFrame({
   size = "default",
 }: PhoneFrameProps) {
   const isCompact = size === "compact";
+  const isHero = size === "hero";
 
   return (
     <div
       className={cn(
         "phone-frame",
         isCompact && "phone-frame--compact",
+        isHero && "phone-frame--hero",
         className,
       )}
     >

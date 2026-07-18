@@ -9,7 +9,7 @@
   --glass: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(0, 0, 0, 0.06);
   --section-alt: #eeeff2;
-  --header-offset: 4rem;
+  --header-offset: 4.75rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 0.25s;
   --duration-base: 0.45s;
@@ -35,6 +35,12 @@
   --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.07);
   --shadow-xl: 0 28px 70px rgba(0, 0, 0, 0.09);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-offset: 5.25rem;
+  }
 }
 
 .dark {
@@ -196,6 +202,43 @@ body {
     box-shadow var(--duration-slow) var(--ease-out);
 }
 
+.phone-frame--hero {
+  max-width: 300px;
+  padding: 0.625rem;
+  border-radius: calc(var(--radius-3xl) + 0.15rem);
+  box-shadow:
+    0 36px 80px rgba(0, 0, 0, 0.12),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
+}
+
+.phone-frame--hero .phone-frame__screen {
+  border-radius: calc(var(--radius-3xl) - 0.2rem);
+}
+
+@media (min-width: 640px) {
+  .phone-frame--hero {
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-frame--hero {
+    max-width: 380px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .phone-frame--hero {
+    max-width: 400px;
+  }
+}
+
+.dark .phone-frame--hero {
+  box-shadow:
+    0 36px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .phone-frame:hover {
     transform: translateY(-3px);
@@ -204,10 +247,23 @@ body {
       0 0 0 1px color-mix(in srgb, var(--foreground) 4%, transparent);
   }
 
+  .phone-frame--hero:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 42px 90px rgba(0, 0, 0, 0.14),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 5%, transparent);
+  }
+
   .dark .phone-frame:hover {
     box-shadow:
       0 32px 64px rgba(0, 0, 0, 0.45),
       0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
+  }
+
+  .dark .phone-frame--hero:hover {
+    box-shadow:
+      0 42px 90px rgba(0, 0, 0, 0.55),
+      0 0 0 1px color-mix(in srgb, var(--foreground) 8%, transparent);
   }
 }
 
@@ -373,17 +429,72 @@ body {
   align-items: center;
   min-width: 0;
   border-radius: var(--radius-sm);
+  /* Optical vertical centering for wide wordmark masks */
+  transform: translateY(0.5px);
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .brand-link:hover {
-    opacity: 0.78;
+    opacity: 0.88;
   }
 }
 
 .brand-link:active {
-  opacity: 0.9;
+  opacity: 0.94;
+}
+
+.hero-product-link {
+  display: block;
+  border-radius: calc(var(--radius-3xl) + 0.5rem);
+  outline: none;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.hero-product-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.hero-product-caption {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.hero-product-caption__label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-product-caption__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--foreground);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-product-link:hover .hero-product-caption__action {
+    color: var(--accent);
+  }
+
+  .hero-product-link:hover .hero-product-caption__arrow {
+    transform: translateX(3px);
+  }
+}
+
+.hero-product-caption__arrow {
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
 :focus-visible {
