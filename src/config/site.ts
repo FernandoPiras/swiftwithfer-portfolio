@@ -195,14 +195,14 @@ export const siteConfig = {
       name: "Slotiva",
       tagline: "Prenotazioni, CRM e operations in un solo sistema",
       description:
-        "L'ecosistema completo per saloni e studi: app iOS, gestionale web CRM e backend cloud in tempo reale. Meno no-show, agenda allineata, business sotto controllo — dalla prenotazione all'analytics.",
+        "L'ecosistema completo per saloni e studi: app iOS (con Apple Watch e widget), gestionale web CRM con Business Pulse e backend Firebase in tempo reale. Dalla prenotazione pubblica all'analytics operativa — agenda, clienti e staff allineati.",
       outcomes: [
         "Ecosistema app + CRM web + Firebase",
         "Gestionale live su slotiva.it",
-        "Prenotazioni, pagamenti e chat sincronizzati",
+        "Prenotazioni, chat e CRM sincronizzati",
       ],
       architecture:
-        "App iOS (SwiftUI) e gestionale web (React/TypeScript su Vercel) condividono Firestore e Cloud Functions. Auth, ruoli, multi-business e sync realtime unificano clienti, staff e amministrazione.",
+        "App iOS (SwiftUI) e gestionale web (React/TypeScript, export statico su Firebase Hosting) condividono Auth, Firestore e Cloud Functions. Sync realtime tra clienti, staff e amministrazione; Business Pulse fornisce insight operativi rule-based; StoreKit 2 per Slotiva Pro.",
       icon: "/images/apps/slotiva/icon.png",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
@@ -216,11 +216,11 @@ export const siteConfig = {
         "Cloud Functions",
         "React",
         "TypeScript",
-        "Vercel",
+        "Firebase Hosting",
         "StoreKit 2",
         "Apple Watch",
+        "WidgetKit",
         "Push Notifications",
-        "AI",
       ],
       appStoreUrl: "https://apps.apple.com/it/app/slotiva/id6779347919",
       websiteUrl: "https://www.slotiva.it",
@@ -237,14 +237,14 @@ export const siteConfig = {
       name: "AndroMetrics",
       tagline: "Qualità medicale, chiarezza ogni giorno",
       description:
-        "App medicale premium per fertilità e benessere maschile: tracking, score 0–100, grafici e report PDF. Privacy by design e UX pensata per fiducia — non per tecnici.",
+        "App medicale premium per fertilità e benessere maschile: tracking quotidiano, score 0–100, grafici, HealthKit, AI Coach, referti con OCR e report PDF. Local-first e privacy by design — chiarezza clinica senza complessità da laboratorio.",
       outcomes: [
         "Tracking e score giornaliero chiari",
         "Valutazione 5.0 su App Store",
-        "Report PDF e privacy protetta",
+        "Report PDF, AI Coach e privacy protetta",
       ],
       architecture:
-        "App SwiftUI con sync Firebase, digitalizzazione referti (Vision), widget iOS e StoreKit 2. Flusso dati orientato a continuità, chiarezza clinica e protezione delle informazioni di salute.",
+        "App SwiftUI local-first (App Group + sync opzionale iCloud KVS), HealthKit in lettura, Vision OCR on-device, AI Coach via proxy API, WidgetKit e StoreKit 2. Firebase solo per snapshot TTC di coppia opzionali — i dati di tracking restano sul dispositivo.",
       icon: "/images/apps/andrometrics/icon.png",
       screenshots: [
         "/images/apps/andrometrics/screenshot-1.png",
@@ -255,9 +255,10 @@ export const siteConfig = {
         "SwiftUI",
         "HealthKit",
         "StoreKit 2",
-        "Firebase",
         "WidgetKit",
         "Vision",
+        "iCloud",
+        "Firebase",
       ],
       appStoreUrl:
         "https://apps.apple.com/it/app/andrometrics-fertility/id6758244167",
