@@ -10,7 +10,7 @@ import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 function HeroMeta({ className }: { className?: string }) {
   return (
-    <p className={className ?? "hero-meta mt-8"}>
+    <p className={className ?? "hero-meta mt-10"}>
       <span>{siteConfig.name}</span>
       <span className="hero-meta__sep" aria-hidden />
       <span>{siteConfig.role}</span>
@@ -101,10 +101,6 @@ export function Hero() {
           }}
           className="hero-phone-stage relative order-2 w-full min-w-0 justify-self-center lg:justify-self-center"
         >
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[110%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-gradient-to-b from-accent/10 via-accent/3 to-transparent blur-3xl"
-            aria-hidden
-          />
           {slotiva ? (
             <Link
               href={`/apps/${slotiva.id}`}
@@ -144,7 +140,7 @@ export function Hero() {
           }}
         >
           <HeroCtas className="flex flex-col gap-3 sm:flex-row sm:justify-center" />
-          <HeroMeta className="hero-meta mt-6 sm:mt-8" />
+          <HeroMeta className="hero-meta mt-8 sm:mt-10" />
         </motion.div>
       </div>
     </section>
