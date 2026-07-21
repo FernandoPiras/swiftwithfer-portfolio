@@ -4,11 +4,10 @@ import { MobileNav } from "@/components/layout/MobileNav";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/#apps", label: "Progetti" },
+  { href: "/#proof", label: "Prova" },
   { href: "/#process", label: "Metodo" },
+  { href: "/#apps", label: "Prodotti" },
   { href: "/#services", label: "Servizi" },
-  { href: "/#bio", label: "Bio" },
-  { href: "/#technologies", label: "Stack" },
   { href: "/#contact", label: "Contatti" },
 ];
 

@@ -92,7 +92,7 @@ function LabelStatCard({
   );
 }
 
-export function Stats() {
+export function Stats({ embedded = false }: { embedded?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(false);
 
@@ -122,11 +122,15 @@ export function Stats() {
   return (
     <section
       ref={sectionRef}
-      id="stats"
+      id={embedded ? undefined : "stats"}
       aria-label="Metriche principali"
-      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/40 py-20 sm:py-28 md:py-32"
+      className={
+        embedded
+          ? "relative"
+          : "scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/40 py-20 sm:py-28 md:py-32"
+      }
     >
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <div className={embedded ? "relative" : "relative mx-auto max-w-6xl px-4 sm:px-6"}>
         <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {statsConfig.map((stat, index) => (
             <li

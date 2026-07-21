@@ -21,9 +21,9 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="Contatti"
+      eyebrow="Soglia"
       title="Iniziamo"
-      subtitle="Compila il Discovery Document o scrivimi direttamente. Rispondo entro 48 ore lavorative."
+      subtitle="Se la tesi ti convince, il passo successivo è chiaro. Compila il Discovery Document o scrivimi — rispondo entro 48 ore lavorative."
       tone="glow"
     >
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">

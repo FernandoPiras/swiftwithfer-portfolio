@@ -3,10 +3,12 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { developmentProcess } from "@/config/process";
+import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { Section } from "@/components/ui/Section";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
+import { TechIcon } from "@/components/ui/TechIcon";
 import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 const icons: Record<string, ReactNode> = {
@@ -92,17 +94,33 @@ const icons: Record<string, ReactNode> = {
   ),
 };
 
+/** Atto III — Principio. Metodo + filosofia; stack assorbito come nota, non atto. */
 export function Process() {
   const reduceMotion = useReducedMotion();
+  const { bio } = siteConfig;
 
   return (
     <Section
       id="process"
-      eyebrow="Metodo"
-      title="Come sviluppo un prodotto"
-      subtitle="Un processo end-to-end: dal problema reale al software in produzione, con aggiornamenti continui."
+      eyebrow="Principio"
+      title="Come nasce un prodotto"
+      subtitle="La prova non è fortuna: è un modo ripetibile — dal problema reale al software in produzione."
       tone="default"
     >
+      <Reveal>
+        <div className="mb-14 max-w-2xl space-y-5 sm:mb-16">
+          <p className="text-sm leading-relaxed text-muted text-pretty sm:text-base">
+            {bio.philosophy}
+          </p>
+          <p className="text-sm leading-relaxed text-muted text-pretty sm:text-base">
+            {bio.full}
+          </p>
+          <p className="text-sm leading-relaxed text-muted text-pretty sm:text-base">
+            {bio.journey}
+          </p>
+        </div>
+      </Reveal>
+
       <ol className="relative grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
         {developmentProcess.map((step, index) => (
           <motion.li
@@ -141,9 +159,43 @@ export function Process() {
         ))}
       </ol>
 
+      <div id="technologies" className="mt-20 scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] sm:mt-24">
+        <Reveal>
+          <p className="text-eyebrow mb-3 text-accent">Strumenti</p>
+          <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            Strumenti di produzione
+          </h3>
+          <p className="mt-3 max-w-xl text-sm text-muted">
+            Tecnologie usate per costruire e rilasciare prodotti reali — non solo demo.
+          </p>
+        </Reveal>
+        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {siteConfig.technologies.map((tech, index) => (
+            <motion.li
+              key={tech.name}
+              initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={MOTION.viewportTight}
+              transition={{
+                duration: MOTION.duration.base,
+                delay: Math.min(index * MOTION.stagger, 0.48),
+                ease: EASE_OUT_SOFT,
+              }}
+            >
+              <div className="tech-tile flex h-full flex-col items-center justify-center gap-3 rounded-xl border border-glass-border bg-glass/60 p-5 backdrop-blur-md sm:gap-3.5 sm:p-6">
+                <TechIcon slug={tech.slug} className="h-8 w-8 sm:h-9 sm:w-9" />
+                <span className="text-center text-xs font-medium text-foreground">
+                  {tech.name}
+                </span>
+              </div>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+
       <Reveal delay={0.08} className="mt-16 flex justify-center sm:mt-20">
-        <ButtonLink href="/#services" variant="ghost">
-          Cosa posso fare per te →
+        <ButtonLink href="/#apps" variant="ghost">
+          Altre prove live →
         </ButtonLink>
       </Reveal>
     </Section>

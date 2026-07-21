@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
-import { Bio } from "@/components/sections/Bio";
-import { Apps } from "@/components/sections/Apps";
-import { Services } from "@/components/sections/Services";
+import { ProductProof } from "@/components/sections/ProductProof";
 import { Process } from "@/components/sections/Process";
-import { Technologies } from "@/components/sections/Technologies";
+import { ProductBody } from "@/components/sections/ProductBody";
+import { Services } from "@/components/sections/Services";
 import { Contact } from "@/components/sections/Contact";
 import { buildHomeJsonLd } from "@/lib/json-ld";
 import { createHomeMetadata } from "@/lib/seo-metadata";
@@ -25,6 +23,10 @@ function JsonLd() {
   );
 }
 
+/**
+ * Manifesto narrative architecture:
+ * I Dichiarazione (Hero) → II Prova → III Principio → IV Corpo → V Offerta → VI Soglia
+ */
 export default function Home() {
   return (
     <>
@@ -32,12 +34,10 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <Hero />
-        <Stats />
-        <Apps />
+        <ProductProof />
         <Process />
+        <ProductBody />
         <Services />
-        <Bio />
-        <Technologies />
         <Contact />
       </main>
       <Footer />
