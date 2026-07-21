@@ -189,6 +189,51 @@ body {
   }
 }
 
+/* Hero-only typography — editorial measure + vertical rhythm */
+.hero-headline {
+  max-width: 22ch;
+  margin-inline: auto;
+  line-height: 1.11;
+}
+
+.hero-subhead {
+  max-width: 20.5rem;
+  margin-inline: auto;
+  margin-top: var(--space-6);
+  font-size: clamp(1rem, 0.35vw + 0.92rem, 1.125rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .hero-headline {
+    max-width: 23ch;
+  }
+
+  .hero-subhead {
+    max-width: 26rem;
+    margin-top: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-headline {
+    max-width: 24ch;
+    margin-inline: 0;
+  }
+
+  .hero-subhead {
+    max-width: 27rem;
+    margin-inline: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-headline {
+    font-size: clamp(2.35rem, 4.2vw + 0.85rem, 4rem);
+  }
+}
+
 .section-surface {
   background:
     linear-gradient(
