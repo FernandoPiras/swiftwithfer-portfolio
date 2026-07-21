@@ -13,7 +13,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-6">
             <Link
               href="/#hero"
-              className="brand-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="brand-link brand-link--footer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               aria-label="SwiftWithFer — torna all'inizio"
             >
               <SwiftWithFerLogo variant="footer" />

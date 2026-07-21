@@ -675,6 +675,23 @@ body {
   }
 }
 
+/* Footer wordmark — room for the larger readable brand mark */
+.brand-link--footer {
+  max-width: min(100%, 12rem);
+}
+
+@media (min-width: 390px) {
+  .brand-link--footer {
+    max-width: min(100%, 13.5rem);
+  }
+}
+
+@media (min-width: 640px) {
+  .brand-link--footer {
+    max-width: min(100%, 15rem);
+  }
+}
+
 .header-wordmark {
   display: block;
   flex-shrink: 0;

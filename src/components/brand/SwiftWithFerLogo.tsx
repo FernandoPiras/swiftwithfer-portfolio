@@ -24,6 +24,13 @@ const HEADER_WM_DISPLAY_W = {
   sm: 172,
 } as const;
 
+/** Footer brand mark — readable focal size (larger than header chrome). */
+const FOOTER_WM_DISPLAY_W = {
+  xs: 176,
+  base: 196,
+  sm: 220,
+} as const;
+
 interface SwiftWithFerLogoProps {
   variant?: "header" | "footer" | "hero" | "mark" | "icon";
   className?: string;
@@ -86,21 +93,10 @@ export function SwiftWithFerLogo({
   }
 
   if (variant === "footer") {
-    // Same asset; compact height for footer chrome (≈ previous visual mass)
-    const footerH = 22;
-    const footerW = Math.round(footerH * WORDMARK_ASPECT);
     return (
-      <Image
-        src={logo.wordmark}
-        alt={logo.wordmarkAlt}
-        width={WORDMARK_WIDTH}
-        height={WORDMARK_HEIGHT}
-        unoptimized
-        sizes={`${footerW}px`}
-        className={cn(
-          "h-[22px] w-auto max-w-full object-contain object-left sm:h-6",
-          className,
-        )}
+      <BrandWordmark
+        className={cn("object-center", className)}
+        displayWidth={FOOTER_WM_DISPLAY_W}
       />
     );
   }
