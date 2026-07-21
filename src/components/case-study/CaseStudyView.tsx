@@ -38,7 +38,7 @@ function Reveal({
       initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={MOTION.viewport}
-      transition={{ duration: MOTION.duration.base, delay, ease: EASE_OUT_SOFT }}
+      transition={{ duration: MOTION.duration.slow, delay, ease: EASE_OUT_SOFT }}
     >
       {children}
     </motion.div>

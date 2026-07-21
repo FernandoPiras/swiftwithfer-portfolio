@@ -107,11 +107,11 @@ export function Process() {
         {developmentProcess.map((step, index) => (
           <motion.li
             key={step.id}
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={MOTION.viewportTight}
             transition={{
-              duration: MOTION.duration.fast,
+              duration: MOTION.duration.base,
               delay: index * MOTION.stagger,
               ease: EASE_OUT_SOFT,
             }}

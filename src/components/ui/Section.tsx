@@ -39,11 +39,11 @@ export function Section({
     >
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={MOTION.viewport}
           transition={{
-            duration: MOTION.duration.base,
+            duration: MOTION.duration.slow,
             ease: EASE_OUT_SOFT,
           }}
           className="mb-16 sm:mb-[4.5rem] md:mb-20"

@@ -88,10 +88,10 @@ export function DiscoveryDocumentPicker() {
         {mode === "email" ? (
           <motion.div
             key="email"
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.45, ease: [0.33, 0, 0.2, 1] }}
             className="rounded-2xl border border-glass-border bg-background/40 p-6 sm:p-7"
           >
             <h4 className="text-base font-semibold text-foreground sm:text-lg">
@@ -110,10 +110,10 @@ export function DiscoveryDocumentPicker() {
         ) : (
           <motion.div
             key="discovery"
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.45, ease: [0.33, 0, 0.2, 1] }}
             className="space-y-7"
           >
             <div className="rounded-2xl border border-accent/20 bg-accent/5 p-6 sm:p-7">

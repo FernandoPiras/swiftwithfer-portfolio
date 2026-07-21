@@ -23,12 +23,12 @@ export function Technologies() {
         {siteConfig.technologies.map((tech, index) => (
           <motion.li
             key={tech.name}
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={MOTION.viewportTight}
             transition={{
-              duration: MOTION.duration.fast,
-              delay: Math.min(index * MOTION.stagger, 0.35),
+              duration: MOTION.duration.base,
+              delay: Math.min(index * MOTION.stagger, 0.48),
               ease: EASE_OUT_SOFT,
             }}
           >

@@ -69,7 +69,7 @@ export function Contact() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex min-h-11 items-center justify-between rounded-lg border border-glass-border bg-background/40 px-4 py-3 text-sm transition-all duration-300 hover:border-accent/25 hover:bg-background/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      className="flex min-h-11 items-center justify-between rounded-lg border border-glass-border bg-background/40 px-4 py-3 text-sm transition-all duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] hover:border-accent/25 hover:bg-background/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     >
                       <span className="flex items-center gap-3 text-foreground">
                         <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white ring-1 ring-black/5 dark:bg-white/10">
@@ -77,7 +77,7 @@ export function Contact() {
                         </span>
                         {link.name}
                       </span>
-                      <span className="text-muted transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden>
+                      <span className="text-muted transition-transform duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] group-hover:translate-x-0.5" aria-hidden>
                         →
                       </span>
                     </a>

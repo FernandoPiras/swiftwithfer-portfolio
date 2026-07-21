@@ -36,8 +36,8 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={MOTION.viewport}
       transition={{
-        duration: MOTION.duration.base,
-        delay: index * 0.07,
+        duration: MOTION.duration.slow,
+        delay: index * 0.1,
         ease: EASE_OUT_SOFT,
       }}
     >
@@ -190,7 +190,7 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
                     >
                       <span
                         className={cn(
-                          "block rounded-full transition-all duration-300",
+                          "block rounded-full transition-all duration-500 ease-[cubic-bezier(0.33,0,0.2,1)]",
                           selected ? "h-1.5 w-7 bg-accent" : "h-1.5 w-1.5 bg-muted/30",
                         )}
                       />

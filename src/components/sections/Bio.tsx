@@ -28,10 +28,10 @@ export function Bio() {
         <GlassCard className="overflow-hidden">
           <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:items-start lg:gap-14">
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, scale: 0.97 }}
+              initial={reduceMotion ? false : { opacity: 0, scale: 0.985 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={MOTION.viewportTight}
-              transition={{ duration: MOTION.duration.base, ease: EASE_OUT_SOFT }}
+              transition={{ duration: MOTION.duration.slow, ease: EASE_OUT_SOFT }}
               className="mx-auto flex flex-col items-center lg:mx-0"
             >
               <div className="relative">
@@ -83,7 +83,7 @@ export function Bio() {
                 {bio.highlights.map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-xl border border-glass-border bg-background/40 px-4 py-4 transition-[border-color,box-shadow] duration-300 hover:border-accent/20"
+                    className="rounded-xl border border-glass-border bg-background/40 px-4 py-4 transition-[border-color,box-shadow] duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] hover:border-accent/20"
                   >
                     <dt className="text-xs font-medium uppercase tracking-wider text-muted">
                       {item.label}

@@ -23,11 +23,11 @@ export function Services() {
         {siteConfig.services.map((service, index) => (
           <motion.div
             key={service.id}
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={MOTION.viewportTight}
             transition={{
-              duration: MOTION.duration.fast,
+              duration: MOTION.duration.base,
               delay: index * MOTION.stagger,
               ease: EASE_OUT_SOFT,
             }}

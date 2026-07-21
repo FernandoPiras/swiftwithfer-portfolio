@@ -7,7 +7,7 @@ function easeOutCubic(t: number) {
   return 1 - (1 - t) ** 3;
 }
 
-function useCountUp(target: number, active: boolean, duration = 1400) {
+function useCountUp(target: number, active: boolean, duration = 1800) {
   const [value, setValue] = useState(0);
   const reducedMotionRef = useRef(false);
 
@@ -132,12 +132,12 @@ export function Stats() {
             <li
               key={stat.id}
               style={{
-                transitionDelay: active ? `${index * 40}ms` : "0ms",
+                transitionDelay: active ? `${index * 70}ms` : "0ms",
               }}
               className={
                 active
-                  ? "translate-y-0 opacity-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  : "translate-y-2 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  ? "translate-y-0 opacity-100 transition-all duration-700 ease-[cubic-bezier(0.33,0,0.2,1)]"
+                  : "translate-y-1.5 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.33,0,0.2,1)]"
               }
             >
               {stat.type === "counter" ? (

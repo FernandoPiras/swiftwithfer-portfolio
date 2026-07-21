@@ -40,12 +40,12 @@ export function FlowSteps({
         return (
           <motion.li
             key={`${step}-${index}`}
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={MOTION.viewportTight}
             transition={{
-              duration: MOTION.duration.fast,
-              delay: index * 0.045,
+              duration: MOTION.duration.base,
+              delay: index * MOTION.stagger,
               ease: EASE_OUT_SOFT,
             }}
             className={cn(

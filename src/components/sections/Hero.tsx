@@ -53,10 +53,10 @@ export function Hero() {
         <div className="order-1 min-w-0 text-center lg:text-left">
           <motion.h1
             className="text-display text-foreground text-balance max-sm:mx-auto max-sm:w-full max-sm:max-w-none"
-            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: MOTION.duration.base,
+              duration: MOTION.duration.slow,
               ease: EASE_OUT_SOFT,
             }}
           >
@@ -65,11 +65,11 @@ export function Hero() {
 
           <motion.p
             className="text-lead mx-auto mt-6 max-w-lg text-pretty lg:mx-0 max-sm:mt-4 max-sm:max-w-none"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: MOTION.duration.base,
-              delay: 0.07,
+              duration: MOTION.duration.slow,
+              delay: 0.12,
               ease: EASE_OUT_SOFT,
             }}
           >
@@ -78,11 +78,11 @@ export function Hero() {
 
           <motion.div
             className="mt-10 hidden lg:block"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: MOTION.duration.base,
-              delay: 0.14,
+              duration: MOTION.duration.slow,
+              delay: 0.24,
               ease: EASE_OUT_SOFT,
             }}
           >
@@ -92,11 +92,11 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: MOTION.duration.slow,
-            delay: 0.08,
+            delay: 0.16,
             ease: EASE_OUT_SOFT,
           }}
           className="hero-phone-stage relative order-2 w-full min-w-0 justify-self-center lg:justify-self-center"
@@ -135,11 +135,11 @@ export function Hero() {
         {/* Mobile + tablet: CTAs directly under the mockup */}
         <motion.div
           className="hero-ctas-below order-3 text-center"
-          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: MOTION.duration.base,
-            delay: 0.16,
+            duration: MOTION.duration.slow,
+            delay: 0.28,
             ease: EASE_OUT_SOFT,
           }}
         >

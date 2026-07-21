@@ -13,7 +13,7 @@ interface RevealProps {
   compact?: boolean;
 }
 
-/** Cinematic in-view reveal — soft, once, respects reduced motion */
+/** In-view reveal — slow fade, tiny travel, once. Respects reduced motion. */
 export function Reveal({
   children,
   className,
@@ -21,7 +21,7 @@ export function Reveal({
   compact = false,
 }: RevealProps) {
   const reduceMotion = useReducedMotion();
-  const y = compact ? 12 : MOTION.distance;
+  const y = compact ? 5 : MOTION.distance;
 
   return (
     <motion.div
@@ -30,7 +30,7 @@ export function Reveal({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={MOTION.viewport}
       transition={{
-        duration: compact ? MOTION.duration.fast : MOTION.duration.base,
+        duration: compact ? MOTION.duration.base : MOTION.duration.slow,
         delay,
         ease: EASE_OUT_SOFT,
       }}

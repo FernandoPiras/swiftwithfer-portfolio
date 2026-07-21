@@ -1,11 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Section } from "@/components/ui/Section";
-import { EASE_OUT } from "@/lib/motion";
+import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 export function Timeline() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <Section
       id="timeline"
@@ -18,10 +20,14 @@ export function Timeline() {
         {siteConfig.timeline.map((entry, index) => (
           <motion.li
             key={`${entry.year}-${entry.title}`}
-            initial={{ opacity: 0, x: -12 }}
+            initial={reduceMotion ? false : { opacity: 0, x: -MOTION.distance }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.06, ease: EASE_OUT }}
+            viewport={MOTION.viewport}
+            transition={{
+              duration: MOTION.duration.base,
+              delay: index * MOTION.stagger,
+              ease: EASE_OUT_SOFT,
+            }}
             className="relative pb-10 last:pb-0"
           >
             <span

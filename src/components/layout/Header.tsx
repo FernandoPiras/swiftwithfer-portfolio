@@ -35,7 +35,7 @@ export function ButtonLink({
   };
 
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium tracking-[-0.01em] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.985]",
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium tracking-[-0.01em] transition-all duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.99]",
     styles[variant],
     className,
   );
@@ -86,7 +86,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-flex h-9 items-center px-2.5 text-[0.8125rem] font-medium tracking-[-0.012em] text-muted transition-colors duration-300 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:px-3"
+                  className="inline-flex h-9 items-center px-2.5 text-[0.8125rem] font-medium tracking-[-0.012em] text-muted transition-colors duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:px-3"
                 >
                   {item.label}
                 </Link>

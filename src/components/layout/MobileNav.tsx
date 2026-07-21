@@ -114,7 +114,7 @@ export function MobileNav() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-background/70 backdrop-blur-sm transition-opacity duration-300",
+          "fixed inset-0 z-40 bg-background/70 backdrop-blur-sm transition-opacity duration-500 ease-[cubic-bezier(0.33,0,0.2,1)]",
           open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0",
@@ -128,7 +128,7 @@ export function MobileNav() {
         id="mobile-nav-panel"
         aria-labelledby={titleId}
         className={cn(
-          "fixed inset-x-0 top-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] z-50 mx-3 max-h-[min(70vh,calc(100dvh-var(--header-offset)-2rem))] overflow-y-auto rounded-2xl border border-glass-border bg-background/95 p-3 shadow-glass backdrop-blur-xl transition-all duration-300 sm:mx-4 sm:p-4",
+          "fixed inset-x-0 top-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] z-50 mx-3 max-h-[min(70vh,calc(100dvh-var(--header-offset)-2rem))] overflow-y-auto rounded-2xl border border-glass-border bg-background/95 p-3 shadow-glass backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] sm:mx-4 sm:p-4",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
