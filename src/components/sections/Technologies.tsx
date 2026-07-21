@@ -19,7 +19,7 @@ export function Technologies() {
       subtitle="Tecnologie usate per costruire e rilasciare prodotti reali — non solo demo."
       tone="surface"
     >
-      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {siteConfig.technologies.map((tech, index) => (
           <motion.li
             key={tech.name}
@@ -32,7 +32,7 @@ export function Technologies() {
               ease: EASE_OUT_SOFT,
             }}
           >
-            <div className="tech-tile flex h-full flex-col items-center justify-center gap-2 rounded-xl border border-glass-border bg-glass/60 p-4 backdrop-blur-md sm:gap-3">
+            <div className="tech-tile flex h-full flex-col items-center justify-center gap-3 rounded-xl border border-glass-border bg-glass/60 p-5 backdrop-blur-md sm:gap-3.5 sm:p-6">
               <TechIcon slug={tech.slug} className="h-8 w-8 sm:h-9 sm:w-9" />
               <span className="text-center text-xs font-medium text-foreground">
                 {tech.name}
@@ -42,7 +42,7 @@ export function Technologies() {
         ))}
       </ul>
 
-      <Reveal delay={0.06} className="mt-14 flex justify-center">
+      <Reveal delay={0.06} className="mt-16 flex justify-center sm:mt-20">
         <ButtonLink href="/#contact">Iniziamo</ButtonLink>
       </Reveal>
     </Section>

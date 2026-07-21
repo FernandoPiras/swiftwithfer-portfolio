@@ -26,7 +26,7 @@ export function Bio() {
     >
       <Reveal>
         <GlassCard className="overflow-hidden">
-          <div className="grid gap-10 lg:grid-cols-[200px_1fr] lg:items-start lg:gap-12">
+          <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:items-start lg:gap-14">
             <motion.div
               initial={reduceMotion ? false : { opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -58,37 +58,37 @@ export function Bio() {
                   href={instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 text-sm font-medium text-accent transition-opacity hover:opacity-80"
+                  className="mt-5 text-sm font-medium text-accent transition-opacity hover:opacity-80"
                 >
                   @{brand.toLowerCase()}
                 </Link>
               ) : null}
             </motion.div>
 
-            <div className="space-y-7 sm:space-y-8">
+            <div className="space-y-9 sm:space-y-11">
               <div>
                 <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                   {name}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-accent">{role}</p>
-                <p className="mt-4 text-sm leading-relaxed text-muted text-pretty sm:text-base">
+                <p className="mt-1.5 text-sm font-medium text-accent">{role}</p>
+                <p className="mt-5 text-sm leading-relaxed text-muted text-pretty sm:text-base">
                   {bio.short}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted text-pretty sm:text-base">
+                <p className="mt-4 text-sm leading-relaxed text-muted text-pretty sm:text-base">
                   {bio.full}
                 </p>
               </div>
 
-              <dl className="grid gap-3 sm:grid-cols-3">
+              <dl className="grid gap-4 sm:grid-cols-3">
                 {bio.highlights.map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-xl border border-glass-border bg-background/40 px-4 py-3 transition-[border-color,box-shadow] duration-300 hover:border-accent/20"
+                    className="rounded-xl border border-glass-border bg-background/40 px-4 py-4 transition-[border-color,box-shadow] duration-300 hover:border-accent/20"
                   >
                     <dt className="text-xs font-medium uppercase tracking-wider text-muted">
                       {item.label}
                     </dt>
-                    <dd className="mt-1 text-sm font-semibold text-foreground">
+                    <dd className="mt-1.5 text-sm font-semibold text-foreground">
                       {item.value}
                     </dd>
                   </div>
@@ -97,7 +97,7 @@ export function Bio() {
 
               <div>
                 <h4 className="text-eyebrow text-accent">App pubblicate</h4>
-                <ul className="mt-3 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {publishedApps.map((app) => (
                     <li
                       key={app.id}
@@ -109,16 +109,16 @@ export function Bio() {
                 </ul>
               </div>
 
-              <div className="grid gap-6 border-t border-glass-border/70 pt-7 sm:grid-cols-2">
+              <div className="grid gap-8 border-t border-glass-border/70 pt-9 sm:grid-cols-2">
                 <div>
                   <h4 className="text-eyebrow text-accent">Percorso</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted text-pretty">
+                  <p className="mt-3 text-sm leading-relaxed text-muted text-pretty">
                     {bio.journey}
                   </p>
                 </div>
                 <div>
                   <h4 className="text-eyebrow text-accent">Approccio</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted text-pretty">
+                  <p className="mt-3 text-sm leading-relaxed text-muted text-pretty">
                     {bio.philosophy}
                   </p>
                 </div>
@@ -135,7 +135,7 @@ export function Bio() {
                 ))}
               </ul>
 
-              <div className="flex flex-col gap-3 border-t border-glass-border/70 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-3 border-t border-glass-border/70 pt-8 sm:flex-row sm:items-center sm:justify-between">
                 <a
                   href={`mailto:${email}`}
                   className="text-sm font-medium text-accent transition-opacity hover:opacity-80"

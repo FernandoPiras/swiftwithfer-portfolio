@@ -103,7 +103,7 @@ export function Process() {
       subtitle="Un processo end-to-end: dal problema reale al software in produzione, con aggiornamenti continui."
       tone="default"
     >
-      <ol className="relative grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+      <ol className="relative grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
         {developmentProcess.map((step, index) => (
           <motion.li
             key={step.id}
@@ -116,7 +116,7 @@ export function Process() {
               ease: EASE_OUT_SOFT,
             }}
           >
-            <GlassCard className="premium-card relative h-full !p-4 sm:!p-5">
+            <GlassCard className="premium-card relative h-full p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <span
                   className="flex h-10 w-10 items-center justify-center rounded-xl border border-glass-border bg-background/50 text-accent"
@@ -130,10 +130,10 @@ export function Process() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
+              <h3 className="mt-5 text-base font-semibold text-foreground">
                 {step.title}
               </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {step.description}
               </p>
             </GlassCard>
@@ -141,7 +141,7 @@ export function Process() {
         ))}
       </ol>
 
-      <Reveal delay={0.08} className="mt-14 flex justify-center">
+      <Reveal delay={0.08} className="mt-16 flex justify-center sm:mt-20">
         <ButtonLink href="/#services" variant="ghost">
           Cosa posso fare per te →
         </ButtonLink>

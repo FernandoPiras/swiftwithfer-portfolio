@@ -7,10 +7,10 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-glass-border/40 py-14 pb-[max(3rem,env(safe-area-inset-bottom))] sm:py-16">
+    <footer className="border-t border-glass-border/40 py-20 pb-[max(4rem,env(safe-area-inset-bottom))] sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col items-center gap-10 text-center">
-          <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-12 text-center">
+          <div className="flex flex-col items-center gap-6">
             <Link
               href="/#hero"
               className="brand-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -51,7 +51,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="flex w-full flex-col items-center justify-between gap-3 border-t border-glass-border/40 pt-8 text-xs tracking-[-0.01em] text-muted sm:flex-row sm:text-[0.8125rem]">
+          <div className="flex w-full flex-col items-center justify-between gap-3 border-t border-glass-border/40 pt-10 text-xs tracking-[-0.01em] text-muted sm:flex-row sm:text-[0.8125rem]">
             <p>
               © {year} {siteConfig.name}
             </p>

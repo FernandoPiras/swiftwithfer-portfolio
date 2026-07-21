@@ -57,7 +57,7 @@ function StoryChapter({
   children: ReactNode;
 }) {
   return (
-    <section className="space-y-4 border-t border-glass-border/80 pt-8 first:border-t-0 first:pt-0 sm:pt-10">
+    <section className="space-y-5 border-t border-glass-border/80 pt-10 first:border-t-0 first:pt-0 sm:space-y-6 sm:pt-14">
       <div className="flex items-baseline gap-3">
         <span className="text-eyebrow text-accent tabular-nums">
           {String(index).padStart(2, "0")}
@@ -67,7 +67,7 @@ function StoryChapter({
             {title}
           </h2>
           {description ? (
-            <p className="mt-1 text-sm text-muted">{description}</p>
+            <p className="mt-1.5 text-sm text-muted">{description}</p>
           ) : null}
         </div>
       </div>
@@ -80,7 +80,7 @@ function StoryChapter({
 
 function FeatureGrid({ items }: { items: string[] }) {
   return (
-    <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((feature) => (
         <li
           key={feature}
@@ -144,7 +144,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
 
   return (
     <article>
-      <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2rem)] pb-10 sm:pb-14">
+      <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2.5rem)] pb-14 sm:pb-16 md:pb-20">
         <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <Link
@@ -154,7 +154,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             ← Torna ai progetti
           </Link>
 
-          <div className="mt-8 flex flex-col items-center gap-6 text-center sm:mt-10 md:flex-row md:items-start md:gap-8 md:text-left">
+          <div className="mt-10 flex flex-col items-center gap-8 text-center sm:mt-12 md:flex-row md:items-start md:gap-10 md:text-left">
             <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[1.25rem] shadow-md ring-1 ring-black/5 sm:h-28 sm:w-28">
               <Image
                 src={app.icon}
@@ -236,10 +236,10 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           <section
             id="demo"
             aria-label={`Demo ${app.name}`}
-            className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-14"
+            className="mx-auto max-w-6xl px-4 pb-14 sm:px-6 sm:pb-16 md:pb-20"
           >
             <h2 className="text-lg font-semibold text-foreground sm:text-xl">Demo reale</h2>
-            <p className="mb-6 mt-2 max-w-lg text-sm text-muted">
+            <p className="mb-8 mt-3 max-w-lg text-sm text-muted">
               Registrazione diretta da iPhone — il prodotto in uso, non un mockup.
             </p>
             <AppDemoVideo
@@ -252,17 +252,17 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </Reveal>
       ) : null}
 
-      <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 sm:space-y-12 sm:px-6 sm:pb-24">
+      <div className="mx-auto max-w-6xl space-y-14 px-4 pb-20 sm:space-y-16 sm:px-6 sm:pb-28">
         {study.ecosystem?.length ? (
           <Reveal>
             <div>
-              <h2 className="mb-2 text-lg font-semibold text-foreground sm:text-xl">
+              <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
                 L&apos;ecosistema
               </h2>
-              <p className="mb-6 max-w-2xl text-sm text-muted">
+              <p className="mb-8 max-w-2xl text-sm text-muted">
                 Tre superfici, una piattaforma: così Slotiva copre l&apos;intera attività.
               </p>
-              <ul className="grid gap-4 sm:grid-cols-3">
+              <ul className="grid gap-5 sm:grid-cols-3 sm:gap-6">
                 {study.ecosystem.map((layer, index) => (
                   <li key={layer.title}>
                     <GlassCard className="premium-card h-full">
@@ -314,13 +314,13 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 title="Architettura"
                 description="Come è strutturato il sistema — flusso, non documentazione."
               >
-                <div className="space-y-6">
+                <div className="space-y-8">
                   <FlowSteps
                     steps={study.architectureFlow}
                     label={`Architettura di ${app.name}`}
                   />
                   {study.journeyFlow?.length ? (
-                    <div className="space-y-3 border-t border-glass-border/60 pt-6">
+                    <div className="space-y-4 border-t border-glass-border/60 pt-8">
                       <p className="text-eyebrow text-accent">Flusso operativo</p>
                       <FlowSteps
                         steps={study.journeyFlow}
@@ -416,13 +416,13 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
 
         <Reveal delay={0.06}>
           <section aria-label={`Screenshot ${app.name}`}>
-            <h2 className="mb-2 text-lg font-semibold text-foreground sm:text-xl">
+            <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
               Il prodotto in immagini
             </h2>
-            <p className="mb-6 max-w-xl text-sm text-muted">
+            <p className="mb-8 max-w-xl text-sm text-muted">
               Screenshot reali, stesso formato e stessa cornice — per leggere il prodotto senza rumore.
             </p>
-            <ul className="grid justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <ul className="grid justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {app.screenshots.map((screenshot, index) => (
                 <li key={screenshot} className="w-full max-w-[260px]">
                   <PhoneFrame
@@ -430,7 +430,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                     alt={`Screenshot ${index + 1} di ${app.name}`}
                     size="compact"
                   />
-                  <p className="mt-3 text-center text-xs text-muted">
+                  <p className="mt-4 text-center text-xs text-muted">
                     Schermata {index + 1}
                   </p>
                 </li>
@@ -452,10 +452,10 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             <h2 className="text-lg font-semibold text-foreground sm:text-xl">
               Vuoi un prodotto come {app.name}?
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-sm text-muted">
+            <p className="mx-auto mt-4 max-w-md text-sm text-muted">
               Dalla discovery al rilascio — un unico partner. Rispondo entro 48 ore lavorative.
             </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink
                 href={`mailto:${siteConfig.email}?subject=Consulenza%20-%20${encodeURIComponent(app.name)}`}
                 external

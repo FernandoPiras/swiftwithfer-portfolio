@@ -74,7 +74,7 @@ export function DiscoveryDocumentPicker() {
   ] as const;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="flex rounded-full border border-glass-border bg-background/50 p-1">
         <ModeTab active={mode === "discovery"} onClick={() => setMode("discovery")}>
           Discovery Document
@@ -92,16 +92,16 @@ export function DiscoveryDocumentPicker() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="rounded-2xl border border-glass-border bg-background/40 p-5 sm:p-6"
+            className="rounded-2xl border border-glass-border bg-background/40 p-6 sm:p-7"
           >
             <h4 className="text-base font-semibold text-foreground sm:text-lg">
               Preferisci una mail veloce?
             </h4>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
+            <p className="mt-3 text-sm leading-relaxed text-muted">
               Scrivimi direttamente con una breve descrizione del progetto. Rispondo
               entro 48 ore lavorative.
             </p>
-            <div className="mt-5">
+            <div className="mt-6">
               <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                 Apri email
               </ButtonLink>
@@ -114,9 +114,9 @@ export function DiscoveryDocumentPicker() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="space-y-5"
+            className="space-y-7"
           >
-            <div className="rounded-2xl border border-accent/20 bg-accent/5 p-5 sm:p-6">
+            <div className="rounded-2xl border border-accent/20 bg-accent/5 p-6 sm:p-7">
               <div className="flex items-start gap-3">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <DocumentIcon />
@@ -125,7 +125,7 @@ export function DiscoveryDocumentPicker() {
                   <h4 className="text-base font-semibold text-foreground sm:text-lg">
                     SwiftWithFer Discovery Document
                   </h4>
-                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
                     Template professionale per raccogliere le informazioni essenziali
                     di progetto. Compilalo, allegalo via email e partiamo con un
                     quadro chiaro — senza iniziare da zero.
@@ -135,7 +135,7 @@ export function DiscoveryDocumentPicker() {
             </div>
 
             <div>
-              <label htmlFor="discovery-sector" className="mb-2 block text-sm font-medium text-foreground">
+              <label htmlFor="discovery-sector" className="mb-2.5 block text-sm font-medium text-foreground">
                 Tipo di attività
               </label>
               <select
@@ -150,12 +150,12 @@ export function DiscoveryDocumentPicker() {
                   </option>
                 ))}
               </select>
-              <p className="mt-2 text-sm text-muted">{selectedSector.description}</p>
+              <p className="mt-2.5 text-sm text-muted">{selectedSector.description}</p>
             </div>
 
             <div>
-              <p className="mb-3 text-sm font-medium text-foreground">Scarica il template</p>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <p className="mb-4 text-sm font-medium text-foreground">Scarica il template</p>
+              <div className="grid gap-3.5 sm:grid-cols-2">
                 {downloads.map((item) => (
                   <a
                     key={item.label}
@@ -168,21 +168,21 @@ export function DiscoveryDocumentPicker() {
                   </a>
                 ))}
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-muted">
+              <p className="mt-4 text-xs leading-relaxed text-muted">
                 Il settore <span className="font-medium text-foreground">{selectedSector.label}</span>{" "}
                 è già precompilato. Usa il PDF compilabile o Word per compilazione manuale,
                 oppure il JSON se lavori con strumenti AI.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-glass-border bg-background/40 p-5 sm:p-6">
+            <div className="rounded-2xl border border-glass-border bg-background/40 p-6 sm:p-7">
               <h4 className="text-sm font-semibold text-foreground sm:text-base">
                 Documento compilato?
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="mt-2.5 text-sm leading-relaxed text-muted">
                 Allega il file alla mail. L&apos;oggetto includerà già il settore selezionato.
               </p>
-              <div className="mt-4">
+              <div className="mt-5">
                 <ButtonLink href={buildDiscoveryMailto(siteConfig.email, selectedSector.label)}>
                   Invia documento compilato
                 </ButtonLink>

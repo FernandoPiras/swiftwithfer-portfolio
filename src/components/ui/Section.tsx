@@ -31,7 +31,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-20 sm:py-28 md:py-32",
+        "relative scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] py-28 sm:py-36 md:py-44",
         tone === "surface" && "section-surface",
         tone === "glow" && "section-glow",
         className,
@@ -46,14 +46,14 @@ export function Section({
             duration: MOTION.duration.base,
             ease: EASE_OUT_SOFT,
           }}
-          className="mb-12 sm:mb-14 md:mb-16"
+          className="mb-16 sm:mb-[4.5rem] md:mb-20"
         >
           {eyebrow ? (
-            <p className="text-eyebrow mb-3.5 text-accent">{eyebrow}</p>
+            <p className="text-eyebrow mb-4 text-accent">{eyebrow}</p>
           ) : null}
           <h2 className="text-section-title text-foreground text-balance">{title}</h2>
           {subtitle ? (
-            <p className="text-lead mt-5 max-w-xl text-pretty">{subtitle}</p>
+            <p className="text-lead mt-6 max-w-xl text-pretty">{subtitle}</p>
           ) : null}
         </motion.div>
         {children}

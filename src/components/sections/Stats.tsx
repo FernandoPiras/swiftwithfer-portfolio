@@ -63,9 +63,9 @@ function CounterStatCard({
         <span>{count}</span>
         {stat.suffix}
       </p>
-      <p className="mt-2 text-sm font-semibold text-foreground">{stat.label}</p>
+      <p className="mt-2.5 text-sm font-semibold text-foreground">{stat.label}</p>
       {stat.description ? (
-        <p className="mt-1 text-xs text-muted">{stat.description}</p>
+        <p className="mt-1.5 text-xs text-muted">{stat.description}</p>
       ) : null}
     </article>
   );
@@ -124,10 +124,10 @@ export function Stats() {
       ref={sectionRef}
       id="stats"
       aria-label="Metriche principali"
-      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/40 py-16 sm:py-20 md:py-24"
+      className="scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/40 py-20 sm:py-28 md:py-32"
     >
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <ul className="grid grid-cols-2 gap-3 sm:gap-3.5 lg:grid-cols-4 lg:gap-4">
+        <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {statsConfig.map((stat, index) => (
             <li
               key={stat.id}

@@ -19,7 +19,7 @@ export function Services() {
       subtitle="Offerte chiare, orientate al risultato — non a un elenco di tecnologie."
       tone="surface"
     >
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
         {siteConfig.services.map((service, index) => (
           <motion.div
             key={service.id}
@@ -37,10 +37,10 @@ export function Services() {
               <p className="text-eyebrow text-accent">
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <h3 className="mt-3 text-lg font-semibold text-foreground">
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
                 {service.description}
               </p>
             </GlassCard>
@@ -48,7 +48,7 @@ export function Services() {
         ))}
       </div>
 
-      <Reveal delay={0.06} className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <Reveal delay={0.06} className="mt-16 flex flex-col items-center gap-3 sm:mt-20 sm:flex-row sm:justify-center">
         <ButtonLink href="/#contact">Avvia un progetto</ButtonLink>
         <ButtonLink href="/#bio" variant="ghost">
           Chi sono →

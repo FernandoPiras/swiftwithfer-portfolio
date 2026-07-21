@@ -26,23 +26,23 @@ export function Contact() {
       subtitle="Compila il Discovery Document o scrivimi direttamente. Rispondo entro 48 ore lavorative."
       tone="glow"
     >
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-10">
         <Reveal>
           <GlassCard className="premium-card">
             <DiscoveryDocumentPicker />
           </GlassCard>
         </Reveal>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           <Reveal delay={0.06}>
             <GlassCard className="premium-card">
               <h3 className="text-lg font-semibold tracking-tight text-foreground">
                 Parliamo del tuo progetto
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted text-pretty sm:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-muted text-pretty sm:text-base">
                 App iOS, gestionali o CRM — un unico partner dalla prima call al rilascio.
               </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <ButtonLink href={buildDirectMailto(siteConfig.email)}>
                   Scrivimi ora
                 </ButtonLink>
@@ -52,7 +52,7 @@ export function Contact() {
               </div>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="mt-5 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-medium text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="mt-6 inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-medium text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <EmailIcon />
                 {siteConfig.email}
@@ -62,7 +62,7 @@ export function Contact() {
 
           <Reveal delay={0.1}>
             <GlassCard>
-              <ul className="space-y-2" aria-label="Collegamenti">
+              <ul className="space-y-3" aria-label="Collegamenti">
                 {siteConfig.social.map((link) => (
                   <li key={link.name}>
                     <a

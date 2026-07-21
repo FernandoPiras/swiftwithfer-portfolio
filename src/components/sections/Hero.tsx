@@ -10,7 +10,7 @@ import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 function HeroMeta({ className }: { className?: string }) {
   return (
-    <p className={className ?? "hero-meta mt-7"}>
+    <p className={className ?? "hero-meta mt-8"}>
       <span>{siteConfig.name}</span>
       <span className="hero-meta__sep" aria-hidden />
       <span>{siteConfig.role}</span>
@@ -49,7 +49,7 @@ export function Hero() {
         Desktop/tablet: unchanged two-column / phone-then-CTA rhythm.
         Mobile (<640): wordmark → headline → description → mockup → CTA.
       */}
-      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:pb-20 lg:pt-10 xl:gap-16 max-sm:gap-6 max-sm:px-5 max-sm:pb-12 max-sm:pt-4">
+      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 pb-16 pt-12 sm:gap-14 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 lg:pb-24 lg:pt-12 xl:gap-20 max-sm:gap-8 max-sm:px-5 max-sm:pb-14 max-sm:pt-5">
         <div className="order-1 min-w-0 text-center lg:text-left">
           <motion.h1
             className="text-display text-foreground text-balance max-sm:mx-auto max-sm:w-full max-sm:max-w-none"
@@ -64,7 +64,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lead mx-auto mt-5 max-w-lg text-pretty lg:mx-0 max-sm:mt-3.5 max-sm:max-w-none"
+            className="text-lead mx-auto mt-6 max-w-lg text-pretty lg:mx-0 max-sm:mt-4 max-sm:max-w-none"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -77,7 +77,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-9 hidden lg:block"
+            className="mt-10 hidden lg:block"
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -144,7 +144,7 @@ export function Hero() {
           }}
         >
           <HeroCtas className="flex flex-col gap-3 sm:flex-row sm:justify-center" />
-          <HeroMeta className="hero-meta mt-5 sm:mt-7" />
+          <HeroMeta className="hero-meta mt-6 sm:mt-8" />
         </motion.div>
       </div>
     </section>

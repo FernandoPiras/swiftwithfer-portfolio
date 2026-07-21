@@ -43,11 +43,11 @@ export function AppCard({ app, index = 0 }: AppCardProps) {
     >
       <GlassCard className="premium-card overflow-hidden">
         {isFlagship ? (
-          <p className="text-eyebrow mb-6 text-accent">Progetto principale</p>
+          <p className="text-eyebrow mb-8 text-accent">Progetto principale</p>
         ) : null}
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12">
-          <div className="order-2 space-y-6 lg:order-1">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] lg:items-center lg:gap-14">
+          <div className="order-2 space-y-7 lg:order-1">
             <div className="flex items-start gap-4">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[1.15rem] shadow-[0_4px_16px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.04] sm:h-[4.5rem] sm:w-[4.5rem]">
                 <Image
