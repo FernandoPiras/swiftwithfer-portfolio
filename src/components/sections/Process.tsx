@@ -193,7 +193,7 @@ export function Process() {
         </ul>
       </div>
 
-      <Reveal delay={0.08} className="mt-16 flex justify-center sm:mt-20">
+      <Reveal delay={0.08} className="mt-24 flex justify-center sm:mt-28 md:mt-32">
         <ButtonLink href="/#apps" variant="ghost">
           Altre prove live →
         </ButtonLink>

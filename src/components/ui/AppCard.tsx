@@ -27,7 +27,6 @@ export function AppCard({ app }: AppCardProps) {
   const reduceMotion = useReducedMotion();
   const tabId = useId();
   const extraTech = app.technologies.length - VISIBLE_TECH;
-  const isFlagship = app.id === "slotiva";
 
   return (
     <motion.article
@@ -40,10 +39,6 @@ export function AppCard({ app }: AppCardProps) {
         ease: EASE_OUT_SOFT,
       }}
     >
-      {isFlagship ? (
-        <p className="text-eyebrow mb-10 text-accent/80">Progetto principale</p>
-      ) : null}
-
       <div className="grid gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] lg:items-center lg:gap-20 xl:gap-24">
         <div className="order-2 space-y-8 lg:order-1">
           <div className="flex items-start gap-3.5 sm:gap-4">

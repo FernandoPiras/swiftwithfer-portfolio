@@ -49,7 +49,7 @@ export function Hero() {
         Desktop/tablet: unchanged two-column / phone-then-CTA rhythm.
         Mobile (<640): wordmark → headline → description → mockup → CTA.
       */}
-      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 pb-16 pt-12 sm:gap-14 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 lg:pb-24 lg:pt-12 xl:gap-20 max-sm:gap-8 max-sm:px-5 max-sm:pb-14 max-sm:pt-5">
+      <div className="hero-shell relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 pb-16 pt-12 sm:gap-14 sm:px-6 sm:pb-20 sm:pt-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 lg:px-8 lg:pb-24 lg:pt-12 xl:gap-20 max-sm:gap-8 max-sm:px-5 max-sm:pb-14 max-sm:pt-5">
         <div className="order-1 min-w-0 text-center lg:text-left">
           <motion.h1
             className="text-display hero-headline text-foreground text-balance"

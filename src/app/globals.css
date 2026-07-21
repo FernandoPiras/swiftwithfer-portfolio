@@ -11,9 +11,9 @@
   --section-alt: #eeeff2;
   --header-offset: 5rem;
   --ease-out: cubic-bezier(0.33, 0, 0.2, 1);
-  --duration-fast: 0.4s;
-  --duration-base: 0.55s;
-  --duration-slow: 0.8s;
+  --duration-fast: 0.55s;
+  --duration-base: 0.78s;
+  --duration-slow: 1s;
   /* Rhythm scale — section/block breath (4px base) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;

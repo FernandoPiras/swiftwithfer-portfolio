@@ -37,7 +37,7 @@ export function Section({
         className,
       )}
     >
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: MOTION.distance }}
           whileInView={{ opacity: 1, y: 0 }}

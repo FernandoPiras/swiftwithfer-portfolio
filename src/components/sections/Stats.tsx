@@ -93,11 +93,11 @@ function LabelStatCard({
 }
 
 export function Stats({ embedded = false }: { embedded?: boolean }) {
-  const sectionRef = useRef<HTMLElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    const node = sectionRef.current;
+    const node = rootRef.current;
     if (!node) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -119,10 +119,15 @@ export function Stats({ embedded = false }: { embedded?: boolean }) {
     return () => observer.disconnect();
   }, []);
 
+  const revealClass = active
+    ? "translate-y-0 opacity-100 transition-all duration-[1000ms] ease-[cubic-bezier(0.33,0,0.2,1)]"
+    : "translate-y-[7px] opacity-0 transition-all duration-[1000ms] ease-[cubic-bezier(0.33,0,0.2,1)]";
+
   return (
-    <section
-      ref={sectionRef}
+    <div
+      ref={rootRef}
       id={embedded ? undefined : "stats"}
+      role="group"
       aria-label="Metriche principali"
       className={
         embedded
@@ -130,19 +135,21 @@ export function Stats({ embedded = false }: { embedded?: boolean }) {
           : "scroll-mt-[calc(var(--header-offset)+env(safe-area-inset-top,0px))] relative border-y border-glass-border/40 py-20 sm:py-28 md:py-32"
       }
     >
-      <div className={embedded ? "relative" : "relative mx-auto max-w-6xl px-4 sm:px-6"}>
+      <div
+        className={
+          embedded
+            ? "relative"
+            : "relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
+        }
+      >
         <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {statsConfig.map((stat, index) => (
             <li
               key={stat.id}
               style={{
-                transitionDelay: active ? `${index * 70}ms` : "0ms",
+                transitionDelay: active ? `${index * 80}ms` : "0ms",
               }}
-              className={
-                active
-                  ? "translate-y-0 opacity-100 transition-all duration-700 ease-[cubic-bezier(0.33,0,0.2,1)]"
-                  : "translate-y-1.5 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.33,0,0.2,1)]"
-              }
+              className={revealClass}
             >
               {stat.type === "counter" ? (
                 <CounterStatCard stat={stat} active={active} />
@@ -153,6 +160,6 @@ export function Stats({ embedded = false }: { embedded?: boolean }) {
           ))}
         </ul>
       </div>
-    </section>
+    </div>
   );
 }

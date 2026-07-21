@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-glass-border/40 py-20 pb-[max(4rem,env(safe-area-inset-bottom))] sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12 text-center">
           <div className="flex flex-col items-center gap-6">
             <Link

@@ -146,7 +146,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
     <article>
       <section className="relative overflow-hidden pt-[calc(var(--header-offset)+env(safe-area-inset-top,0px)+2.5rem)] pb-14 sm:pb-16 md:pb-20">
         <div className="hero-gradient pointer-events-none absolute inset-0" aria-hidden />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/#apps"
             className="inline-flex min-h-11 items-center text-sm font-medium text-accent transition-opacity hover:opacity-80"
@@ -236,7 +236,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           <section
             id="demo"
             aria-label={`Demo ${app.name}`}
-            className="mx-auto max-w-6xl px-4 pb-14 sm:px-6 sm:pb-16 md:pb-20"
+            className="mx-auto max-w-6xl px-4 pb-14 sm:px-6 sm:pb-16 md:pb-20 lg:px-8"
           >
             <h2 className="text-lg font-semibold text-foreground sm:text-xl">Demo reale</h2>
             <p className="mb-8 mt-3 max-w-lg text-sm text-muted">
@@ -252,7 +252,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
         </Reveal>
       ) : null}
 
-      <div className="mx-auto max-w-6xl space-y-14 px-4 pb-20 sm:space-y-16 sm:px-6 sm:pb-28">
+      <div className="mx-auto max-w-6xl space-y-14 px-4 pb-20 sm:space-y-16 sm:px-6 sm:pb-28 lg:px-8">
         {study.ecosystem?.length ? (
           <Reveal>
             <div>

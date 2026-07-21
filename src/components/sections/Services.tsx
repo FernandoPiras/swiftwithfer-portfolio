@@ -137,7 +137,7 @@ export function Services() {
         ))}
       </div>
 
-      <Reveal delay={0.06} className="mt-16 flex justify-center sm:mt-20">
+      <Reveal delay={0.06} className="mt-24 flex justify-center sm:mt-28 md:mt-32">
         <ButtonLink href="/#contact">Avvia un progetto</ButtonLink>
       </Reveal>
     </Section>
