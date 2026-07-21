@@ -571,6 +571,52 @@ body {
   }
 }
 
+/* Product stage — gallery exposure, not portfolio cards */
+.product-stage {
+  position: relative;
+}
+
+.product-stage__icon {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  outline: 1px solid color-mix(in srgb, var(--foreground) 4%, transparent);
+  outline-offset: -1px;
+}
+
+.product-stage__device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  padding-block: var(--space-2);
+}
+
+.product-stage__phone.phone-frame--compact {
+  max-width: min(72vw, 256px);
+}
+
+@media (min-width: 640px) {
+  .product-stage__phone.phone-frame--compact {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-stage__phone.phone-frame--compact {
+    max-width: 300px;
+  }
+}
+
+.product-stage__dots {
+  margin-top: 0;
+  opacity: 0.72;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-stage .phone-frame:hover {
+    transform: translateY(-0.5px);
+  }
+}
+
 .btn-primary {
   position: relative;
   background: var(--accent);
