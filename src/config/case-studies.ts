@@ -59,13 +59,13 @@ export const caseStudies: CaseStudyContent[] = [
     slug: "slotiva",
     appId: "slotiva",
     positioning:
-      "Un ecosistema completo per attività basate su appuntamenti: app iOS, gestionale web e backend cloud che lavorano come un unico prodotto.",
+      "Sistema operativo per l’attività: Business Pulse, CRM e prenotazioni su iOS e Web — stessi dati, esperienza dark-first, oltre 40 settori.",
     problem:
-      "Saloni, barbieri e studi professionali gestiscono ancora prenotazioni su WhatsApp, fogli e strumenti scollegati. Il risultato è prevedibile: sovrapposizioni, no-show, staff fuori sync, clienti senza storico e zero visione su fatturato e performance. Ogni strumento risolve un pezzo — nessuno governa l'attività per intero.",
+      "Attività basate su appuntamenti — saloni, barbieri, beauty, PT e molti altri settori — gestiscono ancora prenotazioni su WhatsApp, fogli e strumenti scollegati. Il risultato è prevedibile: sovrapposizioni, no-show, staff fuori sync, clienti senza storico e zero visione su priorità e performance.",
     solution:
-      "Slotiva unifica operations e crescita. I clienti prenotano da app, marketplace o pagina pubblica; i titolari gestiscono agenda, servizi, team e chat; il gestionale su slotiva.it offre CRM, Business Pulse e analytics. Tutto condivide Firebase in tempo reale: una modifica su un dispositivo è subito ovunque.",
+      "Slotiva unifica operations e crescita. I clienti prenotano da app, marketplace o pagina pubblica; i titolari gestiscono agenda, team e chat; il gestionale su slotiva.it offre CRM e Business Pulse (Score, Plan, Actions). Tutto condivide Firebase in tempo reale. Prova gratuita 30 giorni per i titolari.",
     architecture:
-      "Tre superfici, una fonte di verità — Firebase Hosting per il web, Cloud Functions e Firestore per sync e automazioni.",
+      "Tre superfici, una fonte di verità — Firebase Hosting per il web, Cloud Functions e Firestore per sync e automazioni. UI dark-first su iOS e Web.",
     architectureFlow: [
       "Utente",
       "App iOS",
@@ -129,6 +129,7 @@ export const caseStudies: CaseStudyContent[] = [
           "Il centro di controllo dell'attività: da desktop, tablet o mobile, senza perdere contesto.",
         items: [
           "Business Pulse: score, plan e next actions",
+          "40+ settori professionali",
           "Dashboard completa con KPI",
           "Analytics e insight operativi",
           "CRM clienti con segmenti e recall",
@@ -137,6 +138,7 @@ export const caseStudies: CaseStudyContent[] = [
           "Pagine pubbliche di booking e profilo",
           "Marketplace web",
           "Responsive desktop, tablet e mobile",
+          "Esperienza dark-first",
         ],
       },
       {
@@ -184,10 +186,10 @@ export const caseStudies: CaseStudyContent[] = [
     productTimeline: [...PRODUCT_TIMELINE],
     qualitySignals: [
       "In produzione",
-      "Mantenuto e aggiornato",
+      "v1.0 dark-first",
       "Sync realtime",
       "Business Pulse",
-      "Architettura cloud",
+      "Prova 30 giorni",
     ],
     capabilities: [
       "Realtime",
@@ -207,19 +209,19 @@ export const caseStudies: CaseStudyContent[] = [
     results: [
       "App pubblicata su App Store",
       "Gestionale CRM live su slotiva.it (Firebase Hosting)",
-      "Ecosistema end-to-end: prenotazioni, chat, CRM, Pulse e analytics nello stesso prodotto",
-      "Architettura moderna per saloni, barbieri e studi basati su appuntamenti",
-      "Un unico partner dalla progettazione al rilascio",
+      "Business Pulse + CRM + prenotazioni nello stesso prodotto iOS/Web",
+      "Catalogo 40+ settori professionali",
+      "Prova gratuita 30 giorni per i titolari (Slotiva Pro)",
     ],
     trustSignals: [
       "App Store",
       "slotiva.it live",
       "Sync realtime",
-      "End-to-end",
+      "Dark-first",
       "Business Pulse",
     ],
     seoDescription:
-      "Case study Slotiva: ecosistema prenotazioni con app iOS, gestionale web CRM, Business Pulse, Firebase Hosting e sync realtime.",
+      "Case study Slotiva v1.0: Business Pulse, CRM e prenotazioni su iOS e Web. Dark-first, 40+ settori, prova 30 giorni, Firebase realtime.",
   },
   {
     slug: "andrometrics",

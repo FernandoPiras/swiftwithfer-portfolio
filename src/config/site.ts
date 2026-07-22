@@ -193,16 +193,16 @@ export const siteConfig = {
     {
       id: "slotiva",
       name: "Slotiva",
-      tagline: "Prenotazioni, CRM e operations in un solo sistema",
+      tagline: "Business Pulse, CRM e prenotazioni — iOS e Web",
       description:
-        "L'ecosistema completo per saloni e studi: app iOS (con Apple Watch e widget), gestionale web CRM con Business Pulse e backend Firebase in tempo reale. Dalla prenotazione pubblica all'analytics operativa — agenda, clienti e staff allineati.",
+        "Sistema operativo per l’attività: Business Pulse (Score, Plan, Actions), CRM intelligente e prenotazioni sugli stessi dati. App iOS (Watch e widget) + gestionale web dark-first su slotiva.it. Oltre 40 settori. Prova gratis 30 giorni.",
       outcomes: [
-        "Ecosistema app + CRM web + Firebase",
-        "Gestionale live su slotiva.it",
-        "Prenotazioni, chat e CRM sincronizzati",
+        "Business Pulse + CRM smart",
+        "iOS e Web con sync realtime",
+        "40+ settori · prova 30 giorni",
       ],
       architecture:
-        "App iOS (SwiftUI) e gestionale web (React/TypeScript, export statico su Firebase Hosting) condividono Auth, Firestore e Cloud Functions. Sync realtime tra clienti, staff e amministrazione; Business Pulse fornisce insight operativi rule-based; StoreKit 2 per Slotiva Pro.",
+        "App iOS (SwiftUI) e gestionale web (React/TypeScript su Firebase Hosting) condividono Auth, Firestore e Cloud Functions. Business Pulse rule-based; StoreKit 2 per Slotiva Pro; esperienza dark-first su tutte le superfici.",
       icon: "/images/apps/slotiva/icon.png",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
@@ -229,7 +229,7 @@ export const siteConfig = {
       demoVideo: {
         src: "/videos/slotiva-demo.mp4",
         poster: "/images/apps/slotiva/screenshot-1.png",
-        title: "Slotiva in uso reale su iPhone",
+        title: "Slotiva v1.0 — Pulse, CRM e prenotazioni",
       },
     },
     {
