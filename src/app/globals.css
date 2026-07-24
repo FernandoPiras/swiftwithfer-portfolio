@@ -9,7 +9,7 @@
   --glass: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(0, 0, 0, 0.06);
   --section-alt: #eeeff2;
-  --header-offset: 5rem;
+  --header-offset: 5.25rem;
   --ease-out: cubic-bezier(0.33, 0, 0.2, 1);
   --duration-fast: 0.55s;
   --duration-base: 0.78s;
@@ -53,7 +53,7 @@
 
 @media (min-width: 640px) {
   :root {
-    --header-offset: 5.5rem;
+    --header-offset: 5.75rem;
     --section-py: var(--space-36);
     --section-header-gap: var(--space-18);
     --card-pad: var(--space-8);
@@ -658,37 +658,37 @@ body {
   display: inline-flex;
   align-items: center;
   min-width: 0;
-  max-width: min(100%, 9.5rem);
+  max-width: min(100%, 12.5rem);
   border-radius: var(--radius-sm);
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
 @media (min-width: 390px) {
   .brand-link {
-    max-width: min(100%, 10.5rem);
-  }
-}
-
-@media (min-width: 640px) {
-  .brand-link {
-    max-width: min(100%, 14rem);
-  }
-}
-
-/* Footer wordmark — room for the larger readable brand mark */
-.brand-link--footer {
-  max-width: min(100%, 12rem);
-}
-
-@media (min-width: 390px) {
-  .brand-link--footer {
     max-width: min(100%, 13.5rem);
   }
 }
 
 @media (min-width: 640px) {
+  .brand-link {
+    max-width: min(100%, 15.5rem);
+  }
+}
+
+/* Footer wordmark — signature scale (~2× prior), room to breathe */
+.brand-link--footer {
+  max-width: min(100%, 22rem);
+}
+
+@media (min-width: 390px) {
   .brand-link--footer {
-    max-width: min(100%, 15rem);
+    max-width: min(100%, 24.5rem);
+  }
+}
+
+@media (min-width: 640px) {
+  .brand-link--footer {
+    max-width: min(100%, 27rem);
   }
 }
 

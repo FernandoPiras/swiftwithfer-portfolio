@@ -10,7 +10,11 @@ export function Footer() {
     <footer className="border-t border-glass-border/40 py-20 pb-[max(4rem,env(safe-area-inset-bottom))] sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12 text-center">
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-10">
+            <p className="max-w-sm text-sm leading-relaxed text-muted text-pretty sm:max-w-md">
+              {siteConfig.tagline}
+            </p>
+
             <Link
               href="/#hero"
               className="brand-link brand-link--footer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -18,10 +22,6 @@ export function Footer() {
             >
               <SwiftWithFerLogo variant="footer" />
             </Link>
-
-            <p className="max-w-sm text-sm leading-relaxed text-muted text-pretty sm:max-w-md">
-              {siteConfig.tagline}
-            </p>
           </div>
 
           <nav aria-label="Social footer">

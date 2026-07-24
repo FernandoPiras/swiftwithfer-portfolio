@@ -13,22 +13,22 @@ export const WORDMARK_HEIGHT = 1024;
 export const WORDMARK_ASPECT = WORDMARK_WIDTH / WORDMARK_HEIGHT;
 
 /**
- * Display widths — unchanged from prior header balance.
- *   <390px   140px
- *   390–639  152px
- *   ≥640px   172px
+ * Header display widths — +33% vs prior for brand presence.
+ *   <390px   186px
+ *   390–639  202px
+ *   ≥640px   228px
  */
 const HEADER_WM_DISPLAY_W = {
-  xs: 140,
-  base: 152,
-  sm: 172,
+  xs: 186,
+  base: 202,
+  sm: 228,
 } as const;
 
-/** Footer brand mark — readable focal size (larger than header chrome). */
+/** Footer signature — ~2× prior size; brand closing mark, not chrome. */
 const FOOTER_WM_DISPLAY_W = {
-  xs: 176,
-  base: 196,
-  sm: 220,
+  xs: 340,
+  base: 380,
+  sm: 420,
 } as const;
 
 interface SwiftWithFerLogoProps {
