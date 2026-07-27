@@ -135,13 +135,26 @@ export function AppCard({ app }: AppCardProps) {
                 {getWebsiteLinkLabel(app.websiteUrl)}
               </ButtonLink>
             ) : null}
+            {app.businessUrl ? (
+              <ButtonLink
+                href={app.businessUrl}
+                external
+                variant="ghost"
+                className="w-full sm:w-auto"
+              >
+                {getWebsiteLinkLabel(app.businessUrl)}
+              </ButtonLink>
+            ) : null}
           </div>
         </div>
 
         <div className="product-stage__device order-1 lg:order-2">
           <PhoneFrame
             src={app.screenshots[activeScreenshot] ?? app.screenshots[0]}
-            alt={`Screenshot di ${app.name}`}
+            alt={
+              app.screenshotAlts?.[activeScreenshot] ??
+              `Screenshot di ${app.name}`
+            }
             size="compact"
             className="product-stage__phone"
             sizes="(max-width: 639px) 256px, (max-width: 1023px) 280px, 300px"

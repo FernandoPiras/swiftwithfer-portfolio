@@ -225,6 +225,16 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                     {getWebsiteLinkLabel(app.websiteUrl)}
                   </ButtonLink>
                 ) : null}
+                {app.businessUrl ? (
+                  <ButtonLink
+                    href={app.businessUrl}
+                    external
+                    variant="secondary"
+                    className="w-full sm:w-auto"
+                  >
+                    {getWebsiteLinkLabel(app.businessUrl)}
+                  </ButtonLink>
+                ) : null}
               </div>
             </div>
           </div>
@@ -420,18 +430,22 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               Il prodotto in immagini
             </h2>
             <p className="mb-8 max-w-xl text-sm text-muted">
-              Screenshot reali, stesso formato e stessa cornice — per leggere il prodotto senza rumore.
+              Marketplace, app iOS e Business Portal — Business Brain, CRM e calendario sullo stesso ecosistema.
             </p>
             <ul className="grid justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {app.screenshots.map((screenshot, index) => (
                 <li key={screenshot} className="w-full max-w-[260px]">
                   <PhoneFrame
                     src={screenshot}
-                    alt={`Screenshot ${index + 1} di ${app.name}`}
+                    alt={
+                      app.screenshotAlts?.[index] ??
+                      `Screenshot ${index + 1} di ${app.name}`
+                    }
                     size="compact"
                   />
                   <p className="mt-4 text-center text-xs text-muted">
-                    Schermata {index + 1}
+                    {app.screenshotAlts?.[index]?.split("—")[0]?.trim() ??
+                      `Schermata ${index + 1}`}
                   </p>
                 </li>
               ))}

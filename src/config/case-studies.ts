@@ -59,136 +59,141 @@ export const caseStudies: CaseStudyContent[] = [
     slug: "slotiva",
     appId: "slotiva",
     positioning:
-      "Sistema operativo per l’attività: Business Pulse, CRM e prenotazioni su iOS e Web — stessi dati, esperienza dark-first, oltre 40 settori.",
+      "Business Brain per attività locali: un ecosistema completo con app iOS, Business Portal web e marketplace — CRM, agenda, analytics e automazioni su un’unica piattaforma.",
     problem:
-      "Attività basate su appuntamenti — saloni, barbieri, beauty, PT e molti altri settori — gestiscono ancora prenotazioni su WhatsApp, fogli e strumenti scollegati. Il risultato è prevedibile: sovrapposizioni, no-show, staff fuori sync, clienti senza storico e zero visione su priorità e performance.",
+      "Le attività locali basate su appuntamenti gestiscono ancora prenotazioni, clienti e staff su WhatsApp, fogli e tool scollegati. Mancano priorità chiare, storico clienti, sync tra team e una visione unica su cosa fare oggi per far crescere il business.",
     solution:
-      "Slotiva unifica operations e crescita. I clienti prenotano da app, marketplace o pagina pubblica; i titolari gestiscono agenda, team e chat; il gestionale su slotiva.it offre CRM e Business Pulse (Score, Plan, Actions). Tutto condivide Firebase in tempo reale. Prova gratuita 30 giorni per i titolari.",
+      "Slotiva è un ecosistema software, non una semplice app di prenotazioni. I clienti scoprono e prenotano da app iOS e marketplace (www.slotiva.it); i titolari e lo staff operano dal Business Portal (business.slotiva.it) con Business Brain, CRM, agenda, richieste, team e servizi. Stessi dati Firebase in tempo reale. Prova gratuita 30 giorni.",
     architecture:
-      "Tre superfici, una fonte di verità — Firebase Hosting per il web, Cloud Functions e Firestore per sync e automazioni. UI dark-first su iOS e Web.",
+      "Tre superfici, una fonte di verità: app iOS (SwiftUI), marketplace consumer e Business Portal (Next.js) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain ordina priorità e opportunità sulla giornata reale.",
     architectureFlow: [
-      "Utente",
+      "Cliente / Titolare",
       "App iOS",
       "Firebase",
       "Cloud Functions",
       "Firestore",
-      "Dashboard Web",
+      "Business Portal",
     ],
     journeyFlow: [
-      "Cliente",
+      "Marketplace",
       "Prenotazione",
       "Realtime Sync",
-      "Gestionale",
+      "Business Brain",
+      "CRM & Agenda",
       "Notifiche",
-      "Analytics",
     ],
     features: [],
     ecosystem: [
       {
         title: "App iOS",
         summary:
-          "Esperienza native per clienti e titolari: prenotazioni, chat, CRM operativo, widget, profilo e companion Apple Watch.",
+          "Esperienza nativa per clienti e titolari: discovery, prenotazioni, chat, operazioni quotidiane, widget e notifiche push.",
       },
       {
-        title: "Gestionale web",
+        title: "Marketplace consumer",
         summary:
-          "CRM e operations su slotiva.it: Business Pulse, dashboard KPI, staff, servizi, marketplace e booking pubblico.",
+          "www.slotiva.it: trova e prenota attività locali, profili pubblici e booking online senza frammentare i canali.",
+      },
+      {
+        title: "Business Portal",
+        summary:
+          "business.slotiva.it: Business Brain, CRM, calendario, richieste, team, servizi e analytics — il centro di controllo dell’attività.",
       },
       {
         title: "Backend cloud",
         summary:
-          "Firebase Auth, Firestore, Cloud Functions e FCM: sync realtime, notifiche e automazioni CRM leggere.",
+          "Firebase Auth, Firestore, Cloud Functions, Storage e FCM: sync realtime, sicurezza, automazioni e notifiche end-to-end.",
       },
     ],
     featureGroups: [
       {
-        title: "App iOS — clienti e titolari",
+        title: "Business Brain & crescita",
         description:
-          "Il prodotto in tasca: chi prenota e chi gestisce l'attività condividono la stessa fonte dati, con UX distinte.",
+          "Non solo dati: priorità, richiami e azioni consigliate sulla giornata reale dell’attività.",
         items: [
-          "Prenotazioni e gestione appuntamenti",
-          "Calendario e disponibilità in tempo reale",
-          "Clienti, storico e profilo",
-          "Staff, ruoli e permessi",
-          "Servizi e catalogo attività",
-          "Chat business–cliente",
-          "Notifiche push (FCM)",
-          "Chiusura in sede e ricevuta digitale",
-          "Dashboard e analytics operative",
-          "Marketplace e discovery attività",
-          "Autenticazione sicura",
-          "Sincronizzazione realtime",
-          "Widget iOS",
-          "Companion Apple Watch",
-          "Slotiva Pro con StoreKit 2",
-        ],
-      },
-      {
-        title: "Gestionale web — CRM & operations",
-        description:
-          "Il centro di controllo dell'attività: da desktop, tablet o mobile, senza perdere contesto.",
-        items: [
-          "Business Pulse: score, plan e next actions",
-          "40+ settori professionali",
-          "Dashboard completa con KPI",
+          "Business Brain: giornata già in ordine",
+          "Score, priorità e opportunità recuperabili",
           "Analytics e insight operativi",
-          "CRM clienti con segmenti e recall",
-          "Gestione staff e servizi",
-          "Disponibilità e configurazione attività",
-          "Pagine pubbliche di booking e profilo",
-          "Marketplace web",
-          "Responsive desktop, tablet e mobile",
-          "Esperienza dark-first",
+          "Automazioni e richiami clienti",
+          "Dashboard business unificata",
         ],
       },
       {
-        title: "Infrastruttura — Firebase & Hosting",
+        title: "Operations & CRM",
         description:
-          "L'architettura che rende l'ecosistema affidabile, aggiornabile e pronto a crescere.",
+          "Gestire clienti, staff e agenda come un unico sistema — non come tool separati.",
         items: [
-          "Firebase Authentication",
-          "Cloud Firestore",
-          "Cloud Functions",
-          "Sincronizzazione realtime",
-          "Push FCM e digest CRM",
-          "React + TypeScript (export statico)",
-          "Deploy su Firebase Hosting",
-          "Insight operativi rule-based (Business Pulse)",
+          "CRM evoluto con Health Score e segmenti",
+          "Calendario intelligente giorno / settimana",
+          "Gestione staff, ruoli e disponibilità",
+          "Gestione servizi e catalogo",
+          "Richieste clienti e flusso operativo",
+          "Sistema notifiche (push / FCM)",
+        ],
+      },
+      {
+        title: "Esperienza cliente & marketplace",
+        description:
+          "Prenotare e tornare deve essere semplice — su app e sul web, con gli stessi dati del business.",
+        items: [
+          "Prenotazioni online in tempo reale",
+          "Marketplace e profili pubblici",
+          "App iOS dedicata ai clienti",
+          "Esperienza sincronizzata iOS ↔ Web",
+        ],
+      },
+      {
+        title: "Piattaforma & infrastruttura",
+        description:
+          "Architettura pensata per scalare: mobile, web e cloud sullo stesso modello dati.",
+        items: [
+          "Firebase Cloud Backend",
+          "Realtime Sync (Firestore)",
+          "Authentication e sicurezza",
+          "Cloud Functions & Storage",
+          "Business Portal responsive (Next.js)",
+          "Deep Links e Push Notifications",
         ],
       },
     ],
     decisions: [
       {
+        title: "Una piattaforma, tre superfici",
+        reason:
+          "App iOS, marketplace e Business Portal condividono lo stesso backend — zero silos tra cliente e titolare.",
+      },
+      {
         title: "Firebase per sync realtime",
-        reason: "Agenda, chat e stato business allineati su ogni dispositivo.",
+        reason:
+          "Agenda, CRM, richieste e stato business allineati su ogni dispositivo in tempo reale.",
       },
       {
         title: "Cloud Functions per la logica server",
-        reason: "Notifiche, regole di business e digest CRM fuori dal client.",
+        reason:
+          "Notifiche, regole di business e automazioni restano fuori dal client, sicure e aggiornabili.",
       },
       {
-        title: "Firestore per scalabilità",
-        reason: "Profili business e crescita senza redesign del data model.",
+        title: "SwiftUI per l’esperienza iOS",
+        reason:
+          "UX nativa fluida per clienti e titolari, con widget e deep link verso il prodotto.",
       },
       {
-        title: "SwiftUI per UI nativa",
-        reason: "Esperienza iOS fluida per clienti e titolari, con Watch e widget.",
+        title: "Next.js per il Business Portal",
+        reason:
+          "Portale web professionale, responsive e deployabile su Vercel, allineato al brand Slotiva Business.",
       },
       {
-        title: "React per il gestionale",
-        reason: "Dashboard CRM professionale, responsive e aggiornabile.",
-      },
-      {
-        title: "Firebase Hosting per il web",
-        reason: "Export statico Next.js allineato allo stesso progetto Firebase.",
+        title: "Business Brain come prodotto, non come report",
+        reason:
+          "Score e priorità devono guidare l’azione quotidiana — non restare metriche decorative.",
       },
     ],
     productTimeline: [...PRODUCT_TIMELINE],
     qualitySignals: [
       "In produzione",
-      "v1.0 dark-first",
+      "App Store + Web",
       "Sync realtime",
-      "Business Pulse",
+      "Business Brain",
       "Prova 30 giorni",
     ],
     capabilities: [
@@ -197,31 +202,31 @@ export const caseStudies: CaseStudyContent[] = [
       "Sicurezza",
       "Responsive",
       "Performance",
-      "Accessibilità",
+      "Scalabilità",
     ],
     challenges: [
       "Prenotazioni concorrenti senza conflitti di slot",
-      "Due esperienze distinte (cliente vs titolare) sulla stessa piattaforma",
-      "Sync affidabile e a bassa latenza tra app, web e cloud",
-      "Ruoli staff/titolare con dati isolati per business",
-      "Notifiche e digest CRM affidabili sotto carico reale",
+      "Esperienze distinte (cliente, titolare, staff) sulla stessa piattaforma",
+      "Sync affidabile tra app iOS, marketplace e Business Portal",
+      "Ruoli e isolamento dati per business multi-utente",
+      "Business Brain utile fin dai primi dati, senza rumore",
     ],
     results: [
-      "App pubblicata su App Store",
-      "Gestionale CRM live su slotiva.it (Firebase Hosting)",
-      "Business Pulse + CRM + prenotazioni nello stesso prodotto iOS/Web",
-      "Catalogo 40+ settori professionali",
-      "Prova gratuita 30 giorni per i titolari (Slotiva Pro)",
+      "App iOS pubblicata su App Store",
+      "Marketplace consumer live su www.slotiva.it",
+      "Business Portal live su business.slotiva.it",
+      "Business Brain + CRM + agenda + marketplace in un’unica piattaforma",
+      "Prova gratuita 30 giorni per i titolari",
     ],
     trustSignals: [
       "App Store",
-      "slotiva.it live",
+      "slotiva.it",
+      "business.slotiva.it",
       "Sync realtime",
-      "Dark-first",
-      "Business Pulse",
+      "Business Brain",
     ],
     seoDescription:
-      "Case study Slotiva v1.0: Business Pulse, CRM e prenotazioni su iOS e Web. Dark-first, 40+ settori, prova 30 giorni, Firebase realtime.",
+      "Case study Slotiva: Business Brain per attività locali. Ecosistema con app iOS, Business Portal, CRM, agenda, marketplace e sync Firebase realtime.",
   },
   {
     slug: "andrometrics",

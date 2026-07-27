@@ -42,6 +42,13 @@ function buildAppSchema(app: AppProject, siteUrl: string, position?: number) {
     };
   }
 
+  const sameAs = [app.appStoreUrl, app.websiteUrl, app.businessUrl].filter(
+    (url): url is string => Boolean(url),
+  );
+  if (sameAs.length) {
+    base.sameAs = sameAs;
+  }
+
   return base;
 }
 

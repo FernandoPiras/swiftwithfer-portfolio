@@ -109,7 +109,9 @@ export function Hero() {
             >
               <PhoneFrame
                 src={heroVisual}
-                alt={`Anteprima ${slotiva.name}`}
+                alt={
+                  slotiva.screenshotAlts?.[0] ?? `Anteprima ${slotiva.name}`
+                }
                 priority
                 size="hero"
                 sizes="(max-width: 359px) 72vw, (max-width: 389px) 72vw, (max-width: 429px) 72vw, (max-width: 639px) 72vw, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"

@@ -160,12 +160,13 @@ export function createCaseStudyMetadata(
   appName: string,
   description: string,
   slug: string,
+  tagline?: string,
 ): Metadata {
   const siteUrl = getSiteUrl();
   const { name } = siteConfig;
   const url = `${siteUrl}/apps/${slug}`;
-  const title = `${appName} — Case Study`;
-  const ogTitle = `${appName} — Case Study | ${name}`;
+  const title = tagline ? `${appName} — ${tagline}` : `${appName} — Case Study`;
+  const ogTitle = `${title} | ${name}`;
   const ogImage = buildOgImage(siteUrl);
   const twitterImage = buildTwitterImage(siteUrl);
 

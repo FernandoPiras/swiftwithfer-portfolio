@@ -26,10 +26,14 @@ export interface AppProject {
   description: string;
   icon: string;
   screenshots: string[];
+  /** Optional accessible alts aligned 1:1 with screenshots */
+  screenshotAlts?: string[];
   technologies: string[];
   appStoreUrl?: string;
   githubUrl?: string;
   websiteUrl?: string;
+  /** Secondary product surface (e.g. Slotiva Business Portal) */
+  businessUrl?: string;
   status: ProjectStatus;
   featured?: boolean;
   outcomes?: string[];
@@ -193,43 +197,56 @@ export const siteConfig = {
     {
       id: "slotiva",
       name: "Slotiva",
-      tagline: "Business Pulse, CRM e prenotazioni — iOS e Web",
+      tagline: "Business Brain per attività locali",
       description:
-        "Sistema operativo per l’attività: Business Pulse (Score, Plan, Actions), CRM intelligente e prenotazioni sugli stessi dati. App iOS (Watch e widget) + gestionale web dark-first su slotiva.it. Oltre 40 settori. Prova gratis 30 giorni.",
+        "Ecosistema software completo: app iOS per i clienti, Business Portal web per titolari e staff, CRM, agenda intelligente, marketplace e Business Brain. Prenotazioni, clienti, team, analytics e automazioni — una sola piattaforma sincronizzata in tempo reale.",
       outcomes: [
-        "Business Pulse + CRM smart",
-        "iOS e Web con sync realtime",
-        "40+ settori · prova 30 giorni",
+        "App iOS + Business Portal + Marketplace",
+        "Business Brain, CRM e agenda intelligente",
+        "Sync realtime end-to-end su Firebase",
       ],
       architecture:
-        "App iOS (SwiftUI) e gestionale web (React/TypeScript su Firebase Hosting) condividono Auth, Firestore e Cloud Functions. Business Pulse rule-based; StoreKit 2 per Slotiva Pro; esperienza dark-first su tutte le superfici.",
+        "Tre superfici, una piattaforma: app iOS (SwiftUI), marketplace consumer (www.slotiva.it) e Business Portal (business.slotiva.it) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain ordina priorità, richiami e opportunità sulla giornata reale.",
       icon: "/images/apps/slotiva/icon.png",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
         "/images/apps/slotiva/screenshot-2.png",
         "/images/apps/slotiva/screenshot-3.png",
+        "/images/apps/slotiva/screenshot-4.png",
+        "/images/apps/slotiva/screenshot-5.png",
+      ],
+      screenshotAlts: [
+        "Business Brain — Business Score e salute dell’attività",
+        "Marketplace consumer — trova e prenota sull’app iOS",
+        "CRM intelligente — Health Score, richiami e azioni",
+        "Business Portal — calendario staff giorno e settimana",
+        "Business Brain — priorità e Business Plan della settimana",
       ],
       technologies: [
         "SwiftUI",
         "Firebase",
         "Firestore",
         "Cloud Functions",
+        "Authentication",
+        "Next.js",
         "React",
         "TypeScript",
-        "Firebase Hosting",
-        "StoreKit 2",
-        "Apple Watch",
-        "WidgetKit",
+        "Tailwind",
+        "Vercel",
+        "Cloud Messaging",
         "Push Notifications",
+        "StoreKit 2",
+        "WidgetKit",
       ],
       appStoreUrl: "https://apps.apple.com/it/app/slotiva/id6779347919",
       websiteUrl: "https://www.slotiva.it",
+      businessUrl: "https://business.slotiva.it",
       status: "published",
       featured: true,
       demoVideo: {
         src: "/videos/slotiva-demo.mp4",
         poster: "/images/apps/slotiva/screenshot-1.png",
-        title: "Slotiva v1.0 — Pulse, CRM e prenotazioni",
+        title: "Slotiva — ecosistema iOS e Business Portal",
       },
     },
     {
@@ -346,6 +363,7 @@ export const siteConfig = {
       "SwiftUI",
       "Gestionali Aziendali",
       "CRM",
+      "Business Brain",
       "Slotiva",
       "AndroMetrics",
       "PreventivoRapido",
