@@ -25,6 +25,15 @@ export interface AppProject {
   tagline: string;
   description: string;
   icon: string;
+  /** Optional official product wordmark (PNG) replacing the text title in AppCard */
+  wordmark?: string;
+  /** Intrinsic pixel size of the wordmark asset (for next/image) */
+  wordmarkSize?: { width: number; height: number };
+  /**
+   * Wordmark ink: "on-light" = dark glyphs (invert in dark mode);
+   * "on-dark" = light glyphs (force black in light mode).
+   */
+  wordmarkInk?: "on-light" | "on-dark";
   screenshots: string[];
   /** Optional accessible alts aligned 1:1 with screenshots */
   screenshotAlts?: string[];
@@ -208,6 +217,9 @@ export const siteConfig = {
       architecture:
         "Tre superfici, una piattaforma: app iOS (SwiftUI), marketplace consumer (www.slotiva.it) e Business Portal (business.slotiva.it) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain ordina priorità, richiami e opportunità sulla giornata reale.",
       icon: "/images/apps/slotiva/icon.png",
+      wordmark: "/images/apps/slotiva/wordmark.png",
+      wordmarkSize: { width: 931, height: 128 },
+      wordmarkInk: "on-light",
       screenshots: [
         "/images/apps/slotiva/screenshot-1.png",
         "/images/apps/slotiva/screenshot-2.png",
@@ -263,6 +275,9 @@ export const siteConfig = {
       architecture:
         "App SwiftUI local-first (App Group + sync opzionale iCloud KVS), HealthKit in lettura, Vision OCR on-device, AI Coach via proxy API, WidgetKit e StoreKit 2. Firebase solo per snapshot TTC di coppia opzionali — i dati di tracking restano sul dispositivo.",
       icon: "/images/apps/andrometrics/icon.png",
+      wordmark: "/images/apps/andrometrics/wordmark.png",
+      wordmarkSize: { width: 1208, height: 230 },
+      wordmarkInk: "on-dark",
       screenshots: [
         "/images/apps/andrometrics/screenshot-1.png",
         "/images/apps/andrometrics/screenshot-2.png",
