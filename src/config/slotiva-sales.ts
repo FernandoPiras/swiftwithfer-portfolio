@@ -94,18 +94,18 @@ export const slotivaSales = {
     marketplace: {
       title: "Marketplace",
       outcome:
-        "Un canale pubblico che riempie l’agenda: profilo, servizi e prenotazione online allineati al tuo Business Portal.",
+        "Un canale pubblico che riempie l’agenda: i clienti cercano, confrontano e prenotano su www.slotiva.it — stesso account dell’app.",
       shots: [
         {
-          src: "/images/apps/slotiva/marketplace/marketplace.jpg",
-          alt: "Slotiva marketplace — scoperta attività locali",
-          caption: "Marketplace",
+          src: "/images/apps/slotiva/marketplace/home.jpg",
+          alt: "Slotiva marketplace — home prenotazione online attuale",
+          caption: "Home marketplace",
           wide: true,
         },
         {
-          src: "/images/apps/slotiva/marketplace/public-profile.jpg",
-          alt: "Slotiva — profilo pubblico attività",
-          caption: "Profilo pubblico",
+          src: "/images/apps/slotiva/marketplace/marketplace.jpg",
+          alt: "Slotiva marketplace — Esplora professionisti e attività",
+          caption: "Esplora",
           wide: true,
         },
       ],
