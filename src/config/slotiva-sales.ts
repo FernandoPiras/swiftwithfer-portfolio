@@ -70,22 +70,22 @@ export const slotivaSales = {
         "I tuoi clienti trovano l’attività, prenotano in pochi tap e tornano — senza messaggi sparsi.",
       shots: [
         {
-          src: "/images/apps/slotiva/consumer/home.png",
+          src: "/images/apps/slotiva/consumer/home.jpg",
           alt: "Slotiva app iOS — Home marketplace",
           caption: "Home",
         },
         {
-          src: "/images/apps/slotiva/consumer/explore.png",
+          src: "/images/apps/slotiva/consumer/explore.jpg",
           alt: "Slotiva app iOS — Explore e ricerca",
           caption: "Explore",
         },
         {
-          src: "/images/apps/slotiva/consumer/book.png",
+          src: "/images/apps/slotiva/consumer/book.jpg",
           alt: "Slotiva app iOS — flusso di prenotazione",
           caption: "Prenotazione",
         },
         {
-          src: "/images/apps/slotiva/consumer/appointments.png",
+          src: "/images/apps/slotiva/consumer/appointments.jpg",
           alt: "Slotiva app iOS — appuntamenti cliente",
           caption: "Appuntamenti",
         },
