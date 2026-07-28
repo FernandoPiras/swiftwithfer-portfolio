@@ -113,12 +113,12 @@ export const slotivaSales = {
     portal: {
       title: "Business Portal",
       outcome:
-        "Il centro operativo: richieste, calendario, CRM e chat — così il team lavora sullo stesso stato, in tempo reale.",
+        "Il centro operativo web: agenda, CRM, analytics e team — così il titolare guida l’attività dallo stesso sistema SaaS.",
       shots: [
         {
           src: "/images/apps/slotiva/business/calendar.jpg",
-          alt: "Slotiva Business Portal — calendario staff",
-          caption: "Calendario",
+          alt: "Slotiva Business Portal — agenda giornata con appuntamenti",
+          caption: "Agenda",
           wide: true,
         },
         {
@@ -129,14 +129,14 @@ export const slotivaSales = {
         },
         {
           src: "/images/apps/slotiva/business/requests.jpg",
-          alt: "Slotiva Business Portal — richieste in arrivo",
-          caption: "Richieste",
+          alt: "Slotiva Business Portal — analytics operative",
+          caption: "Analytics",
           wide: true,
         },
         {
           src: "/images/apps/slotiva/business/chat.jpg",
-          alt: "Slotiva Business Portal — chat nel contesto",
-          caption: "Chat",
+          alt: "Slotiva Business Portal — team e staff",
+          caption: "Team",
           wide: true,
         },
       ],
@@ -159,9 +159,9 @@ export const slotivaSales = {
           wide: true,
         },
         {
-          src: "/images/apps/slotiva/brain/plan.jpg",
-          alt: "Slotiva Business Brain — piano della settimana",
-          caption: "Week Plan",
+          src: "/images/apps/slotiva/brain/actions.jpg",
+          alt: "Slotiva Business Brain — Pulse Actions",
+          caption: "Priorità",
           wide: true,
         },
       ],

@@ -229,10 +229,10 @@ export const siteConfig = {
       ],
       screenshotAlts: [
         "Slotiva Consumer — Home marketplace su iOS",
+        "Slotiva Consumer — Explore e ricerca attività",
+        "Slotiva Consumer — dettaglio attività",
         "Slotiva Consumer — prenotazione in pochi tap",
-        "Slotiva Business Brain — Pulse dashboard",
-        "Slotiva Business Portal — CRM clienti",
-        "Slotiva Business Portal — calendario staff",
+        "Slotiva Consumer — appuntamenti cliente",
       ],
       technologies: [
         "SwiftUI",
