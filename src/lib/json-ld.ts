@@ -168,14 +168,21 @@ export function buildCaseStudyJsonLd(
       "@type": "WebPage",
       "@id": `${pageUrl}/#webpage`,
       url: pageUrl,
-      name: `${app.name} — Case Study`,
+      name:
+        app.id === "slotiva"
+          ? `${app.name} — Business Brain per attività di servizi`
+          : `${app.name} — Case Study`,
       description,
       isPartOf: { "@id": `${siteUrl}/#website` },
       breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
       inLanguage: "it-IT",
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${siteUrl}${app.icon}`,
+        url: `${siteUrl}${
+          app.id === "slotiva"
+            ? "/images/apps/slotiva/brain/pulse-hero.jpg"
+            : app.icon
+        }`,
       },
     },
     {

@@ -59,13 +59,13 @@ export const caseStudies: CaseStudyContent[] = [
     slug: "slotiva",
     appId: "slotiva",
     positioning:
-      "Business Brain per attività locali: un ecosistema completo con app iOS, Business Portal web e marketplace — CRM, agenda, analytics e automazioni su un’unica piattaforma.",
+      "AI-powered Business Brain per attività di servizi: ecosistema enterprise con marketplace consumer (app iOS + www.slotiva.it) e Business Portal (business.slotiva.it) — CRM, agenda, analytics e automazioni su un’unica piattaforma.",
     problem:
       "Le attività locali basate su appuntamenti gestiscono ancora prenotazioni, clienti e staff su WhatsApp, fogli e tool scollegati. Mancano priorità chiare, storico clienti, sync tra team e una visione unica su cosa fare oggi per far crescere il business.",
     solution:
-      "Slotiva è un ecosistema software, non una semplice app di prenotazioni. I clienti scoprono e prenotano da app iOS e marketplace (www.slotiva.it); i titolari e lo staff operano dal Business Portal (business.slotiva.it) con Business Brain, CRM, agenda, richieste, team e servizi. Stessi dati Firebase in tempo reale. Prova gratuita 30 giorni.",
+      "Slotiva non è “solo un’app di booking”. I clienti scoprono e prenotano da app iOS e marketplace (www.slotiva.it); i titolari e lo staff operano dal Business Portal (business.slotiva.it) con Business Brain, Pulse, Score, CRM, agenda, richieste, team e crescita. Stessi dati Firebase in tempo reale. Qualità enterprise, superfici separate.",
     architecture:
-      "Tre superfici, una fonte di verità: app iOS (SwiftUI), marketplace consumer e Business Portal (Next.js) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain ordina priorità e opportunità sulla giornata reale.",
+      "Tre superfici, una fonte di verità: app iOS Consumer (SwiftUI), marketplace consumer e Business Portal (Next.js) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain sul portale ordina priorità e opportunità sulla giornata reale.",
     architectureFlow: [
       "Cliente / Titolare",
       "App iOS",
@@ -85,9 +85,9 @@ export const caseStudies: CaseStudyContent[] = [
     features: [],
     ecosystem: [
       {
-        title: "App iOS",
+        title: "App iOS (Consumer)",
         summary:
-          "Esperienza nativa per clienti e titolari: discovery, prenotazioni, chat, operazioni quotidiane, widget e notifiche push.",
+          "Esperienza App Store nativa per i clienti: Home, Explore, dettaglio attività, prenotazione, preferiti, appuntamenti, chat e profilo — allineata a www.slotiva.it.",
       },
       {
         title: "Marketplace consumer",
@@ -226,7 +226,7 @@ export const caseStudies: CaseStudyContent[] = [
       "Business Brain",
     ],
     seoDescription:
-      "Case study Slotiva: Business Brain per attività locali. Ecosistema con app iOS, Business Portal, CRM, agenda, marketplace e sync Firebase realtime.",
+      "Slotiva: Business Brain per saloni, barbieri e centri estetici. Gestionale con prenotazioni, CRM, marketplace e priorità operative. Richiedi una demo.",
   },
   {
     slug: "andrometrics",

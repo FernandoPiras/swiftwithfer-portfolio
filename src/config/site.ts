@@ -206,16 +206,16 @@ export const siteConfig = {
     {
       id: "slotiva",
       name: "Slotiva",
-      tagline: "Business Brain per attività locali",
+      tagline: "Business Brain per attività di servizi",
       description:
-        "Ecosistema software completo: app iOS per i clienti, Business Portal web per titolari e staff, CRM, agenda intelligente, marketplace e Business Brain. Prenotazioni, clienti, team, analytics e automazioni — una sola piattaforma sincronizzata in tempo reale.",
+        "Ecosistema enterprise: i clienti scoprono e prenotano su app iOS e www.slotiva.it; i titolari guidano l’attività con Business Brain su business.slotiva.it — Pulse, Score, CRM, marketplace e team. Stessi dati Firebase, qualità enterprise, superfici chiare.",
       outcomes: [
-        "App iOS + Business Portal + Marketplace",
-        "Business Brain, CRM e agenda intelligente",
+        "Business Brain: priorità e azioni sulla giornata",
+        "Marketplace + app clienti + Business Portal",
         "Sync realtime end-to-end su Firebase",
       ],
       architecture:
-        "Tre superfici, una piattaforma: app iOS (SwiftUI), marketplace consumer (www.slotiva.it) e Business Portal (business.slotiva.it) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain ordina priorità, richiami e opportunità sulla giornata reale.",
+        "Tre superfici, una piattaforma: app iOS Consumer (SwiftUI), marketplace (www.slotiva.it) e Business Portal (business.slotiva.it) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain sul portale ordina priorità, richiami e opportunità sulla giornata reale.",
       icon: "/images/apps/slotiva/icon.png",
       wordmark: "/images/apps/slotiva/wordmark.png",
       wordmarkSize: { width: 931, height: 128 },
@@ -228,11 +228,11 @@ export const siteConfig = {
         "/images/apps/slotiva/screenshot-5.png",
       ],
       screenshotAlts: [
-        "Business Brain — Business Score e salute dell’attività",
-        "Marketplace consumer — trova e prenota sull’app iOS",
-        "CRM intelligente — Health Score, richiami e azioni",
-        "Business Portal — calendario staff giorno e settimana",
-        "Business Brain — priorità e Business Plan della settimana",
+        "Slotiva Consumer — Home marketplace su iOS",
+        "Slotiva Consumer — prenotazione in pochi tap",
+        "Slotiva Business Brain — Pulse dashboard",
+        "Slotiva Business Portal — CRM clienti",
+        "Slotiva Business Portal — calendario staff",
       ],
       technologies: [
         "SwiftUI",
@@ -258,7 +258,7 @@ export const siteConfig = {
       demoVideo: {
         src: "/videos/slotiva-demo.mp4",
         poster: "/images/apps/slotiva/screenshot-1.png",
-        title: "Slotiva — ecosistema iOS e Business Portal",
+        title: "Slotiva — Consumer app + Business Brain",
       },
     },
     {

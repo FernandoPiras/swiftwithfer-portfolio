@@ -161,6 +161,7 @@ export function createCaseStudyMetadata(
   description: string,
   slug: string,
   tagline?: string,
+  keywords?: readonly string[],
 ): Metadata {
   const siteUrl = getSiteUrl();
   const { name } = siteConfig;
@@ -173,6 +174,7 @@ export function createCaseStudyMetadata(
   return {
     title,
     description,
+    ...(keywords?.length ? { keywords: [...keywords] } : {}),
     alternates: {
       canonical: url,
       languages: { "it-IT": url },
