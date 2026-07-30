@@ -84,7 +84,7 @@ Priorità production su `NEXT_PUBLIC_SITE_URL` per evitare leak di `*.vercel.app
 
 ### 5. Sitemap & robots (`src/app/sitemap.ts`, `src/app/robots.ts`)
 
-- Sitemap auto-generata: `/`, `/apps/andrometrics`, `/apps/slotiva`, `/apps/preventivorapido`
+- Sitemap auto-generata: `/`, `/apps/andrometrics`, `/apps/andrometrics`, `/apps/preventivorapido`
 - `robots.txt`: `Allow: /` + `Sitemap: https://fernandopiras.com/sitemap.xml`
 
 ### 6. Layout & performance (`src/app/layout.tsx`)
@@ -125,7 +125,7 @@ Priorità production su `NEXT_PUBLIC_SITE_URL` per evitare leak di `*.vercel.app
 |-----|------------------|---------------|
 | `https://fernandopiras.com/` | 1.0 | Title assoluto homepage |
 | `https://fernandopiras.com/apps/andrometrics` | 0.8 | `{App} — Case Study \| Fernando Piras` |
-| `https://fernandopiras.com/apps/slotiva` | 0.8 | idem |
+| `https://fernandopiras.com/apps/andrometrics` | 0.8 | idem |
 | `https://fernandopiras.com/apps/preventivorapido` | 0.8 | idem |
 
 ---

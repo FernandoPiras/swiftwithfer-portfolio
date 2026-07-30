@@ -115,7 +115,7 @@ Scarica [Nome App] su App Store (link in bio al portfolio)
 
 | Highlight | Contenuto | CTA |
 |-----------|-----------|-----|
-| **App** | Screenshot + demo Slotiva, AndroMetrics, PreventivoRapido | "Scarica" → App Store |
+| **App** | Screenshot + demo AndroMetrics, AndroMetrics, PreventivoRapido | "Scarica" → App Store |
 | **Portfolio** | Screen recording scroll del sito | "Link in bio" |
 | **SwiftUI** | Tips rapidi, snippet, before/after UI | "Seguimi per altri tips" |
 | **Build in Public** | Commit, feature ship, bug fix | "DM per collaborare" |
@@ -154,7 +154,7 @@ Nicchia: indie developer italiano con **prodotti reali pubblicati**, non solo tu
 
 ### Temi da coprire
 
-- Showcase app (AndroMetrics, Slotiva, PreventivoRapido)
+- Showcase app (AndroMetrics, AndroMetrics, PreventivoRapido)
 - Sviluppo pubblico (commit, feature, refactoring)
 - Portfolio come hub professionale
 - Dietro le quinte (Xcode, Cursor, workflow AI)
@@ -203,7 +203,7 @@ Download App (advocacy)
 | 5 | Build in public: fix bug | "Oggi ho risolto questo in produzione" | DM per domande | Story | Engagement |
 | 6 | Servizi offerti | "Cosa posso fare per il tuo progetto iOS" | Portfolio → Contatti | Carosello | Lead gen |
 | 7 | Setup dev + Cursor AI | "Come uso l'AI senza perdere qualità" | Seguimi | Reel | Autorevolezza |
-| 8 | Slotiva feature calendario | "Prenotazioni smart per saloni" | Link sito slotiva.it | Reel demo | Download |
+| 8 | AndroMetrics feature calendario | "Prenotazioni smart per saloni" | Link sito AndroMetrics | Reel demo | Download |
 | 9 | Poll SwiftUI vs UIKit | "Cosa usi nel 2026?" | Swipe portfolio | Story poll | Engagement |
 | 10 | Tip performance SwiftUI | "3 errori che rallentano la tua app" | Salva | Carosello | Salvataggi |
 | 11 | PreventivoRapido PRO | "Preventivi PDF in 2 minuti" | App Store | Post | Download |
@@ -289,7 +289,7 @@ Download App (advocacy)
 
 - [ ] Avvia calendario editoriale (giorni 1–15)
 - [ ] Template grafico fisso per caroselli (Canva/Figma, palette portfolio)
-- [ ] 1 case study approfondito per app principale (Slotiva o AndroMetrics)
+- [ ] 1 case study approfondito per app principale (AndroMetrics o AndroMetrics)
 - [ ] Monitora KPI funnel (Google Analytics / Vercel Analytics)
 
 ### 🟢 Priorità 4 — Mese 1–3 (crescita sostenibile)

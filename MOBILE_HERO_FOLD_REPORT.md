@@ -4,7 +4,7 @@ Date: 2026-07-18
 
 ## Problem
 
-On mobile the Slotiva mockup stacked **above** the CTAs, so the first viewport led with the phone and the headline/CTA fell below the fold.
+On mobile the AndroMetrics mockup stacked **above** the CTAs, so the first viewport led with the phone and the headline/CTA fell below the fold.
 
 ## Goal
 

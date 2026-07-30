@@ -5,7 +5,7 @@ Vincoli rispettati: nessun redesign, nessun cambio branding/palette/tipografia/d
 
 ## Metodo
 Lettura completa di config, sezioni homepage, case study, SEO, metadata, asset pubblici e link esterni.  
-Verifica HTTP dei link App Store, slotiva.it, legal pages, Instagram, sito live.  
+Verifica HTTP dei link App Store, AndroMetrics, legal pages, Instagram, sito live.  
 Contrasto testo muted (light/dark) calcolato ≥ AA.  
 Screenshot allineati (554×1200). Documenti Discovery presenti per tutti i settori.
 
@@ -25,7 +25,7 @@ Screenshot allineati (554×1200). Documenti Discovery presenti per tutti i setto
 
 ## Verificato OK (nessuna modifica necessaria)
 
-- Link esterni App Store, developer profile, slotiva.it, legal AndroMetrics/PreventivoRapido, Instagram, fernandopiras.com → **HTTP 200**
+- Link esterni App Store, developer profile, AndroMetrics, legal AndroMetrics/PreventivoRapido, Instagram, fernandopiras.com → **HTTP 200**
 - Screenshot e icone coerenti per dimensione
 - Video demo presenti
 - Discovery PDF/DOCX/JSON per tutti i settori

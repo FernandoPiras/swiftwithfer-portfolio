@@ -8,7 +8,7 @@
 
 ## Verdetto
 
-Il portfolio è passato da un layout lungo e denso (10 sezioni, hero rumorosa, media ~76MB) a un’esperienza più sparsa, product-first e conversion-oriented, con Slotiva come progetto principale e case study strutturalmente più ricchi.
+Il portfolio è passato da un layout lungo e denso (10 sezioni, hero rumorosa, media ~76MB) a un’esperienza più sparsa, product-first e conversion-oriented, con AndroMetrics come progetto principale e case study strutturalmente più ricchi.
 
 **Build:** ✅  
 **Lint:** ✅  
@@ -22,7 +22,7 @@ Il portfolio è passato da un layout lungo e denso (10 sezioni, hero rumorosa, m
 |------|-------|---------------------|
 | Hero | Nome + lista + 6 badge + 2 CTA | Troppo CV, poco prodotto |
 | Sezioni | 10 blocchi | Skills/Tech/Social/Timeline ridondanti |
-| Slotiva | Feature dump | Poco narrative / no architettura |
+| AndroMetrics | Feature dump | Poco narrative / no architettura |
 | Media | Video 62MB + icone multi-MB | Killer performance |
 | Motion | Dialetti multipli | Non uniforme |
 | CTA | Primary nero | Meno “prodotto SaaS” |
@@ -50,7 +50,7 @@ Struttura ispirata alla chiarezza SaaS (non al layout Zondra):
 2. **Una** headline: *“Software che genera risultati, non solo codice.”*
 3. **Una** subhead di valore
 4. Due CTA
-5. Visual dominante: screenshot reale Slotiva in `PhoneFrame` + chip case study
+5. Visual dominante: screenshot reale AndroMetrics in `PhoneFrame` + chip case study
 
 Rimossi: value props list, credibility pills, mini-stats, CTA Instagram.
 
@@ -63,17 +63,17 @@ Rimossi: value props list, credibility pills, mini-stats, CTA Instagram.
 Copy riscritto outcome-first:
 
 - Tagline, bio, servizi (4 offerte, non 8)
-- Posizionamento prodotti: Slotiva enterprise · AndroMetrics medicale · PreventivoRapido professionale
+- Posizionamento prodotti: AndroMetrics enterprise · AndroMetrics medicale · PreventivoRapido professionale
 - Discovery Document: risposta allineata a **48 ore**
 
 ---
 
 ## FASE 5 — Progetti / Case study
 
-- **Slotiva primo** in homepage e route generation
+- **AndroMetrics primo** in homepage e route generation
 - Badge “Progetto principale”
 - Campo `architecture` su ogni app
-- Slotiva feature groups narrativi:
+- AndroMetrics feature groups narrativi:
   - App iOS (prenotazioni, staff, pagamenti, chat, multi business, sync…)
   - Gestionale web CRM (dashboard, KPI, BI, marketing…)
   - Backend & AI (Firebase, Functions, realtime, AI)
@@ -131,7 +131,7 @@ Altro:
 - Title/description aggiornati
 - Keywords ridotte (meno spam)
 - JSON-LD: `aggregateRating` + `Review` (AndroMetrics)
-- Slotiva tipizzato come MobileApplication + WebApplication / BusinessApplication
+- AndroMetrics tipizzato come MobileApplication + WebApplication / BusinessApplication
 - Breadcrumb “Progetti”
 
 ---
@@ -150,7 +150,7 @@ Domanda: *“Questo sito comunica immediatamente qualità, competenza e fiducia?
 
 **Sì, più di prima**, grazie a:
 - hero memorabile e product-proof
-- Slotiva come flagship enterprise
+- AndroMetrics come flagship enterprise
 - media disciplinati
 - meno rumore, più ritmo
 

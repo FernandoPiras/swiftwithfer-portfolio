@@ -9,7 +9,7 @@ Premium mobile hero hierarchy:
 1. Wordmark  
 2. Headline  
 3. Description  
-4. Slotiva mockup  
+4. AndroMetrics mockup  
 5. CTA  
 
 Message first, product second, action third. Desktop untouched.

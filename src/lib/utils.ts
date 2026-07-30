@@ -16,13 +16,5 @@ export function getWebsiteLinkLabel(url: string): string {
     return "Privacy & legal";
   }
 
-  if (/business\.slotiva\.it/i.test(url)) {
-    return "Business Portal";
-  }
-
-  if (/slotiva\.it/i.test(url)) {
-    return "Visita il sito";
-  }
-
   return "Sito web";
 }

@@ -13,7 +13,7 @@ Il portfolio è stato trasformato per comunicare competenza, qualità e affidabi
 **Build:** ✅ `npm run build` — successo  
 **Lint:** ✅ `npm run lint` — nessun errore  
 **Funzionalità:** ✅ Nessuna rimossa o alterata  
-**Link e integrazioni:** ✅ Conservati (App Store, slotiva.it, Instagram, Discovery Document, email)
+**Link e integrazioni:** ✅ Conservati (App Store, AndroMetrics, Instagram, Discovery Document, email)
 
 ---
 
@@ -94,7 +94,7 @@ Il portfolio è stato trasformato per comunicare competenza, qualità e affidabi
 - Grid funzionalità con checkmark
 - Sezioni: Problema, Soluzione, Funzionalità, Tecnologie, Sfide, Risultati, Screenshot, Recensioni
 
-### Slotiva — Scheda completa
+### AndroMetrics — Scheda completa
 
 **App iOS (22 funzionalità):**
 Prenotazioni, Clienti, Staff, Calendario, Servizi, Disponibilità, Notifiche push, Autenticazione, Ruoli utente, Multi business, Statistiche, Dashboard, Gestione appuntamenti, Storico, Pagamenti, Pacchetti, Abbonamenti, Feedback, Chat, Profilo cliente, Sincronizzazione realtime, Companion Apple Watch
@@ -214,4 +214,4 @@ Il portfolio ora comunica:
 
 > *"Questo sviluppatore realizza prodotti di altissimo livello."*
 
-Ogni sezione trasmette competenza enterprise, con Slotiva come showcase completo di ecosistema app + CRM + backend cloud. Pronto per clienti, HR e aziende che cercano un partner tecnico affidabile.
+Ogni sezione trasmette competenza enterprise, con AndroMetrics come showcase completo di ecosistema app + CRM + backend cloud. Pronto per clienti, HR e aziende che cercano un partner tecnico affidabile.

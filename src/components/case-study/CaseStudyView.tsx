@@ -270,7 +270,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 L&apos;ecosistema
               </h2>
               <p className="mb-8 max-w-2xl text-sm text-muted">
-                Tre superfici, una piattaforma: così Slotiva copre l&apos;intera attività.
+                Come si articola il prodotto: superfici chiare, un unico sistema.
               </p>
               <ul className="grid gap-5 sm:grid-cols-3 sm:gap-6">
                 {study.ecosystem.map((layer, index) => (
@@ -430,7 +430,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               Il prodotto in immagini
             </h2>
             <p className="mb-8 max-w-xl text-sm text-muted">
-              Marketplace, app iOS e Business Portal — Business Brain, CRM e calendario sullo stesso ecosistema.
+              Schermate reali del prodotto in uso — non mockup.
             </p>
             <ul className="grid justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {app.screenshots.map((screenshot, index) => (

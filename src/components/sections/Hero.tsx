@@ -8,6 +8,8 @@ import { ButtonLink } from "@/components/layout/Header";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
 import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
+const FEATURED_APP_ID = "andrometrics";
+
 function HeroMeta({ className }: { className?: string }) {
   return (
     <p className={className ?? "hero-meta mt-14"}>
@@ -23,8 +25,8 @@ function HeroMeta({ className }: { className?: string }) {
 function HeroCtas({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <ButtonLink href="/apps/slotiva" className="w-full sm:w-auto">
-        Esplora Slotiva
+      <ButtonLink href={`/apps/${FEATURED_APP_ID}`} className="w-full sm:w-auto">
+        Esplora AndroMetrics
       </ButtonLink>
       <ButtonLink href="/#contact" variant="secondary" className="w-full sm:w-auto">
         Parliamo del tuo progetto
@@ -35,8 +37,8 @@ function HeroCtas({ className }: { className?: string }) {
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
-  const slotiva = siteConfig.apps.find((app) => app.id === "slotiva");
-  const heroVisual = slotiva?.screenshots[0] ?? siteConfig.logo.full;
+  const featured = siteConfig.apps.find((app) => app.id === FEATURED_APP_ID);
+  const heroVisual = featured?.screenshots[0] ?? siteConfig.logo.full;
 
   return (
     <section
@@ -101,24 +103,22 @@ export function Hero() {
           }}
           className="hero-phone-stage relative order-2 w-full min-w-0 justify-self-center lg:justify-self-center"
         >
-          {slotiva ? (
+          {featured ? (
             <Link
-              href={`/apps/${slotiva.id}`}
+              href={`/apps/${featured.id}`}
               className="hero-product-link relative mx-auto block w-full sm:max-w-[248px] lg:max-w-[288px] xl:max-w-[308px]"
-              aria-label={`Esplora il case study di ${slotiva.name}`}
+              aria-label={`Esplora il case study di ${featured.name}`}
             >
               <PhoneFrame
                 src={heroVisual}
-                alt={
-                  slotiva.screenshotAlts?.[0] ?? `Anteprima ${slotiva.name}`
-                }
+                alt={`Anteprima ${featured.name}`}
                 priority
                 size="hero"
                 sizes="(max-width: 359px) 72vw, (max-width: 389px) 72vw, (max-width: 429px) 72vw, (max-width: 639px) 72vw, (max-width: 1024px) 248px, (max-width: 1280px) 288px, 308px"
               />
               <div className="hero-product-caption">
                 <span className="hero-product-caption__action">
-                  Esplora {slotiva.name}
+                  Esplora {featured.name}
                   <span className="hero-product-caption__arrow" aria-hidden>
                     →
                   </span>

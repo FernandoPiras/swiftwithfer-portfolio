@@ -4,9 +4,11 @@ import { AppCard } from "@/components/ui/AppCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 
+const FEATURED_APP_ID = "andrometrics";
+
 /** Atto II — Prova vivente (climax). Un solo prodotto dimostra la tesi della Hero. */
 export function ProductProof() {
-  const proof = siteConfig.apps.find((app) => app.id === "slotiva");
+  const proof = siteConfig.apps.find((app) => app.id === FEATURED_APP_ID);
   if (!proof) return null;
 
   return (

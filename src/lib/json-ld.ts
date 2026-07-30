@@ -4,16 +4,12 @@ import { getSiteUrl } from "@/lib/site-url";
 
 function buildAppSchema(app: AppProject, siteUrl: string, position?: number) {
   const base: Record<string, unknown> = {
-    "@type":
-      app.id === "slotiva"
-        ? ["MobileApplication", "WebApplication"]
-        : "MobileApplication",
+    "@type": "MobileApplication",
     "@id": `${siteUrl}/apps/${app.id}/#app`,
     name: app.name,
     description: app.description,
-    applicationCategory:
-      app.id === "slotiva" ? "BusinessApplication" : "MobileApplication",
-    operatingSystem: app.id === "slotiva" ? "iOS, Web" : "iOS",
+    applicationCategory: "MobileApplication",
+    operatingSystem: "iOS",
     image: `${siteUrl}${app.icon}`,
     author: { "@id": `${siteUrl}/#person` },
     url: app.appStoreUrl ?? `${siteUrl}/apps/${app.id}`,
@@ -168,21 +164,14 @@ export function buildCaseStudyJsonLd(
       "@type": "WebPage",
       "@id": `${pageUrl}/#webpage`,
       url: pageUrl,
-      name:
-        app.id === "slotiva"
-          ? `${app.name} — Business Brain per attività di servizi`
-          : `${app.name} — Case Study`,
+      name: `${app.name} — Case Study`,
       description,
       isPartOf: { "@id": `${siteUrl}/#website` },
       breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
       inLanguage: "it-IT",
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${siteUrl}${
-          app.id === "slotiva"
-            ? "/images/apps/slotiva/brain/pulse-hero.jpg"
-            : app.icon
-        }`,
+        url: `${siteUrl}${app.icon}`,
       },
     },
     {

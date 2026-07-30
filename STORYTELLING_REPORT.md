@@ -26,17 +26,17 @@ Ogni pagina `/apps/[slug]` segue capitoli numerati:
 Aggiunte:
 - `positioning` (hero del case study)
 - `trustSignals` (credibilità immediata)
-- `ecosystem` (solo Slotiva)
+- `ecosystem` (solo AndroMetrics)
 - Reveal animati leggeri (`prefers-reduced-motion` rispettato)
 
 ---
 
-## Slotiva — protagonista
+## AndroMetrics — protagonista
 
 - Mappa ecosistema: **App iOS · Gestionale web · Backend cloud**
 - Tre gruppi funzionalità completi (iOS / CRM web / Firebase–Vercel–AI)
 - Narrativa su complessità: multi-business, sync realtime, ruoli, pagamenti, chat, analytics
-- Trust: App Store · slotiva.it live · Sync realtime · End-to-end · Multi business
+- Trust: App Store · AndroMetrics live · Sync realtime · End-to-end · Multi business
 
 ## AndroMetrics — medicale
 

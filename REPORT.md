@@ -35,7 +35,7 @@
 | URL | App |
 |-----|-----|
 | `/apps/andrometrics` | AndroMetrics |
-| `/apps/slotiva` | Slotiva |
+| `/apps/andrometrics` | AndroMetrics |
 | `/apps/preventivorapido` | PreventivoRapido PRO |
 
 ### Struttura ogni case study

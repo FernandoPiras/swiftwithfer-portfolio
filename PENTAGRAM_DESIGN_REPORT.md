@@ -26,7 +26,7 @@ Doppio blob accent + secondary → **un solo alone soft all’8%**. Meno glow da
 Mouse hint in fondo hero **rimosso**. Cliché SaaS mid-tier.
 
 ### 6. Caption prodotto
-Eyebrow “Prodotto in evidenza” **eliminato**. Solo “Esplora Slotiva →” in muted, peso 500.
+Eyebrow “Prodotto in evidenza” **eliminato**. Solo “Esplora AndroMetrics →” in muted, peso 500.
 
 ### 7. Meta hero
 Separatori `·` → **hairline verticali**. Peso tipografico abbassato.

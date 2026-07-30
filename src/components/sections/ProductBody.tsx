@@ -5,9 +5,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Stats } from "@/components/sections/Stats";
 
+const FEATURED_APP_ID = "andrometrics";
+
 /** Atto IV — Corpo di lavoro. Credibilità + altri prodotti come conseguenze del metodo. */
 export function ProductBody() {
-  const bodyApps = siteConfig.apps.filter((app) => app.id !== "slotiva");
+  const bodyApps = siteConfig.apps.filter((app) => app.id !== FEATURED_APP_ID);
+  const catalogLabel = siteConfig.apps.map((app) => app.name).join(" · ");
 
   return (
     <Section
@@ -23,9 +26,7 @@ export function ProductBody() {
             <p className="text-[0.9375rem] font-semibold tracking-[-0.015em] text-foreground">
               Profilo sviluppatore verificato su App Store
             </p>
-            <p className="mt-2 text-sm text-muted">
-              Slotiva · AndroMetrics · PreventivoRapido PRO
-            </p>
+            <p className="mt-2 text-sm text-muted">{catalogLabel}</p>
           </div>
           <ButtonLink
             href={siteConfig.metrics.appStoreDeveloperUrl}

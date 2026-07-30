@@ -13,7 +13,7 @@ Trasformare il portfolio da raccolta di prodotti a dimostrazione di capacità di
 ### Case study — presentazione architetturale
 Per ogni progetto:
 - **Architecture flow** visuale (es. Utente → App iOS → Firebase → …)
-- **Journey flow** (Slotiva): Cliente → Prenotazione → Realtime Sync → …
+- **Journey flow** (AndroMetrics): Cliente → Prenotazione → Realtime Sync → …
 - **3–6 decisioni tecniche** leggibili (titolo + motivo breve)
 - **Timeline prodotto**: Idea → … → Produzione → Aggiornamenti
 - **Quality signals** + **capabilities** (realtime, cloud, sicurezza, responsive, …)

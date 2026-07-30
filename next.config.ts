@@ -29,6 +29,20 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: "/apps/slotiva",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/apps/slotiva/:path*",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

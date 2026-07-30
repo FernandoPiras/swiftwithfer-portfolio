@@ -41,7 +41,7 @@ export interface AppProject {
   appStoreUrl?: string;
   githubUrl?: string;
   websiteUrl?: string;
-  /** Secondary product surface (e.g. Slotiva Business Portal) */
+  /** Secondary product surface URL, if any */
   businessUrl?: string;
   status: ProjectStatus;
   featured?: boolean;
@@ -110,7 +110,7 @@ export const siteConfig = {
       "Privacy",
     ],
     highlights: [
-      { label: "Prodotti", value: "3 live su App Store" },
+      { label: "Prodotti", value: "2 live su App Store" },
       { label: "Qualità", value: "5.0 AndroMetrics" },
       { label: "Delivery", value: "Idea → Rilascio" },
     ],
@@ -154,7 +154,7 @@ export const siteConfig = {
     },
   ],
   metrics: {
-    publishedApps: 3,
+    publishedApps: 2,
     technologies: 11,
     appStoreDeveloperUrl:
       "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
@@ -198,69 +198,11 @@ export const siteConfig = {
     },
     {
       year: "2026",
-      title: "Slotiva & AndroMetrics",
-      description: "Piattaforme complete: CRM + app servizi e prodotto medicale premium.",
+      title: "AndroMetrics",
+      description: "Prodotto medicale premium live su App Store, con standard di qualità enterprise.",
     },
   ] satisfies TimelineEntry[],
   apps: [
-    {
-      id: "slotiva",
-      name: "Slotiva",
-      tagline: "Business Brain per attività di servizi",
-      description:
-        "Ecosistema enterprise: i clienti scoprono e prenotano su app iOS e www.slotiva.it; i titolari guidano l’attività con Business Brain su business.slotiva.it — Pulse, Score, CRM, marketplace e team. Stessi dati Firebase, qualità enterprise, superfici chiare.",
-      outcomes: [
-        "Business Brain: priorità e azioni sulla giornata",
-        "Marketplace + app clienti + Business Portal",
-        "Sync realtime end-to-end su Firebase",
-      ],
-      architecture:
-        "Tre superfici, una piattaforma: app iOS Consumer (SwiftUI), marketplace (www.slotiva.it) e Business Portal (business.slotiva.it) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain sul portale ordina priorità, richiami e opportunità sulla giornata reale.",
-      icon: "/images/apps/slotiva/icon.png",
-      wordmark: "/images/apps/slotiva/wordmark.png",
-      wordmarkSize: { width: 931, height: 128 },
-      wordmarkInk: "on-light",
-      screenshots: [
-        "/images/apps/slotiva/screenshot-1.png",
-        "/images/apps/slotiva/screenshot-2.png",
-        "/images/apps/slotiva/screenshot-3.png",
-        "/images/apps/slotiva/screenshot-4.png",
-        "/images/apps/slotiva/screenshot-5.png",
-      ],
-      screenshotAlts: [
-        "Slotiva Consumer — Home marketplace su iOS",
-        "Slotiva Consumer — Explore e ricerca attività",
-        "Slotiva Consumer — dettaglio attività",
-        "Slotiva Consumer — prenotazione in pochi tap",
-        "Slotiva Consumer — appuntamenti cliente",
-      ],
-      technologies: [
-        "SwiftUI",
-        "Firebase",
-        "Firestore",
-        "Cloud Functions",
-        "Authentication",
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind",
-        "Vercel",
-        "Cloud Messaging",
-        "Push Notifications",
-        "StoreKit 2",
-        "WidgetKit",
-      ],
-      appStoreUrl: "https://apps.apple.com/it/app/slotiva/id6779347919",
-      websiteUrl: "https://www.slotiva.it",
-      businessUrl: "https://business.slotiva.it",
-      status: "published",
-      featured: true,
-      demoVideo: {
-        src: "/videos/slotiva-demo.mp4",
-        poster: "/images/apps/slotiva/screenshot-1.png",
-        title: "Slotiva — Consumer app + Business Brain",
-      },
-    },
     {
       id: "andrometrics",
       name: "AndroMetrics",
@@ -378,8 +320,6 @@ export const siteConfig = {
       "SwiftUI",
       "Gestionali Aziendali",
       "CRM",
-      "Business Brain",
-      "Slotiva",
       "AndroMetrics",
       "PreventivoRapido",
       "App Store",

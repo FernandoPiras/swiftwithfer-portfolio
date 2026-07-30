@@ -1,6 +1,6 @@
 # Hero & Navbar Premium Report
 
-Scope esclusivo: Navbar wordmark, Hero Slotiva, collegamento al case study.  
+Scope esclusivo: Navbar wordmark, Hero AndroMetrics, collegamento al case study.  
 Invariati: branding asset, palette, tipografia, design system tokens, SEO, breakpoint strategy.
 
 ## Navbar
@@ -24,9 +24,9 @@ Invariati: branding asset, palette, tipografia, design system tokens, SEO, break
 
 ## Case study — nuova soluzione
 
-- Badge “Slotiva — case study” **rimosso** (non migliorato)
-- Mockup **interamente cliccabile** → `/apps/slotiva`
-- Caption sotto (non sopra): eyebrow “Prodotto in evidenza” + “Esplora Slotiva →”
+- Badge “AndroMetrics — case study” **rimosso** (non migliorato)
+- Mockup **interamente cliccabile** → `/apps/andrometrics`
+- Caption sotto (non sopra): eyebrow “Prodotto in evidenza” + “Esplora AndroMetrics →”
 - Hover: lift del telefono + accent sulla caption + freccia
 
 ## Gerarchia (primi 5 secondi)
@@ -36,7 +36,7 @@ Invariati: branding asset, palette, tipografia, design system tokens, SEO, break
 3. **Mockup** — protagonista visivo  
 4. **CTA** — desktop sotto headline; mobile/tablet dopo il mockup  
 
-CTA primaria: **Esplora Slotiva** (case study). Secondaria: contatto.
+CTA primaria: **Esplora AndroMetrics** (case study). Secondaria: contatto.
 
 ## Verifica
 

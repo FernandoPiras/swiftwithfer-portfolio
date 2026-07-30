@@ -30,7 +30,7 @@ Il wordmark non è “una scritta più grande”: occupa la massa sinistra della
 
 1. Wordmark navbar  
 2. Headline  
-3. Mockup Slotiva (secondo peso della viewport)  
+3. Mockup AndroMetrics (secondo peso della viewport)  
 4. CTA  
 
 ## Verifica

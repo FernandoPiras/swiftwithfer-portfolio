@@ -94,7 +94,7 @@
 
 | App | Percezione target | Copy |
 |-----|-------------------|------|
-| **Slotiva** | Software enterprise | *"Meno no-show, agenda sempre aggiornata, business sotto controllo"* + 3 outcomes |
+| **AndroMetrics** | Software enterprise | *"Meno no-show, agenda sempre aggiornata, business sotto controllo"* + 3 outcomes |
 | **AndroMetrics** | App medica premium | *"Punteggio chiaro 0–100, dati protetti, valutazione 5.0"* |
 | **PreventivoRapido** | Pro tool aziende | *"Meno tempo in ufficio, più tempo sul campo"* |
 
@@ -130,7 +130,7 @@
 ## 8. Case Study
 
 - Copy riscritto: problema/soluzione più concisi, risultati misurabili
-- Slotiva: gruppi *"App iOS — per clienti e titolari"* / *"Gestionale Web — CRM professionale"*
+- AndroMetrics: gruppi *"App iOS — per clienti e titolari"* / *"Gestionale Web — CRM professionale"*
 - AndroMetrics: linguaggio medico premium, no jargon OCR/StoreKit in evidenza
 - PreventivoRapido: focus su risparmio tempo e professionalità documenti
 - Screenshot via PhoneFrame — griglia centrata uniforme
@@ -205,7 +205,7 @@ src/components/case-study/CaseStudyView.tsx
 ## 13. Cosa NON è cambiato
 
 - Routing, Discovery Document, demo video, recensioni App Store
-- Link App Store, slotiva.it, Instagram, email
+- Link App Store, AndroMetrics, Instagram, email
 - JSON-LD, sitemap, robots, manifest
 - Header nav items, MobileNav, Footer structure
 

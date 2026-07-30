@@ -16,7 +16,7 @@ export interface TechnicalDecision {
 
 export interface CaseStudyContent {
   slug: string;
-  appId: "andrometrics" | "slotiva" | "preventivorapido";
+  appId: "andrometrics" | "preventivorapido";
   /** One-line positioning for the case study hero */
   positioning: string;
   problem: string;
@@ -29,7 +29,7 @@ export interface CaseStudyContent {
   journeyFlow?: string[];
   features: string[];
   featureGroups?: CaseStudyFeatureGroup[];
-  /** High-level product map — used for Slotiva */
+  /** High-level product map */
   ecosystem?: CaseStudyEcosystemLayer[];
   /** 3–6 key technical / product decisions */
   decisions: TechnicalDecision[];
@@ -55,179 +55,6 @@ const PRODUCT_TIMELINE = [
 ] as const;
 
 export const caseStudies: CaseStudyContent[] = [
-  {
-    slug: "slotiva",
-    appId: "slotiva",
-    positioning:
-      "AI-powered Business Brain per attività di servizi: ecosistema enterprise con marketplace consumer (app iOS + www.slotiva.it) e Business Portal (business.slotiva.it) — CRM, agenda, analytics e automazioni su un’unica piattaforma.",
-    problem:
-      "Le attività locali basate su appuntamenti gestiscono ancora prenotazioni, clienti e staff su WhatsApp, fogli e tool scollegati. Mancano priorità chiare, storico clienti, sync tra team e una visione unica su cosa fare oggi per far crescere il business.",
-    solution:
-      "Slotiva non è “solo un’app di booking”. I clienti scoprono e prenotano da app iOS e marketplace (www.slotiva.it); i titolari e lo staff operano dal Business Portal (business.slotiva.it) con Business Brain, Pulse, Score, CRM, agenda, richieste, team e crescita. Stessi dati Firebase in tempo reale. Qualità enterprise, superfici separate.",
-    architecture:
-      "Tre superfici, una fonte di verità: app iOS Consumer (SwiftUI), marketplace consumer e Business Portal (Next.js) condividono Auth, Firestore, Cloud Functions, Storage e FCM. Business Brain sul portale ordina priorità e opportunità sulla giornata reale.",
-    architectureFlow: [
-      "Cliente / Titolare",
-      "App iOS",
-      "Firebase",
-      "Cloud Functions",
-      "Firestore",
-      "Business Portal",
-    ],
-    journeyFlow: [
-      "Marketplace",
-      "Prenotazione",
-      "Realtime Sync",
-      "Business Brain",
-      "CRM & Agenda",
-      "Notifiche",
-    ],
-    features: [],
-    ecosystem: [
-      {
-        title: "App iOS (Consumer)",
-        summary:
-          "Esperienza App Store nativa per i clienti: Home, Explore, dettaglio attività, prenotazione, preferiti, appuntamenti, chat e profilo — allineata a www.slotiva.it.",
-      },
-      {
-        title: "Marketplace consumer",
-        summary:
-          "www.slotiva.it: trova e prenota attività locali, profili pubblici e booking online senza frammentare i canali.",
-      },
-      {
-        title: "Business Portal",
-        summary:
-          "business.slotiva.it: Business Brain, CRM, calendario, richieste, team, servizi e analytics — il centro di controllo dell’attività.",
-      },
-      {
-        title: "Backend cloud",
-        summary:
-          "Firebase Auth, Firestore, Cloud Functions, Storage e FCM: sync realtime, sicurezza, automazioni e notifiche end-to-end.",
-      },
-    ],
-    featureGroups: [
-      {
-        title: "Business Brain & crescita",
-        description:
-          "Non solo dati: priorità, richiami e azioni consigliate sulla giornata reale dell’attività.",
-        items: [
-          "Business Brain: giornata già in ordine",
-          "Score, priorità e opportunità recuperabili",
-          "Analytics e insight operativi",
-          "Automazioni e richiami clienti",
-          "Dashboard business unificata",
-        ],
-      },
-      {
-        title: "Operations & CRM",
-        description:
-          "Gestire clienti, staff e agenda come un unico sistema — non come tool separati.",
-        items: [
-          "CRM evoluto con Health Score e segmenti",
-          "Calendario intelligente giorno / settimana",
-          "Gestione staff, ruoli e disponibilità",
-          "Gestione servizi e catalogo",
-          "Richieste clienti e flusso operativo",
-          "Sistema notifiche (push / FCM)",
-        ],
-      },
-      {
-        title: "Esperienza cliente & marketplace",
-        description:
-          "Prenotare e tornare deve essere semplice — su app e sul web, con gli stessi dati del business.",
-        items: [
-          "Prenotazioni online in tempo reale",
-          "Marketplace e profili pubblici",
-          "App iOS dedicata ai clienti",
-          "Esperienza sincronizzata iOS ↔ Web",
-        ],
-      },
-      {
-        title: "Piattaforma & infrastruttura",
-        description:
-          "Architettura pensata per scalare: mobile, web e cloud sullo stesso modello dati.",
-        items: [
-          "Firebase Cloud Backend",
-          "Realtime Sync (Firestore)",
-          "Authentication e sicurezza",
-          "Cloud Functions & Storage",
-          "Business Portal responsive (Next.js)",
-          "Deep Links e Push Notifications",
-        ],
-      },
-    ],
-    decisions: [
-      {
-        title: "Una piattaforma, tre superfici",
-        reason:
-          "App iOS, marketplace e Business Portal condividono lo stesso backend — zero silos tra cliente e titolare.",
-      },
-      {
-        title: "Firebase per sync realtime",
-        reason:
-          "Agenda, CRM, richieste e stato business allineati su ogni dispositivo in tempo reale.",
-      },
-      {
-        title: "Cloud Functions per la logica server",
-        reason:
-          "Notifiche, regole di business e automazioni restano fuori dal client, sicure e aggiornabili.",
-      },
-      {
-        title: "SwiftUI per l’esperienza iOS",
-        reason:
-          "UX nativa fluida per clienti e titolari, con widget e deep link verso il prodotto.",
-      },
-      {
-        title: "Next.js per il Business Portal",
-        reason:
-          "Portale web professionale, responsive e deployabile su Vercel, allineato al brand Slotiva Business.",
-      },
-      {
-        title: "Business Brain come prodotto, non come report",
-        reason:
-          "Score e priorità devono guidare l’azione quotidiana — non restare metriche decorative.",
-      },
-    ],
-    productTimeline: [...PRODUCT_TIMELINE],
-    qualitySignals: [
-      "In produzione",
-      "App Store + Web",
-      "Sync realtime",
-      "Business Brain",
-      "Prova 30 giorni",
-    ],
-    capabilities: [
-      "Realtime",
-      "Cloud",
-      "Sicurezza",
-      "Responsive",
-      "Performance",
-      "Scalabilità",
-    ],
-    challenges: [
-      "Prenotazioni concorrenti senza conflitti di slot",
-      "Esperienze distinte (cliente, titolare, staff) sulla stessa piattaforma",
-      "Sync affidabile tra app iOS, marketplace e Business Portal",
-      "Ruoli e isolamento dati per business multi-utente",
-      "Business Brain utile fin dai primi dati, senza rumore",
-    ],
-    results: [
-      "App iOS pubblicata su App Store",
-      "Marketplace consumer live su www.slotiva.it",
-      "Business Portal live su business.slotiva.it",
-      "Business Brain + CRM + agenda + marketplace in un’unica piattaforma",
-      "Prova gratuita 30 giorni per i titolari",
-    ],
-    trustSignals: [
-      "App Store",
-      "slotiva.it",
-      "business.slotiva.it",
-      "Sync realtime",
-      "Business Brain",
-    ],
-    seoDescription:
-      "Slotiva: Business Brain per saloni, barbieri e centri estetici. Gestionale con prenotazioni, CRM, marketplace e priorità operative. Richiedi una demo.",
-  },
   {
     slug: "andrometrics",
     appId: "andrometrics",
