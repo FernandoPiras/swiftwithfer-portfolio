@@ -2,13 +2,13 @@
   "meta": {
     "title": "SwiftWithFer — Discovery Document",
     "subtitle": "Analisi requisiti per kick-off progetto",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
     "website": "https://fernandopiras.com",
     "email": "fernando@fernandopiras.com",
     "instructions": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
-    "generated_at": "2026-07-10T15:16:58.361691",
+    "generated_at": "2026-07-31T00:03:05.496562",
     "format": "ai-ready",
     "usage": "Compila tutti i campi obbligatori (*). Per lo sviluppo con AI: esporta il file JSON compilato e forniscilo a Cursor. Non sono necessarie ulteriori domande se ogni sezione e compilata.",
     "cursor_command": "python3 discovery-document/scripts/generate_cursor_prompt.py path/to/compilato.json"
@@ -2229,9 +2229,96 @@
               "label": "Prompt completo per Cursor AI",
               "type": "textarea",
               "generated": true,
-              "template": "# PROGETTO: {{company_name}}\n\n## RIEPILOGO\n- **Cliente:** {{company_name}} ({{legal_name}})\n- **Settore:** {{sector}} — {{sector_other}}\n- **Referente:** {{contact_name}} ({{contact_email}})\n- **Obiettivi:** {{project_objectives}}\n- **Problemi da risolvere:** {{problems_to_solve}}\n- **Budget:** {{budget_range}} — {{budget_notes}}\n- **Tempistiche:** {{timeline}} — Deadline: {{deadline}}\n- **Priorità:** {{priorities}}\n\n## STACK TECNOLOGICO\n- **Frontend:** {{arch_frontend}}\n- **Backend:** {{arch_backend}}\n- **Database:** {{arch_database}}\n- **Mobile:** {{arch_mobile}}\n- **Cloud:** {{arch_cloud}}\n- **API:** {{arch_api}}\n- **Auth:** {{arch_auth}}\n\n## ARCHITETTURA\n{{arch_diagram}}\n\n## DATABASE\n**Entità:** {{db_entities}}\n**Relazioni:** {{db_relations}}\n**Campi chiave:** {{db_fields}}\n**Volume:** {{db_estimated_volume}}\n\n## UI / UX\n- **Stile:** {{ux_style}}\n- **Colori:** {{ux_colors}} | Brand: {{brand_colors}}\n- **Animazioni:** {{ux_animations}}\n- **Design System:** {{ux_design_system}}\n- **User Flows:** {{ux_user_flows}}\n- **Dispositivi:** Mobile, Tablet, Desktop\n\n## FUNZIONALITÀ\n{{features_detail}}\n\n## FLUSSI BUSINESS\n- **Customer Journey:** {{customer_journey}}\n- **Preventivi:** {{quotation_process}}\n- **Ordini:** {{order_process}}\n- **Appuntamenti:** {{appointment_process}}\n- **Pagamenti:** {{payment_flows}}\n\n## API & INTEGRAZIONI\n{{integrations_detail}}\n**API esistenti:** {{existing_apis}}\n**Webhook:** {{webhooks}}\n**Sincronizzazioni:** {{sync_requirements}}\n\n## AUTOMAZIONI\n- **Comunicazioni:** Email, SMS, WhatsApp, Push\n- **Reminder:** {{auto_reminders}}\n- **Follow-up:** {{auto_followup}}\n- **Marketing:** {{auto_marketing}}\n- **Pipeline:** {{auto_pipeline}}\n- **Workflow:** {{auto_workflows}}\n\n## SICUREZZA\n- GDPR: {{sec_gdpr}} | HTTPS: {{sec_https}} | 2FA: {{sec_2fa}}\n- **Crittografia:** {{sec_encryption}}\n- **Retention:** {{sec_data_retention}}\n- **Audit log:** {{sec_audit_log}}\n\n## BRANDING\n- **Tone of Voice:** {{tone_of_voice}}\n- **USP:** {{usp}}\n- **Target:** {{target_audience}}\n- **Font:** {{brand_fonts}}\n\n## ROADMAP\n{{milestones}}\n**Deliverable:** {{deliverables}}\n**Criteri accettazione:** {{acceptance_criteria}}\n\n## VINCOLI\n{{constraints}} | {{arch_constraints}}\n\n## DELIVERABLE\nRepository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.\n\n---\n*Generato da SwiftWithFer Discovery Document v1.0 — Compilare tutti i campi sopra per un prompt completo.*",
-              "value": "# PROGETTO: {{company_name}}\n\n## RIEPILOGO\n- **Cliente:** {{company_name}} ({{legal_name}})\n- **Settore:** {{sector}} — {{sector_other}}\n- **Referente:** {{contact_name}} ({{contact_email}})\n- **Obiettivi:** {{project_objectives}}\n- **Problemi da risolvere:** {{problems_to_solve}}\n- **Budget:** {{budget_range}} — {{budget_notes}}\n- **Tempistiche:** {{timeline}} — Deadline: {{deadline}}\n- **Priorità:** {{priorities}}\n\n## STACK TECNOLOGICO\n- **Frontend:** {{arch_frontend}}\n- **Backend:** {{arch_backend}}\n- **Database:** {{arch_database}}\n- **Mobile:** {{arch_mobile}}\n- **Cloud:** {{arch_cloud}}\n- **API:** {{arch_api}}\n- **Auth:** {{arch_auth}}\n\n## ARCHITETTURA\n{{arch_diagram}}\n\n## DATABASE\n**Entità:** {{db_entities}}\n**Relazioni:** {{db_relations}}\n**Campi chiave:** {{db_fields}}\n**Volume:** {{db_estimated_volume}}\n\n## UI / UX\n- **Stile:** {{ux_style}}\n- **Colori:** {{ux_colors}} | Brand: {{brand_colors}}\n- **Animazioni:** {{ux_animations}}\n- **Design System:** {{ux_design_system}}\n- **User Flows:** {{ux_user_flows}}\n- **Dispositivi:** Mobile, Tablet, Desktop\n\n## FUNZIONALITÀ\n{{features_detail}}\n\n## FLUSSI BUSINESS\n- **Customer Journey:** {{customer_journey}}\n- **Preventivi:** {{quotation_process}}\n- **Ordini:** {{order_process}}\n- **Appuntamenti:** {{appointment_process}}\n- **Pagamenti:** {{payment_flows}}\n\n## API & INTEGRAZIONI\n{{integrations_detail}}\n**API esistenti:** {{existing_apis}}\n**Webhook:** {{webhooks}}\n**Sincronizzazioni:** {{sync_requirements}}\n\n## AUTOMAZIONI\n- **Comunicazioni:** Email, SMS, WhatsApp, Push\n- **Reminder:** {{auto_reminders}}\n- **Follow-up:** {{auto_followup}}\n- **Marketing:** {{auto_marketing}}\n- **Pipeline:** {{auto_pipeline}}\n- **Workflow:** {{auto_workflows}}\n\n## SICUREZZA\n- GDPR: {{sec_gdpr}} | HTTPS: {{sec_https}} | 2FA: {{sec_2fa}}\n- **Crittografia:** {{sec_encryption}}\n- **Retention:** {{sec_data_retention}}\n- **Audit log:** {{sec_audit_log}}\n\n## BRANDING\n- **Tone of Voice:** {{tone_of_voice}}\n- **USP:** {{usp}}\n- **Target:** {{target_audience}}\n- **Font:** {{brand_fonts}}\n\n## ROADMAP\n{{milestones}}\n**Deliverable:** {{deliverables}}\n**Criteri accettazione:** {{acceptance_criteria}}\n\n## VINCOLI\n{{constraints}} | {{arch_constraints}}\n\n## DELIVERABLE\nRepository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.\n\n---\n*Generato da SwiftWithFer Discovery Document v1.0 — Compilare tutti i campi sopra per un prompt completo.*",
+              "template": "# PROGETTO: {{company_name}}\n\n## RIEPILOGO\n- **Cliente:** {{company_name}} ({{legal_name}})\n- **Settore:** {{sector}} — {{sector_other}}\n- **Referente:** {{contact_name}} ({{contact_email}})\n- **Obiettivi:** {{project_objectives}}\n- **Problemi da risolvere:** {{problems_to_solve}}\n- **Budget:** {{budget_range}} — {{budget_notes}}\n- **Tempistiche:** {{timeline}} — Deadline: {{deadline}}\n- **Priorità:** {{priorities}}\n\n## STACK TECNOLOGICO\n- **Frontend:** {{arch_frontend}}\n- **Backend:** {{arch_backend}}\n- **Database:** {{arch_database}}\n- **Mobile:** {{arch_mobile}}\n- **Cloud:** {{arch_cloud}}\n- **API:** {{arch_api}}\n- **Auth:** {{arch_auth}}\n\n## ARCHITETTURA\n{{arch_diagram}}\n\n## DATABASE\n**Entità:** {{db_entities}}\n**Relazioni:** {{db_relations}}\n**Campi chiave:** {{db_fields}}\n**Volume:** {{db_estimated_volume}}\n\n## UI / UX\n- **Stile:** {{ux_style}}\n- **Colori:** {{ux_colors}} | Brand: {{brand_colors}}\n- **Animazioni:** {{ux_animations}}\n- **Design System:** {{ux_design_system}}\n- **User Flows:** {{ux_user_flows}}\n- **Dispositivi:** Mobile, Tablet, Desktop\n\n## FUNZIONALITÀ\n{{features_detail}}\n\n## FLUSSI BUSINESS\n- **Customer Journey:** {{customer_journey}}\n- **Preventivi:** {{quotation_process}}\n- **Ordini:** {{order_process}}\n- **Appuntamenti:** {{appointment_process}}\n- **Pagamenti:** {{payment_flows}}\n\n## API & INTEGRAZIONI\n{{integrations_detail}}\n**API esistenti:** {{existing_apis}}\n**Webhook:** {{webhooks}}\n**Sincronizzazioni:** {{sync_requirements}}\n\n## AUTOMAZIONI\n- **Comunicazioni:** Email, SMS, WhatsApp, Push\n- **Reminder:** {{auto_reminders}}\n- **Follow-up:** {{auto_followup}}\n- **Marketing:** {{auto_marketing}}\n- **Pipeline:** {{auto_pipeline}}\n- **Workflow:** {{auto_workflows}}\n\n## SICUREZZA\n- GDPR: {{sec_gdpr}} | HTTPS: {{sec_https}} | 2FA: {{sec_2fa}}\n- **Crittografia:** {{sec_encryption}}\n- **Retention:** {{sec_data_retention}}\n- **Audit log:** {{sec_audit_log}}\n\n## BRANDING\n- **Tone of Voice:** {{tone_of_voice}}\n- **USP:** {{usp}}\n- **Target:** {{target_audience}}\n- **Font:** {{brand_fonts}}\n\n## ROADMAP\n{{milestones}}\n**Deliverable:** {{deliverables}}\n**Criteri accettazione:** {{acceptance_criteria}}\n\n## VINCOLI\n{{constraints}} | {{arch_constraints}}\n\n## DELIVERABLE\nRepository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.\n\n---\n*Generato da SwiftWithFer Discovery Document v1.2 — Compilare tutti i campi sopra per un prompt completo.*",
+              "value": "# PROGETTO: {{company_name}}\n\n## RIEPILOGO\n- **Cliente:** {{company_name}} ({{legal_name}})\n- **Settore:** {{sector}} — {{sector_other}}\n- **Referente:** {{contact_name}} ({{contact_email}})\n- **Obiettivi:** {{project_objectives}}\n- **Problemi da risolvere:** {{problems_to_solve}}\n- **Budget:** {{budget_range}} — {{budget_notes}}\n- **Tempistiche:** {{timeline}} — Deadline: {{deadline}}\n- **Priorità:** {{priorities}}\n\n## STACK TECNOLOGICO\n- **Frontend:** {{arch_frontend}}\n- **Backend:** {{arch_backend}}\n- **Database:** {{arch_database}}\n- **Mobile:** {{arch_mobile}}\n- **Cloud:** {{arch_cloud}}\n- **API:** {{arch_api}}\n- **Auth:** {{arch_auth}}\n\n## ARCHITETTURA\n{{arch_diagram}}\n\n## DATABASE\n**Entità:** {{db_entities}}\n**Relazioni:** {{db_relations}}\n**Campi chiave:** {{db_fields}}\n**Volume:** {{db_estimated_volume}}\n\n## UI / UX\n- **Stile:** {{ux_style}}\n- **Colori:** {{ux_colors}} | Brand: {{brand_colors}}\n- **Animazioni:** {{ux_animations}}\n- **Design System:** {{ux_design_system}}\n- **User Flows:** {{ux_user_flows}}\n- **Dispositivi:** Mobile, Tablet, Desktop\n\n## FUNZIONALITÀ\n{{features_detail}}\n\n## FLUSSI BUSINESS\n- **Customer Journey:** {{customer_journey}}\n- **Preventivi:** {{quotation_process}}\n- **Ordini:** {{order_process}}\n- **Appuntamenti:** {{appointment_process}}\n- **Pagamenti:** {{payment_flows}}\n\n## API & INTEGRAZIONI\n{{integrations_detail}}\n**API esistenti:** {{existing_apis}}\n**Webhook:** {{webhooks}}\n**Sincronizzazioni:** {{sync_requirements}}\n\n## AUTOMAZIONI\n- **Comunicazioni:** Email, SMS, WhatsApp, Push\n- **Reminder:** {{auto_reminders}}\n- **Follow-up:** {{auto_followup}}\n- **Marketing:** {{auto_marketing}}\n- **Pipeline:** {{auto_pipeline}}\n- **Workflow:** {{auto_workflows}}\n\n## SICUREZZA\n- GDPR: {{sec_gdpr}} | HTTPS: {{sec_https}} | 2FA: {{sec_2fa}}\n- **Crittografia:** {{sec_encryption}}\n- **Retention:** {{sec_data_retention}}\n- **Audit log:** {{sec_audit_log}}\n\n## BRANDING\n- **Tone of Voice:** {{tone_of_voice}}\n- **USP:** {{usp}}\n- **Target:** {{target_audience}}\n- **Font:** {{brand_fonts}}\n\n## ROADMAP\n{{milestones}}\n**Deliverable:** {{deliverables}}\n**Criteri accettazione:** {{acceptance_criteria}}\n\n## VINCOLI\n{{constraints}} | {{arch_constraints}}\n\n## DELIVERABLE\nRepository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.\n\n---\n*Generato da SwiftWithFer Discovery Document v1.2 — Compilare tutti i campi sopra per un prompt completo.*",
               "note": "Auto-generato: sostituire {{field_id}} con i valori compilati"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consent",
+      "number": 18,
+      "title": "Consenso e Accettazione",
+      "description": "Sezione obbligatoria. Spunta tutte le dichiarazioni e completa i dati di accettazione prima di inviare il documento. Dichiaro di aver letto e compreso quanto sopra e di accettarne integralmente il contenuto.",
+      "subsections": [
+        {
+          "title": "Dichiarazioni di consenso",
+          "fields": [
+            {
+              "id": "consent_authorized_to_provide",
+              "label": "Dichiaro di essere autorizzato a fornire tutti i dati, file, immagini, loghi, contenuti, credenziali e materiali allegati.",
+              "type": "checkbox",
+              "required": true,
+              "value": false
+            },
+            {
+              "id": "consent_use_for_project",
+              "label": "Autorizzo Fernando Piras ad utilizzare tali dati esclusivamente per analizzare, progettare, sviluppare, testare e consegnare il progetto richiesto.",
+              "type": "checkbox",
+              "required": true,
+              "value": false
+            },
+            {
+              "id": "consent_lawful_materials",
+              "label": "Dichiaro che tutti i dati e materiali forniti sono leciti e non violano diritti di terzi.",
+              "type": "checkbox",
+              "required": true,
+              "value": false
+            },
+            {
+              "id": "consent_gdpr",
+              "label": "Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR) esclusivamente per la gestione della richiesta e dello sviluppo del progetto.",
+              "type": "checkbox",
+              "required": true,
+              "value": false
+            },
+            {
+              "id": "consent_full_acceptance",
+              "label": "Dichiaro di aver letto e compreso quanto sopra e di accettarne integralmente il contenuto.",
+              "type": "checkbox",
+              "required": true,
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": "Dati di accettazione",
+          "fields": [
+            {
+              "id": "consent_full_name",
+              "label": "Nome e Cognome",
+              "type": "text",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "consent_company",
+              "label": "Azienda (se presente)",
+              "type": "text",
+              "value": null
+            },
+            {
+              "id": "consent_date",
+              "label": "Data",
+              "type": "date",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "consent_place",
+              "label": "Luogo",
+              "type": "text",
+              "required": true,
+              "value": null
+            },
+            {
+              "id": "consent_signature",
+              "label": "Firma (o firma digitale)",
+              "type": "text",
+              "required": true,
+              "value": null
             }
           ]
         }

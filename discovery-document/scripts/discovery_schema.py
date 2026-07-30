@@ -6,7 +6,7 @@ Source of truth for all document formats.
 META = {
     "title": "SwiftWithFer — Discovery Document",
     "subtitle": "Analisi requisiti per kick-off progetto",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "author": "Fernando Piras — SwiftWithFer",
     "confidentiality": "Confidenziale — Uso interno e cliente",
     "website": "https://fernandopiras.com",
@@ -801,7 +801,104 @@ SECTIONS = [
 Repository, documentazione, deploy su {{arch_cloud}}, store submission se applicabile.
 
 ---
-*Generato da SwiftWithFer Discovery Document v1.0 — Compilare tutti i campi sopra per un prompt completo.*""",
+*Generato da SwiftWithFer Discovery Document v1.2 — Compilare tutti i campi sopra per un prompt completo.*""",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "consent",
+        "number": 18,
+        "title": "Consenso e Accettazione",
+        "description": (
+            "Sezione obbligatoria. Spunta tutte le dichiarazioni e completa i dati di accettazione "
+            "prima di inviare il documento. Dichiaro di aver letto e compreso quanto sopra e di "
+            "accettarne integralmente il contenuto."
+        ),
+        "subsections": [
+            {
+                "title": "Dichiarazioni di consenso",
+                "fields": [
+                    {
+                        "id": "consent_authorized_to_provide",
+                        "label": (
+                            "Dichiaro di essere autorizzato a fornire tutti i dati, file, immagini, "
+                            "loghi, contenuti, credenziali e materiali allegati."
+                        ),
+                        "type": "checkbox",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_use_for_project",
+                        "label": (
+                            "Autorizzo Fernando Piras ad utilizzare tali dati esclusivamente per "
+                            "analizzare, progettare, sviluppare, testare e consegnare il progetto richiesto."
+                        ),
+                        "type": "checkbox",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_lawful_materials",
+                        "label": (
+                            "Dichiaro che tutti i dati e materiali forniti sono leciti e non violano "
+                            "diritti di terzi."
+                        ),
+                        "type": "checkbox",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_gdpr",
+                        "label": (
+                            "Acconsento al trattamento dei dati personali ai sensi del Regolamento "
+                            "(UE) 2016/679 (GDPR) esclusivamente per la gestione della richiesta e "
+                            "dello sviluppo del progetto."
+                        ),
+                        "type": "checkbox",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_full_acceptance",
+                        "label": (
+                            "Dichiaro di aver letto e compreso quanto sopra e di accettarne "
+                            "integralmente il contenuto."
+                        ),
+                        "type": "checkbox",
+                        "required": True,
+                    },
+                ],
+            },
+            {
+                "title": "Dati di accettazione",
+                "fields": [
+                    {
+                        "id": "consent_full_name",
+                        "label": "Nome e Cognome",
+                        "type": "text",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_company",
+                        "label": "Azienda (se presente)",
+                        "type": "text",
+                    },
+                    {
+                        "id": "consent_date",
+                        "label": "Data",
+                        "type": "date",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_place",
+                        "label": "Luogo",
+                        "type": "text",
+                        "required": True,
+                    },
+                    {
+                        "id": "consent_signature",
+                        "label": "Firma (o firma digitale)",
+                        "type": "text",
+                        "required": True,
                     },
                 ],
             },

@@ -4,7 +4,7 @@
 > **Come compilare:** compila ogni campo sotto. I campi con * sono obbligatori. Per lo sviluppo con AI, usa il file JSON e genera il prompt con `python3 discovery-document/scripts/generate_cursor_prompt.py`.
 
 ---
-| Versione | 1.1.0 || Autore | Fernando Piras — SwiftWithFer || Data | _____________ || Cliente | _____________ || Progetto | _____________ || Confidenzialità | Confidenziale — Uso interno e cliente |
+| Versione | 1.2.0 || Autore | Fernando Piras — SwiftWithFer || Data | _____________ || Cliente | _____________ || Progetto | _____________ || Confidenzialità | Confidenziale — Uso interno e cliente |
 
 ---
 ## Indice
@@ -25,6 +25,7 @@
 15. [Checklist Consegna](#delivery_checklist)
 16. [Note](#notes)
 17. [Prompt Finale Cursor](#cursor_prompt)
+18. [Consenso e Accettazione](#consent)
 
 ---
 
@@ -1781,6 +1782,38 @@ cursor_prompt_output:
 
 
 ```
+
+
+## 18. Consenso e Accettazione {#consent}
+*Sezione obbligatoria. Spunta tutte le dichiarazioni e completa i dati di accettazione prima di inviare il documento. Dichiaro di aver letto e compreso quanto sopra e di accettarne integralmente il contenuto.*
+
+### Dichiarazioni di consenso
+- [ ] **Dichiaro di essere autorizzato a fornire tutti i dati, file, immagini, loghi, contenuti, credenziali e materiali allegati.** *(obbligatorio)*
+- [ ] **Autorizzo Fernando Piras ad utilizzare tali dati esclusivamente per analizzare, progettare, sviluppare, testare e consegnare il progetto richiesto.** *(obbligatorio)*
+- [ ] **Dichiaro che tutti i dati e materiali forniti sono leciti e non violano diritti di terzi.** *(obbligatorio)*
+- [ ] **Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR) esclusivamente per la gestione della richiesta e dello sviluppo del progetto.** *(obbligatorio)*
+- [ ] **Dichiaro di aver letto e compreso quanto sopra e di accettarne integralmente il contenuto.** *(obbligatorio)*
+
+### Dati di accettazione
+**Nome e Cognome** *(obbligatorio)*
+
+`consent_full_name`: 
+
+**Azienda (se presente)**
+
+`consent_company`: 
+
+**Data** *(obbligatorio)*
+
+`consent_date`: 
+
+**Luogo** *(obbligatorio)*
+
+`consent_place`: 
+
+**Firma (o firma digitale)** *(obbligatorio)*
+
+`consent_signature`: 
 
 
 ---
