@@ -1,45 +1,95 @@
 # Enterprise GitHub Portfolio — Phase 2  
-## Real Project Discovery & Evidence Matrix
+## Real Project Discovery & Evidence Matrix  
+### Owner Verification Gate (revision)
 
 **Owner:** Fernando Piras  
 **GitHub username:** FernandoPiras  
 **Primary site:** https://www.fernandopiras.com  
 **Phase 1 reference:** `GITHUB_PORTFOLIO_PHASE_1_REPORT.md` (merged)  
-**Scope:** Analysis, discovery, and evidence collection only.  
-**Not in this phase:** Profile README, showcase repositories, banners, generated images, badges, marketing copy finalization, Phase 3.
+**Scope:** Analysis, discovery, evidence collection, and owner-verification scaffolding only.  
+**Not in this phase:** Profile README, showcase repositories, banners, generated images, badges, marketing copy finalization, Phase 3, merge.
 
-**Evidence rule:** Every future public sentence must be backed by sources listed here. Hypotheses are labeled. Unverified items are not facts.
+**Evidence rule:** Every future public sentence must be backed by an explicit evidence type below. Hypotheses are labeled. Unverified items are not facts.
+
+---
+
+# Evidence Type Legend
+
+| Evidence Type | Meaning |
+|---------------|---------|
+| **APP_STORE_VERIFIED** | Confirmed via App Store listing and/or Apple iTunes Lookup API |
+| **PUBLIC_DOCUMENTATION_VERIFIED** | Confirmed via official public legal/support/privacy/terms pages |
+| **WORKSPACE_ASSET_VERIFIED** | Confirmed via files present in this portfolio workspace (icons, screenshots, videos, site config used as marketing secondary source) |
+| **SOURCE_VERIFIED** | Confirmed by inspecting commercial application source code |
+| **OWNER_VERIFIED** | Explicit confirmation by the product owner/developer (valid factual evidence; **not** automatic source inspection) |
+| **NOT_VERIFIED** | Not confirmed by any accepted evidence type |
+
+**Rules:**
+
+- `OWNER_VERIFIED` must never be described as source-code verification.  
+- Commercial source remains private; source disclosure is not required.  
+- Profile README may use only **SAFE TO CLAIM** or **OWNER_VERIFIED** facts.  
+- Showcase READMEs may use APP_STORE / PUBLIC_DOCUMENTATION / WORKSPACE_ASSET / SOURCE / OWNER evidence as classified below.
+
+---
+
+# Final Decision — Source Code
+
+**Commercial source code remains private.**  
+**Owner verification is sufficient for factual technology declarations.**  
+**No public source disclosure is required for this portfolio.**
 
 ---
 
 # 1. Executive Summary
 
-Two published App Store products were identified and verified through public Apple metadata, official legal/support sites, and portfolio marketing materials in this workspace.
+Two published App Store products were identified and verified through public Apple metadata, official legal/support sites, and portfolio workspace assets.
 
-| Product | Public App Store name | Bundle ID | App Store version | Seller |
-|---------|----------------------|-----------|-------------------|--------|
-| AndroMetrics | AndroMetrics | `com.fernando.andrometrics.app` | 1.1.0 | Fernando Piras |
-| Preventivo Rapido | PreventivoRapido PRO | `Fernando.PreventivoRapido` | 1.1.0 | Fernando Piras |
+| Product | App Store name | Bundle ID | Seller | Source in workspace |
+|---------|----------------|-----------|--------|---------------------|
+| AndroMetrics | AndroMetrics | `com.fernando.andrometrics.app` | Fernando Piras | **NOT_VERIFIED** (absent) |
+| Preventivo Rapido | PreventivoRapido PRO | `Fernando.PreventivoRapido` | Fernando Piras | **NOT_VERIFIED** (absent) |
 
-**Critical availability finding:** Commercial **source code is not present** in this workspace and was **not accessible** via listed public GitHub repositories. Stack details such as “SwiftUI” therefore come from owner-controlled marketing/config and corroborating platform signals — not from inspected application source. They must be treated with qualification unless the owner confirms or provides source access.
+### Public naming (locked)
 
-**Strongest verified facts (both products):**
+| Use | Value |
+|-----|-------|
+| GitHub showcase repository | `preventivo-rapido` |
+| Official name in README / App Store | **PreventivoRapido PRO** |
+| Descriptive form allowed in prose | Preventivo Rapido |
+| AndroMetrics official name | AndroMetrics |
 
-- Published on the App Store under seller **Fernando Piras**
-- Native iOS (and iPad-capable) applications
-- Official privacy / terms / support pages live
-- Real product screenshots and icons available in the portfolio workspace
-- Monetization via Apple subscriptions (StoreKit / App Store billing)
+Do not alter the official App Store product names.
 
-**Portfolio readiness (README writing):**
+### Strongest non-source facts (both products)
 
-| Surface | Ready to draft without unverified claims? | Condition |
-|---------|---------------------------------------------|-----------|
-| Profile README | **Conditionally yes** | Stick to SAFE TO CLAIM + owner answers for qualifications |
-| AndroMetrics showcase | **Conditionally yes** | Prefer App Store + legal evidence; qualify Swift/SwiftUI; resolve version mismatch |
-| Preventivo Rapido showcase | **Conditionally yes** | Prefer App Store + legal evidence; qualify Swift/SwiftUI and “cloud sync” implementation |
+- Published on the App Store — **APP_STORE_VERIFIED**
+- Native iOS (+ iPad-capable) — **APP_STORE_VERIFIED**
+- Official privacy / terms / support pages live — **PUBLIC_DOCUMENTATION_VERIFIED**
+- Icons / screenshots / demos present in workspace — **WORKSPACE_ASSET_VERIFIED**
+- Apple-managed App Store subscriptions — **APP_STORE_VERIFIED**
 
-**Phase 3 must not start until this document is accepted and missing owner inputs are answered for any claim marked WITH QUALIFICATION that will appear publicly.**
+### StoreKit logic (corrected — no internal contradiction)
+
+| Statement | When allowed | Evidence type required |
+|-----------|--------------|------------------------|
+| “Apple-managed App Store subscriptions” | Subscriptions visible on App Store | **APP_STORE_VERIFIED** |
+| “StoreKit” | Named in privacy/policy **or** owner confirms | **PUBLIC_DOCUMENTATION_VERIFIED** or **OWNER_VERIFIED** |
+| “StoreKit 2” | Only if source inspected **or** owner confirms | **SOURCE_VERIFIED** or **OWNER_VERIFIED** |
+
+### Temporal / audit-only metrics
+
+See § Temporal Data Policy. Ratings, review counts, versions, release dates, update dates, file sizes, and rankings are **AUDIT ONLY — DO NOT USE IN PUBLIC README**.
+
+### Portfolio readiness (pending owner answers)
+
+| Surface | Ready? | Condition |
+|---------|--------|-----------|
+| Profile README | **Blocked on owner answers for desired stack claims**; otherwise draftable from SAFE TO CLAIM only | SAFE TO CLAIM + OWNER_VERIFIED only |
+| AndroMetrics showcase | **Conditionally ready** | Prefer App Store + legal evidence; owner gate for Swift/SwiftUI/StoreKit 2/Vision/WidgetKit |
+| PreventivoRapido PRO showcase | **Conditionally ready** | Prefer App Store + legal evidence; screenshot privacy gate; owner gate for stack specifics |
+
+**Phase 3 must not start until owner questionnaire answers are recorded for any OWNER_VERIFIED claim intended for public use.**
 
 ---
 
@@ -47,33 +97,59 @@ Two published App Store products were identified and verified through public App
 
 ## 2.1 Sources searched
 
-| Source | Result |
-|--------|--------|
-| Workspace `/workspace` (`swiftwithfer-portfolio`) | Marketing site + product assets + config claims |
-| Public GitHub under `FernandoPiras` | Legal/support repos found; **no product source repos** |
-| `andrometrics-legal` | Live legal/support site content (cloned for analysis) |
-| `andrometrics-privacy` | Empty repository (no files) |
-| `preventivorapido--legal` | Live legal/support site content (cloned for analysis) |
-| `preventivorapido-support` | Empty repository |
-| Apple iTunes Lookup API (`country=it`) | App metadata VERIFIED |
-| Live HTTP checks | App Store, legal pages, fernandopiras.com product pages → HTTP 200 |
+| Source | Result | Evidence Type |
+|--------|--------|---------------|
+| Workspace `swiftwithfer-portfolio` | Marketing site + product assets + config claims | WORKSPACE_ASSET_VERIFIED |
+| Public GitHub `FernandoPiras` | Legal/support repos; **no product source repos** | PUBLIC_DOCUMENTATION_VERIFIED / NOT_VERIFIED (source) |
+| `andrometrics-legal` | Live legal/support content | PUBLIC_DOCUMENTATION_VERIFIED |
+| `andrometrics-privacy` | Empty repository | NOT_VERIFIED |
+| `preventivorapido--legal` | Live legal/support content | PUBLIC_DOCUMENTATION_VERIFIED |
+| `preventivorapido-support` | Empty repository | NOT_VERIFIED |
+| Apple iTunes Lookup API (`country=it`) | App metadata | APP_STORE_VERIFIED |
+| Live HTTP checks | App Store, legal, product pages → 200 | APP_STORE_VERIFIED / PUBLIC_DOCUMENTATION_VERIFIED |
 
 ## 2.2 Availability matrix
 
-| Project | Source code in workspace | Private source accessible | Public legal docs | App Store listing | Portfolio page | Overall |
-|---------|--------------------------|---------------------------|-------------------|-------------------|----------------|---------|
-| AndroMetrics | **NOT FOUND** | **NOT FOUND** | **VERIFIED** | **VERIFIED** | **VERIFIED** | Analyzable via public evidence only |
-| Preventivo Rapido | **NOT FOUND** | **NOT FOUND** | **VERIFIED** | **VERIFIED** | **VERIFIED** | Analyzable via public evidence only |
+| Project | Source code | Private source access | Public legal docs | App Store | Portfolio page | Overall |
+|---------|-------------|----------------------|-------------------|-----------|----------------|---------|
+| AndroMetrics | NOT_VERIFIED (absent) | NOT_VERIFIED | PUBLIC_DOCUMENTATION_VERIFIED | APP_STORE_VERIFIED | WORKSPACE_ASSET_VERIFIED | Public-evidence analyzable; owner gate open |
+| PreventivoRapido PRO | NOT_VERIFIED (absent) | NOT_VERIFIED | PUBLIC_DOCUMENTATION_VERIFIED | APP_STORE_VERIFIED | WORKSPACE_ASSET_VERIFIED | Public-evidence analyzable; owner gate open |
 
 ## 2.3 Evidence Missing (global)
 
-- Application Xcode/Swift source trees  
-- Package manifests (`Package.swift`, `Podfile`, SPM locks)  
-- CI/CD configs for the apps  
-- Unit/UI test suites  
+- Application source trees (**not required publicly**; optional for SOURCE_VERIFIED)  
+- Package manifests / SPM locks  
+- CI/CD configs  
+- Unit/UI tests  
 - Exact third-party SDK versions  
-- Private backend repos / infrastructure diagrams beyond privacy text  
-- Authoritative confirmation that portfolio `technologies: ["SwiftUI", …]` matches current binaries  
+- Owner answers for language/UI/StoreKit 2/WidgetKit/Vision/PDFKit/cloud vendor  
+
+---
+
+# Temporal Data Policy
+
+The following fields may appear in this audit document only.
+
+### AUDIT ONLY — DO NOT USE IN PUBLIC README
+
+- App Store rating  
+- Number of reviews  
+- Version numbers  
+- Release date  
+- Last update date  
+- File size  
+- Rankings / charts  
+
+**Decision:** Version numbers will **not** be inserted into the Profile README or showcase repositories because they are temporal and unnecessary for credibility.
+
+**Still required:** Align AndroMetrics legal documentation with the current App Store versioning practice to avoid public trust conflict on the legal site itself (even though GitHub READMEs will omit version numbers).
+
+### Documented AndroMetrics version conflict (audit only)
+
+| Source | Version string | Evidence Type |
+|--------|----------------|---------------|
+| App Store / iTunes | 1.1.0 | APP_STORE_VERIFIED |
+| Legal support/privacy/terms | 1.4.0 | PUBLIC_DOCUMENTATION_VERIFIED |
 
 ---
 
@@ -81,67 +157,52 @@ Two published App Store products were identified and verified through public App
 
 ## 3.1 Identity & inventory
 
-| Item | Value | Status | Evidence |
-|------|-------|--------|----------|
-| Path / repository (source) | Not in workspace | **NOT FOUND** | Search of `/workspace`; no public source repo |
-| Official public name | AndroMetrics | **VERIFIED** | iTunes `trackName`; App Store |
-| Portfolio / case-study slug | `andrometrics` | **VERIFIED** | `src/config/site.ts`, `/apps/andrometrics` |
-| App Store ID | `6758244167` | **VERIFIED** | iTunes lookup |
-| Bundle identifier | `com.fernando.andrometrics.app` | **VERIFIED** | iTunes `bundleId` (non-secret identifier) |
-| Seller / developer | Fernando Piras | **VERIFIED** | iTunes `sellerName` / `artistName` |
-| Platforms | iPhone + iPad (`iosUniversal`) | **VERIFIED** | iTunes `features`, device lists, iPad screenshots |
-| Status | Published on App Store | **VERIFIED** | Live listing HTTP 200; iTunes metadata |
-| App Store version | **1.1.0** | **VERIFIED** | iTunes `version` |
-| Legal/support stated version | **1.4.0** | **PARTIALLY VERIFIED** (conflict) | `andrometrics-legal/support.html`, privacy/terms meta |
-| Minimum iOS | 18.6 | **VERIFIED** | iTunes `minimumOsVersion` |
-| Category | Health & Fitness / Medicine (IT store) | **VERIFIED** | iTunes genres |
-| Price | Free (IAP subscriptions) | **VERIFIED** | iTunes `price` 0; description Premium |
-| Rating | 5.0 from 4 ratings | **VERIFIED** | iTunes `averageUserRating` / `userRatingCount` |
-| Localization (store languages) | Italian (`IT`) | **VERIFIED** | iTunes `languageCodesISO2A` |
-| Extra locales claimed | ES, DE in release notes | **PARTIALLY VERIFIED** | Release notes mention translations; store language list still `IT` only |
-| Release date | 2026-03-06 | **VERIFIED** | iTunes `releaseDate` |
-| Current version date | 2026-07-19 | **VERIFIED** | iTunes `currentVersionReleaseDate` |
-| File size | ~32.4 MB | **VERIFIED** | iTunes `fileSizeBytes` |
-| Age rating | 12+ | **VERIFIED** | iTunes |
-| Official assets (portfolio) | icon, wordmark, 3 screenshots, demo mp4 | **VERIFIED** | `/workspace/public/images/apps/andrometrics/*`, `/videos/andrometrics-demo.mp4` |
-| Official assets (legal site) | app-icon, brand-logo, favicon, og-image | **VERIFIED** | `andrometrics-legal/assets/` |
-| App Store artwork / screenshots | Remote Apple CDN assets (8 iPhone + 8 iPad) | **VERIFIED** | iTunes screenshot URLs |
-| Privacy policy | Live | **VERIFIED** | https://fernandopiras.github.io/andrometrics-legal/privacy.html |
-| Support URL | Live | **VERIFIED** | https://fernandopiras.github.io/andrometrics-legal/support.html |
-| Terms | Live | **VERIFIED** | terms.html on legal site |
-| Marketing / product URL | https://www.fernandopiras.com/apps/andrometrics | **VERIFIED** | HTTP 200; also iTunes `sellerUrl` |
-| Documentation (in-app/source) | Not available | **NOT FOUND** | No source |
-| Tests | Not available | **NOT FOUND** | No source |
-| External services | OpenAI (via proxy), Cloudflare (proxy), Firebase Auth anon + Firestore (optional TTC), Apple HealthKit, StoreKit, iCloud KVS | **VERIFIED** (as declared in privacy) | privacy.html |
-| Dependencies (code) | Unknown | **NOT FOUND** | No source |
-| Release config | App Store distribution | **VERIFIED** | Live listing |
-| Monetization | Premium subscription via Apple; 7-day intro mentioned | **VERIFIED** | App Store description; privacy StoreKit; terms |
-| Analytics SDK | Not declared | **NOT FOUND** | Privacy does not name product analytics SDK |
-| Push notifications | Not declared | **NOT FOUND** | — |
-| Local notifications | Not declared for this app | **NOT FOUND** | — |
-| Authentication | No email/password account; optional Firebase Anonymous Auth for TTC sync | **VERIFIED** | privacy + delete-account.html |
-| Storage | Local device primary; optional iCloud KVS; optional Firebase snapshots for TTC | **VERIFIED** | privacy.html |
-| Backend | Optional Firebase for TTC snapshots; AI proxy (Cloudflare → OpenAI) | **VERIFIED** | privacy.html |
-| AI | OpenAI via owner-managed proxy; consent-gated | **VERIFIED** | privacy.html; App Store description (Coach IA / interpretazione IA) |
-| Export / PDF | Report PDF (Premium) | **VERIFIED** | App Store description |
-| OCR | On-device OCR for reports | **VERIFIED** | privacy + App Store description |
-| Widget | Home Screen widget | **VERIFIED** | App Store description |
-| Live Activities | — | **NOT FOUND** | — |
-| StoreKit | Apple StoreKit / App Store subscriptions | **VERIFIED** | privacy.html (“Apple StoreKit”) |
-| AdMob / ads | None (“Niente pubblicità”) | **VERIFIED** (absent by policy) | App Store description |
-| Web technologies (product) | Marketing/legal pages only; not a web app product | **NOT APPLICABLE** as product platform | — |
-| DNA / genetics features | On-device genetic import (Premium); not synced to iCloud | **VERIFIED** | privacy + support + App Store Premium list |
-| Face ID | Optional | **VERIFIED** | App Store description |
-| Medical device claim | Explicitly **not** a medical device | **VERIFIED** | App Store description / terms |
-
-### Version conflict (must resolve before assertive version claims)
-
-| Source | Version string |
-|--------|----------------|
-| App Store / iTunes | 1.1.0 |
-| Legal support/privacy/terms | 1.4.0 |
-
-**Status:** Conflict → do not publish a single version number until owner confirms which is current and legal pages are aligned.
+| Item | Value | Status | Evidence Type | Evidence |
+|------|-------|--------|---------------|----------|
+| Path / repository (source) | Not in workspace | Absent | NOT_VERIFIED | No public/source tree found |
+| Official public name | AndroMetrics | Confirmed | APP_STORE_VERIFIED | iTunes `trackName` |
+| Portfolio slug | `andrometrics` | Confirmed | WORKSPACE_ASSET_VERIFIED | `src/config/site.ts` |
+| App Store ID | `6758244167` | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Bundle identifier | `com.fernando.andrometrics.app` | Confirmed | APP_STORE_VERIFIED | iTunes (public identifier) |
+| Seller / developer | Fernando Piras | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Platforms | iPhone + iPad (`iosUniversal`) | Confirmed | APP_STORE_VERIFIED | iTunes features + screenshots |
+| Publication status | Published on App Store | Confirmed | APP_STORE_VERIFIED | Live listing |
+| App Store version | 1.1.0 | Audit only | APP_STORE_VERIFIED | iTunes — **DO NOT USE IN README** |
+| Legal stated version | 1.4.0 | Audit only / conflict | PUBLIC_DOCUMENTATION_VERIFIED | legal support/privacy — **DO NOT USE IN README**; align legal pages |
+| Minimum iOS | 18.6 | Audit optional | APP_STORE_VERIFIED | iTunes |
+| Category | Health & Fitness / Medicine | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Price model | Free + Premium subscriptions | Confirmed | APP_STORE_VERIFIED | iTunes + description |
+| Rating / review count | 5.0 / 4 | Audit only | APP_STORE_VERIFIED | **DO NOT USE IN README** |
+| Store languages | IT | Confirmed | APP_STORE_VERIFIED | iTunes `languageCodesISO2A` |
+| Extra locales (ES, DE) | Mentioned in release notes | Uncertain | APP_STORE_VERIFIED (notes only) | Needs owner confirmation for “multilingual” |
+| Release / update dates | Present in iTunes | Audit only | APP_STORE_VERIFIED | **DO NOT USE IN README** |
+| File size | ~32.4 MB | Audit only | APP_STORE_VERIFIED | **DO NOT USE IN README** |
+| Age rating | 12+ | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Portfolio assets | icon, wordmark, 3 screenshots, demo mp4 | Confirmed | WORKSPACE_ASSET_VERIFIED | `/public/images/apps/andrometrics/*` |
+| Legal assets | app-icon, brand-logo, favicon, og-image | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | legal `assets/` |
+| Privacy / support / terms | Live | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | github.io legal site |
+| Product page | https://www.fernandopiras.com/apps/andrometrics | Confirmed | APP_STORE_VERIFIED + live site | iTunes `sellerUrl` + HTTP 200 |
+| Tests / CI / source deps | Unknown | Absent | NOT_VERIFIED | — |
+| Apple-managed subscriptions | Yes | Confirmed | APP_STORE_VERIFIED | App Store IAP narrative |
+| StoreKit (API family) | Named “Apple StoreKit” in privacy | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy.html |
+| StoreKit 2 | Unknown | Pending owner/source | NOT_VERIFIED | — |
+| Analytics SDK | Not declared | Absent | NOT_VERIFIED | — |
+| Push notifications | Not declared | Absent | NOT_VERIFIED | — |
+| Local notifications | Not declared | Absent | NOT_VERIFIED | — |
+| Authentication | No email/password; Firebase Anonymous Auth for optional TTC | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy + delete-account |
+| Storage | Local primary; optional iCloud KVS; optional Firebase TTC snapshots | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy |
+| Backend | Firebase (TTC optional); Cloudflare proxy for AI | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy |
+| AI | OpenAI via owner proxy | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy; also App Store AI features |
+| PDF export | Premium reports | Confirmed | APP_STORE_VERIFIED | App Store description |
+| OCR | On-device OCR | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | privacy + store |
+| Vision framework | Claimed in portfolio only | Pending | NOT_VERIFIED (framework) | WORKSPACE marketing only |
+| Widget feature | Home Screen widget | Confirmed | APP_STORE_VERIFIED | App Store description |
+| WidgetKit API | Pending | Pending | NOT_VERIFIED | — |
+| Live Activities | — | Absent | NOT_VERIFIED | — |
+| Ads | None | Confirmed | APP_STORE_VERIFIED | “Niente pubblicità” |
+| DNA / genetics | On-device import; not iCloud synced | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy/support/store |
+| Face ID | Optional | Confirmed | APP_STORE_VERIFIED | store description |
+| Not a medical device | Explicit disclaimer | Confirmed | APP_STORE_VERIFIED | store/terms |
 
 ---
 
@@ -149,59 +210,50 @@ Two published App Store products were identified and verified through public App
 
 ## 4.1 Identity & inventory
 
-| Item | Value | Status | Evidence |
-|------|-------|--------|----------|
-| Path / repository (source) | Not in workspace | **NOT FOUND** | — |
-| Official store name | PreventivoRapido PRO | **VERIFIED** | iTunes `trackName` |
-| Official short / brand name | PreventivoRapido / Preventivo Rapido | **VERIFIED** | Legal site brand; Phase 1 naming; App Store title |
-| Portfolio slug | `preventivorapido` | **VERIFIED** | `site.ts`, `/apps/preventivorapido` |
-| Planned GitHub showcase slug | `preventivo-rapido` | **VERIFIED** (plan only) | Phase 1 report |
-| App Store ID | `6768065146` | **VERIFIED** | iTunes |
-| Bundle identifier | `Fernando.PreventivoRapido` | **VERIFIED** | iTunes |
-| Seller | Fernando Piras | **VERIFIED** | iTunes |
-| Platforms | iPhone + iPad | **VERIFIED** | iTunes screenshots + devices |
-| Status | Published | **VERIFIED** | Live listing |
-| Version | 1.1.0 | **VERIFIED** | iTunes |
-| Minimum iOS | 17.6 | **VERIFIED** | iTunes |
-| Category | Finance / Productivity | **VERIFIED** | iTunes |
-| Price | Free + Pro subscription | **VERIFIED** | iTunes + description |
-| Rating / reviews | 0 ratings in IT lookup | **VERIFIED** | iTunes `userRatingCount` 0 |
-| Localization (store) | Italian (`IT`) | **VERIFIED** | iTunes |
-| Release date | 2026-05-20 | **VERIFIED** | iTunes |
-| Current version date | 2026-06-23 | **VERIFIED** | iTunes |
-| File size | ~14.6 MB | **VERIFIED** | iTunes |
-| Age rating | 4+ | **VERIFIED** | iTunes |
-| Assets (portfolio) | icon + 3 screenshots + demo mp4 | **VERIFIED** | `/workspace/public/images/apps/preventivorapido/*` |
-| Assets (legal) | app-icon 1024×1024 | **VERIFIED** | legal `assets/app-icon.png` |
-| App Store screenshots | 5 iPhone + 5 iPad | **VERIFIED** | iTunes |
-| Privacy URL | Live | **VERIFIED** | https://fernandopiras.github.io/preventivorapido--legal/privacy.html |
-| Support URL | Live | **VERIFIED** | support.html |
-| Terms URL | Live | **VERIFIED** | terms.html |
-| Marketing / product URL | https://www.fernandopiras.com/apps/preventivorapido | **VERIFIED** | HTTP 200 |
-| iTunes sellerUrl | None | **NOT FOUND** | iTunes `sellerUrl` null |
-| Documentation (source) | Not available | **NOT FOUND** | — |
-| Tests | Not available | **NOT FOUND** | — |
-| Auth | Email/password **or** Sign in with Apple | **VERIFIED** | privacy.html; App Store description |
-| Storage | Local device primary; Keychain for sensitive credentials | **VERIFIED** | privacy.html |
-| Cloud sync | Optional user-activated sync to a configured web service | **VERIFIED** (existence) / **NOT FOUND** (implementation details) | privacy 8-ter; App Store “sync cloud” |
-| PDF export | Yes | **VERIFIED** | App Store + terms |
-| Digital / customer signature | Yes (public link or in-person) | **VERIFIED** | App Store description |
-| Invoices / proforma | Yes | **VERIFIED** | App Store + terms |
-| E-invoice provider link | Beta | **VERIFIED** | App Store description (“funzione beta”); release notes |
-| Local notifications | Optional | **VERIFIED** | privacy.html; terms |
-| Email compose via system Mail | Yes | **VERIFIED** | privacy.html |
-| Monetization | Pro subscription via Apple; 14-day trial | **VERIFIED** | App Store description |
-| StoreKit | Implied via App Store subscriptions | **PARTIALLY VERIFIED** | Described as Apple-managed subscriptions; “StoreKit 2” string is portfolio-only |
-| Analytics SDK | Not declared | **NOT FOUND** | — |
-| Crash reporting | Not declared | **NOT FOUND** | — |
-| Firebase | Not declared for this product | **NOT FOUND** | privacy does not name Firebase |
-| AI | Not declared | **NOT FOUND** / **NOT APPLICABLE** for claims |
-| HealthKit | — | **NOT APPLICABLE** | — |
-| Widgets | — | **NOT FOUND** | — |
-| Live Activities | — | **NOT FOUND** | — |
-| AdMob | — | **NOT FOUND** | — |
-| Web technologies | Optional configured web sync + public signature link | **PARTIALLY VERIFIED** | App Store + privacy; **not** verified as a React/Next full-stack product |
-| App lock | Device authentication lock available | **VERIFIED** | privacy.html |
+| Item | Value | Status | Evidence Type | Evidence |
+|------|-------|--------|---------------|----------|
+| Path / repository (source) | Not in workspace | Absent | NOT_VERIFIED | — |
+| Official App Store name | PreventivoRapido PRO | Confirmed | APP_STORE_VERIFIED | iTunes `trackName` — **do not alter** |
+| Descriptive prose name | Preventivo Rapido | Allowed | — | Phase naming rule |
+| GitHub showcase repo name | `preventivo-rapido` | Planned | — | Phase 1 |
+| Portfolio slug | `preventivorapido` | Confirmed | WORKSPACE_ASSET_VERIFIED | site config |
+| App Store ID | `6768065146` | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Bundle identifier | `Fernando.PreventivoRapido` | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Seller | Fernando Piras | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Platforms | iPhone + iPad | Confirmed | APP_STORE_VERIFIED | screenshots/devices |
+| Publication status | Published | Confirmed | APP_STORE_VERIFIED | live listing |
+| Version | 1.1.0 | Audit only | APP_STORE_VERIFIED | **DO NOT USE IN README** |
+| Minimum iOS | 17.6 | Audit optional | APP_STORE_VERIFIED | iTunes |
+| Category | Finance / Productivity | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Price model | Free + Pro subscription | Confirmed | APP_STORE_VERIFIED | store |
+| Rating / reviews | 0 in IT lookup | Audit only | APP_STORE_VERIFIED | **DO NOT USE IN README** |
+| Store language | IT | Confirmed | APP_STORE_VERIFIED | iTunes |
+| Release / update dates / size | Present | Audit only | APP_STORE_VERIFIED | **DO NOT USE IN README** |
+| Portfolio assets | icon, 3 screenshots, demo mp4 | Confirmed | WORKSPACE_ASSET_VERIFIED | `/public/images/apps/preventivorapido/*` |
+| Legal app icon | 1024×1024 | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | legal assets |
+| Privacy / support / terms | Live | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | github.io legal site |
+| Product page | https://www.fernandopiras.com/apps/preventivorapido | Confirmed | live site | HTTP 200 |
+| iTunes sellerUrl | None | Absent | NOT_VERIFIED | — |
+| Auth | Email/password **or** Sign in with Apple | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | privacy + store |
+| Storage | Local device; Keychain for sensitive creds | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy |
+| Cloud sync existence | Optional sync to configured web service | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | privacy 8-ter; store |
+| Cloud sync vendor | Unknown | Pending | NOT_VERIFIED | owner gate |
+| PDF export | Yes | Confirmed | APP_STORE_VERIFIED | store + terms |
+| PDFKit | Unknown | Pending | NOT_VERIFIED | owner gate |
+| Customer signature | Public link or in person | Confirmed | APP_STORE_VERIFIED | store |
+| Invoices / proforma | Yes | Confirmed | APP_STORE_VERIFIED | store + terms |
+| E-invoice provider | Beta | Confirmed | APP_STORE_VERIFIED | store + release notes |
+| Local notifications | Optional | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy/terms |
+| Push notifications | Not declared | Absent | NOT_VERIFIED | — |
+| Apple-managed subscriptions | Yes | Confirmed | APP_STORE_VERIFIED | store Pro plan |
+| StoreKit (API family) | Not named in privacy text | Pending | NOT_VERIFIED | may become OWNER_VERIFIED |
+| StoreKit 2 | Portfolio-only string historically | Pending | NOT_VERIFIED | SOURCE or OWNER only |
+| Analytics | Not declared | Absent | NOT_VERIFIED | — |
+| Crash reporting | Not declared | Absent | NOT_VERIFIED | — |
+| Firebase | Not declared for this product | Absent | NOT_VERIFIED | do not claim unless owner confirms |
+| AI | Not declared | Absent | NOT_VERIFIED | do not claim |
+| App lock | Device auth lock | Confirmed | PUBLIC_DOCUMENTATION_VERIFIED | privacy |
+| Full-stack web product | Not evidenced | Absent | NOT_VERIFIED | **DO NOT CLAIM** |
 
 ---
 
@@ -209,112 +261,112 @@ Two published App Store products were identified and verified through public App
 
 ## 5.1 AndroMetrics features
 
-| Feature | Factual description | Evidence | State | Public availability | Limits | Portfolio class |
-|---------|---------------------|----------|-------|---------------------|--------|-----------------|
-| Daily tracking | Log habits/parameters (sleep, stress, activity, hydration, alcohol, heat, etc.) | App Store description | Shipped | Free tier | User-entered + optional Health | **CORE** |
-| Score 0–100 | Daily wellbeing/fertility-related score | App Store description; screenshots | Shipped | Free | Informational, not diagnosis | **CORE** |
-| Trends / cycle overview | 72-day trend and 90-day cycle framing | App Store description | Shipped | Free | — | **CORE** |
-| Charts / statistics | Graphs and trends over time | Portfolio screenshots; store Premium “grafici avanzati” | Shipped | Free basic / advanced Premium | Exact free vs Premium split from store copy | **CORE** |
-| HealthKit import | Optional read of steps/sleep (and related authorized data) | Privacy; App Store | Shipped | Optional permission | Read-only | **CORE** |
-| Home widget | Score glance on Home Screen | App Store description | Shipped | Free (per store) | — | **CORE** |
-| Report OCR | On-device OCR from photo/PDF lab reports | Privacy; App Store | Shipped | Premium | On-device processing claimed | **CORE** |
-| AI interpretation / Coach | AI insights/chat via proxy to OpenAI | Privacy; App Store Premium | Shipped | Premium; consent | Content sent to OpenAI via proxy | **CORE** |
-| PDF export | Exportable PDF reports | App Store Premium | Shipped | Premium | — | **CORE** |
-| Medication registry | Medication log / adherence | App Store Premium; portfolio | Shipped | Premium | — | **SUPPORTING** |
-| TTC couple mode | Share summary snapshot; optional cloud sync with invite code | Privacy; App Store | Shipped | Premium for sync per store | Summary only to cloud; not full tracking | **CORE** |
-| DNA import | Import raw genetic files on-device | Privacy; support; store Premium | Shipped | Premium | Never iCloud-synced | **SUPPORTING** — publish only at high level + privacy framing |
-| Premium / StoreKit | Subscriptions managed by Apple | Privacy; terms; store | Shipped | Paid | — | **CORE** |
-| Face ID lock | Optional Face ID | App Store description | Shipped | Optional | — | **SUPPORTING** |
-| Local-first storage | Primary data on device | Privacy | Shipped | Default | — | **CORE** |
-| Delete all data | In-app privacy deletion including iCloud copies when active | delete-account.html; support | Shipped | — | — | **SUPPORTING** |
-| Accessibility improvements | VoiceOver improvements noted in release notes | iTunes releaseNotes | Shipped | — | Depth unknown without source | **SUPPORTING** |
-| Ads | None | App Store description | N/A | — | — | **SUPPORTING** (privacy differentiator) |
-| Medical diagnosis | Explicitly not provided | App Store / terms | N/A | — | Must not claim clinical diagnosis | **DO NOT PUBLISH** as capability |
-| Salon/CRM booking features | Old portfolio reports only; contradict current product | Historical MD reports | Obsolete | — | — | **DO NOT PUBLISH** |
+| Feature | Factual description | Evidence Type | State | Public availability | Limits | Portfolio class |
+|---------|---------------------|---------------|-------|---------------------|--------|-----------------|
+| Daily tracking | Log habits/parameters | APP_STORE_VERIFIED | Shipped | Free | — | CORE |
+| Score 0–100 | Daily score | APP_STORE_VERIFIED | Shipped | Free | Informational | CORE |
+| Trends / cycle overview | 72-day / 90-day framing | APP_STORE_VERIFIED | Shipped | Free | — | CORE |
+| Charts / statistics | Graphs over time | APP_STORE_VERIFIED + WORKSPACE_ASSET_VERIFIED | Shipped | Free/Premium split | — | CORE |
+| HealthKit import | Optional read steps/sleep | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | Shipped | Optional | Read-only | CORE |
+| Home widget | Score glance | APP_STORE_VERIFIED | Shipped | Free (per store) | WidgetKit API pending | CORE |
+| Report OCR | On-device OCR | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | Shipped | Premium | Vision API pending | CORE |
+| AI Coach | OpenAI via proxy | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | Premium; consent | Naming policy pending | CORE |
+| PDF export | Exportable PDF | APP_STORE_VERIFIED | Shipped | Premium | — | CORE |
+| Medication registry | Medication log | APP_STORE_VERIFIED | Shipped | Premium | — | SUPPORTING |
+| TTC couple mode | Snapshot share; optional cloud | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | Shipped | Premium sync | Summary only | CORE |
+| DNA import | On-device genetics | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | Premium | High-level only | SUPPORTING |
+| Premium subscriptions | Apple-managed | APP_STORE_VERIFIED | Shipped | Paid | StoreKit 2 pending | CORE |
+| Face ID | Optional | APP_STORE_VERIFIED | Shipped | Optional | — | SUPPORTING |
+| Local-first storage | On-device primary | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | Default | — | CORE |
+| Delete all data | In-app deletion | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | — | — | SUPPORTING |
+| No ads | No advertising | APP_STORE_VERIFIED | N/A | — | — | SUPPORTING |
+| Medical diagnosis | Not provided | APP_STORE_VERIFIED | N/A | — | — | DO NOT PUBLISH as capability |
+| Salon/CRM legacy claims | Obsolete marketing reports | NOT_VERIFIED / contradicted | Obsolete | — | — | DO NOT PUBLISH |
 
-## 5.2 Preventivo Rapido features
+## 5.2 PreventivoRapido PRO features
 
-| Feature | Factual description | Evidence | State | Public availability | Limits | Portfolio class |
-|---------|---------------------|----------|-------|---------------------|--------|-----------------|
-| Create professional quotes | Build quotes with company/client data, line items, VAT | App Store; screenshots | Shipped | Core product | — | **CORE** |
-| PDF export/share | Generate professional PDF | App Store; terms | Shipped | Included in Pro narrative | — | **CORE** |
-| Customer signature | Sign via public link or in person | App Store description | Shipped | Pro feature set | — | **CORE** |
-| Client directory | Clients with VAT, email, address, history | App Store; screenshots | Shipped | — | — | **CORE** |
-| Dashboard / status filters | Monitor quotes, accepted, to collect, invoiced | Screenshots; store | Shipped | — | — | **CORE** |
-| Convert to invoice/proforma | Confirmed quote → invoice or proforma | App Store; terms | Shipped | — | Not automatic SDI submission | **CORE** |
-| Document archive | Invoices/documents section | App Store; screenshots | Shipped | — | — | **SUPPORTING** |
-| Email send | Send documents via device Mail / configured email | Privacy; store | Shipped | User action | — | **SUPPORTING** |
-| Auth email/password | Account with email/password | Privacy | Shipped | — | — | **SUPPORTING** |
-| Sign in with Apple | Apple ID login | App Store; privacy | Shipped | — | — | **CORE** |
-| Local backup | Local backup tools | Terms; store | Shipped | — | User responsible | **SUPPORTING** |
-| Optional cloud sync | Sync to configured web service | Privacy 8-ter; store | Shipped optional | User-activated | Provider/impl unknown | **CORE** (existence) / qualify implementation |
-| Local notifications | Optional local notifications | Privacy; terms | Shipped | Permission | — | **SUPPORTING** |
-| App lock | Lock with device auth | Privacy | Shipped | Optional | — | **SUPPORTING** |
-| Pro subscription | Monthly/yearly via Apple; 14-day trial | App Store | Shipped | Paid | — | **CORE** |
-| E-invoice provider integration | Connect e-invoice provider | App Store (“beta”); release notes | Beta | Beta | User must verify provider outcome; not automatic SDI | **EXPERIMENTAL** / publish only as beta |
-| Onboarding / paywall | Present in release notes & screenshots | Release notes; screenshot trial CTA | Shipped | — | — | **INTERNAL** (usually skip in showcase) |
-| Full-stack web CRM | Not evidenced as separate web product for this app | — | — | — | — | **DO NOT PUBLISH** |
+| Feature | Factual description | Evidence Type | State | Public availability | Limits | Portfolio class |
+|---------|---------------------|---------------|-------|---------------------|--------|-----------------|
+| Create quotes | Professional quotes with VAT lines | APP_STORE_VERIFIED + WORKSPACE_ASSET_VERIFIED | Shipped | Core | — | CORE |
+| PDF export/share | Professional PDF | APP_STORE_VERIFIED | Shipped | Pro narrative | PDFKit pending | CORE |
+| Customer signature | Public link or in person | APP_STORE_VERIFIED | Shipped | Pro | — | CORE |
+| Client directory | Clients + history | APP_STORE_VERIFIED + WORKSPACE_ASSET_VERIFIED | Shipped | — | — | CORE |
+| Dashboard filters | Status monitoring | WORKSPACE_ASSET_VERIFIED + APP_STORE_VERIFIED | Shipped | — | — | CORE |
+| Invoice/proforma conversion | From confirmed quote | APP_STORE_VERIFIED | Shipped | — | Not automatic SDI | CORE |
+| Document archive | Invoices/docs section | APP_STORE_VERIFIED + WORKSPACE_ASSET_VERIFIED | Shipped | — | — | SUPPORTING |
+| Email send | System Mail / configured email | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | User action | — | SUPPORTING |
+| Email/password auth | Account login | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | — | — | SUPPORTING |
+| Sign in with Apple | Apple ID login | APP_STORE_VERIFIED + PUBLIC_DOCUMENTATION_VERIFIED | Shipped | — | — | CORE |
+| Local backup | Local backup tools | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | Shipped | — | User responsible | SUPPORTING |
+| Optional cloud sync | Sync to configured web service | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | Optional | User-activated | Vendor pending | CORE (existence) |
+| Local notifications | Optional | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | Permission | — | SUPPORTING |
+| App lock | Device auth | PUBLIC_DOCUMENTATION_VERIFIED | Shipped | Optional | — | SUPPORTING |
+| Pro subscription | Apple-managed; trial | APP_STORE_VERIFIED | Shipped | Paid | StoreKit 2 pending | CORE |
+| E-invoice provider | Beta | APP_STORE_VERIFIED | Beta | Beta | Qualify as beta | EXPERIMENTAL |
+| Onboarding/paywall | Present | APP_STORE_VERIFIED + WORKSPACE_ASSET_VERIFIED | Shipped | — | — | INTERNAL |
+| Full-stack web CRM | Not evidenced | NOT_VERIFIED | — | — | — | DO NOT PUBLISH |
 
 ---
 
 # 6. Verified Tech Stack
 
-## 6.1 AndroMetrics stack matrix
+## 6.1 AndroMetrics
 
-| Category | Technology | Evidence | Usage level | Publicly declare? |
-|----------|------------|----------|-------------|-------------------|
-| Languages | Swift | No source; native iOS app | **NOT VERIFIED** (language) | **WITH QUALIFICATION** — “Native iOS app” is safe; “Swift” only after owner confirmation |
-| UI Frameworks | SwiftUI | Portfolio `site.ts` / case study only | **NOT VERIFIED** in binary/source | **WITH QUALIFICATION** |
-| Architecture | Local-first; optional cloud snapshots | Privacy | **PRIMARY** (local-first) | **YES** (high-level) |
-| Persistence | On-device storage; App Group claimed in portfolio | Privacy (local); App Group **portfolio-only** | Local **PRIMARY**; App Group **NOT VERIFIED** | Local **YES**; App Group **WITH QUALIFICATION** |
-| Networking | AI proxy; optional Firebase | Privacy | **SECONDARY** | **YES** at high level; no endpoints |
-| Backend | Firebase Anonymous Auth + Firestore (TTC only); Cloudflare proxy | Privacy | **SUPPORTING** / optional | **YES** with “optional TTC” qualification |
-| Authentication | No classic user account; Firebase Anonymous for TTC | Privacy | **SUPPORTING** | **YES** |
-| Analytics | — | — | **NOT FOUND** | **NO** |
-| Crash Reporting | — | — | **NOT FOUND** | **NO** |
-| Monetization | Apple StoreKit / App Store subscriptions | Privacy names StoreKit | **PRIMARY** | **YES** — prefer “App Store subscriptions” / “StoreKit”; “StoreKit 2” only if confirmed |
-| AI | OpenAI via secure proxy | Privacy | **PRIMARY** for Premium AI features | **YES** — “OpenAI via proxy”, not vague “AI-powered” alone |
-| OCR | On-device OCR; portfolio says Vision | Privacy (OCR on-device); Vision framework **portfolio-only** | OCR **PRIMARY** | OCR **YES**; “Vision” **WITH QUALIFICATION** |
-| Health | Apple HealthKit read-only | Privacy | **SECONDARY** | **YES** |
-| Sync | Apple iCloud KVS (`NSUbiquitousKeyValueStore`) | Privacy | **SECONDARY** | **YES** |
-| Widgets | Widget / WidgetKit | Store description (widget); WidgetKit name portfolio-only | Widget **PRIMARY** feature | Widget **YES**; “WidgetKit” **WITH QUALIFICATION** |
-| Testing | — | — | **NOT FOUND** | **NO** |
-| CI/CD | — | — | **NOT FOUND** | **NO** |
-| Distribution | App Store | iTunes | **PRIMARY** | **YES** |
-| Accessibility | VoiceOver improvements | Release notes | **SUPPORTING** | **WITH QUALIFICATION** |
-| Localization | Italian store listing; release notes IT/ES/DE | iTunes | IT **PRIMARY** | IT **YES**; multilingual **WITH QUALIFICATION** |
-| Privacy | GDPR policy; local-first; consent gates | Legal site | **PRIMARY** | **YES** — factual privacy design, not slogan-only |
-| Security | No API keys in app for OpenAI (per privacy); Face ID optional | Privacy; store | **SUPPORTING** | **WITH QUALIFICATION** — avoid “secure” absolute |
-| Ads | None | Store | **NOT APPLICABLE** | May state “no ads” **YES** |
-| Third-party SDKs | OpenAI, Cloudflare, Google Firebase | Privacy | As above | Name only what privacy states |
+| Category | Technology | Evidence Type | Usage level | Public claim allowed |
+|----------|------------|---------------|-------------|----------------------|
+| Languages | Swift | NOT_VERIFIED | — | Only after OWNER_VERIFIED or SOURCE_VERIFIED |
+| UI | SwiftUI | NOT_VERIFIED | — | Only after OWNER_VERIFIED or SOURCE_VERIFIED |
+| Architecture | Local-first + optional cloud snapshots | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES (high-level) |
+| Persistence | On-device storage | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES |
+| App Group | Portfolio claim only | NOT_VERIFIED | — | NO until owner/source |
+| Networking | AI proxy; optional Firebase | PUBLIC_DOCUMENTATION_VERIFIED | SECONDARY | YES high-level; no endpoints |
+| Backend | Firebase Auth anon + Firestore (TTC); Cloudflare proxy | PUBLIC_DOCUMENTATION_VERIFIED | SUPPORTING | YES with “optional TTC” |
+| Authentication | Firebase Anonymous (TTC) | PUBLIC_DOCUMENTATION_VERIFIED | SUPPORTING | YES |
+| Analytics | — | NOT_VERIFIED | — | NO |
+| Crash reporting | — | NOT_VERIFIED | — | NO |
+| Apple-managed subscriptions | App Store IAP | APP_STORE_VERIFIED | PRIMARY | YES |
+| StoreKit | Named in privacy | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES |
+| StoreKit 2 | — | NOT_VERIFIED | — | Only SOURCE_VERIFIED or OWNER_VERIFIED |
+| AI | OpenAI via proxy | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY (Premium) | YES if naming approved |
+| OCR | On-device OCR | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES |
+| Vision | — | NOT_VERIFIED | — | Only OWNER/SOURCE |
+| HealthKit | Read-only | PUBLIC_DOCUMENTATION_VERIFIED | SECONDARY | YES |
+| iCloud KVS | NSUbiquitousKeyValueStore | PUBLIC_DOCUMENTATION_VERIFIED | SECONDARY | YES |
+| Widget feature | Home widget | APP_STORE_VERIFIED | PRIMARY | YES (“widget”) |
+| WidgetKit | — | NOT_VERIFIED | — | Only OWNER/SOURCE |
+| Testing | — | NOT_VERIFIED | — | NO |
+| CI/CD | — | NOT_VERIFIED | — | NO |
+| Distribution | App Store | APP_STORE_VERIFIED | PRIMARY | YES |
+| Localization | IT confirmed; ES/DE uncertain | APP_STORE_VERIFIED / pending | IT PRIMARY | IT YES; multilingual only after owner |
+| Privacy design | Local-first + consent | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES factual |
+| Ads | None | APP_STORE_VERIFIED | — | YES (“no ads”) |
 
-## 6.2 Preventivo Rapido stack matrix
+## 6.2 PreventivoRapido PRO
 
-| Category | Technology | Evidence | Usage level | Publicly declare? |
-|----------|------------|----------|-------------|-------------------|
-| Languages | Swift | No source | **NOT VERIFIED** | **WITH QUALIFICATION** |
-| UI Frameworks | SwiftUI | Portfolio only | **NOT VERIFIED** | **WITH QUALIFICATION** |
-| Architecture | Local-first ops data + optional web sync | Privacy | **PRIMARY** local | **YES** high-level |
-| Persistence | Local device storage | Privacy | **PRIMARY** | **YES** |
-| Security storage | Keychain for sensitive provider credentials | Privacy | **SUPPORTING** | **YES** |
-| Networking | Optional sync to configured web service; email | Privacy | **SECONDARY** | **YES** without vendor guess |
-| Backend | Unspecified configured web service | Privacy | **NOT VERIFIED** (vendor) | **WITH QUALIFICATION** — “optional cloud sync” |
-| Authentication | Email/password; Sign in with Apple | Privacy; store | **PRIMARY** | **YES** |
-| Analytics | — | — | **NOT FOUND** | **NO** |
-| Crash Reporting | — | — | **NOT FOUND** | **NO** |
-| Monetization | Apple subscriptions (Pro) | Store; privacy | **PRIMARY** | **YES**; “StoreKit 2” **WITH QUALIFICATION** |
-| AI | — | — | **NOT FOUND** | **NO** |
-| PDF | PDF generation/export | Store; terms | **PRIMARY** | **YES**; “PDFKit” name **WITH QUALIFICATION** |
-| Testing | — | — | **NOT FOUND** | **NO** |
-| CI/CD | — | — | **NOT FOUND** | **NO** |
-| Distribution | App Store | iTunes | **PRIMARY** | **YES** |
-| Accessibility | — | — | **NOT FOUND** | **NO** |
-| Localization | Italian | iTunes | **PRIMARY** | **YES** |
-| Privacy | Published policy; local data; Keychain | Legal | **PRIMARY** | **YES** factual |
-| Notifications | Local notifications | Privacy | **SUPPORTING** | **YES** |
-| E-invoicing | External provider API (user-configured), beta | Store; terms | **SUPPORTING** / beta | **WITH QUALIFICATION** |
-| Firebase | — | — | **NOT FOUND** | **NO** for this product |
-| Full stack web | — | — | **NOT VERIFIED** | **NO** |
+| Category | Technology | Evidence Type | Usage level | Public claim allowed |
+|----------|------------|---------------|-------------|----------------------|
+| Languages | Swift | NOT_VERIFIED | — | Only OWNER/SOURCE |
+| UI | SwiftUI | NOT_VERIFIED | — | Only OWNER/SOURCE |
+| Architecture | Local-first + optional web sync | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES high-level |
+| Persistence | Local storage | PUBLIC_DOCUMENTATION_VERIFIED | PRIMARY | YES |
+| Keychain | Sensitive credentials | PUBLIC_DOCUMENTATION_VERIFIED | SUPPORTING | YES |
+| Backend vendor | Unknown configured web service | NOT_VERIFIED (vendor) | — | “Optional cloud sync” YES; vendor only after owner |
+| Authentication | Email/password + Sign in with Apple | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | PRIMARY | YES |
+| Analytics | — | NOT_VERIFIED | — | NO |
+| Crash reporting | — | NOT_VERIFIED | — | NO |
+| Apple-managed subscriptions | App Store Pro | APP_STORE_VERIFIED | PRIMARY | YES |
+| StoreKit | — | NOT_VERIFIED | — | Only if privacy/owner confirms |
+| StoreKit 2 | — | NOT_VERIFIED | — | Only SOURCE or OWNER |
+| AI | — | NOT_VERIFIED | — | NO |
+| PDF export | Yes | APP_STORE_VERIFIED | PRIMARY | YES |
+| PDFKit | — | NOT_VERIFIED | — | Only OWNER/SOURCE |
+| Notifications | Local | PUBLIC_DOCUMENTATION_VERIFIED | SUPPORTING | YES |
+| Push | — | NOT_VERIFIED | — | NO unless owner |
+| Localization | IT | APP_STORE_VERIFIED | PRIMARY | YES |
+| Firebase | — | NOT_VERIFIED | — | NO unless owner |
+| Full stack | — | NOT_VERIFIED | — | NO |
+| Testing / CI/CD | — | NOT_VERIFIED | — | NO |
+| Distribution | App Store | APP_STORE_VERIFIED | PRIMARY | YES |
 
 ---
 
@@ -322,54 +374,25 @@ Two published App Store products were identified and verified through public App
 
 ## 7.1 AndroMetrics — publishable architecture
 
-**Publishable description (high level):**
+AndroMetrics is a native iOS app for male fertility/wellbeing tracking. Core tracking data stays on device. Optional HealthKit read access can enrich inputs. Optional iCloud Key-Value sync can align selected non-genetic data across Apple devices. Premium features include on-device OCR for lab reports, PDF export, and an AI coach that sends user-provided content through an owner-operated proxy to OpenAI. Optional couple TTC mode can share summary snapshots; cloud sync for those summaries uses Firebase Anonymous Authentication and Firestore when enabled. Genetic imports remain on-device only. Subscriptions are Apple-managed App Store subscriptions. The product is informational and not a medical device.
 
-AndroMetrics is a native iOS app focused on male fertility/wellbeing tracking. Core health and tracking data are stored on the device. Optional Apple HealthKit read access can enrich inputs. Optional iCloud Key-Value sync can keep selected non-genetic preferences/data aligned across Apple devices. Premium features include on-device OCR for lab reports, PDF export, and an AI coach that sends user-provided content through an owner-operated proxy to OpenAI. An optional couple TTC mode can share summary snapshots; if cloud sync is enabled, summary snapshots use Firebase Anonymous Authentication and Firestore. Genetic imports remain on-device only. Subscriptions are handled by Apple. The app states it is informational and not a medical device.
+**Public flow:**  
+`User → iOS app → On-device tracking/score → Optional HealthKit → Optional iCloud KVS → Optional OCR → Optional AI proxy → Optional TTC summary sync → PDF export`
 
-**Suggested public flow (non-sensitive):**
+**Do not publish:** secrets, endpoints, project IDs, schemas, prompts, scoring algorithms, real health data.
 
-`User → iOS app → On-device tracking/score → Optional HealthKit → Optional iCloud KVS → Optional report OCR → Optional AI proxy → Optional TTC summary sync → PDF export`
+**Pending owner/source:** Swift/SwiftUI, Vision vs other OCR, WidgetKit, StoreKit 2, legal version alignment.
 
-**Do not publish:**
+## 7.2 PreventivoRapido PRO — publishable architecture
 
-- API keys, proxy URLs, Cloudflare/Firebase project IDs  
-- Firestore collection schemas or security rule details  
-- Prompt templates / model parameters  
-- Exact scoring algorithm / proprietary medical logic  
-- Internal module names from source (unavailable anyway)  
-- Any real user health data  
+PreventivoRapido PRO is a native iOS app for tradespeople and freelancers to create professional quotes, export PDFs, collect signatures, manage clients, and convert accepted quotes into invoices/proforma documents. Operational data is stored primarily on device. Users authenticate with email/password or Sign in with Apple. Sensitive third-party credentials can be stored in Keychain. Optional cloud synchronization can send quotes to a user-configured web service. Local notifications and system Mail are supported. Pro access is an Apple-managed App Store subscription. E-invoice provider connection exists in beta and is not automatic SDI submission.
 
-**Uncertainties:**
+**Public flow:**  
+`Client request → iOS app → Quote → PDF → Signature → Optional cloud sync / email → Archive`
 
-- Whether UI is SwiftUI vs UIKit (or mixed)  
-- Whether OCR uses Apple Vision specifically  
-- Whether subscriptions use StoreKit 1 or 2 APIs  
-- Why legal docs say v1.4.0 while App Store shows 1.1.0  
-- Depth of ES/DE localization vs store language list  
+**Do not publish:** sync endpoints, provider secrets, customer PII, internal fiscal automation claims beyond public terms.
 
-## 7.2 Preventivo Rapido — publishable architecture
-
-**Publishable description (high level):**
-
-PreventivoRapido PRO is a native iOS app for tradespeople and freelancers to create professional quotes, export PDFs, collect customer signatures, manage clients, and convert accepted quotes into invoices/proforma documents. Operational data is stored primarily on the device. Users authenticate with email/password or Sign in with Apple. Sensitive third-party credentials can be stored in Keychain. Optional cloud synchronization can send quotes to a user-configured web service. Local notifications and system Mail composition are supported. Pro access is sold as an Apple-managed subscription. E-invoice provider connection exists in beta and does not automatically equal official SDI submission.
-
-**Suggested public flow:**
-
-`Client request → iOS app → Quote → PDF → Signature → Optional cloud sync / email → Archive (invoice/proforma)`
-
-**Do not publish:**
-
-- Web sync endpoint URLs or credentials  
-- Provider API keys / e-invoice secrets  
-- Customer PII from real projects  
-- Internal billing business rules beyond public terms  
-
-**Uncertainties:**
-
-- SwiftUI vs UIKit  
-- Exact cloud sync vendor/stack  
-- PDF engine (PDFKit vs other)  
-- Whether “StoreKit 2” is accurate  
+**Pending owner/source:** Swift/SwiftUI, PDFKit, StoreKit/StoreKit 2, cloud vendor, analytics/crash tools.
 
 ---
 
@@ -377,205 +400,294 @@ PreventivoRapido PRO is a native iOS app for tradespeople and freelancers to cre
 
 ## 8.1 AndroMetrics
 
-| Link type | URL | HTTP | Status |
-|-----------|-----|------|--------|
-| App Store (canonical after redirect) | https://apps.apple.com/it/app/andrometrics/id6758244167 | 200 | **VERIFIED** |
-| App Store (portfolio slug form) | https://apps.apple.com/it/app/andrometrics-fertility/id6758244167 | 200 → same app | **VERIFIED** (alias) |
-| Developer page | https://apps.apple.com/it/developer/fernando-piras/id1865514513 | 200 | **VERIFIED** |
-| Product page | https://www.fernandopiras.com/apps/andrometrics | 200 | **VERIFIED** |
-| Legal hub | https://fernandopiras.github.io/andrometrics-legal/ | 200 | **VERIFIED** |
-| Privacy | https://fernandopiras.github.io/andrometrics-legal/privacy.html | 200 | **VERIFIED** |
-| Support | https://fernandopiras.github.io/andrometrics-legal/support.html | 200 | **VERIFIED** |
-| Terms | https://fernandopiras.github.io/andrometrics-legal/terms.html | 200 | **VERIFIED** |
-| Delete account guide | https://fernandopiras.github.io/andrometrics-legal/delete-account.html | (in repo; same site) | **VERIFIED** in repo |
-| Public seller URL in App Store | https://www.fernandopiras.com/apps/andrometrics | Present in iTunes | **VERIFIED** |
+| Link type | URL | Evidence Type |
+|-----------|-----|---------------|
+| App Store (canonical) | https://apps.apple.com/it/app/andrometrics/id6758244167 | APP_STORE_VERIFIED |
+| App Store (alias) | https://apps.apple.com/it/app/andrometrics-fertility/id6758244167 | APP_STORE_VERIFIED |
+| Developer | https://apps.apple.com/it/developer/fernando-piras/id1865514513 | APP_STORE_VERIFIED |
+| Product page | https://www.fernandopiras.com/apps/andrometrics | APP_STORE_VERIFIED (sellerUrl) + live |
+| Legal hub | https://fernandopiras.github.io/andrometrics-legal/ | PUBLIC_DOCUMENTATION_VERIFIED |
+| Privacy | https://fernandopiras.github.io/andrometrics-legal/privacy.html | PUBLIC_DOCUMENTATION_VERIFIED |
+| Support | https://fernandopiras.github.io/andrometrics-legal/support.html | PUBLIC_DOCUMENTATION_VERIFIED |
+| Terms | https://fernandopiras.github.io/andrometrics-legal/terms.html | PUBLIC_DOCUMENTATION_VERIFIED |
 
-## 8.2 Preventivo Rapido
+## 8.2 PreventivoRapido PRO
 
-| Link type | URL | HTTP | Status |
-|-----------|-----|------|--------|
-| App Store | https://apps.apple.com/it/app/preventivorapido-pro/id6768065146 | 200 | **VERIFIED** |
-| Product page | https://www.fernandopiras.com/apps/preventivorapido | 200 | **VERIFIED** |
-| Legal hub | https://fernandopiras.github.io/preventivorapido--legal/ | 200 | **VERIFIED** |
-| Privacy | https://fernandopiras.github.io/preventivorapido--legal/privacy.html | 200 | **VERIFIED** |
-| Support | https://fernandopiras.github.io/preventivorapido--legal/support.html | 200 | **VERIFIED** |
-| Terms | https://fernandopiras.github.io/preventivorapido--legal/terms.html | 200 | **VERIFIED** |
-| iTunes sellerUrl | — | — | **NOT FOUND** |
-| Dedicated non-empty support repo | `preventivorapido-support` | empty | **NOT FOUND** (content) |
+| Link type | URL | Evidence Type |
+|-----------|-----|---------------|
+| App Store | https://apps.apple.com/it/app/preventivorapido-pro/id6768065146 | APP_STORE_VERIFIED |
+| Product page | https://www.fernandopiras.com/apps/preventivorapido | live site verified |
+| Legal hub | https://fernandopiras.github.io/preventivorapido--legal/ | PUBLIC_DOCUMENTATION_VERIFIED |
+| Privacy | https://fernandopiras.github.io/preventivorapido--legal/privacy.html | PUBLIC_DOCUMENTATION_VERIFIED |
+| Support | https://fernandopiras.github.io/preventivorapido--legal/support.html | PUBLIC_DOCUMENTATION_VERIFIED |
+| Terms | https://fernandopiras.github.io/preventivorapido--legal/terms.html | PUBLIC_DOCUMENTATION_VERIFIED |
+| iTunes sellerUrl | — | NOT_VERIFIED |
 
-## 8.3 Profile / contact links
+## 8.3 Profile contacts
 
-| Link | Status |
-|------|--------|
-| https://www.fernandopiras.com | **VERIFIED** 200 |
-| https://fernandopiras.com | **VERIFIED** 200 |
-| mailto:fernando@fernandopiras.com | **VERIFIED** as published contact on legal + site config |
-| Instagram https://www.instagram.com/swiftwithfer | Present in site config (**PARTIALLY VERIFIED** — not revalidated beyond config in this pass) |
+| Link | Evidence Type |
+|------|---------------|
+| https://www.fernandopiras.com | live verified |
+| fernando@fernandopiras.com | PUBLIC_DOCUMENTATION_VERIFIED + workspace config |
+| Instagram @swiftwithfer | WORKSPACE_ASSET_VERIFIED (config; not revalidated externally in this gate) |
 
 ---
 
 # 9. Claim Safety Matrix
 
-| Claim | Verdict | Motivation |
-|-------|---------|------------|
-| “iOS app” | **SAFE TO CLAIM** | Live App Store iOS apps for both products |
-| “Published on the App Store” | **SAFE TO CLAIM** | Live listings; seller Fernando Piras |
-| “Swift” | **CLAIM WITH QUALIFICATION** | Native iOS strongly implied; language not proven without source/owner confirmation |
-| “SwiftUI” | **CLAIM WITH QUALIFICATION** | Stated in portfolio config only; not in App Store/privacy text; no source |
-| “Firebase” | **CLAIM WITH QUALIFICATION** | **SAFE for AndroMetrics** as optional TTC sync (privacy). **DO NOT CLAIM** for Preventivo Rapido |
-| “AI-powered” | **CLAIM WITH QUALIFICATION** | AndroMetrics only; prefer “AI coach / report interpretation via OpenAI proxy”. Not for Preventivo |
-| “privacy-focused” / local-first | **CLAIM WITH QUALIFICATION** | Supported by AndroMetrics privacy design; keep factual (“on-device storage”, “consent gates”), avoid absolute marketing |
-| “production-ready” | **DO NOT CLAIM** | Subjective; replace with “published on the App Store” |
-| “multilingual” | **CLAIM WITH QUALIFICATION** | Store lists IT; AndroMetrics release notes mention ES/DE — confirm before claiming |
-| “secure” | **DO NOT CLAIM** as absolute | Prefer concrete controls (Keychain, on-device data, Sign in with Apple, no ads) |
-| “scalable” | **DO NOT CLAIM** | No evidence |
-| “full stack” | **DO NOT CLAIM** | Not verified for either product as a full-stack system |
-| “commercial product” | **SAFE TO CLAIM** | Paid subscriptions / commercial App Store products by individual seller |
-| “used by real users” | **CLAIM WITH QUALIFICATION** | AndroMetrics has 4 ratings (evidence of some users). Preventivo has 0 ratings — do not generalize |
-| “enterprise” | **DO NOT CLAIM** | Forbidden by Phase 1; no enterprise customer evidence |
-| “advanced architecture” | **DO NOT CLAIM** | Subjective; describe architecture factually instead |
-| “high performance” | **DO NOT CLAIM** | No measurements |
-| “HealthKit” | **SAFE TO CLAIM** (AndroMetrics) | Privacy + store |
-| “StoreKit” / App Store subscriptions | **SAFE TO CLAIM** | Privacy (AndroMetrics) + Apple billing (both) |
-| “Widget support” | **SAFE TO CLAIM** (AndroMetrics) | App Store description |
-| “PDF quotes / invoices” | **SAFE TO CLAIM** (Preventivo) | App Store + terms |
-| “Sign in with Apple” | **SAFE TO CLAIM** (Preventivo) | App Store + privacy |
-| “OpenAI” | **SAFE TO CLAIM** (AndroMetrics AI features) | Named in privacy |
-| Site skills React/TypeScript/Vercel as product-backed | **DO NOT CLAIM** from these two apps | Not evidenced in product legal/store materials |
+### Profile README rule
+
+Profile may publish only:
+
+- **SAFE TO CLAIM**, or  
+- **OWNER_VERIFIED**
+
+Showcase READMEs may additionally use APP_STORE / PUBLIC_DOCUMENTATION / WORKSPACE_ASSET / SOURCE evidence as classified.
+
+| Claim | Verdict | Notes |
+|-------|---------|-------|
+| iOS app | SAFE TO CLAIM | APP_STORE_VERIFIED |
+| Published on the App Store | SAFE TO CLAIM | APP_STORE_VERIFIED |
+| Commercial product | SAFE TO CLAIM | Paid App Store products |
+| Apple-managed App Store subscriptions | SAFE TO CLAIM | APP_STORE_VERIFIED |
+| StoreKit | SAFE TO CLAIM for AndroMetrics | PUBLIC_DOCUMENTATION_VERIFIED; Preventivo pending |
+| StoreKit 2 | DO NOT CLAIM until OWNER/SOURCE | — |
+| Swift | Pending → can become OWNER_VERIFIED | Not required to omit if owner confirms |
+| SwiftUI | Pending → can become OWNER_VERIFIED | Not required to omit if owner confirms |
+| Firebase | SAFE TO CLAIM for AndroMetrics optional TTC only | PUBLIC_DOCUMENTATION_VERIFIED; not for Preventivo unless owner |
+| OpenAI / AI coach | SAFE TO CLAIM for AndroMetrics if naming allowed | PUBLIC_DOCUMENTATION_VERIFIED; General Q3 |
+| HealthKit | SAFE TO CLAIM (AndroMetrics) | PUBLIC_DOCUMENTATION_VERIFIED |
+| Widget support | SAFE TO CLAIM (AndroMetrics) | APP_STORE_VERIFIED (“widget”); WidgetKit pending |
+| PDF quotes/invoices | SAFE TO CLAIM (PreventivoRapido PRO) | APP_STORE_VERIFIED |
+| Sign in with Apple | SAFE TO CLAIM (PreventivoRapido PRO) | APP_STORE_VERIFIED |
+| Local-first / on-device storage | SAFE TO CLAIM with factual wording | PUBLIC_DOCUMENTATION_VERIFIED |
+| privacy-focused (absolute slogan) | CLAIM WITH QUALIFICATION / prefer facts | Use concrete controls |
+| multilingual | DO NOT CLAIM until owner | IT confirmed only |
+| used by real users | DO NOT CLAIM in README | Temporal/social proof; ratings are audit-only |
+| rating / review count | DO NOT CLAIM | AUDIT ONLY |
+| version / dates / file size | DO NOT CLAIM | AUDIT ONLY |
+| production-ready | DO NOT CLAIM | — |
+| scalable | DO NOT CLAIM | — |
+| enterprise | DO NOT CLAIM | — |
+| senior | DO NOT CLAIM | — |
+| full stack | DO NOT CLAIM | — |
+| advanced architecture | DO NOT CLAIM | — |
+| high performance | DO NOT CLAIM | — |
+| secure (absolute) | DO NOT CLAIM | Prefer concrete controls |
+| React / TypeScript / Vercel as product-backed | DO NOT CLAIM from these two apps | — |
 
 ---
 
 # 10. Screenshot & Asset Inventory
 
-## 10.1 AndroMetrics (workspace portfolio assets)
+## 10.1 AndroMetrics
 
-| Path | Type | Size / dims | Orientation | Quality | Personal data | Portfolio fit | Class |
-|------|------|-------------|-------------|---------|---------------|---------------|-------|
-| `public/images/apps/andrometrics/icon.png` | App icon | 512×512 PNG | Square | High | None | Official-style icon | **READY** |
-| `public/images/apps/andrometrics/wordmark.png` | Wordmark | 1208×230 PNG | Landscape | High | None | Good for headers | **READY** |
-| `public/images/apps/andrometrics/screenshot-1.png` | UI screenshot + EN promo chrome | 554×1200 | Portrait | High | Demo name “Marco” (likely fictional) | Usable; confirm no real user data | **READY** / confirm |
-| `public/images/apps/andrometrics/screenshot-2.png` | UI screenshot | 554×1200 | Portrait | High | None obvious | Shows PDF/logging UI | **READY** |
-| `public/images/apps/andrometrics/screenshot-3.png` | UI screenshot | 554×1200 | Portrait | High | None obvious | Shows AI coach UI | **READY** |
-| `public/videos/andrometrics-demo.mp4` | Demo video | ~9.3 MB MP4 | — | High | Must review frames before publish | Strong proof | **NEEDS EDITING** review pass |
-| Legal `assets/app-icon.png` | Icon | 120×120 | Square | OK for web | None | Prefer 512/1024 masters | **READY** for web; **NEEDS** larger for GitHub if used |
-| App Store CDN screenshots (8+8) | Store shots | Remote | Portrait | Apple-hosted | Unknown until downloaded | Excellent authenticity | **READY** after download/review |
-| Banners for GitHub | — | — | — | — | — | Not created (Phase 2 rule) | **MISSING** |
+| Path | Type | Dims | Personal data | Class | Evidence Type |
+|------|------|------|---------------|-------|---------------|
+| `public/images/apps/andrometrics/icon.png` | Icon | 512×512 | None | READY | WORKSPACE_ASSET_VERIFIED |
+| `public/images/apps/andrometrics/wordmark.png` | Wordmark | 1208×230 | None | READY | WORKSPACE_ASSET_VERIFIED |
+| `.../screenshot-1.png` | Screenshot | 554×1200 | Demo name “Marco” | READY (confirm non-real) | WORKSPACE_ASSET_VERIFIED |
+| `.../screenshot-2.png` | Screenshot | 554×1200 | None obvious | READY | WORKSPACE_ASSET_VERIFIED |
+| `.../screenshot-3.png` | Screenshot | 554×1200 | None obvious | READY | WORKSPACE_ASSET_VERIFIED |
+| `public/videos/andrometrics-demo.mp4` | Demo | ~9.3 MB | Possibly | FRAME-BY-FRAME PRIVACY REVIEW REQUIRED | WORKSPACE_ASSET_VERIFIED |
+| App Store CDN screenshots | Store | Remote | Review before reuse | READY after review | APP_STORE_VERIFIED |
+| GitHub banners | — | — | — | MISSING | NOT_VERIFIED |
 
-## 10.2 Preventivo Rapido (workspace portfolio assets)
+## 10.2 PreventivoRapido PRO — privacy gate
 
-| Path | Type | Size / dims | Orientation | Quality | Personal data | Portfolio fit | Class |
-|------|------|-------------|-------------|---------|---------------|---------------|-------|
-| `public/images/apps/preventivorapido/icon.png` | App icon | 512×512 | Square | High | None | Good | **READY** |
-| `public/images/apps/preventivorapido/screenshot-1.png` | Dashboard UI | 554×1200 | Portrait | High | Shows “Ciao, Fernando Piras” | Developer name visible | **NEEDS EDITING** (genericize or approve personal branding) |
-| `public/images/apps/preventivorapido/screenshot-2.png` | New quote UI | 554×1200 | Portrait | High | Shows `fernandopiras@icloud.com` | Personal email visible | **NEEDS EDITING** / **DO NOT USE** until scrubbed or approved |
-| `public/images/apps/preventivorapido/screenshot-3.png` | Documents UI | 554×1200 | Portrait | High | Low risk | Usable | **READY** |
-| `public/videos/preventivorapido-demo.mp4` | Demo video | ~2.0 MB | — | High | May contain personal fields | Review required | **NEEDS EDITING** review |
-| Legal `assets/app-icon.png` | Icon | 1024×1024 | Square | Excellent | None | Best icon master found | **READY** |
-| Wordmark | — | — | — | — | — | — | **MISSING** |
-| GitHub banners | — | — | — | — | — | — | **MISSING** |
+| Path | Type | Personal data | Class | Rule |
+|------|------|---------------|-------|------|
+| `.../icon.png` | Icon 512×512 | None | READY | — |
+| Legal `app-icon.png` | Icon 1024×1024 | None | READY | Preferred master |
+| `.../screenshot-1.png` | Dashboard | Name “Fernando Piras” | OWNER APPROVAL REQUIRED **or** SCRUB RECOMMENDED | Do not publish until decided |
+| `.../screenshot-2.png` | New quote | Personal email `fernandopiras@icloud.com` | **DO NOT USE UNTIL SCRUBBED** | Hard block |
+| `.../screenshot-3.png` | Documents | Low risk | READY | — |
+| `.../preventivorapido-demo.mp4` | Demo | Possibly personal fields | **FRAME-BY-FRAME PRIVACY REVIEW REQUIRED** | Hard review before use |
+| Wordmark / banners | — | — | MISSING | — |
 
-**No assets were modified in this phase.**
+**No assets were modified in this gate.**
 
 ---
 
 # 11. Profile Evidence
 
-Based **only** on the two real products (plus verified public identity links).
+## 11.1 SAFE TO CLAIM now (no owner answer required)
 
-## 11.1 Primary verifiable competencies
+- Product-focused software developer shipping iOS apps  
+- Two App Store products: AndroMetrics; PreventivoRapido PRO  
+- Apple-managed App Store subscriptions  
+- AndroMetrics: HealthKit, widgets, on-device OCR, local-first storage, optional Firebase TTC summaries, OpenAI-via-proxy AI features (naming policy pending for OpenAI string)  
+- PreventivoRapido PRO: PDF quotes/invoices, Sign in with Apple, optional cloud sync, local notifications  
+- Primary CTA: https://www.fernandopiras.com  
+- Contact: fernando@fernandopiras.com  
 
-- Shipping native iOS apps to the App Store  
-- End-to-end product ownership (design → release → maintenance signals via version updates)  
-- Health/wellbeing product domain experience (AndroMetrics)  
-- Business/productivity document workflows (PreventivoRapido PRO)  
-- Privacy-aware product design (published policies; local-first patterns)  
-- In-app purchases / App Store subscriptions  
-- Integration with Apple platforms: HealthKit, Sign in with Apple, StoreKit/App Store billing, widgets (AndroMetrics)  
-- PDF document generation/export (Preventivo; AndroMetrics reports)  
-- Optional cloud sync patterns with explicit user control  
-- AI feature integration with third-party model provider via proxy (AndroMetrics / OpenAI)
+## 11.2 Can become profile claims after OWNER_VERIFIED
 
-## 11.2 Secondary competencies (declare carefully)
+- Swift  
+- SwiftUI  
+- StoreKit 2  
+- WidgetKit  
+- Apple Vision  
+- PDFKit  
+- Exact Preventivo cloud vendor  
 
-- Firebase (Anonymous Auth + Firestore) — AndroMetrics optional feature only  
-- On-device OCR pipelines — AndroMetrics  
-- Accessibility iteration (VoiceOver notes) — AndroMetrics release notes  
-- iPad support — both apps have iPad screenshots / universal capability  
+## 11.3 Do not cite on profile
 
-## 11.3 Do not cite (from these products alone)
+- Rating / users / performance / scalability  
+- Enterprise / senior / full stack / production-ready / advanced architecture  
+- FOTIQ, Slotiva, SwiftToKotlin  
+- React/TypeScript/Vercel as evidenced by these two apps  
 
-- React / TypeScript / Vercel as core specializations  
-- “Full stack engineer” as primary identity  
-- Firestore/Cloud Functions as broad expertise beyond AndroMetrics optional sync  
-- FOTIQ, Slotiva, SwiftToKotlin, TurboRun (out of Phase 1 active set; TurboRun privacy repo exists but is excluded here)  
-- Enterprise / senior / agency positioning  
-- Unverified performance or user-scale metrics  
+---
 
-## 11.4 Published products for profile
+# Owner Verification Required
 
-1. AndroMetrics — App Store  
-2. PreventivoRapido PRO — App Store  
+Owner answers are blank until provided.  
+`OWNER_VERIFIED` becomes valid only after an explicit owner response is recorded here.
 
-## 11.5 Credible specialization direction (evidence-aligned)
+## AndroMetrics — owner verification table
 
-- Product-focused software developer  
-- iOS apps  
-- Swift / SwiftUI **only with qualification or owner confirmation**  
-- Privacy, UX clarity, release quality  
-- Practical integrations (HealthKit, StoreKit, Sign in with Apple, PDF, optional cloud, AI proxy)
+| Topic | Current report status | Owner answer | Final evidence classification | Public claim allowed | Qualification required |
+|-------|----------------------|--------------|-------------------------------|----------------------|------------------------|
+| Language | NOT_VERIFIED | | pending | pending | Prefer exact language name |
+| UI framework | NOT_VERIFIED | | pending | pending | SwiftUI / UIKit / Mixed |
+| Architecture | PUBLIC_DOCUMENTATION_VERIFIED (local-first + optional cloud) | | PUBLIC_DOCUMENTATION_VERIFIED (+ owner if expanded) | YES high-level | No secrets |
+| StoreKit 1 vs 2 | StoreKit family PUBLIC_DOCUMENTATION_VERIFIED; StoreKit 2 NOT_VERIFIED | | pending for v2 | “StoreKit” YES; “StoreKit 2” only OWNER/SOURCE | Keep distinction |
+| WidgetKit | Widget feature APP_STORE_VERIFIED; WidgetKit API NOT_VERIFIED | | pending | “Widget” YES; “WidgetKit” only OWNER/SOURCE | — |
+| Vision / OCR | OCR PUBLIC_DOCUMENTATION_VERIFIED; Vision NOT_VERIFIED | | pending for Vision | OCR YES; Vision only OWNER/SOURCE | — |
+| PDFKit | PDF export APP_STORE_VERIFIED; PDFKit NOT_VERIFIED | | pending | PDF YES; PDFKit only OWNER/SOURCE | — |
+| Backend | Firebase TTC + Cloudflare proxy PUBLIC_DOCUMENTATION_VERIFIED | | PUBLIC_DOCUMENTATION_VERIFIED | YES as optional/supporting | No endpoints |
+| Cloud sync | iCloud KVS + optional Firebase TTC PUBLIC_DOCUMENTATION_VERIFIED | | PUBLIC_DOCUMENTATION_VERIFIED | YES | Optional / summary-only |
+| Firebase | PUBLIC_DOCUMENTATION_VERIFIED (TTC optional) | | PUBLIC_DOCUMENTATION_VERIFIED | YES with qualification | Not primary backend for all data |
+| Authentication | Firebase Anonymous for TTC PUBLIC_DOCUMENTATION_VERIFIED | | PUBLIC_DOCUMENTATION_VERIFIED | YES | No classic account |
+| Notifications | NOT_VERIFIED | | pending | NO until answered | — |
+| Localization | IT APP_STORE_VERIFIED; ES/DE uncertain | | pending | IT YES | Multilingual only if owner confirms shipped locales |
+| Analytics | NOT_VERIFIED | | pending | NO until answered | — |
+| Crash reporting | NOT_VERIFIED | | pending | NO until answered | — |
+| Testing | NOT_VERIFIED | | pending | Usually omit | — |
+| CI/CD | NOT_VERIFIED | | pending | Usually omit | — |
+| Legal doc version alignment | Conflict 1.1.0 vs 1.4.0 | | pending action | Versions omitted from README anyway | Align legal site |
 
-## 11.6 Verifiable CTAs
+## PreventivoRapido PRO — owner verification table
 
-- https://www.fernandopiras.com  
-- https://www.fernandopiras.com/apps/andrometrics  
-- https://www.fernandopiras.com/apps/preventivorapido  
-- App Store developer page  
-- Email: fernando@fernandopiras.com  
-
-## 11.7 Contacts available
-
-| Contact | Status |
-|---------|--------|
-| fernando@fernandopiras.com | **VERIFIED** published |
-| App Store developer ID 1865514513 | **VERIFIED** |
-| Instagram @swiftwithfer | In site config |
-| Phone | **NOT FOUND** |
+| Topic | Current report status | Owner answer | Final evidence classification | Public claim allowed | Qualification required |
+|-------|----------------------|--------------|-------------------------------|----------------------|------------------------|
+| Language | NOT_VERIFIED | | pending | pending | — |
+| UI framework | NOT_VERIFIED | | pending | pending | — |
+| Architecture | PUBLIC_DOCUMENTATION_VERIFIED (local + optional web sync) | | PUBLIC_DOCUMENTATION_VERIFIED | YES high-level | No endpoints |
+| StoreKit 1 vs 2 | Apple-managed subs APP_STORE_VERIFIED; StoreKit/StoreKit 2 NOT_VERIFIED | | pending | Subs YES; StoreKit/StoreKit 2 only after confirmation | Keep 3-way distinction |
+| WidgetKit | NOT_VERIFIED / N/A | | pending | NO unless exists | — |
+| Vision / OCR | NOT_VERIFIED / N/A | | pending | NO | — |
+| PDFKit | PDF APP_STORE_VERIFIED; PDFKit NOT_VERIFIED | | pending | PDF YES; PDFKit only OWNER/SOURCE | — |
+| Backend | Existence of optional web sync PUBLIC_DOCUMENTATION_VERIFIED; vendor NOT_VERIFIED | | pending vendor | “Optional cloud sync” YES | Vendor-specific only after owner |
+| Cloud sync | PUBLIC_DOCUMENTATION_VERIFIED (existence) | | pending vendor detail | YES existence | — |
+| Firebase | NOT_VERIFIED | | pending | NO unless owner confirms | — |
+| Authentication | Email/password + Sign in with Apple verified publicly | | PUBLIC_DOCUMENTATION_VERIFIED + APP_STORE_VERIFIED | YES | — |
+| Notifications | Local PUBLIC_DOCUMENTATION_VERIFIED; push NOT_VERIFIED | | local verified; push pending | Local YES | — |
+| Localization | IT APP_STORE_VERIFIED | | APP_STORE_VERIFIED | YES IT | — |
+| Analytics | NOT_VERIFIED | | pending | NO until answered | — |
+| Crash reporting | NOT_VERIFIED | | pending | NO until answered | — |
+| Testing | NOT_VERIFIED | | pending | Usually omit | — |
+| CI/CD | NOT_VERIFIED | | pending | Usually omit | — |
+| Screenshot name “Fernando Piras” | WORKSPACE_ASSET_VERIFIED | | pending approval | Pending | OWNER APPROVAL REQUIRED or scrub |
+| Screenshot personal email | WORKSPACE_ASSET_VERIFIED | | blocked | NO until scrubbed | DO NOT USE UNTIL SCRUBBED |
+| Demo video | WORKSPACE_ASSET_VERIFIED | | blocked pending review | NO until reviewed | FRAME-BY-FRAME REVIEW |
 
 ---
 
 # 12. Missing Evidence
 
-| Gap | Impact | Needed from |
-|-----|--------|-------------|
-| Application source access | Blocks definitive Swift/SwiftUI/PDFKit/WidgetKit/StoreKit 2 claims | Owner |
-| AndroMetrics version mismatch (1.1.0 vs 1.4.0) | Blocks version statements; trust risk | Owner + legal site update |
-| Multilingual confirmation (ES/DE) | Blocks “multilingual” claim | Owner / App Store localization settings |
-| Preventivo cloud sync stack identity | Blocks naming Firebase/iCloud/custom backend | Owner |
-| Preventivo PDF engine confirmation | Blocks “PDFKit” claim | Owner |
-| Scrubbed Preventivo screenshots | Blocks clean showcase assets | Owner or Phase 6 editing |
-| Demo video privacy review | Blocks embedding videos | Owner review |
-| App Store rating refresh process | Portfolio config may drift | Owner process |
-| Crash/analytics tooling | Unknown | Owner (optional) |
-| Test/CI practices | Unknown | Owner (optional; usually omit publicly) |
+| Gap | Blocks | Resolution path |
+|-----|--------|-----------------|
+| Owner questionnaire answers | OWNER_VERIFIED stack claims | Fill tables above |
+| SOURCE_VERIFIED stack | Optional; not required | Keep source private |
+| Legal version alignment (AndroMetrics) | Legal-site trust | Owner updates legal pages |
+| Preventivo email screenshot scrub | Showcase image set | Scrub or replace |
+| Name-in-screenshot decision | Showcase image set | Approve or scrub |
+| Demo video privacy review | Video embeds | Frame-by-frame review |
+| OpenAI public naming decision | Wording of AI claims | General Q3 |
 
 ---
 
-# 13. Questions Requiring Owner Input
+# 13. Owner Questionnaire (selectable answers)
 
-1. Confirm UI framework for each app: SwiftUI, UIKit, or mixed?  
-2. Confirm language: Swift only? Any Kotlin/JS in apps?  
-3. AndroMetrics: which version is current — App Store **1.1.0** or legal docs **1.4.0**?  
-4. AndroMetrics: are ES/DE fully shipped, or only partial strings?  
-5. Confirm StoreKit 1 vs StoreKit 2 for both apps.  
-6. Confirm OCR uses Apple Vision.  
-7. Confirm WidgetKit API usage (vs generic widget wording).  
-8. Preventivo: what powers “sync cloud” (iCloud / Firebase / custom Vapor / other)?  
-9. Preventivo: is PDFKit used?  
-10. May GitHub showcases display your real name/email in screenshots, or must we scrub?  
-11. Preferred public product naming: “Preventivo Rapido” vs “PreventivoRapido PRO”?  
-12. Preferred canonical App Store URL for AndroMetrics (short `andrometrics` vs `andrometrics-fertility`)?  
-13. Any features that must never be mentioned publicly for competitive/privacy reasons?  
-14. Should OpenAI be named publicly on GitHub, or only “AI coach via third-party provider”?  
+Fill by circling/checking one option per item. Leave blank only if truly unknown.
+
+## ANDROMETRICS
+
+1. Language:  
+   ☐ Swift ☐ Other ☐ Mixed  
+
+2. UI:  
+   ☐ SwiftUI ☐ UIKit ☐ Mixed  
+
+3. Subscriptions:  
+   ☐ StoreKit 1 ☐ StoreKit 2 ☐ Other  
+
+4. OCR:  
+   ☐ Apple Vision ☐ VisionKit ☐ Other  
+
+5. Widget:  
+   ☐ WidgetKit ☐ Other  
+
+6. Backend:  
+   ☐ Firebase ☐ Custom ☐ Mixed ☐ None  
+
+7. AI:  
+   ☐ OpenAI through proxy ☐ Other  
+
+8. Localization actually shipped:  
+   ☐ IT ☐ EN ☐ ES ☐ DE ☐ Other: ______  
+   (check all that apply)
+
+9. Current legal-document version:  
+   ______  
+
+## PREVENTIVO RAPIDO
+
+1. Language:  
+   ☐ Swift ☐ Other ☐ Mixed  
+
+2. UI:  
+   ☐ SwiftUI ☐ UIKit ☐ Mixed  
+
+3. Subscriptions:  
+   ☐ StoreKit 1 ☐ StoreKit 2 ☐ Other  
+
+4. PDF:  
+   ☐ PDFKit ☐ Other  
+
+5. Authentication:  
+   ☐ Email-password ☐ Sign in with Apple ☐ Both ☐ Other  
+
+6. Cloud sync:  
+   ☐ Firebase ☐ iCloud ☐ Custom backend ☐ Other ☐ None  
+
+7. Notifications:  
+   ☐ Local ☐ Push ☐ Both ☐ None  
+
+8. Analytics:  
+   ______  
+
+9. Crash reporting:  
+   ______  
+
+## GENERAL
+
+1. May the public screenshots show the name Fernando Piras?  
+   ☐ Yes ☐ No ☐ Scrub recommended / replace with demo name  
+
+2. Must every personal email be replaced with demo data?  
+   ☐ Yes ☐ No  
+
+3. May OpenAI be named publicly?  
+   ☐ Yes ☐ No ☐ Use generic “AI provider” only  
+
+4. Are there features that must remain confidential?  
+   ☐ No ☐ Yes — list: ______  
+
+5. May technical details confirmed by the owner be published as OWNER_VERIFIED?  
+   ☐ Yes ☐ No ☐ Yes, with restrictions: ______  
 
 ---
 
@@ -583,86 +695,59 @@ Based **only** on the two real products (plus verified public identity links).
 
 | Criterion | Status |
 |-----------|--------|
-| Phase 1 architecture approved/merged | **Yes** |
-| Active products identified | **Yes** (2) |
-| Public proof links verified | **Yes** |
-| Feature lists grounded in public evidence | **Yes** (with classes) |
-| Unsafe claims isolated | **Yes** |
-| Source-level stack fully verified | **No** |
-| Asset set fully showcase-clean | **Partial** (Preventivo PII in shots) |
-| Owner questionnaire answered | **No** |
+| Phase 1 merged | Yes |
+| Public evidence matrix complete | Yes |
+| Evidence Type taxonomy applied | Yes |
+| StoreKit logic de-conflicted | Yes |
+| Temporal metrics excluded from future READMEs | Yes |
+| Owner Verification tables ready | Yes — answers empty |
+| Owner questionnaire answered | **No — waiting** |
+| Preventivo screenshot privacy cleared | **No — waiting** |
+| Phase 3 started | **No** |
 
-**Phase 3 (Profile README) can proceed only if copy stays inside SAFE TO CLAIM and explicitly qualified statements, or after owner answers for desired qualifications.**
+**Readiness by surface**
 
-**Phase 3 must not invent stack. Recommended profile stance until answers arrive:**
-
-- “I design and ship iOS apps on the App Store.”  
-- Name the two products with links.  
-- Mention concrete Apple capabilities that are verified (HealthKit, widgets, Sign in with Apple, App Store subscriptions, PDF workflows, privacy policies).  
-- Avoid SwiftUI/Firebase/OpenAI wording until decisions on public naming are confirmed (OpenAI/Firebase are legally documented for AndroMetrics and *may* be claimed with product-specific qualification).  
+| Surface | Status |
+|---------|--------|
+| Profile README | Ready to draft from SAFE TO CLAIM only; Swift/SwiftUI allowed after OWNER_VERIFIED |
+| AndroMetrics showcase | Conditionally ready; strong public evidence; owner gate for API-level names |
+| PreventivoRapido PRO showcase | Conditionally ready; blocked images until scrub/approval; owner gate for stack names |
 
 ---
 
 # 15. Final Recommendation
 
-1. **Treat App Store + legal pages as primary truth; portfolio config as secondary.**  
-2. **Do not claim SwiftUI/PDFKit/WidgetKit/StoreKit 2 as fact until confirmed.**  
-3. **Do claim:** published iOS apps, product purpose, verified integrations named in privacy/store, commercial App Store distribution.  
-4. **Scrub or approve Preventivo screenshots** before showcase publication.  
-5. **Align AndroMetrics version numbers** across legal site and App Store messaging.  
-6. **AndroMetrics README readiness:** Conditionally ready (strong evidence).  
-7. **Preventivo Rapido README readiness:** Conditionally ready (strong product proof; weaker ratings; screenshot privacy edits needed).  
-8. **Profile README readiness:** Conditionally ready without unverified claims if limited to SAFE TO CLAIM set.  
-9. **Do not start Phase 3 implementation until this evidence file is accepted.**  
-10. Exclude future concepts (FOTIQ, Slotiva, SwiftToKotlin) entirely.
+1. Keep commercial source private; use OWNER_VERIFIED for missing API-level facts.  
+2. Publish only SAFE TO CLAIM + OWNER_VERIFIED on the Profile README.  
+3. Use “Apple-managed App Store subscriptions” freely; use “StoreKit” only where documented/confirmed; use “StoreKit 2” only OWNER/SOURCE.  
+4. Omit all temporal metrics from public READMEs.  
+5. Align AndroMetrics legal version labels even though READMEs omit versions.  
+6. Scrub Preventivo email screenshot before any showcase use.  
+7. Do not start Phase 3 until questionnaire responses are recorded for intended claims.  
+8. Stop here and wait for owner answers.  
 
 ---
 
-# Quality Gate
-
-## Checks performed
-
-- Phase 1 constraints respected  
-- No source invention  
-- iTunes metadata pulled for both apps + developer  
-- Legal/support repos inspected  
-- Live URLs checked  
-- Workspace assets inventoried  
-- Claim safety applied  
-- Sensitive details excluded (no secrets/endpoints/keys)  
-- Future projects excluded  
-- No README/showcase/banner creation  
-
-## Scores
+# Quality Gate (Owner Verification revision)
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
-| Accuracy | 99 | Conflicts explicitly flagged; no fabricated stack |
-| Evidence Coverage | 97 | High public coverage; source gap remains unavoidable here |
-| Safety | 99 | No secrets; medical/PII risks called out |
-| Completeness | 98 | All required sections; owner questions listed |
-| Portfolio Readiness | 97 | Conditional readiness; screenshot scrub + confirmations pending |
-| Maintainability | 99 | Clear VERIFIED / PARTIAL / NOT FOUND taxonomy |
+| Accuracy | 99 | StoreKit contradiction removed; evidence types explicit |
+| Evidence Coverage | 98 | Public evidence complete; owner/source intentionally open |
+| Safety | 99 | Screenshot hard-blocks; no secrets; temporal data quarantined |
+| Completeness | 99 | Owner tables + selectable questionnaire added |
+| Portfolio Readiness | 96 | Waiting on owner answers + asset privacy |
+| Maintainability | 99 | Clear evidence-type taxonomy |
 
-### Overall: **98.2 / 100**
+### Overall: **98.3 / 100**
 
-Evidence Coverage and Portfolio Readiness cannot reach 100 without source access and asset cleanup — further invention was refused. Score meets gate via honest gap handling rather than fake certainty.
+Remaining gaps are owner-input gaps, not invented facts.
 
 ---
 
 ## Stop
 
-**Phase 2 evidence document complete.**  
+**Owner Verification Gate applied to `GITHUB_PORTFOLIO_PHASE_2_EVIDENCE.md`.**  
 **Phase 3 not started.**  
-No public READMEs, repositories, banners, or generated images were created.
-
-### Direct answers
-
-| Question | Answer |
-|----------|--------|
-| What was verified? | App Store listings, identities, versions, ratings, categories, legal/support URLs, site product pages, feature claims supported by store/privacy/screenshots, monetization, key Apple/third-party services declared in privacy |
-| What is missing? | Source code, definitive UI framework confirmation, version alignment, scrubbed Preventivo assets, some stack name confirmations |
-| What must you provide? | Answers to §13; optionally source access or written stack confirmation; preferred public naming; screenshot usage approval |
-| AndroMetrics ready for README? | **Conditionally yes** |
-| Preventivo Rapido ready for README? | **Conditionally yes** (after screenshot decision) |
-| Profile README possible without unverified claims? | **Yes**, if limited to SAFE TO CLAIM (+ carefully qualified product-specific facts) |
+**No merge executed.**  
+**Awaiting owner questionnaire responses.**
