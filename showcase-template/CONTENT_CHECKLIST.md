@@ -28,16 +28,18 @@ Reviewer: _______________
 - [ ] No absolute marketing claims (enterprise, scalable, production-ready, senior, …)
 - [ ] No future products or “coming soon”
 
-## Links
+## Links & availability
 
-- [ ] App Store URL verified live
-- [ ] Product page URL verified live
-- [ ] Privacy policy URL verified live (if referenced)
-- [ ] Support URL verified live (if referenced)
+- [ ] `[AVAILABILITY_STATEMENT]` replaced with a verified factual statement (not left as a template token)
+- [ ] Primary CTA matches the real distribution channel (App Store for Apple apps; live URL for web; other official channel when applicable)
+- [ ] App Store URL verified live **only if** the product is App Store–distributed; otherwise the App Store link row was removed
+- [ ] Product page URL verified live **or** removed if not applicable
+- [ ] Privacy policy URL verified live (if referenced) — else line removed
+- [ ] Support URL verified live (if referenced) — else line removed
 - [ ] Contact email is the professional address
 - [ ] No empty URLs
 - [ ] No invented URLs
-- [ ] No duplicate-link clutter
+- [ ] No duplicate App Store / primary-CTA URL in the header block
 
 ## Assets
 
@@ -64,6 +66,18 @@ Reviewer: _______________
 - [ ] No duplicated paragraphs
 - [ ] Matches Profile README tone (calm, factual)
 - [ ] Follows `PRODUCT_SHOWCASE_DESIGN_SYSTEM.md` section order
+
+## Template-token gate
+
+Template tokens = UPPERCASE compilation names in square brackets (and screenshot alt tokens), e.g. `[PRODUCT_NAME]`, `[FACTUAL_ONE_LINE_DESCRIPTION]`, `[AVAILABILITY_STATEMENT]`, `[APP_STORE_URL]`, `[PRODUCT_PAGE_URL]`, `[VERIFIED_FEATURE]`, `[VERIFIED_TECHNOLOGY]`, `[PUBLIC_ARCHITECTURE_SUMMARY]`, `SCREENSHOT_01_ALT`.
+
+- [ ] No residual template tokens remain in the compiled README
+- [ ] No placeholder URLs
+- [ ] No placeholder alt text (no `SCREENSHOT_0N_ALT`, no brackets left in alt text)
+- [ ] No empty required fields
+- [ ] No example availability strings published accidentally
+- [ ] Finished Markdown links `[label](https://…)` are real labels/URLs — not unresolved tokens
+- [ ] Official token list section removed from the published README
 
 ## Gate
 

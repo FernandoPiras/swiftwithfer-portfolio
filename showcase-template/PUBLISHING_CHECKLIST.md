@@ -15,12 +15,22 @@ A repository is publishable only when **all blocking gates** pass.
 
 ## B. Placeholder & copy gate (blocking)
 
-- [ ] No `[PLACEHOLDER]` tokens remain
+Template tokens = UPPERCASE compilation names in square brackets (and screenshot alt tokens), e.g. `[PRODUCT_NAME]`, `[AVAILABILITY_STATEMENT]`, `[APP_STORE_URL]`, `[PRODUCT_PAGE_URL]`, `[VERIFIED_FEATURE]`, `[VERIFIED_TECHNOLOGY]`, `[PUBLIC_ARCHITECTURE_SUMMARY]`, `SCREENSHOT_01_ALT`.
+
+Do **not** treat normal finished Markdown links `[label](https://example.com)` as template tokens once labels/URLs are real.
+
+- [ ] No residual template tokens remain (scan beyond the literal string `[PLACEHOLDER]`)
+- [ ] No placeholder URLs
+- [ ] No placeholder alt text / no square brackets left inside image alt text
+- [ ] No empty required fields
+- [ ] No example values left from the template comments
 - [ ] No `TODO`
 - [ ] No “coming soon”
-- [ ] No empty URLs
 - [ ] No visible unfinished labels
 - [ ] Official product name correct
+- [ ] Availability statement factual and verified
+- [ ] Non-applicable distribution links removed (not blank)
+- [ ] Primary CTA URL appears once in the header/CTA block
 - [ ] No slogans / banned tone phrases
 - [ ] No temporal metrics
 - [ ] No improper medical claims
@@ -38,9 +48,9 @@ A repository is publishable only when **all blocking gates** pass.
 
 ## D. Links & metadata gate (blocking)
 
-- [ ] App Store URL works
-- [ ] Product page URL works
-- [ ] Privacy/support URLs work if referenced
+- [ ] Primary distribution URL works (App Store for Apple apps; live product URL for web; other official channel when applicable)
+- [ ] Product page URL works if included; otherwise omitted
+- [ ] Privacy/support URLs work if referenced; otherwise omitted
 - [ ] GitHub repository description filled (factual, ≤ ~80 chars recommended)
 - [ ] GitHub topics accurate and evidence-based only
 - [ ] LICENSE present and reviewed

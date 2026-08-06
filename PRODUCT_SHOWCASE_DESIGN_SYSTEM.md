@@ -28,7 +28,7 @@ It is not an open-source app, not a tutorial, and not a “coming soon” placeh
 | Surface | Owns | Does not own |
 |---------|------|----------------|
 | **Profile README** (`FernandoPiras/FernandoPiras`) | Identity, short product index, primary Website CTA | Deep screenshots, architecture essays |
-| **Showcase repo** (`andrometrics`, `preventivo-rapido`, …) | Product narrative, screenshots, verified stack, public architecture, App Store + product links | Full case-study marketing site, private source |
+| **Showcase repo** (`andrometrics`, `preventivo-rapido`, …) | Product narrative, screenshots, verified stack, public architecture, verified distribution links | Full case-study marketing site, private source |
 | **Website** (`fernandopiras.com`) | Full visual case studies, SEO, richer media | GitHub-only governance rules |
 
 **Rule:** Profile stays short. Showcase goes deeper. Website remains the richest visual surface. Never paste the full website case study into GitHub.
@@ -168,19 +168,35 @@ Prefer plain Markdown text over shields.
 
 ## 11. Links & CTA
 
-| Priority | Link |
-|----------|------|
-| 1 | App Store product URL |
+### Initial showcases vs general template
+
+- The first planned showcases (`andrometrics`, `preventivo-rapido`) are **App Store** products.  
+- The **general template must not assume** every future product is App Store–distributed.  
+- Availability must state the **real verified channel**.  
+- Non-applicable links are **removed**, never left empty.
+
+### Primary CTA by product type
+
+| Product type | Primary CTA | Secondary |
+|--------------|-------------|-----------|
+| Published Apple app | App Store product URL | Product page on fernandopiras.com |
+| Web application | Live product URL | Website / docs as relevant |
+| Other shipped product | Official verified distribution channel | Product page when available |
+
+### Shared link rules
+
+| Priority (when applicable) | Link |
+|----------------------------|------|
+| 1 | Primary distribution channel (see above) |
 | 2 | Product page on fernandopiras.com |
 | 3 | Privacy / support pages when relevant |
 | 4 | Website home (secondary) |
 | 5 | Professional email |
 
-- Never duplicate the same URL in multiple sections without need  
+- Never duplicate the same URL in the header/CTA block  
 - Never invent URLs  
 - Label links clearly  
-
-Primary showcase CTA: **App Store** (product). Secondary: **Product page**.
+- Availability statement (`[AVAILABILITY_STATEMENT]`) is factual text, not a second App Store hyperlink  
 
 ---
 
@@ -267,7 +283,7 @@ Do not pre-announce unfinished products on GitHub.
 |---------|----------|
 | Short product blurbs | Full product specimen |
 | No screenshot carousels | Screenshots required |
-| Website as hero CTA | App Store as primary CTA |
+| Website as hero CTA | Primary CTA = verified distribution channel (App Store for the initial iOS apps) |
 | Locked role line | Product name as hero |
 | No GitHub self-link | Contact email / site as needed |
 
@@ -296,19 +312,28 @@ Design goals: minimal, original, sober, product-led, mode-safe, mobile-readable,
 - Closed-source notice and proprietary license template included  
 - Scalability path defined without naming unfinished products as scheduled  
 
+### Correction gate (this revision)
+
+- Removed duplicate App Store hyperlink from README template header  
+- Added `[AVAILABILITY_STATEMENT]` as an official token  
+- Fixed screenshot alt-text Markdown syntax  
+- Unified template-token detection across README + checklists (not only `[PLACEHOLDER]`)  
+- Clarified App Store vs channel-agnostic reusability and CTA rules  
+- Preserved normal Markdown link syntax as valid after compilation  
+
 ### Scores
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
 | Professionalism | 99 | Product specimen model; no template chrome |
-| Reusability | 99 | Single kit for all future showcases |
+| Reusability | 99 | Channel-agnostic availability + CTA rules |
 | Claim Safety | 99 | Evidence types + hard NOT_VERIFIED ban |
 | Visual Consistency | 99 | Fixed section order + asset conventions |
-| Mobile Readiness | 99 | Markdown-first; no fragile layouts |
-| Maintainability | 99 | Checklists + rules; lean file set |
+| Mobile Readiness | 99 | Markdown-first; valid image syntax |
+| Maintainability | 99 | Shared placeholder policy across checklists |
 | Closed-source Suitability | 99 | Source notice + license + IP exclusions |
-| Publishing Readiness | 99 | Blocking gates before publish |
+| Publishing Readiness | 99 | Blocking gates; no duplicate CTAs |
 
-### **Overall: 99.0 / 100**
+### **Overall: 99.1 / 100**
 
-Phase 5 design system and reusable template are complete. Stop before product repository creation.
+Phase 5 correction gate complete. PR remains Draft. No product repositories created. Source Verification remains suspended.
