@@ -1,12 +1,12 @@
 # Enterprise GitHub Portfolio — Phase 2  
 ## Real Project Discovery & Evidence Matrix  
-### Owner Verification Gate (revision)
+### Owner Verification Gate + Source Verification Pass (revision)
 
 **Owner:** Fernando Piras  
 **GitHub username:** FernandoPiras  
 **Primary site:** https://www.fernandopiras.com  
 **Phase 1 reference:** `GITHUB_PORTFOLIO_PHASE_1_REPORT.md` (merged)  
-**Scope:** Analysis, discovery, evidence collection, and owner-verification scaffolding only.  
+**Scope:** Analysis, discovery, evidence collection, owner-verification scaffolding, and attempted source verification only.  
 **Not in this phase:** Profile README, showcase repositories, banners, generated images, badges, marketing copy finalization, Phase 3, merge.
 
 **Evidence rule:** Every future public sentence must be backed by an explicit evidence type below. Hypotheses are labeled. Unverified items are not facts.
@@ -37,13 +37,62 @@
 
 **Commercial source code remains private.**  
 **Owner verification is sufficient for factual technology declarations.**  
-**No public source disclosure is required for this portfolio.**
+**No public source disclosure is required for this portfolio.**  
+**SOURCE_VERIFIED requires private source attached to the agent environment (read-only). It was not available in this pass.**
+
+---
+
+# Source Verification Pass — Result
+
+## Status: BLOCKED — commercial source not present in environment
+
+This pass searched for AndroMetrics and PreventivoRapido PRO application sources in order to upgrade technical claims to `SOURCE_VERIFIED`.
+
+### Discovery performed
+
+| Search target | Result |
+|---------------|--------|
+| `/workspace` tree | Portfolio site only (`swiftwithfer-portfolio`) |
+| `*.xcodeproj` / `*.xcworkspace` / `project.pbxproj` | **0 found** (excluding unrelated Cursor plugin Package.swift) |
+| `*.swift` files system-wide | **0 product Swift files found** |
+| `Package.swift` (product) | **0 found** |
+| Entitlements / GoogleService-Info.plist / Firebase configs (product) | **0 found** |
+| Adjacent mounts (`/mnt`, `/media`, `/opt/cursor/artifacts`) | No product sources |
+| Public GitHub `FernandoPiras/*` | Legal/support only; no product source repos |
+| Likely private repo names via GitHub API | **404 / not accessible** for AndroMetrics / PreventivoRapido name variants |
+| Cloud environment `repos` | **Only** `github.com/FernandoPiras/swiftwithfer-portfolio` |
+
+### Folders analyzed (available)
+
+| Path | Role | Useful for source verification? |
+|------|------|----------------------------------|
+| `/workspace` (`swiftwithfer-portfolio`) | Marketing portfolio | No — not app source |
+| `/workspace/public/images/apps/andrometrics/` | Icons/screenshots | Asset privacy only |
+| `/workspace/public/images/apps/preventivorapido/` | Icons/screenshots | Asset privacy only |
+| `/workspace/public/videos/*-demo.mp4` | Demo videos | Asset privacy sample frames |
+| Previously cloned legal sites under `/tmp/evidence/*-legal` | Public docs | Already classified PUBLIC_DOCUMENTATION_VERIFIED |
+
+### Technologies upgraded to SOURCE_VERIFIED
+
+**None.** No commercial application source was available to inspect. No technology was deduced from screenshots or marketing UI alone.
+
+### What remains NOT_VERIFIED at source level (both apps unless noted)
+
+Swift, SwiftUI/UIKit/mixed, StoreKit 1 vs 2, WidgetKit API, Vision/VisionKit, PDFKit, App Groups, SwiftData/Core Data internals, DI/state-management modules, analytics SDKs, crash reporters, unit/UI tests, CI/CD, Preventivo cloud-sync provider/client implementation, exact localization resource catalogs beyond App Store language list.
+
+### Environment action requested
+
+Cloud Agent setup actions were recorded asking the owner to attach the **private** AndroMetrics and PreventivoRapido PRO repositories to this environment (still private; no public disclosure). Source Verification Pass should be re-run after attachment.
+
+### Asset privacy re-check (visual; no file edits)
+
+See §10 updates. Demo video frames were sampled (not a full frame-by-frame legal review).
 
 ---
 
 # 1. Executive Summary
 
-Two published App Store products were identified and verified through public Apple metadata, official legal/support sites, and portfolio workspace assets.
+Two published App Store products were identified and verified through public Apple metadata, official legal/support sites, and portfolio workspace assets. **Commercial source trees were not found in this environment; Source Verification Pass is blocked.**
 
 | Product | App Store name | Bundle ID | Seller | Source in workspace |
 |---------|----------------|-----------|--------|---------------------|
@@ -81,15 +130,15 @@ Do not alter the official App Store product names.
 
 See § Temporal Data Policy. Ratings, review counts, versions, release dates, update dates, file sizes, and rankings are **AUDIT ONLY — DO NOT USE IN PUBLIC README**.
 
-### Portfolio readiness (pending owner answers)
+### Portfolio readiness (pending private source attach and/or owner answers)
 
 | Surface | Ready? | Condition |
 |---------|--------|-----------|
-| Profile README | **Blocked on owner answers for desired stack claims**; otherwise draftable from SAFE TO CLAIM only | SAFE TO CLAIM + OWNER_VERIFIED only |
-| AndroMetrics showcase | **Conditionally ready** | Prefer App Store + legal evidence; owner gate for Swift/SwiftUI/StoreKit 2/Vision/WidgetKit |
-| PreventivoRapido PRO showcase | **Conditionally ready** | Prefer App Store + legal evidence; screenshot privacy gate; owner gate for stack specifics |
+| Profile README | **Draftable from SAFE TO CLAIM only** | Swift/SwiftUI need OWNER_VERIFIED or SOURCE_VERIFIED |
+| AndroMetrics showcase | **Conditionally ready** | Strong App Store + legal evidence; API-level names pending source/owner |
+| PreventivoRapido PRO showcase | **Conditionally ready** | Strong product proof; **email screenshot blocked**; name screenshot needs approval; cloud vendor pending |
 
-**Phase 3 must not start until owner questionnaire answers are recorded for any OWNER_VERIFIED claim intended for public use.**
+**Phase 3 must not start until either (a) private sources are attached and re-verified, or (b) owner questionnaire answers cover intended OWNER_VERIFIED claims, and Preventivo screenshot privacy is cleared.**
 
 ---
 
@@ -480,32 +529,36 @@ Showcase READMEs may additionally use APP_STORE / PUBLIC_DOCUMENTATION / WORKSPA
 
 # 10. Screenshot & Asset Inventory
 
+**Classification vocabulary (this pass):** READY · OWNER NAME ACCEPTABLE · NEEDS SCRUBBING · DO NOT USE · FRAME-BY-FRAME PRIVACY REVIEW REQUIRED · MISSING
+
+No assets were modified.
+
 ## 10.1 AndroMetrics
 
-| Path | Type | Dims | Personal data | Class | Evidence Type |
-|------|------|------|---------------|-------|---------------|
+| Path | Type | Dims | Personal / sensitive content | Class | Evidence Type |
+|------|------|------|------------------------------|-------|---------------|
 | `public/images/apps/andrometrics/icon.png` | Icon | 512×512 | None | READY | WORKSPACE_ASSET_VERIFIED |
 | `public/images/apps/andrometrics/wordmark.png` | Wordmark | 1208×230 | None | READY | WORKSPACE_ASSET_VERIFIED |
-| `.../screenshot-1.png` | Screenshot | 554×1200 | Demo name “Marco” | READY (confirm non-real) | WORKSPACE_ASSET_VERIFIED |
-| `.../screenshot-2.png` | Screenshot | 554×1200 | None obvious | READY | WORKSPACE_ASSET_VERIFIED |
-| `.../screenshot-3.png` | Screenshot | 554×1200 | None obvious | READY | WORKSPACE_ASSET_VERIFIED |
-| `public/videos/andrometrics-demo.mp4` | Demo | ~9.3 MB | Possibly | FRAME-BY-FRAME PRIVACY REVIEW REQUIRED | WORKSPACE_ASSET_VERIFIED |
+| `.../screenshot-1.png` | Home / panel | 554×1200 | Demo first name “Marco”; BMI demo value | READY if demo identity acceptable; else NEEDS SCRUBBING of display name | WORKSPACE_ASSET_VERIFIED |
+| `.../screenshot-2.png` | Daily log | 554×1200 | Intimate wellness category labels visible (demo values; date 2026) | OWNER APPROVAL REQUIRED for public intimate-category visibility | WORKSPACE_ASSET_VERIFIED |
+| `.../screenshot-3.png` | AI Insight | 554×1200 | No identity PII; health parameter scores (demo) | READY | WORKSPACE_ASSET_VERIFIED |
+| `public/videos/andrometrics-demo.mp4` | Demo | ~9.3 MB | Sampled frames include UI + “Marco”; settings UI mentions OpenAI & Face ID; not a full legal review | FRAME-BY-FRAME PRIVACY REVIEW REQUIRED | WORKSPACE_ASSET_VERIFIED |
 | App Store CDN screenshots | Store | Remote | Review before reuse | READY after review | APP_STORE_VERIFIED |
 | GitHub banners | — | — | — | MISSING | NOT_VERIFIED |
 
-## 10.2 PreventivoRapido PRO — privacy gate
+**Note:** UI strings such as “Coach IA”, OpenAI mention in settings frames, Face ID row, and notification toggles are **WORKSPACE_ASSET_VERIFIED** corroboration of already public facts. They do **not** create `SOURCE_VERIFIED` for SwiftUI, WidgetKit, Vision, or StoreKit 2.
 
-| Path | Type | Personal data | Class | Rule |
-|------|------|---------------|-------|------|
-| `.../icon.png` | Icon 512×512 | None | READY | — |
-| Legal `app-icon.png` | Icon 1024×1024 | None | READY | Preferred master |
-| `.../screenshot-1.png` | Dashboard | Name “Fernando Piras” | OWNER APPROVAL REQUIRED **or** SCRUB RECOMMENDED | Do not publish until decided |
-| `.../screenshot-2.png` | New quote | Personal email `fernandopiras@icloud.com` | **DO NOT USE UNTIL SCRUBBED** | Hard block |
-| `.../screenshot-3.png` | Documents | Low risk | READY | — |
-| `.../preventivorapido-demo.mp4` | Demo | Possibly personal fields | **FRAME-BY-FRAME PRIVACY REVIEW REQUIRED** | Hard review before use |
+## 10.2 PreventivoRapido PRO
+
+| Path | Type | Personal / sensitive content | Class | Rule |
+|------|------|------------------------------|-------|------|
+| `.../icon.png` (512×512) | Icon | None | READY | — |
+| Legal `app-icon.png` (1024×1024) | Icon | None | READY | Preferred master |
+| `.../screenshot-1.png` | Dashboard | Greeting **“Ciao, Fernando Piras”**; counters at zero | OWNER NAME ACCEPTABLE **or** NEEDS SCRUBBING | Requires General Q1 |
+| `.../screenshot-2.png` | Nuovo preventivo | Personal email **`fernandopiras@icloud.com`**; empty client fields | **DO NOT USE** / **NEEDS SCRUBBING** | Hard block until scrubbed |
+| `.../screenshot-3.png` | Documenti empty state | No identity/client/amount PII | READY | — |
+| `.../preventivorapido-demo.mp4` | Demo | Sampled frames: brand splash, login with empty fields + Sign in with Apple; no filled client/VAT/amounts in samples | FRAME-BY-FRAME PRIVACY REVIEW REQUIRED | Full pass still required before embed |
 | Wordmark / banners | — | — | MISSING | — |
-
-**No assets were modified in this gate.**
 
 ---
 
@@ -599,17 +652,21 @@ Owner answers are blank until provided.
 
 | Gap | Blocks | Resolution path |
 |-----|--------|-----------------|
-| Owner questionnaire answers | OWNER_VERIFIED stack claims | Fill tables above |
-| SOURCE_VERIFIED stack | Optional; not required | Keep source private |
-| Legal version alignment (AndroMetrics) | Legal-site trust | Owner updates legal pages |
+| **Private app sources not in Cloud Agent environment** | All SOURCE_VERIFIED upgrades | Attach private AndroMetrics + PreventivoRapido repos (requested) |
+| Owner questionnaire answers | OWNER_VERIFIED stack claims | Fill tables / questionnaire |
+| Legal version alignment (AndroMetrics 1.1.0 vs 1.4.0) | Legal-site trust | Owner updates legal pages (versions still omitted from GitHub READMEs) |
 | Preventivo email screenshot scrub | Showcase image set | Scrub or replace |
-| Name-in-screenshot decision | Showcase image set | Approve or scrub |
-| Demo video privacy review | Video embeds | Frame-by-frame review |
+| Name-in-screenshot decision | Showcase image set | Approve OWNER NAME ACCEPTABLE or scrub |
+| AndroMetrics intimate-category screenshot approval | Showcase image set | Approve or choose alternate App Store screenshots |
+| Demo video full privacy review | Video embeds | Complete frame-by-frame review |
 | OpenAI public naming decision | Wording of AI claims | General Q3 |
+| Preventivo cloud sync vendor | Naming Firebase/iCloud/custom | Source attach **or** owner answer |
 
 ---
 
 # 13. Owner Questionnaire (selectable answers)
+
+**Note:** Questions that could have been answered by reading product source remain listed because **source was not available in this environment**. After private sources are attached, re-run Source Verification Pass and delete items that become SOURCE_VERIFIED.
 
 Fill by circling/checking one option per item. Leave blank only if truly unknown.
 
@@ -700,6 +757,8 @@ Fill by circling/checking one option per item. Leave blank only if truly unknown
 | Evidence Type taxonomy applied | Yes |
 | StoreKit logic de-conflicted | Yes |
 | Temporal metrics excluded from future READMEs | Yes |
+| Source Verification Pass | **BLOCKED — no product source in environment** |
+| Technologies upgraded to SOURCE_VERIFIED | **None** |
 | Owner Verification tables ready | Yes — answers empty |
 | Owner questionnaire answered | **No — waiting** |
 | Preventivo screenshot privacy cleared | **No — waiting** |
@@ -709,45 +768,48 @@ Fill by circling/checking one option per item. Leave blank only if truly unknown
 
 | Surface | Status |
 |---------|--------|
-| Profile README | Ready to draft from SAFE TO CLAIM only; Swift/SwiftUI allowed after OWNER_VERIFIED |
-| AndroMetrics showcase | Conditionally ready; strong public evidence; owner gate for API-level names |
-| PreventivoRapido PRO showcase | Conditionally ready; blocked images until scrub/approval; owner gate for stack names |
+| Profile README | Ready to draft from SAFE TO CLAIM only; Swift/SwiftUI after OWNER_VERIFIED or SOURCE_VERIFIED |
+| AndroMetrics showcase | Conditionally ready on public evidence; API-level names pending source/owner |
+| PreventivoRapido PRO showcase | Conditionally ready; email screenshot **DO NOT USE**; name screenshot pending; cloud vendor pending |
 
 ---
 
 # 15. Final Recommendation
 
-1. Keep commercial source private; use OWNER_VERIFIED for missing API-level facts.  
-2. Publish only SAFE TO CLAIM + OWNER_VERIFIED on the Profile README.  
-3. Use “Apple-managed App Store subscriptions” freely; use “StoreKit” only where documented/confirmed; use “StoreKit 2” only OWNER/SOURCE.  
-4. Omit all temporal metrics from public READMEs.  
-5. Align AndroMetrics legal version labels even though READMEs omit versions.  
-6. Scrub Preventivo email screenshot before any showcase use.  
-7. Do not start Phase 3 until questionnaire responses are recorded for intended claims.  
-8. Stop here and wait for owner answers.  
+1. Keep commercial source private; attach private checkouts to the Cloud Agent environment for SOURCE_VERIFIED (requested).  
+2. Until source is attached, use OWNER_VERIFIED for API-level facts (Swift, SwiftUI, StoreKit 2, WidgetKit, Vision, PDFKit, cloud vendor).  
+3. Publish only SAFE TO CLAIM + OWNER_VERIFIED on the Profile README.  
+4. Use “Apple-managed App Store subscriptions” freely; “StoreKit” where documented; “StoreKit 2” only OWNER/SOURCE.  
+5. Omit temporal metrics from public READMEs.  
+6. Align AndroMetrics legal version labels (audit/legal trust).  
+7. Scrub Preventivo email screenshot before any showcase use.  
+8. Decide OWNER NAME ACCEPTABLE vs scrub for “Ciao, Fernando Piras”.  
+9. Do not start Phase 3 until source attach **or** questionnaire + asset privacy gates clear intended claims.  
+10. Stop here after Source Verification Pass documentation.  
 
 ---
 
-# Quality Gate (Owner Verification revision)
+# Quality Gate (Source Verification Pass)
 
 | Dimension | Score | Notes |
 |-----------|------:|-------|
-| Accuracy | 99 | StoreKit contradiction removed; evidence types explicit |
-| Evidence Coverage | 98 | Public evidence complete; owner/source intentionally open |
-| Safety | 99 | Screenshot hard-blocks; no secrets; temporal data quarantined |
-| Completeness | 99 | Owner tables + selectable questionnaire added |
-| Portfolio Readiness | 96 | Waiting on owner answers + asset privacy |
-| Maintainability | 99 | Clear evidence-type taxonomy |
+| Accuracy | 99 | No false SOURCE_VERIFIED claims; blocker documented |
+| Evidence Coverage | 92 | Public coverage strong; source coverage 0% — environment gap |
+| Safety | 99 | No secrets; asset privacy tightened; intimate UI flagged |
+| Completeness | 97 | Pass executed; outcome blocked honestly |
+| Portfolio Readiness | 94 | Waiting on source attach and/or owner + scrub |
+| Maintainability | 99 | Clear pass result and re-run path |
 
-### Overall: **98.3 / 100**
+### Overall: **96.7 / 100**
 
-Remaining gaps are owner-input gaps, not invented facts.
+Score below 98 solely because SOURCE_VERIFIED could not be produced without inventing access to private source. Inventing SOURCE_VERIFIED would violate accuracy rules. **Re-run this pass after private repos are attached to raise the score.**
 
 ---
 
 ## Stop
 
-**Owner Verification Gate applied to `GITHUB_PORTFOLIO_PHASE_2_EVIDENCE.md`.**  
+**Source Verification Pass completed with blocker: commercial source absent from environment.**  
+**No technologies upgraded to SOURCE_VERIFIED.**  
 **Phase 3 not started.**  
 **No merge executed.**  
-**Awaiting owner questionnaire responses.**
+**Awaiting: (1) private source attachment and/or (2) owner questionnaire + screenshot decisions.**
