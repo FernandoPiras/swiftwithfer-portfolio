@@ -1,22 +1,22 @@
 # Fernando Piras
 
-**Software Engineer** · Native iOS · Product Engineering
+**iOS Software Developer** · Swift · SwiftUI · Product Engineering
 
-I design and ship iOS applications end to end — from product decisions to App Store release.
+I design and ship native iOS applications end to end — from product decisions to App Store release.
 
 [Website](https://www.fernandopiras.com)
 
 ## About
 
-I build native iOS products with full ownership of design, implementation, privacy-aware data handling, and release.
+I own native iOS products end to end: product design, implementation, privacy-aware data handling, release, and ongoing maintenance.
 
-The goal is software that stays clear and reliable after launch: calm interfaces, explicit permissions, and behavior that holds up in daily use.
+I aim for clear interfaces and software that stays reliable after launch — with explicit permissions and behavior that holds up in daily use.
 
 ## Featured Products
 
 ### AndroMetrics
 
-iOS app for male fertility and wellbeing tracking. Daily scoring, HealthKit-assisted insights, on-device report tools, optional AI coaching, and a privacy-first local data model.
+iOS app for male fertility and wellbeing tracking. Daily scoring, HealthKit-assisted insights, on-device report tools, optional AI coaching, and a local-first data model with explicit privacy controls.
 
 [App Store](https://apps.apple.com/it/app/andrometrics/id6758244167) · [Product page](https://www.fernandopiras.com/apps/andrometrics)
 
@@ -30,7 +30,7 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 
 **Platforms**
 - Native iOS (iPhone and iPad)
-- App Store distribution and subscriptions
+- App Store distribution
 
 **Languages & UI**
 - Swift
@@ -39,13 +39,13 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 **Capabilities used in shipped products**
 - HealthKit
 - Sign in with Apple
-- App Store subscriptions (StoreKit)
+- Apple-managed subscriptions
 - PDF document workflows
 - Home Screen widgets
-- On-device OCR for documents
-- Local-first data handling with explicit privacy controls
-- Optional cloud sync when a product workflow requires it
-- AI-assisted product features (AndroMetrics)
+- On-device OCR
+- Local-first data handling
+- Optional cloud synchronization
+- AI-assisted features in AndroMetrics
 
 ## Engineering Principles
 
@@ -58,12 +58,9 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 ## Current Focus
 
 - Maintaining and improving AndroMetrics and PreventivoRapido PRO
-- Strengthening the public product surface on the website and GitHub
-- Keeping release quality high as both apps evolve
+- Refining product quality, accessibility, and release workflows across both apps
 
 ## Contact
 
 - **App Store:** [Fernando Piras — Developer](https://apps.apple.com/it/developer/fernando-piras/id1865514513)
-- **GitHub:** [github.com/FernandoPiras](https://github.com/FernandoPiras)
-- **LinkedIn:** _Public profile URL to be added_
 - **Email:** [fernando@fernandopiras.com](mailto:fernando@fernandopiras.com)
