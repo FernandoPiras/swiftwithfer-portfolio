@@ -598,6 +598,8 @@ No assets were modified.
 Owner answers are blank until provided.  
 `OWNER_VERIFIED` becomes valid only after an explicit owner response is recorded here.
 
+**Source Verification Pass outcome:** private product sources were **not** found in this environment, so these owner questions could **not** be auto-resolved from code. Prefer attaching private repos for `SOURCE_VERIFIED`; otherwise answer the questionnaire.
+
 ## AndroMetrics — owner verification table
 
 | Topic | Current report status | Owner answer | Final evidence classification | Public claim allowed | Qualification required |
