@@ -1,9 +1,14 @@
 # Enterprise GitHub Portfolio — Phase 1  
-## Architecture & Foundation
+## Architecture & Foundation (Correction Gate)
 
 **Owner:** Fernando Piras  
-**Role:** Software Engineer — iOS · Swift · SwiftUI · AI · Full Stack · Firebase · React · Next.js  
-**Scope:** Design only. No files, README, banners, images, or code in this phase.
+**GitHub username:** FernandoPiras  
+**Professional site:** https://www.fernandopiras.com  
+**Positioning:** Product-focused software developer (individual professional)  
+**Specializations to present only when evidenced:** iOS, Swift, SwiftUI, product design, integrations and services actually used, UX, quality, privacy, release  
+**Scope of this document:** Architecture correction and approval only. No Profile README implementation, no showcase repositories, no banners, images, or assets in this phase.
+
+**Immediate goal:** A credible GitHub profile suitable as a professional link for ArtiProg.
 
 ---
 
@@ -11,363 +16,369 @@
 
 ## 1.1 Profile as Product Surface
 
-Il profilo GitHub non è un archivio di codice: è una **landing page commerciale** che deve comunicare in <5 secondi:
+The GitHub profile is not a code dump. It is a clear professional surface that should communicate within a few seconds:
 
-1. Chi sei (Software Engineer, prodotto commerciale)  
-2. Cosa costruisci (iOS + Full Stack + AI)  
-3. Che livello hai (enterprise, non studente)  
-4. Cosa guardare per primi (pinned showcase)
+1. Who you are — Fernando Piras, product-focused software developer  
+2. What you build — shipped products, with iOS / Swift / SwiftUI as a core strength when evidenced  
+3. What to look at first — the two pinned product showcases  
+4. Where to go next — https://www.fernandopiras.com  
 
-**Principi:**
+The Profile README (`FernandoPiras/FernandoPiras`) appears automatically on the GitHub homepage. It is **not** required as a pinned repository.
 
-| Principio | Regola |
-|-----------|--------|
-| Zero rumore | Nessun repo casuale, fork non pinnato, experimento non curato in vista |
-| Una gerarchia | Profile → Pinned Showcase → Product Repos → Capability Repos → Meta |
-| Un linguaggio | Stesso design system, stesso tono, stessa struttura su ogni repo |
-| Scalabilità | Ogni nuovo prodotto entra in un template, non inventa regole |
-| Separazione | Codice privato vs showcase pubblico: sempre distinti |
+**Principles:**
 
-## 1.2 Repository Taxonomy
+| Principle | Rule |
+|-----------|------|
+| Zero noise | No casual repos, unfinished concepts, or placeholder pins on the public surface |
+| Small start | Only real, publishable work is visible |
+| One language | Same visual and writing standard across profile and showcases |
+| Evidence first | No technology, metric, or classification without verification |
+| Private source | Commercial product code stays private; public repos are documentation-led showcases |
+| Individual brand | The profile represents Fernando Piras as one professional — not a software company |
+
+## 1.2 Initial Public Structure (Phase 1–6 target)
+
+Only these public portfolio elements are required for the initial credible surface:
 
 ```
-fernando-piras (GitHub user)
+FernandoPiras (GitHub user)
 │
-├── META (identità & governance)
-│   ├── fernando-piras          → Profile README (special repo)
-│   └── .github                 → Org-style community health (se account personale: profile README + templates)
+├── FernandoPiras/FernandoPiras     → Profile README (auto-displayed on homepage; not a required pin)
 │
-├── SHOWCASE (prodotti — codice NON pubblico)
-│   ├── andrometrics            → Product showcase
-│   ├── preventivo-rapido       → Product showcase
-│   ├── fotiq                   → Product showcase (future)
-│   ├── slotiva                 → Product showcase (future)
-│   └── swift-to-kotlin         → Product / tooling showcase (future)
+├── andrometrics                    → Public product showcase (no commercial source code)
 │
-├── CAPABILITY (credibilità tecnica — codice pubblico selettivo)
-│   ├── ios-architecture-kit    → Pattern / sample architecture (opzionale, fase 2+)
-│   └── ai-integration-patterns → AI + Firebase / on-device patterns (opzionale)
-│
-└── INFRA (non pinnati, nascosti dalla narrativa)
-    ├── portfolio-assets        → Private o public-read-only asset pack (banner, badges SVG)
-    └── archived/*              → Solo archivi, mai in home
+└── preventivo-rapido               → Public product showcase (no commercial source code)
 ```
 
-**Regola d’oro:** in homepage e pin si vedono solo **META + SHOWCASE**. Capability solo se di qualità commerciale. Infra mai pinnata.
+**Working repository (not part of the visible portfolio narrative):**
 
-## 1.3 Pin Strategy (ordine fisso)
+- `swiftwithfer-portfolio` — may be used for preparation work if needed. It must **not** be pinned and must **not** be presented as a portfolio product.
 
-Ordine dei pin = ordine di lettura del recruiter (sinistra → destra, riga 1 → riga 2).
+**Not required in the initial phase:**
 
-| Pin # | Repository | Tipo | Perché |
-|-------|------------|------|--------|
-| 1 | `fernando-piras` | Meta | Brand, value prop, stack, CTA |
-| 2 | `andrometrics` | Showcase | Prodotto iOS flagship |
-| 3 | `preventivo-rapido` | Showcase | Full stack / prodotto business |
-| 4 | `fotiq` | Showcase | (quando pronto) AI / prodotto premium |
-| 5 | `slotiva` | Showcase | Diversificazione prodotto |
-| 6 | `swift-to-kotlin` | Showcase / Tool | Bridge iOS↔Android, segnale seniority |
+- `.github` community/org repository  
+- `portfolio-assets` control-plane repository  
+- capability / sample-code repositories  
+- infrastructure repositories  
+- future-product repositories (FOTIQ, Slotiva, SwiftToKotlin, or any incomplete concept)  
+- organization-style governance  
+- issue / pull request templates without a real need  
+- GitHub Actions without a real use case  
 
-**Regole pin:**
+These may be introduced later only when they create concrete value.
 
-- Max **6** pin (limite GitHub; non sprecare slot).  
-- Pin 1 **sempre** profile README.  
-- Pin 2–3 **sempre** prodotti live con screenshots.  
-- Nuovi prodotti: entrano in pin solo dopo checklist qualità (vedi Growth).  
-- Se >4 prodotti showcase: ruotare i pin per campagna (ArtiProg / Toptal / Upwork) senza cambiare standard.
+## 1.3 Pin Strategy (initial)
 
-## 1.4 Growth Over Time (fasi)
+Initial pins — and only these:
 
-| Fase | Contenuto | Pin |
-|------|-----------|-----|
-| **P1 — Foundation** | Architecture (questo doc) | — |
-| **P2 — Profile + Standards** | Profile README + template + design system assets | Profile |
-| **P3 — Showcase core** | AndroMetrics + Preventivo Rapido | +2 |
-| **P4 — Expansion** | FOTIQ, Slotiva, SwiftToKotlin | fino a 6 |
-| **P5 — Capability (opzionale)** | 0–1 repo tecnico pubblico di livello product | solo se eleva |
-| **P6 — Maintenance** | Audit trimestrale, retirement, re-pin | continuo |
+| Pin # | Repository | Type | Role |
+|-------|------------|------|------|
+| 1 | `andrometrics` | Showcase | Active published product |
+| 2 | `preventivo-rapido` | Showcase | Active published product |
 
-## 1.5 What Must NOT Exist on the Public Surface
+**Rules:**
 
-- Repo “test”, “demo”, “homework”, “learning-*”  
-- Fork senza contributo reale pinnati  
-- README vuoti o default GitHub  
-- Codice sorgente di prodotti commerciali  
-- WIP senza banner “Coming soon” strutturato  
-- Naming inconsistente (`AndroMetrics` vs `andrometrics_app` vs `AM`)
+- Leave remaining pin slots **empty**.  
+- Do **not** pin the profile repository.  
+- Do **not** pin placeholders, “coming soon” repos, or future concepts.  
+- Do **not** pin `swiftwithfer-portfolio`.  
+- Add a new pin only after a product is complete, verified, and showcase-ready.  
+- Maximum useful pins later: up to GitHub’s limit (6), filled only with real products.
+
+## 1.4 Active vs future products
+
+**Active public products (now):**
+
+1. AndroMetrics  
+2. Preventivo Rapido  
+
+**Not active. Do not present as current work:**
+
+- FOTIQ  
+- Slotiva  
+- SwiftToKotlin  
+- any other incomplete concept  
+
+Future products may join the public portfolio **only after** they are complete, verifiable, and evidence-collected.
+
+## 1.5 What must not exist on the public surface
+
+- Repos named like `test`, `demo`, `homework`, `learning-*`  
+- Empty or default GitHub READMEs  
+- Commercial product source code  
+- Placeholder / coming-soon pinned repositories  
+- Unverified metrics (users, downloads, revenue, performance)  
+- Self-assigned labels such as “enterprise”, “senior”, “production-scale” as branding  
+- Inconsistent naming (`AndroMetrics` vs `andrometrics_app` vs `AM` as repo names)
 
 ---
 
 # 2. Repository Strategy
 
-## 2.1 Tipi di repository ammessi
+## 2.1 Repository types for the initial phase
 
-| Tipo | Codice | Scopo | Visibilità tipica |
-|------|--------|-------|-------------------|
-| **Profile** | N/A | Identità | Public |
-| **Product Showcase** | No (o stub minimo) | Vendere il prodotto / skill | Public |
-| **Capability Sample** | Sì, curato | Dimostrare craft | Public |
-| **Private Product** | Sì | Sviluppo reale | Private |
-| **Assets / Templates** | Asset + MD | Coerenza brand | Private o Public |
-| **Archived** | Qualsiasi | Storia | Public archived / Private |
+| Type | Source code | Purpose | Visibility |
+|------|-------------|---------|------------|
+| **Profile** (`FernandoPiras/FernandoPiras`) | N/A | Identity, positioning, links | Public |
+| **Product Showcase** | No commercial source | Document and present a real product | Public |
+| **Private product repos** | Yes | Actual development | Private |
+| **Prep / working** (`swiftwithfer-portfolio`) | As needed | Internal preparation only | Not pinned; not portfolio narrative |
 
-## 2.2 Relazione Private ↔ Showcase
+Deferred until value is clear: capability samples, shared assets repos, org `.github`, CI automation, templates for issues/PRs.
+
+## 2.2 Private ↔ public relationship
 
 ```
-[Private monorepo / private app repos]
-        │  build artifacts, screenshots, copy
+[Private product source]
+        │  verified screenshots, icons, facts, App Store links
         ▼
-[Public Showcase repo]  ← unica superficie esterna
+[Public showcase repo]  ← documentation-led surface
         │
         ▼
-Recruiter / ArtiProg / Toptal / client
+Recruiter / ArtiProg / client → fernandopiras.com
 ```
 
-Ogni prodotto commerciale ha:
+Each commercial product has:
 
-1. **Private repo** (o monorepo) — source of truth  
-2. **Public showcase repo** — narrative, media, docs, fake/minimal structure  
-3. **Nessun bridge** che esponga IP (niente submodule verso private, niente leak di secret)
+1. **Private** development repository (or equivalent private source of truth)  
+2. **Public showcase** repository — README, verified media, high-level architecture, links  
+3. **No bridge** that exposes IP (no private submodules, no secrets, no internal endpoints)
 
-## 2.3 Priorità di investimento (ROI recruiter)
+## 2.3 Investment priority (ArtiProg-first)
 
-1. Profile README (massimo impatto / minuto)  
-2. Showcase prodotti con screenshot reali  
-3. Consistenza visuale tra pin  
-4. Capability repo (solo se tempo e qualità enterprise)  
-5. Stars/activity theater — **non** obiettivo; qualità > vanity metrics
+1. Evidence collection for AndroMetrics and Preventivo Rapido (Phase 2)  
+2. Profile README on `FernandoPiras/FernandoPiras`  
+3. `andrometrics` showcase  
+4. `preventivo-rapido` showcase  
+5. Visual consistency and publication check  
+6. Only later: additional products, optional tooling repos, shared asset systems  
 
 ---
 
 # 3. Repository Standards
 
-## 3.1 Standard enterprise per ogni Product Showcase
+## 3.1 Product showcase requirements (pin gate)
 
-Ogni showcase **deve** includere (gate: senza questi non è pinnabile):
+A product showcase may be pinned only when it includes verified materials:
 
-| Elemento | Obbligatorio | Note |
-|----------|--------------|------|
-| Nome kebab-case | Sì | `andrometrics` |
-| Description ≤ 80 char | Sì | Value prop, non slogan vuoto |
-| Topics (5–8) | Sì | `ios`, `swiftui`, `firebase`, … |
-| README.md | Sì | Template unico |
-| Banner 1280×640 | Sì | Design system |
-| 3–6 screenshot | Sì | Device frame coerente |
-| Badges riga | Sì | Platform / status / stack |
-| Architecture section | Sì | High-level, no IP sensibile |
-| Features section | Sì | Outcome-oriented |
-| Tech stack | Sì | Preciso |
-| License | Sì | Proprietary / All Rights Reserved per showcase |
-| `.gitignore` | Sì | Anche se poco codice |
-| `docs/` | Consigliato | Architecture, privacy summary |
-| Issues/PR templates | Opzionale | Solo se open contribution |
+| Element | Required | Notes |
+|---------|----------|-------|
+| kebab-case repo name | Yes | `andrometrics`, `preventivo-rapido` |
+| Short GitHub description | Yes | Factual value proposition only |
+| Topics | Yes | Only accurate, evidenced topics |
+| `README.md` | Yes | Shared section order (see Documentation Standards) |
+| Real screenshots | Yes | From the real product UI |
+| Authorized app icon | Yes | Official product icon |
+| Feature description | Yes | Only real features |
+| Tech stack | Yes | Only technologies actually used |
+| High-level architecture | Yes | No sensitive IP |
+| App Store link | Yes, if published there | Exact public URL |
+| Site / product page link | Yes, when available | Prefer fernandopiras.com or product page |
+| Contact | Yes | Professional contact path |
+| Private source notice | Yes | Explicit: source code is private |
+| License / copyright | Yes | Coherent proprietary / All Rights Reserved notice |
 
-## 3.2 Folder Convention (Product Showcase)
+**Do not include:**
+
+- Fake folders or empty technical stubs presented as a real codebase  
+- Install / build requirements when there is no public code  
+- Issue templates without a real contribution process  
+- `CONTRIBUTING` if contributions are not accepted  
+- `SECURITY.md` without a real security process  
+- Unnecessary public roadmaps  
+- Unverifiable badges  
+- Metrics not documented by evidence  
+
+Optional later (only if useful): a short `docs/` note for architecture or privacy summary based on real product facts.
+
+## 3.2 Folder convention (product showcase — lean)
 
 ```
 andrometrics/
-├── README.md                 # Superficie primaria
-├── LICENSE                   # Proprietary
-├── .gitignore
-├── docs/
-│   ├── ARCHITECTURE.md       # High-level system design
-│   ├── PRODUCT.md            # Problem, users, value
-│   └── PRIVACY.md            # Summary (se app store / user data)
+├── README.md
+├── LICENSE                 # Proprietary / copyright notice
 ├── assets/
 │   ├── banner/
-│   │   └── banner.png        # 1280×640 (o .svg se vettoriale)
+│   │   └── banner.png      # Optional but recommended for visual consistency
 │   ├── screenshots/
-│   │   ├── 01-home.png
-│   │   ├── 02-core-flow.png
-│   │   └── 03-detail.png
-│   ├── icons/
-│   │   └── app-icon.png      # 1024 o 512
-│   └── diagrams/
-│       └── architecture.svg  # Opzionale
-└── .github/
-    └── (optional) FUNDING.yml / ISSUE templates — solo se serve
+│   │   ├── 01-....png
+│   │   ├── 02-....png
+│   │   └── 03-....png
+│   └── icons/
+│       └── app-icon.png
+└── docs/                   # Optional; only if content is real and useful
+    └── ARCHITECTURE.md
 ```
 
-**Non** mettere codice app, `xcworkspace`, secret, `.env`, build folders.
+No app source, no Xcode projects, no `.env`, no build artifacts, no fake `src/` trees.
 
-**Capability sample** (se pubblico) usa struttura codice reale:
-
-```
-ios-architecture-kit/
-├── README.md
-├── Package.swift | project
-├── Sources/
-├── Tests/
-├── Examples/
-├── docs/
-└── assets/
-```
-
-## 3.3 Profile Repository Structure
+## 3.3 Profile repository structure
 
 ```
-fernando-piras/fernando-piras/
-├── README.md                 # Profile landing
-└── assets/                   # Solo se necessari al profile (avatar strip, etc.)
-    └── ...
+FernandoPiras/FernandoPiras/
+├── README.md               # Shown automatically on the GitHub profile homepage
+└── assets/                 # Only if needed by the Profile README
 ```
 
-Profile README = composizione unica: brand → headline → specializzazioni → pinned product strip (testuale/link) → stack → contatto professionale. Nessun dashboard clutter.
+Profile README composition (one clear surface):
+
+1. Name / identity  
+2. Short professional positioning  
+3. What you build (product-focused; evidenced strengths)  
+4. Links to active products (AndroMetrics, Preventivo Rapido)  
+5. Primary CTA: https://www.fernandopiras.com  
+6. Optional contact  
+
+No dashboard clutter, no fake stats, no company voice.
 
 ---
 
 # 4. Documentation Standards
 
-## 4.1 Gerarchia documentale
+## 4.1 Document hierarchy
 
-| Livello | File | Audience | Lunghezza target |
-|---------|------|----------|------------------|
-| L0 | Profile README | Tutti | 1 schermo + depth |
-| L1 | Product README | Recruiter / client | 150–350 righe MD max; preferire densità alta, < schermate scroll eccessive |
-| L2 | `docs/PRODUCT.md` | Deep dive | Problem/solution |
-| L2 | `docs/ARCHITECTURE.md` | Engineer reviewer | Diagrammi, moduli |
-| L2 | `docs/PRIVACY.md` | Trust | Dati, retention (alto livello) |
+| Level | Surface | Audience | Intent |
+|-------|---------|----------|--------|
+| L0 | Profile README | Everyone | Who you are + what to open + site CTA |
+| L1 | Product README | Recruiter / reviewer | Understand the product quickly with evidence |
+| L2 | Optional `docs/*` | Deeper technical readers | Only verified architecture / privacy notes |
 
-## 4.2 README Convention (struttura obbligatoria — Product Showcase)
+Keep READMEs dense and readable. Prefer clarity over length.
 
-Ordine **fisso** (non riordinare per capriccio):
+## 4.2 README convention — product showcase
 
-1. **Banner** (immagine full-width)  
-2. **Title + one-liner**  
-3. **Badge row**  
-4. **Overview** (3–5 frasi: problema → soluzione → chi usa)  
-5. **Screenshots** (griglia o sequenza numerata)  
-6. **Key Features** (bullet outcome, non lista API)  
-7. **Architecture** (diagramma + 4–8 bullet moduli)  
-8. **Tech Stack** (tabella o grouped list)  
-9. **Product Highlights** (metriche solo se vere; altrimenti qualità/design/AI capabilities)  
-10. **Status** (Live / In development / Private source)  
-11. **Contact / Links** (App Store, site, email professionale — no spam)  
-12. **License** (Proprietary notice)
+Fixed section order:
 
-**Vietato nel README showcase:**
+1. Banner (if used)  
+2. Product title + one factual sentence  
+3. Minimal verified badge row (optional; see Badge Convention)  
+4. Overview (problem → product → who it is for)  
+5. Screenshots (real UI)  
+6. Features (real capabilities only)  
+7. Architecture (high-level modules / responsibilities)  
+8. Tech stack (verified only)  
+9. Status (e.g. Available on the App Store — only if true)  
+10. Links (App Store, product/site, contact)  
+11. Source code notice (private)  
+12. License / copyright  
 
-- Tutorial “come clonare e buildare” se non c’è codice  
-- “Made with ❤️” / emoji decorative a grappolo  
-- Badge spazzatura (visitor counter glitter, “awesome”, meme)  
-- Mentire su users/revenue  
-- Dump di codice lungo  
-- Sezioni “Learning goals” / “What I learned”
+**Forbidden in showcase READMEs:**
 
-## 4.3 Markdown Rules
+- Clone/build tutorials without public code  
+- Decorative emoji clusters  
+- Visitor counters and vanity badges  
+- Unverified users / revenue / download claims  
+- Long code dumps  
+- “What I learned” student framing  
+- Self-congratulatory seniority language  
 
-- ATX headings (`#`, `##`), mai Setext  
-- Una sola H1 (titolo prodotto)  
-- H2 per sezioni standard; H3 solo se necessario  
-- Tabelle per stack e confronti  
-- Immagini sempre con `alt` descrittivo  
-- Link assoluti agli asset nel repo (`./assets/...`)  
-- Nessun HTML layout complesso tranne dove GitHub lo rende necessario (es. `<p align="center">` per banner — uso controllato e documentato nel Design System)  
-- Line length: preferire paragrafi corti (2–4 frasi)  
-- Liste: parallelismo grammaticale  
-- Separatori: `---` solo tra blocchi maggiori; non dopo ogni paragrafo  
+## 4.3 Markdown rules
 
-## 4.4 Language Rules (IT vs EN)
+- ATX headings (`#`, `##`)  
+- One H1 per README  
+- Images always with meaningful `alt` text  
+- Relative asset links (`./assets/...`)  
+- Prefer native Markdown over fragile HTML  
+- Short paragraphs  
+- Parallel list grammar  
+- `---` only between major blocks  
 
-**Decisione architetturale:**
+Light HTML centering for a banner may be used sparingly if needed for GitHub rendering — never as a layout system, never to force text colors that break light/dark mode.
 
-- **Default pubblico: English** per Profile + Showcase pinnati (ArtiProg, Toptal, Arc, Lemon, Upwork, aziende internazionali).  
-- **Italian** consentito in descrizione prodotto se il mercato è IT (es. Preventivo Rapido), ma README pinnato resta **EN** con una riga “Built for the Italian market” se rilevante.  
-- Documentazione interna privata: lingua del team.  
-- Nessun mix casuale IT/EN nella stessa sezione.
+## 4.4 Public language
+
+**Primary public language: English.**
+
+Writing must be:
+
+- clear  
+- professional  
+- international  
+- concrete  
+- easy to read  
+- free of generic slogans  
+- free of artificial or overly corporate English  
+
+Official Italian product names remain unchanged (e.g. **Preventivo Rapido**, **AndroMetrics**).  
+Market context may be stated factually when relevant (e.g. built for Italian users) without mixing languages inside the same section.
 
 ---
 
 # 5. Design System (GitHub Visual Language)
 
-Obiettivo: **Apple × Stripe × Linear × Vercel × OpenAI** — freddo professionale, non “dev pink/purple GitHub”.
+Goal: a premium, minimal, coherent personal brand for Fernando Piras.  
+Original. Calm. Product-led. Compatible with GitHub **light mode and dark mode**.
 
-## 5.1 Brand Tokens
+Do **not** rely on comparisons to Apple, Stripe, Linear, Vercel, or OpenAI as the brand story. Those references are not part of the public narrative.
 
-| Token | Valore | Uso |
-|-------|--------|-----|
-| `--bg-deep` | `#0B0D10` | Banner background base |
-| `--bg-elevated` | `#12151A` | Pannelli / card media |
-| `--fg-primary` | `#F5F7FA` | Titoli |
-| `--fg-secondary` | `#A7B0BE` | Body / captions |
-| `--accent` | `#2F6FED` | CTA, underline, focus (blu tecnico, non viola) |
-| `--accent-soft` | `#1B3A6B` | Glow/line sottili |
-| `--success` | `#3DDC97` | Status Live |
-| `--warning` | `#E6B84A` | In development |
-| `--border` | `#1E2430` | Separatori |
-| `--radius` | `12px` | Screenshot frame (non pill) |
-| `--space-unit` | `8px` | Griglia spacing |
+## 5.1 Visual principles
 
-**Anti-pattern espliciti (vietati):** viola-on-white, gradient purple-indigo, cream+terracotta+serif “AI default”, neon glow, emoji come design, pill cluster, card shadow multi-layer.
+| Principle | Practice |
+|-----------|----------|
+| Minimal | Few elements; strong hierarchy |
+| Real product visuals | Screenshots and official icons over abstract decoration |
+| Mode-safe | README text uses default GitHub typography/colors — do not force text color via HTML/CSS hacks |
+| Light imagery debt | Banners/screenshots should remain legible on both profile themes; prefer balanced contrast in media itself |
+| Consistency | Same screenshot framing approach and spacing rhythm across showcases |
+| Restraint | No decorative card stacks, no fake dashboards, no glow theater |
 
-## 5.2 Typography
+## 5.2 Color guidance (for banners / composed media only)
 
-| Ruolo | Font | Note |
-|-------|------|------|
-| Display (banner title) | **SF Pro Display** / Inter *solo se SF non disponibile in export* → preferire **Geist** o **Söhne**-like; in pratica per export: **Geist Sans** o **IBM Plex Sans** | Tracking stretto, weight 600–700 |
-| Body (in immagini) | Geist Sans / IBM Plex Sans | 400–500 |
-| Mono (stack labels) | **JetBrains Mono** o **IBM Plex Mono** | Badge tech |
+Use a simple personal palette for composed images — not for forcing README body text:
 
-Nei README GitHub: tipografia nativa GitHub; il control tipografico è nei **banner e screenshot captions**, non forzando CSS impossibile.
+| Role | Guidance |
+|------|----------|
+| Background | Neutral dark or soft neutral — choose one system and reuse it |
+| Foreground | High-contrast light text on dark media (inside images only) |
+| Accent | One restrained accent (e.g. calm technical blue) — not purple gradients |
+| Borders | Subtle, low-contrast separators inside media |
 
-## 5.3 Banner Spec
+**Avoid:** purple-on-white clichés, heavy neon glow, cream+terracotta “AI default” looks, multi-layer shadow cards, emoji-as-design.
 
-| Property | Spec |
-|----------|------|
-| Size | **1280 × 640** (2:1) — standard GitHub social/README |
-| Safe area | 64px padding interno |
-| Layout | Full-bleed dark plane; brand name dominante; one headline; optional product glyph |
-| Content budget | Brand/product name + 1 headline + optional stack row (max 4 label) |
-| No | Stats, fake charts, floating badges, stickers, collage |
-| Export | PNG @2x master 2560×1280, serve 1280×640; o SVG se tipografia embedded |
-| Naming | `assets/banner/banner.png` |
+## 5.3 Typography (composed media)
 
-**Varianti:**
+- Clean sans for titles in banners  
+- Limited text inside images (name + short line)  
+- README body: GitHub default rendering (mode-safe)
 
-- Profile: “Fernando Piras” hero-level  
-- Product: Product name hero-level; subtitle = category (“iOS · Analytics”)  
-
-## 5.4 Screenshot Spec
+## 5.4 Banner (recommended, not over-engineered)
 
 | Property | Spec |
 |----------|------|
-| Device | iPhone 15/16 frame **unico** per tutti i prodotti iOS |
-| Background | Stesso `--bg-deep` o gradient sottile brand |
-| Count | 3 min, 6 max per README |
-| Order | Primary job → core flow → detail/AI/insight |
-| Naming | `01-*.png`, `02-*.png` zero-padded |
-| Format | PNG; WebP opzionale se supportato nel contesto |
-| No | Random Android/iOS mix di frame; watermark “DEMO”; UI incompleta |
+| Size | 1280 × 640 when used |
+| Content budget | Product or person name + one short line |
+| Avoid | Dense copy, stats, floating stickers, collage |
+| Path | `assets/banner/banner.png` |
 
-Web products (Preventivo Rapido): browser chrome **minimal** coerente (stesso dark surround), non screenshot grezzi del desktop.
+If a banner is not ready, ship the showcase with strong screenshots first rather than delaying publication for over-designed media.
 
-## 5.5 Cards & Layout (README)
+## 5.5 Screenshots
 
-- Default: **no cards**.  
-- Eccezione: griglia screenshot e tabella stack.  
-- Se HTML `<table>` per screenshot: bordi 0, spacing uniforme, allineamento center.  
-- Separatori: linea `--border` implicita via `---` sparsi, non decorativi ASCII art.
+| Property | Spec |
+|----------|------|
+| Source | Real product UI only |
+| Count | Enough to explain the product (typically 3–6) |
+| Naming | `01-...`, `02-...` |
+| Framing | Consistent treatment across products |
+| Avoid | Fake UI, incomplete WIP, customer private data, “DEMO” watermarks |
 
-## 5.6 Icons
+## 5.6 Cards & layout
 
-- App icon: reale, non placeholder Generico.  
-- Tech icons: Simple Icons / ufficiale, monocromo chiaro su dark, dimensione uniforme 20–24px nei banner.  
-- Nessuna icona emoji come sostituto.
+- Default: no decorative cards  
+- Use simple screenshot grids or sequential images  
+- Tables allowed for stack lists  
+- No HTML card frameworks  
 
-## 5.7 Spacing System
+## 5.7 Icons
 
-- Tra banner e titolo: 16–24px visual  
-- Tra sezioni H2: una riga vuota + `##`  
-- Tra screenshot: gap uniforme  
-- Margini simmetrici in compositing banner
+- Official app icon only  
+- No emoji substitutes for product identity  
 
-## 5.8 Graphic Style Summary
+## 5.8 Spacing
 
-- Dark, precisо, molto aria  
-- Accent blu elettrico controllato  
-- Fotorealismo UI reale > illustrazioni astratte  
-- Motion: non applicabile su GitHub statico; “presence” via sharpness, contrast, hierarchy  
-- Feel: product marketing page, non repo student
+- Consistent gaps between sections  
+- One job per section  
+- Generous readability; avoid dense marketing walls  
 
 ---
 
@@ -375,78 +386,64 @@ Web products (Preventivo Rapido): browser chrome **minimal** coerente (stesso da
 
 ## 6.1 Repository names
 
-| Tipo | Pattern | Esempio |
-|------|---------|---------|
-| Product showcase | `{product-slug}` kebab-case | `andrometrics` |
-| Profile | `{username}` | `fernando-piras` |
-| Capability | `{domain}-{purpose}` | `ios-architecture-kit` |
-| Private app | `{product-slug}-ios` / `-web` / `-app` | `andrometrics-ios` (private) |
-| Assets | `portfolio-assets` | — |
-| Archived | stesso nome + GitHub Archive | — |
+| Type | Pattern | Exact / example |
+|------|---------|-----------------|
+| Profile | Exact username | `FernandoPiras/FernandoPiras` |
+| Product showcase | kebab-case slug | `andrometrics`, `preventivo-rapido` |
+| Private app (example) | `{slug}-ios` / `{slug}-app` etc. | Private only; not public portfolio surface |
+| Prep repo | existing working repo | `swiftwithfer-portfolio` (not pinned) |
 
-**Slug prodotti:**
+**Do not use:** `fernando-piras` as username or profile repository name.
 
-| Prodotto | Public showcase | Private (esempio) |
-|----------|-----------------|-------------------|
-| AndroMetrics | `andrometrics` | `andrometrics-ios` |
-| Preventivo Rapido | `preventivo-rapido` | `preventivo-rapido-web` |
-| FOTIQ | `fotiq` | `fotiq-ios` |
-| Slotiva | `slotiva` | `slotiva-app` |
-| SwiftToKotlin | `swift-to-kotlin` | `swift-to-kotlin` (tool può avere codice se open) |
+## 6.2 Active product slugs
 
-## 6.2 Branch / file naming (quando c’è codice)
+| Product | Public showcase | Status |
+|---------|-----------------|--------|
+| AndroMetrics | `andrometrics` | Active — to be showcased |
+| Preventivo Rapido | `preventivo-rapido` | Active — to be showcased |
 
-- Branch: `main` only su showcase; private: `main` + `feature/*`  
-- Asset: lowercase, kebab, numeric prefix per sequenze  
-- Docs: `SCREAMING_SNAKE` solo per doc top-level standard (`ARCHITECTURE.md`) — coerente con enterprise docs
+Future products receive slugs only when ready. Do not pre-create public repos for incomplete work.
 
-## 6.3 Topics (GitHub)
+## 6.3 Topics
 
-Sempre includere dove applicabile:
-
-`ios` `swift` `swiftui` `firebase` `react` `nextjs` `ai` `fullstack` `mobile` `portfolio` `showcase`
-
-Product-specific: `analytics`, `invoicing`, `photography`, ecc.
+Use only topics that match verified stack and product type.  
+Do not add `fullstack`, `ai`, or other labels unless Phase 2 evidence confirms them for that product.
 
 ---
 
 # 7. Assets Convention
 
-| Asset | Path | Size | Notes |
-|-------|------|------|-------|
-| Banner | `assets/banner/banner.png` | 1280×640 | Obbligatorio |
-| App icon | `assets/icons/app-icon.png` | 512+ | Obbligatorio per app |
-| Screenshots | `assets/screenshots/NN-slug.png` | coerenti | 3–6 |
-| Diagrams | `assets/diagrams/*.svg` | — | Preferire SVG |
-| OG image | stesso banner | — | Allineato social preview |
+| Asset | Path | Rule |
+|-------|------|------|
+| Screenshots | `assets/screenshots/` | Required; real UI |
+| App icon | `assets/icons/app-icon.png` | Required; authorized |
+| Banner | `assets/banner/banner.png` | Recommended |
+| Diagrams | `assets/diagrams/` | Optional; high-level only |
 
-**Master assets** vivono in `portfolio-assets` (private o controlled) e vengono **copiati** nei repo showcase — single source of truth per template Figma/Sketch.
+No separate `portfolio-assets` repository is required initially. Assets live inside each showcase (and profile assets folder if needed). A shared asset system may be introduced later if duplication becomes a real problem.
 
 ---
 
 # 8. Badge Convention
 
-## 8.1 Allowed badges (riga sotto titolo)
+## 8.1 Allowed (minimal)
 
-Ordine fisso:
+Only simple, factual labels when helpful:
 
-1. **Platform** — `iOS` / `Web` / `Full Stack`  
-2. **Status** — `Live` | `In Development` | `Private Source`  
-3. **Stack** — max 4 (`SwiftUI`, `Firebase`, `Next.js`, `AI`)  
-4. **License** — `Proprietary`
+1. Platform — only if verified (e.g. iOS)  
+2. Availability — only if verified (e.g. App Store)  
+3. Key stack labels — only verified technologies (max a few)  
 
-Stile: **static shields** o SVG custom nel design system (stessi colori token).  
-Esempio semantico (non generare ora):
+Prefer plain Markdown or a very small static badge set. Reliability over decoration.
 
-`Platform: iOS` · `Status: Live` · `SwiftUI` · `Firebase` · `Proprietary`
-
-## 8.2 Forbidden badges
+## 8.2 Forbidden
 
 - Visitor counters  
-- “Made in …” fluff  
-- Discord/Twitter random  
-- Coverage/build verdi finti se non c’è CI pubblica  
-- Versioni inventate
+- External GitHub stat cards  
+- Dynamic badges that can rot or mislead  
+- Fake build/coverage badges  
+- Invented version numbers  
+- “Enterprise” / “Senior” style badges  
 
 ---
 
@@ -455,247 +452,295 @@ Esempio semantico (non generare ora):
 ## 9.1 Profile identity
 
 - **Name:** Fernando Piras  
-- **Headline pattern:** `Software Engineer · iOS · Full Stack · AI`  
-- **Bio (≤160):** una frase outcome-oriented, stack secondario  
-- **Location / links:** sito o email professionale; LinkedIn se curato  
-- **Avatar:** foto professionale o monogramma brand (non meme, non default GitHub)  
-- **Pinned = product catalog**
+- **Voice:** Individual professional, product-focused  
+- **Primary CTA:** https://www.fernandopiras.com  
+- **Pinned catalog (initial):** AndroMetrics, Preventivo Rapido  
+- **Avatar:** Professional photo or simple personal mark — not meme, not generic default if avoidable  
 
-## 9.2 Product brand in repo
+Headline and bio must stay factual. Do not inflate title with unverified seniority or company-scale language.
 
-- Nome prodotto come H1 e banner hero  
-- Category line sotto: `iOS Application` / `Full-Stack Product`  
-- Non diluire con “My project for learning Swift”
+Suggested direction (final copy after Phase 2 evidence):
 
-## 9.3 Voice of brand
+- Product-focused software developer  
+- iOS development with Swift and SwiftUI when evidenced  
+- End-to-end product care: UX, quality, privacy, release  
 
-- Professionale, calmo, preciso  
-- Come Stripe docs + Apple product page  
-- Nessuna iperbole (“revolutionary”, “best ever”)  
-- Nessuna scusa da junior (“this is my attempt to…”)
+## 9.2 Product presence
+
+- Product name as H1 / banner focus  
+- Category line factual (e.g. iOS app) — never guessed architecture labels  
+- No student framing; no agency/company framing  
+
+## 9.3 Brand voice
+
+- Calm, precise, concrete  
+- Explain what the product does  
+- Let quality show through evidence  
+- No hype adjectives as identity  
 
 ---
 
 # 10. Language Strategy (Tone & Writing)
 
-| Dimensione | Standard |
-|------------|----------|
-| **Tone** | Confident, concise, commercial |
-| **Person** | Third person product (“AndroMetrics helps…”) o first professional (“I design and ship…”) — **profile = I**; **product = product name** |
-| **Technical level** | Senior: architecture, tradeoffs, stack reale; no tutorial 101 |
-| **Terminology** | Production terms: shipping, release, architecture, observability, auth, data model — non “homework”, “assignment” |
-| **Claims** | Solo verificabili |
-| **CTA** | Soft: App Store, contact for collaboration — no hard sell spam |
+| Dimension | Standard |
+|-----------|----------|
+| **Public language** | English |
+| **Tone** | Clear, professional, concrete |
+| **Person** | Profile: first person (“I design and ship…”). Products: product name as subject |
+| **Technical level** | Accurate and understandable — architecture only at evidenced depth |
+| **Terminology** | Real product terms: features, release, privacy, App Store — not homework language |
+| **Claims** | Verified only |
+| **CTA** | fernandopiras.com + App Store links when applicable |
 
 **Writing checklist:**
 
-- [ ] Prima frase = valore  
-- [ ] Nessun filler  
-- [ ] Feature = benefit utente  
-- [ ] Architecture = moduli e responsabilità  
-- [ ] Stack = versioni major solo se utili  
+- [ ] First sentence states value factually  
+- [ ] No filler  
+- [ ] Features map to real product behavior  
+- [ ] Stack list is evidence-backed  
+- [ ] No self-assigned seniority / enterprise branding  
+- [ ] No unverified metrics  
 
 ---
 
 # 11. Growth Strategy
 
-## 11.1 Adding a new product (checklist gate)
+## 11.1 Adding a future product
 
-Prima di creare il public showcase:
+Only when all are true:
 
-1. Private product ha MVP dimostrabile (UI reale)  
-2. 3+ screenshot production-quality  
-3. Banner nel design system  
-4. Copy EN approvato (Overview + Features + Stack)  
-5. Architecture one-pager senza IP sensibile  
-6. License proprietary  
-7. Topics + description  
-8. Peer self-audit vs questo standard (≥98 checklist)  
-9. Solo allora: create repo → pin se c’è slot  
+1. Product is complete enough to demonstrate honestly  
+2. Real screenshots exist  
+3. Stack and features are verified  
+4. App Store / public URL evidence collected (if applicable)  
+5. Showcase README can be written without speculation  
+6. Quality matches the two initial showcases  
+7. Then create public showcase → optionally pin  
 
-## 11.2 Consistency maintenance
+## 11.2 Keeping the portfolio clean
 
-- **Template README** versionato in `portfolio-assets`  
-- **Quarterly audit:** pin order, screenshot freshness, link rotti, tono  
-- **One visual refresh / anno** max (evitare churn)  
-- **Changelog** opzionale nei docs per prodotti live  
+| Rule | Action |
+|------|--------|
+| Ideas ≠ public repos | Keep experiments private |
+| No placeholder pins | Empty pin slots are better than fake work |
+| One showcase per product | No duplicates |
+| Prep repos stay off-narrative | `swiftwithfer-portfolio` is not a portfolio piece |
+| Rename carefully | Update README links and site references together |
 
-## 11.3 Avoiding messy repos
+## 11.3 Maintenance
 
-| Regola | Azione |
-|--------|--------|
-| Un’idea ≠ un repo pubblico | Esperimenti restano private |
-| WIP visibile | Solo con Status badge + sezione onesta |
-| Duplicati | Un showcase per prodotto |
-| Fork | Unwatch dalla narrativa; non pin |
-| Rename | Aggiornare slug + banner + profile links insieme |
+- Re-check App Store and site links before any application deadline (ArtiProg, etc.)  
+- Refresh screenshots when UI materially changes  
+- Do not expand structure for its own sake  
 
 ## 11.4 Retirement
 
-- Prodotti morti: Archive + rimuovi pin + mantieni README “Sunset” una riga  
-- Non cancellare storia se utile a credibilità; archiviare è più enterprise che delete impulsivo  
+- If a product is discontinued: unpinned, README status updated honestly, archive if appropriate  
 
 ---
 
-# 12. Repository Showcase Strategy (Commercial / Closed Source)
+# 12. Repository Showcase Strategy (Closed Source)
 
-## 12.1 Problema
+## 12.1 Approach
 
-Il codice è IP. Il recruiter vuole **prova**. Soluzione: **Product Specimens**, non empty repos.
+Public product repositories are **documentation-led showcases**.
 
-## 12.2 Pattern raccomandato: “Showcase Specimen”
+They present the product without publishing commercial source code.
 
-Il public repo è un **specimen di prodotto**:
+## 12.2 What each showcase contains
 
-- README marketing-grade  
-- Media reali  
-- Architecture high-level  
-- Tech stack onesto  
-- Explicit: **Source code is private**  
-- Opzionale: `docs/` con ADRs pubblici non sensibili  
-- Opzionale: **public interface surface** — es. snippet **non eseguibile** o **pseudocodice** di 10–20 righe che mostra stile API (mai moduli core)  
-- Mai: binary rilasciati che reverse-engineerable del business logic critico senza necessità  
+- README  
+- Real screenshots  
+- Authorized app icon  
+- Feature description  
+- Verified tech stack  
+- High-level architecture  
+- App Store link (when applicable)  
+- Site or product page link  
+- Contact  
+- Private source notice  
+- Coherent license / copyright  
 
-## 12.3 Alternative valutate
+## 12.3 What each showcase must not contain
 
-| Approccio | Verdetto |
-|-----------|----------|
-| Repo vuoto + 1 riga README | ❌ Non credibile |
-| Solo website link | ⚠️ Debole su GitHub surface |
-| Full open source | ❌ Se commerciale |
-| Open core | Solo se strategia prodotto lo richiede |
-| **Showcase Specimen** | ✅ Default |
-| Video demo embed (YouTube/Loom) | ✅ Complementare nel README |
-| TestFlight / App Store badge | ✅ Se live |
-| Capability repo separato con codice sample | ✅ Per dimostrare craft senza aprire il prodotto |
+- Commercial source code  
+- Fake project trees  
+- Build/install instructions without public code  
+- Unnecessary community health files  
+- Unverifiable badges or metrics  
+- Speculative roadmaps  
 
-## 12.4 Credibilità senza codice
+## 12.4 Credibility without source code
 
-Ordine di forza evidenza:
+Evidence strength order:
 
-1. App Store / Play / production URL  
-2. Screenshot + screen recording  
-3. Architecture diagram  
-4. Concrete stack & responsibilities  
-5. Case-study metrics (solo reali)  
-6. Sample code in capability repo  
+1. App Store (or other real distribution) link  
+2. Real screenshots / short demo video if available  
+3. Clear product explanation  
+4. Honest stack and architecture overview  
+5. Link to https://www.fernandopiras.com  
+6. Optional deeper docs only if factual  
 
 ## 12.5 Legal / safety
 
-- LICENSE: All Rights Reserved / Proprietary  
-- No customer data negli screenshot  
-- No API keys, endpoints interni, naming clienti riservati  
-- Privacy summary se l’app tratta dati utente  
+- Proprietary / All Rights Reserved copyright notice  
+- No customer private data in screenshots  
+- No API keys, internal endpoints, or confidential client names  
 
 ---
 
 # 13. Folder Convention (Global Summary)
 
+**Initial approved public layout:**
+
 ```
-showcase-repo/
+FernandoPiras/FernandoPiras/
+  README.md
+  assets/ (optional)
+
+andrometrics/
   README.md
   LICENSE
-  docs/{PRODUCT,ARCHITECTURE,PRIVACY}.md
-  assets/{banner,screenshots,icons,diagrams}/
-  .gitignore
+  assets/{banner?,screenshots,icons}
+  docs/ (optional)
 
-profile-repo/
+preventivo-rapido/
   README.md
-  assets/ (minimal)
-
-portfolio-assets/ (control plane)
-  templates/README.product.md
-  templates/README.profile.md
-  design-tokens.json (o doc)
-  banners/masters/
-  frames/iphone-frame.sketch|figma
-  checklists/pre-publish.md
+  LICENSE
+  assets/{banner?,screenshots,icons}
+  docs/ (optional)
 ```
 
----
-
-# 14. Image Convention (Summary)
-
-- Color space sRGB  
-- Banner 1280×640; master @2x  
-- Screenshots: same device frame, same background treatment  
-- File weight: compress without visible artifacts (<500KB banner target when possible)  
-- Alt text: “AndroMetrics — Home dashboard on iOS”  
-- No casual selfies, memes, AI-slop abstract heroes come unica visual  
+**Out of initial scope:** shared `portfolio-assets`, capability kits, `.github` org repo, Actions, issue/PR template packs.
 
 ---
 
-# 15. Scalability Model
+# 14. Image Convention
+
+- Real product imagery only  
+- sRGB  
+- Consistent framing across a single product README  
+- Compress without visible damage  
+- Meaningful `alt` text  
+- Limited text inside banners  
+- No meme imagery, no abstract AI-slop as the only visual  
+
+---
+
+# 15. Roadmap (corrected order)
+
+| Phase | Focus | Output |
+|-------|--------|--------|
+| **Phase 1** | Architecture correction and approval | This document |
+| **Phase 2** | Real-project discovery and evidence collection | Evidence matrix before any public claim |
+| **Phase 3** | Profile README implementation | `FernandoPiras/FernandoPiras` |
+| **Phase 4** | AndroMetrics showcase implementation | `andrometrics` |
+| **Phase 5** | Preventivo Rapido showcase implementation | `preventivo-rapido` |
+| **Phase 6** | Visual consistency, validation, publication | Pins, links, final checks |
+
+**Phase 2 rule:** Cursor must analyze available real projects and produce an evidence matrix before writing any public claim.
+
+Do not start Phase 2 until this corrected Phase 1 document is approved and an explicit instruction is given.
+
+---
+
+# 16. Scalability Model
 
 ```
-New product idea
-  → Private build
-  → Specimen kit (banner, shots, copy) from portfolio-assets
-  → Public showcase from template
-  → Quality gate
-  → Pin / rebalance
-  → Quarterly audit
+New completed product
+  → Evidence collection (stack, screenshots, links, features)
+  → Public showcase from the same lean standard
+  → Quality check against AndroMetrics / Preventivo Rapido bar
+  → Optional pin
 ```
 
-Il sistema scala a N prodotti senza cambiare linguaggio: cambia solo lo **slot pin** e il **catalogo**.
+The system scales by repeating a small proven pattern — not by pre-building organizational infrastructure.
 
 ---
 
-# 16. Audit — Enterprise Final Architecture Review
+# 17. Audit — Correction Gate Review
 
-## Controlli eseguiti
+## Checks performed
 
-- Tassonomia repo e superficie pubblica  
-- Pin order e crescita  
-- Standard cartelle / README / assets / badge  
-- Design system anti-amateur  
-- Linguaggio e mercato (EN-first per piattaforme target)  
-- Showcase closed-source strategy  
-- Naming, branding, growth, retirement  
-- Allineamento a recruiter / ArtiProg / Toptal / Arc / Lemon / Upwork  
+- Exact username `FernandoPiras` and profile repo `FernandoPiras/FernandoPiras`  
+- Profile README not required as a pin  
+- Initial pins only `andrometrics` and `preventivo-rapido`  
+- Future products not presented as active  
+- No obligatory infra / capability / assets / `.github` / Actions / templates in initial phase  
+- No unverified full-stack / metrics / seniority / enterprise self-labels  
+- Individual professional positioning (not a software house)  
+- English as public language standard  
+- Documentation-led closed-source showcases  
+- Primary CTA fernandopiras.com  
+- ArtiProg-first, fast path  
+- Future scalability preserved without premature complexity  
 
-## Problemi trovati (e chiusi in questa revisione)
+## Corrections applied in this revision
 
-| Issue | Fix applicato nel design |
-|-------|--------------------------|
-| Rischio mix IT/EN | EN default pinnati; IT solo mercato prodotto |
-| Showcase vuoti poco credibili | Pattern Specimen + evidence ladder |
-| Capability repo premature | Opzionale fase 5, non obbligatorio P1–P3 |
-| Badge vanity | Allowlist stretta |
-| Design “AI purple/cream” | Token dark + accent blu; ban list |
-| Pin overcrowding futuro | Max 6 + rotation + retirement |
-| IP leak via submodule | Vietato; private/public hard split |
-| Docs troppo lunghe nel README | Split L1 README / L2 docs |
+| Issue in prior draft | Correction |
+|----------------------|------------|
+| Username / profile repo `fernando-piras` | Replaced with `FernandoPiras` / `FernandoPiras/FernandoPiras` |
+| Profile repo treated as required pin | Removed; profile README is automatic homepage surface |
+| Future products in taxonomy and pins | Removed from active structure; deferred until complete |
+| Preventivo Rapido labeled full stack | Removed; stack deferred to Phase 2 evidence |
+| Mandatory portfolio-assets, capability repos, `.github`, templates, Actions | Deferred; not part of initial structure |
+| Over-designed org/governance model | Replaced with lean individual workflow |
+| Design system dependent on forced colors / brand comparisons | Simplified; light/dark safe; original personal brand |
+| Roadmap jumped to profile/assets before evidence | Reordered: evidence matrix before any public copy |
+| Seniority / enterprise self-branding | Prohibited; quality via evidence |
+| Software-house tone risk | Explicit individual-professional positioning |
+| Placeholder pin strategy | Empty slots preferred; no coming-soon pins |
 
-## Limitazioni residue (accettabili)
+## Remaining gaps (expected; resolved in Phase 2)
 
-- GitHub non permette CSS custom nei README: il design system vive in asset raster/SVG  
-- Senza prodotti live store, credibilità dipende da screenshot + copy (mitigato da standard screenshot)  
-- Capability code non ancora definito (corretto defer)  
+- Verified stack per product  
+- Confirmed feature lists  
+- App Store URLs  
+- Authorized icons and real screenshots inventory  
+- High-level architecture facts safe to publish  
+- Exact profile bio wording based on evidence  
 
-## Punteggi
+## Scores (post-correction)
 
-| Dimensione | Score | Note |
-|------------|-------|------|
-| Professionalità | 99 | Commercial specimen, non student |
-| Scalabilità | 99 | Template + gate + pin rotation |
-| Manutenibilità | 98 | Control plane `portfolio-assets`, audit trimestrale |
-| Brand Identity | 99 | Token + voice + naming unificati |
-| Impatto visivo | 98 | Banner/screenshot spec; vincoli GitHub MD |
-| Credibilità | 99 | Evidence ladder + proprietary honesty |
-| Ordine | 99 | Taxonomy + pin order |
-| Pulizia | 99 | Anti-mess rules + archive policy |
-| Enterprise Readiness | 99 | Pronto per Phase 2 (profile + templates) |
+| Dimension | Score | Note |
+|-----------|-------|------|
+| Professionalità | 99 | Individual, product-led, evidence-based |
+| Accuratezza | 99 | Unverified claims removed |
+| Scalabilità | 99 | Lean pattern repeats for future products |
+| Manutenibilità | 99 | Minimal surface; less structure to drift |
+| Brand Identity | 98 | Personal brand; mode-safe; no borrowed identity |
+| Impatto visivo | 98 | Real screenshots + restrained media |
+| Credibilità | 99 | Closed-source honesty + evidence gate |
+| Ordine | 99 | Two pins; empty slots; clear taxonomy |
+| Pulizia | 99 | No placeholders; deferred complexity |
+| ArtiProg Fit | 99 | Fast credible path |
+| Enterprise Readiness (as architecture) | 99 | Corrected and approval-ready |
 
-### **Overall Architecture Score: 98.7 / 100**
+### **Overall Architecture Score: 98.8 / 100**
 
-**Soglia ≥ 98 raggiunta. Architettura approvata.**
+**Correction Gate passed. Phase 1 architecture approved pending owner confirmation.**
 
 ---
 
-## Decisione
+# Final Decisions
 
-**Phase 1 — Architecture & Foundation: COMPLETE.**  
-Nessun file creato. Nessun README. Nessun asset. Nessun codice.
+- Exact GitHub username: FernandoPiras  
+- Profile repository: FernandoPiras/FernandoPiras  
+- Active public products: AndroMetrics, Preventivo Rapido  
+- Initial pinned repositories: andrometrics, preventivo-rapido  
+- Public language: English  
+- Product source code: Private  
+- Public repositories: Documentation-led showcases  
+- Unverified claims: Prohibited  
+- Future projects: Added only after completion  
+- Primary CTA: fernandopiras.com  
+- Primary immediate goal: Credible GitHub link for ArtiProg  
 
-**Stop.** Non si avvia Phase 2 fino a istruzione esplicita.
+---
+
+## Decision
+
+**Phase 1 — Architecture correction: COMPLETE (document updated).**  
+
+Do not start Phase 2 until explicitly instructed.  
+Do not create Profile README content, showcase repositories, banners, images, or assets in this phase.
