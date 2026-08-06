@@ -1,0 +1,38 @@
+TEMPLATE — REVIEW BEFORE PUBLICATION
+
+This file is a prudent proprietary notice template for documentation-led
+product showcase repositories. It is not legal advice. Have it reviewed
+before publishing any public repository.
+
+--------------------------------------------------------------------------
+
+Copyright (c) [YEAR] Fernando Piras. All rights reserved.
+
+This repository presents product documentation and demonstration assets
+for [PRODUCT_NAME]. It does not include the commercial application
+source code.
+
+All rights in the product, brand, trademarks, visual identity, screenshots,
+icons, text, and other materials are reserved by Fernando Piras, except
+where a third-party right is expressly identified.
+
+No license is granted to copy, modify, distribute, republish, or use the
+materials in this repository for any purpose, except for viewing on GitHub
+or other channels expressly authorized by the rights holder.
+
+The commercial software product itself is proprietary. Access to source
+code, binaries, or internal systems is not granted by this repository.
+
+Unauthorized use may violate copyright and other applicable laws.
+
+For permissions or product inquiries:
+fernando@fernandopiras.com
+https://www.fernandopiras.com
+
+--------------------------------------------------------------------------
+
+Before publication:
+1. Replace [YEAR] and [PRODUCT_NAME].
+2. Confirm the notice matches your intent for the showcase repository.
+3. Rename this file to LICENSE in the public repository.
+4. Remove this template header after review.
