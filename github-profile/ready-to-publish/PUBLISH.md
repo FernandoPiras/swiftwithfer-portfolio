@@ -1,33 +1,32 @@
-# Phase 6 — Manual publish (required)
+# Phase 6 — Publish (blocked on write access)
 
-**Status:** Cloud Agent cannot create `FernandoPiras/FernandoPiras` (GitHub API `403 Resource not accessible by integration`).
+**Repo exists:** https://github.com/FernandoPiras/FernandoPiras (public, default branch `main`)  
+**Current content:** GitHub default “Hi there” template — **not** the approved profile  
+**Blocker:** Cursor Agent / `cursor[bot]` has **no push permission** on this repo (GitHub App is limited to `swiftwithfer-portfolio`).
 
-**Approved source:** `README.md` in this folder (byte-identical to `github-profile/README.md`).
+**Approved file to publish (root only):** `README.md` in this folder  
+(byte-identical to `github-profile/README.md`)
 
-## Single required owner operation
+## Finish now — pick one
 
-1. As **FernandoPiras**, create a **public** repository named **`FernandoPiras`** (no README / license / .gitignore init).  
-   Description: `iOS Software Developer · Swift · SwiftUI · Product Engineering`
-2. Push **only** this folder’s `README.md` to the root of that repo’s default branch (`main`) with commit:
+### A) Grant Cursor write access (then ask the agent to push)
 
-```text
-feat: publish GitHub profile README
+1. GitHub → **Settings → Applications → Installed GitHub Apps → Cursor → Configure**
+2. Add repository **`FernandoPiras/FernandoPiras`** with **Write**
+3. Tell the agent to continue — it will push this `README.md` and set the description
 
-Publishes the approved GitHub profile homepage for Fernando Piras.
+### B) Publish yourself (~30 seconds)
 
-Includes:
-- factual iOS positioning;
-- two shipped App Store products;
-- evidence-aware technical expertise;
-- primary website CTA;
-- professional contact links.
-```
+1. Open: https://github.com/FernandoPiras/FernandoPiras/edit/main/README.md  
+2. Replace **all** content with this folder’s `README.md`  
+3. Commit title: `feat: publish GitHub profile README`  
+4. Repo **Description**: `iOS Software Developer · Swift · SwiftUI · Product Engineering`
 
-Example after the empty repo exists:
+Or from a machine logged in as FernandoPiras:
 
 ```bash
-mkdir -p /tmp/FernandoPiras && cd /tmp/FernandoPiras
-git init -b main
+git clone https://github.com/FernandoPiras/FernandoPiras.git
+cd FernandoPiras
 cp /path/to/swiftwithfer-portfolio/github-profile/ready-to-publish/README.md ./README.md
 git add README.md
 git commit -m "$(cat <<'EOF'
@@ -43,13 +42,13 @@ Includes:
 - professional contact links.
 EOF
 )"
-git remote add origin https://github.com/FernandoPiras/FernandoPiras.git
-git push -u origin main
+git push origin main
+gh repo edit FernandoPiras/FernandoPiras --description "iOS Software Developer · Swift · SwiftUI · Product Engineering"
 ```
 
 ## Do not
 
 - Pin `FernandoPiras/FernandoPiras`
 - Create or pin `andrometrics` / `preventivo-rapido` yet
-- Add rules files, phase reports, badges, LICENSE, Actions, or assets
+- Add extra files (rules, badges, LICENSE, Actions)
 - Start Source Verification from this step
