@@ -12,28 +12,32 @@
 
 **Rule:** No invented personal facts. Location recommendation uses the owner-stated Phase 7 preference set (`Bologna, Italy` / `Italy`), not a claim scraped as already published on the site.
 
-**Apply-gate tooling note (2026-08-07):** Cloud Agent GitHub App token cannot update user profile fields (`PATCH /user` → 403) or repository description/homepage (`PATCH /repos/...` and GraphQL `updateRepository` → 403; administration permission absent). Live profile metadata and `swiftwithfer-portfolio` description/homepage therefore remain **MANUAL ACTION REQUIRED** until the owner applies them in GitHub Settings. No success was invented.
+**Status vocabulary (mandatory for the final gate):** `APPLIED_AND_VERIFIED` · `MANUAL_ACTION_REQUIRED` · `ALREADY_CORRECT` · `DEFERRED`  
+Statuses describe **live public values vs approved targets**, not Cloud Agent write success. The Cursor GitHub App token returns **403** for user-profile and repository-About writes; those App-token failures must not be narrated as successful agent applies.
+
+**Live re-verify (2026-08-07, public API):** Name still has a trailing space (`"Fernando Piras "`). Bio, Website, Location, portfolio Description/Homepage match targets. Company empty, email hidden, socials empty, pins = 0. Avatar still default identicon. See final decision record.
 
 ---
 
 # 1. Executive Summary
 
-Phase 6 delivered a strong Profile README. The rest of the public GitHub surface is still mostly **empty metadata** and **legal/support repositories** with no descriptions, no topics, and several portfolio-confusing names.
+Phase 6 delivered a strong Profile README. At audit start the public GitHub surface still had **empty sidebar metadata** and **legal/support repositories** with no descriptions, no topics, and several portfolio-confusing names.
 
-**Decision status:** Safe profile + portfolio metadata changes are **approved**. Agent could not write them (token 403). Owner must enter the exact values in Section **SAFE CHANGES — FINAL DECISION RECORD**. Deferred cleanups remain deferred. Pins stay at zero. Avatar is a future improvement (no automatic upload this pass).
+**Decision status (final correction gate):** Most approved safe targets are **live and verified**. **Name** is not yet exact (`Fernando Piras` with trailing space → `MANUAL_ACTION_REQUIRED`). Avatar and legal/showcase items remain **DEFERRED**. Cloud Agent App-token writes for profile/repo About remain unsupported (**403**); do not attribute live values to App-token success. Pins stay at zero.
 
-| Area | Current state | Priority |
-|------|---------------|----------|
+| Area | Live state (re-verify) | Priority |
+|------|------------------------|----------|
 | Profile README | Approved, live, byte-identical | Keep |
-| Name / Bio / Website / Location | All empty / unset | Fill (safe, owner-approved) |
-| Avatar | Default GitHub identicon | Replace with site-grade portrait |
-| Pins | **Zero** pinned repos | Keep zero until showcases exist |
-| Public repos (8) | Mostly legal/privacy/empty; no `andrometrics` / `preventivo-rapido` showcases | Cleanup recommendations only |
-| Trust risks | Empty repo, double-dash name, Slotiva/Turbo Run visibility, personal Gmail on Turbo Run page | Defer invasive changes; document now |
+| Name | `"Fernando Piras "` (trailing space) | Trim to exact `Fernando Piras` |
+| Bio / Website / Location | Match approved targets | Keep |
+| Avatar | Default GitHub identicon | Future improvement |
+| Pins | **Zero** | Keep until showcases exist |
+| Public repos (8) | Legal/privacy/empty still present; no product showcases | Deferred cleanup |
+| Trust risks | Empty repo, double-dash name, Slotiva/Turbo Run, personal Gmail on Turbo Run page | Deferred |
 
-**Verdict:** The homepage README is recruiter-ready. The **sidebar and repository list are not**. Completing the metadata block and leaving pins empty until product showcases exist will produce a credible ArtiProg-ready surface without touching commercial apps.
+**Verdict:** Sidebar identity is largely in place; one Name whitespace fix remains. Repository-list noise is deferred. No showcases, no Source Verification, no visibility/archive/rename in this phase.
 
-**Approval gate:** Owner approved the safe set below. Live writes by the agent **failed** (403). See final decision record for APPLIED / MANUAL ACTION REQUIRED / DEFERRED.
+**Approval gate:** Owner approved the safe set. Final statuses are only those in **SAFE CHANGES — FINAL DECISION RECORD**.
 
 ---
 
@@ -325,13 +329,13 @@ Empty or legal pins would harm trust more than having no pins. GitHub will show 
 
 # 16. Changes Safe to Apply Now — Final Approved Set
 
-*(Locked by owner approval gate, 2026-08-07. Agent write attempt: failed with 403 — see decision record.)*
+*(Locked by owner approval gate, 2026-08-07. Live status is authoritative in the final decision record below — not historical App-token 403 notes.)*
 
-### Profile metadata (approved)
+### Profile metadata (approved targets)
 
 | Field | Approved value |
 |-------|----------------|
-| Name | `Fernando Piras` |
+| Name | `Fernando Piras` *(exact; no trailing space)* |
 | Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
 | Website | `https://www.fernandopiras.com` |
 | Location | `Bologna, Italy` |
@@ -420,58 +424,87 @@ Scores reflect **current live public surface** and **projected surface after own
 
 # SAFE CHANGES — FINAL DECISION RECORD
 
-**Owner approval:** 2026-08-07 (PR #10 reviewed and approved)  
-**Apply status:** 2026-08-07 — profile metadata applied by owner; `swiftwithfer-portfolio` About applied via owner-provided short-lived PAT (Administration write)  
-**PR #10:** remains **Draft** — not merged in this gate  
+**Owner approval:** 2026-08-07 (PR #10)  
+**Live re-verify:** 2026-08-07 via public GitHub API / GraphQL  
+**PR #10:** remains **Draft** — not merged  
 
-## APPLIED
+**Status rules:**  
+- `APPLIED_AND_VERIFIED` = live value matches approved target (exact check).  
+- `MANUAL_ACTION_REQUIRED` = live value does **not** match target; Cloud Agent App token cannot fix it (profile/About writes → 403).  
+- `ALREADY_CORRECT` = target was already satisfied / intentionally left as-is and verified.  
+- `DEFERRED` = out of this pass by owner decision.  
 
-| Item | Live public value | Verified |
-|------|-------------------|----------|
-| Name | `Fernando Piras` *(trailing space present in API)* | Yes |
-| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` | Yes |
-| Website | `https://www.fernandopiras.com/` | Yes |
-| Location | `Bologna, Italy` | Yes |
-| Company | empty (`null`) | Yes |
-| Public email | hidden (`null`) | Yes |
-| Social links | none | Yes |
-| Pins | **0** | Yes |
-| `FernandoPiras/FernandoPiras` README | unchanged | Yes |
-| `FernandoPiras/FernandoPiras` topics | none (not added) | Yes |
-| `FernandoPiras/FernandoPiras` description | unchanged (`null`) | Yes |
-| `swiftwithfer-portfolio` description | `Source for the fernandopiras.com personal site` | Yes |
-| `swiftwithfer-portfolio` homepage | `https://www.fernandopiras.com` | Yes |
+Cloud Agent **App-token** writes for Name/Bio/Website/Location and repository Description/Homepage are **not** claimed as agent-applied (those calls return **403**).
 
-## MANUAL ACTION REQUIRED
+| Element | Approved target | Live value (API) | Status |
+|---------|-----------------|------------------|--------|
+| Name | `Fernando Piras` | `Fernando Piras ` (len 15; trailing space) | **MANUAL_ACTION_REQUIRED** |
+| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` | exact match | **APPLIED_AND_VERIFIED** |
+| Website | `https://www.fernandopiras.com` | `https://www.fernandopiras.com/` (equivalent) | **APPLIED_AND_VERIFIED** |
+| Location | `Bologna, Italy` | exact match | **APPLIED_AND_VERIFIED** |
+| Company | empty | `null` | **ALREADY_CORRECT** |
+| Public email | hidden | `null` | **ALREADY_CORRECT** |
+| Social links | empty | `[]` | **ALREADY_CORRECT** |
+| Avatar | unchanged this pass | default identicon | **DEFERRED** |
+| `FernandoPiras` README | unchanged | approved content live | **ALREADY_CORRECT** |
+| `FernandoPiras` topics | do not add | `[]` | **ALREADY_CORRECT** |
+| `FernandoPiras` description | unchanged | `null` | **ALREADY_CORRECT** |
+| `FernandoPiras` pin | do not pin | not pinned | **ALREADY_CORRECT** |
+| `swiftwithfer-portfolio` description | `Source for the fernandopiras.com personal site` | exact match | **APPLIED_AND_VERIFIED** |
+| `swiftwithfer-portfolio` homepage | `https://www.fernandopiras.com` | exact match | **APPLIED_AND_VERIFIED** |
+| `swiftwithfer-portfolio` pin | do not pin | not pinned | **ALREADY_CORRECT** |
+| Pin count | `0` | `0` | **ALREADY_CORRECT** |
 
-| Item | Action |
-|------|--------|
-| **Revoke PATs pasted in chat** | https://github.com/settings/personal-access-tokens — revoke both tokens shared during this gate |
-| Name trailing space (optional) | Trim `Fernando Piras ` → `Fernando Piras` in https://github.com/settings/profile |
+## 1. APPLIED_AND_VERIFIED
 
-## DEFERRED
+- Bio  
+- Website  
+- Location  
+- `swiftwithfer-portfolio` description  
+- `swiftwithfer-portfolio` homepage  
 
-| Item | Reason |
-|------|--------|
-| Avatar replacement | Approved as future improvement; left unchanged this pass |
-| `andrometrics-privacy` cleanup | Explicitly deferred |
-| `preventivorapido-support` visibility/archive | Explicitly deferred |
-| `preventivorapido--legal` rename | Explicitly deferred |
-| Legal repository metadata cleanup | Explicitly deferred |
-| Slotiva cleanup | Explicitly deferred |
-| Turbo Run cleanup | Explicitly deferred |
-| Showcase creation (`andrometrics`, `preventivo-rapido`) | Explicitly deferred |
-| Source Verification | Remains suspended |
-| Profile README edits | Not needed / deferred |
-| Repository visibility changes | Explicitly deferred |
-| Archives | Explicitly deferred |
-| Renames | Explicitly deferred |
-| Topics on `FernandoPiras/FernandoPiras` | Decision: do **not** add |
-| Description on `FernandoPiras/FernandoPiras` | Optional; no change this pass |
-| Legal repo descriptions | Deferred with legal metadata cleanup |
+## 2. MANUAL_ACTION_REQUIRED
 
-**Explicit non-actions still in force:** no visibility changes, no archives, no renames, no showcase creation, no Source Verification, no Profile README edit, no app changes, no Phase 8.
+**Name only** — must become exactly `Fernando Piras` (no trailing space).
+
+Checklist:
+
+1. Open https://github.com/settings/profile  
+2. Set **Name** to exactly: `Fernando Piras`  
+3. Save  
+4. Confirm API `users/FernandoPiras.name === "Fernando Piras"` (length 14)
+
+## 3. ALREADY_CORRECT
+
+- Company empty  
+- Public email hidden  
+- Social links empty  
+- Pins = 0  
+- `FernandoPiras/FernandoPiras` README unchanged  
+- `FernandoPiras/FernandoPiras` no topics  
+- `FernandoPiras/FernandoPiras` description unchanged  
+- Neither profile repo nor portfolio pinned  
+
+## 4. DEFERRED
+
+- Avatar replacement (future improvement)  
+- `andrometrics-privacy` cleanup  
+- `preventivorapido-support` visibility/archive  
+- `preventivorapido--legal` rename  
+- Legal repository metadata cleanup  
+- Slotiva cleanup  
+- Turbo Run cleanup  
+- Showcase creation (`andrometrics`, `preventivo-rapido`)  
+- Source Verification  
+- Profile README edits  
+- Repository visibility changes / archives / renames  
+
+## Security note
+
+Personal access tokens were pasted into this agent chat during the approval gate. **Revoke them** at https://github.com/settings/personal-access-tokens. Do not paste tokens into chat again. This document does not store token values.
+
+**Explicit non-actions still in force:** no visibility changes, no archives, no renames, no showcase creation, no Source Verification, no Profile README edit, no app changes, no Phase 8, no merge of PR #10 in this gate.
 
 ---
 
-**Phase 7 status:** Approved safe changes **applied and verified** (avatar deferred). Owner should revoke chat-shared PATs. PR #10 stays Draft until merge is requested.
+**Phase 7 correction-gate status:** Decision record aligned to live API. Remaining blocker for full safe-target completion: **Name trailing-space trim** (`MANUAL_ACTION_REQUIRED`). PR #10 stays Draft.
