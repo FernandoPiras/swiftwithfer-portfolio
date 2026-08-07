@@ -5,8 +5,10 @@
 **Status:** TEMPLATE — fill only during local Source Verification  
 **Filled by:** _______________  
 **Date:** _______________  
-**Local project root:** _______________  
-**Xcode project / workspace:** _______________  
+**Local project root:** _______________ *(PRIVATE_VERIFICATION_DATA — never copy into SHOWCASE_INPUT_PACKAGE)*  
+**Xcode project / workspace:** _______________ *(PRIVATE_VERIFICATION_DATA — never copy into SHOWCASE_INPUT_PACKAGE)*  
+
+**Artifact class:** Completed fillings are **LOCAL_PRIVATE_WORKING_ARTIFACTS** — no commit, no push, no public PR.  
 
 **Rules:** No invention. No PreventivoRapido evidence here. No secrets copied. Real usage required.
 
@@ -72,7 +74,7 @@ If access = NO → stop this template; do not mark any row `SOURCE_VERIFIED`.
 
 ### PUBLIC_SAFE_SUMMARY
 
-*(2–5 sentences max. No internal folder dump. No clonable blueprint.)*
+*(2–5 sentences max. High-level competence only. No full directory tree, no unnecessary proprietary component names, no endpoints, no full data schemas, no algorithms, no clonable blueprint. Evidence file paths stay in INTERNAL_FINDING only.)*
 
 ```
 [FILL]
@@ -115,8 +117,8 @@ For each row: only mark `SOURCE_VERIFIED` if **real product usage** is proven.
 |------|----------------------|-------|-------------|-------|
 | | | | | |
 
-**Secrets in dependency config:** SECRET_PRESENT = YES / NO  
-Coarse locations (if YES): _______________
+**Secret scan (private detail):** coarse locations only — _______________  
+*(Values/tokens/keys never written here for publication.)*
 
 ---
 
@@ -244,12 +246,14 @@ Coarse locations (if YES): _______________
 
 ## 11. Security & secret scan
 
-| SECRET_PRESENT | YES / NO |
-|----------------|----------|
-| Coarse locations (if YES) | |
-| Classes found (`SAFE` / `REDACT` / `DO_NOT_PUBLISH`) | |
+| Field | Value |
+|-------|-------|
+| Private scan detail class | `SAFE` / `REDACT` / `DO_NOT_PUBLISH` (list classes only) |
+| Coarse locations (PRIVATE_VERIFICATION_DATA) | |
+| Package status for SHOWCASE_INPUT_PACKAGE | `NOT_VERIFIED` / `CLEAR` / `FINDINGS_PRESENT` |
 
-**No secret values in this file.**
+**No secret values, token fragments, API keys, or credentials in this file.**  
+If `FINDINGS_PRESENT`, SHOWCASE_INPUT_PACKAGE gets **only** that status — no detail.
 
 ---
 
@@ -279,7 +283,9 @@ Evidence types: `SOURCE_VERIFIED` · `APP_STORE_VERIFIED` · `OWNER_VERIFIED` ·
 
 ## 14. SHOWCASE_INPUT_PACKAGE — ANDROMETRICS
 
-Fill **only** approved public-safe content. Leave blank or `NOT_VERIFIED` rather than inventing.
+Fill **only** `PUBLIC_SAFE_VERIFICATION_DATA` / approved public fields.  
+**Exclude:** local roots, Xcode paths, evidence file paths, `INTERNAL_FINDING`, security detail, secret values/locations.  
+Leave blank or `NOT_VERIFIED` rather than inventing. Default secret status before scan: `NOT_VERIFIED`.
 
 ```yaml
 product_code: ANDROMETRICS
@@ -301,7 +307,7 @@ support_url: "https://fernandopiras.github.io/andrometrics-legal/support.html"
 privacy_url: "https://fernandopiras.github.io/andrometrics-legal/privacy.html"
 source_code_notice: "Commercial source is private. This repository is a documentation showcase only."
 claims_explicitly_forbidden: []
-secret_present: NO
+secret_scan_status: NOT_VERIFIED   # NOT_VERIFIED | CLEAR | FINDINGS_PRESENT (no details)
 verification_complete: NO
 ```
 
