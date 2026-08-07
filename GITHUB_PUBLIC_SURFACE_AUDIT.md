@@ -421,57 +421,39 @@ Scores reflect **current live public surface** and **projected surface after own
 # SAFE CHANGES — FINAL DECISION RECORD
 
 **Owner approval:** 2026-08-07 (PR #10 reviewed and approved)  
-**Agent apply attempt:** 2026-08-07 — profile + repo metadata writes returned **403 Resource not accessible by integration**  
+**Apply status:** 2026-08-07 — profile metadata applied by owner; `swiftwithfer-portfolio` About applied via owner-provided short-lived PAT (Administration write)  
 **PR #10:** remains **Draft** — not merged in this gate  
 
 ## APPLIED
 
-| Item | Status |
-|------|--------|
-| *(none via agent)* | No live metadata write succeeded. Document updated to record decisions. |
-| `FernandoPiras/FernandoPiras` README | Confirmed unchanged (no edit attempted) |
-| `FernandoPiras/FernandoPiras` topics | Confirmed none added (do not add — honored) |
-| `FernandoPiras/FernandoPiras` description | No change (optional; default honored) |
-| Pins | Confirmed **0** pinned repositories (honored) |
-| Avatar automatic replacement | Not attempted (no supported safe profile-avatar upload path for this token) |
+| Item | Live public value | Verified |
+|------|-------------------|----------|
+| Name | `Fernando Piras` *(trailing space present in API)* | Yes |
+| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` | Yes |
+| Website | `https://www.fernandopiras.com/` | Yes |
+| Location | `Bologna, Italy` | Yes |
+| Company | empty (`null`) | Yes |
+| Public email | hidden (`null`) | Yes |
+| Social links | none | Yes |
+| Pins | **0** | Yes |
+| `FernandoPiras/FernandoPiras` README | unchanged | Yes |
+| `FernandoPiras/FernandoPiras` topics | none (not added) | Yes |
+| `FernandoPiras/FernandoPiras` description | unchanged (`null`) | Yes |
+| `swiftwithfer-portfolio` description | `Source for the fernandopiras.com personal site` | Yes |
+| `swiftwithfer-portfolio` homepage | `https://www.fernandopiras.com` | Yes |
 
 ## MANUAL ACTION REQUIRED
 
-Enter these exact values in GitHub (agent cannot write them):
-
-### A) https://github.com/settings/profile
-
-| Field | Exact value |
-|-------|-------------|
-| **Name** | `Fernando Piras` |
-| **Bio** | `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
-| **Website** | `https://www.fernandopiras.com` |
-| **Location** | `Bologna, Italy` |
-| **Company** | *(leave empty)* |
-| **Public email** | keep hidden / not displayed on profile |
-| **Social links** | *(leave empty)* |
-| **Avatar** | leave unchanged this pass |
-
-### B) https://github.com/FernandoPiras/swiftwithfer-portfolio (About / Settings)
-
-| Field | Exact value |
-|-------|-------------|
-| **Description** | `Source for the fernandopiras.com personal site` |
-| **Website / Homepage** | `https://www.fernandopiras.com` |
-
-### Post-manual verification checklist
-
-After saving, public API should show:
-
-- `users/FernandoPiras`: `name=Fernando Piras`, `bio=iOS Software Developer · Swift · SwiftUI · Product Engineering`, `blog=https://www.fernandopiras.com`, `location=Bologna, Italy`, `company=null`, `email` not public, no social accounts  
-- `repos/FernandoPiras/swiftwithfer-portfolio`: `description=Source for the fernandopiras.com personal site`, `homepage=https://www.fernandopiras.com`  
-- pinned count = 0  
+| Item | Action |
+|------|--------|
+| **Revoke PATs pasted in chat** | https://github.com/settings/personal-access-tokens — revoke both tokens shared during this gate |
+| Name trailing space (optional) | Trim `Fernando Piras ` → `Fernando Piras` in https://github.com/settings/profile |
 
 ## DEFERRED
 
 | Item | Reason |
 |------|--------|
-| Avatar replacement | Approved as future improvement; no auto-upload this pass |
+| Avatar replacement | Approved as future improvement; left unchanged this pass |
 | `andrometrics-privacy` cleanup | Explicitly deferred |
 | `preventivorapido-support` visibility/archive | Explicitly deferred |
 | `preventivorapido--legal` rename | Explicitly deferred |
@@ -486,10 +468,10 @@ After saving, public API should show:
 | Renames | Explicitly deferred |
 | Topics on `FernandoPiras/FernandoPiras` | Decision: do **not** add |
 | Description on `FernandoPiras/FernandoPiras` | Optional; no change this pass |
-| Legal repo descriptions (`andrometrics-legal`, `preventivorapido--legal`) | Deferred with legal metadata cleanup |
+| Legal repo descriptions | Deferred with legal metadata cleanup |
 
 **Explicit non-actions still in force:** no visibility changes, no archives, no renames, no showcase creation, no Source Verification, no Profile README edit, no app changes, no Phase 8.
 
 ---
 
-**Phase 7 status:** Decisions locked. Live profile/portfolio metadata **not yet updated** (manual action required). PR #10 stays Draft pending owner manual apply + optional re-verify.
+**Phase 7 status:** Approved safe changes **applied and verified** (avatar deferred). Owner should revoke chat-shared PATs. PR #10 stays Draft until merge is requested.
