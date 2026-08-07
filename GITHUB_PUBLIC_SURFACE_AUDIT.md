@@ -4,18 +4,23 @@
 **Profile:** https://github.com/FernandoPiras  
 **Special repository:** https://github.com/FernandoPiras/FernandoPiras  
 **Audit date:** 2026-08-07  
+**Approval gate:** 2026-08-07 — owner approved safe changes (PR #10)  
 **Scope:** Public metadata, repository surface, pins, trust, recruiter readability  
-**Out of scope (not performed):** profile metadata edits, visibility changes, archive actions, showcase creation, Source Verification, app code changes, banners/images/badges, Profile README edits  
+**Out of scope (not performed):** visibility changes, archive actions, showcase creation, Source Verification, app code changes, banners/images/badges, Profile README edits, legal-repo metadata, avatar auto-upload  
 
 **Evidence sources used:** GitHub REST/GraphQL public APIs, live profile/repo pages, `FernandoPiras/FernandoPiras` README (byte-identical to approved `github-profile/README.md`), https://www.fernandopiras.com, GitHub Pages for legal/privacy repos, Phase 1 report, Profile README content rules.
 
 **Rule:** No invented personal facts. Location recommendation uses the owner-stated Phase 7 preference set (`Bologna, Italy` / `Italy`), not a claim scraped as already published on the site.
+
+**Apply-gate tooling note (2026-08-07):** Cloud Agent GitHub App token cannot update user profile fields (`PATCH /user` → 403) or repository description/homepage (`PATCH /repos/...` and GraphQL `updateRepository` → 403; administration permission absent). Live profile metadata and `swiftwithfer-portfolio` description/homepage therefore remain **MANUAL ACTION REQUIRED** until the owner applies them in GitHub Settings. No success was invented.
 
 ---
 
 # 1. Executive Summary
 
 Phase 6 delivered a strong Profile README. The rest of the public GitHub surface is still mostly **empty metadata** and **legal/support repositories** with no descriptions, no topics, and several portfolio-confusing names.
+
+**Decision status:** Safe profile + portfolio metadata changes are **approved**. Agent could not write them (token 403). Owner must enter the exact values in Section **SAFE CHANGES — FINAL DECISION RECORD**. Deferred cleanups remain deferred. Pins stay at zero. Avatar is a future improvement (no automatic upload this pass).
 
 | Area | Current state | Priority |
 |------|---------------|----------|
@@ -28,7 +33,7 @@ Phase 6 delivered a strong Profile README. The rest of the public GitHub surface
 
 **Verdict:** The homepage README is recruiter-ready. The **sidebar and repository list are not**. Completing the metadata block and leaving pins empty until product showcases exist will produce a credible ArtiProg-ready surface without touching commercial apps.
 
-**No changes were applied in this phase.** All proposed edits wait for owner approval (Section 16 / Safe Changes).
+**Approval gate:** Owner approved the safe set below. Live writes by the agent **failed** (403). See final decision record for APPLIED / MANUAL ACTION REQUIRED / DEFERRED.
 
 ---
 
@@ -121,11 +126,11 @@ Balance: credible for Italian/EU recruiting, not street-level, aligned with owne
 | Small-size legibility | Identicon remains readable but generic |
 | Neutrality | High (abstract) |
 
-**Classification: SHOULD CHANGE**
+**Classification: SHOULD CHANGE** *(approved as **future improvement** — not this pass)*
 
-**Reason:** A default identicon undercuts an otherwise serious Profile README and breaks visual continuity with the personal site. Replace with the same professional portrait used on fernandopiras.com (face-forward crop, high contrast, no text overlay).
+**Reason:** A default identicon undercuts an otherwise serious Profile README and breaks visual continuity with the personal site. Replace later with the same professional portrait used on fernandopiras.com (face-forward crop, high contrast, no text overlay).
 
-**Not applied in this phase** (no image upload / no automatic avatar change).
+**This pass:** No automatic avatar upload (no supported safe profile-avatar action for the agent token). Leave unchanged; manual future action.
 
 ---
 
@@ -318,31 +323,29 @@ Empty or legal pins would harm trust more than having no pins. GitHub will show 
 
 ---
 
-# 16. Changes Safe to Apply Now
+# 16. Changes Safe to Apply Now — Final Approved Set
 
-*(Safe = metadata / descriptions / topics / homepage URL text. Still **requires owner approval** before execution. No visibility flips in this list except where noted as recommendation-only.)*
+*(Locked by owner approval gate, 2026-08-07. Agent write attempt: failed with 403 — see decision record.)*
 
-### Profile metadata
+### Profile metadata (approved)
 
-| Field | Action |
-|-------|--------|
-| Name | Set `Fernando Piras` |
-| Bio | Set `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
-| Website | Set `https://www.fernandopiras.com` |
-| Location | Set `Bologna, Italy` (or `Italy` if privacy preferred) |
-| Company | Leave empty |
-| Public email | Keep hidden |
-| Social links | Leave empty |
-| Avatar | Upload professional portrait (same family as site photo) — owner action in GitHub UI |
+| Field | Approved value |
+|-------|----------------|
+| Name | `Fernando Piras` |
+| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
+| Website | `https://www.fernandopiras.com` |
+| Location | `Bologna, Italy` |
+| Company | leave empty |
+| Public email | keep hidden |
+| Social links | leave empty |
+| Avatar | future improvement — leave unchanged this pass |
 
-### Repository metadata (public text only)
+### Repository metadata (approved this pass)
 
-| Repository | Description | Homepage | Topics |
-|------------|-------------|----------|--------|
-| `FernandoPiras` | `GitHub profile README for Fernando Piras` | empty | `ios`, `swift`, `swiftui`, `product-engineering` |
-| `swiftwithfer-portfolio` | `Source for the fernandopiras.com personal site` | `https://www.fernandopiras.com` | none for now |
-| `andrometrics-legal` | `Public legal pages for AndroMetrics` | optional Pages URL | none |
-| `preventivorapido--legal` | `Public legal pages for PreventivoRapido PRO` | optional Pages URL | none |
+| Repository | Description | Homepage | Topics | Pin |
+|------------|-------------|----------|--------|-----|
+| `FernandoPiras` | **no change** (optional; default leave empty) | no change | **do not add** | **do not pin** |
+| `swiftwithfer-portfolio` | `Source for the fernandopiras.com personal site` | `https://www.fernandopiras.com` | no change | **do not pin** |
 
 ### Pins
 
@@ -415,28 +418,78 @@ Scores reflect **current live public surface** and **projected surface after own
 
 ---
 
-# SAFE CHANGES READY FOR OWNER APPROVAL
+# SAFE CHANGES — FINAL DECISION RECORD
 
-Do **not** apply until explicitly approved.
+**Owner approval:** 2026-08-07 (PR #10 reviewed and approved)  
+**Agent apply attempt:** 2026-08-07 — profile + repo metadata writes returned **403 Resource not accessible by integration**  
+**PR #10:** remains **Draft** — not merged in this gate  
 
-1. **Name** → `Fernando Piras`  
-2. **Bio** → `iOS Software Developer · Swift · SwiftUI · Product Engineering`  
-3. **Website** → `https://www.fernandopiras.com`  
-4. **Location** → `Bologna, Italy` *(alt: `Italy`)*  
-5. **Company** → leave empty  
-6. **Public email** → keep hidden  
-7. **Social links** → leave empty  
-8. **Avatar** → replace identicon with professional portrait (owner upload)  
-9. **`FernandoPiras` description** → `GitHub profile README for Fernando Piras`  
-10. **`FernandoPiras` topics** → `ios`, `swift`, `swiftui`, `product-engineering`  
-11. **`swiftwithfer-portfolio` description** → `Source for the fernandopiras.com personal site`  
-12. **`swiftwithfer-portfolio` homepage** → `https://www.fernandopiras.com`  
-13. **`andrometrics-legal` description** → `Public legal pages for AndroMetrics`  
-14. **`preventivorapido--legal` description** → `Public legal pages for PreventivoRapido PRO`  
-15. **Pins** → keep none  
+## APPLIED
 
-**Explicit non-actions until further instruction:** no visibility changes, no archives, no renames, no showcase creation, no Source Verification, no Profile README edit, no app changes.
+| Item | Status |
+|------|--------|
+| *(none via agent)* | No live metadata write succeeded. Document updated to record decisions. |
+| `FernandoPiras/FernandoPiras` README | Confirmed unchanged (no edit attempted) |
+| `FernandoPiras/FernandoPiras` topics | Confirmed none added (do not add — honored) |
+| `FernandoPiras/FernandoPiras` description | No change (optional; default honored) |
+| Pins | Confirmed **0** pinned repositories (honored) |
+| Avatar automatic replacement | Not attempted (no supported safe profile-avatar upload path for this token) |
+
+## MANUAL ACTION REQUIRED
+
+Enter these exact values in GitHub (agent cannot write them):
+
+### A) https://github.com/settings/profile
+
+| Field | Exact value |
+|-------|-------------|
+| **Name** | `Fernando Piras` |
+| **Bio** | `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
+| **Website** | `https://www.fernandopiras.com` |
+| **Location** | `Bologna, Italy` |
+| **Company** | *(leave empty)* |
+| **Public email** | keep hidden / not displayed on profile |
+| **Social links** | *(leave empty)* |
+| **Avatar** | leave unchanged this pass |
+
+### B) https://github.com/FernandoPiras/swiftwithfer-portfolio (About / Settings)
+
+| Field | Exact value |
+|-------|-------------|
+| **Description** | `Source for the fernandopiras.com personal site` |
+| **Website / Homepage** | `https://www.fernandopiras.com` |
+
+### Post-manual verification checklist
+
+After saving, public API should show:
+
+- `users/FernandoPiras`: `name=Fernando Piras`, `bio=iOS Software Developer · Swift · SwiftUI · Product Engineering`, `blog=https://www.fernandopiras.com`, `location=Bologna, Italy`, `company=null`, `email` not public, no social accounts  
+- `repos/FernandoPiras/swiftwithfer-portfolio`: `description=Source for the fernandopiras.com personal site`, `homepage=https://www.fernandopiras.com`  
+- pinned count = 0  
+
+## DEFERRED
+
+| Item | Reason |
+|------|--------|
+| Avatar replacement | Approved as future improvement; no auto-upload this pass |
+| `andrometrics-privacy` cleanup | Explicitly deferred |
+| `preventivorapido-support` visibility/archive | Explicitly deferred |
+| `preventivorapido--legal` rename | Explicitly deferred |
+| Legal repository metadata cleanup | Explicitly deferred |
+| Slotiva cleanup | Explicitly deferred |
+| Turbo Run cleanup | Explicitly deferred |
+| Showcase creation (`andrometrics`, `preventivo-rapido`) | Explicitly deferred |
+| Source Verification | Remains suspended |
+| Profile README edits | Not needed / deferred |
+| Repository visibility changes | Explicitly deferred |
+| Archives | Explicitly deferred |
+| Renames | Explicitly deferred |
+| Topics on `FernandoPiras/FernandoPiras` | Decision: do **not** add |
+| Description on `FernandoPiras/FernandoPiras` | Optional; no change this pass |
+| Legal repo descriptions (`andrometrics-legal`, `preventivorapido--legal`) | Deferred with legal metadata cleanup |
+
+**Explicit non-actions still in force:** no visibility changes, no archives, no renames, no showcase creation, no Source Verification, no Profile README edit, no app changes, no Phase 8.
 
 ---
 
-**Phase 7 status:** Audit document complete. Awaiting owner approval before any public metadata updates.
+**Phase 7 status:** Decisions locked. Live profile/portfolio metadata **not yet updated** (manual action required). PR #10 stays Draft pending owner manual apply + optional re-verify.
