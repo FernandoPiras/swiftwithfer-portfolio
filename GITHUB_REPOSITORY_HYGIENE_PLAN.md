@@ -322,22 +322,35 @@ Record answers before any hide gate:
 
 ```
 FernandoPiras/
-├── FernandoPiras                 # PERSONAL_INFRASTRUCTURE (Profile README) — DO NOT PIN
-├── swiftwithfer-portfolio        # PERSONAL_INFRASTRUCTURE (site source) — DO NOT PIN
-├── andrometrics                  # CORE_PRODUCT showcase (future)
-├── andrometrics-legal            # CORE_INFRASTRUCTURE
-├── preventivo-rapido             # CORE_PRODUCT showcase (future)
-└── preventivorapido--legal       # CORE_INFRASTRUCTURE
+├── FernandoPiras
+├── swiftwithfer-portfolio
+├── andrometrics
+├── andrometrics-legal
+├── preventivo-rapido
+└── preventivorapido--legal
 ```
 
-**Must not remain on the public portfolio surface once dependencies are cleared:**
+**Roles (authoritative):**
 
-- `Slotiva-Legal` — **OUT_OF_PORTFOLIO**  
-- `turborun-privacy` — **OUT_OF_PORTFOLIO**  
-- `andrometrics-privacy` — **LEGACY**  
-- `preventivorapido-support` — **LEGACY**  
+| Path | Scope |
+|------|--------|
+| `FernandoPiras` | PERSONAL_INFRASTRUCTURE — Profile README — DO NOT PIN |
+| `swiftwithfer-portfolio` | PERSONAL_INFRASTRUCTURE — site source — DO NOT PIN · not a product |
+| `andrometrics` | CORE_PRODUCT showcase (future) |
+| `andrometrics-legal` | CORE_INFRASTRUCTURE |
+| `preventivo-rapido` | CORE_PRODUCT showcase (future) |
+| `preventivorapido--legal` | CORE_INFRASTRUCTURE |
 
-**No** Slotiva. **No** Turbo Run. **No** obsolete privacy/support leftovers. **No** future-product placeholders as public portfolio products.
+**Not part of final public surface:**
+
+- `andrometrics-privacy` — LEGACY  
+- `preventivorapido-support` — LEGACY  
+- `Slotiva-Legal` — OUT_OF_PORTFOLIO  
+- `turborun-privacy` — OUT_OF_PORTFOLIO  
+
+**Removal happens only after dependency clearance** (App Store Connect / store / AdMob as applicable). Until then each of the four may remain only as **TEMPORARY_PUBLIC_DEPENDENCY**.
+
+**No** Slotiva. **No** Turbo Run. **No** obsolete privacy/support leftovers on the final public portfolio surface. **No** other portfolio products.
 
 ### Recruiter view target
 
@@ -354,8 +367,8 @@ FernandoPiras/
 
 | Strategy bucket | Repositories |
 |-----------------|--------------|
-| **PRODUCT SHOWCASE** | `andrometrics`, `preventivo-rapido` (future) |
-| **PRODUCT INFRASTRUCTURE** | `andrometrics-legal`, `preventivorapido--legal` |
+| **PRODUCT SHOWCASE** (`CORE_PRODUCT`) | `andrometrics`, `preventivo-rapido` (future) — AndroMetrics, PreventivoRapido PRO only |
+| **PRODUCT INFRASTRUCTURE** (`CORE_INFRASTRUCTURE`) | `andrometrics-legal`, `preventivorapido--legal` |
 | **PERSONAL PORTFOLIO INFRASTRUCTURE** | `FernandoPiras`, `swiftwithfer-portfolio` |
 | **LEGACY TO REMOVE FROM PUBLIC SURFACE** | `andrometrics-privacy`, `preventivorapido-support` |
 | **OUT OF PORTFOLIO TO REMOVE FROM PUBLIC SURFACE** | `Slotiva-Legal`, `turborun-privacy` |
@@ -364,9 +377,35 @@ FernandoPiras/
 
 ## Non-actions confirmation
 
-- No visibility / archive / delete / rename applied  
-- No Pages or App Store Connect changes  
+- No private  
+- No archive  
+- No rename  
+- No delete  
+- No Pages changes  
+- No App Store Connect changes  
 - No showcase creation  
 - No Source Verification  
-- No application changes  
-- Document + PR #11 Draft updated only  
+- Document + PR #11 Draft only  
+
+---
+
+# FINAL PHASE 8 STATUS
+
+**PLAN:** APPROVED  
+
+**PORTFOLIO PRODUCTS:**  
+- AndroMetrics  
+- PreventivoRapido PRO  
+
+**LIVE CHANGES:** NONE  
+
+**CURRENT TEMPORARY PUBLIC DEPENDENCIES:**  
+- `andrometrics-privacy`  
+- `preventivorapido-support`  
+- `Slotiva-Legal`  
+- `turborun-privacy`  
+
+**FINAL REMOVAL TARGET:**  
+All four above leave the public repository surface after dependency clearance.  
+
+**MERGE READINESS:** READY — `mergeable = true`, changed files = 1 (`GITHUB_REPOSITORY_HYGIENE_PLAN.md`), base `main`, PR remains Draft until merge gate.  
