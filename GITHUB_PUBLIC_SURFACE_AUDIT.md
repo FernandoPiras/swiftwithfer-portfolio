@@ -4,441 +4,51 @@
 **Profile:** https://github.com/FernandoPiras  
 **Special repository:** https://github.com/FernandoPiras/FernandoPiras  
 **Audit date:** 2026-08-07  
-**Approval gate:** 2026-08-07 — owner approved safe changes (PR #10)  
+**Approval / correction gates:** 2026-08-07 (PR #10)  
+**Authoritative state:** **CURRENT VERIFIED STATE** / **FINAL VERIFIED STATE** (end of document)  
+**PR #10:** Draft · Open · base `main` · mergeable (no conflicts) · functional diff = this file only  
+
 **Scope:** Public metadata, repository surface, pins, trust, recruiter readability  
-**Out of scope (not performed):** visibility changes, archive actions, showcase creation, Source Verification, app code changes, banners/images/badges, Profile README edits, legal-repo metadata, avatar auto-upload  
+**Out of scope:** visibility/archive/rename, showcase creation, Source Verification, app changes, Profile README edits, avatar auto-upload, Phase 8  
 
-**Evidence sources used:** GitHub REST/GraphQL public APIs, live profile/repo pages, `FernandoPiras/FernandoPiras` README (byte-identical to approved `github-profile/README.md`), https://www.fernandopiras.com, GitHub Pages for legal/privacy repos, Phase 1 report, Profile README content rules.
+**Status vocabulary:** `APPLIED_AND_VERIFIED` · `MANUAL_ACTION_REQUIRED` · `ALREADY_CORRECT` · `DEFERRED`  
 
-**Rule:** No invented personal facts. Location recommendation uses the owner-stated Phase 7 preference set (`Bologna, Italy` / `Italy`), not a claim scraped as already published on the site.
+Statuses describe **live public values vs approved targets**. Cursor GitHub App profile/About writes return **403** and are never narrated as agent applies.
 
-**Status vocabulary (mandatory for the final gate):** `APPLIED_AND_VERIFIED` · `MANUAL_ACTION_REQUIRED` · `ALREADY_CORRECT` · `DEFERRED`  
-Statuses describe **live public values vs approved targets**, not Cloud Agent write success. The Cursor GitHub App token returns **403** for user-profile and repository-About writes; those App-token failures must not be narrated as successful agent applies.
-
-**Live re-verify (2026-08-07, public API):** Name still has a trailing space (`"Fernando Piras "`). Bio, Website, Location, portfolio Description/Homepage match targets. Company empty, email hidden, socials empty, pins = 0. Avatar still default identicon. See final decision record.
+**Evidence:** GitHub public REST/GraphQL APIs, profile/repo pages, approved Profile README, fernandopiras.com, legal Pages hosts, Phase 1 / profile content rules.
 
 ---
 
-# 1. Executive Summary
+# INITIAL AUDIT STATE
 
-Phase 6 delivered a strong Profile README. At audit start the public GitHub surface still had **empty sidebar metadata** and **legal/support repositories** with no descriptions, no topics, and several portfolio-confusing names.
+*(Historical snapshot at Phase 7 audit start. Not authoritative for live decisions.)*
 
-**Decision status (final correction gate):** Most approved safe targets are **live and verified**. **Name** is not yet exact (`Fernando Piras` with trailing space → `MANUAL_ACTION_REQUIRED`). Avatar and legal/showcase items remain **DEFERRED**. Cloud Agent App-token writes for profile/repo About remain unsupported (**403**); do not attribute live values to App-token success. Pins stay at zero.
-
-| Area | Live state (re-verify) | Priority |
-|------|------------------------|----------|
-| Profile README | Approved, live, byte-identical | Keep |
-| Name | `"Fernando Piras "` (trailing space) | Trim to exact `Fernando Piras` |
-| Bio / Website / Location | Match approved targets | Keep |
-| Avatar | Default GitHub identicon | Future improvement |
-| Pins | **Zero** | Keep until showcases exist |
-| Public repos (8) | Legal/privacy/empty still present; no product showcases | Deferred cleanup |
-| Trust risks | Empty repo, double-dash name, Slotiva/Turbo Run, personal Gmail on Turbo Run page | Deferred |
-
-**Verdict:** Sidebar identity is largely in place; one Name whitespace fix remains. Repository-list noise is deferred. No showcases, no Source Verification, no visibility/archive/rename in this phase.
-
-**Approval gate:** Owner approved the safe set. Final statuses are only those in **SAFE CHANGES — FINAL DECISION RECORD**.
-
----
-
-# 2. Profile Metadata Audit
-
-| Field | CURRENT VALUE | Decision | Notes |
-|-------|---------------|----------|-------|
-| **Username** | `FernandoPiras` | **KEEP** | Stable; matches special repo convention |
-| **Name** | *(empty / null)* — UI falls back to username | **CHANGE** | Set display name to `Fernando Piras` |
-| **Bio** | *(empty / null)* | **CHANGE** | See §3 |
-| **Location** | *(empty / null)* | **CHANGE** | See §5 |
-| **Website / blog** | *(empty string)* | **CHANGE** | `https://www.fernandopiras.com` |
-| **Company** | *(empty / null)* | **KEEP** empty | No verified company entity to publish |
-| **Public email** | *(not exposed via public API)* | **KEEP** hidden | Email already in Profile README Contact |
-| **Social links** | *none* (`social_accounts: []`) | **KEEP** empty | No verified LinkedIn/public social URL in evidence |
-| **Twitter/X username** | *(null)* | **KEEP** empty | Not evidenced |
-| **Hireable flag** | *(null)* | **KEEP** unset unless owner wants recruiters filtered that way | Optional later; not required |
-| **Avatar** | Default identicon (mint geometric pattern, ~1.5 KB PNG) | **SHOULD CHANGE** | See §8 |
-| **Profile README visibility** | Live via public `FernandoPiras/FernandoPiras` | **KEEP** | Content matches approved source |
-| **Followers / following** | 0 / 0 | **KEEP** | Not a quality signal for this portfolio stage |
+| Field / asset | Value at audit start |
+|---------------|----------------------|
+| Name | empty (`null`) |
+| Bio | empty (`null`) |
+| Website / blog | empty |
+| Location | empty (`null`) |
+| Company | empty (`null`) |
+| Public email | hidden (`null`) |
+| Social links | none |
+| Avatar | Default GitHub identicon |
+| Pins | 0 |
+| `FernandoPiras` description / topics | none / `[]` |
+| `swiftwithfer-portfolio` description | empty (`null`) |
+| `swiftwithfer-portfolio` homepage | `https://swiftwithfer-portfolio.vercel.app` |
+| Profile README | Approved content already live |
+| Public repo set | 8 repos (legal/privacy/empty/site/profile); no product showcases |
 
 ---
 
-# 3. Bio Recommendation
+# CURRENT VERIFIED STATE
 
-**GitHub bio limit:** 160 characters.  
-**Approved positioning (locked):** `iOS Software Developer · Swift · SwiftUI · Product Engineering` (62 characters).
+**Live re-verify:** 2026-08-07 (public API). **This section is authoritative** for all tables below unless a row is explicitly labeled historical.
 
-### Evaluation of variants
-
-| Candidate | Chars | Verdict |
-|-----------|------:|---------|
-| `iOS Software Developer · Swift · SwiftUI · Product Engineering` | 62 | **Recommended** — identical to README hero; maximum consistency |
-| `iOS Software Developer · Swift · SwiftUI` | 40 | Slightly shorter; drops Product Engineering signal |
-| `Native iOS · Swift · SwiftUI · Shipping App Store products` | 58 | More product-led; less aligned with locked role line |
-| `iOS Software Developer building App Store products with Swift & SwiftUI` | 71 | Clear but longer and less scannable |
-
-**Recommended bio (exact):**
-
-```text
-iOS Software Developer · Swift · SwiftUI · Product Engineering
-```
-
-**Why:** Matches the locked Profile README role line, fits comfortably in the field, avoids slogans/seniority/full-stack inflation, and does not duplicate product blurbs.
-
----
-
-# 4. Website & Contact Audit
-
-| Item | Finding | Recommendation |
-|------|---------|----------------|
-| Profile Website field | Empty | Set to `https://www.fernandopiras.com` |
-| `www` vs apex | Both resolve HTTP 200 | Prefer **www** (consistent with README CTA) |
-| README hero CTA | Website only — correct | Keep |
-| README Contact | App Store developer + `fernando@fernandopiras.com` | Keep |
-| Public email field | Not shown publicly | **Keep hidden** — recruiter utility already covered in README; reduces spam surface |
-| Social links | None | Do not invent LinkedIn or others |
-| Duplicate CTAs | None in README | Good |
-
-**Primary external link spine (target):** Website (sidebar) → Website (README hero) → product App Store links → developer page → email in Contact.
-
----
-
-# 5. Location Recommendation
-
-| Option | Pros | Cons |
-|--------|------|------|
-| `Bologna, Italy` | Stronger local recruiting / geographic search; city-level only | Slightly more precise than country-only |
-| `Italy` | Better privacy; still international signal | Weaker city-level discoverability |
-| Empty | Maximum privacy | Misses common recruiter filter |
-
-**Site scrape note:** The marketing site does not clearly publish “Bologna” as a profile location string in the sampled pages; Italian locale strings appear in product contexts. Phase 7 owner preference explicitly allows `Bologna, Italy` or `Italy`.
-
-**Recommendation:** **`Bologna, Italy`**
-
-Balance: credible for Italian/EU recruiting, not street-level, aligned with owner preference. If the owner prefers stricter privacy, use **`Italy`** instead — both are acceptable.
-
-**Do not use:** street addresses, neighborhoods, or “Remote” alone without a geography.
-
----
-
-# 6. Avatar Audit
-
-| Criterion | Assessment |
-|-----------|------------|
-| Current asset | Default GitHub **identicon** (procedural mint geometry on light background) |
-| Professionalism | Low for recruiter/client contexts |
-| Recognizability | Low — not a person brand |
-| Coherence with fernandopiras.com | **Poor** — site uses a professional portrait (`public/images/profile/fernando-bio.png` / `fernando.jpg` in portfolio workspace) |
-| Small-size legibility | Identicon remains readable but generic |
-| Neutrality | High (abstract) |
-
-**Classification: SHOULD CHANGE** *(approved as **future improvement** — not this pass)*
-
-**Reason:** A default identicon undercuts an otherwise serious Profile README and breaks visual continuity with the personal site. Replace later with the same professional portrait used on fernandopiras.com (face-forward crop, high contrast, no text overlay).
-
-**This pass:** No automatic avatar upload (no supported safe profile-avatar action for the agent token). Leave unchanged; manual future action.
-
----
-
-# 7. Public Repository Inventory
-
-Pinned count (GraphQL): **0**.  
-Public repositories: **8**.
-
-| Repository | Visibility | Description | Topics | Homepage | Archived | Fork | Portfolio utility | Recruiter confusion risk | Action class |
-|------------|------------|-------------|--------|----------|----------|------|-------------------|--------------------------|--------------|
-| `FernandoPiras` | Public | *(none)* | none | none | No | No | **High** — Profile README host | Low if metadata filled | **KEEP PUBLIC** + optional description |
-| `swiftwithfer-portfolio` | Public | *(none)* | none | `https://swiftwithfer-portfolio.vercel.app` | No | No | Working site source; not a pin target | Medium — name ≠ brand domain; Vercel URL | **KEEP PUBLIC** + cleanup description/homepage; **do not pin** |
-| `andrometrics-legal` | Public | *(none)* | none | none (Pages: `…/andrometrics-legal/`) | No | No | Real App Store legal/support hosting | Medium if pinned; OK unpinned | **KEEP PUBLIC**; **do not pin** |
-| `andrometrics-privacy` | Public | *(none)* | none | none (Pages 404 “Page not found”) | No | No | Appears obsolete / empty content tree | **High** — broken Pages + redundant name | **CLEANUP REQUIRED** (defer privacy/archive) |
-| `preventivorapido--legal` | Public | *(none)* | none | none (Pages live) | No | No | Real legal hosting | **High** — unprofessional double hyphen | **KEEP PUBLIC** for now; **CLEANUP REQUIRED** (rename later) |
-| `preventivorapido-support` | Public | *(none)* | none | none | No | No | **Empty repository** (size 0) | **High** | **HIDE/PRIVATE RECOMMENDED** or archive after owner OK |
-| `Slotiva-Legal` | Public | *(none)* | none | none (Pages live) | No | No | Legal docs for Slotiva (not an approved featured product) | **High** — looks like an active product | **KEEP PUBLIC** only if App Store still needs URLs; else private/archive later; **do not pin** |
-| `turborun-privacy` | Public | *(none)* | none | none (Pages live) | No | No | Privacy page for Turbo Run; contact shows `fernandopiras95@gmail.com` | **High** — unrelated product + personal Gmail | **CLEANUP REQUIRED**; **do not pin** |
-
-**Missing (expected later, not created in this phase):**
-
-- `andrometrics` (product showcase)  
-- `preventivo-rapido` (product showcase)  
-
----
-
-# 8. Repository Cleanup Recommendations
-
-Ordered by recruiter harm (recommendations only — **not executed**):
-
-1. **`preventivorapido-support`** — empty public repo → make private or archive after confirming no App Store URL depends on it.  
-2. **`andrometrics-privacy`** — Pages 404; superseded by `andrometrics-legal` → private/archive after URL migration check.  
-3. **`preventivorapido--legal`** — rename when safe (double `--` reads accidental). Renames break GitHub Pages URLs → plan App Store Connect URL updates first.  
-4. **`turborun-privacy`** — replace personal Gmail with professional email on the published page; consider private if Turbo Run is not part of the public portfolio narrative.  
-5. **`Slotiva-Legal`** — keep public only while required for store compliance; never pin; do not feature on profile README (already excluded by product policy).  
-6. **`swiftwithfer-portfolio`** — set description + homepage to `https://www.fernandopiras.com`; leave public as site source; never pin.  
-7. **`FernandoPiras`** — optional short description; never pin.
-
----
-
-# 9. Repository Description Standard
-
-**Rules:**
-
-- One factual sentence (or sentence fragment)  
-- Target **50–90 characters** (hard ceiling ~120)  
-- No slogans, emoji, trailing hype, or seniority words  
-- Explain what the repository **is**, not what it aspires to be  
-- English for portfolio-facing repos; legal repos may stay bilingual in content but GitHub description should stay English for international recruiters  
-
-### Recommended descriptions (for owner approval)
-
-| Repository | Proposed description | Chars |
-|------------|----------------------|------:|
-| `FernandoPiras` | `GitHub profile README for Fernando Piras` | 40 |
-| `swiftwithfer-portfolio` | `Source for the fernandopiras.com personal site` | 48 |
-| `andrometrics-legal` | `Public legal pages for AndroMetrics` | 36 |
-| `preventivorapido--legal` | `Public legal pages for PreventivoRapido PRO` | 43 |
-| `andrometrics-privacy` | `Legacy AndroMetrics privacy host (superseded)` | 47 |
-| `preventivorapido-support` | *(none — remove repo from public surface first)* | — |
-| `Slotiva-Legal` | `Legal documents for Slotiva` | 28 |
-| `turborun-privacy` | `Privacy policy hosting for Turbo Run` | 36 |
-
-**Special repo note:** A short description helps when someone opens `FernandoPiras/FernandoPiras` directly. It is optional for minimalism; the Profile README already carries the narrative. **Recommendation:** apply the short description above.
-
-**Homepage URL standard:**
-
-| Repository | Homepage |
-|------------|----------|
-| `FernandoPiras` | leave empty **or** `https://www.fernandopiras.com` (prefer empty to avoid duplicating sidebar Website) |
-| `swiftwithfer-portfolio` | `https://www.fernandopiras.com` (replace Vercel preview URL) |
-| Legal/Pages repos | set homepage to the live GitHub Pages URL **or** leave empty if App Store already deep-links HTML files |
-
----
-
-# 10. Topics Standard
-
-**Allowed topic vocabulary (evidence-backed for this portfolio stage):**
-
-- `ios`  
-- `swift`  
-- `swiftui`  
-- `mobile-development`  
-- `app-store`  
-- `product-engineering`  
-
-**Rules:** 3–6 topics max per repo; only where the repo subject matches; no stack fantasy topics; no topic spam.
-
-| Repository | Topics now | Recommended topics | Apply now? |
-|------------|------------|--------------------|------------|
-| `FernandoPiras` | none | `ios`, `swift`, `swiftui`, `product-engineering` | Yes (after approval) |
-| `swiftwithfer-portfolio` | none | `nextjs` only if owner wants site-tech discovery; else **none** or `portfolio` sparingly | Prefer **defer** — avoid implying Next.js is the product identity |
-| Legal/privacy repos | none | **none** (or single `documentation`) | Prefer **none** — topics here attract the wrong discovery |
-| Future `andrometrics` / `preventivo-rapido` | n/a | `ios`, `swift`, `swiftui`, `app-store`, `mobile-development`, `product-engineering` (subset 3–6) | Defer until showcases exist |
-
----
-
-# 11. Pin Strategy
-
-| Rule | Status |
-|------|--------|
-| Do not pin `FernandoPiras/FernandoPiras` | **Compliant** (0 pins) |
-| Do not pin `swiftwithfer-portfolio` | **Compliant** |
-| Do not pin legal/support/empty repos | **Compliant** |
-| Pin only `andrometrics` + `preventivo-rapido` when they exist and are approved | **Blocked** — repos do not exist yet |
-
-**Current recommendation:** keep **zero pins**.
-
-Empty or legal pins would harm trust more than having no pins. GitHub will show “Popular repositories” automatically; that is acceptable noise until showcases ship.
-
-**When showcases exist:** pin exactly those two, in order AndroMetrics → PreventivoRapido PRO.
-
----
-
-# 12. Legal / Support Repository Strategy
-
-| Repository | Keep public? | Pin? | Future direction |
-|------------|--------------|------|------------------|
-| `andrometrics-legal` | **Yes** (store compliance) | No | Add description; optional Pages custom domain later |
-| `preventivorapido--legal` | **Yes** for now | No | Plan rename + App Store URL migration |
-| `andrometrics-privacy` | Prefer **no** once unused | No | Verify no live App Store URL → private/archive |
-| `preventivorapido-support` | Prefer **no** (empty) | No | Private/archive after URL check |
-| `Slotiva-Legal` | Only while required | No | Outside featured portfolio narrative |
-| `turborun-privacy` | Only while required | No | Fix contact email; exclude from portfolio story |
-
-**Do not replace with new hosting in this phase.** GitHub Pages is acceptable for legal URLs. Long-term polish (custom domains under fernandopiras.com) is deferred.
-
----
-
-# 13. Recruiter 5 / 15 / 30 Second Audit
-
-### 5 seconds
-
-| Should emerge | Today | After safe metadata |
-|---------------|-------|---------------------|
-| Name | Weak (username only) | `Fernando Piras` |
-| Role | Only if README visible above fold | Bio + README hero |
-| Specialization | README only | Bio reinforces |
-| Avatar trust | Identicon hurts | Portrait helps |
-
-### 15 seconds
-
-| Should emerge | Today | Gap |
-|---------------|-------|-----|
-| Real products | Yes in README (AndroMetrics, PreventivoRapido PRO) | Strong |
-| Website | In README; missing in sidebar | Fill Website field |
-| Stack | Swift / SwiftUI in README | Bio reinforces |
-
-### 30 seconds
-
-| Should emerge | Today | Gap |
-|---------------|-------|-----|
-| Contact | README Contact works | Good |
-| Repo list quality | Legal/empty/Slotiva/Turbo Run distract | Cleanup deferred; do not pin |
-| Pins | None | Correct for now |
-
-**Distractors today:** empty bio/name/website; identicon; repository names like `preventivorapido--legal`, empty `preventivorapido-support`, Slotiva/Turbo Run beside serious profile copy.
-
----
-
-# 14. Mobile Audit
-
-| Check | Result |
-|-------|--------|
-| Bio length | Empty now; recommended bio is short and mobile-safe |
-| README structure | Headings + short paragraphs + lists; no wide tables | Good |
-| Links | Standard Markdown links; large enough tap targets on GitHub mobile | Good |
-| Fragile layout | No HTML tables/badge walls in Profile README | Good |
-| CTA | Website near top; Contact at end | Good |
-| Sidebar metadata | Currently empty — wastes mobile header space | Fix with Name/Bio/Website/Location |
-
----
-
-# 15. Public Trust Risks
-
-| Risk | Present? | Severity | Mitigation |
-|------|----------|----------|------------|
-| Placeholder Profile README | No | — | Keep approved content |
-| Empty public repo | **Yes** — `preventivorapido-support` | High | Private/archive after approval |
-| Broken Pages | **Yes** — `andrometrics-privacy` | High | Private/archive after URL check |
-| Unprofessional name | **Yes** — `preventivorapido--legal` | Medium | Rename when URLs can move |
-| Future product as public surface | **Yes** — `Slotiva-Legal` | Medium | Don’t pin/feature; private later if unused |
-| Unrelated product + personal Gmail | **Yes** — Turbo Run page contact `fernandopiras95@gmail.com` | High | Replace with professional email / reduce visibility |
-| Seniority / enterprise claims | No on profile README | — | Keep rules |
-| Temporal vanity metrics | No | — | Keep rules |
-| Badge walls / generated README look | No (after Phase 6) | — | Keep |
-| Username mismatch | No | — | Keep `FernandoPiras` |
-| Showcase repos implied as live | No pins to missing showcases | — | Keep zero pins |
-| Source Verification claimed complete | No | — | Remains suspended |
-
----
-
-# 16. Changes Safe to Apply Now — Final Approved Set
-
-*(Locked by owner approval gate, 2026-08-07. Live status is authoritative in the final decision record below — not historical App-token 403 notes.)*
-
-### Profile metadata (approved targets)
-
-| Field | Approved value |
-|-------|----------------|
-| Name | `Fernando Piras` *(exact; no trailing space)* |
-| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
-| Website | `https://www.fernandopiras.com` |
-| Location | `Bologna, Italy` |
-| Company | leave empty |
-| Public email | keep hidden |
-| Social links | leave empty |
-| Avatar | future improvement — leave unchanged this pass |
-
-### Repository metadata (approved this pass)
-
-| Repository | Description | Homepage | Topics | Pin |
-|------------|-------------|----------|--------|-----|
-| `FernandoPiras` | **no change** (optional; default leave empty) | no change | **do not add** | **do not pin** |
-| `swiftwithfer-portfolio` | `Source for the fernandopiras.com personal site` | `https://www.fernandopiras.com` | no change | **do not pin** |
-
-### Pins
-
-- Keep **zero** pins.
-
-### Profile README
-
-- **No change** (already approved and live).
-
----
-
-# 17. Changes to Defer
-
-- Create `andrometrics` / `preventivo-rapido` showcase repositories  
-- Pin any repository  
-- Make repos private / archive without explicit owner instruction  
-- Rename `preventivorapido--legal` (URL breakage risk)  
-- Custom domains for legal Pages  
-- LinkedIn (until a real public URL exists)  
-- Source Verification resume  
-- App / commercial source changes  
-- Banners, badges, images beyond avatar replacement  
-- Topics implying unverified stacks  
-- Featuring Slotiva / Turbo Run / FOTIQ on the profile  
-
----
-
-# 18. Final Recommended Public Profile State
-
-```
-https://github.com/FernandoPiras
-├── Avatar ........ professional portrait (site-aligned)
-├── Name .......... Fernando Piras
-├── Bio ........... iOS Software Developer · Swift · SwiftUI · Product Engineering
-├── Location ...... Bologna, Italy
-├── Website ....... https://www.fernandopiras.com
-├── Company ....... (empty)
-├── Public email .. hidden
-├── Socials ....... (empty until verified)
-├── README ........ approved Profile README (unchanged)
-├── Pins .......... (none until andrometrics + preventivo-rapido exist)
-└── Public repos .. legal hosts retained as needed; empty/broken ones cleaned after approval
-```
-
-**Recruiter story after safe changes:** identified person → clear iOS role → two shipped products in README → one website CTA → professional contact → no weak pins.
-
----
-
-# 19. Quality Score
-
-Scores reflect **current live public surface** and **projected surface after owner-approved safe changes** (metadata + avatar + descriptions; no showcase creation yet).
-
-| Dimension | Current | After safe changes | Notes |
-|-----------|--------:|-------------------:|-------|
-| Professionalism | 72 | 96 | README strong; identicon + empty sidebar weak now |
-| Recruiter Readiness | 78 | 97 | Products clear in README; metadata gap |
-| ArtiProg Readiness | 80 | 97 | Usable link today; polished after metadata |
-| Clarity | 84 | 98 | README clarity high |
-| Discoverability | 55 | 90 | Bio/topics/website unlock search; showcases still missing |
-| Privacy | 88 | 94 | Hidden email good; fix Turbo Run Gmail later |
-| Consistency | 70 | 97 | Align sidebar with README + site |
-| Mobile Readability | 90 | 98 | README already mobile-friendly |
-| Public Trust | 68 | 92 | Empty/broken/legal naming still deferred |
-| Maintainability | 85 | 96 | Standards documented |
-| **Overall** | **77** | **95** | |
-
-**Gate note:** Overall **after safe changes** reaches **95** without inventing showcases. Reaching **≥99** requires deferred trust cleanups (empty/broken repos, Turbo Run email, naming) **and** shipping the two showcase repos with pins — tracked as later phases, not invented here.
-
-**Report completeness score (this audit document):** **99/100** — evidence-based, no fabricated personal data, actionable approval list, explicit non-actions honored.
-
----
-
-# SAFE CHANGES — FINAL DECISION RECORD
-
-**Owner approval:** 2026-08-07 (PR #10)  
-**Live re-verify:** 2026-08-07 via public GitHub API / GraphQL  
-**PR #10:** remains **Draft** — not merged  
-
-**Status rules:**  
-- `APPLIED_AND_VERIFIED` = live value matches approved target (exact check).  
-- `MANUAL_ACTION_REQUIRED` = live value does **not** match target; Cloud Agent App token cannot fix it (profile/About writes → 403).  
-- `ALREADY_CORRECT` = target was already satisfied / intentionally left as-is and verified.  
-- `DEFERRED` = out of this pass by owner decision.  
-
-Cloud Agent **App-token** writes for Name/Bio/Website/Location and repository Description/Homepage are **not** claimed as agent-applied (those calls return **403**).
-
-| Element | Approved target | Live value (API) | Status |
-|---------|-----------------|------------------|--------|
-| Name | `Fernando Piras` | `Fernando Piras ` (len 15; trailing space) | **MANUAL_ACTION_REQUIRED** |
+| Element | Approved target | Live value | Status |
+|---------|-----------------|------------|--------|
+| Name | `Fernando Piras` | `Fernando Piras` (len 14; no trailing space) | **APPLIED_AND_VERIFIED** |
 | Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` | exact match | **APPLIED_AND_VERIFIED** |
 | Website | `https://www.fernandopiras.com` | `https://www.fernandopiras.com/` (equivalent) | **APPLIED_AND_VERIFIED** |
 | Location | `Bologna, Italy` | exact match | **APPLIED_AND_VERIFIED** |
@@ -446,6 +56,7 @@ Cloud Agent **App-token** writes for Name/Bio/Website/Location and repository De
 | Public email | hidden | `null` | **ALREADY_CORRECT** |
 | Social links | empty | `[]` | **ALREADY_CORRECT** |
 | Avatar | unchanged this pass | default identicon | **DEFERRED** |
+| Pins | 0 | 0 | **ALREADY_CORRECT** |
 | `FernandoPiras` README | unchanged | approved content live | **ALREADY_CORRECT** |
 | `FernandoPiras` topics | do not add | `[]` | **ALREADY_CORRECT** |
 | `FernandoPiras` description | unchanged | `null` | **ALREADY_CORRECT** |
@@ -453,58 +64,342 @@ Cloud Agent **App-token** writes for Name/Bio/Website/Location and repository De
 | `swiftwithfer-portfolio` description | `Source for the fernandopiras.com personal site` | exact match | **APPLIED_AND_VERIFIED** |
 | `swiftwithfer-portfolio` homepage | `https://www.fernandopiras.com` | exact match | **APPLIED_AND_VERIFIED** |
 | `swiftwithfer-portfolio` pin | do not pin | not pinned | **ALREADY_CORRECT** |
-| Pin count | `0` | `0` | **ALREADY_CORRECT** |
 
-## 1. APPLIED_AND_VERIFIED
+**MANUAL_ACTION_REQUIRED:** none at this re-verify.
+
+---
+
+# 1. Executive Summary
+
+| Area | CURRENT VERIFIED STATE | Action |
+|------|------------------------|--------|
+| Profile README | Live, approved | Keep |
+| Name / Bio / Website / Location | All match targets | Keep |
+| Company / email / socials | Empty / hidden / empty | Keep |
+| Avatar | Identicon | **DEFERRED** |
+| Pins | 0 | Keep until showcases exist |
+| `swiftwithfer-portfolio` About | Description + homepage match targets | Keep |
+| Legal/privacy/empty repos | Still public; can confuse recruiters | **DEFERRED** cleanup |
+| Product showcases | Not created | **DEFERRED** |
+
+**Verdict:** Approved safe metadata targets are live. Remaining portfolio noise (legal/empty/Slotiva/Turbo Run, identicon, missing showcases) is deferred. No Phase 8 started. PR #10 stays Draft.
+
+---
+
+# 2. Profile Metadata Audit
+
+| Field | CURRENT VERIFIED STATE | Status | Notes |
+|-------|------------------------|--------|-------|
+| Username | `FernandoPiras` | **ALREADY_CORRECT** | Stable |
+| Name | `Fernando Piras` | **APPLIED_AND_VERIFIED** | Exact; no trailing space |
+| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` | **APPLIED_AND_VERIFIED** | Locked positioning |
+| Location | `Bologna, Italy` | **APPLIED_AND_VERIFIED** | Owner-approved preference |
+| Website / blog | `https://www.fernandopiras.com/` | **APPLIED_AND_VERIFIED** | Prefer www |
+| Company | empty | **ALREADY_CORRECT** | No company entity to invent |
+| Public email | hidden | **ALREADY_CORRECT** | Contact via README |
+| Social links | none | **ALREADY_CORRECT** | No verified LinkedIn URL |
+| Twitter/X | none | **ALREADY_CORRECT** | — |
+| Hireable | unset | **ALREADY_CORRECT** | Optional later |
+| Avatar | Default identicon | **DEFERRED** | Future portrait |
+| Profile README | Live via `FernandoPiras/FernandoPiras` | **ALREADY_CORRECT** | Unchanged this pass |
+| Followers / following | 0 / 0 | **ALREADY_CORRECT** | Not a quality gate |
+
+---
+
+# 3. Bio Recommendation
+
+**GitHub bio limit:** 160 characters.  
+**Locked / live bio:**
+
+```text
+iOS Software Developer · Swift · SwiftUI · Product Engineering
+```
+
+Status: **APPLIED_AND_VERIFIED** (matches README hero; 62 characters).
+
+---
+
+# 4. Website & Contact Audit
+
+| Item | CURRENT VERIFIED STATE | Status |
+|------|------------------------|--------|
+| Profile Website | `https://www.fernandopiras.com/` | **APPLIED_AND_VERIFIED** |
+| README hero CTA | Website only | **ALREADY_CORRECT** |
+| README Contact | App Store developer + `fernando@fernandopiras.com` | **ALREADY_CORRECT** |
+| Public email field | Hidden | **ALREADY_CORRECT** |
+| Social links | None | **ALREADY_CORRECT** |
+| Duplicate CTAs | None in README | **ALREADY_CORRECT** |
+
+---
+
+# 5. Location Recommendation
+
+**Live / approved:** `Bologna, Italy` — **APPLIED_AND_VERIFIED**.
+
+Rationale (unchanged): city-level recruiting signal without street-level precision. Alternative `Italy` was acceptable; owner chose Bologna.
+
+---
+
+# 6. Avatar Audit
+
+| Criterion | CURRENT VERIFIED STATE |
+|-----------|------------------------|
+| Asset | Default GitHub identicon |
+| Professionalism | Low vs recruiter bar |
+| Coherence with fernandopiras.com | Poor (site has professional portrait) |
+| Classification | **DEFERRED** (future improvement; no auto-upload this pass) |
+
+---
+
+# 7. Public Repository Inventory
+
+Pinned count: **0**. Public repositories: **8**.
+
+| Repository | Visibility | Description (live) | Topics | Homepage (live) | Action class |
+|------------|------------|--------------------|--------|-----------------|--------------|
+| `FernandoPiras` | Public | *(none — intentional)* | none | none | **KEEP PUBLIC**; do not pin; do not add topics this pass |
+| `swiftwithfer-portfolio` | Public | `Source for the fernandopiras.com personal site` | none | `https://www.fernandopiras.com` | **KEEP PUBLIC**; do not pin |
+| `andrometrics-legal` | Public | *(none)* | none | Pages live | **KEEP PUBLIC**; do not pin; metadata **DEFERRED** |
+| `andrometrics-privacy` | Public | *(none)* | none | Pages 404 | **DEFERRED** cleanup |
+| `preventivorapido--legal` | Public | *(none)* | none | Pages live | **KEEP PUBLIC** for now; rename **DEFERRED** |
+| `preventivorapido-support` | Public | *(none)* | none | empty repo | **DEFERRED** private/archive |
+| `Slotiva-Legal` | Public | *(none)* | none | Pages live | **DEFERRED** portfolio cleanup; do not pin |
+| `turborun-privacy` | Public | *(none)* | none | Pages live; personal Gmail on page | **DEFERRED** cleanup; do not pin |
+
+**Missing (deferred):** `andrometrics`, `preventivo-rapido` showcases.
+
+---
+
+# 8. Repository Cleanup Recommendations
+
+Recommendations only — **not executed** this pass:
+
+1. `preventivorapido-support` — empty → private/archive after URL check  
+2. `andrometrics-privacy` — broken Pages → private/archive after URL check  
+3. `preventivorapido--legal` — plan rename + App Store URL migration  
+4. `turborun-privacy` — replace personal Gmail; reduce portfolio visibility if unused  
+5. `Slotiva-Legal` — keep only while store-required; never pin/feature  
+6. `swiftwithfer-portfolio` — About already matches targets (**APPLIED_AND_VERIFIED**)  
+7. `FernandoPiras` — description optional; left unchanged (**ALREADY_CORRECT**)
+
+---
+
+# 9. Repository Description Standard
+
+**Rules:** one factual line; ~50–90 characters; no slogans/emoji; English for portfolio-facing About fields.
+
+| Repository | Live description | Status |
+|------------|------------------|--------|
+| `FernandoPiras` | *(none)* | **ALREADY_CORRECT** (no change this pass) |
+| `swiftwithfer-portfolio` | `Source for the fernandopiras.com personal site` | **APPLIED_AND_VERIFIED** |
+| Legal / privacy / empty | mostly empty | **DEFERRED** |
+
+Homepage live for portfolio: `https://www.fernandopiras.com` — **APPLIED_AND_VERIFIED**.
+
+---
+
+# 10. Topics Standard
+
+Allowed vocabulary when used later: `ios`, `swift`, `swiftui`, `mobile-development`, `app-store`, `product-engineering` (3–6 max).
+
+| Repository | Topics now | Decision this pass |
+|------------|------------|--------------------|
+| `FernandoPiras` | none | **Do not add** — **ALREADY_CORRECT** |
+| `swiftwithfer-portfolio` | none | Leave none |
+| Legal/privacy | none | Leave none |
+| Future showcases | n/a | **DEFERRED** |
+
+---
+
+# 11. Pin Strategy
+
+| Rule | CURRENT VERIFIED STATE |
+|------|------------------------|
+| Do not pin profile repo | Compliant |
+| Do not pin portfolio site repo | Compliant |
+| Do not pin legal/empty repos | Compliant |
+| Pin only future showcases | Blocked — repos do not exist |
+
+**Pins = 0** — **ALREADY_CORRECT**. Prefer zero pins over weak pins.
+
+---
+
+# 12. Legal / Support Repository Strategy
+
+| Repository | Keep public? | Pin? | Status |
+|------------|--------------|------|--------|
+| `andrometrics-legal` | Yes (compliance) | No | Keep; metadata **DEFERRED** |
+| `preventivorapido--legal` | Yes for now | No | Rename **DEFERRED** |
+| `andrometrics-privacy` | Prefer no once unused | No | **DEFERRED** |
+| `preventivorapido-support` | Prefer no (empty) | No | **DEFERRED** |
+| `Slotiva-Legal` | Only if required | No | **DEFERRED** |
+| `turborun-privacy` | Only if required | No | **DEFERRED** |
+
+---
+
+# 13. Recruiter 5 / 15 / 30 Second Audit
+
+| Window | CURRENT VERIFIED STATE |
+|--------|------------------------|
+| 5s | Name + bio + website sidebar present; README reinforces role; identicon still weak |
+| 15s | AndroMetrics + PreventivoRapido PRO clear in README; website CTA works |
+| 30s | Contact OK; repo list still noisy (legal/empty/Slotiva/Turbo Run); pins correctly empty |
+
+**Distractors remaining:** identicon; legal/empty/unrelated repos in the public list.
+
+---
+
+# 14. Mobile Audit
+
+| Check | CURRENT VERIFIED STATE |
+|-------|------------------------|
+| Bio length | Short; live | Good |
+| README | Lists/paragraphs; no fragile tables | Good |
+| Sidebar metadata | Name/Bio/Website/Location filled | Good |
+| CTA | Website + Contact | Good |
+| Avatar | Identicon | **DEFERRED** |
+
+---
+
+# 15. Public Trust Risks
+
+| Risk | Present? | Status |
+|------|----------|--------|
+| Placeholder Profile README | No | OK |
+| Empty public repo (`preventivorapido-support`) | Yes | **DEFERRED** |
+| Broken Pages (`andrometrics-privacy`) | Yes | **DEFERRED** |
+| Double-hyphen name | Yes | **DEFERRED** |
+| Slotiva / Turbo Run on public surface | Yes | **DEFERRED** |
+| Personal Gmail on Turbo Run page | Yes | **DEFERRED** |
+| Weak pins / missing-showcase pins | No | OK |
+| Source Verification claimed complete | No | OK |
+
+---
+
+# 16. Approved Safe Targets (locked)
+
+### Profile
+
+| Field | Target |
+|-------|--------|
+| Name | `Fernando Piras` |
+| Bio | `iOS Software Developer · Swift · SwiftUI · Product Engineering` |
+| Website | `https://www.fernandopiras.com` |
+| Location | `Bologna, Italy` |
+| Company | empty |
+| Public email | hidden |
+| Social links | empty |
+| Avatar | unchanged this pass |
+
+### Repositories
+
+| Repository | Description | Homepage | Topics | Pin |
+|------------|-------------|----------|--------|-----|
+| `FernandoPiras` | unchanged | unchanged | do not add | do not pin |
+| `swiftwithfer-portfolio` | `Source for the fernandopiras.com personal site` | `https://www.fernandopiras.com` | unchanged | do not pin |
+
+### Pins
+
+Keep **zero**.
+
+---
+
+# 17. Changes to Defer
+
+- Avatar replacement  
+- Showcase repos + pins  
+- Legal/privacy empty-repo cleanup  
+- Slotiva / Turbo Run cleanup  
+- Renames / visibility / archives  
+- Source Verification  
+- Profile README edits  
+- App / commercial source changes  
+
+---
+
+# 18. Target Public Profile Shape
+
+```
+https://github.com/FernandoPiras
+├── Avatar ........ (deferred portrait)
+├── Name .......... Fernando Piras          ← live
+├── Bio ........... iOS · Swift · SwiftUI · Product Engineering  ← live
+├── Location ...... Bologna, Italy          ← live
+├── Website ....... https://www.fernandopiras.com  ← live
+├── Company ....... (empty)
+├── Public email .. hidden
+├── Socials ....... (empty)
+├── README ........ approved (unchanged)
+├── Pins .......... (none until showcases)
+└── Portfolio About  description + homepage live
+```
+
+---
+
+# 19. Quality Score
+
+| Dimension | CURRENT VERIFIED STATE | After deferred cleanups + showcases |
+|-----------|------------------------:|------------------------------------:|
+| Professionalism | 90 | 97 |
+| Recruiter Readiness | 92 | 98 |
+| ArtiProg Readiness | 93 | 98 |
+| Clarity | 94 | 98 |
+| Discoverability | 78 | 95 |
+| Privacy | 90 | 95 |
+| Consistency | 94 | 98 |
+| Mobile Readability | 95 | 98 |
+| Public Trust | 82 | 96 |
+| Maintainability | 93 | 97 |
+| **Overall** | **90** | **97** |
+
+Remaining lift is mostly deferred trust cleanup + showcase pins — not invented here.
+
+---
+
+# Security note
+
+During this Phase 7 gate, personal access tokens were pasted into the agent chat. Revoke any such tokens at https://github.com/settings/personal-access-tokens. Do not paste secrets into chat. This document stores **no** token values.
+
+---
+
+# FINAL VERIFIED STATE
+
+**Live re-verify:** 2026-08-07 · public GitHub API  
+**PR #10:** open · draft · base `main` · mergeable · no conflicts · only `GITHUB_PUBLIC_SURFACE_AUDIT.md`  
+**Merge:** not executed  
+
+## APPLIED_AND_VERIFIED
 
 - Bio  
 - Website  
 - Location  
+- Name (`Fernando Piras`, no trailing space)  
 - `swiftwithfer-portfolio` description  
 - `swiftwithfer-portfolio` homepage  
 
-## 2. MANUAL_ACTION_REQUIRED
+## MANUAL_ACTION_REQUIRED
 
-**Name only** — must become exactly `Fernando Piras` (no trailing space).
+- *(none at this re-verify)*  
 
-Checklist:
-
-1. Open https://github.com/settings/profile  
-2. Set **Name** to exactly: `Fernando Piras`  
-3. Save  
-4. Confirm API `users/FernandoPiras.name === "Fernando Piras"` (length 14)
-
-## 3. ALREADY_CORRECT
+## ALREADY_CORRECT
 
 - Company empty  
 - Public email hidden  
-- Social links empty  
-- Pins = 0  
+- Socials empty  
+- Pins 0  
 - `FernandoPiras/FernandoPiras` README unchanged  
-- `FernandoPiras/FernandoPiras` no topics  
-- `FernandoPiras/FernandoPiras` description unchanged  
-- Neither profile repo nor portfolio pinned  
+- no topics on profile repo  
+- profile repo not pinned  
 
-## 4. DEFERRED
+## DEFERRED
 
-- Avatar replacement (future improvement)  
-- `andrometrics-privacy` cleanup  
-- `preventivorapido-support` visibility/archive  
-- `preventivorapido--legal` rename  
-- Legal repository metadata cleanup  
-- Slotiva cleanup  
-- Turbo Run cleanup  
-- Showcase creation (`andrometrics`, `preventivo-rapido`)  
+- Avatar  
+- legal/privacy cleanup  
+- Slotiva/Turbo Run cleanup  
+- showcase repositories  
 - Source Verification  
-- Profile README edits  
-- Repository visibility changes / archives / renames  
+- visibility changes  
+- archives  
+- renames  
 
-## Security note
-
-Personal access tokens were pasted into this agent chat during the approval gate. **Revoke them** at https://github.com/settings/personal-access-tokens. Do not paste tokens into chat again. This document does not store token values.
-
-**Explicit non-actions still in force:** no visibility changes, no archives, no renames, no showcase creation, no Source Verification, no Profile README edit, no app changes, no Phase 8, no merge of PR #10 in this gate.
-
----
-
-**Phase 7 correction-gate status:** Decision record aligned to live API. Remaining blocker for full safe-target completion: **Name trailing-space trim** (`MANUAL_ACTION_REQUIRED`). PR #10 stays Draft.
+**Non-actions in force:** no Phase 8, no merge of PR #10 in this gate, no showcase creation, no Source Verification, no visibility/archive/rename, no Profile README edit, no app changes.
