@@ -46,7 +46,7 @@ Aggiunte:
 ## PreventivoRapido — strumento professionale
 
 - Focus: rapidità, semplicità, affidabilità, produttività
-- Trust: App Store · PDF · Firma digitale · Sync cloud
+- Trust: App Store · PDF · Firma cliente · Sync cloud
 
 ---
 

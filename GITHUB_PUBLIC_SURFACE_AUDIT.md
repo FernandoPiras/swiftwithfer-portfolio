@@ -82,7 +82,7 @@ Statuses describe **live public values vs approved targets**. Cursor GitHub App 
 | Legal/privacy/empty repos | Still public; can confuse recruiters | **DEFERRED** cleanup |
 | Product showcases | Not created | **DEFERRED** |
 
-**Verdict:** Approved safe metadata targets are live. Remaining portfolio noise (legal/empty/Slotiva/Turbo Run, identicon, missing showcases) is deferred. No Phase 8 started. PR #10 stays Draft.
+**Verdict:** Approved safe metadata targets are live. Remaining portfolio noise (legal/empty/other non-approved products/other non-approved products, identicon, missing showcases) is deferred. No Phase 8 started. PR #10 stays Draft.
 
 ---
 
@@ -160,11 +160,11 @@ Pinned count: **0**. Public repositories: **8**.
 | `FernandoPiras` | Public | *(none — intentional)* | none | none | **KEEP PUBLIC**; do not pin; do not add topics this pass |
 | `swiftwithfer-portfolio` | Public | `Source for the fernandopiras.com personal site` | none | `https://www.fernandopiras.com` | **KEEP PUBLIC**; do not pin |
 | `andrometrics-legal` | Public | *(none)* | none | Pages live | **KEEP PUBLIC**; do not pin; metadata **DEFERRED** |
-| `andrometrics-privacy` | Public | *(none)* | none | Pages 404 | **DEFERRED** cleanup |
+| `legacy-andrometrics-privacy` | Public | *(none)* | none | Pages 404 | **DEFERRED** cleanup |
 | `preventivorapido--legal` | Public | *(none)* | none | Pages live | **KEEP PUBLIC** for now; rename **DEFERRED** |
-| `preventivorapido-support` | Public | *(none)* | none | empty repo | **DEFERRED** private/archive |
-| `Slotiva-Legal` | Public | *(none)* | none | Pages live | **DEFERRED** portfolio cleanup; do not pin |
-| `turborun-privacy` | Public | *(none)* | none | Pages live; personal Gmail on page | **DEFERRED** cleanup; do not pin |
+| `legacy-preventivorapido-support` | Public | *(none)* | none | empty repo | **DEFERRED** private/archive |
+| `legacy-out-of-portfolio-legal` | Public | *(none)* | none | Pages live | **DEFERRED** portfolio cleanup; do not pin |
+| `legacy-out-of-portfolio-privacy` | Public | *(none)* | none | Pages live; personal Gmail on page | **DEFERRED** cleanup; do not pin |
 
 **Missing (deferred):** `andrometrics`, `preventivo-rapido` showcases.
 
@@ -174,11 +174,11 @@ Pinned count: **0**. Public repositories: **8**.
 
 Recommendations only — **not executed** this pass:
 
-1. `preventivorapido-support` — empty → private/archive after URL check  
-2. `andrometrics-privacy` — broken Pages → private/archive after URL check  
+1. `legacy-preventivorapido-support` — empty → private/archive after URL check  
+2. `legacy-andrometrics-privacy` — broken Pages → private/archive after URL check  
 3. `preventivorapido--legal` — plan rename + App Store URL migration  
-4. `turborun-privacy` — replace personal Gmail; reduce portfolio visibility if unused  
-5. `Slotiva-Legal` — keep only while store-required; never pin/feature  
+4. `legacy-out-of-portfolio-privacy` — replace personal Gmail; reduce portfolio visibility if unused  
+5. `legacy-out-of-portfolio-legal` — keep only while store-required; never pin/feature  
 6. `swiftwithfer-portfolio` — About already matches targets (**APPLIED_AND_VERIFIED**)  
 7. `FernandoPiras` — description optional; left unchanged (**ALREADY_CORRECT**)
 
@@ -230,10 +230,10 @@ Allowed vocabulary when used later: `ios`, `swift`, `swiftui`, `mobile-developme
 |------------|--------------|------|--------|
 | `andrometrics-legal` | Yes (compliance) | No | Keep; metadata **DEFERRED** |
 | `preventivorapido--legal` | Yes for now | No | Rename **DEFERRED** |
-| `andrometrics-privacy` | Prefer no once unused | No | **DEFERRED** |
-| `preventivorapido-support` | Prefer no (empty) | No | **DEFERRED** |
-| `Slotiva-Legal` | Only if required | No | **DEFERRED** |
-| `turborun-privacy` | Only if required | No | **DEFERRED** |
+| `legacy-andrometrics-privacy` | Prefer no once unused | No | **DEFERRED** |
+| `legacy-preventivorapido-support` | Prefer no (empty) | No | **DEFERRED** |
+| `legacy-out-of-portfolio-legal` | Only if required | No | **DEFERRED** |
+| `legacy-out-of-portfolio-privacy` | Only if required | No | **DEFERRED** |
 
 ---
 
@@ -243,7 +243,7 @@ Allowed vocabulary when used later: `ios`, `swift`, `swiftui`, `mobile-developme
 |--------|------------------------|
 | 5s | Name + bio + website sidebar present; README reinforces role; identicon still weak |
 | 15s | AndroMetrics + PreventivoRapido PRO clear in README; website CTA works |
-| 30s | Contact OK; repo list still noisy (legal/empty/Slotiva/Turbo Run); pins correctly empty |
+| 30s | Contact OK; repo list still noisy (legal/empty/other non-approved products/other non-approved products); pins correctly empty |
 
 **Distractors remaining:** identicon; legal/empty/unrelated repos in the public list.
 
@@ -266,11 +266,11 @@ Allowed vocabulary when used later: `ios`, `swift`, `swiftui`, `mobile-developme
 | Risk | Present? | Status |
 |------|----------|--------|
 | Placeholder Profile README | No | OK |
-| Empty public repo (`preventivorapido-support`) | Yes | **DEFERRED** |
-| Broken Pages (`andrometrics-privacy`) | Yes | **DEFERRED** |
+| Empty public repo (`legacy-preventivorapido-support`) | Yes | **DEFERRED** |
+| Broken Pages (`legacy-andrometrics-privacy`) | Yes | **DEFERRED** |
 | Double-hyphen name | Yes | **DEFERRED** |
-| Slotiva / Turbo Run on public surface | Yes | **DEFERRED** |
-| Personal Gmail on Turbo Run page | Yes | **DEFERRED** |
+| other non-approved products on public surface | Yes | **DEFERRED** |
+| Personal Gmail on other non-approved products page | Yes | **DEFERRED** |
 | Weak pins / missing-showcase pins | No | OK |
 | Source Verification claimed complete | No | OK |
 
@@ -309,7 +309,7 @@ Keep **zero**.
 - Avatar replacement  
 - Showcase repos + pins  
 - Legal/privacy empty-repo cleanup  
-- Slotiva / Turbo Run cleanup  
+- other non-approved products cleanup  
 - Renames / visibility / archives  
 - Source Verification  
 - Profile README edits  
@@ -395,7 +395,7 @@ During this Phase 7 gate, personal access tokens were pasted into the agent chat
 
 - Avatar  
 - legal/privacy cleanup  
-- Slotiva/Turbo Run cleanup  
+- other non-approved products/other non-approved products cleanup  
 - showcase repositories  
 - Source Verification  
 - visibility changes  

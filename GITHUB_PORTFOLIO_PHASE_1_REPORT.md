@@ -60,7 +60,7 @@ FernandoPiras (GitHub user)
 - `portfolio-assets` control-plane repository  
 - capability / sample-code repositories  
 - infrastructure repositories  
-- future-product repositories (FOTIQ, Slotiva, SwiftToKotlin, or any incomplete concept)  
+- future-product repositories (other non-approved products, other non-approved products, or any incomplete concept)  
 - organization-style governance  
 - issue / pull request templates without a real need  
 - GitHub Actions without a real use case  
@@ -94,9 +94,9 @@ Initial pins — and only these:
 
 **Not active. Do not present as current work:**
 
-- FOTIQ  
-- Slotiva  
-- SwiftToKotlin  
+- other non-approved products  
+- other non-approved products  
+- other non-approved products  
 - any other incomplete concept  
 
 Future products may join the public portfolio **only after** they are complete, verifiable, and evidence-collected.

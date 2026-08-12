@@ -39,7 +39,7 @@ Recruiters visiting `github.com/FernandoPiras` must understand only:
 - **Fernando Piras** — iOS Software Developer  
 - **Published portfolio products:** AndroMetrics, PreventivoRapido PRO  
 
-**No** Slotiva, Turbo Run, other apps, prototypes, or future placeholders may compete as portfolio products.
+**No** other non-approved products, other apps, prototypes, or future placeholders may compete as portfolio products.
 
 ### Current vs target
 
@@ -48,8 +48,8 @@ Recruiters visiting `github.com/FernandoPiras` must understand only:
 | Profile / site infra | `FernandoPiras`, `swiftwithfer-portfolio` | — |
 | Product infra | `andrometrics-legal`, `preventivorapido--legal` | — |
 | Product showcases (future) | `andrometrics`, `preventivo-rapido` | — |
-| Legacy Andro/Preventivo | — | `andrometrics-privacy`, `preventivorapido-support` |
-| Out of portfolio | — | `Slotiva-Legal`, `turborun-privacy` |
+| Legacy Andro/Preventivo | — | `legacy-andrometrics-privacy`, `legacy-preventivorapido-support` |
+| Out of portfolio | — | `legacy-out-of-portfolio-legal`, `legacy-out-of-portfolio-privacy` |
 
 ### BLOCKING dependencies (must stay public until migrated)
 
@@ -62,16 +62,16 @@ Recruiters visiting `github.com/FernandoPiras` must understand only:
 
 | Repo | Status |
 |------|--------|
-| `andrometrics-privacy` | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect confirms unused → then **PRIVATE_LATER** / **ARCHIVE_AND_HIDE_LATER** |
-| `preventivorapido-support` | Same |
-| `Slotiva-Legal` | **OUT_OF_PORTFOLIO** + **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared → **PRIVATE_LATER** |
-| `turborun-privacy` | **OUT_OF_PORTFOLIO** + **TEMPORARY_PUBLIC_DEPENDENCY** until store/AdMob cleared → **PRIVATE_LATER** |
+| `legacy-andrometrics-privacy` | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect confirms unused → then **PRIVATE_LATER** / **ARCHIVE_AND_HIDE_LATER** |
+| `legacy-preventivorapido-support` | Same |
+| `legacy-out-of-portfolio-legal` | **OUT_OF_PORTFOLIO** + **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared → **PRIVATE_LATER** |
+| `legacy-out-of-portfolio-privacy` | **OUT_OF_PORTFOLIO** + **TEMPORARY_PUBLIC_DEPENDENCY** until store/AdMob cleared → **PRIVATE_LATER** |
 
-Email fix on Turbo Run is **not** the end state — only a possible interim if it must stay public briefly.
+Email fix on other non-approved products is **not** the end state — only a possible interim if it must stay public briefly.
 
 **This correction gate applies no live changes.**
 
-**Evidence sources:** GitHub REST/Pages, App Store HTML (AndroMetrics / PreventivoRapido PRO), iTunes Search/Lookup, fernandopiras.com, `src/config/site.ts`, Profile README, Slotiva README, Turbo Run Pages HTML. App Store Connect console fields unread → **UNKNOWN_DEPENDENCY** where noted.
+**Evidence sources:** GitHub REST/Pages, App Store HTML (AndroMetrics / PreventivoRapido PRO), iTunes Search/Lookup, fernandopiras.com, `src/config/site.ts`, Profile README, other non-approved products README, other non-approved products Pages HTML. App Store Connect console fields unread → **UNKNOWN_DEPENDENCY** where noted.
 
 ---
 
@@ -89,10 +89,10 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 | `preventivorapido--legal` | public | no | live 200 | **CORE_INFRASTRUCTURE** | ACTIVE_REQUIRED | **KEEP PUBLIC** · **do not rename now** | no (permanent infra) |
 | `andrometrics` | **missing** | — | — | **CORE_PRODUCT** (future showcase) | not created | **KEEP PUBLIC** when created | — |
 | `preventivo-rapido` | **missing** | — | — | **CORE_PRODUCT** (future showcase) | not created | **KEEP PUBLIC** when created | — |
-| `andrometrics-privacy` | public | empty `main`; Pages **404** | broken | **LEGACY** | BROKEN + UNKNOWN Connect | **PRIVATE_LATER** / **ARCHIVE_AND_HIDE_LATER** | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared |
-| `preventivorapido-support` | public | empty; no Pages | none | **LEGACY** | EMPTY + UNKNOWN Connect | **PRIVATE_LATER** / **ARCHIVE_AND_HIDE_LATER** | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared |
-| `Slotiva-Legal` | public | no | live 200 | **OUT_OF_PORTFOLIO** | UNKNOWN Connect; not a portfolio product | **PRIVATE_LATER** (hide from public profile) | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared |
-| `turborun-privacy` | public | no | live 200 | **OUT_OF_PORTFOLIO** | UNKNOWN store/AdMob; personal Gmail on page | **PRIVATE_LATER** | **TEMPORARY_PUBLIC_DEPENDENCY** until consoles cleared |
+| `legacy-andrometrics-privacy` | public | empty `main`; Pages **404** | broken | **LEGACY** | BROKEN + UNKNOWN Connect | **PRIVATE_LATER** / **ARCHIVE_AND_HIDE_LATER** | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared |
+| `legacy-preventivorapido-support` | public | empty; no Pages | none | **LEGACY** | EMPTY + UNKNOWN Connect | **PRIVATE_LATER** / **ARCHIVE_AND_HIDE_LATER** | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared |
+| `legacy-out-of-portfolio-legal` | public | no | live 200 | **OUT_OF_PORTFOLIO** | UNKNOWN Connect; not a portfolio product | **PRIVATE_LATER** (hide from public profile) | **TEMPORARY_PUBLIC_DEPENDENCY** until Connect cleared |
+| `legacy-out-of-portfolio-privacy` | public | no | live 200 | **OUT_OF_PORTFOLIO** | UNKNOWN store/AdMob; personal Gmail on page | **PRIVATE_LATER** | **TEMPORARY_PUBLIC_DEPENDENCY** until consoles cleared |
 
 **Metadata notes (unchanged facts):** no custom domains on Pages (`cname: null`). Profile repo = README only. Portfolio About fields match Phase 7.
 
@@ -109,11 +109,11 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 | App Store PreventivoRapido PRO | `…/preventivorapido--legal/terms.html` | **BLOCKING** | Keep infra public |
 | fernandopiras.com / `site.ts` | `…/andrometrics-legal/` | **IMPORTANT** | Product site link |
 | fernandopiras.com / `site.ts` | `…/preventivorapido--legal/` | **IMPORTANT** | Product site link |
-| Profile README | Slotiva / Turbo Run / legacy repos | **NONE** | Correctly omitted |
-| Public App Store HTML | `andrometrics-privacy` | **NONE** found | Connect still **UNKNOWN** |
-| Public App Store HTML | `preventivorapido-support` | **NONE** found | Connect still **UNKNOWN** |
-| Slotiva-Legal README | Claims Connect privacy/support/terms | **UNKNOWN** | Not found as public App Store app; `slotiva.it` 404 |
-| Turbo Run Pages | Possible store/AdMob privacy URL | **UNKNOWN** | Not found as Fernando Piras App Store app in Search |
+| Profile README | other non-approved products / legacy repos | **NONE** | Correctly omitted |
+| Public App Store HTML | `legacy-andrometrics-privacy` | **NONE** found | Connect still **UNKNOWN** |
+| Public App Store HTML | `legacy-preventivorapido-support` | **NONE** found | Connect still **UNKNOWN** |
+| legacy-out-of-portfolio-legal README | Claims Connect privacy/support/terms | **UNKNOWN** | Not found as public App Store app; `(legacy product domain)` 404 |
+| other non-approved products Pages | Possible store/AdMob privacy URL | **UNKNOWN** | Not found as Fernando Piras App Store app in Search |
 
 **Rule:** No private/archive while **BLOCKING** or uncleared **TEMPORARY_PUBLIC_DEPENDENCY** remains.
 
@@ -131,7 +131,7 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 | Recommendation | **KEEP** |
 | Pin / feature | Never as “product”; infra only |
 
-### `andrometrics-privacy` — LEGACY
+### `legacy-andrometrics-privacy` — LEGACY
 
 | Field | Value |
 |-------|--------|
@@ -157,7 +157,7 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 | Future rename | Only after new URLs live + Connect + site updated + verification |
 | Recommendation | **KEEP**; ugly name accepted as infra cost for now |
 
-### `preventivorapido-support` — LEGACY / EMPTY
+### `legacy-preventivorapido-support` — LEGACY / EMPTY
 
 | Field | Value |
 |-------|--------|
@@ -169,7 +169,7 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 
 ---
 
-# 6. Turbo Run Analysis — OUT_OF_PORTFOLIO
+# 6. other non-approved products Analysis — OUT_OF_PORTFOLIO
 
 | Field | Value |
 |-------|--------|
@@ -179,13 +179,13 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 | Final goal | **Not visible** on public GitHub portfolio surface |
 | Email swap to `fernando@fernandopiras.com` | Optional **interim only** if repo must stay public briefly — **not** the end state |
 | Pin / feature / README mention | **Forbidden** |
-| Public App Store listing (Search) | Not found under Fernando Piras as “Turbo Run” |
+| Public App Store listing (Search) | Not found under Fernando Piras as “other non-approved products” |
 
 **Recommendation:** Verify consoles → then **PRIVATE_LATER**. Do not treat email polish as success.
 
 ---
 
-# 7. Slotiva Analysis — OUT_OF_PORTFOLIO
+# 7. other non-approved products Analysis — OUT_OF_PORTFOLIO
 
 | Field | Value |
 |-------|--------|
@@ -195,7 +195,7 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 | Final goal | **Must not** remain on the public portfolio surface |
 | Pin / feature / README / “active product” framing | **Forbidden** |
 | Keep public for aesthetics/history | **No** |
-| Public App Store “Slotiva” | Not found; `www.slotiva.it` → 404; README still claims Connect URLs |
+| Public App Store “other non-approved products” | Not found; `(legacy product domain)` → 404; README still claims Connect URLs |
 
 **Recommendation:** Owner confirms Connect → then **PRIVATE_LATER**. Until then: temporary public dependency only, never portfolio product.
 
@@ -233,10 +233,10 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 |------------|---------|------------------|------------------|--------------|-----------------|--------------------------|----------------------|----------------------|-------------|----------------|-------|----------------|------------------|
 | `andrometrics-legal` | Infra, no description | Low | Store breaks if removed | BLOCKING | CORE_INFRASTRUCTURE | KEEP PUBLIC | no | — | High if hidden | KEEP | — | for optional description | Description optional later |
 | `preventivorapido--legal` | `--` name | Medium cosmetic | Store breaks if renamed now | BLOCKING | CORE_INFRASTRUCTURE | KEEP PUBLIC | no | Migration plan before rename | **High** rename | KEEP; no rename now | — | for rename | Defer rename |
-| `andrometrics-privacy` | 404 / empty | High noise | Low if unused | Connect UNKNOWN | LEGACY | PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER | **YES** | Connect: no leftover URL | Medium | Hide after confirm | 2 | **Required** | Defer |
-| `preventivorapido-support` | Empty public | High noise | Low if unused | Connect UNKNOWN | LEGACY | PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER | **YES** | Connect: no leftover URL | Medium | Hide after confirm | 2 | **Required** | Defer |
-| `Slotiva-Legal` | Non-portfolio product host | **High** (false product signal) | Compliance if Connect live | Connect UNKNOWN | OUT_OF_PORTFOLIO | PRIVATE_LATER | **YES** | Connect cleared or URLs migrated | High if early | Remove from public surface | 1 | **Required** | Defer |
-| `turborun-privacy` | Non-portfolio + personal Gmail | **High** | Low if unused | Store/AdMob UNKNOWN | OUT_OF_PORTFOLIO | PRIVATE_LATER | **YES** | Consoles cleared | Medium | Remove from public surface | 1 | **Required** | Email interim optional only |
+| `legacy-andrometrics-privacy` | 404 / empty | High noise | Low if unused | Connect UNKNOWN | LEGACY | PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER | **YES** | Connect: no leftover URL | Medium | Hide after confirm | 2 | **Required** | Defer |
+| `legacy-preventivorapido-support` | Empty public | High noise | Low if unused | Connect UNKNOWN | LEGACY | PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER | **YES** | Connect: no leftover URL | Medium | Hide after confirm | 2 | **Required** | Defer |
+| `legacy-out-of-portfolio-legal` | Non-portfolio product host | **High** (false product signal) | Compliance if Connect live | Connect UNKNOWN | OUT_OF_PORTFOLIO | PRIVATE_LATER | **YES** | Connect cleared or URLs migrated | High if early | Remove from public surface | 1 | **Required** | Defer |
+| `legacy-out-of-portfolio-privacy` | Non-portfolio + personal Gmail | **High** | Low if unused | Store/AdMob UNKNOWN | OUT_OF_PORTFOLIO | PRIVATE_LATER | **YES** | Consoles cleared | Medium | Remove from public surface | 1 | **Required** | Email interim optional only |
 | `swiftwithfer-portfolio` | Not a product | Low if unpinned | Site source | Site deploy | PERSONAL_INFRASTRUCTURE | KEEP PUBLIC | no | — | — | KEEP; never pin | — | — | OK |
 | `FernandoPiras` | — | — | Profile README | — | PERSONAL_INFRASTRUCTURE | KEEP PUBLIC | no | — | — | KEEP; never pin | — | — | OK |
 | `andrometrics` / `preventivo-rapido` | Missing | Missing proof depth | — | Future evidence gates | CORE_PRODUCT | KEEP PUBLIC when created | — | Evidence/showcase gates | — | Create later | later | Yes | Deferred |
@@ -249,9 +249,9 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 
 | ID | Action | Fits final goal? | Notes |
 |----|--------|------------------|-------|
-| S1 | Turbo Run email → professional | **Interim only** | Allowed if still TEMPORARY_PUBLIC; does **not** replace PRIVATE_LATER |
+| S1 | other non-approved products email → professional | **Interim only** | Allowed if still TEMPORARY_PUBLIC; does **not** replace PRIVATE_LATER |
 | S2 | Neutral descriptions on **CORE_INFRASTRUCTURE** hosts | Optional | Does not change visibility |
-| S3 | Redirect on `andrometrics-privacy` | **Avoid** unless technical need | Prefer hide after Connect clear |
+| S3 | Redirect on `legacy-andrometrics-privacy` | **Avoid** unless technical need | Prefer hide after Connect clear |
 
 **Not safe now:** private/archive/rename/delete of any TEMPORARY_PUBLIC_DEPENDENCY or BLOCKING infra; Pages URL changes; Connect edits from this agent.
 
@@ -261,13 +261,13 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 
 **Priority A — OUT_OF_PORTFOLIO off public surface**
 
-1. `Slotiva-Legal` → PRIVATE_LATER after Connect check  
-2. `turborun-privacy` → PRIVATE_LATER after store/AdMob check (email interim optional)
+1. `legacy-out-of-portfolio-legal` → PRIVATE_LATER after Connect check  
+2. `legacy-out-of-portfolio-privacy` → PRIVATE_LATER after store/AdMob check (email interim optional)
 
 **Priority B — LEGACY Andro/Preventivo off public surface**
 
-3. `andrometrics-privacy` → PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER after Connect check  
-4. `preventivorapido-support` → PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER after Connect check  
+3. `legacy-andrometrics-privacy` → PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER after Connect check  
+4. `legacy-preventivorapido-support` → PRIVATE_LATER / ARCHIVE_AND_HIDE_LATER after Connect check  
 
 **Priority C — later product surface**
 
@@ -281,10 +281,10 @@ Email fix on Turbo Run is **not** the end state — only a possible interim if i
 
 Record answers before any hide gate:
 
-1. **Connect — AndroMetrics:** any URL to `andrometrics-privacy`?  
-2. **Connect — PreventivoRapido PRO:** any URL to `preventivorapido-support`?  
-3. **Connect — Slotiva:** still using `Slotiva-Legal` Pages URLs? App status (live / review / abandoned)?  
-4. **Turbo Run:** any store or AdMob/privacy console still requiring `turborun-privacy` Pages URL?  
+1. **Connect — AndroMetrics:** any URL to `legacy-andrometrics-privacy`?  
+2. **Connect — PreventivoRapido PRO:** any URL to `legacy-preventivorapido-support`?  
+3. **Connect — other non-approved products:** still using `legacy-out-of-portfolio-legal` Pages URLs? App status (live / review / abandoned)?  
+4. **other non-approved products:** any store or AdMob/privacy console still requiring `legacy-out-of-portfolio-privacy` Pages URL?  
 5. Confirm permanence of: **only AndroMetrics + PreventivoRapido PRO** as portfolio products.  
 6. Approve future apply order: hide OUT_OF_PORTFOLIO first, then LEGACY, after checks?
 
@@ -294,8 +294,8 @@ Record answers before any hide gate:
 
 1. **Dependency verification** — owner answers §13.  
 2. **Non-breaking interim** — only if needed (e.g. Turbo email while still temporary public).  
-3. **Remove OUT_OF_PORTFOLIO from public surface** — Slotiva, Turbo Run → PRIVATE_LATER (or archive-and-hide if chosen).  
-4. **Remove LEGACY** — `andrometrics-privacy`, `preventivorapido-support` after Connect clear.  
+3. **Remove OUT_OF_PORTFOLIO from public surface** — other non-approved products → PRIVATE_LATER (or archive-and-hide if chosen).  
+4. **Remove LEGACY** — `legacy-andrometrics-privacy`, `legacy-preventivorapido-support` after Connect clear.  
 5. **URL migration planning** — only if Preventivo rename/custom domain desired.  
 6. **Rename** — only after dual-URL period + Connect/site updates.  
 7. **Store URL updates** — Connect + site lockstep when migrating.  
@@ -343,14 +343,14 @@ FernandoPiras/
 
 **Not part of final public surface:**
 
-- `andrometrics-privacy` — LEGACY  
-- `preventivorapido-support` — LEGACY  
-- `Slotiva-Legal` — OUT_OF_PORTFOLIO  
-- `turborun-privacy` — OUT_OF_PORTFOLIO  
+- `legacy-andrometrics-privacy` — LEGACY  
+- `legacy-preventivorapido-support` — LEGACY  
+- `legacy-out-of-portfolio-legal` — OUT_OF_PORTFOLIO  
+- `legacy-out-of-portfolio-privacy` — OUT_OF_PORTFOLIO  
 
 **Removal happens only after dependency clearance** (App Store Connect / store / AdMob as applicable). Until then each of the four may remain only as **TEMPORARY_PUBLIC_DEPENDENCY**.
 
-**No** Slotiva. **No** Turbo Run. **No** obsolete privacy/support leftovers on the final public portfolio surface. **No** other portfolio products.
+**No** other non-approved products. **No** other non-approved products. **No** obsolete privacy/support leftovers on the final public portfolio surface. **No** other portfolio products.
 
 ### Recruiter view target
 
@@ -370,8 +370,8 @@ FernandoPiras/
 | **PRODUCT SHOWCASE** (`CORE_PRODUCT`) | `andrometrics`, `preventivo-rapido` (future) — AndroMetrics, PreventivoRapido PRO only |
 | **PRODUCT INFRASTRUCTURE** (`CORE_INFRASTRUCTURE`) | `andrometrics-legal`, `preventivorapido--legal` |
 | **PERSONAL PORTFOLIO INFRASTRUCTURE** | `FernandoPiras`, `swiftwithfer-portfolio` |
-| **LEGACY TO REMOVE FROM PUBLIC SURFACE** | `andrometrics-privacy`, `preventivorapido-support` |
-| **OUT OF PORTFOLIO TO REMOVE FROM PUBLIC SURFACE** | `Slotiva-Legal`, `turborun-privacy` |
+| **LEGACY TO REMOVE FROM PUBLIC SURFACE** | `legacy-andrometrics-privacy`, `legacy-preventivorapido-support` |
+| **OUT OF PORTFOLIO TO REMOVE FROM PUBLIC SURFACE** | `legacy-out-of-portfolio-legal`, `legacy-out-of-portfolio-privacy` |
 
 ---
 
@@ -400,10 +400,10 @@ FernandoPiras/
 **LIVE CHANGES:** NONE  
 
 **CURRENT TEMPORARY PUBLIC DEPENDENCIES:**  
-- `andrometrics-privacy`  
-- `preventivorapido-support`  
-- `Slotiva-Legal`  
-- `turborun-privacy`  
+- `legacy-andrometrics-privacy`  
+- `legacy-preventivorapido-support`  
+- `legacy-out-of-portfolio-legal`  
+- `legacy-out-of-portfolio-privacy`  
 
 **FINAL REMOVAL TARGET:**  
 All four above leave the public repository surface after dependency clearance.  

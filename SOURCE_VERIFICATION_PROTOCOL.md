@@ -111,7 +111,7 @@ source-verification/
 | `ANDROMETRICS` | AndroMetrics | `source-verification/ANDROMETRICS_VERIFICATION_TEMPLATE.md` |
 | `PREVENTIVORAPIDO_PRO` | PreventivoRapido PRO | `source-verification/PREVENTIVORAPIDO_VERIFICATION_TEMPLATE.md` |
 
-**Out of scope:** Slotiva, Turbo Run, NeFine, Wild Animal Explorer, FOTIQ, and any non-approved product.
+**Out of scope:** other non-approved products, other non-approved products, other non-approved products, and any non-approved product.
 
 Public URLs already known from prior phases (for packaging only; **not** source proof):
 

@@ -173,7 +173,7 @@ If LinkedIn is not ready, omit the line entirely.
 
 ### Not allowed
 
-- FOTIQ, Slotiva, SwiftToKotlin, or any incomplete concept  
+- other non-approved products, other non-approved products, or any incomplete concept  
 - “Coming soon” pins or placeholders  
 - Ratings, review counts, version numbers, download counts  
 - Unverified user/revenue metrics  
