@@ -274,14 +274,14 @@ export const siteConfig = {
       name: "PreventivoRapido PRO",
       tagline: "Dal cliente al preventivo firmato, in pochi minuti",
       description:
-        "Strumento professionale per artigiani e freelance: preventivi PDF rapidi, firma digitale e rubrica sincronizzata. Semplicità sul campo, affidabilità da studio.",
+        "Strumento professionale per artigiani e freelance: preventivi PDF rapidi, firma cliente e rubrica. Semplicità sul campo, affidabilità da studio.",
       outcomes: [
         "Preventivi PDF in pochi minuti",
-        "Firma digitale nel documento",
+        "Firma cliente nel documento",
         "Più produttività, meno lavoro d'ufficio",
       ],
       architecture:
-        "App SwiftUI con PDF, firma digitale, Sign in with Apple e sync cloud. Piano Pro via StoreKit 2 per chi chiude lavori ogni giorno.",
+        "App SwiftUI con generazione PDF, firma cliente, Sign in with Apple e sync cloud opzionale. Piano Pro via StoreKit 2 per chi chiude lavori ogni giorno.",
       icon: "/images/apps/preventivorapido/icon.png",
       screenshots: [
         "/images/apps/preventivorapido/screenshot-1.png",
@@ -291,7 +291,7 @@ export const siteConfig = {
       technologies: [
         "SwiftUI",
         "StoreKit 2",
-        "PDFKit",
+        "PDF",
         "Sign in with Apple",
         "Cloud Sync",
       ],

@@ -167,7 +167,7 @@ export const caseStudies: CaseStudyContent[] = [
     features: [
       "Preventivi PDF professionali in pochi minuti",
       "Flusso semplice: crea, invia, fai firmare",
-      "Firma digitale integrata nel documento",
+      "Firma cliente integrata nel documento",
       "Rubrica clienti con storico",
       "Gestione fatture",
       "Backup e sync cloud tra dispositivi",
@@ -219,11 +219,11 @@ export const caseStudies: CaseStudyContent[] = [
     trustSignals: [
       "App Store",
       "PDF professionali",
-      "Firma digitale",
+      "Firma cliente",
       "Sync cloud",
     ],
     seoDescription:
-      "Case study PreventivoRapido PRO: app iOS per preventivi PDF rapidi, firma digitale e produttività professionale.",
+      "Case study PreventivoRapido PRO: app iOS per preventivi PDF rapidi, firma cliente e produttività professionale.",
   },
 ];
 
