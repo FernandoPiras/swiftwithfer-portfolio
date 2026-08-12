@@ -18,13 +18,13 @@ I aim for clear interfaces and software that stays reliable after launch — wit
 
 iOS app for male fertility and wellbeing tracking. Daily scoring, HealthKit-assisted insights, on-device report tools, optional AI coaching, and a local-first data model with explicit privacy controls.
 
-[App Store](https://apps.apple.com/it/app/andrometrics/id6758244167) · [Product page](https://www.fernandopiras.com/apps/andrometrics)
+[App Store](https://apps.apple.com/it/app/andrometrics/id6758244167) · [Product page](https://www.fernandopiras.com/apps/andrometrics) · [Showcase](https://github.com/FernandoPiras/andrometrics)
 
 ### PreventivoRapido PRO
 
 iOS app for tradespeople and freelancers. Professional quotes, PDF documents, customer signatures, client records, and conversion to invoices or proforma — built for fast field use.
 
-[App Store](https://apps.apple.com/it/app/preventivorapido-pro/id6768065146) · [Product page](https://www.fernandopiras.com/apps/preventivorapido)
+[App Store](https://apps.apple.com/it/app/preventivorapido-pro/id6768065146) · [Product page](https://www.fernandopiras.com/apps/preventivorapido) · [Showcase](https://github.com/FernandoPiras/preventivo-rapido)
 
 ## Technical Expertise
 
