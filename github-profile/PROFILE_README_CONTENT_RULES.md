@@ -31,7 +31,7 @@ It is **not** a blog, CV dump, badge gallery, or GitHub template showcase.
 | This workspace folder | `github-profile/` holds the approved draft until the special repo is created/updated |
 | Portfolio site repo | Do **not** replace `swiftwithfer-portfolio/README.md` with the profile README |
 
-**Pin policy:** Do not pin `FernandoPiras/FernandoPiras`. Pin product showcase repos only (`andrometrics`, `preventivo-rapido`).
+**Pin policy:** Pin `andrometrics`, `preventivo-rapido`, and `swiftwithfer-portfolio` (in that order). Do not pin `FernandoPiras/FernandoPiras`, legal Pages repos, or private products (including Slotiva until a public showcase exists).
 
 ---
 
@@ -126,7 +126,7 @@ If the page grows past two scrolls, cut Tech or Principles before cutting Produc
 |---------|----------------|
 | **Hero** | Website only — `https://www.fernandopiras.com` |
 | **Featured Products** | Product App Store links + product pages on fernandopiras.com |
-| **Contact** | App Store developer page; professional email; LinkedIn **only** after a real verified public URL exists |
+| **Contact** | App Store developer page; professional email; Instagram when the public profile URL is verified; LinkedIn **only** after a real verified public URL exists |
 
 ### Explicit exclusions
 
@@ -229,7 +229,7 @@ Forbidden examples: “building my GitHub profile”, “improving portfolio REA
 | Visitor counters / snake / trophies / streak widgets | **Do not use** |
 | Embedded GitHub stats cards | **Optional** — default **off** |
 | Native contribution graph | **Use** (GitHub UI; not embedded) |
-| Pinned repositories | **Use** — `andrometrics`, `preventivo-rapido` only (when showcases exist) |
+| **Pinned repositories** | **Use** — `andrometrics`, `preventivo-rapido`, `swiftwithfer-portfolio` (when public) |
 
 ---
 

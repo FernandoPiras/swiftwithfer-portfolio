@@ -1,6 +1,7 @@
 # Fernando Piras
 
-**iOS Software Developer** · Swift · SwiftUI · Product Engineering
+**iOS Software Developer** · Swift · SwiftUI · Product Engineering  
+Bologna, Italy
 
 I design and ship native iOS applications end to end — from product decisions to App Store release.
 
@@ -8,9 +9,9 @@ I design and ship native iOS applications end to end — from product decisions 
 
 ## About
 
-I own native iOS products end to end: product design, implementation, privacy-aware data handling, release, and ongoing maintenance.
+I build software that people use every day: clear interfaces, explicit privacy choices, and releases that hold up after launch.
 
-I aim for clear interfaces and software that stays reliable after launch — with explicit permissions and behavior that holds up in daily use.
+Work is end to end — discovery, design, implementation, App Store submission, and ongoing maintenance — based in Bologna and available for clients across Italy and beyond.
 
 ## Featured Products
 
@@ -18,23 +19,19 @@ I aim for clear interfaces and software that stays reliable after launch — wit
 
 iOS app for male fertility and wellbeing tracking. Daily scoring, HealthKit-assisted insights, on-device report tools, optional AI coaching, and a local-first data model with explicit privacy controls.
 
-[App Store](https://apps.apple.com/it/app/andrometrics/id6758244167) · [Product page](https://www.fernandopiras.com/apps/andrometrics) · [Showcase](https://github.com/FernandoPiras/andrometrics)
+[App Store](https://apps.apple.com/it/app/andrometrics-fertility/id6758244167) · [Case study](https://www.fernandopiras.com/apps/andrometrics) · [Showcase](https://github.com/FernandoPiras/andrometrics)
 
 ### PreventivoRapido PRO
 
 iOS app for tradespeople and freelancers. Professional quotes, PDF documents, customer signatures, client records, and conversion to invoices or proforma — built for fast field use.
 
-[App Store](https://apps.apple.com/it/app/preventivorapido-pro/id6768065146) · [Product page](https://www.fernandopiras.com/apps/preventivorapido) · [Showcase](https://github.com/FernandoPiras/preventivo-rapido)
+[App Store](https://apps.apple.com/it/app/preventivorapido-pro/id6768065146) · [Case study](https://www.fernandopiras.com/apps/preventivorapido) · [Showcase](https://github.com/FernandoPiras/preventivo-rapido)
 
 ## Technical Expertise
 
-**Platforms**
-- Native iOS (iPhone and iPad)
-- App Store distribution
-
-**Languages & UI**
-- Swift
-- SwiftUI
+**Native iOS**
+- Swift, SwiftUI
+- App Store distribution (iPhone and iPad)
 
 **Capabilities used in shipped products**
 - HealthKit
@@ -46,6 +43,9 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 - Local-first data handling
 - Optional cloud synchronization
 - AI-assisted features in AndroMetrics
+
+**Website**
+- Next.js, React, TypeScript — [fernandopiras.com](https://www.fernandopiras.com)
 
 ## Engineering Principles
 
@@ -62,5 +62,7 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 
 ## Contact
 
+- **Website:** [fernandopiras.com](https://www.fernandopiras.com)
 - **App Store:** [Fernando Piras — Developer](https://apps.apple.com/it/developer/fernando-piras/id1865514513)
 - **Email:** [fernando@fernandopiras.com](mailto:fernando@fernandopiras.com)
+- **Instagram:** [@swiftwithfer](https://www.instagram.com/swiftwithfer)
