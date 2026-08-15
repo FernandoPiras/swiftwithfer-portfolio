@@ -230,6 +230,9 @@ export function ServizioPageView({ page }: { page: ServizioPage }) {
                     <p className="mt-2 text-sm text-muted line-clamp-2">
                       {article.excerpt}
                     </p>
+                    <p className="mt-3 text-xs text-muted">
+                      {article.readingMinutes} min di lettura
+                    </p>
                   </Link>
                 </li>
               ))}

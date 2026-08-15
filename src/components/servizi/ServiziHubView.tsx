@@ -163,6 +163,25 @@ export function ServiziHubView() {
           </div>
         </section>
 
+        <section className="mt-20" aria-labelledby="guides-hub-heading">
+          <h2
+            id="guides-hub-heading"
+            className="text-section-title text-foreground"
+          >
+            Guide e approfondimenti
+          </h2>
+          <p className="mt-4 max-w-3xl text-base text-muted">
+            Approfondimenti su costi, tempi, scelte tecniche e rilascio —
+            collegati a questi servizi.
+          </p>
+          <Link
+            href="/blog"
+            className="mt-6 inline-flex text-sm font-medium text-accent hover:underline"
+          >
+            Apri gli approfondimenti
+          </Link>
+        </section>
+
         <div className="mt-20">
           <ServiziFaq items={serviziHub.faq} />
         </div>

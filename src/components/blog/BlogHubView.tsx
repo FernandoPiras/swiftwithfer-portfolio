@@ -21,7 +21,7 @@ export function BlogHubView() {
         />
 
         <header className="max-w-3xl">
-          <p className="text-eyebrow mb-4 text-accent">Content Hub</p>
+          <p className="text-eyebrow mb-4 text-accent">Guide</p>
           <h1 className="text-display text-foreground text-balance">
             {blogHub.title}
           </h1>

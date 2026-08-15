@@ -388,7 +388,45 @@ export function buildBlogHubJsonLd() {
 export function buildBlogArticleJsonLd(article: BlogArticle) {
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/blog/${article.slug}`;
+  const { name, brand, email, role, social, photo, logo } = siteConfig;
+  const coverApp = siteConfig.apps.find((app) => app.id === article.proofApps[0]);
+  const imageUrl = coverApp
+    ? `${siteUrl}${coverApp.screenshots[0]}`
+    : `${siteUrl}/og-image.png`;
+
+  const person = {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name,
+    jobTitle: role,
+    url: siteUrl,
+    email: `mailto:${email}`,
+    image: `${siteUrl}${photo.bio}`,
+    sameAs: social.map((item) => item.url),
+  };
+
+  const organization = {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: brand,
+    url: siteUrl,
+    logo: `${siteUrl}${logo.full}`,
+    founder: { "@id": `${siteUrl}/#person` },
+  };
+
+  const website = {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: siteUrl,
+    name: `${name} — ${brand}`,
+    publisher: { "@id": `${siteUrl}/#organization` },
+    inLanguage: "it-IT",
+  };
+
   const graph: Record<string, unknown>[] = [
+    person,
+    organization,
+    website,
     {
       "@type": "BreadcrumbList",
       "@id": `${pageUrl}/#breadcrumb`,
@@ -409,25 +447,31 @@ export function buildBlogArticleJsonLd(article: BlogArticle) {
       ],
     },
     {
-      "@type": "BlogPosting",
+      "@type": ["Article", "BlogPosting"],
       "@id": `${pageUrl}/#article`,
       headline: article.title,
       description: article.metaDescription,
-      datePublished: article.publishedAt,
-      dateModified: article.updatedAt,
+      datePublished: `${article.publishedAt}T08:00:00+02:00`,
+      dateModified: `${article.updatedAt}T08:00:00+02:00`,
       inLanguage: "it-IT",
       author: { "@id": `${siteUrl}/#person` },
       publisher: { "@id": `${siteUrl}/#organization` },
-      mainEntityOfPage: pageUrl,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+      },
+      isPartOf: { "@id": `${siteUrl}/#website` },
       keywords: article.keywords.join(", "),
+      articleSection: article.category,
+      timeRequired: `PT${article.readingMinutes}M`,
+      image: [imageUrl],
       wordCount: article.sections.reduce(
         (sum, section) =>
           sum +
-          section.paragraphs.join(" ").split(/\s+/).length +
-          (section.bullets?.join(" ").split(/\s+/).length ?? 0),
+          section.paragraphs.join(" ").split(/\s+/).filter(Boolean).length +
+          (section.bullets?.join(" ").split(/\s+/).filter(Boolean).length ?? 0),
         0,
       ),
-      image: `${siteUrl}/og-image.png`,
     },
     {
       "@type": "WebPage",
@@ -437,11 +481,15 @@ export function buildBlogArticleJsonLd(article: BlogArticle) {
       description: article.metaDescription,
       isPartOf: { "@id": `${siteUrl}/#website` },
       breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: imageUrl,
+      },
       inLanguage: "it-IT",
     },
   ];
 
-  if (article.faq?.length) {
+  if (article.faq.length) {
     graph.push({
       "@type": "FAQPage",
       "@id": `${pageUrl}/#faq`,

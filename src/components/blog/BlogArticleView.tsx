@@ -5,7 +5,12 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { ServiziBreadcrumb } from "@/components/servizi/ServiziBreadcrumb";
 import { ServiziFaq } from "@/components/servizi/ServiziFaq";
 import {
-  formatBlogDate,
+  BlogByline,
+  BlogCallout,
+  BlogCover,
+  BlogMobileToc,
+} from "@/components/blog/BlogArticleChrome";
+import {
   getBlogCategory,
   getRelatedArticles,
   type BlogArticle,
@@ -40,7 +45,7 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
           ]}
         />
 
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem]">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_15.5rem] lg:gap-14">
           <div className="min-w-0">
             <header className="max-w-3xl">
               {category ? (
@@ -57,11 +62,8 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                 {article.title}
               </h1>
               <p className="text-lead mt-6 text-pretty">{article.excerpt}</p>
-              <p className="mt-4 text-sm text-muted">
-                Aggiornato {formatBlogDate(article.updatedAt)} ·{" "}
-                {article.readingMinutes} min di lettura
-              </p>
-              <ul className="mt-4 flex flex-wrap gap-2">
+              <BlogByline article={article} />
+              <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tag">
                 {article.tags.map((tag) => (
                   <li key={tag}>
                     <Link
@@ -75,7 +77,11 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
               </ul>
             </header>
 
-            <div className="mt-12 space-y-12">
+            <BlogCover article={article} priority />
+            <BlogMobileToc sections={article.sections} />
+            <BlogCallout title="In sintesi" body={article.keyTakeaway} />
+
+            <div className="mt-4 space-y-14">
               {article.sections.map((section) => (
                 <section
                   key={section.id}
@@ -92,8 +98,8 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                   <div className="mt-5 space-y-4">
                     {section.paragraphs.map((paragraph) => (
                       <p
-                        key={paragraph.slice(0, 48)}
-                        className="max-w-3xl text-base leading-relaxed text-muted text-pretty"
+                        key={paragraph.slice(0, 64)}
+                        className="max-w-3xl text-base leading-[1.75] text-muted text-pretty"
                       >
                         {paragraph}
                       </p>
@@ -104,7 +110,7 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                       {section.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="rounded-xl border border-glass-border/70 bg-glass/40 px-4 py-3 text-sm text-foreground"
+                          className="rounded-xl border border-glass-border/70 bg-glass/40 px-4 py-3 text-sm leading-relaxed text-foreground"
                         >
                           {bullet}
                         </li>
@@ -121,8 +127,12 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                   id="proof-heading"
                   className="text-section-title text-foreground"
                 >
-                  Prova nei prodotti live
+                  Progetti reali di riferimento
                 </h2>
+                <p className="mt-3 max-w-2xl text-sm text-muted">
+                  Esempi verificabili sul portfolio e su App Store — non casi
+                  inventati.
+                </p>
                 <ul className="mt-8 grid gap-4 sm:grid-cols-2">
                   {proofApps.map((app) => (
                     <li key={app.id}>
@@ -142,12 +152,24 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                             <p className="text-xs text-muted">{app.tagline}</p>
                           </div>
                         </div>
-                        <Link
-                          href={`/apps/${app.id}`}
-                          className="mt-4 inline-flex text-sm font-medium text-accent hover:underline"
-                        >
-                          Case study
-                        </Link>
+                        <div className="mt-4 flex flex-wrap gap-3">
+                          <Link
+                            href={`/apps/${app.id}`}
+                            className="text-sm font-medium text-accent hover:underline"
+                          >
+                            Case study
+                          </Link>
+                          {app.appStoreUrl ? (
+                            <a
+                              href={app.appStoreUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm font-medium text-muted hover:text-foreground"
+                            >
+                              App Store
+                            </a>
+                          ) : null}
+                        </div>
                       </GlassCard>
                     </li>
                   ))}
@@ -155,11 +177,9 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
               </section>
             ) : null}
 
-            {article.faq?.length ? (
-              <div className="mt-16">
-                <ServiziFaq items={article.faq} title="Domande frequenti" />
-              </div>
-            ) : null}
+            <div className="mt-16">
+              <ServiziFaq items={article.faq} title="Domande frequenti" />
+            </div>
 
             <section className="mt-16" aria-labelledby="services-heading">
               <h2
@@ -173,7 +193,7 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                   <li key={service.slug}>
                     <Link
                       href={`/servizi/${service.slug}`}
-                      className="block rounded-2xl border border-glass-border/80 bg-glass/50 p-5 hover:bg-glass/80"
+                      className="block rounded-2xl border border-glass-border/80 bg-glass/50 p-5 transition hover:bg-glass/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     >
                       <h3 className="text-sm font-medium text-foreground">
                         {service.title}
@@ -199,7 +219,7 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                   <li key={item.slug}>
                     <Link
                       href={`/blog/${item.slug}`}
-                      className="block rounded-2xl border border-glass-border/80 bg-glass/50 p-5 hover:bg-glass/80"
+                      className="block rounded-2xl border border-glass-border/80 bg-glass/50 p-5 transition hover:bg-glass/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     >
                       <h3 className="text-sm font-medium text-foreground">
                         {item.title}
@@ -207,42 +227,51 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                       <p className="mt-2 text-sm text-muted line-clamp-2">
                         {item.excerpt}
                       </p>
+                      <p className="mt-3 text-xs text-muted">
+                        {item.readingMinutes} min
+                      </p>
                     </Link>
                   </li>
                 ))}
               </ul>
             </section>
 
-            <section className="mt-16">
+            <section className="mt-16" aria-labelledby="cta-heading">
               <GlassCard className="p-8 sm:p-10">
-                <h2 className="text-section-title text-foreground">
-                  Hai un progetto concreto?
+                <h2
+                  id="cta-heading"
+                  className="text-section-title text-foreground"
+                >
+                  Prossimo passo
                 </h2>
-                <p className="mt-4 max-w-2xl text-base text-muted">
-                  Se questi approfondimenti descrivono il tuo problema, parliamone.
-                  Partiamo da ambito e vincoli — non da un listino.
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+                  Se questo articolo descrive il tuo problema, partiamo da ambito
+                  e vincoli. Nessun listino generico: una conversazione concreta.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <ButtonLink href={mailto}>Scrivimi</ButtonLink>
                   <ButtonLink href="/#contact" variant="secondary">
                     Contatti
                   </ButtonLink>
+                  <ButtonLink href="/servizi" variant="ghost">
+                    Servizi
+                  </ButtonLink>
                 </div>
               </GlassCard>
             </section>
           </div>
 
-          <aside className="lg:pt-2">
-            <div className="lg:sticky lg:top-[calc(var(--header-offset)+1rem)]">
+          <aside className="hidden lg:block">
+            <div className="sticky top-[calc(var(--header-offset)+1rem)] space-y-4">
               <GlassCard className="p-5">
                 <p className="text-sm font-medium text-foreground">Indice</p>
                 <nav aria-label="Indice dell'articolo" className="mt-3">
-                  <ol className="space-y-2">
+                  <ol className="space-y-2.5">
                     {article.sections.map((section) => (
                       <li key={section.id}>
                         <a
                           href={`#${section.id}`}
-                          className="text-sm text-muted hover:text-foreground"
+                          className="text-sm leading-snug text-muted hover:text-foreground"
                         >
                           {section.heading}
                         </a>
@@ -250,6 +279,13 @@ export function BlogArticleView({ article }: { article: BlogArticle }) {
                     ))}
                   </ol>
                 </nav>
+              </GlassCard>
+              <GlassCard className="p-5">
+                <p className="text-xs text-muted">Autore</p>
+                <p className="mt-1 text-sm font-medium text-foreground">
+                  {siteConfig.name}
+                </p>
+                <p className="mt-1 text-xs text-muted">{siteConfig.role}</p>
               </GlassCard>
             </div>
           </aside>

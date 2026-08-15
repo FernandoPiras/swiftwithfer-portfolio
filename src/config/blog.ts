@@ -37,6 +37,8 @@ export interface BlogArticle {
   metaDescription: string;
   keywords: readonly string[];
   excerpt: string;
+  /** Takeaway in evidenza sotto l’introduzione */
+  keyTakeaway: string;
   category: BlogCategoryId;
   tags: readonly string[];
   publishedAt: string;
@@ -45,7 +47,7 @@ export interface BlogArticle {
   relatedServiceSlugs: readonly string[];
   relatedArticleSlugs: readonly string[];
   proofApps: readonly ProofAppId[];
-  faq?: readonly BlogFaq[];
+  faq: readonly BlogFaq[];
   sections: readonly BlogSection[];
 }
 
@@ -80,11 +82,11 @@ export const blogCategories: readonly BlogCategory[] = [
 export const blogHub = {
   metaTitle: "Approfondimenti su app, software e prodotto digitale",
   metaDescription:
-    "Guide pratiche su costi, tempi, scelte tecniche e rilascio di app e software. Scritte da chi pubblica prodotti reali su App Store.",
+    "Guide pratiche su costi, tempi, scelte tecniche e rilascio di app e software. Basate sull’esperienza di prodotti pubblicati su App Store.",
   title: "Approfondimenti",
-  lead: "Contenuti evergreen su come nasce e costa un prodotto digitale — senza slogan e senza stime da listino.",
+  lead: "Contenuti evergreen su come nasce e costa un prodotto digitale — con stime oneste e ambiti espliciti.",
   supporting:
-    "Ogni articolo collega servizi, progetti live e passi operativi. L’obiettivo è aiutarti a decidere meglio prima di investire.",
+    "Ogni articolo collega servizi, progetti live e passi operativi. Servono a decidere con più chiarezza prima di investire.",
 } as const;
 
 export const blogArticles: readonly BlogArticle[] = [
@@ -101,6 +103,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Il prezzo di un’app non è un listino: dipende da ambito, qualità, integrazioni Apple e cosa succede dopo il rilascio.",
+    keyTakeaway:
+      "Il costo serio nasce dall’ambito e dalla qualità di rilascio, non da un prezzo “a schermata”.",
     category: "costi-e-tempi",
     tags: ["app", "ios", "budget", "mvp"],
     publishedAt: "2026-08-15",
@@ -178,7 +182,7 @@ export const blogArticles: readonly BlogArticle[] = [
         id: "prossimo-passo",
         heading: "Come ottenere una stima utile",
         paragraphs: [
-          "Porta problema, utenti e vincoli. Con quei dati si può ragionare su MVP, rischi e ordine di grandezza — non su un numero inventato per chiudere una call.",
+          "Con problema, utenti e vincoli si può ragionare su MVP, rischi e ordine di grandezza — non su un numero inventato per chiudere una call.",
         ],
       },
     ],
@@ -196,6 +200,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Il software custom costa quanto il problema che risolve — e quanto è disciplinato lo scope.",
+    keyTakeaway:
+      "Il custom conviene quando il processo è un vantaggio o un collo di bottiglia — non per moda.",
     category: "costi-e-tempi",
     tags: ["software", "custom", "budget", "crm"],
     publishedAt: "2026-08-15",
@@ -270,6 +276,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Non è una guerra di religioni: è una decisione di prodotto su utenti, capacità e distribuzione.",
+    keyTakeaway:
+      "Scegli per utenti, capacità di sistema e canale di distribuzione, non per preferenza tecnologica.",
     category: "scelte-tecniche",
     tags: ["ios", "web-app", "architettura"],
     publishedAt: "2026-08-15",
@@ -345,6 +353,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Il codice è costoso. La chiarezza sul problema costa meno e evita riscritture.",
+    keyTakeaway:
+      "Congela problema, utente primario e MVP prima di aprire l’IDE.",
     category: "processo",
     tags: ["discovery", "mvp", "processo"],
     publishedAt: "2026-08-15",
@@ -361,6 +371,18 @@ export const blogArticles: readonly BlogArticle[] = [
       "come-scegliere-sviluppatore-software",
     ],
     proofApps: ["andrometrics", "preventivorapido"],
+    faq: [
+      {
+        question: "Quanto tempo dedica alla discovery?",
+        answer:
+          "Dipende dalla complessità. Anche pochi giorni di chiarezza su utenti e flussi evitano settimane di rifacimenti.",
+      },
+      {
+        question: "Serve un documento formale?",
+        answer:
+          "Serve un accordo scritto su ambito e fuori-scope. Il formato può essere snello, purché sia deciso.",
+      },
+    ],
     sections: [
       {
         id: "problema",
@@ -418,6 +440,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Pubblicare non è “caricare un IPA”: è qualità, metadata e conformità.",
+    keyTakeaway:
+      "La submission è qualità + metadata + privacy accurate — non solo un upload.",
     category: "app-store",
     tags: ["app-store", "ios", "release"],
     publishedAt: "2026-08-15",
@@ -498,6 +522,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "I tempi dipendono dal nucleo scelto, non dal desiderio di “avere il gestionale”.",
+    keyTakeaway:
+      "I tempi dipendono dal nucleo operativo scelto, non dal desiderio di “avere tutto”.",
     category: "costi-e-tempi",
     tags: ["gestionale", "tempi", "mvp"],
     publishedAt: "2026-08-15",
@@ -514,6 +540,18 @@ export const blogArticles: readonly BlogArticle[] = [
       "come-progettare-software-prima-di-scrivere-codice",
     ],
     proofApps: ["preventivorapido"],
+    faq: [
+      {
+        question: "Posso avere un gestionale in un mese?",
+        answer:
+          "Solo se il nucleo è strettissimo e le decisioni sono rapide. Un gestionale “completo” non sta in un mese realistico.",
+      },
+      {
+        question: "Cosa rallenta di più?",
+        answer:
+          "Dati sporchi, stakeholder non allineati e integrazioni mal specificate — più della tecnologia scelta.",
+      },
+    ],
     sections: [
       {
         id: "nucleo",
@@ -556,6 +594,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Non scegliere per slide. Scegli per prova di prodotto, chiarezza e responsabilità.",
+    keyTakeaway:
+      "Valuta prova pubblica, metodo e ownership — non solo presentazioni.",
     category: "product",
     tags: ["scelta-partner", "freelance", "processo"],
     publishedAt: "2026-08-15",
@@ -622,6 +662,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "I progetti raramente falliscono per “il linguaggio sbagliato”. Falliscono per decisioni evitabili.",
+    keyTakeaway:
+      "I fallimenti tipici sono scope, owner assente, qualità rimandata e adozione ignorata.",
     category: "product",
     tags: ["rischi", "processo", "mvp"],
     publishedAt: "2026-08-15",
@@ -638,6 +680,18 @@ export const blogArticles: readonly BlogArticle[] = [
       "quanto-costa-creare-software-personalizzato",
     ],
     proofApps: ["andrometrics", "preventivorapido"],
+    faq: [
+      {
+        question: "Come si recupera un progetto già in ritardo?",
+        answer:
+          "Si ricontrae lo scope, si nomina un owner e si congela un MVP onesto. Continuare ad aggiungere feature peggiora il ritardo.",
+      },
+      {
+        question: "Il fallimento è sempre tecnico?",
+        answer:
+          "Raramente. Più spesso è di prodotto, comunicazione o adozione. Il codice diventa il sintomo.",
+      },
+    ],
     sections: [
       {
         id: "scope",
@@ -689,6 +743,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Non è custom vs SaaS: è fit sul processo e costo totale di ownership.",
+    keyTakeaway:
+      "Confronta fit sul processo e costo totale di ownership, non solo il canone del SaaS.",
     category: "scelte-tecniche",
     tags: ["crm", "saas", "custom"],
     publishedAt: "2026-08-15",
@@ -757,6 +813,8 @@ export const blogArticles: readonly BlogArticle[] = [
     ],
     excerpt:
       "Un’app professionale non nasce da un’idea su una slide: nasce da un problema, un metodo e un rilascio.",
+    keyTakeaway:
+      "Un’app professionale è un ciclo: problema → disegno → build → store → manutenzione.",
     category: "processo",
     tags: ["app", "ios", "processo", "app-store"],
     publishedAt: "2026-08-15",
@@ -773,6 +831,18 @@ export const blogArticles: readonly BlogArticle[] = [
       "quanto-costa-sviluppare-un-app-2026",
     ],
     proofApps: ["andrometrics", "preventivorapido"],
+    faq: [
+      {
+        question: "Serve subito App Store?",
+        answer:
+          "Se il canale Apple è parte dell’offerta, sì: pianificalo dall’inizio. Se stai ancora validando, un TestFlight chiuso può bastare.",
+      },
+      {
+        question: "Quando consideri l’app “professionale”?",
+        answer:
+          "Quando regge l’uso reale: errori gestiti, privacy chiara, rilascio controllato e un piano di manutenzione.",
+      },
+    ],
     sections: [
       {
         id: "problema",
