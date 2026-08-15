@@ -24,6 +24,59 @@ export function Footer() {
             </Link>
           </div>
 
+          <nav aria-label="Pagine del sito" className="w-full">
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium tracking-[-0.01em] text-muted">
+              <li>
+                <Link
+                  href="/"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/servizi"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Servizi
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Approfondimenti
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/apps/andrometrics"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  AndroMetrics
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/apps/preventivorapido"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  PreventivoRapido
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#contact"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Contatti
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <nav aria-label="Social footer">
             <ul className="flex flex-wrap items-center justify-center gap-2">
               {siteConfig.social.map((link) => (
@@ -55,13 +108,8 @@ export function Footer() {
             <p>
               © {year} {siteConfig.name}
             </p>
-            <p>
-              <Link
-                href="/#contact"
-                className="transition-colors hover:text-foreground"
-              >
-                Contattami
-              </Link>
+            <p className="text-center sm:text-right">
+              Bologna · Valsamoggia · Emilia-Romagna
             </p>
           </div>
         </div>

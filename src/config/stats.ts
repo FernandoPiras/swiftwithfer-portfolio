@@ -20,7 +20,7 @@ export const statsConfig: StatItem[] = [
   {
     id: "published-apps",
     type: "counter",
-    value: 3,
+    value: 2,
     label: "Prodotti live",
     description: "App Store e piattaforme web",
   },

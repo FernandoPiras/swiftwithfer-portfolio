@@ -11,6 +11,7 @@ import {
 } from "@/config/blog";
 import { getSiteUrl } from "@/lib/site-url";
 import { siteConfig } from "@/config/site";
+import { buildBlogArchiveJsonLd } from "@/lib/json-ld";
 
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -53,9 +54,19 @@ export default async function BlogCategoryPage({ params }: PageProps) {
   const category = getBlogCategory(categoryId as BlogCategoryId);
   if (!category) notFound();
   const articles = getArticlesByCategory(category.id);
+  const jsonLd = buildBlogArchiveJsonLd({
+    path: `/blog/categoria/${category.id}`,
+    name: category.label,
+    description: category.description,
+    articles,
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main id="main-content">
         <BlogArchiveView

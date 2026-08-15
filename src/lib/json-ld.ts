@@ -78,6 +78,10 @@ export function buildHomeJsonLd() {
         sameAs: social.map((item) => item.url),
         knowsAbout: skills,
         worksFor: { "@id": `${siteUrl}/#organization` },
+        homeLocation: {
+          "@type": "Place",
+          name: "Bologna / Valsamoggia, Emilia-Romagna, Italia",
+        },
       },
       {
         "@type": "Organization",
@@ -93,6 +97,12 @@ export function buildHomeJsonLd() {
         email: `mailto:${email}`,
         founder: { "@id": `${siteUrl}/#person` },
         sameAs: social.map((item) => item.url),
+        areaServed: [
+          { "@type": "City", name: "Bologna" },
+          { "@type": "City", name: "Valsamoggia" },
+          { "@type": "AdministrativeArea", name: "Emilia-Romagna" },
+          { "@type": "Country", name: "Italia" },
+        ],
       },
       {
         "@type": "WebSite",
@@ -507,5 +517,59 @@ export function buildBlogArticleJsonLd(article: BlogArticle) {
   return {
     "@context": "https://schema.org",
     "@graph": graph,
+  };
+}
+
+export function buildBlogArchiveJsonLd(options: {
+  path: string;
+  name: string;
+  description: string;
+  articles: BlogArticle[];
+}) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${options.path}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Approfondimenti",
+            item: `${siteUrl}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: options.name,
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: options.name,
+        description: options.description,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+        inLanguage: "it-IT",
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: options.articles.map((article, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: article.title,
+            url: `${siteUrl}/blog/${article.slug}`,
+          })),
+        },
+      },
+    ],
   };
 }

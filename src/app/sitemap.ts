@@ -1,9 +1,5 @@
 import type { MetadataRoute } from "next";
-import {
-  blogArticles,
-  blogCategories,
-  getAllBlogTags,
-} from "@/config/blog";
+import { blogArticles, blogCategories } from "@/config/blog";
 import { getAllCaseStudySlugs } from "@/config/case-studies";
 import { getAllServizioSlugs } from "@/config/servizi";
 import { getSiteUrl } from "@/lib/site-url";
@@ -49,12 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
-    ...getAllBlogTags().map((tag) => ({
-      url: `${siteUrl}/blog/tag/${encodeURIComponent(tag)}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.5,
-    })),
+    // Tag archives are noindex (thin listing pages); keep crawl budget on articles.
     ...getAllCaseStudySlugs().map((slug) => ({
       url: `${siteUrl}/apps/${slug}`,
       lastModified: now,

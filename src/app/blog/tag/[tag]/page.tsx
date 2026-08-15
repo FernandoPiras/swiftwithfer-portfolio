@@ -6,6 +6,7 @@ import { BlogArchiveView } from "@/components/blog/BlogArchiveView";
 import { getAllBlogTags, getArticlesByTag } from "@/config/blog";
 import { getSiteUrl } from "@/lib/site-url";
 import { siteConfig } from "@/config/site";
+import { buildBlogArchiveJsonLd } from "@/lib/json-ld";
 
 interface PageProps {
   params: Promise<{ tag: string }>;
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
+    robots: { index: false, follow: true },
     alternates: { canonical: url, languages: { "it-IT": url } },
     openGraph: {
       type: "website",
@@ -49,9 +51,19 @@ export default async function BlogTagPage({ params }: PageProps) {
   const decoded = decodeURIComponent(tag);
   const articles = getArticlesByTag(decoded);
   if (!articles.length) notFound();
+  const jsonLd = buildBlogArchiveJsonLd({
+    path: `/blog/tag/${encodeURIComponent(decoded)}`,
+    name: `#${decoded}`,
+    description: `Approfondimenti filtrati per il tag ${decoded}.`,
+    articles,
+  });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main id="main-content">
         <BlogArchiveView
