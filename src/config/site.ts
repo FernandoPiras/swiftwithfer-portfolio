@@ -71,9 +71,9 @@ export const siteConfig = {
   name: "Fernando Piras",
   brand: "SwiftWithFer",
   logo: {
-    full: "/images/brand/logo.png",
-    /** Sole brand wordmark — transparent PNG */
-    wordmark: "/images/brand/wordmark.png",
+    full: "/images/brand/logo.webp",
+    /** Sole brand wordmark — transparent WebP (optimized for LCP) */
+    wordmark: "/images/brand/wordmark.webp",
     alt: "SwiftWithFer — iOS Developer",
     wordmarkAlt: "SwiftWithFer",
   },
@@ -221,9 +221,9 @@ export const siteConfig = {
       wordmarkSize: { width: 1208, height: 230 },
       wordmarkInk: "on-dark",
       screenshots: [
-        "/images/apps/andrometrics/screenshot-1.png",
-        "/images/apps/andrometrics/screenshot-2.png",
-        "/images/apps/andrometrics/screenshot-3.png",
+        "/images/apps/andrometrics/screenshot-1.webp",
+        "/images/apps/andrometrics/screenshot-2.webp",
+        "/images/apps/andrometrics/screenshot-3.webp",
       ],
       technologies: [
         "SwiftUI",
@@ -241,7 +241,7 @@ export const siteConfig = {
       featured: true,
       demoVideo: {
         src: "/videos/andrometrics-demo.mp4",
-        poster: "/images/apps/andrometrics/screenshot-1.png",
+        poster: "/images/apps/andrometrics/screenshot-1.webp",
         title: "AndroMetrics in uso reale su iPhone",
       },
       appStoreRating: { average: 5, count: 4 },
@@ -284,9 +284,9 @@ export const siteConfig = {
         "App SwiftUI con generazione PDF, firma cliente, Sign in with Apple e sync cloud opzionale. Piano Pro via StoreKit 2 per chi chiude lavori ogni giorno.",
       icon: "/images/apps/preventivorapido/icon.png",
       screenshots: [
-        "/images/apps/preventivorapido/screenshot-1.png",
-        "/images/apps/preventivorapido/screenshot-2.png",
-        "/images/apps/preventivorapido/screenshot-3.png",
+        "/images/apps/preventivorapido/screenshot-1.webp",
+        "/images/apps/preventivorapido/screenshot-2.webp",
+        "/images/apps/preventivorapido/screenshot-3.webp",
       ],
       technologies: [
         "SwiftUI",
@@ -303,7 +303,7 @@ export const siteConfig = {
       featured: true,
       demoVideo: {
         src: "/videos/preventivorapido-demo.mp4",
-        poster: "/images/apps/preventivorapido/screenshot-1.png",
+        poster: "/images/apps/preventivorapido/screenshot-1.webp",
         title: "PreventivoRapido PRO in uso reale su iPhone",
       },
     },

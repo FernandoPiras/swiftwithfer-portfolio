@@ -20,10 +20,9 @@ export function AppDemoVideo({
 }: AppDemoVideoProps) {
   const isCompact = size === "compact";
   const containerRef = useRef<HTMLDivElement>(null);
-  const [shouldLoad, setShouldLoad] = useState(!isCompact);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    if (shouldLoad) return;
     const node = containerRef.current;
     if (!node) return;
 
@@ -39,7 +38,7 @@ export function AppDemoVideo({
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [shouldLoad]);
+  }, []);
 
   return (
     <figure className={cn("mx-auto w-full", className)}>
@@ -54,7 +53,7 @@ export function AppDemoVideo({
               poster={poster}
               controls
               playsInline
-              preload={isCompact ? "none" : "metadata"}
+              preload="none"
               aria-label={title}
               className="h-full w-full object-contain"
             >
@@ -71,6 +70,8 @@ export function AppDemoVideo({
                   src={poster}
                   alt=""
                   className="h-full w-full object-cover object-top opacity-80"
+                  loading="lazy"
+                  decoding="async"
                 />
               ) : null}
             </div>

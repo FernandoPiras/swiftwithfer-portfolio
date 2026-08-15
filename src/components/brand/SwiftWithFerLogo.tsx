@@ -4,9 +4,8 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 /**
- * Sole brand wordmark — /images/brand/wordmark.png
- * Exact user original: 1536 × 1024 RGBA (MD5 749b46cf67a573c258032a01e62add2e)
- * Sized by WIDTH for the header; height follows aspect.
+ * Sole brand wordmark — /images/brand/wordmark.webp
+ * Source master remains 1536 × 1024; delivered via next/image at display width.
  */
 export const WORDMARK_WIDTH = 1536;
 export const WORDMARK_HEIGHT = 1024;
@@ -64,7 +63,6 @@ function BrandWordmark({
       width={WORDMARK_WIDTH}
       height={WORDMARK_HEIGHT}
       priority={priority}
-      unoptimized
       sizes={`(max-width: 389px) ${xs}px, (max-width: 639px) ${displayWidth.base}px, ${sm}px`}
       style={style}
       className={cn(

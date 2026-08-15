@@ -42,6 +42,8 @@ export function PhoneFrame({
             fill
             sizes={sizes}
             priority={priority}
+            fetchPriority={priority ? "high" : "auto"}
+            quality={75}
             className="object-cover object-top"
           />
         ) : (
