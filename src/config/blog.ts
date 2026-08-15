@@ -109,7 +109,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["app", "ios", "budget", "mvp"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 9,
+    readingMinutes: 11,
     relatedServiceSlugs: [
       "sviluppatore-app-bologna",
       "sviluppatore-app-ios-bologna",
@@ -133,13 +133,13 @@ export const blogArticles: readonly BlogArticle[] = [
           "Sì, se l’MVP è davvero minimo. Se include abbonamenti, OCR, sync e multi-ruolo, non è più un MVP.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "non-un-listino",
         heading: "Perché non esiste un prezzo fisso",
         paragraphs: [
           "Nel 2026 sviluppare un’app significa ancora definire un prodotto: utenti, flussi, vincoli di privacy, modello commerciale e qualità percepita. Un preventivo serio nasce da queste scelte, non da una tariffa “a schermata”.",
-          "Chi pubblica già su App Store lo sa: il costo rilevante non è solo scrivere codice, ma arrivare a una build stabile, passare la review e mantenere il prodotto dopo il lancio.",
+          "Chi pubblica su App Store lo impara in fretta: il costo rilevante non è solo scrivere codice, ma arrivare a una build stabile, passare la review e mantenere il prodotto dopo il lancio.",
         ],
       },
       {
@@ -162,27 +162,47 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Fasce orientative (non listini)",
         paragraphs: [
           "Per un prodotto iOS focalizzato, un MVP serio può partire da un investimento contenuto se l’ambito è stretto e validato. Quando entrano abbonamenti, dati sensibili, OCR, sync o flussi business completi, il budget cresce perché cresce il rischio operativo.",
-          "AndroMetrics e PreventivoRapido PRO mostrano due estremi utili: un prodotto salute privacy-first con framework Apple avanzati, e un prodotto business con documenti, firma cliente e produttività sul campo. Nessuno dei due è “un’app da weekend”.",
+          "Durante lo sviluppo di AndroMetrics, gran parte del costo è andata in privacy, HealthKit, OCR on-device e un rilascio store accurato — non in “schermate decorative”. In PreventivoRapido PRO il peso è stato su flussi documento, firma cliente e usabilità sul campo.",
+        ],
+      },
+      {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "In AndroMetrics abbiamo scelto un modello local-first per i dati di tracking, con sync cloud solo dove l’utente lo attiva (per esempio lo sharing di coppia).",
+          "Alternative valutate: cloud-first “tutto sul server” (più semplice da sincronizzare, peggio su privacy e offline) oppure sync iCloud aggressivo di default. Abbiamo scartato entrambe: su un dominio salute la fiducia passa da controllo esplicito dei dati e permessi chiari.",
         ],
       },
       {
         id: "come-ridurre",
         heading: "Come ridurre il costo senza abbassare la qualità",
         paragraphs: [
-          "Si riduce il costo togliendo ambito, non qualità. Meglio un nucleo che chiude un problema misurabile, poi moduli successivi. Evita di pagare due volte: prima per un prototipo incoerente, poi per riscrivere tutto.",
+          "Si riduce il costo togliendo ambito, non qualità. Meglio un nucleo che chiude un problema misurabile, poi moduli successivi.",
         ],
         bullets: [
           "Definisci un solo utente primario e un solo outcome",
           "Rimanda integrazioni non essenziali",
-          "Investi in discovery prima dello sviluppo pieno",
+          "Fai discovery prima dello sviluppo pieno",
           "Pianifica manutenzione: un’app abbandonata costa di più",
         ],
       },
       {
-        id: "prossimo-passo",
-        heading: "Come ottenere una stima utile",
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Errori che vedo spesso quando si parla di budget:"],
+        bullets: [
+          "Chiedere “il prezzo di un’app” senza elencare i flussi critici",
+          "Mettere StoreKit, OCR e sync nell’MVP “perché tanto serviranno”",
+          "Trascurare privacy labels e URL legali fino alla submission",
+          "Dimenticare TestFlight e test su device reali",
+          "Non budgetare aggiornamenti dopo il go-live",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
         paragraphs: [
-          "Con problema, utenti e vincoli si può ragionare su MVP, rischi e ordine di grandezza — non su un numero inventato per chiudere una call.",
+          "Parti da un outcome misurabile e da un utente solo. Se non riesci a scrivere in una pagina cosa l’app deve fare al day one, non sei ancora in fase di stima: sei ancora in fase di chiarimento. Un ambito stretto e rilasciabile batte un preventivo gonfio pieno di moduli “magari”.",
         ],
       },
     ],
@@ -206,7 +226,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["software", "custom", "budget", "crm"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 8,
+    readingMinutes: 10,
     relatedServiceSlugs: [
       "software-personalizzato-bologna",
       "sviluppatore-software-bologna",
@@ -225,13 +245,13 @@ export const blogArticles: readonly BlogArticle[] = [
           "All’inizio spesso sì. Nel tempo può costare meno se il SaaS ti obbliga a workaround continui o a posti di lavoro manuali.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "quando-custom",
         heading: "Quando ha senso il custom",
         paragraphs: [
           "Il software personalizzato conviene quando il processo è un vantaggio competitivo o un collo di bottiglia strutturale. Se un SaaS copre l’80–90% del bisogno a costo sostenibile, di solito conviene configurare, non costruire.",
-          "PreventivoRapido PRO è un esempio di custom mobile: preventivi, clienti e documenti per un mestiere specifico. Non è un CRM generico rinominato.",
+          "In PreventivoRapido PRO non abbiamo “vestito” un CRM generico: abbiamo modellato preventivi, clienti e documenti per chi lavora sul campo. Il custom aveva senso perché il flusso operativo era il prodotto.",
         ],
       },
       {
@@ -247,18 +267,38 @@ export const blogArticles: readonly BlogArticle[] = [
         ],
       },
       {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "In PreventivoRapido abbiamo scelto un nucleo mobile-first: anagrafica clienti, ciclo preventivo, PDF e firma — prima di qualsiasi “suite gestionale completa”.",
+          "Alternative: partire da un gestionale desktop ricco, oppure da un CRM SaaS + plugin. Le abbiamo scartate perché il lavoro reale avviene in cantiere o dal cliente: se il telefono non chiude il flusso, lo strumento non viene usato.",
+        ],
+      },
+      {
         id: "mvp-disciplinato",
         heading: "MVP disciplinato vs. monolite",
         paragraphs: [
-          "Il modo più costoso di fare custom è volere “tutto subito”. Un nucleo che gestisce anagrafiche e un flusso documentale critico batte un gestionale incompleto con 40 schermate.",
+          "Il modo più costoso di fare custom è volere “tutto subito”. Un nucleo che gestisce anagrafiche e un flusso documentale critico batte un gestionale incompleto con quaranta schermate.",
           "Budgeta anche ownership: chi mantiene, chi decide le priorità, dove vive il codice.",
         ],
       },
       {
-        id: "decisioni",
-        heading: "Come decidere",
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Errori tipici sul custom:"],
+        bullets: [
+          "Costruire custom perché “fa figo”, non perché il SaaS fallisce sul processo",
+          "Promettere magazzino, contabilità e CRM in un unico primo rilascio",
+          "Ignorare la qualità dei dati da migrare",
+          "Non nominare un owner lato cliente",
+          "Trattare l’adozione dello staff come un dettaglio post-lancio",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
         paragraphs: [
-          "Elenca i processi che oggi bruciano tempo o generano errori. Stima il valore recuperato. Solo allora ha senso parlare di investimento tecnico.",
+          "Elenca i tre processi che oggi bruciano più tempo o generano più errori. Stima il valore recuperato. Solo su quello ha senso parlare di investimento custom. Se non riesci a misurare il dolore, non sei pronto a pagare il rimedio.",
         ],
       },
     ],
@@ -282,7 +322,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["ios", "web-app", "architettura"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 8,
+    readingMinutes: 10,
     relatedServiceSlugs: [
       "sviluppatore-app-ios-bologna",
       "web-app-bologna",
@@ -301,20 +341,20 @@ export const blogArticles: readonly BlogArticle[] = [
           "No. App Store richiede un’app nativa (o wrapper con regole precise). Se ti serve la distribuzione Apple, pianifica nativo.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "criterio",
         heading: "Il criterio giusto",
         paragraphs: [
-          "Scegli in base a: dove lavorano gli utenti, quali API del sistema servono, come vuoi distribuire e aggiornare, quale qualità percepita ti aspetti.",
+          "Scegli in base a dove lavorano gli utenti, quali API di sistema servono, come vuoi distribuire e aggiornare, e quale qualità percepita ti aspetti. Non in base alla tecnologia di moda.",
         ],
       },
       {
         id: "nativa",
         heading: "Quando punta al nativo iOS",
         paragraphs: [
-          "Scegli nativo se ti servono HealthKit, widget, Face ID, StoreKit, notifiche locali affidabili, UX “da iPhone” o presenza su App Store come canale commerciale.",
-          "AndroMetrics esiste come app nativa perché privacy, HealthKit, Vision OCR e widget non sono dettagli cosmetici: sono il prodotto.",
+          "Scegli nativo se ti servono HealthKit, widget, Face ID, StoreKit, notifiche locali affidabili, UX da iPhone o presenza su App Store come canale commerciale.",
+          "Durante lo sviluppo di AndroMetrics la scelta nativa non era opinabile: HealthKit in lettura, Vision OCR on-device, widget e un modello privacy-first sono il prodotto, non accessori.",
         ],
         bullets: [
           "Integrazioni Apple profonde",
@@ -327,8 +367,16 @@ export const blogArticles: readonly BlogArticle[] = [
         id: "web",
         heading: "Quando punta alla web app",
         paragraphs: [
-          "La web app è spesso migliore per back-office, CRM, dashboard multi-ruolo e lavoro da desktop. Aggiornamenti immediati, un solo deploy, niente review store.",
-          "In molti prodotti business ha senso: web per l’ufficio, app nativa per il campo — come nei flussi di preventivi e documenti.",
+          "La web app è spesso migliore per back-office, CRM, dashboard multi-ruolo e lavoro da desktop: aggiornamenti immediati, un solo deploy, niente review store.",
+          "In PreventivoRapido il cuore resta l’app iOS per il campo; un companion web ha senso solo dove serve backup o firma da link pubblico, non come sostituto dell’esperienza mobile.",
+        ],
+      },
+      {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Per AndroMetrics abbiamo escluso una PWA come prodotto principale: non avremmo avuto HealthKit, widget e la stessa qualità di integrazione Apple.",
+          "Per PreventivoRapido abbiamo tenuto l’app nativa come superficie primaria e trattato il web come opzionale e user-configured. Duplicare tutta la logica business su due client senza confini chiari sarebbe stato debito, non “omnichannel”.",
         ],
       },
       {
@@ -336,6 +384,25 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "L’opzione ibrida (senza pasticci)",
         paragraphs: [
           "Due superfici con un dominio condiviso funzionano se i confini sono chiari. Falliscono se duplichi regole di business in due posti senza owner.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Errori comuni in questa scelta:"],
+        bullets: [
+          "Scegliere nativo “perché è meglio” senza bisogno di API Apple",
+          "Scegliere web sperando di “finire anche su App Store” senza piano nativo",
+          "Costruire due client completi dallo stesso giorno zero",
+          "Ignorare offline e permessi finché non esplodono in test",
+          "Misurare il successo solo in feature, non in uso reale",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Scrivi i tre casi d’uso che devono funzionare anche con rete scarsa e con un solo utente distratto. Se quei casi dipendono da HealthKit, StoreKit o gesture native, parti iOS. Se sono dashboard e permessi multi-ruolo da ufficio, parti web. Tutto il resto viene dopo.",
         ],
       },
     ],
@@ -359,7 +426,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["discovery", "mvp", "processo"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 9,
+    readingMinutes: 11,
     relatedServiceSlugs: [
       "consulenza-prodotto-digitale",
       "sviluppatore-software-bologna",
@@ -383,7 +450,7 @@ export const blogArticles: readonly BlogArticle[] = [
           "Serve un accordo scritto su ambito e fuori-scope. Il formato può essere snello, purché sia deciso.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "problema",
         heading: "Parti dal problema osservabile",
@@ -395,7 +462,8 @@ export const blogArticles: readonly BlogArticle[] = [
         id: "utenti",
         heading: "Utenti e job-to-be-done",
         paragraphs: [
-          "Un prodotto con troppi utenti primari diventa confuso. Scegline uno per l’MVP. PreventivoRapido PRO è chiaro: professionisti che devono chiudere un preventivo sul campo. AndroMetrics è chiaro: tracking e insight per un percorso di fertilità/benessere.",
+          "Un prodotto con troppi utenti primari diventa confuso. Scegline uno per l’MVP.",
+          "In PreventivoRapido l’utente primario è chi deve chiudere un preventivo sul campo. In AndroMetrics è chi traccia e legge insight sul proprio percorso — non “tutti gli stakeholder sanitari” al day one.",
         ],
       },
       {
@@ -412,6 +480,14 @@ export const blogArticles: readonly BlogArticle[] = [
         ],
       },
       {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Prima di scrivere SwiftUI per AndroMetrics abbiamo congelato i flussi di tracking, consenso e report — non la palette.",
+          "Alternative: aprire Xcode subito “per vedere qualcosa”. L’abbiamo scartata più di una volta: senza flussi, ogni schermata diventa negoziabile all’infinito e il debito cresce prima del primo commit utile.",
+        ],
+      },
+      {
         id: "rischi",
         heading: "Rischi e vincoli",
         paragraphs: [
@@ -423,6 +499,25 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Congela un MVP onesto",
         paragraphs: [
           "Scrivi cosa resta fuori. Se “fuori” è vuoto, non hai un MVP: hai un desiderio. Poi sì, apri Xcode o l’editor.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Nella fase pre-codice:"],
+        bullets: [
+          "Disegnare schermate prima dei flussi",
+          "Avere cinque utenti “primari”",
+          "Lasciare privacy e store come “dettagli finali”",
+          "Non scrivere esplicitamente cosa resta fuori dall’MVP",
+          "Confondere un prototipo navigabile con un piano di rilascio",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Prima di stimare giorni di sviluppo, chiediti: qual è l’unica azione che, se fallisce, rende inutile l’intera app? Progetta quella per prima. Tutto il resto è negoziabile.",
         ],
       },
     ],
@@ -446,7 +541,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["app-store", "ios", "release"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 10,
+    readingMinutes: 12,
     relatedServiceSlugs: [
       "pubblicazione-app-store",
       "sviluppatore-app-ios-bologna",
@@ -465,12 +560,12 @@ export const blogArticles: readonly BlogArticle[] = [
           "Sì. Metadata, privacy, login demo, contenuti incompleti o linee guida mal interpretate bastano. Si riduce il rischio con preparazione, non con ottimismo.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "prerequisiti",
         heading: "Prerequisiti",
         paragraphs: [
-          "Account developer, bundle ID, certificati, URL privacy/support raggiungibili, build firmata, device di test. Senza questi, non sei in fase di pubblicazione: sei ancora in setup.",
+          "Account developer, bundle ID, certificati, URL privacy/support raggiungibili, build firmata, device di test. Senza questi non sei in fase di pubblicazione: sei ancora in setup.",
         ],
       },
       {
@@ -478,19 +573,28 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Qualità della build",
         paragraphs: [
           "Crash noti risolti, stati di errore gestiti, login funzionante, niente placeholder. TestFlight serve a trovare problemi, non a nasconderli.",
+          "Sia su AndroMetrics sia su PreventivoRapido PRO la differenza tra “compila” e “è pronta per review” è stata settimane di edge case su device reali.",
         ],
       },
       {
         id: "metadata",
         heading: "Metadata e privacy",
         paragraphs: [
-          "Titolo, sottotitolo, descrizione, screenshot e privacy nutrition labels devono descrivere il prodotto reale. AndroMetrics e PreventivoRapido PRO hanno schede pubbliche verificabili: categoria, legal URL, messaging coerente.",
+          "Titolo, sottotitolo, descrizione, screenshot e privacy nutrition labels devono descrivere il prodotto reale. Le schede pubbliche di AndroMetrics e PreventivoRapido PRO sono verificabili: categoria, legal URL, messaging coerente con ciò che l’app fa.",
         ],
         bullets: [
           "Privacy policy e support page live",
           "Screenshot che mostrano UI reale",
           "Dichiarazioni dati accurate",
           "Note per App Review se servono account demo",
+        ],
+      },
+      {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Abbiamo scelto repository legali dedicati (GitHub Pages) per privacy e support, separati dal codice commerciale.",
+          "Alternative: mettere tutto nel sito marketing, oppure PDF allegati. Le pagine HTML stabili riducono il rischio di link rotti in App Store Connect e rendono gli aggiornamenti legali indipendenti dal rilascio dell’app.",
         ],
       },
       {
@@ -505,6 +609,25 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Dopo il “Ready for Sale”",
         paragraphs: [
           "Il lancio è l’inizio. Pianifica aggiornamenti OS, fix e piccole evoluzioni. Un prodotto live senza manutenzione decade in fretta.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["In submission:"],
+        bullets: [
+          "Caricare una build con placeholder o login incompleto",
+          "Privacy labels che non coincidono con il comportamento reale",
+          "Screenshot e copy che promettono funzioni assenti",
+          "URL privacy/support non raggiungibili",
+          "Trattare il rifiuto di App Review come “bugia di Apple” invece di un segnale da correggere",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Prepara la checklist store mentre sviluppi, non la settimana della submission. Se privacy, support e account demo sono già pronti quando la build è stabile, la review diventa un passaggio — non un incendio.",
         ],
       },
     ],
@@ -528,7 +651,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["gestionale", "tempi", "mvp"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 7,
+    readingMinutes: 9,
     relatedServiceSlugs: [
       "software-gestionali-valsamoggia",
       "crm-personalizzato-bologna",
@@ -552,12 +675,13 @@ export const blogArticles: readonly BlogArticle[] = [
           "Dati sporchi, stakeholder non allineati e integrazioni mal specificate — più della tecnologia scelta.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "nucleo",
         heading: "Parti dal nucleo che muove soldi",
         paragraphs: [
-          "Per molti professionisti il nucleo è: clienti + documenti + stati. PreventivoRapido PRO mostra quanto valore c’è già in quel perimetro, anche in forma mobile.",
+          "Per molti professionisti il nucleo è: clienti + documenti + stati.",
+          "In PreventivoRapido PRO abbiamo visto quanto valore c’è già in quel perimetro, anche solo in forma mobile: se il preventivo non si chiude sul campo, il resto del gestionale resta teorico.",
         ],
       },
       {
@@ -573,10 +697,37 @@ export const blogArticles: readonly BlogArticle[] = [
         ],
       },
       {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Abbiamo tenuto fuori dall’MVP di PreventivoRapido tutto ciò che non chiudeva il ciclo preventivo (cliente → documento → firma/stato).",
+          "Alternative: partire “gestionale completo” con fatturazione e magazzino. L’avremmo pagata in mesi di scope e scarsa adozione. Meglio un nucleo usato ogni giorno, poi moduli quando il dolore successivo è chiaro.",
+        ],
+      },
+      {
         id: "ritardi",
         heading: "Cosa allunga i tempi",
         paragraphs: [
           "Dati sporchi, stakeholder che cambiano idea ogni sprint, integrazioni mal specificate, assenza di un owner. La tecnologia raramente è il collo di bottiglia principale.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Sui tempi del gestionale:"],
+        bullets: [
+          "Promettere “tutto il gestionale” in una data da pitch",
+          "Iniziare dalle reportistiche invece che dal flusso che genera ricavi",
+          "Sottovalutare la pulizia anagrafiche",
+          "Cambiare priorità ogni settimana senza ricontrarre lo scope",
+          "Saltare l’adozione: uno strumento non usato non è “in tempo”, è inutilizzato",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Chiediti quale schermata, se esistesse domani, ti farebbe risparmiare un’ora al giorno. Costruisci quella. La data di consegna diventa credibile solo quando lo scope è abbastanza piccolo da essere onesto.",
         ],
       },
     ],
@@ -600,7 +751,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["scelta-partner", "freelance", "processo"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 8,
+    readingMinutes: 9,
     relatedServiceSlugs: [
       "sviluppatore-software-bologna",
       "consulenza-prodotto-digitale",
@@ -619,12 +770,12 @@ export const blogArticles: readonly BlogArticle[] = [
           "Chiedi URL pubblici, App Store, ruoli reali. Se non c’è nulla di verificabile, resta un racconto.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "prova",
         heading: "Chiedi prova verificabile",
         paragraphs: [
-          "Prodotti live, case study onesti, schede App Store. AndroMetrics e PreventivoRapido PRO sono pubblici: puoi giudicare da solo qualità e coerenza.",
+          "Prodotti live, case study onesti, schede App Store. AndroMetrics e PreventivoRapido PRO sono pubblici: puoi giudicare da solo qualità e coerenza, senza fidarti di una slide.",
         ],
       },
       {
@@ -641,10 +792,37 @@ export const blogArticles: readonly BlogArticle[] = [
         ],
       },
       {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Nel presentare il lavoro, ho scelto di mostrare prodotti pubblicati e case study verificabili invece di prototipi privati “da portfolio”.",
+          "Alternative: riempire il sito di mockup. Li scarto perché non dimostrano review, privacy, manutenzione e uso reale — che sono proprio i rischi che un cliente sta comprando di ridurre.",
+        ],
+      },
+      {
         id: "fit",
         heading: "Fit sul tuo problema",
         paragraphs: [
           "Uno specialista iOS non è intercambiabile con una web agency. Allinea skill e dominio. Meglio un partner stretto sul problema che un generalista vago.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Nella scelta del partner:"],
+        bullets: [
+          "Valutare solo il prezzo giornaliero",
+          "Accettare portfolio senza URL pubblici",
+          "Non chiedere chi manterrà dopo il rilascio",
+          "Non chiarire ownership del codice in contratto",
+          "Scegliere chi dice sempre di sì allo scope",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Nella prima call, chiedi: “Cosa non fareste in questo progetto, e perché?”. La qualità della risposta ti dice più di qualsiasi listino. Chi non sa dire di no raramente sa portare un prodotto in produzione.",
         ],
       },
     ],
@@ -668,7 +846,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["rischi", "processo", "mvp"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 8,
+    readingMinutes: 10,
     relatedServiceSlugs: [
       "consulenza-prodotto-digitale",
       "sviluppatore-software-bologna",
@@ -692,12 +870,13 @@ export const blogArticles: readonly BlogArticle[] = [
           "Raramente. Più spesso è di prodotto, comunicazione o adozione. Il codice diventa il sintomo.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "scope",
         heading: "Scope infinito",
         paragraphs: [
-          "Se tutto è priorità, nulla lo è. Congela un MVP e difendilo. I prodotti live del portfolio hanno perimetri chiari: non tentano di essere “la piattaforma di tutto”.",
+          "Se tutto è priorità, nulla lo è. Congela un MVP e difendilo.",
+          "AndroMetrics e PreventivoRapido PRO hanno perimetri chiari: non tentano di essere “la piattaforma di tutto”. Quella disciplina è ciò che li ha resi rilasciabili.",
         ],
       },
       {
@@ -712,6 +891,7 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Qualità rimandata",
         paragraphs: [
           "“Sistemiamo dopo” diventa debito permanente. Privacy, errori, performance e UX vanno trattati come requisiti, non come polish finale.",
+          "Su AndroMetrics rinviare la privacy a fine corsa non sarebbe stato un ritardo: sarebbe stato un rischio di prodotto.",
         ],
       },
       {
@@ -726,6 +906,33 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Vendor opachi",
         paragraphs: [
           "Lock-in senza accesso al codice, senza documentazione, senza piano di exit: è un rischio di business. Chiariscilo in contratto.",
+        ],
+      },
+      {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Nei prodotti che pubblico tengo lo scope del primo rilascio ostinatamente stretto, anche quando la tentazione di aggiungere “ancora una feature” è alta.",
+          "Alternative: accettare ogni richiesta per “tenere il cliente contento”. Di solito finisce in ritardo, qualità bassa e un prodotto che nessuno apre. Preferisco un no motivato e una data reale.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Checklist rapida:"],
+        bullets: [
+          "Scope senza fuori-scope scritto",
+          "Nessun owner con potere di decisione",
+          "Privacy e store rimandati all’ultimo miglio",
+          "Zero piano di adozione per chi userà il software",
+          "Contratto senza chiarezza su codice e manutenzione",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Se il progetto è già in ritardo, non aggiungere lavoro: togli ambito. Rinomina le priorità, congela un MVP onesto, nomina un owner. Accelerare senza tagliare è solo un modo elegante di fallire più in fretta.",
         ],
       },
     ],
@@ -749,7 +956,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["crm", "saas", "custom"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 8,
+    readingMinutes: 10,
     relatedServiceSlugs: [
       "crm-personalizzato-bologna",
       "software-personalizzato-bologna",
@@ -768,7 +975,7 @@ export const blogArticles: readonly BlogArticle[] = [
           "Sì, ed è spesso saggio. Usa il SaaS per validare il processo; costruisci custom solo sui gap strutturali.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "saas",
         heading: "Quando il SaaS vince",
@@ -781,7 +988,15 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Quando il custom vince",
         paragraphs: [
           "Regole di dominio peculiari, integrazioni profonde con un’app mobile, documenti e stati che nessun CRM configura bene, o un vantaggio competitivo nel processo stesso.",
-          "PreventivoRapido PRO non sostituisce un CRM enterprise: risolve un flusso professionale specifico con PDF, firma cliente e uso sul campo.",
+          "PreventivoRapido PRO non sostituisce un CRM enterprise: risolve un flusso professionale specifico — preventivo, PDF, firma cliente — dove il telefono è lo strumento di lavoro.",
+        ],
+      },
+      {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "Abbiamo scelto di non modellare PreventivoRapido come “CRM completo + app”. Abbiamo modellato il ciclo che genera lavoro: cliente → preventivo → documento → firma/stato.",
+          "Alternative: partire da HubSpot/Salesforce e forzare il campo dentro un CRM da ufficio. Per molti artigiani sarebbe stato friction, non leva. Il custom stretto batte il CRM largo se il dolore è sul campo.",
         ],
       },
       {
@@ -796,6 +1011,25 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "Guarda il costo totale",
         paragraphs: [
           "Licenze, implementazione, workaround manuali, formazione, integrazioni fragili: somma tutto. A volte il custom “caro” è più economico del caos operativo.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Nella scelta CRM:"],
+        bullets: [
+          "Comprare un CRM enterprise per un team di tre persone “per crescere”",
+          "Costruire custom senza aver verificato che il SaaS fallisce sul processo",
+          "Ignorare chi userà lo strumento davvero (campo vs ufficio)",
+          "Sottovalutare migrazione e pulizia dati",
+          "Confondere “tante integrazioni” con “processo risolto”",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Prova a descrivere il tuo processo in otto passi. Se sette sono standard di mercato, resta sul SaaS. Se due o tre sono il tuo vantaggio (o il tuo incubo quotidiano) e nessun tool li copre, lì nasce il custom — e solo lì.",
         ],
       },
     ],
@@ -819,7 +1053,7 @@ export const blogArticles: readonly BlogArticle[] = [
     tags: ["app", "ios", "processo", "app-store"],
     publishedAt: "2026-08-15",
     updatedAt: "2026-08-15",
-    readingMinutes: 9,
+    readingMinutes: 11,
     relatedServiceSlugs: [
       "sviluppatore-app-ios-bologna",
       "sviluppatore-app-bologna",
@@ -843,12 +1077,13 @@ export const blogArticles: readonly BlogArticle[] = [
           "Quando regge l’uso reale: errori gestiti, privacy chiara, rilascio controllato e un piano di manutenzione.",
       },
     ],
-    sections: [
+sections: [
       {
         id: "problema",
         heading: "1. Un problema meritevole",
         paragraphs: [
-          "Se il problema non è frequente o doloroso, l’app non verrà aperta. AndroMetrics risponde a un bisogno di chiarezza su dati sensibili. PreventivoRapido PRO risponde alla velocità sul campo.",
+          "Se il problema non è frequente o doloroso, l’app non verrà aperta.",
+          "AndroMetrics nasce dal bisogno di chiarezza su dati sensibili di fertilità e benessere. PreventivoRapido PRO nasce dalla velocità sul campo: dal cliente al preventivo senza tornare in ufficio.",
         ],
       },
       {
@@ -863,6 +1098,15 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "3. Build iterativa",
         paragraphs: [
           "Incrementi rilasciabili, TestFlight, feedback. Architettura leggibile in Swift/SwiftUI quando il target è iOS.",
+          "Durante lo sviluppo di entrambe le app, i build interni servivano a scoprire friction reali — non a “mostrare progresso” in riunione.",
+        ],
+      },
+      {
+        id: "decisione-progettuale",
+        heading: "Decisione progettuale",
+        paragraphs: [
+          "In entrambi i prodotti abbiamo trattato App Store come vincolo di design, non come fase finale opzionale: privacy URL, metadata e qualità di review entrano nel piano subito.",
+          "Alternative: “prima facciamo l’app, poi pensiamo allo store”. Di solito produce una corsa dell’ultimo miglio e rischi evitabili. Preferiamo vincoli store visibili fin dalla discovery.",
         ],
       },
       {
@@ -877,6 +1121,25 @@ export const blogArticles: readonly BlogArticle[] = [
         heading: "5. Ownership continua",
         paragraphs: [
           "Chi risponde ai crash? Chi decide la roadmap? Senza ownership, anche un buon lancio decade.",
+        ],
+      },
+      {
+        id: "errori-da-evitare",
+        heading: "Errori da evitare",
+        paragraphs: ["Nel ciclo di vita:"],
+        bullets: [
+          "Partire dall’UI senza un problema misurabile",
+          "Saltare TestFlight “per arrivare prima allo store”",
+          "Trascurare privacy e support fino alla submission",
+          "Considerare il lancio come fine del progetto",
+          "Non avere un owner della roadmap post-rilascio",
+        ],
+      },
+      {
+        id: "consiglio",
+        heading: "Il mio consiglio",
+        paragraphs: [
+          "Definisci il day-one: l’unica sequenza che deve funzionare il giorno della pubblicazione. Costruisci quella fino a essere noiosa nella sua solidità. Poi, e solo poi, amplia. Un’app professionale è noiosa dove conta — e chiara dove l’utente decide.",
         ],
       },
     ],
