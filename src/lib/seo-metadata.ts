@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { serviziHub } from "@/config/servizi";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
 
@@ -185,6 +186,91 @@ export function createCaseStudyMetadata(
     },
     openGraph: {
       type: "article",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createServiziHubMetadata(): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}/servizi`;
+  const title = serviziHub.metaTitle;
+  const description = serviziHub.metaDescription;
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    keywords: [...serviziHub.keywords],
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: "website",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createServizioMetadata(page: {
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: readonly string[];
+}): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}/servizi/${page.slug}`;
+  const title = page.metaTitle;
+  const description = page.metaDescription;
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    keywords: [...page.keywords],
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: "website",
       locale: siteConfig.locale,
       url,
       siteName: name,

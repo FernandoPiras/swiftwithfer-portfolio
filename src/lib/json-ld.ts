@@ -1,3 +1,5 @@
+import type { ServizioPage } from "@/config/servizi";
+import { serviziHub, servizioPages } from "@/config/servizi";
 import type { AppProject } from "@/config/site";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -206,5 +208,139 @@ export function buildCaseStudyJsonLd(
   return {
     "@context": "https://schema.org",
     "@graph": graph,
+  };
+}
+
+export function buildServiziHubJsonLd() {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/servizi`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servizi",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: serviziHub.metaTitle,
+        description: serviziHub.metaDescription,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+        inLanguage: "it-IT",
+        about: { "@id": `${siteUrl}/#person` },
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: servizioPages.map((page, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: page.title,
+            url: `${siteUrl}/servizi/${page.slug}`,
+          })),
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        mainEntity: serviziHub.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
+  };
+}
+
+export function buildServizioJsonLd(page: ServizioPage) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/servizi/${page.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servizi",
+            item: `${siteUrl}/servizi`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: page.title,
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: page.metaTitle,
+        description: page.metaDescription,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+        inLanguage: "it-IT",
+        about: { "@id": `${pageUrl}/#service` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}/#service`,
+        name: page.serviceName,
+        description: page.metaDescription,
+        provider: { "@id": `${siteUrl}/#person` },
+        areaServed: page.areaServed,
+        url: pageUrl,
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        mainEntity: page.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
   };
 }

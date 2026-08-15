@@ -7,7 +7,7 @@ const navItems = [
   { href: "/#proof", label: "Prova" },
   { href: "/#process", label: "Metodo" },
   { href: "/#apps", label: "Prodotti" },
-  { href: "/#services", label: "Servizi" },
+  { href: "/servizi", label: "Servizi" },
   { href: "/#contact", label: "Contatti" },
 ];
 
