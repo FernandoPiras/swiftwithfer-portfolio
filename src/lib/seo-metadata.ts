@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { blogHub } from "@/config/blog";
 import { serviziHub } from "@/config/servizi";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -277,6 +278,89 @@ export function createServizioMetadata(page: {
       title: ogTitle,
       description,
       images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createBlogHubMetadata(): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}/blog`;
+  const title = blogHub.metaTitle;
+  const description = blogHub.metaDescription;
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createBlogArticleMetadata(article: {
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: readonly string[];
+  updatedAt: string;
+  publishedAt: string;
+}): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}/blog/${article.slug}`;
+  const title = article.metaTitle;
+  const description = article.metaDescription;
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    keywords: [...article.keywords],
+    authors: [{ name, url: siteUrl }],
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "article",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+      publishedTime: `${article.publishedAt}T08:00:00+02:00`,
+      modifiedTime: `${article.updatedAt}T08:00:00+02:00`,
     },
     twitter: {
       card: "summary_large_image",

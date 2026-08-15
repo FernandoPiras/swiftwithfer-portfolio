@@ -1,3 +1,5 @@
+import type { BlogArticle } from "@/config/blog";
+import { blogArticles, blogHub } from "@/config/blog";
 import type { ServizioPage } from "@/config/servizi";
 import { serviziHub, servizioPages } from "@/config/servizi";
 import type { AppProject } from "@/config/site";
@@ -342,5 +344,120 @@ export function buildServizioJsonLd(page: ServizioPage) {
         })),
       },
     ],
+  };
+}
+
+export function buildBlogHubJsonLd() {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/blog`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "Approfondimenti", item: pageUrl },
+        ],
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: blogHub.metaTitle,
+        description: blogHub.metaDescription,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+        inLanguage: "it-IT",
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: blogArticles.map((article, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: article.title,
+            url: `${siteUrl}/blog/${article.slug}`,
+          })),
+        },
+      },
+    ],
+  };
+}
+
+export function buildBlogArticleJsonLd(article: BlogArticle) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/blog/${article.slug}`;
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}/#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Approfondimenti",
+          item: `${siteUrl}/blog`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: article.title,
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}/#article`,
+      headline: article.title,
+      description: article.metaDescription,
+      datePublished: article.publishedAt,
+      dateModified: article.updatedAt,
+      inLanguage: "it-IT",
+      author: { "@id": `${siteUrl}/#person` },
+      publisher: { "@id": `${siteUrl}/#organization` },
+      mainEntityOfPage: pageUrl,
+      keywords: article.keywords.join(", "),
+      wordCount: article.sections.reduce(
+        (sum, section) =>
+          sum +
+          section.paragraphs.join(" ").split(/\s+/).length +
+          (section.bullets?.join(" ").split(/\s+/).length ?? 0),
+        0,
+      ),
+      image: `${siteUrl}/og-image.png`,
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}/#webpage`,
+      url: pageUrl,
+      name: article.metaTitle,
+      description: article.metaDescription,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+      inLanguage: "it-IT",
+    },
+  ];
+
+  if (article.faq?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}/#faq`,
+      mainEntity: article.faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
   };
 }

@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/layout/Header";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { ServiziBreadcrumb } from "@/components/servizi/ServiziBreadcrumb";
 import { ServiziFaq } from "@/components/servizi/ServiziFaq";
+import { getArticlesForService } from "@/config/blog";
 import {
   getRelatedServizi,
   type ServizioPage,
@@ -13,6 +14,7 @@ import { buildDirectMailto } from "@/config/discovery";
 
 export function ServizioPageView({ page }: { page: ServizioPage }) {
   const related = getRelatedServizi(page.relatedSlugs);
+  const relatedArticles = getArticlesForService(page.slug).slice(0, 4);
   const proofApps = siteConfig.apps.filter((app) =>
     page.proofApps.includes(app.id as "andrometrics" | "preventivorapido"),
   );
@@ -182,7 +184,7 @@ export function ServizioPageView({ page }: { page: ServizioPage }) {
               id="related-heading"
               className="text-section-title text-foreground"
             >
-              Approfondimenti correlati
+              Servizi correlati
             </h2>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
               {related.map((item) => (
@@ -201,6 +203,43 @@ export function ServizioPageView({ page }: { page: ServizioPage }) {
                 </li>
               ))}
             </ul>
+          </section>
+        ) : null}
+
+        {relatedArticles.length > 0 ? (
+          <section className="mt-20" aria-labelledby="guides-heading">
+            <h2
+              id="guides-heading"
+              className="text-section-title text-foreground"
+            >
+              Guide correlate
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm text-muted">
+              Approfondimenti dal Content Hub collegati a questo servizio.
+            </p>
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+              {relatedArticles.map((article) => (
+                <li key={article.slug}>
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="block rounded-2xl border border-glass-border/80 bg-glass/50 p-5 transition hover:border-glass-border hover:bg-glass/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    <h3 className="text-base font-medium text-foreground">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted line-clamp-2">
+                      {article.excerpt}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/blog"
+              className="mt-6 inline-flex text-sm font-medium text-accent hover:underline"
+            >
+              Tutti gli approfondimenti
+            </Link>
           </section>
         ) : null}
 
