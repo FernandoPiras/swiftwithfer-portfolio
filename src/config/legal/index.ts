@@ -21,7 +21,8 @@ export const legalApps: readonly LegalApp[] = [
   {
     id: "preventivo-rapido",
     name: "PreventivoRapido PRO",
-    blurb: "Documentazione legale ufficiale dell'app.",
+    blurb:
+      "Preventivi, clienti e documenti sul dispositivo. Privacy, termini e supporto dell'app.",
     icon: "/images/apps/preventivorapido/icon.png",
     caseStudyHref: "/apps/preventivorapido",
     documents: preventivoRapidoDocuments,
