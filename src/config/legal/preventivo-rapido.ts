@@ -337,7 +337,7 @@ export const preventivoRapidoDocuments: readonly LegalDocument[] = [
                 "I dati restano sul dispositivo finché non li elimini, non disinstalli l'app o non usi «Elimina definitivamente» sull'account in Impostazioni.",
               ],
               [
-                "L'eliminazione account rimuove utente, clienti, preventivi e fatture locali associati. I backup JSON e i PDF già esportati restano dove li hai salvati. Le credenziali in Keychain di quell'account possono restare sul dispositivo fino alla disinstallazione. L'abbonamento App Store si gestisce dall'Apple ID, non si cancella disinstallando l'app.",
+                "L'eliminazione account rimuove utente, clienti, preventivi, fatture, firme, preferenze, audit locale e credenziali Keychain associate (API key e-fattura e password cloud). L'identificativo Accedi con Apple salvato in locale viene rimosso con l'account: questo non revoca la relazione presso Apple, che va disassociata da Impostazioni iOS se lo desideri. I backup JSON e i PDF già esportati restano dove li hai salvati. L'abbonamento App Store si gestisce dall'Apple ID, non si cancella disinstallando l'app o eliminando l'account locale.",
               ],
               [
                 "Puoi esportare un backup JSON o un export dei dati dell'account corrente (senza password) dalle Impostazioni.",
@@ -822,7 +822,7 @@ export const preventivoRapidoDocuments: readonly LegalDocument[] = [
             type: "faq",
             title: "Eliminare account e dati",
             parts: [
-              "Impostazioni → elimina l'account corrente. Restano i file che hai già esportato e l'abbonamento App Store, da disdire dall'Apple ID.",
+              "Impostazioni → Elimina account e dati. Sul dispositivo vengono rimossi anche i secret in Keychain. Restano i file già esportati, l'abbonamento App Store (da disdire dall'Apple ID) e le copie già inviate a un server o provider che hai configurato.",
             ],
           },
         ],
