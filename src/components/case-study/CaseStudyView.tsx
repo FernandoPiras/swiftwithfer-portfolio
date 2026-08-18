@@ -13,7 +13,7 @@ import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FlowSteps } from "@/components/ui/FlowSteps";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
-import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
+import { cn, getStatusLabel, getWebsiteLinkLabel, isInternalHref } from "@/lib/utils";
 import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 interface CaseStudyViewProps {
@@ -218,7 +218,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 {app.websiteUrl ? (
                   <ButtonLink
                     href={app.websiteUrl}
-                    external
+                    external={!isInternalHref(app.websiteUrl)}
                     variant="secondary"
                     className="w-full sm:w-auto"
                   >

@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import type { AppProject } from "@/config/site";
 import { ButtonLink } from "@/components/layout/Header";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
-import { cn, getStatusLabel, getWebsiteLinkLabel } from "@/lib/utils";
+import { cn, getStatusLabel, getWebsiteLinkLabel, isInternalHref } from "@/lib/utils";
 import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
 interface AppCardProps {
@@ -146,7 +146,7 @@ export function AppCard({ app }: AppCardProps) {
             {app.websiteUrl ? (
               <ButtonLink
                 href={app.websiteUrl}
-                external
+                external={!isInternalHref(app.websiteUrl)}
                 variant="ghost"
                 className="w-full sm:w-auto"
               >

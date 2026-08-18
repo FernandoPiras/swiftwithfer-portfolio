@@ -64,6 +64,7 @@ export function CieloStoriePrivacyView({ doc }: { doc: PrivacyDocument }) {
         <ServiziBreadcrumb
           items={[
             { label: doc.breadcrumbHome, href: "/" },
+            { label: doc.breadcrumbLegal, href: "/legal" },
             { label: doc.breadcrumbCurrent },
           ]}
         />
@@ -169,8 +170,8 @@ export function CieloStoriePrivacyView({ doc }: { doc: PrivacyDocument }) {
                   <ButtonLink href={`mailto:${siteConfig.email}`}>
                     {doc.locale === "it" ? "Scrivi per la privacy" : "Email privacy"}
                   </ButtonLink>
-                  <ButtonLink href="/" variant="secondary">
-                    {doc.locale === "it" ? "Torna al sito" : "Back to the site"}
+                  <ButtonLink href="/legal" variant="secondary">
+                    {doc.locale === "it" ? "Tutti i documenti" : "All legal pages"}
                   </ButtonLink>
                 </div>
               </GlassCard>

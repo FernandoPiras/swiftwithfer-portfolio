@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogArticles, blogCategories } from "@/config/blog";
 import { getAllCaseStudySlugs } from "@/config/case-studies";
+import { getAllLegalSitemapEntries } from "@/config/legal";
 import { getAllServizioSlugs } from "@/config/servizi";
 import { getSiteUrl } from "@/lib/site-url";
 
@@ -52,17 +53,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    {
-      url: `${siteUrl}/cielostorie/privacy`,
-      lastModified: new Date("2026-08-18"),
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
-    {
-      url: `${siteUrl}/cielostorie/privacy/en`,
-      lastModified: new Date("2026-08-18"),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
+    ...getAllLegalSitemapEntries().map((entry) => ({
+      url: `${siteUrl}${entry.path}`,
+      lastModified: entry.lastModified ? new Date(entry.lastModified) : now,
+      changeFrequency: "yearly" as const,
+      priority: entry.path === "/legal" ? 0.5 : 0.4,
+    })),
   ];
 }

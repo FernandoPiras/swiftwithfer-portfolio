@@ -1,5 +1,7 @@
-export const CIELOSTORIE_PRIVACY_PATH = "/cielostorie/privacy";
-export const CIELOSTORIE_PRIVACY_EN_PATH = "/cielostorie/privacy/en";
+export const CIELOSTORIE_PRIVACY_PATH = "/legal/cielostorie/privacy";
+export const CIELOSTORIE_PRIVACY_EN_PATH = "/legal/cielostorie/privacy/en";
+export const CIELOSTORIE_PRIVACY_LEGACY_PATH = "/cielostorie/privacy";
+export const CIELOSTORIE_PRIVACY_EN_LEGACY_PATH = "/cielostorie/privacy/en";
 export const CIELOSTORIE_PRIVACY_UPDATED_ISO = "2026-08-18";
 
 export type PrivacyLocale = "it" | "en";
@@ -30,6 +32,7 @@ export interface PrivacyDocument {
   otherLanguageLabel: string;
   otherLanguageHref: string;
   breadcrumbHome: string;
+  breadcrumbLegal: string;
   breadcrumbCurrent: string;
   metaTitle: string;
   metaDescription: string;
@@ -68,6 +71,7 @@ function italianDocument(contactEmail: string): PrivacyDocument {
     otherLanguageLabel: "English",
     otherLanguageHref: CIELOSTORIE_PRIVACY_EN_PATH,
     breadcrumbHome: "Home",
+    breadcrumbLegal: "Legal",
     breadcrumbCurrent: "Privacy CieloStorie",
     metaTitle: "CieloStorie Privacy Policy",
     metaDescription:
@@ -350,7 +354,7 @@ function italianDocument(contactEmail: string): PrivacyDocument {
         heading: "Modifiche a questa informativa",
         paragraphs: [
           [
-            "Possiamo aggiornare questa pagina se cambia il prodotto o se dobbiamo chiarire una pratica. La data di aggiornamento è indicata in cima. La versione pubblicata su fernandopiras.com/cielostorie/privacy è quella di riferimento.",
+            "Possiamo aggiornare questa pagina se cambia il prodotto o se dobbiamo chiarire una pratica. La data di aggiornamento è indicata in cima. La versione pubblicata su fernandopiras.com/legal/cielostorie/privacy è quella di riferimento.",
           ],
         ],
       },
@@ -386,6 +390,7 @@ function englishDocument(contactEmail: string): PrivacyDocument {
     otherLanguageLabel: "Italiano",
     otherLanguageHref: CIELOSTORIE_PRIVACY_PATH,
     breadcrumbHome: "Home",
+    breadcrumbLegal: "Legal",
     breadcrumbCurrent: "CieloStorie Privacy",
     metaTitle: "CieloStorie Privacy Policy",
     metaDescription:
@@ -668,7 +673,7 @@ function englishDocument(contactEmail: string): PrivacyDocument {
         heading: "Changes to this policy",
         paragraphs: [
           [
-            "We may update this page if the product changes or if we need to clarify a practice. The update date is shown at the top. The version published at fernandopiras.com/cielostorie/privacy is the reference version.",
+            "We may update this page if the product changes or if we need to clarify a practice. The update date is shown at the top. The version published at fernandopiras.com/legal/cielostorie/privacy is the reference version.",
           ],
         ],
       },

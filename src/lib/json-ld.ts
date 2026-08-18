@@ -1,5 +1,12 @@
 import type { BlogArticle } from "@/config/blog";
 import { blogArticles, blogHub } from "@/config/blog";
+import {
+  LEGAL_HUB_PATH,
+  legalAppPath,
+  legalApps,
+  legalDocumentPath,
+} from "@/config/legal";
+import type { LegalApp, LegalDocument } from "@/config/legal/types";
 import type { ServizioPage } from "@/config/servizi";
 import { serviziHub, servizioPages } from "@/config/servizi";
 import type { AppProject } from "@/config/site";
@@ -42,9 +49,9 @@ function buildAppSchema(app: AppProject, siteUrl: string, position?: number) {
     };
   }
 
-  const sameAs = [app.appStoreUrl, app.websiteUrl, app.businessUrl].filter(
-    (url): url is string => Boolean(url),
-  );
+  const sameAs = [app.appStoreUrl, app.websiteUrl, app.businessUrl]
+    .filter((url): url is string => Boolean(url))
+    .map((url) => (url.startsWith("/") ? `${siteUrl}${url}` : url));
   if (sameAs.length) {
     base.sameAs = sameAs;
   }
@@ -622,7 +629,175 @@ export function buildCieloStoriePrivacyJsonLd(options: {
           {
             "@type": "ListItem",
             position: 2,
+            name: "Legal",
+            item: `${siteUrl}${LEGAL_HUB_PATH}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "CieloStorie",
+            item: `${siteUrl}${legalAppPath("cielostorie")}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
             name: "CieloStorie Privacy Policy",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function buildLegalHubJsonLd() {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${LEGAL_HUB_PATH}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: "Legal",
+        description:
+          "Informazioni legali, privacy e condizioni relative alle applicazioni sviluppate da Fernando Piras.",
+        inLanguage: "it-IT",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        author: { "@id": `${siteUrl}/#person` },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${pageUrl}/#apps`,
+        name: "Documenti legali per applicazione",
+        itemListElement: legalApps.map((app, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: app.name,
+          url: `${siteUrl}${legalAppPath(app.id)}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Legal",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function buildLegalAppJsonLd(app: LegalApp) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${legalAppPath(app.id)}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: `Legal — ${app.name}`,
+        description: app.blurb,
+        inLanguage: "it-IT",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: {
+          "@type": "MobileApplication",
+          name: app.name,
+          operatingSystem: "iOS",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Legal",
+            item: `${siteUrl}${LEGAL_HUB_PATH}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: app.name,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function buildLegalDocumentJsonLd(app: LegalApp, document: LegalDocument) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${legalDocumentPath(app.id, document.slug)}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: document.metaTitle,
+        description: document.metaDescription,
+        inLanguage: "it-IT",
+        dateModified: document.updatedISO,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: {
+          "@type": "MobileApplication",
+          name: app.name,
+          operatingSystem: "iOS",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Legal",
+            item: `${siteUrl}${LEGAL_HUB_PATH}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: app.name,
+            item: `${siteUrl}${legalAppPath(app.id)}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: document.title,
             item: pageUrl,
           },
         ],

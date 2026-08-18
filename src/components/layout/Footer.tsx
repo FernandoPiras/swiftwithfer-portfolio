@@ -76,10 +76,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/cielostorie/privacy"
+                  href="/legal"
                   className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
-                  Privacy CieloStorie
+                  Legal
                 </Link>
               </li>
             </ul>

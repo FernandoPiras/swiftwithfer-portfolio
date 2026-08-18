@@ -41,6 +41,16 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/cielostorie/privacy",
+        destination: "/legal/cielostorie/privacy",
+        permanent: true,
+      },
+      {
+        source: "/cielostorie/privacy/en",
+        destination: "/legal/cielostorie/privacy/en",
+        permanent: true,
+      },
     ];
   },
   async headers() {

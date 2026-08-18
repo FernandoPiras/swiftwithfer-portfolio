@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import { blogHub } from "@/config/blog";
+import {
+  CIELOSTORIE_PRIVACY_EN_PATH,
+  CIELOSTORIE_PRIVACY_PATH,
+} from "@/config/cielostorie-privacy";
+import { LEGAL_HUB_PATH, legalAppPath, legalDocumentPath } from "@/config/legal";
+import type { LegalApp, LegalDocument } from "@/config/legal/types";
 import { serviziHub } from "@/config/servizi";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -332,9 +338,9 @@ export function createCieloStoriePrivacyMetadata(options: {
   const siteUrl = getSiteUrl();
   const { name } = siteConfig;
   const url = `${siteUrl}${options.path}`;
-  const italianUrl = `${siteUrl}/cielostorie/privacy`;
-  const englishUrl = `${siteUrl}/cielostorie/privacy/en`;
-  const titleAbsolute = "CieloStorie Privacy Policy | Fernando Piras";
+  const italianUrl = `${siteUrl}${CIELOSTORIE_PRIVACY_PATH}`;
+  const englishUrl = `${siteUrl}${CIELOSTORIE_PRIVACY_EN_PATH}`;
+  const titleAbsolute = "Privacy Policy — CieloStorie | Fernando Piras";
   const ogImage = buildOgImage(siteUrl);
   const twitterImage = buildTwitterImage(siteUrl);
 
@@ -405,6 +411,121 @@ export function createBlogArticleMetadata(article: {
       images: [ogImage],
       publishedTime: `${article.publishedAt}T08:00:00+02:00`,
       modifiedTime: `${article.updatedAt}T08:00:00+02:00`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createLegalHubMetadata(): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}${LEGAL_HUB_PATH}`;
+  const title = "Legal";
+  const description =
+    "Informazioni legali, privacy e condizioni relative alle applicazioni sviluppate da Fernando Piras.";
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createLegalAppMetadata(app: LegalApp): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}${legalAppPath(app.id)}`;
+  const title = `Legal — ${app.name}`;
+  const description = app.blurb;
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [twitterImage],
+    },
+  };
+}
+
+export function createLegalDocumentMetadata(
+  app: LegalApp,
+  document: LegalDocument,
+): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}${legalDocumentPath(app.id, document.slug)}`;
+  const title = document.metaTitle;
+  const description = document.metaDescription;
+  const ogTitle = `${title} | ${name}`;
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: { "it-IT": url },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "article",
+      locale: siteConfig.locale,
+      url,
+      siteName: name,
+      title: ogTitle,
+      description,
+      images: [ogImage],
+      ...(document.updatedISO
+        ? { modifiedTime: `${document.updatedISO}T08:00:00+02:00` }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
