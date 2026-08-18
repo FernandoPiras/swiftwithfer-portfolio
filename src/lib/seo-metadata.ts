@@ -324,6 +324,50 @@ export function createBlogHubMetadata(): Metadata {
   };
 }
 
+export function createCieloStoriePrivacyMetadata(options: {
+  path: string;
+  description: string;
+  locale: "it_IT" | "en_US";
+}): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}${options.path}`;
+  const italianUrl = `${siteUrl}/cielostorie/privacy`;
+  const englishUrl = `${siteUrl}/cielostorie/privacy/en`;
+  const titleAbsolute = "CieloStorie Privacy Policy | Fernando Piras";
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title: { absolute: titleAbsolute },
+    description: options.description,
+    alternates: {
+      canonical: url,
+      languages: {
+        "it-IT": italianUrl,
+        en: englishUrl,
+        "x-default": italianUrl,
+      },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      locale: options.locale,
+      url,
+      siteName: name,
+      title: titleAbsolute,
+      description: options.description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: titleAbsolute,
+      description: options.description,
+      images: [twitterImage],
+    },
+  };
+}
+
 export function createBlogArticleMetadata(article: {
   slug: string;
   metaTitle: string;

@@ -74,6 +74,14 @@ export function Footer() {
                   Contatti
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/cielostorie/privacy"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Privacy CieloStorie
+                </Link>
+              </li>
             </ul>
           </nav>
 

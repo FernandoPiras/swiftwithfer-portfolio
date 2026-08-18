@@ -52,5 +52,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    {
+      url: `${siteUrl}/cielostorie/privacy`,
+      lastModified: new Date("2026-08-18"),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${siteUrl}/cielostorie/privacy/en`,
+      lastModified: new Date("2026-08-18"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 }

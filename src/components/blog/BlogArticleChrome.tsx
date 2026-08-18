@@ -108,13 +108,15 @@ export function BlogCallout({
 
 export function BlogMobileToc({
   sections,
+  summaryLabel = "Indice dell’articolo",
 }: {
   sections: readonly { id: string; heading: string }[];
+  summaryLabel?: string;
 }) {
   return (
     <details className="mt-8 rounded-2xl border border-glass-border/80 bg-glass/50 p-4 lg:hidden">
       <summary className="cursor-pointer text-sm font-medium text-foreground">
-        Indice dell’articolo
+        {summaryLabel}
       </summary>
       <ol className="mt-3 space-y-2">
         {sections.map((section) => (

@@ -573,3 +573,60 @@ export function buildBlogArchiveJsonLd(options: {
     ],
   };
 }
+
+export function buildCieloStoriePrivacyJsonLd(options: {
+  path: string;
+  name: string;
+  description: string;
+  inLanguage: "it-IT" | "en";
+}) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${options.path}`;
+  const { name, email } = siteConfig;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: options.name,
+        description: options.description,
+        inLanguage: options.inLanguage,
+        dateModified: "2026-08-18",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: {
+          "@type": "MobileApplication",
+          name: "CieloStorie",
+          operatingSystem: "iOS",
+          applicationCategory: "https://schema.org/Book",
+        },
+        author: {
+          "@type": "Person",
+          name,
+          email: `mailto:${email}`,
+          url: siteUrl,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "CieloStorie Privacy Policy",
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
