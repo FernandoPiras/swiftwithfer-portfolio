@@ -2,20 +2,22 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { CieloStoriePrivacyView } from "@/components/legal/CieloStoriePrivacyView";
+import { CieloStorieLegalDocumentView } from "@/components/legal/CieloStorieLegalDocumentView";
 import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import {
   getAllLegalDocumentParams,
   getLegalDocument,
 } from "@/config/legal";
 import { getCieloStoriePrivacyDocument } from "@/config/cielostorie-privacy";
+import { getCieloStorieSupportDocument } from "@/config/cielostorie-support";
+import { getCieloStorieTermsDocument } from "@/config/cielostorie-terms";
 import { siteConfig } from "@/config/site";
 import {
-  buildCieloStoriePrivacyJsonLd,
+  buildCieloStorieLegalJsonLd,
   buildLegalDocumentJsonLd,
 } from "@/lib/json-ld";
 import {
-  createCieloStoriePrivacyMetadata,
+  createCieloStorieBilingualMetadata,
   createLegalDocumentMetadata,
 } from "@/lib/seo-metadata";
 
@@ -29,21 +31,70 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
+function cielostorieMetadataForRenderer(
+  renderer: string | undefined,
+  appId: string,
+  docSlug: string,
+): Metadata | null {
+  switch (renderer) {
+    case "cielostorie-privacy": {
+      const doc = getCieloStoriePrivacyDocument("it", siteConfig.email);
+      return createCieloStorieBilingualMetadata({
+        kind: "privacy",
+        path: `/legal/${appId}/${docSlug}`,
+        description: doc.metaDescription,
+        locale: "it_IT",
+      });
+    }
+    case "cielostorie-terms": {
+      const doc = getCieloStorieTermsDocument("it", siteConfig.email);
+      return createCieloStorieBilingualMetadata({
+        kind: "terms",
+        path: `/legal/${appId}/${docSlug}`,
+        description: doc.metaDescription,
+        locale: "it_IT",
+      });
+    }
+    case "cielostorie-support": {
+      const doc = getCieloStorieSupportDocument("it", siteConfig.email);
+      return createCieloStorieBilingualMetadata({
+        kind: "support",
+        path: `/legal/${appId}/${docSlug}`,
+        description: doc.metaDescription,
+        locale: "it_IT",
+      });
+    }
+    default:
+      return null;
+  }
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { app: appId, doc: docSlug } = await params;
   const match = getLegalDocument(appId, docSlug);
   if (!match) return {};
 
-  if (match.document.renderer === "cielostorie-privacy") {
-    const cielostorie = getCieloStoriePrivacyDocument("it", siteConfig.email);
-    return createCieloStoriePrivacyMetadata({
-      path: `/legal/${appId}/${docSlug}`,
-      description: cielostorie.metaDescription,
-      locale: "it_IT",
-    });
-  }
+  const cielostorie = cielostorieMetadataForRenderer(
+    match.document.renderer,
+    appId,
+    docSlug,
+  );
+  if (cielostorie) return cielostorie;
 
   return createLegalDocumentMetadata(match.app, match.document);
+}
+
+function cielostorieDocumentForRenderer(renderer: string | undefined) {
+  switch (renderer) {
+    case "cielostorie-privacy":
+      return getCieloStoriePrivacyDocument("it", siteConfig.email);
+    case "cielostorie-terms":
+      return getCieloStorieTermsDocument("it", siteConfig.email);
+    case "cielostorie-support":
+      return getCieloStorieSupportDocument("it", siteConfig.email);
+    default:
+      return null;
+  }
 }
 
 export default async function LegalDocumentPage({ params }: PageProps) {
@@ -51,12 +102,12 @@ export default async function LegalDocumentPage({ params }: PageProps) {
   const match = getLegalDocument(appId, docSlug);
   if (!match) notFound();
 
-  if (match.document.renderer === "cielostorie-privacy") {
-    const doc = getCieloStoriePrivacyDocument("it", siteConfig.email);
-    const jsonLd = buildCieloStoriePrivacyJsonLd({
+  const cielostorieDoc = cielostorieDocumentForRenderer(match.document.renderer);
+  if (cielostorieDoc) {
+    const jsonLd = buildCieloStorieLegalJsonLd({
       path: `/legal/${appId}/${docSlug}`,
-      name: "CieloStorie Privacy Policy",
-      description: doc.metaDescription,
+      name: cielostorieDoc.metaTitle,
+      description: cielostorieDoc.metaDescription,
       inLanguage: "it-IT",
     });
 
@@ -68,7 +119,7 @@ export default async function LegalDocumentPage({ params }: PageProps) {
         />
         <Header />
         <main id="main-content">
-          <CieloStoriePrivacyView doc={doc} />
+          <CieloStorieLegalDocumentView doc={cielostorieDoc} />
         </main>
         <Footer />
       </>

@@ -581,11 +581,22 @@ export function buildBlogArchiveJsonLd(options: {
   };
 }
 
+export function buildCieloStorieLegalJsonLd(options: {
+  path: string;
+  name: string;
+  description: string;
+  inLanguage: "it-IT" | "en";
+  dateModified?: string;
+}) {
+  return buildCieloStoriePrivacyJsonLd(options);
+}
+
 export function buildCieloStoriePrivacyJsonLd(options: {
   path: string;
   name: string;
   description: string;
   inLanguage: "it-IT" | "en";
+  dateModified?: string;
 }) {
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}${options.path}`;

@@ -23,7 +23,11 @@ export interface LegalSection {
   blocks: LegalBlock[];
 }
 
-export type LegalRenderer = "standard" | "cielostorie-privacy";
+export type LegalRenderer =
+  | "standard"
+  | "cielostorie-privacy"
+  | "cielostorie-terms"
+  | "cielostorie-support";
 
 export interface LegalDocument {
   slug: string;

@@ -1,44 +1,27 @@
-export const CIELOSTORIE_PRIVACY_PATH = "/legal/cielostorie/privacy";
-export const CIELOSTORIE_PRIVACY_EN_PATH = "/legal/cielostorie/privacy/en";
-export const CIELOSTORIE_PRIVACY_LEGACY_PATH = "/cielostorie/privacy";
-export const CIELOSTORIE_PRIVACY_EN_LEGACY_PATH = "/cielostorie/privacy/en";
-export const CIELOSTORIE_PRIVACY_UPDATED_ISO = "2026-08-18";
+import type {
+  CieloStorieLegalDocument,
+  CieloStorieLegalInline,
+  CieloStorieLegalLocale,
+  CieloStorieLegalSection,
+} from "@/config/cielostorie-legal-types";
+import {
+  CIELOSTORIE_PRIVACY_EN_PATH,
+  CIELOSTORIE_PRIVACY_PATH,
+  CIELOSTORIE_PRIVACY_UPDATED_ISO,
+} from "@/config/cielostorie-legal-paths";
 
-export type PrivacyLocale = "it" | "en";
+export {
+  CIELOSTORIE_PRIVACY_EN_LEGACY_PATH,
+  CIELOSTORIE_PRIVACY_EN_PATH,
+  CIELOSTORIE_PRIVACY_LEGACY_PATH,
+  CIELOSTORIE_PRIVACY_PATH,
+  CIELOSTORIE_PRIVACY_UPDATED_ISO,
+} from "@/config/cielostorie-legal-paths";
 
-export type PrivacyInline =
-  | string
-  | { href: string; label: string; external?: boolean };
-
-export interface PrivacySection {
-  id: string;
-  heading: string;
-  paragraphs: PrivacyInline[][];
-  bullets?: PrivacyInline[][];
-}
-
-export interface PrivacyDocument {
-  locale: PrivacyLocale;
-  htmlLang: string;
-  product: string;
-  eyebrow: string;
-  title: string;
-  lead: string;
-  updatedLabel: string;
-  updatedDisplay: string;
-  tocLabel: string;
-  languageLabel: string;
-  languageCurrent: string;
-  otherLanguageLabel: string;
-  otherLanguageHref: string;
-  breadcrumbHome: string;
-  breadcrumbLegal: string;
-  breadcrumbCurrent: string;
-  metaTitle: string;
-  metaDescription: string;
-  contactEmail: string;
-  sections: PrivacySection[];
-}
+export type PrivacyLocale = CieloStorieLegalLocale;
+export type PrivacyInline = CieloStorieLegalInline;
+export type PrivacySection = CieloStorieLegalSection;
+export type PrivacyDocument = CieloStorieLegalDocument;
 
 const GOOGLE_PRIVACY = "https://policies.google.com/privacy";
 const GOOGLE_ADS_PRIVACY = "https://policies.google.com/technologies/ads";
@@ -56,6 +39,7 @@ export function getCieloStoriePrivacyDocument(
 
 function italianDocument(contactEmail: string): PrivacyDocument {
   return {
+    kind: "privacy",
     locale: "it",
     htmlLang: "it",
     product: "CieloStorie",
@@ -65,6 +49,7 @@ function italianDocument(contactEmail: string): PrivacyDocument {
       "Questa informativa descrive come CieloStorie tratta i dati nel contesto dell’app iOS e iPadOS: cosa resta sul dispositivo, come funziona la pubblicità, come interviene Apple per gli acquisti e quali servizi di terze parti sono presenti nel prodotto.",
     updatedLabel: "Ultimo aggiornamento",
     updatedDisplay: "18 agosto 2026",
+    updatedISO: CIELOSTORIE_PRIVACY_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
     languageCurrent: "Italiano",
@@ -375,6 +360,7 @@ function italianDocument(contactEmail: string): PrivacyDocument {
 
 function englishDocument(contactEmail: string): PrivacyDocument {
   return {
+    kind: "privacy",
     locale: "en",
     htmlLang: "en",
     product: "CieloStorie",
@@ -384,6 +370,7 @@ function englishDocument(contactEmail: string): PrivacyDocument {
       "This policy describes how CieloStorie handles information in the iOS and iPadOS app: what stays on the device, how advertising works, how Apple handles purchases, and which third-party services are actually in the product.",
     updatedLabel: "Last updated",
     updatedDisplay: "18 August 2026",
+    updatedISO: CIELOSTORIE_PRIVACY_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
     languageCurrent: "English",

@@ -3,7 +3,12 @@ import { blogHub } from "@/config/blog";
 import {
   CIELOSTORIE_PRIVACY_EN_PATH,
   CIELOSTORIE_PRIVACY_PATH,
-} from "@/config/cielostorie-privacy";
+  CIELOSTORIE_SUPPORT_EN_PATH,
+  CIELOSTORIE_SUPPORT_PATH,
+  CIELOSTORIE_TERMS_EN_PATH,
+  CIELOSTORIE_TERMS_PATH,
+} from "@/config/cielostorie-legal-paths";
+import type { CieloStorieLegalDocKind } from "@/config/cielostorie-legal-types";
 import { LEGAL_HUB_PATH, legalAppPath, legalDocumentPath } from "@/config/legal";
 import type { LegalApp, LegalDocument } from "@/config/legal/types";
 import { serviziHub } from "@/config/servizi";
@@ -330,7 +335,43 @@ export function createBlogHubMetadata(): Metadata {
   };
 }
 
-export function createCieloStoriePrivacyMetadata(options: {
+function cielostorieTitleAbsolute(kind: CieloStorieLegalDocKind): string {
+  switch (kind) {
+    case "privacy":
+      return "Privacy Policy — CieloStorie | Fernando Piras";
+    case "terms":
+      return "Terms of Use — CieloStorie | Fernando Piras";
+    case "support":
+      return "Support — CieloStorie | Fernando Piras";
+  }
+}
+
+function cielostorieLanguagePaths(kind: CieloStorieLegalDocKind): {
+  italianUrl: string;
+  englishUrl: string;
+} {
+  const siteUrl = getSiteUrl();
+  switch (kind) {
+    case "privacy":
+      return {
+        italianUrl: `${siteUrl}${CIELOSTORIE_PRIVACY_PATH}`,
+        englishUrl: `${siteUrl}${CIELOSTORIE_PRIVACY_EN_PATH}`,
+      };
+    case "terms":
+      return {
+        italianUrl: `${siteUrl}${CIELOSTORIE_TERMS_PATH}`,
+        englishUrl: `${siteUrl}${CIELOSTORIE_TERMS_EN_PATH}`,
+      };
+    case "support":
+      return {
+        italianUrl: `${siteUrl}${CIELOSTORIE_SUPPORT_PATH}`,
+        englishUrl: `${siteUrl}${CIELOSTORIE_SUPPORT_EN_PATH}`,
+      };
+  }
+}
+
+export function createCieloStorieBilingualMetadata(options: {
+  kind: CieloStorieLegalDocKind;
   path: string;
   description: string;
   locale: "it_IT" | "en_US";
@@ -338,9 +379,8 @@ export function createCieloStoriePrivacyMetadata(options: {
   const siteUrl = getSiteUrl();
   const { name } = siteConfig;
   const url = `${siteUrl}${options.path}`;
-  const italianUrl = `${siteUrl}${CIELOSTORIE_PRIVACY_PATH}`;
-  const englishUrl = `${siteUrl}${CIELOSTORIE_PRIVACY_EN_PATH}`;
-  const titleAbsolute = "Privacy Policy — CieloStorie | Fernando Piras";
+  const { italianUrl, englishUrl } = cielostorieLanguagePaths(options.kind);
+  const titleAbsolute = cielostorieTitleAbsolute(options.kind);
   const ogImage = buildOgImage(siteUrl);
   const twitterImage = buildTwitterImage(siteUrl);
 
@@ -372,6 +412,17 @@ export function createCieloStoriePrivacyMetadata(options: {
       images: [twitterImage],
     },
   };
+}
+
+export function createCieloStoriePrivacyMetadata(options: {
+  path: string;
+  description: string;
+  locale: "it_IT" | "en_US";
+}): Metadata {
+  return createCieloStorieBilingualMetadata({
+    kind: "privacy",
+    ...options,
+  });
 }
 
 export function createBlogArticleMetadata(article: {
