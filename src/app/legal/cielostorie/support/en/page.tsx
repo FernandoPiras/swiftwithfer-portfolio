@@ -10,6 +10,9 @@ import { createCieloStorieBilingualMetadata } from "@/lib/seo-metadata";
 
 const doc = getCieloStorieSupportDocument("en", siteConfig.email);
 
+/** Request-time render so middleware can set `<html lang="en">`. */
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = createCieloStorieBilingualMetadata({
   kind: "support",
   path: CIELOSTORIE_SUPPORT_EN_PATH,

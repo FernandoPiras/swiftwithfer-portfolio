@@ -12,6 +12,9 @@ import { createCieloStoriePrivacyMetadata } from "@/lib/seo-metadata";
 
 const doc = getCieloStoriePrivacyDocument("en", siteConfig.email);
 
+/** Request-time render so middleware can set `<html lang="en">`. */
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = createCieloStoriePrivacyMetadata({
   path: CIELOSTORIE_PRIVACY_EN_PATH,
   description: doc.metaDescription,
