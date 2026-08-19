@@ -17,3 +17,16 @@ export const CIELOSTORIE_LEGAL_EN_PATHS = [
   CIELOSTORIE_TERMS_EN_PATH,
   CIELOSTORIE_SUPPORT_EN_PATH,
 ] as const;
+
+const CIELOSTORIE_LEGAL_EN_PATH_SET = new Set<string>(
+  CIELOSTORIE_LEGAL_EN_PATHS,
+);
+
+/** Canonical English CieloStorie legal routes that require `<html lang="en">`. */
+export function isCieloStorieEnglishLegalPath(pathname: string): boolean {
+  const normalized =
+    pathname.length > 1 && pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
+  return CIELOSTORIE_LEGAL_EN_PATH_SET.has(normalized);
+}

@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
+import { headers } from "next/headers";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { createSiteMetadata } from "@/lib/seo-metadata";
 import "./globals.css";
+
+const HTML_LANG_HEADER = "x-html-lang";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,14 +27,17 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const lang = headersList.get(HTML_LANG_HEADER) === "en" ? "en" : "it";
+
   return (
     <html
-      lang="it"
+      lang={lang}
       className={`${geistSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -44,7 +50,7 @@ export default function RootLayout({
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
         >
-          Salta al contenuto
+          {lang === "en" ? "Skip to content" : "Salta al contenuto"}
         </a>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
