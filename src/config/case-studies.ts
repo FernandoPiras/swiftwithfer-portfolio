@@ -16,7 +16,7 @@ export interface TechnicalDecision {
 
 export interface CaseStudyContent {
   slug: string;
-  appId: "andrometrics" | "preventivorapido";
+  appId: "andrometrics" | "preventivorapido" | "cielostorie";
   /** One-line positioning for the case study hero */
   positioning: string;
   problem: string;
@@ -224,6 +224,95 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     seoDescription:
       "Case study PreventivoRapido PRO: app iOS per preventivi PDF rapidi, firma cliente e produttività professionale.",
+  },
+  {
+    slug: "cielostorie",
+    appId: "cielostorie",
+    positioning:
+      "Un'app iOS e iPadOS che rende la lettura illustrata per bambini semplice, magica e sicura — pensata per tutta la famiglia.",
+    problem:
+      "Trovare un'esperienza di lettura per bambini che sia davvero child-first è difficile: troppe app sono rumorose, account-centric o poco adatte a un uso sereno in famiglia, con privacy e controllo genitoriale fragili.",
+    solution:
+      "CieloStorie offre storie illustrate in un mondo da esplorare insieme: catalogo offline, profili bambino locali, preferiti, progresso di lettura, Il Mio Cielo e suoni contestuali durante la lettura. Interfaccia child-first, IT/EN, parental gate e acquisto in-app Rimuovi pubblicità — local-first e privacy-oriented, senza account.",
+    architecture:
+      "SwiftUI local-first: catalogo e progresso sul dispositivo, profili locali, parental gate, StoreKit per Rimuovi pubblicità.",
+    architectureFlow: [
+      "Famiglia",
+      "App iOS / iPadOS",
+      "Catalogo locale",
+      "Profili bambino",
+      "Reader + suoni",
+      "Il Mio Cielo",
+    ],
+    features: [
+      "Esperienza child-first su iPhone e iPad",
+      "Storie illustrate da esplorare e leggere",
+      "Catalogo offline sul dispositivo",
+      "Profili bambino locali",
+      "Preferiti e progresso di lettura",
+      "Il Mio Cielo",
+      "Suoni contestuali durante la lettura",
+      "Interfaccia in italiano e inglese",
+      "Parental gate per l'area genitori",
+      "Rimuovi pubblicità con acquisto in-app",
+      "Approccio privacy-oriented e local-first",
+    ],
+    decisions: [
+      {
+        title: "Child-first su iPhone e iPad",
+        reason: "Un'interfaccia pensata per i bambini, con layout e gerarchia chiari su ogni dispositivo.",
+      },
+      {
+        title: "Catalogo e dati locali",
+        reason: "Lettura e progresso restano sul dispositivo, senza account o sync cloud.",
+      },
+      {
+        title: "Profili bambino locali",
+        reason: "Ogni bambino ha il proprio spazio in famiglia, senza login.",
+      },
+      {
+        title: "Suoni contestuali in lettura",
+        reason: "Atmosfera immersiva legata alla storia, senza TTS o narratore vocale.",
+      },
+      {
+        title: "Parental gate + Rimuovi pubblicità",
+        reason: "Controllo genitoriale e monetizzazione chiara, conforme a un prodotto familiare.",
+      },
+      {
+        title: "Privacy by design",
+        reason: "Local-first come requisito di prodotto per un'app usata dai bambini.",
+      },
+    ],
+    productTimeline: [...PRODUCT_TIMELINE],
+    qualitySignals: [
+      "iPhone e iPad",
+      "Child-first",
+      "Local-first",
+      "Privacy oriented",
+      "IT / EN",
+    ],
+    capabilities: ["Accessibilità", "Performance", "Privacy", "iPadOS"],
+    challenges: [
+      "Un'esperienza child-first chiara senza sacrificare il controllo genitoriale",
+      "Catalogo illustrato e Reader fluidi offline sul dispositivo",
+      "Profili e progresso locali coerenti in famiglia",
+      "Monetizzazione pubblicitaria e Remove Ads rispettosa del contesto familiare",
+    ],
+    results: [
+      "Prodotto iOS e iPadOS con esperienza di lettura illustrata end-to-end",
+      "Flussi famiglia: profili locali, preferiti, progresso e Il Mio Cielo",
+      "Documentazione legale pubblica su Privacy, Termini e Supporto",
+      "Architettura local-first pronta per la pubblicazione su App Store",
+    ],
+    trustSignals: [
+      "Local-first",
+      "Privacy oriented",
+      "Parental gate",
+      "iPhone + iPad",
+      "IT / EN",
+    ],
+    seoDescription:
+      "Case study CieloStorie: app iOS e iPadOS per storie illustrate per bambini, catalogo offline, profili locali, Il Mio Cielo e privacy local-first.",
   },
 ];
 

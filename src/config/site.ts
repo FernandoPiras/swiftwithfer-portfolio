@@ -201,6 +201,12 @@ export const siteConfig = {
       title: "AndroMetrics",
       description: "Prodotto medicale premium live su App Store, con standard di qualità enterprise.",
     },
+    {
+      year: "2026",
+      title: "CieloStorie",
+      description:
+        "App iOS e iPadOS per storie illustrate: esperienza child-first, catalogo locale e privacy in famiglia.",
+    },
   ] satisfies TimelineEntry[],
   apps: [
     {
@@ -306,6 +312,36 @@ export const siteConfig = {
         title: "PreventivoRapido PRO in uso reale su iPhone",
       },
     },
+    {
+      id: "cielostorie",
+      name: "CieloStorie",
+      tagline:
+        "Storie illustrate per bambini in un mondo magico da esplorare, leggere e vivere insieme.",
+      description:
+        "App iOS e iPadOS dedicata alla lettura di storie per bambini, progettata per offrire un'esperienza magica, semplice e sicura per tutta la famiglia. Catalogo illustrato offline, profili bambino locali, progresso di lettura, Il Mio Cielo e suoni contestuali — privacy-oriented e local-first.",
+      outcomes: [
+        "Esperienza child-first su iPhone e iPad",
+        "Catalogo illustrato offline e profili locali",
+        "Parental gate e Rimuovi pubblicità in-app",
+      ],
+      architecture:
+        "App SwiftUI local-first: catalogo e progresso sul dispositivo, profili bambino locali, parental gate aritmetico, suoni contestuali in lettura, IT/EN. Monetizzazione con StoreKit (Rimuovi pubblicità) e pubblicità conforme alle policy famiglia — senza account e senza sync cloud.",
+      icon: "/images/apps/cielostorie/icon.png",
+      screenshots: [
+        "/images/apps/cielostorie/screenshot-1.webp",
+        "/images/apps/cielostorie/screenshot-2.webp",
+        "/images/apps/cielostorie/screenshot-3.webp",
+      ],
+      screenshotAlts: [
+        "CieloStorie — Home su iPhone con storie illustrate",
+        "CieloStorie — Esplora il catalogo su iPhone",
+        "CieloStorie — Reader di una storia su iPhone",
+      ],
+      technologies: ["SwiftUI", "SwiftData", "StoreKit 2", "AVFoundation"],
+      websiteUrl: "/legal/cielostorie",
+      status: "in-development",
+      featured: true,
+    },
   ] satisfies AppProject[],
   seo: {
     title: "Fernando Piras — Sviluppatore iOS & Software | SwiftWithFer",
@@ -321,6 +357,7 @@ export const siteConfig = {
       "CRM",
       "AndroMetrics",
       "PreventivoRapido",
+      "CieloStorie",
       "App Store",
       "Software Developer Italia",
     ],

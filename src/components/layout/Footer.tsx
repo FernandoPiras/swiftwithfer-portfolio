@@ -68,6 +68,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/apps/cielostorie"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  CieloStorie
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#contact"
                   className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >

@@ -40,6 +40,8 @@ export const legalApps: readonly LegalApp[] = [
     name: "CieloStorie",
     blurb:
       "Storie illustrate per famiglie: privacy, termini di utilizzo e supporto dell’app iOS e iPadOS.",
+    icon: "/images/apps/cielostorie/icon.png",
+    caseStudyHref: "/apps/cielostorie",
     documents: [
       {
         slug: "privacy",
