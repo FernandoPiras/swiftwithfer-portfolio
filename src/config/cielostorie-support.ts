@@ -36,9 +36,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "CieloStorie",
     title: "Supporto",
     lead:
-      "Assistenza per CieloStorie su iPhone e iPad: lettura, profili, preferiti, pubblicità, acquisto Rimuovi pubblicità, consenso e risoluzione dei problemi più comuni.",
+      "Assistenza per CieloStorie su iPhone e iPad: lettura, profili, preferiti, audio e risoluzione dei problemi più comuni.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "19 agosto 2026",
+    updatedDisplay: "24 agosto 2026",
     updatedISO: CIELOSTORIE_SUPPORT_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -50,7 +50,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     breadcrumbCurrent: "Supporto CieloStorie",
     metaTitle: "Supporto — CieloStorie",
     metaDescription:
-      "Supporto ufficiale CieloStorie: Reader, profili bambini, preferiti, annunci, Rimuovi pubblicità, ripristino acquisti e opzioni privacy.",
+      "Supporto ufficiale CieloStorie: Reader, profili bambini, preferiti, audio e risoluzione problemi.",
     contactEmail,
     sections: [
       {
@@ -97,7 +97,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Usare CieloStorie",
         paragraphs: [
           [
-            "CieloStorie è gratuita: tutte le storie sono leggibili senza acquisto. Non serve un account. La lingua dell’interfaccia segue la lingua del dispositivo (italiano o inglese; altre lingue del sistema usano l’inglese).",
+            "CieloStorie è gratuita: tutte le storie e le funzioni attualmente disponibili possono essere usate senza acquisti in-app o abbonamenti. Non serve un account. La lingua dell’interfaccia segue la lingua del dispositivo (italiano o inglese; altre lingue del sistema usano l’inglese).",
           ],
           [
             "Dalla Home puoi aprire la storia del giorno, continuare una lettura, esplorare per durata o aprire i classici. Il Reader si apre dal dettaglio storia con “Inizia a leggere”.",
@@ -112,7 +112,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Nel Reader scorri verticalmente se il testo è più lungo dell’area visibile. Usa i controlli in basso per pagina precedente, successiva o completamento.",
           ],
           [
-            "Non ci sono annunci nel Reader. Puoi chiudere il Reader in qualsiasi momento; il progresso viene salvato sul dispositivo.",
+            "Puoi chiudere il Reader in qualsiasi momento; il progresso viene salvato sul dispositivo. L’app non include pubblicità.",
           ],
         ],
       },
@@ -153,55 +153,11 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         ],
       },
       {
-        id: "annunci",
-        heading: "Pubblicità",
-        paragraphs: [
-          [
-            "Nella versione gratuita possono comparire banner in Home e in Esplora, e un interstitial solo dopo la chiusura del Reader, con limiti di frequenza.",
-          ],
-          [
-            "Se non vedi annunci, può dipendere dal consenso UMP, da una connessione assente al momento del caricamento, o dall’acquisto Rimuovi pubblicità attivo.",
-          ],
-          [
-            "Dettagli: ",
-            { href: CIELOSTORIE_PRIVACY_PATH, label: "Informativa sulla privacy" },
-            ".",
-          ],
-        ],
-      },
-      {
-        id: "remove-ads",
-        heading: "Rimuovi pubblicità",
-        paragraphs: [
-          [
-            "Acquisto una tantum nell’area genitori. Il prezzo è quello mostrato dall’App Store al momento dell’acquisto. Dopo l’acquisto verificato, banner e interstitial previsti dall’app non vengono mostrati.",
-          ],
-          [
-            "Se hai già acquistato su un altro dispositivo con lo stesso Apple ID, usa Ripristina acquisti nell’area genitori.",
-          ],
-          [
-            "Per problemi di pagamento o rimborsi contatta Apple; CieloStorie non gestisce direttamente le ricevute.",
-          ],
-        ],
-      },
-      {
-        id: "consenso",
-        heading: "Opzioni privacy (consenso annunci)",
-        paragraphs: [
-          [
-            "“Opzioni privacy” nell’area genitori riapre il modulo Google UMP quando disponibile. È distinto dalla Informativa sulla privacy del sito: serve a gestire le scelte pubblicitarie richieste da Google dove applicabile.",
-          ],
-          [
-            "Se il consenso non consente annunci, l’app non li carica ma le storie restano leggibili.",
-          ],
-        ],
-      },
-      {
         id: "offline",
         heading: "Uso offline",
         paragraphs: [
           [
-            "Storie, artwork e audio sono inclusi nell’app: la lettura funziona senza connessione. Annunci, consenso UMP e caricamento prodotto StoreKit richiedono rete quando necessari; in assenza di rete l’app non deve bloccarti dalla lettura.",
+            "Storie, artwork e audio sono inclusi nell’app: la lettura funziona senza connessione. CieloStorie non richiede una connessione di rete per leggere.",
           ],
         ],
       },
@@ -210,13 +166,13 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Domande frequenti",
         bullets: [
           [
-            "Non trovo il prezzo di Rimuovi pubblicità: serve connessione e prodotto disponibile nell’App Store del tuo Paese. Senza prezzo l’acquisto resta disabilitato; le storie restano leggibili.",
-          ],
-          [
             "L’app è in inglese ma il dispositivo è italiano (o viceversa): verifica la lingua per app in Impostazioni iOS → CieloStorie → Lingua preferita.",
           ],
           [
             "Ho perso un profilo: i profili sono solo sul dispositivo. Se hai eliminato il profilo o disinstallato l’app, non possiamo recuperarlo da un server CieloStorie perché non esiste.",
+          ],
+          [
+            "Non sento audio nel Reader: verifica che Suono Reader sia attivo nell’area genitori e che il dispositivo non sia in modalità silenziosa con volume troppo basso.",
           ],
           [
             "Voglio segnalare un contenuto: scrivi a ",
@@ -249,9 +205,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "CieloStorie",
     title: "Support",
     lead:
-      "Help for CieloStorie on iPhone and iPad: reading, profiles, favourites, ads, Remove Ads purchase, consent, and common troubleshooting.",
+      "Help for CieloStorie on iPhone and iPad: reading, profiles, favourites, audio, and common troubleshooting.",
     updatedLabel: "Last updated",
-    updatedDisplay: "19 August 2026",
+    updatedDisplay: "24 August 2026",
     updatedISO: CIELOSTORIE_SUPPORT_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -263,7 +219,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     breadcrumbCurrent: "CieloStorie Support",
     metaTitle: "Support — CieloStorie",
     metaDescription:
-      "Official CieloStorie support: Reader, child profiles, favourites, ads, Remove Ads, restore purchases, and privacy options.",
+      "Official CieloStorie support: Reader, child profiles, favourites, audio, and troubleshooting.",
     contactEmail,
     sections: [
       {
@@ -306,7 +262,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Using CieloStorie",
         paragraphs: [
           [
-            "CieloStorie is free: every story is readable without purchase. No account is required. The interface language follows the device language (Italian or English; other system languages fall back to English).",
+            "CieloStorie is free: every story and feature currently available can be used without in-app purchases or subscriptions. No account is required. The interface language follows the device language (Italian or English; other system languages fall back to English).",
           ],
           [
             "From Home you can open the story of the day, continue reading, browse by duration, or open classics. The Reader opens from story detail with Start reading.",
@@ -321,7 +277,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "In the Reader, scroll vertically if text is taller than the viewport. Use bottom controls for previous page, next page, or completion.",
           ],
           [
-            "There are no ads in the Reader. You can close the Reader at any time; progress is saved on the device.",
+            "You can close the Reader at any time; progress is saved on the device. The app does not include advertising.",
           ],
         ],
       },
@@ -362,55 +318,11 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         ],
       },
       {
-        id: "ads",
-        heading: "Advertising",
-        paragraphs: [
-          [
-            "In the free version, banners may appear on Home and Explore, and an interstitial only after closing the Reader, subject to frequency limits.",
-          ],
-          [
-            "If you see no ads, UMP consent, missing network at load time, or an active Remove Ads purchase may be the reason.",
-          ],
-          [
-            "Details: ",
-            { href: CIELOSTORIE_PRIVACY_EN_PATH, label: "Privacy Policy" },
-            ".",
-          ],
-        ],
-      },
-      {
-        id: "remove-ads",
-        heading: "Remove Ads",
-        paragraphs: [
-          [
-            "One-time purchase in the Parent Area. The price is what the App Store shows at purchase time. After a verified purchase, planned banners and interstitials are not shown.",
-          ],
-          [
-            "If you already purchased on another device with the same Apple ID, use Restore Purchases in the Parent Area.",
-          ],
-          [
-            "For billing or refund issues contact Apple; CieloStorie does not handle receipts directly.",
-          ],
-        ],
-      },
-      {
-        id: "consent",
-        heading: "Privacy options (ad consent)",
-        paragraphs: [
-          [
-            "Privacy options in the Parent Area reopens the Google UMP form when available. This is separate from the website Privacy Policy: it manages advertising choices required by Google where applicable.",
-          ],
-          [
-            "If consent does not allow ads, the app does not load them but stories remain readable.",
-          ],
-        ],
-      },
-      {
         id: "offline",
         heading: "Offline use",
         paragraphs: [
           [
-            "Stories, artwork, and audio ship inside the app: reading works without a connection. Ads, UMP consent, and StoreKit product loading need network when required; without network the app should not block reading.",
+            "Stories, artwork, and audio ship inside the app: reading works without a connection. CieloStorie does not require a network connection to read.",
           ],
         ],
       },
@@ -419,13 +331,13 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Frequently asked questions",
         bullets: [
           [
-            "Remove Ads price missing: network and App Store product availability in your country are required. Without a price the purchase stays disabled; stories remain readable.",
-          ],
-          [
             "Wrong app language: check per-app language in iOS Settings → CieloStorie → Preferred Language.",
           ],
           [
             "Lost a profile: profiles are device-only. If you deleted the profile or uninstalled the app, we cannot recover it from a CieloStorie server because none exists.",
+          ],
+          [
+            "No Reader audio: check that Reader sound is on in the Parent Area and that the device is not in Silent Mode with volume too low.",
           ],
           [
             "Content feedback: email ",

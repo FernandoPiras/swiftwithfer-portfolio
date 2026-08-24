@@ -61,9 +61,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "CieloStorie",
     title: "Termini di utilizzo",
     lead:
-      "Questi termini regolano l’uso dell’app CieloStorie per iOS e iPadOS. Descrivono cosa offre l’app, come funzionano storie gratuite, pubblicità e acquisto opzionale “Rimuovi pubblicità”, e quali responsabilità restano tue o del genitore.",
+      "Questi termini regolano l’uso dell’app CieloStorie per iOS e iPadOS. Descrivono cosa offre l’app, come funziona nella versione attuale gratuita e senza pubblicità, e quali responsabilità restano tue o del genitore.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "19 agosto 2026",
+    updatedDisplay: "24 agosto 2026",
     updatedISO: CIELOSTORIE_TERMS_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -75,7 +75,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     breadcrumbCurrent: "Termini CieloStorie",
     metaTitle: "Termini di utilizzo — CieloStorie",
     metaDescription:
-      "Termini di utilizzo di CieloStorie: storie gratuite, uso familiare, pubblicità, acquisto una tantum Rimuovi pubblicità e proprietà intellettuale.",
+      "Termini di utilizzo di CieloStorie: app gratuita, uso familiare, storie e funzioni senza acquisti in-app e proprietà intellettuale.",
     contactEmail,
     sections: [
       {
@@ -106,14 +106,26 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         ],
       },
       {
+        id: "gratuito",
+        heading: "Versione gratuita",
+        paragraphs: [
+          [
+            "La versione attuale di CieloStorie è fornita gratuitamente. Tutte le storie e le funzioni attualmente disponibili nell’app possono essere usate senza acquisti in-app, abbonamenti o paywall.",
+          ],
+          [
+            "L’app non include pubblicità, SDK pubblicitari o monetizzazione tramite annunci. Non sono previsti acquisti in-app nella versione attuale.",
+          ],
+        ],
+      },
+      {
         id: "famiglie",
         heading: "Uso familiare e responsabilità genitoriale",
         paragraphs: [
           [
-            "CieloStorie è pensata per un uso familiare con la supervisione di un adulto. L’area genitori è protetta da un parental gate (verifica aritmetica). Acquisti, ripristino acquisti, opzioni privacy pubblicitarie e gestione profili sono disponibili solo in quell’area.",
+            "CieloStorie è pensata per un uso familiare con la supervisione di un adulto. L’area genitori è protetta da un parental gate (verifica aritmetica). Gestione profili e preferenze di lettura sono disponibili solo in quell’area.",
           ],
           [
-            "Se un bambino usa l’app, il genitore o tutore è responsabile della supervisione, delle scelte sui profili locali, del consenso pubblicitario dove applicabile e di eventuali acquisti in-app effettuati con l’Apple ID del dispositivo.",
+            "Se un bambino usa l’app, il genitore o tutore è responsabile della supervisione e delle scelte sui profili locali e sulle preferenze dell’app.",
           ],
         ],
       },
@@ -126,49 +138,6 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
           ],
           [
             "Alcune storie possono essere adattamenti di opere di dominio pubblico o contenuti originali. I titoli e le illustrazioni di CieloStorie restano protetti come indicato nella sezione Proprietà intellettuale.",
-          ],
-        ],
-      },
-      {
-        id: "pubblicita",
-        heading: "Pubblicità",
-        paragraphs: [
-          [
-            "La versione gratuita può mostrare annunci Google Mobile Ads (AdMob). Gli annunci possono comparire come banner in Home e in Esplora, e come interstitial solo dopo la chiusura del Reader, secondo regole di frequenza.",
-          ],
-          [
-            "Non ci sono annunci nel Reader, tra le pagine del Reader, sulla schermata di completamento, in Il Mio Cielo, nell’area genitori né durante il parental gate.",
-          ],
-          [
-            "La pubblicità è configurata come child-directed, con contenuto massimo “G” e richieste non personalizzate. Dove richiesto, Google User Messaging Platform (UMP) gestisce il consenso. Se il consenso non consente richieste pubblicitarie, l’app non carica annunci ma le storie restano leggibili.",
-          ],
-          privacyIT,
-        ],
-      },
-      {
-        id: "acquisti",
-        heading: "Rimuovi pubblicità",
-        paragraphs: [
-          [
-            "“Rimuovi pubblicità” è un acquisto in-app una tantum, non consumabile (product ID: com.cielostorie.app.remove_ads). Non è un abbonamento. Rimuove la pubblicità prevista dall’app; non sblocca storie aggiuntive.",
-          ],
-          [
-            "Il prezzo è quello mostrato dall’App Store al momento dell’acquisto, nella valuta del tuo storefront Apple. CieloStorie non fissa un prezzo fisso in questi Termini.",
-          ],
-          [
-            "Pagamento, fatturazione e ricevute sono gestiti da Apple tramite StoreKit. CieloStorie non riceve dati della carta. Il ripristino acquisti è disponibile nell’area genitori.",
-          ],
-        ],
-      },
-      {
-        id: "rimborsi",
-        heading: "Rimborsi e rapporto con Apple",
-        paragraphs: [
-          [
-            "Eventuali rimborsi o contestazioni di pagamento seguono le regole dell’App Store e di Apple, non un sistema di rimborso gestito direttamente da CieloStorie.",
-          ],
-          [
-            "Per problemi di fatturazione o ricevute contatta Apple (Impostazioni Apple ID, assistenza App Store) o usa i canali di ripristino acquisti dell’app.",
           ],
         ],
       },
@@ -192,7 +161,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Puoi usare CieloStorie per la lettura personale o familiare sul dispositivo. Non puoi copiare, ridistribuire, rivendere, decompilare o estrarre sistematicamente storie, artwork o audio dall’app, salvo quanto consentito dalla legge inderogabile.",
           ],
           [
-            "Non devi usare l’app per attività illecite, per aggirare il parental gate, per interferire con annunci o acquisti in modi non previsti, né per tentare accesso non autorizzato a sistemi di terze parti collegati all’app.",
+            "Non devi usare l’app per attività illecite, per aggirare il parental gate o per tentare accesso non autorizzato a sistemi di terze parti collegati all’app.",
           ],
         ],
       },
@@ -201,7 +170,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Disponibilità, aggiornamenti e modifiche",
         paragraphs: [
           [
-            "CieloStorie può essere aggiornata, modificata o interrotta in qualsiasi momento. Possiamo aggiungere o rimuovere storie, cambiare l’interfaccia o regolare la frequenza pubblicitaria, rispettando quanto comunicato nell’app e nei documenti legali.",
+            "CieloStorie può essere aggiornata, modificata o interrotta in qualsiasi momento. Possiamo aggiungere o rimuovere storie, cambiare l’interfaccia o regolare le funzioni, rispettando quanto comunicato nell’app e nei documenti legali.",
           ],
           [
             "Non garantiamo che l’app sia sempre priva di errori, sempre compatibile con ogni dispositivo futuro o sempre disponibile in ogni Paese.",
@@ -222,7 +191,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Limitazione di responsabilità",
         paragraphs: [
           [
-            "Nella misura massima consentita dalla legge, Fernando Piras non è responsabile per danni indiretti, perdita di dati locali non salvati altrove, interruzioni di servizi di terze parti (Apple, Google) o uso dell’app al di fuori di quanto descritto in questi Termini.",
+            "Nella misura massima consentita dalla legge, Fernando Piras non è responsabile per danni indiretti, perdita di dati locali non salvati altrove, interruzioni di servizi di terze parti (inclusa Apple) o uso dell’app al di fuori di quanto descritto in questi Termini.",
           ],
           [
             "Nulla in questi Termini limita responsabilità che non possono essere escluse per legge, inclusi i diritti del consumatore ove applicabili.",
@@ -272,9 +241,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "CieloStorie",
     title: "Terms of Use",
     lead:
-      "These Terms govern use of the CieloStorie iOS and iPadOS app. They explain what the app provides, how free stories, advertising, and the optional Remove Ads one-time purchase work, and which responsibilities remain with you or a parent.",
+      "These Terms govern use of the CieloStorie iOS and iPadOS app. They explain what the app provides, how the current free version with no advertising works, and which responsibilities remain with you or a parent.",
     updatedLabel: "Last updated",
-    updatedDisplay: "19 August 2026",
+    updatedDisplay: "24 August 2026",
     updatedISO: CIELOSTORIE_TERMS_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -286,7 +255,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     breadcrumbCurrent: "CieloStorie Terms",
     metaTitle: "Terms of Use — CieloStorie",
     metaDescription:
-      "CieloStorie Terms of Use: free stories, family use, advertising, one-time Remove Ads purchase, and intellectual property.",
+      "CieloStorie Terms of Use: free app, family use, stories and features without in-app purchases, and intellectual property.",
     contactEmail,
     sections: [
       {
@@ -317,14 +286,26 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         ],
       },
       {
+        id: "free",
+        heading: "Free version",
+        paragraphs: [
+          [
+            "The current version of CieloStorie is provided free of charge. Every story and feature currently available in the app can be used without in-app purchases, subscriptions, or paywalls.",
+          ],
+          [
+            "The app does not include advertising, advertising SDKs, or ad-based monetization. There are no in-app purchases in the current version.",
+          ],
+        ],
+      },
+      {
         id: "families",
         heading: "Family use and parental responsibility",
         paragraphs: [
           [
-            "CieloStorie is intended for family use with adult supervision. The Parent Area is protected by a parental gate (arithmetic check). Purchases, restore, advertising privacy options, and profile management are only available there.",
+            "CieloStorie is intended for family use with adult supervision. The Parent Area is protected by a parental gate (arithmetic check). Profile management and reading preferences are only available there.",
           ],
           [
-            "If a child uses the app, the parent or guardian is responsible for supervision, local profile choices, advertising consent where applicable, and any in-app purchases made with the device Apple ID.",
+            "If a child uses the app, the parent or guardian is responsible for supervision and for choices about local profiles and app preferences.",
           ],
         ],
       },
@@ -337,49 +318,6 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
           ],
           [
             "Some stories may adapt public-domain works or be original content. CieloStorie titles and artwork remain protected as described under Intellectual property.",
-          ],
-        ],
-      },
-      {
-        id: "advertising",
-        heading: "Advertising",
-        paragraphs: [
-          [
-            "The free version may show Google Mobile Ads (AdMob). Ads may appear as banners on Home and Explore, and as interstitials only after closing the Reader, subject to frequency rules.",
-          ],
-          [
-            "There are no ads in the Reader, between Reader pages, on the completion screen, in My Sky, in the Parent Area, or during the parental gate.",
-          ],
-          [
-            "Advertising is configured as child-directed, G-rated maximum content, and non-personalized requests. Where required, Google User Messaging Platform (UMP) handles consent. If consent does not allow ad requests, the app does not load ads but stories remain readable.",
-          ],
-          privacyEN,
-        ],
-      },
-      {
-        id: "purchases",
-        heading: "Remove Ads",
-        paragraphs: [
-          [
-            "Remove Ads is a one-time, non-consumable in-app purchase (product ID: com.cielostorie.app.remove_ads). It is not a subscription. It removes advertising surfaces in the app; it does not unlock additional stories.",
-          ],
-          [
-            "The price is the price Apple shows at purchase time in your Apple storefront currency. CieloStorie does not fix a single price in these Terms.",
-          ],
-          [
-            "Payment, billing, and receipts are handled by Apple through StoreKit. CieloStorie does not receive card details. Restore Purchases is available in the Parent Area.",
-          ],
-        ],
-      },
-      {
-        id: "refunds",
-        heading: "Refunds and Apple",
-        paragraphs: [
-          [
-            "Refunds or billing disputes follow App Store and Apple rules, not a refund system operated directly by CieloStorie.",
-          ],
-          [
-            "For billing or receipt issues contact Apple (Apple ID settings, App Store support) or use the app’s restore purchase flows.",
           ],
         ],
       },
@@ -403,7 +341,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "You may use CieloStorie for personal or family reading on your device. You may not copy, redistribute, resell, decompile, or systematically extract stories, artwork, or audio from the app except as mandatory law allows.",
           ],
           [
-            "You must not use the app for unlawful activity, to bypass the parental gate, to interfere with ads or purchases in unintended ways, or to attempt unauthorized access to third-party systems connected to the app.",
+            "You must not use the app for unlawful activity, to bypass the parental gate, or to attempt unauthorized access to third-party systems connected to the app.",
           ],
         ],
       },
@@ -412,7 +350,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Availability, updates, and changes",
         paragraphs: [
           [
-            "CieloStorie may be updated, changed, or discontinued at any time. We may add or remove stories, change the interface, or adjust ad frequency, consistent with in-app behaviour and legal documents.",
+            "CieloStorie may be updated, changed, or discontinued at any time. We may add or remove stories, change the interface, or adjust features, consistent with in-app behaviour and legal documents.",
           ],
           [
             "We do not guarantee the app will always be error-free, compatible with every future device, or available in every country.",
@@ -433,7 +371,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Limitation of liability",
         paragraphs: [
           [
-            "To the maximum extent permitted by law, Fernando Piras is not liable for indirect damages, loss of local data not backed up elsewhere, third-party service interruptions (Apple, Google), or use of the app outside what these Terms describe.",
+            "To the maximum extent permitted by law, Fernando Piras is not liable for indirect damages, loss of local data not backed up elsewhere, third-party service interruptions (including Apple), or use of the app outside what these Terms describe.",
           ],
           [
             "Nothing in these Terms limits liability that cannot be excluded by law, including applicable consumer rights.",

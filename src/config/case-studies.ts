@@ -233,9 +233,9 @@ export const caseStudies: CaseStudyContent[] = [
     problem:
       "Trovare un'esperienza di lettura per bambini che sia davvero child-first è difficile: troppe app sono rumorose, account-centric o poco adatte a un uso sereno in famiglia, con privacy e controllo genitoriale fragili.",
     solution:
-      "CieloStorie offre storie illustrate in un mondo da esplorare insieme: catalogo offline, profili bambino locali, preferiti, progresso di lettura, Il Mio Cielo e suoni contestuali durante la lettura. Interfaccia child-first, IT/EN, parental gate e acquisto in-app Rimuovi pubblicità — local-first e privacy-oriented, senza account.",
+      "CieloStorie offre storie illustrate in un mondo da esplorare insieme: catalogo offline, profili bambino locali, preferiti, progresso di lettura, Il Mio Cielo e suoni contestuali durante la lettura. Interfaccia child-first, IT/EN, parental gate — local-first e privacy-oriented, gratuita al 100% e senza pubblicità, senza account.",
     architecture:
-      "SwiftUI local-first: catalogo e progresso sul dispositivo, profili locali, parental gate, StoreKit per Rimuovi pubblicità.",
+      "SwiftUI local-first: catalogo e progresso sul dispositivo, profili locali, parental gate.",
     architectureFlow: [
       "Famiglia",
       "App iOS / iPadOS",
@@ -254,7 +254,7 @@ export const caseStudies: CaseStudyContent[] = [
       "Suoni contestuali durante la lettura",
       "Interfaccia in italiano e inglese",
       "Parental gate per l'area genitori",
-      "Rimuovi pubblicità con acquisto in-app",
+      "100% gratuita, senza pubblicità",
       "Approccio privacy-oriented e local-first",
     ],
     decisions: [
@@ -275,8 +275,8 @@ export const caseStudies: CaseStudyContent[] = [
         reason: "Atmosfera immersiva legata alla storia, senza TTS o narratore vocale.",
       },
       {
-        title: "Parental gate + Rimuovi pubblicità",
-        reason: "Controllo genitoriale e monetizzazione chiara, conforme a un prodotto familiare.",
+        title: "Parental gate per l'area genitori",
+        reason: "Controllo genitoriale chiaro, conforme a un prodotto familiare.",
       },
       {
         title: "Privacy by design",
@@ -296,7 +296,7 @@ export const caseStudies: CaseStudyContent[] = [
       "Un'esperienza child-first chiara senza sacrificare il controllo genitoriale",
       "Catalogo illustrato e Reader fluidi offline sul dispositivo",
       "Profili e progresso locali coerenti in famiglia",
-      "Monetizzazione pubblicitaria e Remove Ads rispettosa del contesto familiare",
+      "Esperienza child-first serena senza pubblicità in un prodotto per bambini",
     ],
     results: [
       "Prodotto iOS e iPadOS con esperienza di lettura illustrata end-to-end",
@@ -312,7 +312,7 @@ export const caseStudies: CaseStudyContent[] = [
       "IT / EN",
     ],
     seoDescription:
-      "Case study CieloStorie: app iOS e iPadOS per storie illustrate per bambini, catalogo offline, profili locali, Il Mio Cielo e privacy local-first.",
+      "Case study CieloStorie: app iOS e iPadOS gratuita per storie illustrate per bambini, catalogo offline, profili locali, Il Mio Cielo e privacy local-first.",
   },
 ];
 

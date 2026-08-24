@@ -322,10 +322,10 @@ export const siteConfig = {
       outcomes: [
         "Esperienza child-first su iPhone e iPad",
         "Catalogo illustrato offline e profili locali",
-        "Parental gate e Rimuovi pubblicità in-app",
+        "100% gratuita, senza pubblicità né acquisti in-app",
       ],
       architecture:
-        "App SwiftUI local-first: catalogo e progresso sul dispositivo, profili bambino locali, parental gate aritmetico, suoni contestuali in lettura, IT/EN. Monetizzazione con StoreKit (Rimuovi pubblicità) e pubblicità conforme alle policy famiglia — senza account e senza sync cloud.",
+        "App SwiftUI local-first: catalogo e progresso sul dispositivo, profili bambino locali, parental gate aritmetico, suoni contestuali in lettura, IT/EN — senza account, senza sync cloud e senza monetizzazione.",
       icon: "/images/apps/cielostorie/icon.png",
       screenshots: [
         "/images/apps/cielostorie/screenshot-1.webp",
@@ -337,7 +337,7 @@ export const siteConfig = {
         "CieloStorie — Esplora il catalogo su iPhone",
         "CieloStorie — Reader di una storia su iPhone",
       ],
-      technologies: ["SwiftUI", "SwiftData", "StoreKit 2", "AVFoundation"],
+      technologies: ["SwiftUI", "SwiftData", "AVFoundation"],
       websiteUrl: "/legal/cielostorie",
       status: "in-development",
       featured: true,

@@ -67,31 +67,31 @@ function summaryFor(doc: CieloStorieLegalDocument): { title: string; body: strin
       return doc.locale === "it"
         ? {
             title: "In sintesi",
-            body: "CieloStorie è gratuita, senza account. I profili e i progressi restano sul dispositivo. La versione gratuita può mostrare annunci Google configurati in modo non personalizzato e child-directed; se il consenso non è disponibile, gli annunci non partono e le storie restano leggibili.",
+            body: "CieloStorie è gratuita e senza account. Profili e progressi restano sul dispositivo. L’app non raccoglie dati tramite il prodotto, non include pubblicità né SDK pubblicitari o di analytics di terze parti.",
           }
         : {
             title: "In short",
-            body: "CieloStorie is free and has no account. Profiles and progress stay on the device. The free version may show Google ads configured as non-personalized and child-directed; if consent is unavailable, ads do not run and stories remain readable.",
+            body: "CieloStorie is free and has no account. Profiles and progress stay on the device. The app does not collect data through the product and includes no advertising or third-party advertising or analytics SDKs.",
           };
     case "terms":
       return doc.locale === "it"
         ? {
             title: "In sintesi",
-            body: "Tutte le storie restano gratuite. La pubblicità compare solo fuori dal Reader. Rimuovi pubblicità è un acquisto una tantum gestito da Apple. L’area genitori protegge profili, acquisti e opzioni privacy.",
+            body: "La versione attuale è gratuita: tutte le storie e le funzioni disponibili non richiedono acquisti in-app o abbonamenti. L’area genitori protegge profili e preferenze.",
           }
         : {
             title: "In short",
-            body: "Every story stays free. Ads appear only outside the Reader. Remove Ads is a one-time Apple-managed purchase. The Parent Area protects profiles, purchases, and privacy options.",
+            body: "The current version is free: every available story and feature requires no in-app purchase or subscription. The Parent Area protects profiles and preferences.",
           };
     case "support":
       return doc.locale === "it"
         ? {
             title: "Prima di scrivere",
-            body: "Includi versione app, modello dispositivo e passaggi per riprodurre il problema. Per acquisti e rimborsi usa spesso Ripristina acquisti o l’assistenza Apple.",
+            body: "Includi versione app, modello dispositivo e passaggi per riprodurre il problema. Per domini privacy consulta l’Informativa sulla privacy.",
           }
         : {
             title: "Before you write",
-            body: "Include app version, device model, and steps to reproduce. For purchases and refunds, try Restore Purchases or Apple support first.",
+            body: "Include app version, device model, and steps to reproduce. For privacy questions, see the Privacy Policy.",
           };
   }
 }
