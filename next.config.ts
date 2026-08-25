@@ -51,6 +51,36 @@ const nextConfig: NextConfig = {
         destination: "/legal/cielostorie/privacy/en",
         permanent: true,
       },
+      {
+        source: "/legal/familyplus/privacy",
+        destination: "/familyplus/privacy",
+        permanent: true,
+      },
+      {
+        source: "/legal/familyplus/privacy/en",
+        destination: "/familyplus/privacy/en",
+        permanent: true,
+      },
+      {
+        source: "/legal/familyplus/terms",
+        destination: "/familyplus/terms",
+        permanent: true,
+      },
+      {
+        source: "/legal/familyplus/terms/en",
+        destination: "/familyplus/terms/en",
+        permanent: true,
+      },
+      {
+        source: "/legal/familyplus/support",
+        destination: "/familyplus/support",
+        permanent: true,
+      },
+      {
+        source: "/legal/familyplus/support/en",
+        destination: "/familyplus/support/en",
+        permanent: true,
+      },
     ];
   },
   async headers() {

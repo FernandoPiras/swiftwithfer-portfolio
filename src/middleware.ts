@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { isCieloStorieEnglishLegalPath } from "@/config/cielostorie-legal-paths";
+import { isFamilyPlusEnglishLegalPath } from "@/config/familyplus-legal-paths";
 
 const APEX_HOST = "fernandopiras.com";
 const HTML_LANG_HEADER = "x-html-lang";
@@ -16,10 +17,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  const pathname = request.nextUrl.pathname;
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(
     HTML_LANG_HEADER,
-    isCieloStorieEnglishLegalPath(request.nextUrl.pathname) ? "en" : "it",
+    isCieloStorieEnglishLegalPath(pathname) ||
+      isFamilyPlusEnglishLegalPath(pathname)
+      ? "en"
+      : "it",
   );
 
   return NextResponse.next({

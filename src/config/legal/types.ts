@@ -27,7 +27,10 @@ export type LegalRenderer =
   | "standard"
   | "cielostorie-privacy"
   | "cielostorie-terms"
-  | "cielostorie-support";
+  | "cielostorie-support"
+  | "familyplus-privacy"
+  | "familyplus-terms"
+  | "familyplus-support";
 
 export interface LegalDocument {
   slug: string;

@@ -612,7 +612,7 @@ export function buildCieloStoriePrivacyJsonLd(options: {
         name: options.name,
         description: options.description,
         inLanguage: options.inLanguage,
-        dateModified: "2026-08-18",
+        dateModified: options.dateModified ?? "2026-08-18",
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: {
           "@type": "MobileApplication",
@@ -652,7 +652,78 @@ export function buildCieloStoriePrivacyJsonLd(options: {
           {
             "@type": "ListItem",
             position: 4,
-            name: "CieloStorie Privacy Policy",
+            name: options.name,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
+export function buildFamilyPlusLegalJsonLd(options: {
+  path: string;
+  name: string;
+  description: string;
+  inLanguage: "it-IT" | "en";
+  dateModified?: string;
+  breadcrumbLeaf: string;
+}) {
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}${options.path}`;
+  const { name, email } = siteConfig;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: options.name,
+        description: options.description,
+        inLanguage: options.inLanguage,
+        dateModified: options.dateModified ?? "2026-08-25",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: {
+          "@type": "MobileApplication",
+          name: "Family Plus",
+          operatingSystem: "iOS",
+          applicationCategory: "https://schema.org/LifestyleApplication",
+        },
+        author: {
+          "@type": "Person",
+          name,
+          email: `mailto:${email}`,
+          url: siteUrl,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Legal",
+            item: `${siteUrl}${LEGAL_HUB_PATH}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Family Plus",
+            item: `${siteUrl}${legalAppPath("familyplus")}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: options.breadcrumbLeaf,
             item: pageUrl,
           },
         ],

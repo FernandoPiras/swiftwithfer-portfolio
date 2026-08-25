@@ -9,6 +9,14 @@ import {
   CIELOSTORIE_TERMS_PATH,
 } from "@/config/cielostorie-legal-paths";
 import type { CieloStorieLegalDocKind } from "@/config/cielostorie-legal-types";
+import {
+  FAMILYPLUS_PRIVACY_EN_PATH,
+  FAMILYPLUS_PRIVACY_PATH,
+  FAMILYPLUS_SUPPORT_EN_PATH,
+  FAMILYPLUS_SUPPORT_PATH,
+  FAMILYPLUS_TERMS_EN_PATH,
+  FAMILYPLUS_TERMS_PATH,
+} from "@/config/familyplus-legal-paths";
 import { LEGAL_HUB_PATH, legalAppPath, legalDocumentPath } from "@/config/legal";
 import type { LegalApp, LegalDocument } from "@/config/legal/types";
 import { serviziHub } from "@/config/servizi";
@@ -423,6 +431,85 @@ export function createCieloStoriePrivacyMetadata(options: {
     kind: "privacy",
     ...options,
   });
+}
+
+function familyPlusTitleAbsolute(kind: CieloStorieLegalDocKind): string {
+  switch (kind) {
+    case "privacy":
+      return "Family Plus — Privacy Policy | Fernando Piras";
+    case "terms":
+      return "Family Plus — Terms of Use | Fernando Piras";
+    case "support":
+      return "Family Plus — Support | Fernando Piras";
+  }
+}
+
+function familyPlusLanguagePaths(kind: CieloStorieLegalDocKind): {
+  italianUrl: string;
+  englishUrl: string;
+} {
+  const siteUrl = getSiteUrl();
+  switch (kind) {
+    case "privacy":
+      return {
+        italianUrl: `${siteUrl}${FAMILYPLUS_PRIVACY_PATH}`,
+        englishUrl: `${siteUrl}${FAMILYPLUS_PRIVACY_EN_PATH}`,
+      };
+    case "terms":
+      return {
+        italianUrl: `${siteUrl}${FAMILYPLUS_TERMS_PATH}`,
+        englishUrl: `${siteUrl}${FAMILYPLUS_TERMS_EN_PATH}`,
+      };
+    case "support":
+      return {
+        italianUrl: `${siteUrl}${FAMILYPLUS_SUPPORT_PATH}`,
+        englishUrl: `${siteUrl}${FAMILYPLUS_SUPPORT_EN_PATH}`,
+      };
+  }
+}
+
+export function createFamilyPlusBilingualMetadata(options: {
+  kind: CieloStorieLegalDocKind;
+  path: string;
+  description: string;
+  locale: "it_IT" | "en_US";
+}): Metadata {
+  const siteUrl = getSiteUrl();
+  const { name } = siteConfig;
+  const url = `${siteUrl}${options.path}`;
+  const { italianUrl, englishUrl } = familyPlusLanguagePaths(options.kind);
+  const titleAbsolute = familyPlusTitleAbsolute(options.kind);
+  const ogImage = buildOgImage(siteUrl);
+  const twitterImage = buildTwitterImage(siteUrl);
+
+  return {
+    title: { absolute: titleAbsolute },
+    description: options.description,
+    alternates: {
+      canonical: url,
+      languages: {
+        "it-IT": italianUrl,
+        en: englishUrl,
+        "x-default": italianUrl,
+      },
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      locale: options.locale,
+      url,
+      siteName: name,
+      title: titleAbsolute,
+      description: options.description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: titleAbsolute,
+      description: options.description,
+      images: [twitterImage],
+    },
+  };
 }
 
 export function createBlogArticleMetadata(article: {

@@ -35,5 +35,8 @@ export interface CieloStorieLegalDocument {
   metaTitle: string;
   metaDescription: string;
   contactEmail: string;
+  /** Optional callout override (used by Family Plus and reusable bilingual legal pages). */
+  summaryTitle?: string;
+  summaryBody?: string;
   sections: CieloStorieLegalSection[];
 }

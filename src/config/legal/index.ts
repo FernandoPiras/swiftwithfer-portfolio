@@ -13,6 +13,18 @@ import {
   CIELOSTORIE_TERMS_PATH,
   CIELOSTORIE_TERMS_UPDATED_ISO,
 } from "@/config/cielostorie-legal-paths";
+import {
+  FAMILYPLUS_LEGAL_EN_PATHS,
+  FAMILYPLUS_PRIVACY_EN_PATH,
+  FAMILYPLUS_PRIVACY_PATH,
+  FAMILYPLUS_PRIVACY_UPDATED_ISO,
+  FAMILYPLUS_SUPPORT_EN_PATH,
+  FAMILYPLUS_SUPPORT_PATH,
+  FAMILYPLUS_SUPPORT_UPDATED_ISO,
+  FAMILYPLUS_TERMS_EN_PATH,
+  FAMILYPLUS_TERMS_PATH,
+  FAMILYPLUS_TERMS_UPDATED_ISO,
+} from "@/config/familyplus-legal-paths";
 
 export const LEGAL_HUB_PATH = "/legal";
 
@@ -87,6 +99,57 @@ export const legalApps: readonly LegalApp[] = [
       },
     ],
   },
+  {
+    id: "familyplus",
+    name: "Family Plus",
+    blurb:
+      "Organizer famigliare local-first con iCloud/CloudKit: privacy, termini e supporto dell’app iOS e iPadOS, inclusa la pubblicità AdMob/UMP.",
+    icon: "/images/apps/familyplus/icon.png",
+    documents: [
+      {
+        slug: "privacy",
+        kind: "privacy",
+        title: "Informativa sulla privacy",
+        hubLabel: "Privacy Policy",
+        metaTitle: "Family Plus — Privacy Policy",
+        metaDescription:
+          "Informativa privacy di Family Plus: dati locali, iCloud/CloudKit, condivisione famiglia, Google AdMob, UMP e scelte pubblicitarie.",
+        updatedISO: FAMILYPLUS_PRIVACY_UPDATED_ISO,
+        updatedDisplay: "25 agosto 2026",
+        sections: [],
+        renderer: "familyplus-privacy",
+        extraLocales: [{ label: "English", href: FAMILYPLUS_PRIVACY_EN_PATH }],
+      },
+      {
+        slug: "terms",
+        kind: "terms",
+        title: "Termini di utilizzo",
+        hubLabel: "Termini di utilizzo",
+        metaTitle: "Family Plus — Terms of Use",
+        metaDescription:
+          "Termini di utilizzo di Family Plus: app gratuita con pubblicità, iCloud, spazi famiglia, contenuti utente e responsabilità.",
+        updatedISO: FAMILYPLUS_TERMS_UPDATED_ISO,
+        updatedDisplay: "25 agosto 2026",
+        sections: [],
+        renderer: "familyplus-terms",
+        extraLocales: [{ label: "English", href: FAMILYPLUS_TERMS_EN_PATH }],
+      },
+      {
+        slug: "support",
+        kind: "support",
+        title: "Supporto",
+        hubLabel: "Supporto",
+        metaTitle: "Family Plus — Support",
+        metaDescription:
+          "Supporto ufficiale Family Plus: famiglia iCloud, sync, moduli organizer, promemoria, lingua e privacy pubblicitaria.",
+        updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
+        updatedDisplay: "25 agosto 2026",
+        sections: [],
+        renderer: "familyplus-support",
+        extraLocales: [{ label: "English", href: FAMILYPLUS_SUPPORT_EN_PATH }],
+      },
+    ],
+  },
 ] satisfies readonly LegalApp[];
 
 export function legalAppPath(appId: string): string {
@@ -133,7 +196,7 @@ export function getAllLegalSitemapEntries(): {
     entries.push({ path: legalAppPath(app.id) });
     for (const document of app.documents) {
       entries.push({
-        path: legalDocumentPath(app.id, document.slug),
+        path: documentHref(app.id, document),
         lastModified: document.updatedISO,
       });
     }
@@ -151,6 +214,18 @@ export function getAllLegalSitemapEntries(): {
     });
   }
 
+  for (const path of FAMILYPLUS_LEGAL_EN_PATHS) {
+    entries.push({
+      path,
+      lastModified:
+        path === FAMILYPLUS_PRIVACY_EN_PATH
+          ? FAMILYPLUS_PRIVACY_UPDATED_ISO
+          : path === FAMILYPLUS_TERMS_EN_PATH
+            ? FAMILYPLUS_TERMS_UPDATED_ISO
+            : FAMILYPLUS_SUPPORT_UPDATED_ISO,
+    });
+  }
+
   return entries;
 }
 
@@ -163,6 +238,15 @@ export function documentHref(appId: string, document: LegalDocument): string {
   }
   if (document.renderer === "cielostorie-support") {
     return CIELOSTORIE_SUPPORT_PATH;
+  }
+  if (document.renderer === "familyplus-privacy") {
+    return FAMILYPLUS_PRIVACY_PATH;
+  }
+  if (document.renderer === "familyplus-terms") {
+    return FAMILYPLUS_TERMS_PATH;
+  }
+  if (document.renderer === "familyplus-support") {
+    return FAMILYPLUS_SUPPORT_PATH;
   }
   return legalDocumentPath(appId, document.slug);
 }

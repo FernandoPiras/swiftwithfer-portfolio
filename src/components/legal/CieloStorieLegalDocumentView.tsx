@@ -62,6 +62,10 @@ function InlineText({ parts }: { parts: CieloStorieLegalInline[] }) {
 }
 
 function summaryFor(doc: CieloStorieLegalDocument): { title: string; body: string } {
+  if (doc.summaryTitle && doc.summaryBody) {
+    return { title: doc.summaryTitle, body: doc.summaryBody };
+  }
+
   switch (doc.kind) {
     case "privacy":
       return doc.locale === "it"

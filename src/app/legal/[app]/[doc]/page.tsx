@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { CieloStorieLegalDocumentView } from "@/components/legal/CieloStorieLegalDocumentView";
 import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import {
+  documentHref,
   getAllLegalDocumentParams,
   getLegalDocument,
 } from "@/config/legal";
@@ -74,6 +75,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const match = getLegalDocument(appId, docSlug);
   if (!match) return {};
 
+  if (match.document.renderer?.startsWith("familyplus-")) {
+    return {};
+  }
+
   const cielostorie = cielostorieMetadataForRenderer(
     match.document.renderer,
     appId,
@@ -101,6 +106,10 @@ export default async function LegalDocumentPage({ params }: PageProps) {
   const { app: appId, doc: docSlug } = await params;
   const match = getLegalDocument(appId, docSlug);
   if (!match) notFound();
+
+  if (match.document.renderer?.startsWith("familyplus-")) {
+    redirect(documentHref(appId, match.document));
+  }
 
   const cielostorieDoc = cielostorieDocumentForRenderer(match.document.renderer);
   if (cielostorieDoc) {
