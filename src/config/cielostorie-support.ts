@@ -38,7 +38,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Assistenza per CieloStorie su iPhone e iPad: lettura, profili, preferiti, audio e risoluzione dei problemi più comuni.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "24 agosto 2026",
+    updatedDisplay: "25 agosto 2026",
     updatedISO: CIELOSTORIE_SUPPORT_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -121,7 +121,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Profili bambini",
         paragraphs: [
           [
-            "I profili si creano e gestiscono nell’area genitori, dietro il parental gate. Ogni profilo ha nome, età, interessi e avatar. I dati restano sul dispositivo.",
+            "I profili si creano e gestiscono nell’Area Genitori, dietro un parental gate (verifica aritmetica per l’accesso all’Area Genitori). Ogni profilo ha nome, età, interessi e avatar. I dati restano sul dispositivo.",
+          ],
+          [
+            "Il parental gate protegge l’accesso all’Area Genitori: non è un sistema di Parental Controls né di Age Assurance / verifica dell’età.",
           ],
           [
             "Puoi passare da un profilo all’altro dal selettore profilo in Home. Progressi e preferiti possono essere separati per profilo.",
@@ -207,7 +210,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Help for CieloStorie on iPhone and iPad: reading, profiles, favourites, audio, and common troubleshooting.",
     updatedLabel: "Last updated",
-    updatedDisplay: "24 August 2026",
+    updatedDisplay: "25 August 2026",
     updatedISO: CIELOSTORIE_SUPPORT_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -286,7 +289,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Child profiles",
         paragraphs: [
           [
-            "Profiles are created and managed in the Parent Area, behind the parental gate. Each profile has a name, age, interests, and avatar. Data stays on the device.",
+            "Profiles are created and managed in the Parent Area, behind a parental gate (an arithmetic check that gates access to the Parent Area). Each profile has a name, age, interests, and avatar. Data stays on the device.",
+          ],
+          [
+            "The parental gate protects access to the Parent Area: it is not Parental Controls and not Age Assurance / age verification.",
           ],
           [
             "Switch profiles from the profile switcher on Home. Progress and favourites can be separate per profile.",

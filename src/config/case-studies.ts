@@ -231,7 +231,7 @@ export const caseStudies: CaseStudyContent[] = [
     positioning:
       "Un'app iOS e iPadOS che rende la lettura illustrata per bambini semplice, magica e sicura — pensata per tutta la famiglia.",
     problem:
-      "Trovare un'esperienza di lettura per bambini che sia davvero child-first è difficile: troppe app sono rumorose, account-centric o poco adatte a un uso sereno in famiglia, con privacy e controllo genitoriale fragili.",
+      "Trovare un'esperienza di lettura per bambini che sia davvero child-first è difficile: troppe app sono rumorose, account-centric o poco adatte a un uso sereno in famiglia, con privacy fragile e senza una chiara Area Genitori protetta.",
     solution:
       "CieloStorie offre storie illustrate in un mondo da esplorare insieme: catalogo offline, profili bambino locali, preferiti, progresso di lettura, Il Mio Cielo e suoni contestuali durante la lettura. Interfaccia child-first, IT/EN, parental gate — local-first e privacy-oriented, gratuita al 100% e senza pubblicità, senza account.",
     architecture:
@@ -253,7 +253,7 @@ export const caseStudies: CaseStudyContent[] = [
       "Il Mio Cielo",
       "Suoni contestuali durante la lettura",
       "Interfaccia in italiano e inglese",
-      "Parental gate per l'area genitori",
+      "Parental gate per l'Area Genitori",
       "100% gratuita, senza pubblicità",
       "Approccio privacy-oriented e local-first",
     ],
@@ -275,8 +275,8 @@ export const caseStudies: CaseStudyContent[] = [
         reason: "Atmosfera immersiva legata alla storia, senza TTS o narratore vocale.",
       },
       {
-        title: "Parental gate per l'area genitori",
-        reason: "Controllo genitoriale chiaro, conforme a un prodotto familiare.",
+        title: "Parental gate per l'Area Genitori",
+        reason: "Verifica aritmetica per l'accesso all'Area Genitori, distinta dai Parental Controls e dall'Age Assurance del questionario Age Rating di Apple.",
       },
       {
         title: "Privacy by design",
@@ -293,7 +293,7 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     capabilities: ["Accessibilità", "Performance", "Privacy", "iPadOS"],
     challenges: [
-      "Un'esperienza child-first chiara senza sacrificare il controllo genitoriale",
+      "Un'esperienza child-first chiara con Area Genitori protetta da parental gate",
       "Catalogo illustrato e Reader fluidi offline sul dispositivo",
       "Profili e progresso locali coerenti in famiglia",
       "Esperienza child-first serena senza pubblicità in un prodotto per bambini",

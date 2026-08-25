@@ -45,7 +45,7 @@ function italianDocument(contactEmail: string): PrivacyDocument {
     lead:
       "Questa informativa descrive come CieloStorie tratta le informazioni nel contesto dell’app iOS e iPadOS: cosa resta sul dispositivo, cosa non viene raccolto dal titolare e come funziona l’app nella versione attuale, gratuita e senza pubblicità.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "24 agosto 2026",
+    updatedDisplay: "25 agosto 2026",
     updatedISO: CIELOSTORIE_PRIVACY_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -190,10 +190,13 @@ function italianDocument(contactEmail: string): PrivacyDocument {
         heading: "Bambini e famiglie",
         paragraphs: [
           [
-            "CieloStorie è pensata per un uso familiare: storie per bambini, profili locali e un’area genitori. L’area genitori è protetta da un parental gate (una semplice verifica aritmetica). Gestione profili e preferenze di lettura stanno in quell’area, non nel Reader.",
+            "CieloStorie è pensata per un uso familiare: storie per bambini, profili locali e un’Area Genitori. L’Area Genitori è protetta da un parental gate: una semplice verifica aritmetica per l’accesso all’Area Genitori e alle azioni riservate agli adulti. Gestione profili e preferenze di lettura stanno in quell’area, non nel Reader.",
           ],
           [
-            "Se un genitore inserisce un nome o un’età in un profilo, quelle informazioni restano sul dispositivo. CieloStorie non le invia a un server del titolare.",
+            "Il parental gate non è un sistema di «Parental Controls» né di Age Assurance / verifica dell’età come definiti nel questionario Age Rating di Apple: non verifica l’età dell’utente e non è uno strumento di controlli parentali di sistema.",
+          ],
+          [
+            "Se un genitore inserisce un nome o un’età in un profilo, quelle informazioni restano sul dispositivo. CieloStorie non le invia a un server del titolare. L’età eventualmente indicata nel profilo è solo un dato locale per personalizzare l’esperienza di lettura, non una verifica dell’età.",
           ],
           [
             "L’app è pubblicata nella categoria Kids di Apple. Questa informativa descrive le pratiche del prodotto; non costituisce da sola una dichiarazione di conformità a COPPA o a regimi equivalenti.",
@@ -280,7 +283,7 @@ function englishDocument(contactEmail: string): PrivacyDocument {
     lead:
       "This policy describes how CieloStorie handles information in the iOS and iPadOS app: what stays on the device, what the controller does not collect through the app, and how the current version works as a free app with no advertising.",
     updatedLabel: "Last updated",
-    updatedDisplay: "24 August 2026",
+    updatedDisplay: "25 August 2026",
     updatedISO: CIELOSTORIE_PRIVACY_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -425,10 +428,13 @@ function englishDocument(contactEmail: string): PrivacyDocument {
         heading: "Children and families",
         paragraphs: [
           [
-            "CieloStorie is designed for family use: children’s stories, local profiles, and a Parent Area. The Parent Area is protected by a parental gate (a simple arithmetic check). Profile management and reading preferences live there, not in the Reader.",
+            "CieloStorie is designed for family use: children’s stories, local profiles, and a Parent Area. The Parent Area is protected by a parental gate: a simple arithmetic check that gates access to the Parent Area and adult-only actions. Profile management and reading preferences live there, not in the Reader.",
           ],
           [
-            "If a parent enters a name or age on a profile, that information stays on the device. CieloStorie does not send it to a controller server.",
+            "The parental gate is not Apple Age Rating “Parental Controls” and is not Age Assurance / age verification: it does not verify the user’s age and is not a system parental-controls feature.",
+          ],
+          [
+            "If a parent enters a name or age on a profile, that information stays on the device. CieloStorie does not send it to a controller server. Any age entered on a profile is local reading-personalization data only, not age verification.",
           ],
           [
             "The app is published in Apple’s Kids Category. This policy describes product practices; it is not by itself a claim of COPPA or equivalent compliance.",

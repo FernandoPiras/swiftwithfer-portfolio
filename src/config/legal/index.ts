@@ -64,7 +64,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Informativa sulla privacy di CieloStorie: app gratuita, dati locali sul dispositivo, nessuna raccolta dati tramite l’app.",
         updatedISO: CIELOSTORIE_PRIVACY_UPDATED_ISO,
-        updatedDisplay: "24 agosto 2026",
+        updatedDisplay: "25 agosto 2026",
         sections: [],
         renderer: "cielostorie-privacy",
         extraLocales: [{ label: "English", href: CIELOSTORIE_PRIVACY_EN_PATH }],
@@ -78,7 +78,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Termini di utilizzo di CieloStorie: app gratuita, uso familiare, storie e funzioni senza acquisti in-app e proprietà intellettuale.",
         updatedISO: CIELOSTORIE_TERMS_UPDATED_ISO,
-        updatedDisplay: "24 agosto 2026",
+        updatedDisplay: "25 agosto 2026",
         sections: [],
         renderer: "cielostorie-terms",
         extraLocales: [{ label: "English", href: CIELOSTORIE_TERMS_EN_PATH }],
@@ -92,7 +92,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Supporto ufficiale CieloStorie: Reader, profili bambini, preferiti, audio e risoluzione problemi.",
         updatedISO: CIELOSTORIE_SUPPORT_UPDATED_ISO,
-        updatedDisplay: "24 agosto 2026",
+        updatedDisplay: "25 agosto 2026",
         sections: [],
         renderer: "cielostorie-support",
         extraLocales: [{ label: "English", href: CIELOSTORIE_SUPPORT_EN_PATH }],

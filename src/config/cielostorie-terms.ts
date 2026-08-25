@@ -63,7 +63,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Questi termini regolano l’uso dell’app CieloStorie per iOS e iPadOS. Descrivono cosa offre l’app, come funziona nella versione attuale gratuita e senza pubblicità, e quali responsabilità restano tue o del genitore.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "24 agosto 2026",
+    updatedDisplay: "25 agosto 2026",
     updatedISO: CIELOSTORIE_TERMS_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -122,7 +122,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Uso familiare e responsabilità genitoriale",
         paragraphs: [
           [
-            "CieloStorie è pensata per un uso familiare con la supervisione di un adulto. L’area genitori è protetta da un parental gate (verifica aritmetica). Gestione profili e preferenze di lettura sono disponibili solo in quell’area.",
+            "CieloStorie è pensata per un uso familiare con la supervisione di un adulto. L’Area Genitori è protetta da un parental gate: una verifica aritmetica per l’accesso all’Area Genitori e alle azioni riservate agli adulti. Gestione profili e preferenze di lettura sono disponibili solo in quell’area.",
+          ],
+          [
+            "Il parental gate non è «Parental Controls» né Age Assurance / verifica dell’età secondo il questionario Age Rating di Apple: non verifica l’età e non fornisce controlli parentali di sistema.",
           ],
           [
             "Se un bambino usa l’app, il genitore o tutore è responsabile della supervisione e delle scelte sui profili locali e sulle preferenze dell’app.",
@@ -243,7 +246,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "These Terms govern use of the CieloStorie iOS and iPadOS app. They explain what the app provides, how the current free version with no advertising works, and which responsibilities remain with you or a parent.",
     updatedLabel: "Last updated",
-    updatedDisplay: "24 August 2026",
+    updatedDisplay: "25 August 2026",
     updatedISO: CIELOSTORIE_TERMS_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -302,7 +305,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Family use and parental responsibility",
         paragraphs: [
           [
-            "CieloStorie is intended for family use with adult supervision. The Parent Area is protected by a parental gate (arithmetic check). Profile management and reading preferences are only available there.",
+            "CieloStorie is intended for family use with adult supervision. The Parent Area is protected by a parental gate: an arithmetic check that gates access to the Parent Area and adult-only actions. Profile management and reading preferences are only available there.",
+          ],
+          [
+            "The parental gate is not Apple Age Rating “Parental Controls” and is not Age Assurance / age verification: it does not verify age and does not provide system parental-controls features.",
           ],
           [
             "If a child uses the app, the parent or guardian is responsible for supervision and for choices about local profiles and app preferences.",
