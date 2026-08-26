@@ -299,12 +299,13 @@ export const caseStudies: CaseStudyContent[] = [
       "Esperienza child-first serena senza pubblicità in un prodotto per bambini",
     ],
     results: [
-      "Prodotto iOS e iPadOS con esperienza di lettura illustrata end-to-end",
+      "App live su App Store (iOS e iPadOS)",
       "Flussi famiglia: profili locali, preferiti, progresso e Il Mio Cielo",
       "Documentazione legale pubblica su Privacy, Termini e Supporto",
-      "Architettura local-first pronta per la pubblicazione su App Store",
+      "Esperienza di lettura illustrata end-to-end, gratuita e senza pubblicità",
     ],
     trustSignals: [
+      "App Store",
       "Local-first",
       "Privacy oriented",
       "Parental gate",
@@ -312,7 +313,7 @@ export const caseStudies: CaseStudyContent[] = [
       "IT / EN",
     ],
     seoDescription:
-      "Case study CieloStorie: app iOS e iPadOS gratuita per storie illustrate per bambini, catalogo offline, profili locali, Il Mio Cielo e privacy local-first.",
+      "Case study CieloStorie: app iOS e iPadOS gratuita su App Store per storie illustrate per bambini, catalogo offline, profili locali, Il Mio Cielo e privacy local-first.",
   },
 ];
 

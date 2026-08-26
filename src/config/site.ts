@@ -154,7 +154,7 @@ export const siteConfig = {
     },
   ],
   metrics: {
-    publishedApps: 2,
+    publishedApps: 3,
     technologies: 11,
     appStoreDeveloperUrl:
       "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
@@ -205,7 +205,7 @@ export const siteConfig = {
       year: "2026",
       title: "CieloStorie",
       description:
-        "App iOS e iPadOS per storie illustrate: esperienza child-first, catalogo locale e privacy in famiglia.",
+        "App iOS e iPadOS live su App Store: storie illustrate child-first, catalogo locale e privacy in famiglia.",
     },
   ] satisfies TimelineEntry[],
   apps: [
@@ -338,8 +338,10 @@ export const siteConfig = {
         "CieloStorie — Reader di una storia su iPhone",
       ],
       technologies: ["SwiftUI", "SwiftData", "AVFoundation"],
+      appStoreUrl:
+        "https://apps.apple.com/it/app/cielostorie/id6802746906",
       websiteUrl: "/legal/cielostorie",
-      status: "in-development",
+      status: "published",
       featured: true,
     },
   ] satisfies AppProject[],
