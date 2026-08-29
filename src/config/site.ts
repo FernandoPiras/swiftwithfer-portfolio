@@ -207,6 +207,12 @@ export const siteConfig = {
       description:
         "App iOS e iPadOS live su App Store: storie illustrate child-first, catalogo locale e privacy in famiglia.",
     },
+    {
+      year: "2026",
+      title: "Family Plus",
+      description:
+        "Organizer famiglia iOS/iPadOS local-first con SwiftData e CloudKit CKShare — preparata per App Store.",
+    },
   ] satisfies TimelineEntry[],
   apps: [
     {
@@ -344,6 +350,27 @@ export const siteConfig = {
       status: "published",
       featured: true,
     },
+    {
+      id: "familyplus",
+      name: "Family Plus",
+      tagline:
+        "Organizer famiglia local-first: oggi, calendario, spesa e attività condivisi via iCloud.",
+      description:
+        "App iOS e iPadOS per coordinare la famiglia: Today, Calendario, Spesa, Attività e Altro (Pasti, Ricorrenze, Documenti, Famiglia). Local-first con SwiftData; collaborazione tramite CloudKit CKShare — gratuita, IT/EN, senza account custom né backend proprietario.",
+      outcomes: [
+        "Organizer multi-modulo su iPhone e iPad",
+        "Spazi famiglia con CloudKit CKShare",
+        "Local-first senza backend custom né analytics SDK",
+      ],
+      architecture:
+        "SwiftUI + SwiftData local-first; condivisione famiglia via CloudKit CKShare (iCloud.app.familyplus.FamilyPlus); notifiche collaborative e silent push CloudKit; AdMob banner/interstitial con UMP — senza ATT, Sign in with Apple, backend custom o SDK analytics.",
+      icon: "/images/apps/familyplus/icon.png",
+      screenshots: [],
+      technologies: ["SwiftUI", "SwiftData", "CloudKit", "CKShare"],
+      websiteUrl: "/legal/familyplus",
+      status: "in-development",
+      featured: false,
+    },
   ] satisfies AppProject[],
   seo: {
     title: "Fernando Piras — Sviluppatore iOS & Software | SwiftWithFer",
@@ -360,6 +387,7 @@ export const siteConfig = {
       "AndroMetrics",
       "PreventivoRapido",
       "CieloStorie",
+      "Family Plus",
       "App Store",
       "Software Developer Italia",
     ],

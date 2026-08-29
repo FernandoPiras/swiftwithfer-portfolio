@@ -167,6 +167,7 @@ export function AppCard({ app }: AppCardProps) {
         </div>
 
         <div className="product-stage__device order-1 lg:order-2">
+          {app.screenshots.length > 0 ? (
           <PhoneFrame
             src={app.screenshots[activeScreenshot] ?? app.screenshots[0]}
             alt={
@@ -177,6 +178,18 @@ export function AppCard({ app }: AppCardProps) {
             className="product-stage__phone"
             sizes="(max-width: 639px) 256px, (max-width: 1023px) 280px, 300px"
           />
+          ) : (
+            <div className="product-stage__phone mx-auto flex max-w-[300px] items-center justify-center p-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={app.icon}
+                alt={`Icona ${app.name}`}
+                width={160}
+                height={160}
+                className="rounded-[22%]"
+              />
+            </div>
+          )}
 
           {app.screenshots.length > 1 ? (
             <div

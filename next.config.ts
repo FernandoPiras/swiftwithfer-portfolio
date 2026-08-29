@@ -81,6 +81,16 @@ const nextConfig: NextConfig = {
         destination: "/familyplus/support/en",
         permanent: true,
       },
+      {
+        source: "/legal/familyplus/delete-data",
+        destination: "/familyplus/delete-data",
+        permanent: true,
+      },
+      {
+        source: "/legal/familyplus/delete-data/en",
+        destination: "/familyplus/delete-data/en",
+        permanent: true,
+      },
     ];
   },
   async headers() {

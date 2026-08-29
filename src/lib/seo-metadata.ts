@@ -10,6 +10,8 @@ import {
 } from "@/config/cielostorie-legal-paths";
 import type { CieloStorieLegalDocKind } from "@/config/cielostorie-legal-types";
 import {
+  FAMILYPLUS_DELETE_DATA_EN_PATH,
+  FAMILYPLUS_DELETE_DATA_PATH,
   FAMILYPLUS_PRIVACY_EN_PATH,
   FAMILYPLUS_PRIVACY_PATH,
   FAMILYPLUS_SUPPORT_EN_PATH,
@@ -351,6 +353,8 @@ function cielostorieTitleAbsolute(kind: CieloStorieLegalDocKind): string {
       return "Terms of Use — CieloStorie | Fernando Piras";
     case "support":
       return "Support — CieloStorie | Fernando Piras";
+    case "delete-data":
+      throw new Error("CieloStorie has no delete-data legal document");
   }
 }
 
@@ -375,6 +379,8 @@ function cielostorieLanguagePaths(kind: CieloStorieLegalDocKind): {
         italianUrl: `${siteUrl}${CIELOSTORIE_SUPPORT_PATH}`,
         englishUrl: `${siteUrl}${CIELOSTORIE_SUPPORT_EN_PATH}`,
       };
+    case "delete-data":
+      throw new Error("CieloStorie has no delete-data legal document");
   }
 }
 
@@ -441,6 +447,8 @@ function familyPlusTitleAbsolute(kind: CieloStorieLegalDocKind): string {
       return "Family Plus — Terms of Use | Fernando Piras";
     case "support":
       return "Family Plus — Support | Fernando Piras";
+    case "delete-data":
+      return "Family Plus — Data deletion | Fernando Piras";
   }
 }
 
@@ -464,6 +472,11 @@ function familyPlusLanguagePaths(kind: CieloStorieLegalDocKind): {
       return {
         italianUrl: `${siteUrl}${FAMILYPLUS_SUPPORT_PATH}`,
         englishUrl: `${siteUrl}${FAMILYPLUS_SUPPORT_EN_PATH}`,
+      };
+    case "delete-data":
+      return {
+        italianUrl: `${siteUrl}${FAMILYPLUS_DELETE_DATA_PATH}`,
+        englishUrl: `${siteUrl}${FAMILYPLUS_DELETE_DATA_EN_PATH}`,
       };
   }
 }

@@ -16,7 +16,7 @@ export interface TechnicalDecision {
 
 export interface CaseStudyContent {
   slug: string;
-  appId: "andrometrics" | "preventivorapido" | "cielostorie";
+  appId: "andrometrics" | "preventivorapido" | "cielostorie" | "familyplus";
   /** One-line positioning for the case study hero */
   positioning: string;
   problem: string;
@@ -314,6 +314,96 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     seoDescription:
       "Case study CieloStorie: app iOS e iPadOS gratuita su App Store per storie illustrate per bambini, catalogo offline, profili locali, Il Mio Cielo e privacy local-first.",
+  },
+  {
+    slug: "familyplus",
+    appId: "familyplus",
+    positioning:
+      "Un organizer famiglia local-first per iPhone e iPad: oggi, calendario, spesa e attività condivisi via iCloud — senza account custom né backend proprietario.",
+    problem:
+      "Coordinare una famiglia su più dispositivi spezza le informazioni: liste della spesa, eventi, compiti, pasti e documenti finiscono in chat, note e fogli diversi. Le app cloud-first chiedono account, sync opachi e spesso analytics; quelle solo locali non scalano quando serve collaborare.",
+    solution:
+      "Family Plus unisce Today, Calendario, Spesa, Attività e Altro (Pasti, Ricorrenze, Documenti, Famiglia) in un'unica app SwiftUI. Local-first con SwiftData; collaborazione famiglia tramite CloudKit CKShare sul container iCloud.app.familyplus.FamilyPlus. Gratuita con AdMob (banner e interstitial) e consenso UMP — senza ATT, senza Sign in with Apple, senza backend custom e senza SDK di analytics.",
+    architecture:
+      "SwiftData local-first; sync e condivisione famiglia via CloudKit CKShare (iCloud.app.familyplus.FamilyPlus); notifiche collaborative e silent push CloudKit.",
+    architectureFlow: [
+      "Famiglia",
+      "App iOS / iPadOS",
+      "SwiftData locale",
+      "CloudKit CKShare",
+      "Moduli organizer",
+      "Notifiche collaborative",
+    ],
+    features: [
+      "Schede Today, Calendario, Spesa, Attività e Altro",
+      "Pasti, Ricorrenze, Documenti e Famiglia in Altro",
+      "Local-first con SwiftData sul dispositivo",
+      "Spazi famiglia con CloudKit CKShare (iCloud.app.familyplus.FamilyPlus)",
+      "Layout adattivo iPhone e iPad (non uno stretch del telefono)",
+      "Storico delle uscite spesa",
+      "Notifiche locali collaborative e silent push CloudKit",
+      "Interfaccia in italiano e inglese",
+      "Gratuita con AdMob (banner e interstitial) e consenso UMP",
+      "Nessun ATT, nessun Sign in with Apple, nessun backend custom",
+    ],
+    decisions: [
+      {
+        title: "Local-first con SwiftData",
+        reason: "Le modifiche restano subito sul dispositivo; la rete non è un prerequisito per usare l'app.",
+      },
+      {
+        title: "CloudKit CKShare per la famiglia",
+        reason: "Collaborazione Apple-native sul container iCloud.app.familyplus.FamilyPlus, senza account o API proprietarie.",
+      },
+      {
+        title: "Nessun backend custom",
+        reason: "Meno superficie operativa e di privacy: sync e share restano nel perimetro iCloud/CloudKit.",
+      },
+      {
+        title: "Layout adattivo iPhone e iPad",
+        reason: "Esperienza nativa su entrambe le form factor, non un layout telefono allargato.",
+      },
+      {
+        title: "Monetizzazione AdMob + UMP",
+        reason: "Prodotto gratuito con banner e interstitial a frequenza limitata; consenso pubblicitario gestito con UMP (rewarded non esposto all'utente).",
+      },
+      {
+        title: "Privacy senza ATT né analytics SDK",
+        reason: "Niente tracking IDFA-oriented né SDK analytics di terze parti: focus su organizer e condivisione famiglia.",
+      },
+    ],
+    productTimeline: [...PRODUCT_TIMELINE],
+    qualitySignals: [
+      "iPhone e iPad",
+      "Local-first",
+      "CloudKit CKShare",
+      "IT / EN",
+      "Suite di test automatizzati",
+      "Pronto per App Store",
+    ],
+    capabilities: ["CloudKit", "Privacy", "Performance", "iPadOS", "Accessibilità"],
+    challenges: [
+      "Collaborazione famiglia affidabile con CKShare senza backend proprietario",
+      "Coerenza local-first quando iCloud o la rete non sono disponibili",
+      "Organizer multi-modulo (spesa, calendario, attività, pasti, documenti) con UX chiara",
+      "Layout adattivo iPhone/iPad e notifiche collaborative coerenti tra partecipanti",
+    ],
+    results: [
+      "App iOS e iPadOS in produzione, preparata per la pubblicazione su App Store",
+      "Flusso famiglia end-to-end: spazio, invito CKShare, sync e moduli condivisi",
+      "Documentazione legale pubblica (Privacy, Termini, Supporto, Eliminazione dati)",
+      "Prodotto gratuito local-first, senza account custom né analytics SDK",
+    ],
+    trustSignals: [
+      "Local-first",
+      "CloudKit CKShare",
+      "Nessun backend custom",
+      "IT / EN",
+      "iPhone + iPad",
+      "UMP / AdMob",
+    ],
+    seoDescription:
+      "Case study Family Plus: organizer famiglia iOS/iPadOS local-first con SwiftData e CloudKit CKShare, spesa, calendario, attività e privacy senza backend custom.",
   },
 ];
 

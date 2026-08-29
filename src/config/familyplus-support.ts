@@ -3,6 +3,8 @@ import type {
   CieloStorieLegalLocale,
 } from "@/config/cielostorie-legal-types";
 import {
+  FAMILYPLUS_DELETE_DATA_EN_PATH,
+  FAMILYPLUS_DELETE_DATA_PATH,
   FAMILYPLUS_PRIVACY_EN_PATH,
   FAMILYPLUS_PRIVACY_PATH,
   FAMILYPLUS_SUPPORT_EN_PATH,
@@ -79,6 +81,8 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             { href: FAMILYPLUS_PRIVACY_PATH, label: "Privacy" },
             " · ",
             { href: FAMILYPLUS_TERMS_PATH, label: "Termini" },
+            " · ",
+            { href: FAMILYPLUS_DELETE_DATA_PATH, label: "Eliminazione dati" },
             ".",
           ],
         ],
@@ -192,7 +196,20 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — Cosa succede se lascio la famiglia?",
         paragraphs: [
           [
-            "Lasciare uno spazio condiviso rimuove l’accesso a quel contenuto condiviso sul tuo account secondo le regole della share. I dati sugli altri dispositivi dei partecipanti non vengono “cancellati da remoto” da te in automatico oltre a quanto previsto da Apple/CloudKit.",
+            "Lasciare uno spazio condiviso rimuove l’accesso a quel contenuto condiviso sul tuo account secondo le regole della share. I dati sugli altri dispositivi dei partecipanti non vengono “cancellati da remoto” da te in automatico oltre a quanto previsto da Apple/CloudKit. Guida completa: ",
+            { href: FAMILYPLUS_DELETE_DATA_PATH, label: "Eliminazione dati" },
+            ".",
+          ],
+        ],
+      },
+      {
+        id: "faq-delete",
+        heading: "FAQ — Come elimino i dati di Family Plus?",
+        paragraphs: [
+          [
+            "Non esiste un account Family Plus con password. Disinstallare l’app rimuove i dati locali da quel dispositivo. I partecipanti possono lasciare lo spazio famiglia da Altro → Famiglia. I contenuti già in iCloud restano sotto Apple e gli altri partecipanti. Dettagli: ",
+            { href: FAMILYPLUS_DELETE_DATA_PATH, label: "Eliminazione dati" },
+            ".",
           ],
         ],
       },
@@ -297,6 +314,11 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             { href: FAMILYPLUS_PRIVACY_EN_PATH, label: "Privacy" },
             " · ",
             { href: FAMILYPLUS_TERMS_EN_PATH, label: "Terms" },
+            " · ",
+            {
+              href: FAMILYPLUS_DELETE_DATA_EN_PATH,
+              label: "Delete data",
+            },
             ".",
           ],
         ],
@@ -410,7 +432,20 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — What happens if I leave a shared family?",
         paragraphs: [
           [
-            "Leaving a shared space removes your access to that shared content under share rules. Data on other participants’ devices is not automatically wiped by you beyond Apple/CloudKit behavior.",
+            "Leaving a shared space removes your access to that shared content under share rules. Data on other participants’ devices is not automatically wiped by you beyond Apple/CloudKit behavior. Full guide: ",
+            { href: FAMILYPLUS_DELETE_DATA_EN_PATH, label: "Data deletion" },
+            ".",
+          ],
+        ],
+      },
+      {
+        id: "faq-delete",
+        heading: "FAQ — How do I delete Family Plus data?",
+        paragraphs: [
+          [
+            "There is no Family Plus password account. Uninstalling removes local app data from that device. Participants can leave the family space from More → Family. Content already in iCloud remains under Apple and other participants. Details: ",
+            { href: FAMILYPLUS_DELETE_DATA_EN_PATH, label: "Data deletion" },
+            ".",
           ],
         ],
       },

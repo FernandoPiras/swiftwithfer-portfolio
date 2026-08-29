@@ -11,7 +11,11 @@ export interface CieloStorieLegalSection {
   bullets?: CieloStorieLegalInline[][];
 }
 
-export type CieloStorieLegalDocKind = "privacy" | "terms" | "support";
+export type CieloStorieLegalDocKind =
+  | "privacy"
+  | "terms"
+  | "support"
+  | "delete-data";
 
 export interface CieloStorieLegalDocument {
   kind: CieloStorieLegalDocKind;

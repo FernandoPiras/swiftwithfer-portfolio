@@ -2,7 +2,8 @@ export type LegalDocKind =
   | "privacy"
   | "terms"
   | "support"
-  | "delete-account";
+  | "delete-account"
+  | "delete-data";
 
 export type LegalInline =
   | string
@@ -30,7 +31,8 @@ export type LegalRenderer =
   | "cielostorie-support"
   | "familyplus-privacy"
   | "familyplus-terms"
-  | "familyplus-support";
+  | "familyplus-support"
+  | "familyplus-delete-data";
 
 export interface LegalDocument {
   slug: string;

@@ -97,6 +97,16 @@ function summaryFor(doc: CieloStorieLegalDocument): { title: string; body: strin
             title: "Before you write",
             body: "Include app version, device model, and steps to reproduce. For privacy questions, see the Privacy Policy.",
           };
+    case "delete-data":
+      return doc.locale === "it"
+        ? {
+            title: "In sintesi",
+            body: "Nessun account Family Plus con password. Disinstalla per wipe locale; i partecipanti possono lasciare lo spazio famiglia. ICloud condiviso non è cancellabile da remoto dallo sviluppatore.",
+          }
+        : {
+            title: "At a glance",
+            body: "No Family Plus password account. Uninstall for a local wipe; participants can leave the family space. Shared iCloud cannot be remotely erased by the developer.",
+          };
   }
 }
 
@@ -146,6 +156,20 @@ function contactCopy(doc: CieloStorieLegalDocument): {
         : {
             heading: "Need help?",
             body: "Describe the issue with app version and device. We reply by email within about 2 business days.",
+            primaryLabel: "Email support",
+            secondaryLabel: "All legal pages",
+          };
+    case "delete-data":
+      return doc.locale === "it"
+        ? {
+            heading: "Domande sull’eliminazione?",
+            body: "Scrivi indicando se sei organizzatore o partecipante. Non possiamo cancellare da remoto i dati iCloud di terzi.",
+            primaryLabel: "Scrivi al supporto",
+            secondaryLabel: "Tutti i documenti",
+          }
+        : {
+            heading: "Questions about deletion?",
+            body: "Email us and say whether you are organizer or participant. We cannot remotely delete third parties’ iCloud data.",
             primaryLabel: "Email support",
             secondaryLabel: "All legal pages",
           };

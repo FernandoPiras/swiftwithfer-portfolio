@@ -4,6 +4,8 @@ import type {
   CieloStorieLegalLocale,
 } from "@/config/cielostorie-legal-types";
 import {
+  FAMILYPLUS_DELETE_DATA_EN_PATH,
+  FAMILYPLUS_DELETE_DATA_PATH,
   FAMILYPLUS_PRIVACY_EN_PATH,
   FAMILYPLUS_PRIVACY_PATH,
   FAMILYPLUS_PRIVACY_UPDATED_ISO,
@@ -313,7 +315,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Disinstallare Family Plus rimuove i dati locali dell’app dal dispositivo. Contenuti già sincronizzati in iCloud/CloudKit o presenti su altri dispositivi dei partecipanti possono restare secondo le regole Apple e lo stato della share.",
           ],
           [
-            "Per rimuovere dati da uno spazio condiviso potrebbe essere necessario agire come organizzatore, lasciare la famiglia o usare i controlli iCloud del dispositivo. Non esiste un “account Family Plus” centralizzato da eliminare presso di noi.",
+            "Per rimuovere dati da uno spazio condiviso potrebbe essere necessario agire come organizzatore, lasciare la famiglia o usare i controlli iCloud del dispositivo. Non esiste un “account Family Plus” centralizzato da eliminare presso di noi. Guida dedicata: ",
+            { href: FAMILYPLUS_DELETE_DATA_PATH, label: "Eliminazione dati" },
+            ".",
           ],
         ],
       },
@@ -671,7 +675,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "Uninstalling Family Plus removes the app’s local data from that device. Content already synced in iCloud/CloudKit or present on other participants’ devices may remain under Apple’s rules and share state.",
           ],
           [
-            "Removing shared-space data may require organizer actions, leaving the family, or iCloud controls. There is no centralized Family Plus account to delete with us.",
+            "Removing shared-space data may require organizer actions, leaving the family, or iCloud controls. There is no centralized Family Plus account to delete with us. Dedicated guide: ",
+            { href: FAMILYPLUS_DELETE_DATA_EN_PATH, label: "Data deletion" },
+            ".",
           ],
         ],
       },

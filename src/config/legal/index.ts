@@ -24,6 +24,9 @@ import {
   FAMILYPLUS_TERMS_EN_PATH,
   FAMILYPLUS_TERMS_PATH,
   FAMILYPLUS_TERMS_UPDATED_ISO,
+  FAMILYPLUS_DELETE_DATA_EN_PATH,
+  FAMILYPLUS_DELETE_DATA_PATH,
+  FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
 } from "@/config/familyplus-legal-paths";
 
 export const LEGAL_HUB_PATH = "/legal";
@@ -103,8 +106,9 @@ export const legalApps: readonly LegalApp[] = [
     id: "familyplus",
     name: "Family Plus",
     blurb:
-      "Organizer famigliare local-first con iCloud/CloudKit: privacy, termini e supporto dell’app iOS e iPadOS, inclusa la pubblicità AdMob/UMP.",
+      "Organizer famigliare local-first con iCloud/CloudKit: privacy, termini, supporto ed eliminazione dati dell’app iOS e iPadOS, inclusa la pubblicità AdMob/UMP.",
     icon: "/images/apps/familyplus/icon.png",
+    caseStudyHref: "/apps/familyplus",
     documents: [
       {
         slug: "privacy",
@@ -147,6 +151,22 @@ export const legalApps: readonly LegalApp[] = [
         sections: [],
         renderer: "familyplus-support",
         extraLocales: [{ label: "English", href: FAMILYPLUS_SUPPORT_EN_PATH }],
+      },
+      {
+        slug: "delete-data",
+        kind: "delete-data",
+        title: "Eliminazione dati",
+        hubLabel: "Eliminazione dati",
+        metaTitle: "Family Plus — Eliminazione dati",
+        metaDescription:
+          "Come rimuovere i dati di Family Plus: dati locali, lasciare uno spazio famiglia, limiti di iCloud/CloudKit e disinstallazione.",
+        updatedISO: FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
+        updatedDisplay: "29 agosto 2026",
+        sections: [],
+        renderer: "familyplus-delete-data",
+        extraLocales: [
+          { label: "English", href: FAMILYPLUS_DELETE_DATA_EN_PATH },
+        ],
       },
     ],
   },
@@ -222,7 +242,9 @@ export function getAllLegalSitemapEntries(): {
           ? FAMILYPLUS_PRIVACY_UPDATED_ISO
           : path === FAMILYPLUS_TERMS_EN_PATH
             ? FAMILYPLUS_TERMS_UPDATED_ISO
-            : FAMILYPLUS_SUPPORT_UPDATED_ISO,
+            : path === FAMILYPLUS_SUPPORT_EN_PATH
+              ? FAMILYPLUS_SUPPORT_UPDATED_ISO
+              : FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
     });
   }
 
@@ -247,6 +269,9 @@ export function documentHref(appId: string, document: LegalDocument): string {
   }
   if (document.renderer === "familyplus-support") {
     return FAMILYPLUS_SUPPORT_PATH;
+  }
+  if (document.renderer === "familyplus-delete-data") {
+    return FAMILYPLUS_DELETE_DATA_PATH;
   }
   return legalDocumentPath(appId, document.slug);
 }

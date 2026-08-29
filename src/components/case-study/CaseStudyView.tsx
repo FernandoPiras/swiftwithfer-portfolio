@@ -424,6 +424,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </GlassCard>
         </Reveal>
 
+        {app.screenshots.length > 0 ? (
         <Reveal delay={0.06}>
           <section aria-label={`Screenshot ${app.name}`}>
             <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
@@ -452,6 +453,7 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             </ul>
           </section>
         </Reveal>
+        ) : null}
 
         {app.reviews?.length ? (
           <Reveal delay={0.08}>
