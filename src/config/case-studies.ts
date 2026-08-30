@@ -14,6 +14,21 @@ export interface TechnicalDecision {
   reason: string;
 }
 
+export interface CaseStudyVisualImage {
+  src: string;
+  alt: string;
+  caption?: string;
+  device?: "iphone" | "ipad";
+}
+
+/** Narrative product visuals placed near the matching case-study story. */
+export interface CaseStudyVisualSection {
+  title: string;
+  description?: string;
+  layout?: "hero" | "pair" | "row";
+  images: CaseStudyVisualImage[];
+}
+
 export interface CaseStudyContent {
   slug: string;
   appId: "andrometrics" | "preventivorapido" | "cielostorie" | "familyplus";
@@ -31,6 +46,11 @@ export interface CaseStudyContent {
   featureGroups?: CaseStudyFeatureGroup[];
   /** High-level product map */
   ecosystem?: CaseStudyEcosystemLayer[];
+  /**
+   * Optional curated product screenshots told as a visual story.
+   * When present, these replace the flat end-of-page gallery dump.
+   */
+  productVisuals?: CaseStudyVisualSection[];
   /** 3–6 key technical / product decisions */
   decisions: TechnicalDecision[];
   /** Product lifecycle timeline */
@@ -345,6 +365,128 @@ export const caseStudies: CaseStudyContent[] = [
       "Interfaccia in italiano e inglese",
       "Gratuita con AdMob (banner e interstitial) e consenso UMP",
       "Nessun ATT, nessun Sign in with Apple, nessun backend custom",
+    ],
+    featureGroups: [
+      {
+        title: "Organizza la famiglia",
+        description: "Oggi, calendario e attività in un unico ritmo quotidiano.",
+        items: [
+          "Today con priorità, eventi e pasti del giorno",
+          "Calendario famiglia condiviso",
+          "Attività con scadenze e priorità",
+        ],
+      },
+      {
+        title: "Spesa che riparte da dove eri rimasto",
+        description: "Liste vive e storico delle uscite, senza ricostruire ogni volta.",
+        items: [
+          "Lista spesa con progresso chiaro",
+          "Riutilizzo dell’ultima spesa",
+          "Storico delle uscite completate",
+        ],
+      },
+      {
+        title: "Vita quotidiana in Altro",
+        description: "Pasti, ricorrenze e documenti restano nella stessa app.",
+        items: [
+          "Pianificazione pasti della settimana",
+          "Compleanni e ricorrenze",
+          "Documenti di famiglia a portata di mano",
+        ],
+      },
+    ],
+    productVisuals: [
+      {
+        title: "Tutta la famiglia, in un posto",
+        description:
+          "Today raccoglie priorità, impegni e pasti del giorno — lo snapshot quotidiano della famiglia.",
+        layout: "hero",
+        images: [
+          {
+            src: "/images/apps/familyplus/today.webp",
+            alt: "Family Plus — Today su iPhone con priorità, eventi e pasti del giorno",
+            caption: "Today",
+            device: "iphone",
+          },
+        ],
+      },
+      {
+        title: "Organizza la famiglia",
+        description: "Calendario e attività condividono lo stesso spazio famiglia.",
+        layout: "pair",
+        images: [
+          {
+            src: "/images/apps/familyplus/calendar.webp",
+            alt: "Family Plus — Calendario famiglia su iPhone",
+            caption: "Calendario",
+            device: "iphone",
+          },
+          {
+            src: "/images/apps/familyplus/tasks.webp",
+            alt: "Family Plus — Attività e cose da fare su iPhone",
+            caption: "Attività",
+            device: "iphone",
+          },
+        ],
+      },
+      {
+        title: "La spesa, senza ripartire da zero",
+        description: "Lista attiva, riutilizzo e storico delle uscite.",
+        layout: "pair",
+        images: [
+          {
+            src: "/images/apps/familyplus/shopping.webp",
+            alt: "Family Plus — Lista spesa settimanale su iPhone",
+            caption: "Spesa",
+            device: "iphone",
+          },
+          {
+            src: "/images/apps/familyplus/shopping-history.webp",
+            alt: "Family Plus — Storico spese completate su iPhone",
+            caption: "Storico spese",
+            device: "iphone",
+          },
+        ],
+      },
+      {
+        title: "Vita quotidiana",
+        description: "Pasti e ricorrenze restano nel perimetro famiglia.",
+        layout: "pair",
+        images: [
+          {
+            src: "/images/apps/familyplus/meals.webp",
+            alt: "Family Plus — Pianificazione pasti su iPhone",
+            caption: "Pasti",
+            device: "iphone",
+          },
+          {
+            src: "/images/apps/familyplus/occasions.webp",
+            alt: "Family Plus — Compleanni e ricorrenze su iPhone",
+            caption: "Ricorrenze",
+            device: "iphone",
+          },
+        ],
+      },
+      {
+        title: "Nativo su iPhone e iPad",
+        description:
+          "Layout adattivo: su iPad l’esperienza è pensata per il canvas ampio, non uno stretch del telefono.",
+        layout: "pair",
+        images: [
+          {
+            src: "/images/apps/familyplus/ipad-today.webp",
+            alt: "Family Plus — Today su iPad Pro in portrait",
+            caption: "iPad · Today",
+            device: "ipad",
+          },
+          {
+            src: "/images/apps/familyplus/ipad-more.webp",
+            alt: "Family Plus — Altro su iPad con layout a colonna singola e Legale e supporto",
+            caption: "iPad · Altro",
+            device: "ipad",
+          },
+        ],
+      },
     ],
     decisions: [
       {

@@ -132,6 +132,69 @@ function DecisionsList({
   );
 }
 
+function ProductVisualSection({
+  section,
+  priorityFirst = false,
+}: {
+  section: NonNullable<CaseStudyContent["productVisuals"]>[number];
+  priorityFirst?: boolean;
+}) {
+  const layout = section.layout ?? (section.images.length === 1 ? "hero" : "pair");
+  const isHero = layout === "hero";
+  const hasIpad = section.images.some((image) => image.device === "ipad");
+
+  return (
+    <section aria-label={section.title}>
+      <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
+        {section.title}
+      </h2>
+      {section.description ? (
+        <p className="mb-8 max-w-2xl text-sm text-muted">{section.description}</p>
+      ) : (
+        <div className="mb-8" />
+      )}
+      <ul
+        className={cn(
+          "grid justify-items-center gap-8 lg:gap-10",
+          isHero && "mx-auto max-w-sm",
+          !isHero && section.images.length === 2 && "sm:grid-cols-2",
+          !isHero && section.images.length >= 3 && "sm:grid-cols-2 lg:grid-cols-3",
+          hasIpad && !isHero && "sm:max-w-4xl sm:mx-auto",
+        )}
+      >
+        {section.images.map((image, index) => {
+          const isIpad = image.device === "ipad";
+          return (
+            <li
+              key={image.src}
+              className={cn(
+                "w-full",
+                isIpad ? "max-w-[360px] sm:max-w-[400px]" : "max-w-[260px]",
+                isHero && !isIpad && "max-w-[280px] sm:max-w-[300px]",
+              )}
+            >
+              <PhoneFrame
+                src={image.src}
+                alt={image.alt}
+                device={image.device ?? "iphone"}
+                size={isHero ? "hero" : "compact"}
+                priority={priorityFirst && index === 0}
+                className={cn(
+                  "bg-background/80 ring-1 ring-black/5 dark:ring-white/10",
+                  isIpad && "shadow-lg",
+                )}
+              />
+              {image.caption ? (
+                <p className="mt-4 text-center text-xs text-muted">{image.caption}</p>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
+
 export function CaseStudyView({ study, app }: CaseStudyViewProps) {
   const statusStyles = {
     published: "bg-emerald-500/12 text-emerald-700 dark:text-emerald-400",
@@ -237,6 +300,22 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                 ) : null}
               </div>
             </div>
+
+            {study.productVisuals?.[0]?.images[0] ? (
+              <div className="hero-phone-stage mx-auto w-full max-w-[280px] shrink-0 md:mx-0 md:max-w-[260px] lg:max-w-[280px]">
+                <PhoneFrame
+                  src={study.productVisuals[0].images[0].src}
+                  alt={study.productVisuals[0].images[0].alt}
+                  device={study.productVisuals[0].images[0].device ?? "iphone"}
+                  size="hero"
+                  priority
+                  className="bg-background/80 ring-1 ring-black/5 dark:ring-white/10"
+                />
+                <p className="hero-product-caption mt-4 text-center text-xs text-muted md:text-left">
+                  {study.productVisuals[0].images[0].caption ?? "Schermata reale"}
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
@@ -424,7 +503,15 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </GlassCard>
         </Reveal>
 
-        {app.screenshots.length > 0 ? (
+        {study.productVisuals?.length ? (
+          <div className="space-y-14 sm:space-y-16">
+            {study.productVisuals.slice(1).map((section, index) => (
+              <Reveal key={section.title} delay={0.04 + index * 0.02}>
+                <ProductVisualSection section={section} />
+              </Reveal>
+            ))}
+          </div>
+        ) : app.screenshots.length > 0 ? (
         <Reveal delay={0.06}>
           <section aria-label={`Screenshot ${app.name}`}>
             <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">

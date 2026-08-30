@@ -486,6 +486,38 @@ body {
   padding: 0.375rem;
 }
 
+/* iPad portrait frame — Family Plus case-study visuals */
+.phone-frame--ipad {
+  aspect-ratio: 3 / 4;
+  max-width: min(100%, 360px);
+  padding: 0.55rem;
+  border-radius: calc(var(--radius-3xl) + 0.15rem);
+}
+
+.phone-frame--ipad.phone-frame--compact {
+  max-width: min(100%, 300px);
+}
+
+.phone-frame--ipad.phone-frame--hero {
+  max-width: min(78vw, 340px);
+}
+
+@media (min-width: 640px) {
+  .phone-frame--ipad {
+    max-width: min(100%, 400px);
+  }
+
+  .phone-frame--ipad.phone-frame--hero {
+    max-width: min(100%, 420px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-frame--ipad {
+    max-width: min(100%, 440px);
+  }
+}
+
 @media (min-width: 640px) {
   .phone-frame--compact {
     max-width: 260px;

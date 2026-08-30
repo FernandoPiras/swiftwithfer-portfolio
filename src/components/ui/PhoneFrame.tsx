@@ -10,6 +10,8 @@ interface PhoneFrameProps {
   priority?: boolean;
   className?: string;
   size?: "default" | "compact" | "hero";
+  /** iPhone (default) or iPad portrait proportions */
+  device?: "iphone" | "ipad";
 }
 
 /** Unified device frame — identical proportions across portfolio */
@@ -21,9 +23,11 @@ export function PhoneFrame({
   priority,
   className,
   size = "default",
+  device = "iphone",
 }: PhoneFrameProps) {
   const isCompact = size === "compact";
   const isHero = size === "hero";
+  const isIpad = device === "ipad";
 
   return (
     <div
@@ -31,6 +35,7 @@ export function PhoneFrame({
         "phone-frame",
         isCompact && "phone-frame--compact",
         isHero && "phone-frame--hero",
+        isIpad && "phone-frame--ipad",
         className,
       )}
     >
@@ -40,7 +45,11 @@ export function PhoneFrame({
             src={src}
             alt={alt}
             fill
-            sizes={sizes}
+            sizes={
+              isIpad
+                ? "(max-width: 640px) 280px, (max-width: 1024px) 360px, 420px"
+                : sizes
+            }
             priority={priority}
             fetchPriority={priority ? "high" : "auto"}
             quality={75}

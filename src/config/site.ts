@@ -365,7 +365,22 @@ export const siteConfig = {
       architecture:
         "SwiftUI + SwiftData local-first; condivisione famiglia via CloudKit CKShare (iCloud.app.familyplus.FamilyPlus); notifiche collaborative e silent push CloudKit; AdMob banner/interstitial con UMP — senza ATT, Sign in with Apple, backend custom o SDK analytics.",
       icon: "/images/apps/familyplus/icon.png",
-      screenshots: [],
+      screenshots: [
+        "/images/apps/familyplus/today.webp",
+        "/images/apps/familyplus/shopping.webp",
+        "/images/apps/familyplus/calendar.webp",
+        "/images/apps/familyplus/tasks.webp",
+        "/images/apps/familyplus/meals.webp",
+        "/images/apps/familyplus/ipad-today.webp",
+      ],
+      screenshotAlts: [
+        "Family Plus — Today su iPhone",
+        "Family Plus — Spesa settimanale su iPhone",
+        "Family Plus — Calendario famiglia su iPhone",
+        "Family Plus — Attività su iPhone",
+        "Family Plus — Pasti su iPhone",
+        "Family Plus — Today su iPad",
+      ],
       technologies: ["SwiftUI", "SwiftData", "CloudKit", "CKShare"],
       websiteUrl: "/legal/familyplus",
       status: "in-development",
