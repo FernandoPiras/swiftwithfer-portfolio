@@ -27,6 +27,18 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 
 [App Store](https://apps.apple.com/it/app/preventivorapido-pro/id6768065146) · [Case study](https://www.fernandopiras.com/apps/preventivorapido) · [Showcase](https://github.com/FernandoPiras/preventivo-rapido)
 
+### CieloStorie
+
+Native iOS storytelling app for children, designed around calm reading experiences, age-appropriate stories, child profiles, reading progress, and a personal sky that grows as stories are completed. Available in Italian and English with a privacy-conscious, Apple-native experience.
+
+[App Store](https://apps.apple.com/it/app/cielostorie/id6802746906) · [Case study](https://www.fernandopiras.com/apps/cielostorie)
+
+### Family Plus
+
+Native iOS family organizer for shared everyday planning, bringing the family's activities, lists and essential information into one privacy-conscious Apple-native experience.
+
+[App Store](https://apps.apple.com/it/app/family-plus/id6806600854) · [Case study](https://www.fernandopiras.com/apps/familyplus)
+
 ## Technical Expertise
 
 **Native iOS**
@@ -41,7 +53,9 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 - Home Screen widgets
 - On-device OCR
 - Local-first data handling
+- Internationalization
 - Optional cloud synchronization
+- iCloud sharing in Family Plus
 - AI-assisted features in AndroMetrics
 
 **Website**
@@ -57,8 +71,8 @@ iOS app for tradespeople and freelancers. Professional quotes, PDF documents, cu
 
 ## Current Focus
 
-- Maintaining and improving AndroMetrics and PreventivoRapido PRO
-- Refining product quality, accessibility, and release workflows across both apps
+- Maintaining and improving AndroMetrics, PreventivoRapido PRO, CieloStorie, and Family Plus
+- Refining product quality, accessibility, localization, and App Store release workflows across shipped iOS products
 
 ## Contact
 

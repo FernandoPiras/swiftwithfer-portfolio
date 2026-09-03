@@ -110,7 +110,7 @@ export const siteConfig = {
       "Privacy",
     ],
     highlights: [
-      { label: "Prodotti", value: "2 live su App Store" },
+      { label: "Prodotti", value: "4 live su App Store" },
       { label: "Qualità", value: "5.0 AndroMetrics" },
       { label: "Delivery", value: "Idea → Rilascio" },
     ],
@@ -154,7 +154,7 @@ export const siteConfig = {
     },
   ],
   metrics: {
-    publishedApps: 3,
+    publishedApps: 4,
     technologies: 11,
     appStoreDeveloperUrl:
       "https://apps.apple.com/it/developer/fernando-piras/id1865514513",
@@ -211,7 +211,7 @@ export const siteConfig = {
       year: "2026",
       title: "Family Plus",
       description:
-        "Organizer famiglia iOS/iPadOS local-first con SwiftData e CloudKit CKShare — preparata per App Store.",
+        "Organizer famiglia iOS e iPadOS live su App Store: Today, calendario, spesa e attività condivisi via iCloud.",
     },
   ] satisfies TimelineEntry[],
   apps: [
@@ -353,14 +353,13 @@ export const siteConfig = {
     {
       id: "familyplus",
       name: "Family Plus",
-      tagline:
-        "Organizer famiglia local-first: oggi, calendario, spesa e attività condivisi via iCloud.",
+      tagline: "Tutta la famiglia. Tutto in un posto. Gratis. Davvero.",
       description:
-        "App iOS e iPadOS per coordinare la famiglia: Today, Calendario, Spesa, Attività e Altro (Pasti, Ricorrenze, Documenti, Famiglia). Local-first con SwiftData; collaborazione tramite CloudKit CKShare — gratuita, IT/EN, senza account custom né backend proprietario.",
+        "Organizer famiglia nativo per iOS e iPadOS: Today, calendario, spesa, attività, pasti, ricorrenze e documenti in un unico spazio. Local-first con SwiftData; collaborazione famiglia tramite iCloud e CloudKit CKShare — gratuita, in italiano e inglese, senza account custom né backend proprietario.",
       outcomes: [
-        "Organizer multi-modulo su iPhone e iPad",
-        "Spazi famiglia con CloudKit CKShare",
-        "Local-first senza backend custom né analytics SDK",
+        "Disponibile su App Store, iPhone e iPad",
+        "Spazi famiglia condivisi via iCloud",
+        "Gratuita, local-first, senza account custom",
       ],
       architecture:
         "SwiftUI + SwiftData local-first; condivisione famiglia via CloudKit CKShare (iCloud.app.familyplus.FamilyPlus); notifiche collaborative e silent push CloudKit; AdMob banner/interstitial con UMP — senza ATT, Sign in with Apple, backend custom o SDK analytics.",
@@ -382,9 +381,10 @@ export const siteConfig = {
         "Family Plus — Today su iPad",
       ],
       technologies: ["SwiftUI", "SwiftData", "CloudKit", "CKShare"],
+      appStoreUrl: "https://apps.apple.com/it/app/family-plus/id6806600854",
       websiteUrl: "/legal/familyplus",
-      status: "in-development",
-      featured: false,
+      status: "published",
+      featured: true,
     },
   ] satisfies AppProject[],
   seo: {

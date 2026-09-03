@@ -76,6 +76,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/apps/familyplus"
+                  className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Family Plus
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#contact"
                   className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >

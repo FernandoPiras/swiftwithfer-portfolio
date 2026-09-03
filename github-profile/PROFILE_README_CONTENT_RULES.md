@@ -38,7 +38,7 @@ It is **not** a blog, CV dump, badge gallery, or GitHub template showcase.
 ## 3. Language
 
 - Public language: **English**
-- Official product names stay as published: **AndroMetrics**, **PreventivoRapido PRO**
+- Official product names stay as published: **AndroMetrics**, **PreventivoRapido PRO**, **CieloStorie**, **Family Plus**
 - Descriptive form “Preventivo Rapido” may appear once in prose if useful
 - No Italian/English mixing inside the same section
 
@@ -77,7 +77,7 @@ Supporting hero sentence (locked pattern):
 
 1. **Hero** — name, role line, one supporting sentence, Website CTA only  
 2. **About** — how you work (max two short paragraphs)  
-3. **Featured Products** — AndroMetrics, then PreventivoRapido PRO  
+3. **Featured Products** — AndroMetrics, PreventivoRapido PRO, CieloStorie, Family Plus  
 4. **Technical Expertise** — owner identity + evidence-backed capabilities  
 5. **Engineering Principles** — delivery principles (not tool worship)  
 6. **Current Focus** — ongoing product/engineering work only  
@@ -170,10 +170,12 @@ If LinkedIn is not ready, omit the line entirely.
 
 - AndroMetrics  
 - PreventivoRapido PRO  
+- CieloStorie  
+- Family Plus  
 
 ### Not allowed
 
-- other non-approved products, other non-approved products, or any incomplete concept  
+- other non-approved products or any incomplete concept  
 - “Coming soon” pins or placeholders  
 - Ratings, review counts, version numbers, download counts  
 - Unverified user/revenue metrics  
@@ -186,7 +188,7 @@ A new product may appear in Featured Products only when **all** are true:
 1. Published or otherwise publicly verifiable as a real product  
 2. App Store (or equivalent) link works  
 3. One factual sentence can be written without speculation  
-4. Showcase quality matches the existing two products  
+4. Showcase quality matches the existing featured products  
 5. Phase 1 growth checklist is satisfied  
 6. This rules file is updated with the new official name and links  
 
@@ -201,7 +203,7 @@ Maximum featured products on the profile: **keep the list short** (prefer ≤ 4)
 | Swift, SwiftUI (hero / Languages & UI) | **Owner-maintained professional identity claims** — allowed on the profile; **not** `SOURCE_VERIFIED` until Phase 2 local source verification completes |
 | Native iOS, Product Engineering | Owner-maintained professional identity claims for this version |
 | Apple-managed subscriptions | Allowed from **App Store evidence** (`APP_STORE_VERIFIED`) |
-| Product capabilities (HealthKit, Sign in with Apple, PDF workflows, widgets, on-device OCR, local-first handling, optional cloud sync, AndroMetrics AI-assisted features) | Must follow **Phase 2 evidence** (App Store / public documentation / later OWNER or SOURCE) |
+| Product capabilities (HealthKit, Sign in with Apple, PDF workflows, widgets, on-device OCR, local-first handling, optional cloud sync, iCloud sharing in Family Plus, AndroMetrics AI-assisted features) | Must follow **Phase 2 evidence** (App Store / public documentation / later OWNER or SOURCE) |
 | StoreKit, StoreKit 2, WidgetKit, Vision, PDFKit, and similar API-level implementation names | Require **OWNER_VERIFIED** or **SOURCE_VERIFIED** before public use on the profile — do not use in the Profile README until then |
 | Temporal metrics (ratings, versions, dates, file size) | Never on profile |
 | Absolute marketing claims (“secure”, “scalable”, “production-ready”, “enterprise”) | Never |
