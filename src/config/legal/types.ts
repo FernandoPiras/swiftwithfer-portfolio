@@ -2,6 +2,8 @@ export type LegalDocKind =
   | "privacy"
   | "terms"
   | "support"
+  | "licenses"
+  | "medical-disclaimer"
   | "delete-account"
   | "delete-data";
 

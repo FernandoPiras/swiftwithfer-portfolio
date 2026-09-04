@@ -1,4 +1,5 @@
 import { andrometricsDocuments } from "@/config/legal/andrometrics";
+import { gynometricsDocuments } from "@/config/legal/gynometrics";
 import { preventivoRapidoDocuments } from "@/config/legal/preventivo-rapido";
 import type { LegalApp, LegalDocument } from "@/config/legal/types";
 import {
@@ -40,6 +41,15 @@ export const legalApps: readonly LegalApp[] = [
     icon: "/images/apps/andrometrics/icon.png",
     caseStudyHref: "/apps/andrometrics",
     documents: andrometricsDocuments,
+  },
+  {
+    id: "gynometrics",
+    name: "GynoMetrics",
+    blurb:
+      "Monitoraggio benessere e fertilità femminile con privacy, ciclo, gravidanza, postpartum e spazio partner. Qui trovi la documentazione legale e il supporto dell'app.",
+    icon: "/images/apps/gynometrics/icon.png",
+    caseStudyHref: "/apps/gynometrics",
+    documents: gynometricsDocuments,
   },
   {
     id: "preventivo-rapido",

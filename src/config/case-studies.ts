@@ -31,7 +31,12 @@ export interface CaseStudyVisualSection {
 
 export interface CaseStudyContent {
   slug: string;
-  appId: "andrometrics" | "preventivorapido" | "cielostorie" | "familyplus";
+  appId:
+    | "andrometrics"
+    | "gynometrics"
+    | "preventivorapido"
+    | "cielostorie"
+    | "familyplus";
   /** One-line positioning for the case study hero */
   positioning: string;
   problem: string;
@@ -546,6 +551,90 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     seoDescription:
       "Case study Family Plus: organizer famiglia iOS e iPadOS live su App Store, local-first con SwiftData e CloudKit CKShare, spesa, calendario, attività e privacy senza backend custom.",
+  },
+  {
+    slug: "gynometrics",
+    appId: "gynometrics",
+    positioning:
+      "Un companion medicale premium che traduce ciclo, fertilità, gravidanza e postpartum in insight chiari, protetti e utilizzabili ogni giorno — sibling femminile di AndroMetrics.",
+    problem:
+      "Il percorso riproduttivo femminile frammenta dati tra ciclo, referti, gravidanza, postpartum e comunicazione di coppia. App generiche e fogli sparsi non costruiscono un quadro continuo, privacy-first e clinicamente leggibile.",
+    solution:
+      "GynoMetrics centralizza ciclo, log, score, AI Coach, OCR/PDF, gravidanza, postpartum e Partner Snapshot in un’unica esperienza iOS MedicalUI. Local-first, HealthKit in lettura, CoupleSpace via CloudKit e privacy by design — ecosystem medicale coerente, senza complessità da laboratorio.",
+    architecture:
+      "Local-first su dispositivo; CoupleSpace CloudKit per snapshot partner; OCR on-device; AI Coach via proxy con consenso; nessun Firebase di tracking quotidiano.",
+    architectureFlow: [
+      "Utente",
+      "App iOS",
+      "Tracking locale",
+      "CloudKit CoupleSpace",
+      "Score & Report",
+      "PDF / OCR",
+    ],
+    features: [
+      "Tracking ciclo e log quotidiano",
+      "Score e insight riproduttivi leggibili",
+      "AI Coach con consenso esplicito",
+      "OCR Vision per digitalizzare i referti",
+      "Report e export PDF",
+      "Moduli gravidanza e postpartum",
+      "Partner Snapshot / CoupleSpace (CloudKit)",
+      "Privacy first: dati di tracking sul dispositivo",
+      "Ecosystem medicale allineato ad AndroMetrics",
+      "HealthKit in sola lettura (opzionale)",
+    ],
+    decisions: [
+      {
+        title: "SwiftUI + MedicalUI light",
+        reason: "Chiarezza e fiducia in un contesto di salute sensibile, coerente con AndroMetrics.",
+      },
+      {
+        title: "Local-first + CloudKit CoupleSpace",
+        reason: "Continuità di coppia senza caricare il tracking grezzo su un backend generico.",
+      },
+      {
+        title: "Vision per i referti",
+        reason: "OCR on-device: da documento a dati strutturati, senza frizione.",
+      },
+      {
+        title: "AI Coach via proxy API",
+        reason: "Insight con consenso esplicito; lab images e dati partner privati esclusi di default.",
+      },
+      {
+        title: "Privacy by design",
+        reason: "Sicurezza e discrezione come requisito di prodotto, non add-on.",
+      },
+    ],
+    productTimeline: [...PRODUCT_TIMELINE],
+    qualitySignals: [
+      "In development",
+      "Privacy first",
+      "Local-first",
+      "Medical ecosystem",
+      "CoupleSpace CloudKit",
+    ],
+    capabilities: ["Sicurezza", "Privacy", "HealthKit", "CloudKit", "Accessibilità"],
+    challenges: [
+      "Comunicare dati riproduttivi con linguaggio chiaro e non alarmista",
+      "Restare local-first con condivisione partner affidabile",
+      "Unificare ciclo, gravidanza e postpartum senza sovraccaricare l’UX",
+      "Allineare OCR, AI Coach e report a standard medicali di chiarezza",
+    ],
+    results: [
+      "Case study e documentazione legale pubblici sul sito ufficiale",
+      "Architettura privacy-first allineata all’ecosystem AndroMetrics",
+      "CoupleSpace CloudKit per Partner Snapshot senza Firebase di tracking",
+      "Prodotto in development con roadmap ciclo → gravidanza → postpartum",
+    ],
+    trustSignals: [
+      "In development",
+      "Privacy first",
+      "Local-first",
+      "Medical disclaimer",
+      "Nessun tracking ads",
+    ],
+    seoDescription:
+      "Case study GynoMetrics: app iOS medicale per fertilità femminile, ciclo, gravidanza, postpartum, AI Coach, OCR, PDF e CoupleSpace privacy-first.",
   },
 ];
 

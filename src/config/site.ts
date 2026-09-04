@@ -213,6 +213,12 @@ export const siteConfig = {
       description:
         "Organizer famiglia iOS e iPadOS live su App Store: Today, calendario, spesa e attività condivisi via iCloud.",
     },
+    {
+      year: "2026",
+      title: "GynoMetrics",
+      description:
+        "Companion medicale femminile in development: ciclo, gravidanza, postpartum, AI Coach e CoupleSpace privacy-first.",
+    },
   ] satisfies TimelineEntry[],
   apps: [
     {
@@ -386,6 +392,42 @@ export const siteConfig = {
       status: "published",
       featured: true,
     },
+    {
+      id: "gynometrics",
+      name: "GynoMetrics",
+      tagline: "Fertilità femminile, chiarezza ogni giorno",
+      description:
+        "Companion medicale per benessere e fertilità femminile: ciclo, log, score, AI Coach, OCR e report PDF, gravidanza, postpartum e spazio partner. Local-first, Privacy first, ecosystem medicale coerente con AndroMetrics — in development.",
+      outcomes: [
+        "Ciclo, gravidanza e postpartum in un’unica esperienza",
+        "AI Coach, OCR, PDF e report privacy-first",
+        "CoupleSpace partner via CloudKit, senza tracking pubblicitario",
+      ],
+      architecture:
+        "App SwiftUI local-first (MedicalUI light), HealthKit in lettura, Vision OCR on-device, AI Coach via proxy con consenso, report PDF, CoupleSpace CloudKit per Partner Snapshot — nessun Firebase di tracking quotidiano.",
+      icon: "/images/apps/gynometrics/icon.png",
+      screenshots: [
+        "/images/apps/gynometrics/screenshot-1.png",
+        "/images/apps/gynometrics/screenshot-2.png",
+        "/images/apps/gynometrics/screenshot-3.png",
+      ],
+      screenshotAlts: [
+        "GynoMetrics — anteprima prodotto (placeholder)",
+        "GynoMetrics — feature preview (placeholder)",
+        "GynoMetrics — medical ecosystem (placeholder)",
+      ],
+      technologies: [
+        "SwiftUI",
+        "HealthKit",
+        "CloudKit",
+        "Vision",
+        "StoreKit 2",
+        "WidgetKit",
+      ],
+      websiteUrl: "/legal/gynometrics",
+      status: "in-development",
+      featured: true,
+    },
   ] satisfies AppProject[],
   seo: {
     title: "Fernando Piras — Sviluppatore iOS & Software | SwiftWithFer",
@@ -400,6 +442,7 @@ export const siteConfig = {
       "Gestionali Aziendali",
       "CRM",
       "AndroMetrics",
+      "GynoMetrics",
       "PreventivoRapido",
       "CieloStorie",
       "Family Plus",
