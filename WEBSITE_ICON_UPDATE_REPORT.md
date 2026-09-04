@@ -1,56 +1,36 @@
-# WEBSITE_ICON_UPDATE_REPORT — GynoMetrics
+# WEBSITE_ICON_UPDATE_REPORT — GynoMetrics (fix)
 
 **Date:** 2026-09-04  
-**Commit:** `Website: Use official GynoMetrics app icon`  
-**Repo:** `swiftwithfer-portfolio` (site only — app untouched)
+**Issue:** Live site showed a solid teal/green square instead of the official App Icon.
 
 ---
 
-## Asset sorgente
+## Root cause (verified)
 
-| Campo | Valore |
-|--------|--------|
-| File | `App_Icon.png` |
-| Percorso | `GynoMetrics/GynoMetrics/Resources/Assets.xcassets/AppIcon.appiconset/App_Icon.png` |
-| Formato | PNG 1024×1024, RGBA |
-| SHA-256 | `4c6c1985b78c95e191b15404f289e340b97abe09181f7f9174a7f0e3400445e2` |
+1. First deploy used a tiny solid-green placeholder as `icon.png`.
+2. `_next/image` cached that result with `cache-control: public, max-age=31536000, immutable`.
+3. Replacing the file at the same URL did **not** bust that CDN cache — browsers still painted `(46, 111, 105)` green.
+4. `screenshot-1/2/3.png` were the same green placeholder, so the homepage phone mockup also showed a green square.
 
-**Conferma:** icona ufficiale dell’app iOS (Asset Catalog `AppIcon`). Nessun altro file usato.
+Official App Icon (pink **G** + GYNOMETRICS) was already correct on disk after the previous copy; the CDN + green screenshots were the problem.
 
 ---
 
-## Destinazione
+## Fix
 
-| Campo | Valore |
-|--------|--------|
-| Percorso | `public/images/apps/gynometrics/icon.png` |
-| SHA-256 | `4c6c1985b78c95e191b15404f289e340b97abe09181f7f9174a7f0e3400445e2` (identico alla sorgente) |
+| Item | Value |
+|------|--------|
+| Source | `GynoMetrics/.../AppIcon.appiconset/App_Icon.png` (official) |
+| Dest | `public/images/apps/gynometrics/app-icon.png` (**new URL** → cache bust) |
+| Format | Same artwork, 8-bit RGBA PNG (matches other apps; web-safe) |
+| Config | `site.ts` + `legal/index.ts` → `/images/apps/gynometrics/app-icon.png` |
+| Screenshots | Removed green placeholder PNGs; `screenshots: []` so card uses icon fallback |
 
-Copia byte-identica (`cp`). Nessuna generazioni, ridimensionamento, ImageMagick, AI, o modifica colori.
-
----
-
-## File modificati
-
-| File | Modifica |
-|------|----------|
-| `public/images/apps/gynometrics/icon.png` | Placeholder (4.5 KB) → App Icon ufficiale (byte-identica) |
-
-**Non modificati:** `site.ts`, routing, SEO/metadata, legal, copy, componenti, altre app, OpenGraph (il sito usa `/og-image.png` globale — stesso pattern delle altre app, non l’icona per-app).
-
-Card homepage, `/apps/gynometrics` e hub legal leggono già `app.icon` → `/images/apps/gynometrics/icon.png`.
+**Not redesigned.** No ImageMagick. Artwork = official App Icon only.
 
 ---
 
-## Conferme
+## Build / ship
 
-- [x] Usata esclusivamente l’App Icon ufficiale dell’app
-- [x] Nessuna immagine generata / ridisegnata / riesportata
-- [x] Nessuna altra app modificata
-- [x] Nessuna modifica all’app iOS
-
----
-
-## Build
-
-`npm run build` → **SUCCEEDED** · 0 errori · 0 warning di lint/typecheck
+- `npm run build` SUCCEEDED  
+- Commit + push to `main` for Vercel production

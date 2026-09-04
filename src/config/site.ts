@@ -405,17 +405,8 @@ export const siteConfig = {
       ],
       architecture:
         "App SwiftUI local-first (MedicalUI light), HealthKit in lettura, Vision OCR on-device, AI Coach via proxy con consenso, report PDF, CoupleSpace CloudKit per Partner Snapshot — nessun Firebase di tracking quotidiano.",
-      icon: "/images/apps/gynometrics/icon.png",
-      screenshots: [
-        "/images/apps/gynometrics/screenshot-1.png",
-        "/images/apps/gynometrics/screenshot-2.png",
-        "/images/apps/gynometrics/screenshot-3.png",
-      ],
-      screenshotAlts: [
-        "GynoMetrics — anteprima prodotto (placeholder)",
-        "GynoMetrics — feature preview (placeholder)",
-        "GynoMetrics — medical ecosystem (placeholder)",
-      ],
+      icon: "/images/apps/gynometrics/app-icon.png",
+      screenshots: [],
       technologies: [
         "SwiftUI",
         "HealthKit",

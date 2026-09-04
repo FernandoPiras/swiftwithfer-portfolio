@@ -47,7 +47,7 @@ export const legalApps: readonly LegalApp[] = [
     name: "GynoMetrics",
     blurb:
       "Monitoraggio benessere e fertilità femminile con privacy, ciclo, gravidanza, postpartum e spazio partner. Qui trovi la documentazione legale e il supporto dell'app.",
-    icon: "/images/apps/gynometrics/icon.png",
+    icon: "/images/apps/gynometrics/app-icon.png",
     caseStudyHref: "/apps/gynometrics",
     documents: gynometricsDocuments,
   },
