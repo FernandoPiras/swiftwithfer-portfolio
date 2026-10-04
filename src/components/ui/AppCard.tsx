@@ -55,6 +55,27 @@ export function AppCard({ app }: AppCardProps) {
               <div className="flex flex-wrap items-center gap-2">
                 <h3 className="m-0 min-w-0">
                   {app.wordmark ? (
+                    app.wordmarkLight ? (
+                      <>
+                        <Image
+                          src={app.wordmarkLight}
+                          alt={app.name}
+                          width={app.wordmarkSize?.width ?? 240}
+                          height={app.wordmarkSize?.height ?? 48}
+                          sizes="(max-width: 639px) 148px, 180px"
+                          className="h-[1.35rem] w-auto max-w-[min(100%,11.5rem)] object-contain object-left sm:h-7 sm:max-w-[13.5rem] dark:hidden"
+                        />
+                        <Image
+                          src={app.wordmark}
+                          alt=""
+                          width={app.wordmarkSize?.width ?? 240}
+                          height={app.wordmarkSize?.height ?? 48}
+                          sizes="(max-width: 639px) 148px, 180px"
+                          aria-hidden
+                          className="hidden h-[1.35rem] w-auto max-w-[min(100%,11.5rem)] object-contain object-left sm:h-7 sm:max-w-[13.5rem] dark:block"
+                        />
+                      </>
+                    ) : (
                     <Image
                       src={app.wordmark}
                       alt={app.name}
@@ -68,6 +89,7 @@ export function AppCard({ app }: AppCardProps) {
                           : "dark:invert",
                       )}
                     />
+                    )
                   ) : (
                     <span className="text-xl font-semibold tracking-[-0.02em] text-foreground sm:text-2xl">
                       {app.name}

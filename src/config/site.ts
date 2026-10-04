@@ -32,8 +32,11 @@ export interface AppProject {
   /**
    * Wordmark ink: "on-light" = dark glyphs (invert in dark mode);
    * "on-dark" = light glyphs (force black in light mode).
+   * Prefer `wordmarkLight` + dark `wordmark` (no CSS filters) when both exist.
    */
   wordmarkInk?: "on-light" | "on-dark";
+  /** Optional light-appearance wordmark (transparent). Paired with `wordmark` for dark. */
+  wordmarkLight?: string;
   screenshots: string[];
   /** Optional accessible alts aligned 1:1 with screenshots */
   screenshotAlts?: string[];
@@ -211,7 +214,7 @@ export const siteConfig = {
       year: "2026",
       title: "Family Plus",
       description:
-        "Organizer famiglia per iPhone: Family Home (Casa), Spesa, Calendario e The Family (La Famiglia) — local-first via iCloud.",
+        "Organizer famiglia pensato per iPhone: Casa, Tavola, Memoria e La Famiglia — local-first via iCloud.",
     },
     {
       year: "2026",
@@ -359,35 +362,37 @@ export const siteConfig = {
     {
       id: "familyplus",
       name: "Family Plus",
-      tagline: "Tutta la famiglia. Tutto in un posto. Gratis. Davvero.",
+      tagline: "Tutta la famiglia. Tutto in un posto.",
       description:
-        "Organizer famiglia per iPhone: Family Home (Casa), Calendario, Spesa, Attività, Family Table (Tavola), Family Memory (Memoria), The Family (La Famiglia), Me (Io) e Centro di controllo. Local-first con SwiftData; collaborazione via iCloud/CloudKit — gratuita, IT/EN, senza account custom.",
+        "La vita di famiglia, raccolta con calma. Casa, Tavola, Memoria, La Famiglia, Io e Centro di controllo — pensata per iPhone, local-first, condivisa via iCloud. Gratuita. Senza account custom.",
       outcomes: [
-        "Disponibile su App Store per iPhone",
-        "Family Home (Casa) e The Family (La Famiglia) via iCloud",
-        "Gratuita, local-first, Centro di controllo quieto",
+        "Live su App Store — v1.1.2",
+        "Pensata per iPhone, esperienza portrait",
+        "Local-first · CloudKit · gratis",
       ],
       architecture:
-        "SwiftUI + SwiftData local-first; CloudKit CKShare; notifiche locali con Notification Schedule sul dispositivo; AdMob + UMP — senza ATT, senza Sign in with Apple, senza backend custom.",
+        "SwiftUI + SwiftData local-first; CloudKit CKShare per La Famiglia; Notification Schedule locale sul dispositivo; AdMob + UMP — senza ATT, senza abbonamenti, senza backend custom.",
       icon: "/images/apps/familyplus/icon.png",
-      wordmark: "/images/apps/familyplus/wordmark.png",
-      wordmarkSize: { width: 2172, height: 724 },
-      wordmarkInk: "on-dark",
+      wordmark: "/images/apps/familyplus/wordmark-dark.png",
+      wordmarkLight: "/images/apps/familyplus/wordmark-light.png",
+      wordmarkSize: { width: 1643, height: 288 },
       screenshots: [
-        "/images/apps/familyplus/family-home.jpg",
-        "/images/apps/familyplus/shopping.jpg",
-        "/images/apps/familyplus/calendar.jpg",
-        "/images/apps/familyplus/activities.jpg",
-        "/images/apps/familyplus/family-table.jpg",
-        "/images/apps/familyplus/the-family.jpg",
+        "/images/apps/familyplus/appstore/01-casa.jpg",
+        "/images/apps/familyplus/appstore/02-tavola.jpg",
+        "/images/apps/familyplus/appstore/03-memoria.jpg",
+        "/images/apps/familyplus/appstore/04-me.jpg",
+        "/images/apps/familyplus/appstore/05-control-center.jpg",
+        "/images/apps/familyplus/appstore/06-notifiche.jpg",
+        "/images/apps/familyplus/appstore/07-story.jpg",
       ],
       screenshotAlts: [
-        "Family Plus — Family Home su iPhone",
-        "Family Plus — Spesa su iPhone",
-        "Family Plus — Calendario su iPhone",
-        "Family Plus — Attività su iPhone",
-        "Family Plus — Family Table su iPhone",
-        "Family Plus — The Family su iPhone",
+        "Family Plus — Casa (Family Home) su iPhone",
+        "Family Plus — Tavola (Family Table) su iPhone",
+        "Family Plus — Memoria (Family Memory) su iPhone",
+        "Family Plus — Io (Me) su iPhone",
+        "Family Plus — Centro di controllo (Control Center) su iPhone",
+        "Family Plus — Notifiche su iPhone",
+        "Family Plus — La Storia (Story) su iPhone",
       ],
       technologies: ["SwiftUI", "SwiftData", "CloudKit", "CKShare"],
       appStoreUrl: "https://apps.apple.com/it/app/family-plus/id6806600854",

@@ -31,7 +31,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const app = siteConfig.apps.find((item) => item.id === study.appId);
   if (!app) return {};
 
-  return createCaseStudyMetadata(app.name, study.seoDescription, slug, app.tagline);
+  return createCaseStudyMetadata(
+    app.name,
+    study.seoDescription,
+    slug,
+    app.tagline,
+    undefined,
+    study.ogImage,
+  );
 }
 
 export default async function CaseStudyPage({ params }: PageProps) {

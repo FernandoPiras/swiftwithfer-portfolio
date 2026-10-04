@@ -13,6 +13,12 @@ import { AppStoreReviews } from "@/components/ui/AppStoreReviews";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { FlowSteps } from "@/components/ui/FlowSteps";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
+import {
+  FAMILYPLUS_DELETE_DATA_PATH,
+  FAMILYPLUS_PRIVACY_PATH,
+  FAMILYPLUS_SUPPORT_PATH,
+  FAMILYPLUS_TERMS_PATH,
+} from "@/config/familyplus-legal-paths";
 import { cn, getStatusLabel, getWebsiteLinkLabel, isInternalHref } from "@/lib/utils";
 import { EASE_OUT_SOFT, MOTION } from "@/lib/motion";
 
@@ -142,6 +148,7 @@ function ProductVisualSection({
   const layout = section.layout ?? (section.images.length === 1 ? "hero" : "pair");
   const isHero = layout === "hero";
   const hasIpad = section.images.some((image) => image.device === "ipad");
+  const hasCanvas = section.images.some((image) => image.device === "canvas");
 
   return (
     <section aria-label={section.title}>
@@ -156,7 +163,8 @@ function ProductVisualSection({
       <ul
         className={cn(
           "grid justify-items-center gap-8 lg:gap-10",
-          isHero && "mx-auto max-w-sm",
+          isHero && !hasCanvas && "mx-auto max-w-sm",
+          isHero && hasCanvas && "mx-auto max-w-md",
           !isHero && section.images.length === 2 && "sm:grid-cols-2",
           !isHero && section.images.length >= 3 && "sm:grid-cols-2 lg:grid-cols-3",
           hasIpad && !isHero && "sm:max-w-4xl sm:mx-auto",
@@ -164,32 +172,92 @@ function ProductVisualSection({
       >
         {section.images.map((image, index) => {
           const isIpad = image.device === "ipad";
+          const isCanvas = image.device === "canvas";
           return (
             <li
               key={image.src}
               className={cn(
                 "w-full",
-                isIpad ? "max-w-[360px] sm:max-w-[400px]" : "max-w-[260px]",
-                isHero && !isIpad && "max-w-[280px] sm:max-w-[300px]",
+                isCanvas
+                  ? isHero
+                    ? "max-w-[320px] sm:max-w-[360px]"
+                    : "max-w-[280px] sm:max-w-[300px]"
+                  : isIpad
+                    ? "max-w-[360px] sm:max-w-[400px]"
+                    : "max-w-[260px]",
+                isHero && !isIpad && !isCanvas && "max-w-[280px] sm:max-w-[300px]",
               )}
             >
-              <PhoneFrame
-                src={image.src}
-                alt={image.alt}
-                device={image.device ?? "iphone"}
-                size={isHero ? "hero" : "compact"}
-                priority={priorityFirst && index === 0}
-                className={cn(
-                  "bg-background/80 ring-1 ring-black/5 dark:ring-white/10",
-                  isIpad && "shadow-lg",
-                )}
-              />
+              {isCanvas ? (
+                <div className="relative aspect-[1290/2796] w-full overflow-hidden rounded-[1.75rem] bg-background/80 shadow-md ring-1 ring-black/5 dark:ring-white/10">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes={
+                      isHero
+                        ? "(max-width: 640px) 320px, 360px"
+                        : "(max-width: 640px) 280px, 300px"
+                    }
+                    priority={priorityFirst && index === 0}
+                    quality={82}
+                    className="object-cover object-top"
+                  />
+                </div>
+              ) : (
+                <PhoneFrame
+                  src={image.src}
+                  alt={image.alt}
+                  device={isIpad ? "ipad" : "iphone"}
+                  size={isHero ? "hero" : "compact"}
+                  priority={priorityFirst && index === 0}
+                  className={cn(
+                    "bg-background/80 ring-1 ring-black/5 dark:ring-white/10",
+                    isIpad && "shadow-lg",
+                  )}
+                />
+              )}
               {image.caption ? (
                 <p className="mt-4 text-center text-xs text-muted">{image.caption}</p>
               ) : null}
             </li>
           );
         })}
+      </ul>
+    </section>
+  );
+}
+
+function ProductLegalLinks({ appId }: { appId: CaseStudyContent["appId"] }) {
+  if (appId !== "familyplus") return null;
+
+  const links = [
+    { href: FAMILYPLUS_PRIVACY_PATH, label: "Privacy" },
+    { href: FAMILYPLUS_TERMS_PATH, label: "Termini" },
+    { href: FAMILYPLUS_SUPPORT_PATH, label: "Supporto" },
+    { href: FAMILYPLUS_DELETE_DATA_PATH, label: "Eliminazione dati" },
+  ] as const;
+
+  return (
+    <section aria-label="Informazioni legali Family Plus">
+      <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
+        Privacy e fiducia
+      </h2>
+      <p className="mb-6 max-w-2xl text-sm text-muted">
+        Local-first. iCloud quando serve. Nessun account custom. Documentazione
+        ufficiale allineata a Family Plus v1.1.2.
+      </p>
+      <ul className="flex flex-wrap gap-2">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="inline-flex min-h-11 items-center rounded-full border border-glass-border bg-background/50 px-4 text-sm font-medium text-foreground transition-opacity hover:opacity-80"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </section>
   );
@@ -203,7 +271,19 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
   };
 
   const architectureCaption = study.architecture || app.architecture;
+  const isProductPresentation = study.presentation === "product";
   let chapter = 1;
+
+  const productVisualStory =
+    study.productVisuals && study.productVisuals.length > 1 ? (
+      <div className="space-y-14 sm:space-y-16">
+        {study.productVisuals.slice(1).map((section, index) => (
+          <Reveal key={section.title} delay={0.04 + index * 0.02}>
+            <ProductVisualSection section={section} />
+          </Reveal>
+        ))}
+      </div>
+    ) : null;
 
   return (
     <article>
@@ -230,7 +310,9 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             </div>
             <div className="max-w-2xl">
               <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
-                <p className="text-eyebrow text-accent">Case Study</p>
+                <p className="text-eyebrow text-accent">
+                  {isProductPresentation ? "Prodotto" : "Case Study"}
+                </p>
                 <span
                   className={cn(
                     "rounded-full px-2.5 py-0.5 text-xs font-medium",
@@ -240,7 +322,50 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                   {getStatusLabel(app.status)}
                 </span>
               </div>
-              <h1 className="text-section-title mt-2 text-foreground">{app.name}</h1>
+              {app.wordmark ? (
+                <div className="mt-4 flex justify-center md:justify-start">
+                  {app.wordmarkLight ? (
+                    <>
+                      <Image
+                        src={app.wordmarkLight}
+                        alt={app.name}
+                        width={app.wordmarkSize?.width ?? 480}
+                        height={app.wordmarkSize?.height ?? 160}
+                        priority
+                        className="h-10 w-auto object-contain sm:h-12 dark:hidden"
+                      />
+                      <Image
+                        src={app.wordmark}
+                        alt=""
+                        width={app.wordmarkSize?.width ?? 480}
+                        height={app.wordmarkSize?.height ?? 160}
+                        priority
+                        aria-hidden
+                        className="hidden h-10 w-auto object-contain sm:h-12 dark:block"
+                      />
+                    </>
+                  ) : (
+                    <Image
+                      src={app.wordmark}
+                      alt={app.name}
+                      width={app.wordmarkSize?.width ?? 480}
+                      height={app.wordmarkSize?.height ?? 160}
+                      priority
+                      className={cn(
+                        "h-10 w-auto object-contain sm:h-12",
+                        app.wordmarkInk === "on-dark"
+                          ? "brightness-0 dark:brightness-100"
+                          : app.wordmarkInk === "on-light"
+                            ? "dark:invert"
+                            : undefined,
+                      )}
+                    />
+                  )}
+                  <h1 className="sr-only">{app.name}</h1>
+                </div>
+              ) : (
+                <h1 className="text-section-title mt-2 text-foreground">{app.name}</h1>
+              )}
               <p className="mt-3 text-base font-medium text-accent">{app.tagline}</p>
               <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
                 {study.positioning}
@@ -272,10 +397,10 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                   <ButtonLink
                     href={app.appStoreUrl}
                     external
-                    variant="secondary"
+                    variant={app.demoVideo ? "secondary" : undefined}
                     className="w-full sm:w-auto"
                   >
-                    App Store
+                    {app.demoVideo ? "App Store" : "Scarica su App Store"}
                   </ButtonLink>
                 ) : null}
                 {app.websiteUrl ? (
@@ -302,15 +427,40 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
             </div>
 
             {study.productVisuals?.[0]?.images[0] ? (
-              <div className="hero-phone-stage mx-auto w-full max-w-[280px] shrink-0 md:mx-0 md:max-w-[260px] lg:max-w-[280px]">
-                <PhoneFrame
-                  src={study.productVisuals[0].images[0].src}
-                  alt={study.productVisuals[0].images[0].alt}
-                  device={study.productVisuals[0].images[0].device ?? "iphone"}
-                  size="hero"
-                  priority
-                  className="bg-background/80 ring-1 ring-black/5 dark:ring-white/10"
-                />
+              <div
+                className={cn(
+                  "hero-phone-stage mx-auto w-full shrink-0 md:mx-0",
+                  study.productVisuals[0].images[0].device === "canvas"
+                    ? "max-w-[300px] md:max-w-[280px] lg:max-w-[300px]"
+                    : "max-w-[280px] md:max-w-[260px] lg:max-w-[280px]",
+                )}
+              >
+                {study.productVisuals[0].images[0].device === "canvas" ? (
+                  <div className="relative aspect-[1290/2796] w-full overflow-hidden rounded-[1.75rem] bg-background/80 shadow-md ring-1 ring-black/5 dark:ring-white/10">
+                    <Image
+                      src={study.productVisuals[0].images[0].src}
+                      alt={study.productVisuals[0].images[0].alt}
+                      fill
+                      sizes="(max-width: 768px) 300px, 280px"
+                      priority
+                      quality={82}
+                      className="object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <PhoneFrame
+                    src={study.productVisuals[0].images[0].src}
+                    alt={study.productVisuals[0].images[0].alt}
+                    device={
+                      study.productVisuals[0].images[0].device === "ipad"
+                        ? "ipad"
+                        : "iphone"
+                    }
+                    size="hero"
+                    priority
+                    className="bg-background/80 ring-1 ring-black/5 dark:ring-white/10"
+                  />
+                )}
                 <p className="hero-product-caption mt-4 text-center text-xs text-muted md:text-left">
                   {study.productVisuals[0].images[0].caption ?? "Schermata reale"}
                 </p>
@@ -342,14 +492,20 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
       ) : null}
 
       <div className="mx-auto max-w-6xl space-y-14 px-4 pb-20 sm:space-y-16 sm:px-6 sm:pb-28 lg:px-8">
+        {isProductPresentation && productVisualStory ? (
+          <div className="pt-2">{productVisualStory}</div>
+        ) : null}
+
         {study.ecosystem?.length ? (
           <Reveal>
             <div>
               <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">
-                L&apos;ecosistema
+                {isProductPresentation ? "Come si vive" : "L\u2019ecosistema"}
               </h2>
               <p className="mb-8 max-w-2xl text-sm text-muted">
-                Come si articola il prodotto: superfici chiare, un unico sistema.
+                {isProductPresentation
+                  ? "Il ritmo della casa, ciò che resta, il controllo quieto — un unico sistema."
+                  : "Come si articola il prodotto: superfici chiare, un unico sistema."}
               </p>
               <ul className="grid gap-5 sm:grid-cols-3 sm:gap-6">
                 {study.ecosystem.map((layer, index) => (
@@ -386,9 +542,15 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
                   key={group.title}
                   index={chapter++}
                   title={group.title}
-                  description={group.description}
+                  description={
+                    group.items.length ? group.description : undefined
+                  }
                 >
-                  <FeatureGrid items={group.items} />
+                  {group.items.length ? (
+                    <FeatureGrid items={group.items} />
+                  ) : group.description ? (
+                    <p>{group.description}</p>
+                  ) : null}
                 </StoryChapter>
               ))
             ) : (
@@ -424,68 +586,80 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
               </StoryChapter>
             ) : null}
 
-            <StoryChapter
-              index={chapter++}
-              title="Decisioni tecniche"
-              description="Scelte di prodotto e architettura che contano davvero."
-            >
-              <DecisionsList decisions={study.decisions} />
-            </StoryChapter>
+            {!isProductPresentation ? (
+              <>
+                <StoryChapter
+                  index={chapter++}
+                  title="Decisioni tecniche"
+                  description="Scelte di prodotto e architettura che contano davvero."
+                >
+                  <DecisionsList decisions={study.decisions} />
+                </StoryChapter>
 
-            <StoryChapter
-              index={chapter++}
-              title="Timeline del prodotto"
-              description="Dal concetto alla produzione — e oltre."
-            >
-              <FlowSteps
-                steps={study.productTimeline}
-                label={`Timeline di ${app.name}`}
-              />
-            </StoryChapter>
+                <StoryChapter
+                  index={chapter++}
+                  title="Timeline del prodotto"
+                  description="Dal concetto alla produzione — e oltre."
+                >
+                  <FlowSteps
+                    steps={study.productTimeline}
+                    label={`Timeline di ${app.name}`}
+                  />
+                </StoryChapter>
 
-            <StoryChapter
-              index={chapter++}
-              title="Qualità in produzione"
-              description="Segnali che il prodotto è mantenuto, scalabile e pensato per il reale."
-            >
-              <div className="space-y-4">
-                <SignalList
-                  items={study.qualitySignals}
-                  label="Segnali di qualità"
-                />
-                <SignalList
-                  items={study.capabilities}
-                  label="Capacità del sistema"
-                />
-              </div>
-            </StoryChapter>
-
-            <StoryChapter index={chapter++} title="Tecnologie">
-              <ul className="flex flex-wrap gap-2">
-                {app.technologies.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs font-medium text-foreground sm:text-sm"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </StoryChapter>
-
-            <StoryChapter index={chapter++} title="Sfide affrontate">
-              <ul className="space-y-2.5">
-                {study.challenges.map((challenge) => (
-                  <li key={challenge} className="flex gap-3">
-                    <span
-                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
-                      aria-hidden
+                <StoryChapter
+                  index={chapter++}
+                  title="Qualità in produzione"
+                  description="Segnali che il prodotto è mantenuto, scalabile e pensato per il reale."
+                >
+                  <div className="space-y-4">
+                    <SignalList
+                      items={study.qualitySignals}
+                      label="Segnali di qualità"
                     />
-                    <span>{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-            </StoryChapter>
+                    <SignalList
+                      items={study.capabilities}
+                      label="Capacità del sistema"
+                    />
+                  </div>
+                </StoryChapter>
+
+                <StoryChapter index={chapter++} title="Tecnologie">
+                  <ul className="flex flex-wrap gap-2">
+                    {app.technologies.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-full border border-glass-border bg-background/40 px-3 py-1 text-xs font-medium text-foreground sm:text-sm"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </StoryChapter>
+
+                <StoryChapter index={chapter++} title="Sfide affrontate">
+                  <ul className="space-y-2.5">
+                    {study.challenges.map((challenge) => (
+                      <li key={challenge} className="flex gap-3">
+                        <span
+                          className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                          aria-hidden
+                        />
+                        <span>{challenge}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </StoryChapter>
+              </>
+            ) : (
+              <StoryChapter
+                index={chapter++}
+                title="Scelte che contano"
+                description="Pochi principi, tenuti con disciplina."
+              >
+                <DecisionsList decisions={study.decisions.slice(0, 4)} />
+              </StoryChapter>
+            )}
 
             <StoryChapter index={chapter++} title="Il risultato">
               <ul className="space-y-2.5">
@@ -503,15 +677,15 @@ export function CaseStudyView({ study, app }: CaseStudyViewProps) {
           </GlassCard>
         </Reveal>
 
-        {study.productVisuals?.length ? (
-          <div className="space-y-14 sm:space-y-16">
-            {study.productVisuals.slice(1).map((section, index) => (
-              <Reveal key={section.title} delay={0.04 + index * 0.02}>
-                <ProductVisualSection section={section} />
-              </Reveal>
-            ))}
-          </div>
-        ) : app.screenshots.length > 0 ? (
+        {!isProductPresentation && productVisualStory}
+
+        {isProductPresentation ? (
+          <Reveal delay={0.06}>
+            <ProductLegalLinks appId={study.appId} />
+          </Reveal>
+        ) : null}
+
+        {!study.productVisuals?.length && app.screenshots.length > 0 ? (
         <Reveal delay={0.06}>
           <section aria-label={`Screenshot ${app.name}`}>
             <h2 className="mb-3 text-lg font-semibold text-foreground sm:text-xl">

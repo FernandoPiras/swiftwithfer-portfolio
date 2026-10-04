@@ -185,14 +185,31 @@ export function createCaseStudyMetadata(
   slug: string,
   tagline?: string,
   keywords?: readonly string[],
+  ogImagePath?: string,
 ): Metadata {
   const siteUrl = getSiteUrl();
   const { name } = siteConfig;
   const url = `${siteUrl}/apps/${slug}`;
   const title = tagline ? `${appName} — ${tagline}` : `${appName} — Case Study`;
   const ogTitle = `${title} | ${name}`;
-  const ogImage = buildOgImage(siteUrl);
-  const twitterImage = buildTwitterImage(siteUrl);
+  const imagePath = ogImagePath ?? siteConfig.seo.ogImage;
+  const absoluteImage = `${siteUrl}${imagePath}`;
+  const imageAlt = `${appName} — ${tagline ?? "Case Study"}`;
+  const ogImage = {
+    url: imagePath,
+    secureUrl: absoluteImage,
+    width: 1200,
+    height: 630,
+    alt: imageAlt,
+    type: imagePath.endsWith(".jpg") || imagePath.endsWith(".jpeg")
+      ? ("image/jpeg" as const)
+      : ("image/png" as const),
+  };
+  const twitterImage = {
+    url: imagePath,
+    secureUrl: absoluteImage,
+    alt: imageAlt,
+  };
 
   return {
     title,

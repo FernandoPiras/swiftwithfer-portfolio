@@ -185,10 +185,21 @@ export function buildCaseStudyJsonLd(
       "@type": "WebPage",
       "@id": `${pageUrl}/#webpage`,
       url: pageUrl,
-      name: `${app.name} — Case Study`,
+      name:
+        app.id === "familyplus"
+          ? `${app.name} — ${app.tagline}`
+          : `${app.name} — Case Study`,
       description,
       isPartOf: { "@id": `${siteUrl}/#website` },
       breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+      ...(app.id === "familyplus" && app.screenshots[0]
+        ? {
+            primaryImageOfPage: {
+              "@type": "ImageObject",
+              url: `${siteUrl}${app.screenshots[0]}`,
+            },
+          }
+        : {}),
       inLanguage: "it-IT",
       primaryImageOfPage: {
         "@type": "ImageObject",
