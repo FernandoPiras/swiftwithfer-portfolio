@@ -566,7 +566,7 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     results: [
       "v1.1.2 in produzione: glossario ufficiale, Design System V2, localizzazione certificata",
-      "Galleria App Store ufficiale: hero Campaign + Tavola, Memoria, La Famiglia, Spesa, Calendario, Attività, Storia",
+      "Galleria prodotto ufficiale: Casa, Tavola, Memoria, Io, Centro di controllo, Notifiche, La Storia",
       "Legal pubblico allineato: Privacy, Termini, Supporto, Eliminazione dati",
       "Prodotto gratuito local-first — senza account custom né analytics SDK",
     ],

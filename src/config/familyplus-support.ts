@@ -207,7 +207,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — Come elimino i dati di Family Plus?",
         paragraphs: [
           [
-            "Non esiste un account Family Plus con password. Disinstallare l’app rimuove i dati locali da quel dispositivo. I partecipanti possono lasciare lo spazio famiglia da Altro → Famiglia. I contenuti già in iCloud restano sotto Apple e gli altri partecipanti. Dettagli: ",
+            "Non esiste un account Family Plus con password. Disinstallare l’app rimuove i dati locali da quel dispositivo. I partecipanti possono lasciare lo spazio famiglia da Altro → La Famiglia. I contenuti già in iCloud restano sotto Apple e gli altri partecipanti. Dettagli: ",
             { href: FAMILYPLUS_DELETE_DATA_PATH, label: "Eliminazione dati" },
             ".",
           ],
@@ -443,7 +443,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — How do I delete Family Plus data?",
         paragraphs: [
           [
-            "There is no Family Plus password account. Uninstalling removes local app data from that device. Participants can leave the family space from More → Family. Content already in iCloud remains under Apple and other participants. Details: ",
+            "There is no Family Plus password account. Uninstalling removes local app data from that device. Participants can leave the family space from More → The Family. Content already in iCloud remains under Apple and other participants. Details: ",
             { href: FAMILYPLUS_DELETE_DATA_EN_PATH, label: "Data deletion" },
             ".",
           ],

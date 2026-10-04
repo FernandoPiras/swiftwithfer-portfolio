@@ -105,7 +105,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "4. Lasciare uno spazio famiglia (partecipante)",
         paragraphs: [
           [
-            "Se sei un partecipante (non l’organizzatore), in Altro → Famiglia puoi lasciare lo spazio famiglia. L’app tenta di rimuoverti dalla share CloudKit; se l’operazione riesce, elimina i dati di quella famiglia da questo dispositivo.",
+            "Se sei un partecipante (non l’organizzatore), in Altro → La Famiglia puoi lasciare lo spazio famiglia. L’app tenta di rimuoverti dalla share CloudKit; se l’operazione riesce, elimina i dati di quella famiglia da questo dispositivo.",
           ],
           [
             "Se l’uscita CloudKit fallisce, i dati locali restano per evitare di perdere contenuti senza aver completato l’uscita.",
@@ -161,7 +161,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "9. Passi consigliati",
         bullets: [
           [
-            "Partecipante: Altro → Famiglia → lascia lo spazio (se disponibile), poi eventualmente disinstalla.",
+            "Partecipante: Altro → La Famiglia → lascia lo spazio (se disponibile), poi eventualmente disinstalla.",
           ],
           [
             "Organizzatore: gestisci o revoca la share con i controlli Apple; rimuovi l’app dai dispositivi non più usati.",
@@ -271,7 +271,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "4. Leaving a family space (participant)",
         paragraphs: [
           [
-            "If you are a participant (not the organizer), More → Family lets you leave the family space. The app attempts to remove you from the CloudKit share; if that succeeds, it deletes that family’s data from this device.",
+            "If you are a participant (not the organizer), More → The Family lets you leave the family space. The app attempts to remove you from the CloudKit share; if that succeeds, it deletes that family’s data from this device.",
           ],
           [
             "If the CloudKit leave fails, local data is preserved so you do not lose content without completing the leave.",
@@ -327,7 +327,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "9. Suggested steps",
         bullets: [
           [
-            "Participant: More → Family → leave the space (when available), then uninstall if desired.",
+            "Participant: More → The Family → leave the space (when available), then uninstall if desired.",
           ],
           [
             "Organizer: manage or revoke the share with Apple controls; remove the app from unused devices.",
