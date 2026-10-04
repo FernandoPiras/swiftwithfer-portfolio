@@ -1,18 +1,18 @@
 export const FAMILYPLUS_PRIVACY_PATH = "/familyplus/privacy";
 export const FAMILYPLUS_PRIVACY_EN_PATH = "/familyplus/privacy/en";
-export const FAMILYPLUS_PRIVACY_UPDATED_ISO = "2026-08-25";
+export const FAMILYPLUS_PRIVACY_UPDATED_ISO = "2026-10-04";
 
 export const FAMILYPLUS_TERMS_PATH = "/familyplus/terms";
 export const FAMILYPLUS_TERMS_EN_PATH = "/familyplus/terms/en";
-export const FAMILYPLUS_TERMS_UPDATED_ISO = "2026-08-25";
+export const FAMILYPLUS_TERMS_UPDATED_ISO = "2026-10-04";
 
 export const FAMILYPLUS_SUPPORT_PATH = "/familyplus/support";
 export const FAMILYPLUS_SUPPORT_EN_PATH = "/familyplus/support/en";
-export const FAMILYPLUS_SUPPORT_UPDATED_ISO = "2026-08-25";
+export const FAMILYPLUS_SUPPORT_UPDATED_ISO = "2026-10-04";
 
 export const FAMILYPLUS_DELETE_DATA_PATH = "/familyplus/delete-data";
 export const FAMILYPLUS_DELETE_DATA_EN_PATH = "/familyplus/delete-data/en";
-export const FAMILYPLUS_DELETE_DATA_UPDATED_ISO = "2026-08-29";
+export const FAMILYPLUS_DELETE_DATA_UPDATED_ISO = "2026-10-04";
 
 export const FAMILYPLUS_LEGAL_EN_PATHS = [
   FAMILYPLUS_PRIVACY_EN_PATH,

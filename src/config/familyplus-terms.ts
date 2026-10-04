@@ -49,9 +49,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Termini di utilizzo",
     lead:
-      "Questi Termini regolano l’uso di Family Plus su iOS e iPadOS: organizer famigliare local-first, condivisione via iCloud/CloudKit, promemoria e pubblicità tramite Google AdMob.",
+      "Questi Termini regolano l’uso di Family Plus su iPhone (iOS): organizer famigliare local-first, condivisione via iCloud/CloudKit, promemoria e pubblicità tramite Google AdMob.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "25 agosto 2026",
+    updatedDisplay: "4 ottobre 2026",
     updatedISO: FAMILYPLUS_TERMS_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -84,7 +84,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Descrizione del servizio",
         paragraphs: [
           [
-            "Family Plus è un organizer per famiglie su iPhone e iPad: calendario, spesa, attività, pasti, documenti, ricorrenze, promemoria e spazi famiglia condivisi.",
+            "Family Plus è un organizer per famiglie su iPhone (iOS, orientamento verticale): calendario, spesa, attività, pasti, documenti, ricorrenze, promemoria e spazi famiglia condivisi.",
           ],
           [
             "Funzioni, layout e disponibilità possono evolvere. Non promettiamo che ogni funzione resti identica nel tempo.",
@@ -150,7 +150,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "9. Notifiche e promemoria",
         paragraphs: [
           [
-            "I promemoria dipendono dai permessi di sistema, dalle impostazioni in-app e dallo stato del dispositivo. Non sono un servizio di allarme medico o di emergenza.",
+            "I promemoria dipendono dai permessi di sistema, dalle impostazioni in-app (incluso il programma dei promemoria sul dispositivo corrente) e dallo stato del dispositivo. Le preferenze del programma sono locali a questo iPhone e non vengono sincronizzate con CloudKit. Non sono un servizio di allarme medico o di emergenza.",
           ],
         ],
       },
@@ -315,9 +315,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Terms of Use",
     lead:
-      "These Terms govern use of Family Plus on iOS and iPadOS: a local-first family organizer, sharing via iCloud/CloudKit, reminders, and advertising through Google AdMob.",
+      "These Terms govern use of Family Plus on iPhone (iOS): a local-first family organizer, sharing via iCloud/CloudKit, reminders, and advertising through Google AdMob.",
     updatedLabel: "Last updated",
-    updatedDisplay: "August 25, 2026",
+    updatedDisplay: "October 4, 2026",
     updatedISO: FAMILYPLUS_TERMS_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -350,7 +350,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Service description",
         paragraphs: [
           [
-            "Family Plus is a family organizer for iPhone and iPad: calendar, shopping, tasks, meals, documents, occasions, reminders, and shared family spaces.",
+            "Family Plus is a family organizer for iPhone (iOS, portrait orientation): calendar, shopping, tasks, meals, documents, occasions, reminders, and shared family spaces.",
           ],
           [
             "Features, layout, and availability may evolve. We do not promise that every feature will remain identical over time.",
@@ -416,7 +416,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "9. Notifications and reminders",
         paragraphs: [
           [
-            "Reminders depend on system permission, in-app settings, and device state. They are not a medical or emergency alert service.",
+            "Reminders depend on system permission, in-app settings (including the reminder schedule on the current device), and device state. Schedule preferences are local to this iPhone and are not synced with CloudKit. They are not a medical or emergency alert service.",
           ],
         ],
       },

@@ -344,16 +344,16 @@ export const caseStudies: CaseStudyContent[] = [
     slug: "familyplus",
     appId: "familyplus",
     positioning:
-      "Tutta la famiglia, in un posto: un organizer iOS e iPadOS gratuito per coordinare il quotidiano — calendario, spesa, attività e informazioni familiari — con collaborazione via iCloud.",
+      "Tutta la famiglia, in un posto: un organizer per iPhone gratuito per coordinare il quotidiano — calendario, spesa, attività e informazioni familiari — con collaborazione via iCloud.",
     problem:
       "Coordinare una famiglia su più dispositivi spezza le informazioni: liste della spesa, eventi, compiti, pasti e documenti finiscono in chat, note e fogli diversi. Le app cloud-first chiedono account, sync opachi e spesso analytics; quelle solo locali non scalano quando serve collaborare.",
     solution:
-      "Family Plus unisce Today, Calendario, Spesa, Attività e Altro (Pasti, Ricorrenze, Documenti, Famiglia) in un'unica app SwiftUI. Local-first con SwiftData; collaborazione famiglia tramite CloudKit CKShare sul container iCloud.app.familyplus.FamilyPlus. Gratuita con AdMob (banner e interstitial) e consenso UMP — senza ATT, senza Sign in with Apple, senza backend custom e senza SDK di analytics.",
+      "Family Plus unisce Today, Calendario, Spesa, Attività e Altro (Famiglia, Me, Centro di controllo, Pasti, Ricorrenze, Documenti) in un'unica app SwiftUI per iPhone. Local-first con SwiftData; collaborazione famiglia tramite CloudKit CKShare sul container iCloud.app.familyplus.FamilyPlus. Gratuita con AdMob (banner e interstitial) e consenso UMP — senza ATT, senza Sign in with Apple, senza backend custom e senza SDK di analytics.",
     architecture:
       "SwiftData local-first; sync e condivisione famiglia via CloudKit CKShare (iCloud.app.familyplus.FamilyPlus); notifiche collaborative e silent push CloudKit.",
     architectureFlow: [
       "Famiglia",
-      "App iOS / iPadOS",
+      "App iPhone (iOS)",
       "SwiftData locale",
       "CloudKit CKShare",
       "Moduli organizer",
@@ -361,12 +361,12 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     features: [
       "Schede Today, Calendario, Spesa, Attività e Altro",
-      "Pasti, Ricorrenze, Documenti e Famiglia in Altro",
+      "Famiglia, Me, Centro di controllo, Pasti, Ricorrenze e Documenti in Altro",
       "Local-first con SwiftData sul dispositivo",
       "Spazi famiglia con CloudKit CKShare (iCloud.app.familyplus.FamilyPlus)",
-      "Layout adattivo iPhone e iPad (non uno stretch del telefono)",
+      "Esperienza iPhone in orientamento verticale",
       "Storico delle uscite spesa",
-      "Notifiche locali collaborative e silent push CloudKit",
+      "Notifiche locali con programma personalizzabile sul dispositivo",
       "Interfaccia in italiano e inglese",
       "Gratuita con AdMob (banner e interstitial) e consenso UMP",
       "Nessun ATT, nessun Sign in with Apple, nessun backend custom",
@@ -473,22 +473,16 @@ export const caseStudies: CaseStudyContent[] = [
         ],
       },
       {
-        title: "Nativo su iPhone e iPad",
+        title: "Documenti di famiglia",
         description:
-          "Layout adattivo: su iPad l’esperienza è pensata per il canvas ampio, non uno stretch del telefono.",
-        layout: "pair",
+          "Archivio famiglia con allegati, nello stesso spazio delle altre attività quotidiane.",
+        layout: "hero",
         images: [
           {
-            src: "/images/apps/familyplus/ipad-today.webp",
-            alt: "Family Plus — Today su iPad Pro in portrait",
-            caption: "iPad · Today",
-            device: "ipad",
-          },
-          {
-            src: "/images/apps/familyplus/ipad-more.webp",
-            alt: "Family Plus — Altro su iPad con layout a colonna singola e Legale e supporto",
-            caption: "iPad · Altro",
-            device: "ipad",
+            src: "/images/apps/familyplus/documents.webp",
+            alt: "Family Plus — Documenti di famiglia su iPhone",
+            caption: "Documenti",
+            device: "iphone",
           },
         ],
       },
@@ -507,8 +501,8 @@ export const caseStudies: CaseStudyContent[] = [
         reason: "Meno superficie operativa e di privacy: sync e share restano nel perimetro iCloud/CloudKit.",
       },
       {
-        title: "Layout adattivo iPhone e iPad",
-        reason: "Esperienza nativa su entrambe le form factor, non un layout telefono allargato.",
+        title: "iPhone only, portrait",
+        reason: "Focus su un’unica esperienza iPhone verticale, coerente e semplice da mantenere.",
       },
       {
         title: "Monetizzazione AdMob + UMP",
@@ -522,21 +516,21 @@ export const caseStudies: CaseStudyContent[] = [
     productTimeline: [...PRODUCT_TIMELINE],
     qualitySignals: [
       "Live su App Store",
-      "iPhone e iPad",
+      "iPhone",
       "Local-first",
       "CloudKit CKShare",
       "IT / EN",
       "Gratuita",
     ],
-    capabilities: ["CloudKit", "Privacy", "Performance", "iPadOS", "Accessibilità"],
+    capabilities: ["CloudKit", "Privacy", "Performance", "Accessibilità"],
     challenges: [
       "Collaborazione famiglia affidabile con CKShare senza backend proprietario",
       "Coerenza local-first quando iCloud o la rete non sono disponibili",
       "Organizer multi-modulo (spesa, calendario, attività, pasti, documenti) con UX chiara",
-      "Layout adattivo iPhone/iPad e notifiche collaborative coerenti tra partecipanti",
+      "Notifiche locali e collaborative coerenti tra partecipanti",
     ],
     results: [
-      "App live su App Store (iOS e iPadOS)",
+      "App live su App Store per iPhone",
       "Flusso famiglia end-to-end: spazio, invito CKShare, sync e moduli condivisi",
       "Documentazione legale pubblica (Privacy, Termini, Supporto, Eliminazione dati)",
       "Prodotto gratuito local-first, senza account custom né analytics SDK",
@@ -547,10 +541,10 @@ export const caseStudies: CaseStudyContent[] = [
       "CloudKit CKShare",
       "Nessun backend custom",
       "IT / EN",
-      "iPhone + iPad",
+      "iPhone",
     ],
     seoDescription:
-      "Case study Family Plus: organizer famiglia iOS e iPadOS live su App Store, local-first con SwiftData e CloudKit CKShare, spesa, calendario, attività e privacy senza backend custom.",
+      "Case study Family Plus: organizer famiglia per iPhone live su App Store, local-first con SwiftData e CloudKit CKShare, spesa, calendario, attività e privacy senza backend custom.",
   },
   {
     slug: "gynometrics",

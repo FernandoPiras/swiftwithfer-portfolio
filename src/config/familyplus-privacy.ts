@@ -53,9 +53,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Informativa sulla privacy",
     lead:
-      "Questa informativa descrive come Family Plus tratta le informazioni nell’app iOS e iPadOS: contenuti di famiglia gestiti in locale e via iCloud/CloudKit, preferenze sul dispositivo, notifiche, e l’uso di Google AdMob e Google User Messaging Platform (UMP) per la pubblicità.",
+      "Questa informativa descrive come Family Plus tratta le informazioni nell’app iPhone (iOS): contenuti di famiglia gestiti in locale e via iCloud/CloudKit, preferenze sul dispositivo, notifiche (incluso il programma dei promemoria), e l’uso di Google AdMob e Google User Messaging Platform (UMP) per la pubblicità.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "25 agosto 2026",
+    updatedDisplay: "4 ottobre 2026",
     updatedISO: FAMILYPLUS_PRIVACY_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -78,7 +78,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "1. Introduzione",
         paragraphs: [
           [
-            "Family Plus è un’app iOS e iPadOS per organizzare la vita di famiglia: calendario ed eventi, liste della spesa, attività, pasti, documenti, compleanni e ricorrenze, promemoria e spazi famiglia condivisi.",
+            "Family Plus è un’app per iPhone (iOS, orientamento verticale) per organizzare la vita di famiglia: calendario ed eventi, liste della spesa, attività, pasti, documenti, compleanni e ricorrenze, promemoria e spazi famiglia condivisi.",
           ],
           [
             "Questa pagina spiega pratiche verificabili rispetto al prodotto attuale. Distingue tra (A) contenuti e preferenze legati alle funzioni di organizzazione famigliare e (B) informazioni che tecnologie pubblicitarie di terze parti, in particolare Google Mobile Ads / AdMob e UMP, possono trattare.",
@@ -117,7 +117,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "3. Ambito",
         paragraphs: [
           [
-            "Questa informativa riguarda l’app Family Plus per iOS e iPadOS e le pagine legali/supporto pubblicate su fernandopiras.com relative a Family Plus.",
+            "Questa informativa riguarda l’app Family Plus per iPhone (iOS) e le pagine legali/supporto pubblicate su fernandopiras.com relative a Family Plus.",
           ],
           [
             "Non regola i trattamenti autonomi di Apple (iCloud, CloudKit, App Store, notifiche di sistema) né quelli autonomi di Google (AdMob, UMP e infrastrutture pubblicitarie). Per quei trattamenti valgono le rispettive informative.",
@@ -144,7 +144,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Family Plus è progettata local-first: i dati di organizzazione vengono salvati sul dispositivo principalmente con SwiftData. Scrivere in locale ha priorità; la sincronizzazione cloud, quando attiva, è eventuale.",
           ],
           [
-            "Alcune preferenze (ad esempio lingua dell’app, stato di onboarding, contatori tecnici legati alla frequenza degli annunci a schermo intero) restano sul dispositivo e non sono sincronizzate come contenuti di famiglia via CloudKit.",
+            "Alcune preferenze restano solo sul dispositivo corrente e non sono sincronizzate come contenuti di famiglia via CloudKit: ad esempio lingua dell’app, stato di onboarding, contatori tecnici legati alla frequenza degli annunci a schermo intero, e le preferenze del programma dei promemoria (anticipo per eventi/attività con orario e orari per eventi senza orario, ricorrenze e scadenze documenti). Queste preferenze di notifica non sono condivise con gli altri membri della famiglia.",
           ],
         ],
       },
@@ -193,10 +193,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "9. Notifiche e promemoria",
         paragraphs: [
           [
-            "Family Plus può usare le API di notifica di Apple per promemoria legati a eventi, attività e ricorrenze, secondo le preferenze che imposti nell’app e i permessi di sistema.",
+            "Family Plus può usare le API di notifica locali di Apple per promemoria legati a eventi, attività, ricorrenze e scadenze documenti, secondo le preferenze che imposti nell’app e i permessi di sistema.",
           ],
           [
-            "Le notifiche di promemoria non sono notifiche pubblicitarie. Puoi gestire autorizzazione e categorie dalle Impostazioni iOS/iPadOS e dalle impostazioni Promemoria di Family Plus.",
+            "Le notifiche di promemoria non sono notifiche pubblicitarie. Puoi gestire autorizzazione, categorie e programma dei promemoria da Altro → Centro di controllo (notifiche di questo dispositivo) e dalle Impostazioni iOS. Le preferenze del programma restano locali su questo iPhone: non vengono sincronizzate con CloudKit e non sono condivise con la famiglia.",
           ],
         ],
       },
@@ -277,10 +277,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "15. Scelte privacy e modifica del consenso",
         paragraphs: [
           [
-            "Dove UMP indica che è richiesto un punto di ingresso alle privacy options, Family Plus può mostrare in Altro → Impostazioni una voce per riaprire il modulo privacy di Google. Se UMP non richiede tale ingresso, la voce può non essere visibile.",
+            "Dove UMP indica che è richiesto un punto di ingresso alle privacy options, Family Plus può mostrare in Altro → Centro di controllo → La tua privacy una voce per riaprire il modulo privacy di Google. Se UMP non richiede tale ingresso, la voce può non essere visibile.",
           ],
           [
-            "Puoi anche gestire limiti pubblicitari e tracking dalle Impostazioni iOS/iPadOS (Privacy e sicurezza) e, ove disponibile, dalle scelte Google. Per assistenza vedi ",
+            "Puoi anche gestire limiti pubblicitari e tracking dalle Impostazioni iOS (Privacy e sicurezza) e, ove disponibile, dalle scelte Google. Per assistenza vedi ",
             { href: FAMILYPLUS_SUPPORT_PATH, label: "Supporto" },
             ".",
           ],
@@ -413,9 +413,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Privacy Policy",
     lead:
-      "This policy describes how Family Plus handles information in the iOS and iPadOS app: family content managed locally and via iCloud/CloudKit, on-device preferences, notifications, and Google AdMob plus Google User Messaging Platform (UMP) for advertising.",
+      "This policy describes how Family Plus handles information in the iPhone (iOS) app: family content managed locally and via iCloud/CloudKit, on-device preferences, notifications (including the reminder schedule), and Google AdMob plus Google User Messaging Platform (UMP) for advertising.",
     updatedLabel: "Last updated",
-    updatedDisplay: "August 25, 2026",
+    updatedDisplay: "October 4, 2026",
     updatedISO: FAMILYPLUS_PRIVACY_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -438,7 +438,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "1. Introduction",
         paragraphs: [
           [
-            "Family Plus is an iOS and iPadOS app for organizing family life: calendar and events, shopping lists, tasks, meals, documents, birthdays and occasions, reminders, and shared family spaces.",
+            "Family Plus is an iPhone app (iOS, portrait orientation) for organizing family life: calendar and events, shopping lists, tasks, meals, documents, birthdays and occasions, reminders, and shared family spaces.",
           ],
           [
             "This page describes practices that match the current product. It separates (A) content and preferences tied to family-organizer features from (B) information that third-party advertising technologies—especially Google Mobile Ads / AdMob and UMP—may process.",
@@ -477,7 +477,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "3. Scope",
         paragraphs: [
           [
-            "This policy covers the Family Plus iOS/iPadOS app and Family Plus legal/support pages on fernandopiras.com.",
+            "This policy covers the Family Plus iPhone (iOS) app and Family Plus legal/support pages on fernandopiras.com.",
           ],
           [
             "It does not govern Apple’s own processing (iCloud, CloudKit, App Store, system notifications) or Google’s own processing (AdMob, UMP, advertising infrastructure). Those providers apply their own policies.",
@@ -504,7 +504,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "Family Plus is local-first: organizer data is stored on device primarily with SwiftData. Local writes succeed first; cloud sync, when enabled, is eventual.",
           ],
           [
-            "Some preferences (for example app language, onboarding completion, and minimal counters for interstitial frequency) remain device-local and are not synced as family content through CloudKit.",
+            "Some preferences remain only on the current device and are not synced as family content through CloudKit: for example app language, onboarding completion, minimal counters for interstitial frequency, and reminder-schedule preferences (lead time for timed events/tasks and clock times for untimed events, occasions, and document expiry). Those notification preferences are not shared with other family members.",
           ],
         ],
       },
@@ -553,10 +553,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "9. Notifications and reminders",
         paragraphs: [
           [
-            "Family Plus may use Apple notification APIs for reminders related to events, tasks, and occasions, according to in-app preferences and system permission.",
+            "Family Plus may use Apple local notification APIs for reminders related to events, tasks, occasions, and document expiry, according to in-app preferences and system permission.",
           ],
           [
-            "Reminder notifications are not advertising notifications. You can manage authorization and categories in iOS/iPadOS Settings and in Family Plus Reminder settings.",
+            "Reminder notifications are not advertising notifications. You can manage authorization, categories, and the reminder schedule from More → Control Center (what this device remembers) and in iOS Settings. Schedule preferences stay local on this iPhone: they are not synced with CloudKit and are not shared with the family.",
           ],
         ],
       },
@@ -637,10 +637,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "15. Privacy choices and changing consent",
         paragraphs: [
           [
-            "When UMP reports that a privacy-options entry point is required, Family Plus may show a Settings row under More to reopen Google’s privacy form. If UMP does not require that entry point, the row may not appear.",
+            "When UMP reports that a privacy-options entry point is required, Family Plus may show a row under More → Control Center → Your privacy to reopen Google’s privacy form. If UMP does not require that entry point, the row may not appear.",
           ],
           [
-            "You can also manage advertising and tracking limits in iOS/iPadOS Settings (Privacy & Security) and, where available, through Google choices. See ",
+            "You can also manage advertising and tracking limits in iOS Settings (Privacy & Security) and, where available, through Google choices. See ",
             { href: FAMILYPLUS_SUPPORT_EN_PATH, label: "Support" },
             " for help.",
           ],

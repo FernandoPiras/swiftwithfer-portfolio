@@ -211,7 +211,7 @@ export const siteConfig = {
       year: "2026",
       title: "Family Plus",
       description:
-        "Organizer famiglia iOS e iPadOS live su App Store: Today, calendario, spesa e attività condivisi via iCloud.",
+        "Organizer famiglia per iPhone live su App Store: Today, calendario, spesa e attività condivisi via iCloud.",
     },
     {
       year: "2026",
@@ -361,9 +361,9 @@ export const siteConfig = {
       name: "Family Plus",
       tagline: "Tutta la famiglia. Tutto in un posto. Gratis. Davvero.",
       description:
-        "Organizer famiglia nativo per iOS e iPadOS: Today, calendario, spesa, attività, pasti, ricorrenze e documenti in un unico spazio. Local-first con SwiftData; collaborazione famiglia tramite iCloud e CloudKit CKShare — gratuita, in italiano e inglese, senza account custom né backend proprietario.",
+        "Organizer famiglia nativo per iPhone (iOS): Today, calendario, spesa, attività, pasti, ricorrenze e documenti in un unico spazio. Local-first con SwiftData; collaborazione famiglia tramite iCloud e CloudKit CKShare — gratuita, in italiano e inglese, senza account custom né backend proprietario.",
       outcomes: [
-        "Disponibile su App Store, iPhone e iPad",
+        "Disponibile su App Store per iPhone",
         "Spazi famiglia condivisi via iCloud",
         "Gratuita, local-first, senza account custom",
       ],
@@ -376,7 +376,7 @@ export const siteConfig = {
         "/images/apps/familyplus/calendar.webp",
         "/images/apps/familyplus/tasks.webp",
         "/images/apps/familyplus/meals.webp",
-        "/images/apps/familyplus/ipad-today.webp",
+        "/images/apps/familyplus/occasions.webp",
       ],
       screenshotAlts: [
         "Family Plus — Today su iPhone",
@@ -384,7 +384,7 @@ export const siteConfig = {
         "Family Plus — Calendario famiglia su iPhone",
         "Family Plus — Attività su iPhone",
         "Family Plus — Pasti su iPhone",
-        "Family Plus — Today su iPad",
+        "Family Plus — Compleanni e ricorrenze su iPhone",
       ],
       technologies: ["SwiftUI", "SwiftData", "CloudKit", "CKShare"],
       appStoreUrl: "https://apps.apple.com/it/app/family-plus/id6806600854",

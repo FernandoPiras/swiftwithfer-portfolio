@@ -38,9 +38,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Supporto",
     lead:
-      "Aiuto per Family Plus su iPhone e iPad: spazi famiglia, iCloud, sync, spesa, calendario, attività, pasti, documenti, ricorrenze, promemoria, lingua e scelte pubblicitarie.",
+      "Aiuto per Family Plus su iPhone (iOS): spazi famiglia, iCloud, sync, spesa, calendario, attività, pasti, documenti, ricorrenze, promemoria e programma notifiche, lingua e scelte pubblicitarie.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "25 agosto 2026",
+    updatedDisplay: "4 ottobre 2026",
     updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -56,7 +56,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     contactEmail,
     summaryTitle: "Prima di scrivere",
     summaryBody:
-      "Indica versione dell’app, modello dispositivo, versione iOS/iPadOS e i passaggi per riprodurre il problema. Per privacy e annunci consulta anche l’Informativa sulla privacy.",
+      "Indica versione dell’app, modello iPhone, versione iOS e i passaggi per riprodurre il problema. Per privacy e annunci consulta anche l’Informativa sulla privacy.",
     sections: [
       {
         id: "contatti",
@@ -92,7 +92,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Per iniziare",
         paragraphs: [
           [
-            "Dopo l’onboarding (se mostrato), usa le schede Oggi, Calendario, Spesa, Attività e Altro. In Altro trovi Famiglia, Pasti, Compleanni e ricorrenze, Documenti, Promemoria e Lingua.",
+            "Dopo l’onboarding (se mostrato), usa le schede Oggi, Calendario, Spesa, Attività e Altro. In Altro trovi Famiglia, Me, Centro di controllo, Pasti, Compleanni e ricorrenze e Documenti. Promemoria, lingua e scelte privacy sono in Altro → Centro di controllo.",
           ],
           [
             "Per collaborare con altre persone crea o unisciti a uno spazio famiglia da Altro → Famiglia. Serve tipicamente iCloud.",
@@ -137,7 +137,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Promemoria",
         paragraphs: [
           [
-            "In Altro → Promemoria puoi attivare i promemoria e le categorie. Servono i permessi di notifica di sistema. I promemoria non sono annunci.",
+            "In Altro → Centro di controllo apri le notifiche di questo dispositivo per attivare i promemoria, le categorie e il programma (anticipo per eventi/attività con orario; orario per eventi senza orario, ricorrenze e scadenze documenti). Servono i permessi di notifica di sistema. Queste preferenze restano locali su questo iPhone: non sincronizzano con CloudKit e non sono condivise con la famiglia. I promemoria non sono annunci.",
           ],
         ],
       },
@@ -146,7 +146,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Lingua",
         paragraphs: [
           [
-            "In Altro → Lingua puoi scegliere Automatico, Italiano o English. La lingua dell’app non determina il consenso pubblicitario geografico (UMP).",
+            "In Altro → Centro di controllo → Family Plus nella tua lingua puoi scegliere Automatico, Italiano o English. La lingua dell’app non determina il consenso pubblicitario geografico (UMP).",
           ],
         ],
       },
@@ -158,7 +158,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Family Plus è gratuita e mostra annunci Google AdMob (banner sulle schede operative principali e, a volte, interstitial a frequenza limitata). Onboarding, Family Hub, Documenti, Promemoria e Lingua non mostrano banner.",
           ],
           [
-            "Se Google UMP richiede un ingresso alle privacy options, compare una voce in Impostazioni per riaprire il modulo Google. Se non è richiesto, la voce può non apparire. Dettagli: ",
+            "Se Google UMP richiede un ingresso alle privacy options, compare una voce in Altro → Centro di controllo → La tua privacy per riaprire il modulo Google. Se non è richiesto, la voce può non apparire. Dettagli: ",
             { href: FAMILYPLUS_PRIVACY_PATH, label: "Informativa sulla privacy" },
             ".",
           ],
@@ -218,7 +218,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — Perché non ricevo i promemoria?",
         paragraphs: [
           [
-            "Controlla Impostazioni iOS → Notifiche → Family Plus, lo switch principale e le categorie in Altro → Promemoria, e che eventi/attività/ricorrenze abbiano orari coerenti. In Low Power o Focus iOS può ritardare le notifiche.",
+            "Controlla Impostazioni iOS → Notifiche → Family Plus, poi Altro → Centro di controllo → notifiche di questo dispositivo (switch, categorie e programma), e che eventi/attività/ricorrenze abbiano orari coerenti. In Low Power o Focus iOS può ritardare le notifiche.",
           ],
         ],
       },
@@ -236,7 +236,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — Come cambio le scelte pubblicitarie?",
         paragraphs: [
           [
-            "Se presente, usa Altro → Impostazioni → Scelte privacy (o etichetta equivalente) per riaprire il modulo Google. Altrimenti usa Impostazioni iOS → Privacy e sicurezza e le opzioni Google disponibili. La voce in-app compare solo quando UMP la richiede.",
+            "Se presente, usa Altro → Centro di controllo → La tua privacy per riaprire il modulo Google. Altrimenti usa Impostazioni iOS → Privacy e sicurezza e le opzioni Google disponibili. La voce in-app compare solo quando UMP la richiede.",
           ],
         ],
       },
@@ -271,9 +271,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Support",
     lead:
-      "Help for Family Plus on iPhone and iPad: family spaces, iCloud, sync, shopping, calendar, tasks, meals, documents, occasions, reminders, language, and advertising privacy choices.",
+      "Help for Family Plus on iPhone (iOS): family spaces, iCloud, sync, shopping, calendar, tasks, meals, documents, occasions, reminders and notification schedule, language, and advertising privacy choices.",
     updatedLabel: "Last updated",
-    updatedDisplay: "August 25, 2026",
+    updatedDisplay: "October 4, 2026",
     updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -289,7 +289,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     contactEmail,
     summaryTitle: "Before you write",
     summaryBody:
-      "Include app version, device model, iOS/iPadOS version, and steps to reproduce. For privacy and ads, also see the Privacy Policy.",
+      "Include app version, iPhone model, iOS version, and steps to reproduce. For privacy and ads, also see the Privacy Policy.",
     sections: [
       {
         id: "contact",
@@ -328,7 +328,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Getting started",
         paragraphs: [
           [
-            "After onboarding (when shown), use Today, Calendar, Shopping, Tasks, and More. Under More you will find Family, Meals, Birthdays & occasions, Documents, Reminders, and Language.",
+            "After onboarding (when shown), use Today, Calendar, Shopping, Tasks, and More. Under More you will find Family, Me, Control Center, Meals, Birthdays & occasions, and Documents. Reminders, language, and privacy choices are under More → Control Center.",
           ],
           [
             "To collaborate, create or join a family space from More → Family. iCloud is typically required.",
@@ -373,7 +373,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Reminders",
         paragraphs: [
           [
-            "Under More → Reminders you can enable reminders and categories. System notification permission is required. Reminders are not ads.",
+            "Under More → Control Center, open what this device remembers to enable reminders, categories, and the schedule (lead time for timed events/tasks; clock times for untimed events, occasions, and document expiry). System notification permission is required. These preferences stay local on this iPhone: they do not sync with CloudKit and are not shared with the family. Reminders are not ads.",
           ],
         ],
       },
@@ -382,7 +382,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Language",
         paragraphs: [
           [
-            "Under More → Language you can choose Automatic, Italian, or English. App language does not determine advertising consent geography (UMP).",
+            "Under More → Control Center → Family Plus in your language you can choose Automatic, Italian, or English. App language does not determine advertising consent geography (UMP).",
           ],
         ],
       },
@@ -394,7 +394,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "Family Plus is free and shows Google AdMob ads (banners on main operational tabs and, sometimes, frequency-capped interstitials). Onboarding, Family Hub, Documents, Reminders, and Language do not show banners.",
           ],
           [
-            "If Google UMP requires a privacy-options entry point, a Settings row appears to reopen Google’s form. If not required, the row may be hidden. Details: ",
+            "If Google UMP requires a privacy-options entry point, a row appears under More → Control Center → Your privacy to reopen Google’s form. If not required, the row may be hidden. Details: ",
             { href: FAMILYPLUS_PRIVACY_EN_PATH, label: "Privacy Policy" },
             ".",
           ],
@@ -454,7 +454,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — Why aren’t reminders appearing?",
         paragraphs: [
           [
-            "Check iOS Settings → Notifications → Family Plus, the master switch and categories under More → Reminders, and that events/tasks/occasions have coherent times. Low Power Mode or Focus may delay notifications.",
+            "Check iOS Settings → Notifications → Family Plus, then More → Control Center → what this device remembers (master switch, categories, and schedule), and that events/tasks/occasions have coherent times. Low Power Mode or Focus may delay notifications.",
           ],
         ],
       },
@@ -472,7 +472,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — How do I change advertising privacy choices?",
         paragraphs: [
           [
-            "If shown, use More → Settings → Privacy choices (or equivalent label) to reopen Google’s form. Otherwise use iOS Settings → Privacy & Security and available Google options. The in-app row appears only when UMP requires it.",
+            "If shown, use More → Control Center → Your privacy to reopen Google’s form. Otherwise use iOS Settings → Privacy & Security and available Google options. The in-app row appears only when UMP requires it.",
           ],
         ],
       },

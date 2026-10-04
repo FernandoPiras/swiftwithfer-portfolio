@@ -40,7 +40,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Family Plus non ha un account email/password gestito dallo sviluppatore. Questa pagina spiega cosa puoi rimuovere sul dispositivo, cosa resta in iCloud/CloudKit e come lasciare uno spazio famiglia.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "29 agosto 2026",
+    updatedDisplay: "4 ottobre 2026",
     updatedISO: FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -75,7 +75,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Cosa resta sul dispositivo",
         paragraphs: [
           [
-            "Sul dispositivo Family Plus conserva in locale (SwiftData e file di allegato, più preferenze) contenuti come liste della spesa, attività, eventi, pasti, ricorrenze, documenti, membri e cronologia uscite spesa, oltre a preferenze (lingua, onboarding, limiti di frequenza annunci).",
+            "Sul dispositivo Family Plus conserva in locale (SwiftData e file di allegato, più preferenze) contenuti come liste della spesa, attività, eventi, pasti, ricorrenze, documenti, membri e cronologia uscite spesa, oltre a preferenze (lingua, onboarding, limiti di frequenza annunci, e programma dei promemoria su questo dispositivo).",
           ],
           [
             "Disinstallare Family Plus rimuove i dati dell’app da quel dispositivo. Non cancella automaticamente i contenuti già presenti nello spazio famiglia iCloud di altre persone.",
@@ -141,7 +141,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "7. Notifiche",
         paragraphs: [
           [
-            "I promemoria e le notifiche di attività collaborativa sono gestiti sul dispositivo. Disinstallare l’app o revocare i permessi di notifica interrompe queste notifiche locali. Le sottoscrizioni silent per la sync dipendono da iCloud/Apple.",
+            "I promemoria (incluse le preferenze del programma) e le notifiche di attività collaborativa sono gestiti sul dispositivo. Disinstallare l’app o revocare i permessi di notifica interrompe queste notifiche locali. Le preferenze del programma non sono in CloudKit. Le sottoscrizioni silent per la sync dipendono da iCloud/Apple.",
           ],
         ],
       },
@@ -150,7 +150,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "8. Pubblicità e scelte privacy",
         paragraphs: [
           [
-            "Google AdMob e UMP possono conservare stato di consenso e identificatori tecnici secondo le regole Google. Disinstallare l’app rimuove lo stato locale; non equivale a cancellare tutti i trattamenti Google su altri servizi. Dove UMP lo richiede, in Altro puoi riaprire le privacy options di Google. Vedi anche ",
+            "Google AdMob e UMP possono conservare stato di consenso e identificatori tecnici secondo le regole Google. Disinstallare l’app rimuove lo stato locale; non equivale a cancellare tutti i trattamenti Google su altri servizi. Dove UMP lo richiede, in Altro → Centro di controllo → La tua privacy puoi riaprire le privacy options di Google. Vedi anche ",
             { href: FAMILYPLUS_PRIVACY_PATH, label: "Informativa sulla privacy" },
             ".",
           ],
@@ -206,7 +206,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Family Plus has no developer-hosted email/password account. This page explains what you can remove on device, what may remain in iCloud/CloudKit, and how leaving a family space works.",
     updatedLabel: "Last updated",
-    updatedDisplay: "August 29, 2026",
+    updatedDisplay: "October 4, 2026",
     updatedISO: FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -241,7 +241,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. What stays on the device",
         paragraphs: [
           [
-            "On device, Family Plus stores family content locally (SwiftData and attachment files, plus preferences): shopping lists, tasks, events, meals, occasions, documents, members, shopping-trip history, and preferences such as language, onboarding, and ad frequency limits.",
+            "On device, Family Plus stores family content locally (SwiftData and attachment files, plus preferences): shopping lists, tasks, events, meals, occasions, documents, members, shopping-trip history, and preferences such as language, onboarding, ad frequency limits, and the reminder schedule on this device.",
           ],
           [
             "Uninstalling Family Plus removes the app’s data from that device. It does not automatically erase content already present in other people’s shared iCloud family space.",
@@ -307,7 +307,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "7. Notifications",
         paragraphs: [
           [
-            "Reminders and collaborative activity alerts are handled on device. Uninstalling or revoking notification permission stops those local notifications. Silent subscriptions used for sync depend on iCloud/Apple.",
+            "Reminders (including schedule preferences) and collaborative activity alerts are handled on device. Uninstalling or revoking notification permission stops those local notifications. Schedule preferences are not in CloudKit. Silent subscriptions used for sync depend on iCloud/Apple.",
           ],
         ],
       },
@@ -316,7 +316,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "8. Advertising and privacy choices",
         paragraphs: [
           [
-            "Google AdMob and UMP may keep consent state and technical identifiers under Google’s rules. Uninstalling clears local state; it is not a full erasure of Google processing elsewhere. Where UMP requires it, More may offer Google’s privacy options. See also the ",
+            "Google AdMob and UMP may keep consent state and technical identifiers under Google’s rules. Uninstalling clears local state; it is not a full erasure of Google processing elsewhere. Where UMP requires it, More → Control Center → Your privacy may offer Google’s privacy options. See also the ",
             { href: FAMILYPLUS_PRIVACY_EN_PATH, label: "Privacy Policy" },
             ".",
           ],

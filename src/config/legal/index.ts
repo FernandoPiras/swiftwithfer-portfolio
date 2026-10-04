@@ -116,7 +116,7 @@ export const legalApps: readonly LegalApp[] = [
     id: "familyplus",
     name: "Family Plus",
     blurb:
-      "Organizer famigliare local-first con iCloud/CloudKit: privacy, termini, supporto ed eliminazione dati dell’app iOS e iPadOS, inclusa la pubblicità AdMob/UMP.",
+      "Organizer famigliare local-first con iCloud/CloudKit: privacy, termini, supporto ed eliminazione dati dell’app iPhone (iOS), inclusa la pubblicità AdMob/UMP.",
     icon: "/images/apps/familyplus/icon.png",
     caseStudyHref: "/apps/familyplus",
     documents: [
@@ -129,7 +129,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Informativa privacy di Family Plus: dati locali, iCloud/CloudKit, condivisione famiglia, Google AdMob, UMP e scelte pubblicitarie.",
         updatedISO: FAMILYPLUS_PRIVACY_UPDATED_ISO,
-        updatedDisplay: "25 agosto 2026",
+        updatedDisplay: "4 ottobre 2026",
         sections: [],
         renderer: "familyplus-privacy",
         extraLocales: [{ label: "English", href: FAMILYPLUS_PRIVACY_EN_PATH }],
@@ -143,7 +143,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Termini di utilizzo di Family Plus: app gratuita con pubblicità, iCloud, spazi famiglia, contenuti utente e responsabilità.",
         updatedISO: FAMILYPLUS_TERMS_UPDATED_ISO,
-        updatedDisplay: "25 agosto 2026",
+        updatedDisplay: "4 ottobre 2026",
         sections: [],
         renderer: "familyplus-terms",
         extraLocales: [{ label: "English", href: FAMILYPLUS_TERMS_EN_PATH }],
@@ -157,7 +157,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Supporto ufficiale Family Plus: famiglia iCloud, sync, moduli organizer, promemoria, lingua e privacy pubblicitaria.",
         updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
-        updatedDisplay: "25 agosto 2026",
+        updatedDisplay: "4 ottobre 2026",
         sections: [],
         renderer: "familyplus-support",
         extraLocales: [{ label: "English", href: FAMILYPLUS_SUPPORT_EN_PATH }],
@@ -171,7 +171,7 @@ export const legalApps: readonly LegalApp[] = [
         metaDescription:
           "Come rimuovere i dati di Family Plus: dati locali, lasciare uno spazio famiglia, limiti di iCloud/CloudKit e disinstallazione.",
         updatedISO: FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
-        updatedDisplay: "29 agosto 2026",
+        updatedDisplay: "4 ottobre 2026",
         sections: [],
         renderer: "familyplus-delete-data",
         extraLocales: [
