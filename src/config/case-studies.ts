@@ -18,7 +18,8 @@ export interface CaseStudyVisualImage {
   src: string;
   alt: string;
   caption?: string;
-  device?: "iphone" | "ipad";
+  /** iphone/ipad → device frame; canvas → full marketing/story slide (no double frame) */
+  device?: "iphone" | "ipad" | "canvas";
 }
 
 /** Narrative product visuals placed near the matching case-study story. */
@@ -344,145 +345,217 @@ export const caseStudies: CaseStudyContent[] = [
     slug: "familyplus",
     appId: "familyplus",
     positioning:
-      "Tutta la famiglia, in un posto: un organizer per iPhone gratuito per coordinare il quotidiano — calendario, spesa, attività e informazioni familiari — con collaborazione via iCloud.",
+      "Tutta la famiglia, in un posto. Un organizer per iPhone — caldo, minimale, local-first — per sapere cosa conta oggi e restare sincronizzati via iCloud.",
     problem:
-      "Coordinare una famiglia su più dispositivi spezza le informazioni: liste della spesa, eventi, compiti, pasti e documenti finiscono in chat, note e fogli diversi. Le app cloud-first chiedono account, sync opachi e spesso analytics; quelle solo locali non scalano quando serve collaborare.",
+      "La vita di famiglia si spezza tra chat, note e liste diverse. Quello che serve oggi — la spesa, l’impegno, il pasto, la ricorrenza — non ha un posto quieto in cui vivere insieme.",
     solution:
-      "Family Plus unisce Today, Calendario, Spesa, Attività e Altro (Famiglia, Me, Centro di controllo, Pasti, Ricorrenze, Documenti) in un'unica app SwiftUI per iPhone. Local-first con SwiftData; collaborazione famiglia tramite CloudKit CKShare sul container iCloud.app.familyplus.FamilyPlus. Gratuita con AdMob (banner e interstitial) e consenso UMP — senza ATT, senza Sign in with Apple, senza backend custom e senza SDK di analytics.",
+      "Family Plus è pensata per la famiglia, non per il produttività-teatro. Casa raccoglie la giornata; Calendario, Spesa e Attività la coordinano; La Famiglia e Io tengono le persone; Centro di controllo e La Storia restano discreti. Local-first su iPhone, condivisione Apple via CloudKit — senza account custom, senza abbonamenti.",
     architecture:
-      "SwiftData local-first; sync e condivisione famiglia via CloudKit CKShare (iCloud.app.familyplus.FamilyPlus); notifiche collaborative e silent push CloudKit.",
+      "iPhone only · SwiftData local-first · CloudKit CKShare per La Famiglia · notifiche locali con programma sul dispositivo · AdMob + UMP, senza ATT.",
     architectureFlow: [
-      "Famiglia",
-      "App iPhone (iOS)",
+      "La Famiglia",
+      "iPhone",
       "SwiftData locale",
       "CloudKit CKShare",
-      "Moduli organizer",
-      "Notifiche collaborative",
+      "Centro di controllo",
+      "Promemoria locali",
+    ],
+    ecosystem: [
+      {
+        title: "Family Home",
+        summary:
+          "Casa: lo snapshot della giornata — priorità, impegni e Tavola — così la famiglia sa dove guardare per prima.",
+      },
+      {
+        title: "Family Table · Family Memory",
+        summary:
+          "Tavola e Memoria restano nella stessa casa digitale: pasti della settimana e documenti che contano, insieme alla vita quotidiana.",
+      },
+      {
+        title: "The Family · Me · Control Center",
+        summary:
+          "La Famiglia, Io, e un Centro di controllo quieto — lingua, privacy, programma notifiche, Story.",
+      },
     ],
     features: [
-      "Schede Today, Calendario, Spesa, Attività e Altro",
-      "Famiglia, Me, Centro di controllo, Pasti, Ricorrenze e Documenti in Altro",
-      "Local-first con SwiftData sul dispositivo",
-      "Spazi famiglia con CloudKit CKShare (iCloud.app.familyplus.FamilyPlus)",
-      "Esperienza iPhone in orientamento verticale",
-      "Storico delle uscite spesa",
-      "Notifiche locali con programma personalizzabile sul dispositivo",
-      "Interfaccia in italiano e inglese",
-      "Gratuita con AdMob (banner e interstitial) e consenso UMP",
-      "Nessun ATT, nessun Sign in with Apple, nessun backend custom",
+      "Casa — la giornata in un respiro",
+      "Calendario e Attività — ritmo condiviso",
+      "Spesa — lista viva e Conoscenza per aggiungere senza frizione",
+      "Tavola — la settimana a tavola",
+      "Memoria — documenti e carte di famiglia",
+      "Compleanni e ricorrenze — le date che contano",
+      "La Famiglia — inviti e condivisione iCloud",
+      "Io e Centro di controllo — presenza, privacy, programma notifiche",
+      "La Storia — perché esiste Family Plus",
+      "iPhone only, verticale, gratis",
     ],
     featureGroups: [
       {
-        title: "Organizza la famiglia",
-        description: "Oggi, calendario e attività in un unico ritmo quotidiano.",
+        title: "Perché esiste Family Home",
+        description:
+          "Non un dashboard: Casa — un solo posto in cui la giornata della famiglia diventa leggibile.",
         items: [
-          "Today con priorità, eventi e pasti del giorno",
-          "Calendario famiglia condiviso",
-          "Attività con scadenze e priorità",
+          "Cosa non perdere, cosa arriva dopo, cosa c’è in programma",
+          "Spesa e attività a portata di sguardo",
+          "Il tono della casa, non della produttività",
         ],
       },
       {
-        title: "Spesa che riparte da dove eri rimasto",
-        description: "Liste vive e storico delle uscite, senza ricostruire ogni volta.",
+        title: "Calendario, Spesa, Attività, Knowledge",
+        description:
+          "Coordinare senza ricostruire ogni volta — e aggiungere alla Spesa con Conoscenza (Knowledge).",
         items: [
-          "Lista spesa con progresso chiaro",
-          "Riutilizzo dell’ultima spesa",
-          "Storico delle uscite completate",
+          "Calendario e Attività nello stesso spazio famiglia",
+          "Spesa che riparte da dove eri rimasto",
+          "Conoscenza: prodotti e sinonimi per trovare subito cosa serve",
         ],
       },
       {
-        title: "Vita quotidiana in Altro",
-        description: "Pasti, ricorrenze e documenti restano nella stessa app.",
+        title: "Tavola, Memoria, ricorrenze",
+        description:
+          "Quello che resta nel tempo — Tavola, Memoria (documenti), compleanni e ricorrenze — senza uscire dall’app.",
         items: [
-          "Pianificazione pasti della settimana",
-          "Compleanni e ricorrenze",
-          "Documenti di famiglia a portata di mano",
+          "Tavola: la settimana a tavola",
+          "Memoria: documenti e allegati di famiglia, senza banner",
+          "Compleanni e ricorrenze: le date che contano",
+        ],
+      },
+      {
+        title: "Persone e controllo quieto",
+        description:
+          "The Family per condividere; Me per esserci; Centro di controllo per le preferenze sul dispositivo.",
+        items: [
+          "La Famiglia — organizzatore, membri, inviti CKShare",
+          "Io — nome, presenza, porta al Centro di controllo",
+          "Notification Schedule — orari e anticipi locali, non in CloudKit",
+          "La Storia — valori e versione, senza rumore",
         ],
       },
     ],
     productVisuals: [
       {
-        title: "Tutta la famiglia, in un posto",
+        title: "Story — dove inizia Family Plus",
         description:
-          "Today raccoglie priorità, impegni e pasti del giorno — lo snapshot quotidiano della famiglia.",
+          "Il tono del prodotto: famiglia prima di tutto, in un unico posto.",
         layout: "hero",
         images: [
           {
-            src: "/images/apps/familyplus/today.webp",
-            alt: "Family Plus — Today su iPhone con priorità, eventi e pasti del giorno",
-            caption: "Today",
-            device: "iphone",
+            src: "/images/apps/familyplus/story-hero.jpg",
+            alt: "Family Plus — Story (La Storia) su iPhone",
+            caption: "Story",
+            device: "canvas",
           },
         ],
       },
       {
-        title: "Organizza la famiglia",
-        description: "Calendario e attività condividono lo stesso spazio famiglia.",
+        title: "Family Home",
+        description:
+          "Casa: la giornata della famiglia, raccolta con calma — priorità, impegni, Tavola.",
+        layout: "hero",
+        images: [
+          {
+            src: "/images/apps/familyplus/family-home.jpg",
+            alt: "Family Plus — Family Home (Casa) su iPhone",
+            caption: "Family Home",
+            device: "canvas",
+          },
+        ],
+      },
+      {
+        title: "Una giornata, insieme",
+        description:
+          "Calendario, Attività, Spesa, Tavola e Memoria — nello stesso spazio.",
         layout: "pair",
         images: [
           {
-            src: "/images/apps/familyplus/calendar.webp",
-            alt: "Family Plus — Calendario famiglia su iPhone",
+            src: "/images/apps/familyplus/story-day.jpg",
+            alt: "Family Plus — onboarding giornata insieme su iPhone",
+            caption: "Il ritmo",
+            device: "canvas",
+          },
+          {
+            src: "/images/apps/familyplus/calendar.jpg",
+            alt: "Family Plus — Calendario su iPhone",
             caption: "Calendario",
-            device: "iphone",
-          },
-          {
-            src: "/images/apps/familyplus/tasks.webp",
-            alt: "Family Plus — Attività e cose da fare su iPhone",
-            caption: "Attività",
-            device: "iphone",
+            device: "canvas",
           },
         ],
       },
       {
-        title: "La spesa, senza ripartire da zero",
-        description: "Lista attiva, riutilizzo e storico delle uscite.",
+        title: "Spesa e Attività",
+        description: "Liste vive e cose da fare — senza ripartire da zero ogni volta.",
         layout: "pair",
         images: [
           {
-            src: "/images/apps/familyplus/shopping.webp",
-            alt: "Family Plus — Lista spesa settimanale su iPhone",
+            src: "/images/apps/familyplus/shopping.jpg",
+            alt: "Family Plus — Spesa su iPhone",
             caption: "Spesa",
-            device: "iphone",
+            device: "canvas",
           },
           {
-            src: "/images/apps/familyplus/shopping-history.webp",
-            alt: "Family Plus — Storico spese completate su iPhone",
-            caption: "Storico spese",
-            device: "iphone",
+            src: "/images/apps/familyplus/activities.jpg",
+            alt: "Family Plus — Attività su iPhone",
+            caption: "Attività",
+            device: "canvas",
           },
         ],
       },
       {
-        title: "Vita quotidiana",
-        description: "Pasti e ricorrenze restano nel perimetro famiglia.",
+        title: "Family Table · Compleanni e ricorrenze",
+        description: "Tavola e le date che contano — nella stessa casa.",
         layout: "pair",
         images: [
           {
-            src: "/images/apps/familyplus/meals.webp",
-            alt: "Family Plus — Pianificazione pasti su iPhone",
-            caption: "Pasti",
-            device: "iphone",
+            src: "/images/apps/familyplus/family-table.jpg",
+            alt: "Family Plus — Family Table (Tavola) su iPhone",
+            caption: "Family Table",
+            device: "canvas",
           },
           {
-            src: "/images/apps/familyplus/occasions.webp",
+            src: "/images/apps/familyplus/family-memory.jpg",
             alt: "Family Plus — Compleanni e ricorrenze su iPhone",
-            caption: "Ricorrenze",
-            device: "iphone",
+            caption: "Compleanni e ricorrenze",
+            device: "canvas",
           },
         ],
       },
       {
-        title: "Documenti di famiglia",
+        title: "The Family · Family Memory",
         description:
-          "Archivio famiglia con allegati, nello stesso spazio delle altre attività quotidiane.",
-        layout: "hero",
+          "La Famiglia e Memoria — persone e documenti, insieme.",
+        layout: "pair",
         images: [
           {
-            src: "/images/apps/familyplus/documents.webp",
-            alt: "Family Plus — Documenti di famiglia su iPhone",
-            caption: "Documenti",
-            device: "iphone",
+            src: "/images/apps/familyplus/the-family.jpg",
+            alt: "Family Plus — The Family (La Famiglia) su iPhone",
+            caption: "The Family",
+            device: "canvas",
+          },
+          {
+            src: "/images/apps/familyplus/documents.jpg",
+            alt: "Family Plus — Family Memory (Memoria) su iPhone",
+            caption: "Family Memory",
+            device: "canvas",
+          },
+        ],
+      },
+      {
+        title: "Privacy e condivisione",
+        description:
+          "Local-first, iCloud quando serve, pubblicità separata dai contenuti di famiglia.",
+        layout: "pair",
+        images: [
+          {
+            src: "/images/apps/familyplus/story-share.jpg",
+            alt: "Family Plus — storia sulla condivisione famiglia su iPhone",
+            caption: "Condivisione",
+            device: "canvas",
+          },
+          {
+            src: "/images/apps/familyplus/story-privacy.jpg",
+            alt: "Family Plus — storia sulla privacy su iPhone",
+            caption: "Privacy",
+            device: "canvas",
           },
         ],
       },
@@ -490,33 +563,39 @@ export const caseStudies: CaseStudyContent[] = [
     decisions: [
       {
         title: "Local-first con SwiftData",
-        reason: "Le modifiche restano subito sul dispositivo; la rete non è un prerequisito per usare l'app.",
+        reason:
+          "Scrivere in locale ha priorità: la rete non decide se la famiglia può organizzarsi.",
       },
       {
-        title: "CloudKit CKShare per la famiglia",
-        reason: "Collaborazione Apple-native sul container iCloud.app.familyplus.FamilyPlus, senza account o API proprietarie.",
-      },
-      {
-        title: "Nessun backend custom",
-        reason: "Meno superficie operativa e di privacy: sync e share restano nel perimetro iCloud/CloudKit.",
+        title: "CloudKit CKShare per The Family",
+        reason:
+          "Collaborazione Apple-native — senza account Family Plus, senza backend proprietario.",
       },
       {
         title: "iPhone only, portrait",
-        reason: "Focus su un’unica esperienza iPhone verticale, coerente e semplice da mantenere.",
+        reason:
+          "Un’unica esperienza verticale, coerente e semplice da mantenere — solo iPhone.",
       },
       {
-        title: "Monetizzazione AdMob + UMP",
-        reason: "Prodotto gratuito con banner e interstitial a frequenza limitata; consenso pubblicitario gestito con UMP (rewarded non esposto all'utente).",
+        title: "Centro di controllo e Notification Schedule",
+        reason:
+          "Preferenze quiete sul dispositivo: programma promemoria locale, non sincronizzato in CloudKit.",
+      },
+      {
+        title: "Gratis con AdMob + UMP",
+        reason:
+          "Niente abbonamenti; consenso pubblicitario chiaro; contenuti di famiglia separati dagli annunci.",
       },
       {
         title: "Privacy senza ATT né analytics SDK",
-        reason: "Niente tracking IDFA-oriented né SDK analytics di terze parti: focus su organizer e condivisione famiglia.",
+        reason:
+          "Niente tracking IDFA-oriented né SDK analytics: focus su organizer e famiglia.",
       },
     ],
     productTimeline: [...PRODUCT_TIMELINE],
     qualitySignals: [
       "Live su App Store",
-      "iPhone",
+      "iPhone only",
       "Local-first",
       "CloudKit CKShare",
       "IT / EN",
@@ -525,26 +604,26 @@ export const caseStudies: CaseStudyContent[] = [
     capabilities: ["CloudKit", "Privacy", "Performance", "Accessibilità"],
     challenges: [
       "Collaborazione famiglia affidabile con CKShare senza backend proprietario",
-      "Coerenza local-first quando iCloud o la rete non sono disponibili",
-      "Organizer multi-modulo (spesa, calendario, attività, pasti, documenti) con UX chiara",
-      "Notifiche locali e collaborative coerenti tra partecipanti",
+      "Coerenza local-first quando iCloud non è disponibile",
+      "Un tono famigliare su più superfici, senza dashboard rumorose",
+      "Promemoria locali utili, con programma personalizzabile sul dispositivo",
     ],
     results: [
-      "App live su App Store per iPhone",
-      "Flusso famiglia end-to-end: spazio, invito CKShare, sync e moduli condivisi",
-      "Documentazione legale pubblica (Privacy, Termini, Supporto, Eliminazione dati)",
-      "Prodotto gratuito local-first, senza account custom né analytics SDK",
+      "App per iPhone: Casa, Tavola, Memoria, La Famiglia, Io, Centro di controllo",
+      "Condivisione La Famiglia end-to-end via CKShare",
+      "Legal pubblico: Privacy, Termini, Supporto, Eliminazione dati",
+      "Prodotto gratuito local-first — senza account custom né analytics SDK",
     ],
     trustSignals: [
       "App Store",
       "Local-first",
-      "CloudKit CKShare",
-      "Nessun backend custom",
+      "iPhone only",
+      "CloudKit",
       "IT / EN",
-      "iPhone",
+      "Gratis",
     ],
     seoDescription:
-      "Case study Family Plus: organizer famiglia per iPhone live su App Store, local-first con SwiftData e CloudKit CKShare, spesa, calendario, attività e privacy senza backend custom.",
+      "Family Plus per iPhone: organizer famiglia local-first con Family Home (Casa), Spesa, Calendario, The Family (La Famiglia) e Centro di controllo. CloudKit CKShare, gratis, privacy-first.",
   },
   {
     slug: "gynometrics",

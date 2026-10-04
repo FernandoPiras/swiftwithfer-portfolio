@@ -75,7 +75,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Cosa resta sul dispositivo",
         paragraphs: [
           [
-            "Sul dispositivo Family Plus conserva in locale (SwiftData e file di allegato, più preferenze) contenuti come liste della spesa, attività, eventi, pasti, ricorrenze, documenti, membri e cronologia uscite spesa, oltre a preferenze (lingua, onboarding, limiti di frequenza annunci, e programma dei promemoria su questo dispositivo).",
+            "Sul dispositivo Family Plus conserva in locale (SwiftData e file di allegato, più preferenze) contenuti come liste della Spesa, Attività, eventi di Calendario, elementi di Tavola, ricorrenze, documenti in Memoria, membri della Famiglia e cronologia uscite Spesa, oltre a preferenze (lingua, onboarding, limiti di frequenza annunci, e programma dei promemoria su questo dispositivo).",
           ],
           [
             "Disinstallare Family Plus rimuove i dati dell’app da quel dispositivo. Non cancella automaticamente i contenuti già presenti nello spazio famiglia iCloud di altre persone.",
@@ -241,7 +241,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. What stays on the device",
         paragraphs: [
           [
-            "On device, Family Plus stores family content locally (SwiftData and attachment files, plus preferences): shopping lists, tasks, events, meals, occasions, documents, members, shopping-trip history, and preferences such as language, onboarding, ad frequency limits, and the reminder schedule on this device.",
+            "On device, Family Plus stores family content locally (SwiftData and attachment files, plus preferences): Shopping lists, Tasks, Calendar events, Family Table items, occasions, Family Memory documents, The Family members, shopping-trip history, and preferences such as language, onboarding, ad frequency limits, and the reminder schedule on this device.",
           ],
           [
             "Uninstalling Family Plus removes the app’s data from that device. It does not automatically erase content already present in other people’s shared iCloud family space.",

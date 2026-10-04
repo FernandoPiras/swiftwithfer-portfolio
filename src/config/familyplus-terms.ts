@@ -84,7 +84,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Descrizione del servizio",
         paragraphs: [
           [
-            "Family Plus è un organizer per famiglie su iPhone (iOS, orientamento verticale): calendario, spesa, attività, pasti, documenti, ricorrenze, promemoria e spazi famiglia condivisi.",
+            "Family Plus è un organizer per famiglie su iPhone (iOS, orientamento verticale): Casa, Calendario, Spesa, Attività, Tavola, Memoria, Compleanni e ricorrenze, promemoria e La Famiglia condivisa.",
           ],
           [
             "Funzioni, layout e disponibilità possono evolvere. Non promettiamo che ogni funzione resti identica nel tempo.",
@@ -350,7 +350,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Service description",
         paragraphs: [
           [
-            "Family Plus is a family organizer for iPhone (iOS, portrait orientation): calendar, shopping, tasks, meals, documents, occasions, reminders, and shared family spaces.",
+            "Family Plus is a family organizer for iPhone (iOS, portrait orientation): Family Home, Calendar, Shopping, Tasks, Family Table, Family Memory, Birthdays & occasions, reminders, and The Family shared space.",
           ],
           [
             "Features, layout, and availability may evolve. We do not promise that every feature will remain identical over time.",

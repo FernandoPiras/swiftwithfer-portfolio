@@ -78,7 +78,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "1. Introduzione",
         paragraphs: [
           [
-            "Family Plus è un’app per iPhone (iOS, orientamento verticale) per organizzare la vita di famiglia: calendario ed eventi, liste della spesa, attività, pasti, documenti, compleanni e ricorrenze, promemoria e spazi famiglia condivisi.",
+            "Family Plus è un’app per iPhone (iOS, orientamento verticale) per organizzare la vita di famiglia: Casa, Calendario, Spesa, Attività, Tavola, Memoria (documenti e allegati), Compleanni e ricorrenze, promemoria e La Famiglia condivisa.",
           ],
           [
             "Questa pagina spiega pratiche verificabili rispetto al prodotto attuale. Distingue tra (A) contenuti e preferenze legati alle funzioni di organizzazione famigliare e (B) informazioni che tecnologie pubblicitarie di terze parti, in particolare Google Mobile Ads / AdMob e UMP, possono trattare.",
@@ -129,7 +129,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "4. Informazioni che fornisci a Family Plus",
         paragraphs: [
           [
-            "Puoi creare e gestire, a seconda dell’uso, contenuti come: nome dello spazio famiglia, eventi di calendario, liste e voci della spesa, attività, pasti, documenti e allegati, compleanni e ricorrenze, note e altri testi inseriti volontariamente.",
+            "Puoi creare e gestire, a seconda dell’uso, contenuti come: nome della Famiglia, eventi di Calendario, liste e voci della Spesa, Attività, elementi di Tavola, documenti e allegati in Memoria, Compleanni e ricorrenze, note e altri testi inseriti volontariamente.",
           ],
           [
             "Questi contenuti sono generati da te (e dai partecipanti invitati allo spazio famiglia). Family Plus non richiede un account con email/password gestito dall’app.",
@@ -208,10 +208,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Family Plus è gratuita e, nella versione attuale, usa pubblicità come modello di monetizzazione. Non ci sono abbonamenti o acquisti in-app Family Plus descritti in questa informativa.",
           ],
           [
-            "Formati attualmente esposti nell’esperienza utente: banner adattivi (Today, Calendario, Spesa, Attività) e interstitial a frequenza controllata in momenti idonei (ad esempio dopo un’azione di completamento nella Spesa). Non sono previsti App Open Ads. Un’infrastruttura tecnica per rewarded ads può esistere in app, ma non è offerta all’utente come premio o sblocco nella versione attuale.",
+            "Formati attualmente esposti nell’esperienza utente: banner adattivi (Casa, Calendario, Spesa, Attività) e interstitial a frequenza controllata in momenti idonei (ad esempio dopo un’azione di completamento nella Spesa). Non sono previsti App Open Ads. Un’infrastruttura tecnica per rewarded ads può esistere in app, ma non è offerta all’utente come premio o sblocco nella versione attuale.",
           ],
           [
-            "Nessun banner su onboarding, Family Hub, Documenti, Promemoria, impostazioni lingua e area Altro, secondo la policy di placement del prodotto.",
+            "Nessun banner su onboarding, La Famiglia, Memoria, Promemoria, impostazioni lingua e area Altro, secondo la policy di placement del prodotto.",
           ],
         ],
       },
@@ -438,7 +438,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "1. Introduction",
         paragraphs: [
           [
-            "Family Plus is an iPhone app (iOS, portrait orientation) for organizing family life: calendar and events, shopping lists, tasks, meals, documents, birthdays and occasions, reminders, and shared family spaces.",
+            "Family Plus is an iPhone app (iOS, portrait orientation) for organizing family life: Family Home, Calendar, Shopping, Tasks, Family Table, Family Memory (documents and attachments), Birthdays & occasions, reminders, and The Family shared space.",
           ],
           [
             "This page describes practices that match the current product. It separates (A) content and preferences tied to family-organizer features from (B) information that third-party advertising technologies—especially Google Mobile Ads / AdMob and UMP—may process.",
@@ -489,7 +489,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "4. Information you provide in Family Plus",
         paragraphs: [
           [
-            "Depending on use, you may create content such as: family space name, calendar events, shopping lists and items, tasks, meals, documents and attachments, birthdays and occasions, notes, and other text you enter.",
+            "Depending on use, you may create content such as: The Family name, Calendar events, Shopping lists and items, Tasks, Family Table items, Family Memory documents and attachments, Birthdays & occasions, notes, and other text you enter.",
           ],
           [
             "This content is created by you (and invited family participants). Family Plus does not require an app-operated email/password account.",
@@ -568,10 +568,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "Family Plus is free and, in the current version, uses advertising as its monetization model. This policy does not describe Family Plus subscriptions or in-app purchases.",
           ],
           [
-            "Formats currently shown in the product: adaptive banners (Today, Calendar, Shopping, Tasks) and frequency-capped interstitials at eligible moments (for example after a Shopping completion action). There are no App Open ads. Rewarded-ad infrastructure may exist technically, but it is not offered to users as a reward or unlock in the current version.",
+            "Formats currently shown in the product: adaptive banners (Family Home, Calendar, Shopping, Tasks) and frequency-capped interstitials at eligible moments (for example after a Shopping completion action). There are no App Open ads. Rewarded-ad infrastructure may exist technically, but it is not offered to users as a reward or unlock in the current version.",
           ],
           [
-            "No banners on onboarding, Family Hub, Documents, Reminders, language settings, or More, per product placement policy.",
+            "No banners on onboarding, The Family, Family Memory, Reminders, language settings, or More, per product placement policy.",
           ],
         ],
       },

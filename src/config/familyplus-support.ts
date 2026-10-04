@@ -38,7 +38,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Supporto",
     lead:
-      "Aiuto per Family Plus su iPhone (iOS): spazi famiglia, iCloud, sync, spesa, calendario, attività, pasti, documenti, ricorrenze, promemoria e programma notifiche, lingua e scelte pubblicitarie.",
+      "Aiuto per Family Plus su iPhone (iOS): La Famiglia, iCloud, sincronizzazione, Casa, Spesa, Calendario, Attività, Tavola, Memoria, ricorrenze, promemoria e programma notifiche, lingua e scelte pubblicitarie.",
     updatedLabel: "Ultimo aggiornamento",
     updatedDisplay: "4 ottobre 2026",
     updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
@@ -52,7 +52,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     breadcrumbCurrent: "Supporto Family Plus",
     metaTitle: "Family Plus — Support",
     metaDescription:
-      "Supporto ufficiale Family Plus: famiglia iCloud, sync, moduli organizer, promemoria, lingua e privacy pubblicitaria.",
+      "Supporto ufficiale Family Plus: famiglia iCloud, sincronizzazione, moduli organizer, promemoria, lingua e privacy pubblicitaria.",
     contactEmail,
     summaryTitle: "Prima di scrivere",
     summaryBody:
@@ -77,7 +77,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
           ["Oggetto consigliato: Family Plus — richiesta assistenza"],
           ["Tempo medio di risposta: entro 2 giorni lavorativi."],
           [
-            "Documenti: ",
+            "Pagine legali: ",
             { href: FAMILYPLUS_PRIVACY_PATH, label: "Privacy" },
             " · ",
             { href: FAMILYPLUS_TERMS_PATH, label: "Termini" },
@@ -92,16 +92,16 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Per iniziare",
         paragraphs: [
           [
-            "Dopo l’onboarding (se mostrato), usa le schede Oggi, Calendario, Spesa, Attività e Altro. In Altro trovi Famiglia, Me, Centro di controllo, Pasti, Compleanni e ricorrenze e Documenti. Promemoria, lingua e scelte privacy sono in Altro → Centro di controllo.",
+            "Dopo l’onboarding (se mostrato), usa le schede Casa, Calendario, Spesa, Attività e Altro. In Altro trovi La Famiglia, Io, Centro di controllo, Tavola, Compleanni e ricorrenze e Memoria. Promemoria, lingua e scelte privacy sono in Altro → Centro di controllo.",
           ],
           [
-            "Per collaborare con altre persone crea o unisciti a uno spazio famiglia da Altro → Famiglia. Serve tipicamente iCloud.",
+            "Per collaborare con altre persone crea o unisciti a La Famiglia da Altro → La Famiglia. Serve tipicamente iCloud.",
           ],
         ],
       },
       {
         id: "famiglia",
-        heading: "Spazi famiglia e inviti",
+        heading: "La Famiglia e inviti",
         paragraphs: [
           [
             "L’organizzatore crea lo spazio e prepara la condivisione Apple (CKShare). L’invito passa dai canali Apple (ad esempio Messaggi o Mail). I partecipanti accettano con l’account iCloud corretto.",
@@ -125,10 +125,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
       },
       {
         id: "moduli",
-        heading: "Spesa, calendario, attività, pasti, documenti, ricorrenze",
+        heading: "Spesa, Calendario, Attività, Tavola, Memoria, ricorrenze",
         paragraphs: [
           [
-            "Spesa: liste e voci, modalità spesa a schermo intero, pulizia delle completate. Calendario e Attività: eventi/task con dettaglio e creazione. Pasti e ricorrenze: da Altro. Documenti: archivio famiglia con allegati; non è previsto un banner pubblicitario in Documenti.",
+            "Spesa: liste e voci, modalità spesa a schermo intero, pulizia delle completate. Calendario e Attività: eventi e attività con dettaglio e creazione. Tavola e Compleanni e ricorrenze: da Altro. Memoria (documenti e allegati di famiglia): da Altro; non è previsto un banner pubblicitario in Memoria.",
           ],
         ],
       },
@@ -155,7 +155,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Pubblicità e scelte privacy",
         paragraphs: [
           [
-            "Family Plus è gratuita e mostra annunci Google AdMob (banner sulle schede operative principali e, a volte, interstitial a frequenza limitata). Onboarding, Family Hub, Documenti, Promemoria e Lingua non mostrano banner.",
+            "Family Plus è gratuita e mostra annunci Google AdMob (banner sulle schede operative principali e, a volte, interstitial a frequenza limitata). Onboarding, La Famiglia, Memoria, Promemoria e Lingua non mostrano banner.",
           ],
           [
             "Se Google UMP richiede un ingresso alle privacy options, compare una voce in Altro → Centro di controllo → La tua privacy per riaprire il modulo Google. Se non è richiesto, la voce può non apparire. Dettagli: ",
@@ -254,7 +254,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — Come gestisco gli allegati dei documenti?",
         paragraphs: [
           [
-            "Apri Documenti da Altro, aggiungi o apri un documento e gestisci gli allegati dal flusso dell’app. Conserva copie importanti anche fuori dall’app. Documenti non mostra banner pubblicitari.",
+            "Apri Memoria da Altro, aggiungi o apri un documento e gestisci gli allegati dal flusso dell’app. Conserva copie importanti anche fuori dall’app. Memoria non mostra banner pubblicitari.",
           ],
         ],
       },
@@ -271,7 +271,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Support",
     lead:
-      "Help for Family Plus on iPhone (iOS): family spaces, iCloud, sync, shopping, calendar, tasks, meals, documents, occasions, reminders and notification schedule, language, and advertising privacy choices.",
+      "Help for Family Plus on iPhone (iOS): The Family, iCloud, sync, Family Home, Shopping, Calendar, Tasks, Family Table, Family Memory, occasions, reminders and notification schedule, language, and advertising privacy choices.",
     updatedLabel: "Last updated",
     updatedDisplay: "October 4, 2026",
     updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
@@ -310,7 +310,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
           ["Suggested subject: Family Plus — support request"],
           ["Typical reply time: within 2 business days."],
           [
-            "Documents: ",
+            "Legal pages: ",
             { href: FAMILYPLUS_PRIVACY_EN_PATH, label: "Privacy" },
             " · ",
             { href: FAMILYPLUS_TERMS_EN_PATH, label: "Terms" },
@@ -328,16 +328,16 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Getting started",
         paragraphs: [
           [
-            "After onboarding (when shown), use Today, Calendar, Shopping, Tasks, and More. Under More you will find Family, Me, Control Center, Meals, Birthdays & occasions, and Documents. Reminders, language, and privacy choices are under More → Control Center.",
+            "After onboarding (when shown), use Family Home, Calendar, Shopping, Tasks, and More. Under More you will find The Family, Me, Control Center, Family Table, Birthdays & occasions, and Family Memory. Reminders, language, and privacy choices are under More → Control Center.",
           ],
           [
-            "To collaborate, create or join a family space from More → Family. iCloud is typically required.",
+            "To collaborate, create or join The Family from More → The Family. iCloud is typically required.",
           ],
         ],
       },
       {
         id: "family",
-        heading: "Family spaces and invites",
+        heading: "The Family and invites",
         paragraphs: [
           [
             "The organizer creates the space and starts Apple sharing (CKShare). The invite is delivered through Apple channels (for example Messages or Mail). Participants must accept with the correct iCloud account.",
@@ -361,10 +361,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
       },
       {
         id: "modules",
-        heading: "Shopping, calendar, tasks, meals, documents, occasions",
+        heading: "Shopping, Calendar, Tasks, Family Table, Family Memory, occasions",
         paragraphs: [
           [
-            "Shopping: lists and items, full-screen shopping mode, clear completed. Calendar and Tasks: events/tasks with detail and create flows. Meals and occasions: under More. Documents: family archive with attachments; Documents does not show an ad banner.",
+            "Shopping: lists and items, full-screen shopping mode, clear completed. Calendar and Tasks: events/tasks with detail and create flows. Family Table and Birthdays & occasions: under More. Family Memory: family documents and attachments under More; Family Memory does not show an ad banner.",
           ],
         ],
       },
@@ -391,7 +391,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Advertising and privacy choices",
         paragraphs: [
           [
-            "Family Plus is free and shows Google AdMob ads (banners on main operational tabs and, sometimes, frequency-capped interstitials). Onboarding, Family Hub, Documents, Reminders, and Language do not show banners.",
+            "Family Plus is free and shows Google AdMob ads (banners on main operational tabs and, sometimes, frequency-capped interstitials). Onboarding, The Family, Family Memory, Reminders, and Language do not show banners.",
           ],
           [
             "If Google UMP requires a privacy-options entry point, a row appears under More → Control Center → Your privacy to reopen Google’s form. If not required, the row may be hidden. Details: ",
@@ -490,7 +490,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "FAQ — How do I manage document attachments?",
         paragraphs: [
           [
-            "Open Documents from More, add or open a document, and manage attachments in the app flow. Keep important copies outside the app. Documents does not show ad banners.",
+            "Open Family Memory from More, add or open a document, and manage attachments in the app flow. Keep important copies outside the app. Family Memory does not show ad banners.",
           ],
         ],
       },
