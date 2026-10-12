@@ -372,7 +372,7 @@ export const siteConfig = {
       ],
       architecture:
         "SwiftUI + SwiftData local-first; CloudKit CKShare per La Famiglia; Bilancio local-first con sync CloudKit quando serve; Notification Schedule locale sul dispositivo; AdMob + UMP — senza ATT, senza abbonamenti, senza backend custom.",
-      icon: "/images/apps/familyplus/icon.png",
+      icon: "/images/apps/familyplus/icon-v113.png",
       wordmark: "/images/apps/familyplus/wordmark-dark.png",
       wordmarkLight: "/images/apps/familyplus/wordmark-light.png",
       wordmarkSize: { width: 1643, height: 288 },
