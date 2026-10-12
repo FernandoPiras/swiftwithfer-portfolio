@@ -245,7 +245,7 @@ function ProductLegalLinks({ appId }: { appId: CaseStudyContent["appId"] }) {
       </h2>
       <p className="mb-6 max-w-2xl text-sm text-muted">
         Local-first. iCloud quando serve. Nessun account custom. Documentazione
-        ufficiale allineata a Family Plus v1.1.2.
+        ufficiale allineata a Family Plus v1.1.3.
       </p>
       <ul className="flex flex-wrap gap-2">
         {links.map((link) => (

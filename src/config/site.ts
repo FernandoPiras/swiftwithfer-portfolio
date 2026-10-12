@@ -364,14 +364,14 @@ export const siteConfig = {
       name: "Family Plus",
       tagline: "Tutta la famiglia. Tutto in un posto.",
       description:
-        "La vita di famiglia, raccolta con calma. Casa, Tavola, Memoria, La Famiglia, Io e Centro di controllo — pensata per iPhone, local-first, condivisa via iCloud. Gratuita. Senza account custom.",
+        "La vita di famiglia, raccolta con calma. Casa, Tavola, Memoria, Bilancio, La Famiglia, Io e Centro di controllo — pensata per iPhone, local-first, condivisa via iCloud. Gratuita. Senza account custom.",
       outcomes: [
-        "Live su App Store — v1.1.2",
+        "Live su App Store — v1.1.3",
         "Pensata per iPhone, esperienza portrait",
         "Local-first · CloudKit · gratis",
       ],
       architecture:
-        "SwiftUI + SwiftData local-first; CloudKit CKShare per La Famiglia; Notification Schedule locale sul dispositivo; AdMob + UMP — senza ATT, senza abbonamenti, senza backend custom.",
+        "SwiftUI + SwiftData local-first; CloudKit CKShare per La Famiglia; Bilancio local-first con sync CloudKit quando serve; Notification Schedule locale sul dispositivo; AdMob + UMP — senza ATT, senza abbonamenti, senza backend custom.",
       icon: "/images/apps/familyplus/icon.png",
       wordmark: "/images/apps/familyplus/wordmark-dark.png",
       wordmarkLight: "/images/apps/familyplus/wordmark-light.png",

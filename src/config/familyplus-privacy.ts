@@ -55,7 +55,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Questa informativa descrive come Family Plus tratta le informazioni nell’app iPhone (iOS): contenuti di famiglia gestiti in locale e via iCloud/CloudKit, preferenze sul dispositivo, notifiche (incluso il programma dei promemoria), e l’uso di Google AdMob e Google User Messaging Platform (UMP) per la pubblicità.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "4 ottobre 2026",
+    updatedDisplay: "11 ottobre 2026",
     updatedISO: FAMILYPLUS_PRIVACY_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -78,7 +78,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "1. Introduzione",
         paragraphs: [
           [
-            "Family Plus è un’app per iPhone (iOS, orientamento verticale) per organizzare la vita di famiglia: Casa, Calendario, Spesa, Attività, Tavola, Memoria (documenti e allegati), Compleanni e ricorrenze, promemoria e La Famiglia condivisa.",
+            "Family Plus è un’app per iPhone (iOS, orientamento verticale) per organizzare la vita di famiglia: Casa, Calendario, Spesa, Attività, Tavola, Memoria (documenti e allegati), Bilancio, Compleanni e ricorrenze, promemoria e La Famiglia condivisa.",
           ],
           [
             "Questa pagina spiega pratiche verificabili rispetto al prodotto attuale. Distingue tra (A) contenuti e preferenze legati alle funzioni di organizzazione famigliare e (B) informazioni che tecnologie pubblicitarie di terze parti, in particolare Google Mobile Ads / AdMob e UMP, possono trattare.",
@@ -132,6 +132,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Puoi creare e gestire, a seconda dell’uso, contenuti come: nome della Famiglia, eventi di Calendario, liste e voci della Spesa, Attività, elementi di Tavola, documenti e allegati in Memoria, Compleanni e ricorrenze, note e altri testi inseriti volontariamente.",
           ],
           [
+            "In Bilancio puoi inserire, a seconda dell’uso, informazioni finanziarie che digiti tu: conti, entrate e uscite, trasferimenti, budget, categorie, operazioni ricorrenti, obiettivi, allegati/ricevute e report esportati. Non sincronizziamo automaticamente conti bancari esterni e non eseguiamo OCR delle ricevute nella versione attuale.",
+          ],
+          [
             "Questi contenuti sono generati da te (e dai partecipanti invitati allo spazio famiglia). Family Plus non richiede un account con email/password gestito dall’app.",
           ],
         ],
@@ -141,7 +144,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "5. Memorizzazione locale",
         paragraphs: [
           [
-            "Family Plus è progettata local-first: i dati di organizzazione vengono salvati sul dispositivo principalmente con SwiftData. Scrivere in locale ha priorità; la sincronizzazione cloud, quando attiva, è eventuale.",
+            "Family Plus è progettata local-first: i dati di organizzazione vengono salvati sul dispositivo principalmente con SwiftData. Scrivere in locale ha priorità; la sincronizzazione cloud, quando attiva, è eventuale. Anche i dati di Bilancio vengono salvati in locale sul dispositivo; gli allegati Bilancio possono restare in file locali dell’app.",
           ],
           [
             "Alcune preferenze restano solo sul dispositivo corrente e non sono sincronizzate come contenuti di famiglia via CloudKit: ad esempio lingua dell’app, stato di onboarding, contatori tecnici legati alla frequenza degli annunci a schermo intero, e le preferenze del programma dei promemoria (anticipo per eventi/attività con orario e orari per eventi senza orario, ricorrenze e scadenze documenti). Queste preferenze di notifica non sono condivise con gli altri membri della famiglia.",
@@ -154,6 +157,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         paragraphs: [
           [
             "Quando usi le funzioni di condivisione/sincronizzazione famiglia, Family Plus si appoggia all’infrastruttura iCloud/CloudKit di Apple. L’accesso dipende dall’account iCloud e dalle impostazioni del dispositivo.",
+          ],
+          [
+            "I contenuti di Bilancio collegati a uno spazio famiglia possono sincronizzarsi tramite CloudKit nello stesso container iCloud dell’app, con ambito famiglia o privato a seconda della visibilità che imposti. La sync è eventuale e dipende da iCloud, rete e stato della condivisione.",
           ],
           [
             "Apple tratta i dati secondo la propria informativa: ",
@@ -211,7 +217,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             "Formati attualmente esposti nell’esperienza utente: banner adattivi (Casa, Calendario, Spesa, Attività) e interstitial a frequenza controllata in momenti idonei (ad esempio dopo un’azione di completamento nella Spesa). Non sono previsti App Open Ads. Un’infrastruttura tecnica per rewarded ads può esistere in app, ma non è offerta all’utente come premio o sblocco nella versione attuale.",
           ],
           [
-            "Nessun banner su onboarding, La Famiglia, Memoria, Promemoria, impostazioni lingua e area Altro, secondo la policy di placement del prodotto.",
+            "Nessun banner su onboarding, La Famiglia, Memoria, Bilancio, Promemoria, impostazioni lingua e area Altro, secondo la policy di placement del prodotto.",
           ],
         ],
       },
@@ -230,7 +236,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
             ".",
           ],
           [
-            "I contenuti testuali di famiglia (nomi liste, attività, documenti, note, ecc.) non vengono inviati a AdMob come payload pubblicitario. La pubblicità è infrastruttura di presentazione sul dispositivo, separata dai modelli di dominio/CloudKit.",
+            "I contenuti testuali di famiglia e le informazioni finanziarie che inserisci in Bilancio (nomi conti, importi, note, titoli di operazioni, documenti, ecc.) non vengono inviati a AdMob come payload pubblicitario. La pubblicità è infrastruttura di presentazione sul dispositivo, separata dai modelli di dominio/CloudKit.",
           ],
         ],
       },
@@ -415,7 +421,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "This policy describes how Family Plus handles information in the iPhone (iOS) app: family content managed locally and via iCloud/CloudKit, on-device preferences, notifications (including the reminder schedule), and Google AdMob plus Google User Messaging Platform (UMP) for advertising.",
     updatedLabel: "Last updated",
-    updatedDisplay: "October 4, 2026",
+    updatedDisplay: "October 11, 2026",
     updatedISO: FAMILYPLUS_PRIVACY_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -438,7 +444,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "1. Introduction",
         paragraphs: [
           [
-            "Family Plus is an iPhone app (iOS, portrait orientation) for organizing family life: Family Home, Calendar, Shopping, Tasks, Family Table, Family Memory (documents and attachments), Birthdays & occasions, reminders, and The Family shared space.",
+            "Family Plus is an iPhone app (iOS, portrait orientation) for organizing family life: Family Home, Calendar, Shopping, Tasks, Family Table, Family Memory (documents and attachments), Budget, Birthdays & occasions, reminders, and The Family shared space.",
           ],
           [
             "This page describes practices that match the current product. It separates (A) content and preferences tied to family-organizer features from (B) information that third-party advertising technologies—especially Google Mobile Ads / AdMob and UMP—may process.",
@@ -492,6 +498,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "Depending on use, you may create content such as: The Family name, Calendar events, Shopping lists and items, Tasks, Family Table items, Family Memory documents and attachments, Birthdays & occasions, notes, and other text you enter.",
           ],
           [
+            "In Budget, depending on use, you may enter financial information you type yourself: accounts, income and expenses, transfers, budgets, categories, recurring transactions, goals, attachments/receipts, and exported reports. We do not automatically sync external bank accounts, and receipt OCR is not available in the current version.",
+          ],
+          [
             "This content is created by you (and invited family participants). Family Plus does not require an app-operated email/password account.",
           ],
         ],
@@ -501,7 +510,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "5. Local storage",
         paragraphs: [
           [
-            "Family Plus is local-first: organizer data is stored on device primarily with SwiftData. Local writes succeed first; cloud sync, when enabled, is eventual.",
+            "Family Plus is local-first: organizer data is stored on device primarily with SwiftData. Local writes succeed first; cloud sync, when enabled, is eventual. Budget data is also stored locally on device; Budget attachments may remain as local app files.",
           ],
           [
             "Some preferences remain only on the current device and are not synced as family content through CloudKit: for example app language, onboarding completion, minimal counters for interstitial frequency, and reminder-schedule preferences (lead time for timed events/tasks and clock times for untimed events, occasions, and document expiry). Those notification preferences are not shared with other family members.",
@@ -514,6 +523,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         paragraphs: [
           [
             "When you use family sharing/sync features, Family Plus relies on Apple’s iCloud/CloudKit infrastructure. Access depends on the iCloud account and device settings.",
+          ],
+          [
+            "Budget content linked to a family space may sync through CloudKit in the app’s iCloud container, with family or private scope depending on the visibility you set. Sync is eventual and depends on iCloud, network, and share state.",
           ],
           [
             "Apple processes data under its own policy: ",
@@ -571,7 +583,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             "Formats currently shown in the product: adaptive banners (Family Home, Calendar, Shopping, Tasks) and frequency-capped interstitials at eligible moments (for example after a Shopping completion action). There are no App Open ads. Rewarded-ad infrastructure may exist technically, but it is not offered to users as a reward or unlock in the current version.",
           ],
           [
-            "No banners on onboarding, The Family, Family Memory, Reminders, language settings, or More, per product placement policy.",
+            "No banners on onboarding, The Family, Family Memory, Budget, Reminders, language settings, or More, per product placement policy.",
           ],
         ],
       },
@@ -590,7 +602,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
             ".",
           ],
           [
-            "Family content text (list names, tasks, documents, notes, and similar) is not sent to AdMob as advertising payload. Ads are on-device presentation infrastructure, separate from domain/CloudKit models.",
+            "Family content text and financial information you enter in Budget (account names, amounts, notes, transaction titles, documents, and similar) is not sent to AdMob as advertising payload. Ads are on-device presentation infrastructure, separate from domain/CloudKit models.",
           ],
         ],
       },

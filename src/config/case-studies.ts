@@ -354,18 +354,19 @@ export const caseStudies: CaseStudyContent[] = [
     presentation: "product",
     ogImage: "/images/apps/familyplus/brand-poster.jpg",
     positioning:
-      "La vita di famiglia merita un posto solo. Non un’altra app di produttività — uno spazio caldo dove Casa, Tavola, Memoria e La Famiglia vivono insieme.",
+      "La vita di famiglia merita un posto solo. Non un’altra app di produttività — uno spazio caldo dove Casa, Tavola, Memoria, Bilancio e La Famiglia vivono insieme.",
     problem:
-      "Chat, note e liste sparse. L’impegno di oggi, la Spesa, la Tavola, un documento — tutto importante, niente di quieto. La famiglia finisce dispersa in troppi posti.",
+      "Chat, note e liste sparse. L’impegno di oggi, la Spesa, la Tavola, un documento, le spese di casa — tutto importante, niente di quieto. La famiglia finisce dispersa in troppi posti.",
     solution:
-      "Family Plus è pensata per iPhone: local-first, condivisa via iCloud quando serve. Scrivi subito. Invita La Famiglia. Niente account custom. Niente abbonamenti. Solo la casa digitale della famiglia.",
+      "Family Plus è pensata per iPhone: local-first, condivisa via iCloud quando serve. Scrivi subito. Invita La Famiglia. Organizza anche Bilancio. Niente account custom. Niente abbonamenti. Solo la casa digitale della famiglia.",
     architecture:
-      "Pensata per iPhone · SwiftData local-first · CloudKit CKShare per La Famiglia · Notification Schedule sul dispositivo · AdMob + UMP, senza ATT.",
+      "Pensata per iPhone · SwiftData local-first · CloudKit CKShare per La Famiglia · Bilancio local-first con sync CloudKit quando serve · Notification Schedule sul dispositivo · AdMob + UMP, senza ATT.",
     architectureFlow: [
       "Casa",
       "SwiftData locale",
       "La Famiglia",
       "CloudKit CKShare",
+      "Bilancio",
       "Centro di controllo",
       "Notification Schedule",
     ],
@@ -374,6 +375,11 @@ export const caseStudies: CaseStudyContent[] = [
         title: "Il ritmo",
         summary:
           "Casa apre la giornata. Tavola, Calendario, Spesa e Attività la accompagnano — senza ricostruire tutto ogni volta.",
+      },
+      {
+        title: "Bilancio",
+        summary:
+          "Entrate, spese e obiettivi in un unico posto — semplice, in famiglia, senza sembrare una banca.",
       },
       {
         title: "Ciò che resta",
@@ -390,6 +396,7 @@ export const caseStudies: CaseStudyContent[] = [
       "Casa — la giornata, a colpo d’occhio",
       "Tavola — la settimana a tavola",
       "Memoria — documenti di famiglia",
+      "Bilancio — entrate, spese e obiettivi in un unico posto",
       "La Famiglia — persone e condivisione iCloud",
       "Spesa, Calendario, Attività — il ritmo quotidiano",
       "Io e Centro di controllo — preferenze e Notification Schedule",
@@ -399,7 +406,7 @@ export const caseStudies: CaseStudyContent[] = [
       {
         title: "Un posto solo",
         description:
-          "Non una checklist infinita. Un tono di casa: sapere cosa conta, senza rumore. Spesa, impegni e Tavola nello stesso respiro — meno app aperte, più tempo insieme.",
+          "Non una checklist infinita. Un tono di casa: sapere cosa conta, senza rumore. Spesa, impegni, Tavola e Bilancio nello stesso respiro — meno app aperte, più tempo insieme.",
         items: [],
       },
       {
@@ -411,7 +418,7 @@ export const caseStudies: CaseStudyContent[] = [
       {
         title: "Privacy come prodotto",
         description:
-          "I contenuti di famiglia restano tuoi. Local-first su SwiftData. CloudKit solo per condividere La Famiglia. Pubblicità separata, senza ATT. Legal chiaro: Privacy, Termini, Supporto, Eliminazione dati.",
+          "I contenuti di famiglia restano tuoi. Local-first su SwiftData. CloudKit per condividere La Famiglia (e, quando attivo, i contenuti Bilancio collegati allo spazio). Pubblicità separata, senza ATT. Legal chiaro: Privacy, Termini, Supporto, Eliminazione dati.",
         items: [],
       },
     ],
@@ -550,7 +557,7 @@ export const caseStudies: CaseStudyContent[] = [
     productTimeline: [...PRODUCT_TIMELINE],
     qualitySignals: [
       "Live su App Store",
-      "v1.1.2",
+      "v1.1.3",
       "Pensata per iPhone",
       "Local-first",
       "CloudKit CKShare",
@@ -565,14 +572,14 @@ export const caseStudies: CaseStudyContent[] = [
       "Promemoria locali utili, con Notification Schedule sul dispositivo",
     ],
     results: [
-      "v1.1.2 in produzione: glossario ufficiale, Design System V2, localizzazione certificata",
+      "v1.1.3: glossario ufficiale, Design System V2, Bilancio come pilastro di famiglia, localizzazione certificata",
       "Galleria prodotto ufficiale: Casa, Tavola, Memoria, Io, Centro di controllo, Notifiche, La Storia",
       "Legal pubblico allineato: Privacy, Termini, Supporto, Eliminazione dati",
       "Prodotto gratuito local-first — senza account custom né analytics SDK",
     ],
     trustSignals: [
       "App Store",
-      "v1.1.2",
+      "v1.1.3",
       "Local-first",
       "Pensata per iPhone",
       "CloudKit",
@@ -580,7 +587,7 @@ export const caseStudies: CaseStudyContent[] = [
       "Gratis",
     ],
     seoDescription:
-      "Family Plus v1.1.2 su App Store: organizer famiglia pensato per iPhone. Casa, Tavola, Memoria, La Famiglia — local-first, CloudKit, gratis, privacy-first.",
+      "Family Plus v1.1.3 su App Store: organizer famiglia pensato per iPhone. Casa, Tavola, Memoria, Bilancio, La Famiglia — local-first, CloudKit, gratis, privacy-first.",
   },
   {
     slug: "gynometrics",

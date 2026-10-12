@@ -40,7 +40,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Family Plus non ha un account email/password gestito dallo sviluppatore. Questa pagina spiega cosa puoi rimuovere sul dispositivo, cosa resta in iCloud/CloudKit e come lasciare uno spazio famiglia.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "4 ottobre 2026",
+    updatedDisplay: "11 ottobre 2026",
     updatedISO: FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -75,16 +75,19 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Cosa resta sul dispositivo",
         paragraphs: [
           [
-            "Sul dispositivo Family Plus conserva in locale (SwiftData e file di allegato, più preferenze) contenuti come liste della Spesa, Attività, eventi di Calendario, elementi di Tavola, ricorrenze, documenti in Memoria, membri della Famiglia e cronologia uscite Spesa, oltre a preferenze (lingua, onboarding, limiti di frequenza annunci, e programma dei promemoria su questo dispositivo).",
+            "Sul dispositivo Family Plus conserva in locale (SwiftData e file di allegato, più preferenze) contenuti come liste della Spesa, Attività, eventi di Calendario, elementi di Tavola, ricorrenze, documenti in Memoria, dati di Bilancio (conti, operazioni, budget, obiettivi, allegati), membri della Famiglia e cronologia uscite Spesa, oltre a preferenze (lingua, onboarding, limiti di frequenza annunci, e programma dei promemoria su questo dispositivo).",
           ],
           [
-            "Disinstallare Family Plus rimuove i dati dell’app da quel dispositivo. Non cancella automaticamente i contenuti già presenti nello spazio famiglia iCloud di altre persone.",
+            "Disinstallare Family Plus rimuove i dati dell’app da quel dispositivo, inclusi i dati locali di Bilancio. Non cancella automaticamente i contenuti già presenti nello spazio famiglia iCloud di altre persone.",
           ],
         ],
         bullets: [
           ["Disinstallazione = wipe locale su quel dispositivo."],
           [
             "ICloud/CloudKit condiviso può restare attivo per organizzatore e altri partecipanti.",
+          ],
+          [
+            "In Bilancio puoi eliminare singoli elementi (conti, budget, obiettivi, allegati) o annullare operazioni; non esiste un pulsante «elimina tutto Bilancio».",
           ],
         ],
       },
@@ -93,10 +96,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "3. iCloud e CloudKit",
         paragraphs: [
           [
-            "Quando usi uno spazio famiglia, i contenuti possono sincronizzarsi nel container iCloud iCloud.app.familyplus.FamilyPlus gestito da Apple. Lo sviluppatore non opera un pannello per cancellare i record CloudKit degli utenti.",
+            "Quando usi uno spazio famiglia, i contenuti possono sincronizzarsi nel container iCloud iCloud.app.familyplus.FamilyPlus gestito da Apple, inclusi i dati di Bilancio collegati a quello spazio. Lo sviluppatore non opera un pannello per cancellare i record CloudKit degli utenti.",
           ],
           [
-            "La rimozione definitiva dei dati cloud dipende dalle regole Apple (spazio famiglia, partecipanti, eventuale gestione share) e da ciò che resta sugli altri dispositivi.",
+            "La rimozione definitiva dei dati cloud dipende dalle regole Apple (spazio famiglia, partecipanti, eventuale gestione share) e da ciò che resta sugli altri dispositivi. Non promettiamo cancellazione remota completa dei record CloudKit condivisi.",
           ],
         ],
       },
@@ -105,7 +108,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "4. Lasciare uno spazio famiglia (partecipante)",
         paragraphs: [
           [
-            "Se sei un partecipante (non l’organizzatore), in Altro → La Famiglia puoi lasciare lo spazio famiglia. L’app tenta di rimuoverti dalla share CloudKit; se l’operazione riesce, elimina i dati di quella famiglia da questo dispositivo.",
+            "Se sei un partecipante (non l’organizzatore), in Altro → La Famiglia puoi lasciare lo spazio famiglia. L’app tenta di rimuoverti dalla share CloudKit; se l’operazione riesce, elimina molti dati di quella famiglia da questo dispositivo.",
+          ],
+          [
+            "Alcuni dati locali di Bilancio possono restare sul dispositivo dopo aver lasciato lo spazio famiglia. Per rimuoverli da questo iPhone puoi eliminarli nell’app oppure disinstallare Family Plus.",
           ],
           [
             "Se l’uscita CloudKit fallisce, i dati locali restano per evitare di perdere contenuti senza aver completato l’uscita.",
@@ -132,7 +138,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "6. Documenti e allegati",
         paragraphs: [
           [
-            "Gli allegati possono essere salvati in locale e, dove previsto, sincronizzati come asset CloudKit. Eliminare un documento nell’app rimuove i relativi dati locali e richiede la sync per aggiornare gli altri dispositivi. Lasciare lo spazio o disinstallare elimina gli allegati locali di quel dispositivo.",
+            "Gli allegati (Memoria e Bilancio) possono essere salvati in locale e, dove previsto, sincronizzati come asset CloudKit. Eliminare un documento o un allegato nell’app rimuove i relativi dati locali e richiede la sync per aggiornare gli altri dispositivi. Lasciare lo spazio o disinstallare elimina gli allegati locali di quel dispositivo, con i limiti descritti sopra per Bilancio dopo leave.",
           ],
         ],
       },
@@ -206,7 +212,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Family Plus has no developer-hosted email/password account. This page explains what you can remove on device, what may remain in iCloud/CloudKit, and how leaving a family space works.",
     updatedLabel: "Last updated",
-    updatedDisplay: "October 4, 2026",
+    updatedDisplay: "October 11, 2026",
     updatedISO: FAMILYPLUS_DELETE_DATA_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -241,16 +247,19 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. What stays on the device",
         paragraphs: [
           [
-            "On device, Family Plus stores family content locally (SwiftData and attachment files, plus preferences): Shopping lists, Tasks, Calendar events, Family Table items, occasions, Family Memory documents, The Family members, shopping-trip history, and preferences such as language, onboarding, ad frequency limits, and the reminder schedule on this device.",
+            "On device, Family Plus stores family content locally (SwiftData and attachment files, plus preferences): Shopping lists, Tasks, Calendar events, Family Table items, occasions, Family Memory documents, Budget data (accounts, transactions, budgets, goals, attachments), The Family members, shopping-trip history, and preferences such as language, onboarding, ad frequency limits, and the reminder schedule on this device.",
           ],
           [
-            "Uninstalling Family Plus removes the app’s data from that device. It does not automatically erase content already present in other people’s shared iCloud family space.",
+            "Uninstalling Family Plus removes the app’s data from that device, including local Budget data. It does not automatically erase content already present in other people’s shared iCloud family space.",
           ],
         ],
         bullets: [
           ["Uninstall = local wipe on that device."],
           [
             "Shared iCloud/CloudKit data may remain for the organizer and other participants.",
+          ],
+          [
+            "In Budget you can delete individual items (accounts, budgets, goals, attachments) or cancel transactions; there is no “delete all Budget” button.",
           ],
         ],
       },
@@ -259,10 +268,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "3. iCloud and CloudKit",
         paragraphs: [
           [
-            "When you use a family space, content may sync in Apple’s iCloud container for Family Plus. The developer does not operate a console to delete users’ CloudKit records.",
+            "When you use a family space, content may sync in Apple’s iCloud container for Family Plus, including Budget data linked to that space. The developer does not operate a console to delete users’ CloudKit records.",
           ],
           [
-            "Permanent cloud deletion depends on Apple’s rules (family space, participants, share management) and what remains on other devices.",
+            "Permanent cloud deletion depends on Apple’s rules (family space, participants, share management) and what remains on other devices. We do not promise complete remote erasure of shared CloudKit records.",
           ],
         ],
       },
@@ -271,7 +280,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "4. Leaving a family space (participant)",
         paragraphs: [
           [
-            "If you are a participant (not the organizer), More → The Family lets you leave the family space. The app attempts to remove you from the CloudKit share; if that succeeds, it deletes that family’s data from this device.",
+            "If you are a participant (not the organizer), More → The Family lets you leave the family space. The app attempts to remove you from the CloudKit share; if that succeeds, it deletes much of that family’s data from this device.",
+          ],
+          [
+            "Some local Budget data may remain on the device after leaving the family space. To remove it from this iPhone, delete it in-app or uninstall Family Plus.",
           ],
           [
             "If the CloudKit leave fails, local data is preserved so you do not lose content without completing the leave.",
@@ -298,7 +310,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "6. Documents and attachments",
         paragraphs: [
           [
-            "Attachments may be stored locally and, where supported, synced as CloudKit assets. Deleting a document in-app removes local data and relies on sync to update other devices. Leaving the space or uninstalling removes local attachments on that device.",
+            "Attachments (Family Memory and Budget) may be stored locally and, where supported, synced as CloudKit assets. Deleting a document or attachment in-app removes local data and relies on sync to update other devices. Leaving the space or uninstalling removes local attachments on that device, with the Budget leave limits described above.",
           ],
         ],
       },

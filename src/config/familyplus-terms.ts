@@ -51,7 +51,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "Questi Termini regolano l’uso di Family Plus su iPhone (iOS): organizer famigliare local-first, condivisione via iCloud/CloudKit, promemoria e pubblicità tramite Google AdMob.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "4 ottobre 2026",
+    updatedDisplay: "11 ottobre 2026",
     updatedISO: FAMILYPLUS_TERMS_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -84,7 +84,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Descrizione del servizio",
         paragraphs: [
           [
-            "Family Plus è un organizer per famiglie su iPhone (iOS, orientamento verticale): Casa, Calendario, Spesa, Attività, Tavola, Memoria, Compleanni e ricorrenze, promemoria e La Famiglia condivisa.",
+            "Family Plus è un organizer per famiglie su iPhone (iOS, orientamento verticale): Casa, Calendario, Spesa, Attività, Tavola, Memoria, Bilancio, Compleanni e ricorrenze, promemoria e La Famiglia condivisa.",
+          ],
+          [
+            "Bilancio è uno strumento per registrare informazioni finanziarie inserite da te (e, se condivise, dai partecipanti). Non è una banca, non offre consulenza finanziaria e non importa automaticamente movimenti da conti esterni.",
           ],
           [
             "Funzioni, layout e disponibilità possono evolvere. Non promettiamo che ogni funzione resti identica nel tempo.",
@@ -123,7 +126,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "6. Contenuti creati dagli utenti",
         paragraphs: [
           [
-            "Restano tuoi (o dei rispettivi autori) i contenuti che inserisci. Concedi a Family Plus la licenza tecnica necessaria per salvarli, mostrarli e sincronizzarli sul tuo dispositivo e, se applicabile, tramite CloudKit verso i partecipanti autorizzati.",
+            "Restano tuoi (o dei rispettivi autori) i contenuti che inserisci, inclusi i dati di Bilancio. Concedi a Family Plus la licenza tecnica necessaria per salvarli, mostrarli e sincronizzarli sul tuo dispositivo e, se applicabile, tramite CloudKit verso i partecipanti autorizzati.",
+          ],
+          [
+            "Sei responsabile dell’accuratezza delle informazioni finanziarie che inserisci in Bilancio. Family Plus non verifica saldi bancari esterni né fornisce garanzie su completezza o correttezza contabile.",
           ],
         ],
       },
@@ -132,7 +138,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "7. Responsabilità sui contenuti condivisi",
         paragraphs: [
           [
-            "Sei responsabile di ciò che condividi con la famiglia e di verificare che i partecipanti siano appropriati. Non usare Family Plus per contenuti illegali, abusivi o che violino diritti di terzi.",
+            "Sei responsabile di ciò che condividi con la famiglia e di verificare che i partecipanti siano appropriati. Non usare Family Plus per contenuti illegali, abusivi o che violino diritti di terzi. Se condividi dati Bilancio nello spazio famiglia, i partecipanti autorizzati possono vederli secondo i permessi della share e della visibilità impostata.",
           ],
         ],
       },
@@ -141,7 +147,7 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "8. Documenti e allegati",
         paragraphs: [
           [
-            "I documenti e gli allegati sono sotto la tua responsabilità. Conserva copie importanti anche fuori dall’app. Non garantiamo recupero illimitato dopo cancellazioni, leave dalla famiglia o problemi iCloud.",
+            "I documenti e gli allegati (inclusi allegati/ricevute in Bilancio e documenti in Memoria) sono sotto la tua responsabilità. Conserva copie importanti anche fuori dall’app. Non garantiamo recupero illimitato dopo cancellazioni, leave dalla famiglia o problemi iCloud.",
           ],
         ],
       },
@@ -317,7 +323,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     lead:
       "These Terms govern use of Family Plus on iPhone (iOS): a local-first family organizer, sharing via iCloud/CloudKit, reminders, and advertising through Google AdMob.",
     updatedLabel: "Last updated",
-    updatedDisplay: "October 4, 2026",
+    updatedDisplay: "October 11, 2026",
     updatedISO: FAMILYPLUS_TERMS_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -350,7 +356,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "2. Service description",
         paragraphs: [
           [
-            "Family Plus is a family organizer for iPhone (iOS, portrait orientation): Family Home, Calendar, Shopping, Tasks, Family Table, Family Memory, Birthdays & occasions, reminders, and The Family shared space.",
+            "Family Plus is a family organizer for iPhone (iOS, portrait orientation): Family Home, Calendar, Shopping, Tasks, Family Table, Family Memory, Budget, Birthdays & occasions, reminders, and The Family shared space.",
+          ],
+          [
+            "Budget is a tool for recording financial information you enter (and, if shared, participants enter). It is not a bank, does not provide financial advice, and does not automatically import transactions from external accounts.",
           ],
           [
             "Features, layout, and availability may evolve. We do not promise that every feature will remain identical over time.",
@@ -389,7 +398,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "6. User-created content",
         paragraphs: [
           [
-            "Content you enter remains yours (or the respective authors’). You grant Family Plus the technical license needed to store, display, and sync it on your device and, where applicable, through CloudKit to authorized participants.",
+            "Content you enter remains yours (or the respective authors’), including Budget data. You grant Family Plus the technical license needed to store, display, and sync it on your device and, where applicable, through CloudKit to authorized participants.",
+          ],
+          [
+            "You are responsible for the accuracy of financial information you enter in Budget. Family Plus does not verify external bank balances and does not guarantee accounting completeness or correctness.",
           ],
         ],
       },
@@ -398,7 +410,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "7. Responsibility for shared content",
         paragraphs: [
           [
-            "You are responsible for what you share with the family and for ensuring participants are appropriate. Do not use Family Plus for unlawful or abusive content or content that infringes others’ rights.",
+            "You are responsible for what you share with the family and for ensuring participants are appropriate. Do not use Family Plus for unlawful or abusive content or content that infringes others’ rights. If you share Budget data in the family space, authorized participants may see it according to share permissions and the visibility you set.",
           ],
         ],
       },
@@ -407,7 +419,7 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "8. Documents and attachments",
         paragraphs: [
           [
-            "Documents and attachments are your responsibility. Keep important copies outside the app. We do not guarantee unlimited recovery after deletions, leaving a family, or iCloud issues.",
+            "Documents and attachments (including Budget attachments/receipts and Family Memory documents) are your responsibility. Keep important copies outside the app. We do not guarantee unlimited recovery after deletions, leaving a family, or iCloud issues.",
           ],
         ],
       },

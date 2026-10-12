@@ -38,9 +38,9 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Supporto",
     lead:
-      "Aiuto per Family Plus su iPhone (iOS): La Famiglia, iCloud, sincronizzazione, Casa, Spesa, Calendario, Attività, Tavola, Memoria, ricorrenze, promemoria e programma notifiche, lingua e scelte pubblicitarie.",
+      "Aiuto per Family Plus su iPhone (iOS): La Famiglia, iCloud, sincronizzazione, Casa, Spesa, Calendario, Attività, Tavola, Memoria, Bilancio, ricorrenze, promemoria e programma notifiche, lingua e scelte pubblicitarie.",
     updatedLabel: "Ultimo aggiornamento",
-    updatedDisplay: "4 ottobre 2026",
+    updatedDisplay: "11 ottobre 2026",
     updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
     tocLabel: "Indice",
     languageLabel: "Lingua",
@@ -92,10 +92,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Per iniziare",
         paragraphs: [
           [
-            "Dopo l’onboarding (se mostrato), usa le schede Casa, Calendario, Spesa, Attività e Altro. In Altro trovi La Famiglia, Io, Centro di controllo, Tavola, Compleanni e ricorrenze e Memoria. Promemoria, lingua e scelte privacy sono in Altro → Centro di controllo.",
+            "Dopo l’onboarding (se mostrato), usa le schede Casa, Calendario, Spesa, Attività e Altro. In Altro trovi La Famiglia, Io, Centro di controllo, Tavola, Compleanni e ricorrenze, Memoria e Bilancio. Promemoria, lingua e scelte privacy sono in Altro → Centro di controllo.",
           ],
           [
-            "Per collaborare con altre persone crea o unisciti a La Famiglia da Altro → La Famiglia. Serve tipicamente iCloud.",
+            "Per collaborare con altre persone crea o unisciti a La Famiglia da Altro → La Famiglia. Serve tipicamente iCloud. Bilancio lavora nello spazio famiglia attivo: crea un conto per iniziare, poi registra le operazioni.",
           ],
         ],
       },
@@ -125,10 +125,10 @@ function italianDocument(contactEmail: string): CieloStorieLegalDocument {
       },
       {
         id: "moduli",
-        heading: "Spesa, Calendario, Attività, Tavola, Memoria, ricorrenze",
+        heading: "Spesa, Calendario, Attività, Tavola, Memoria, Bilancio, ricorrenze",
         paragraphs: [
           [
-            "Spesa: liste e voci, modalità spesa a schermo intero, pulizia delle completate. Calendario e Attività: eventi e attività con dettaglio e creazione. Tavola e Compleanni e ricorrenze: da Altro. Memoria (documenti e allegati di famiglia): da Altro; non è previsto un banner pubblicitario in Memoria.",
+            "Spesa: liste e voci, modalità spesa a schermo intero, pulizia delle completate. Calendario e Attività: eventi e attività con dettaglio e creazione. Tavola e Compleanni e ricorrenze: da Altro. Memoria (documenti e allegati di famiglia): da Altro. Bilancio: da Altro — entrate, spese e obiettivi in un unico posto; non sincronizza conti bancari esterni e non esegue OCR delle ricevute. Non è previsto un banner pubblicitario in Memoria o in Bilancio.",
           ],
         ],
       },
@@ -271,9 +271,9 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
     eyebrow: "Family Plus",
     title: "Support",
     lead:
-      "Help for Family Plus on iPhone (iOS): The Family, iCloud, sync, Family Home, Shopping, Calendar, Tasks, Family Table, Family Memory, occasions, reminders and notification schedule, language, and advertising privacy choices.",
+      "Help for Family Plus on iPhone (iOS): The Family, iCloud, sync, Family Home, Shopping, Calendar, Tasks, Family Table, Family Memory, Budget, occasions, reminders and notification schedule, language, and advertising privacy choices.",
     updatedLabel: "Last updated",
-    updatedDisplay: "October 4, 2026",
+    updatedDisplay: "October 11, 2026",
     updatedISO: FAMILYPLUS_SUPPORT_UPDATED_ISO,
     tocLabel: "Contents",
     languageLabel: "Language",
@@ -328,10 +328,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
         heading: "Getting started",
         paragraphs: [
           [
-            "After onboarding (when shown), use Family Home, Calendar, Shopping, Tasks, and More. Under More you will find The Family, Me, Control Center, Family Table, Birthdays & occasions, and Family Memory. Reminders, language, and privacy choices are under More → Control Center.",
+            "After onboarding (when shown), use Family Home, Calendar, Shopping, Tasks, and More. Under More you will find The Family, Me, Control Center, Family Table, Birthdays & occasions, Family Memory, and Budget. Reminders, language, and privacy choices are under More → Control Center.",
           ],
           [
-            "To collaborate, create or join The Family from More → The Family. iCloud is typically required.",
+            "To collaborate, create or join The Family from More → The Family. iCloud is typically required. Budget works in the active family space: create an account to start, then log transactions.",
           ],
         ],
       },
@@ -361,10 +361,10 @@ function englishDocument(contactEmail: string): CieloStorieLegalDocument {
       },
       {
         id: "modules",
-        heading: "Shopping, Calendar, Tasks, Family Table, Family Memory, occasions",
+        heading: "Shopping, Calendar, Tasks, Family Table, Family Memory, Budget, occasions",
         paragraphs: [
           [
-            "Shopping: lists and items, full-screen shopping mode, clear completed. Calendar and Tasks: events/tasks with detail and create flows. Family Table and Birthdays & occasions: under More. Family Memory: family documents and attachments under More; Family Memory does not show an ad banner.",
+            "Shopping: lists and items, full-screen shopping mode, clear completed. Calendar and Tasks: events/tasks with detail and create flows. Family Table and Birthdays & occasions: under More. Family Memory: family documents and attachments under More. Budget: under More — income, spending, and goals in one place; it does not sync external bank accounts and does not run receipt OCR. Family Memory and Budget do not show an ad banner.",
           ],
         ],
       },
